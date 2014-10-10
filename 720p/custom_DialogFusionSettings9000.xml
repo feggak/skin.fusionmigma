@@ -1,0 +1,659 @@
+<window id="9000">
+	<defaultcontrol>9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>Home/bg2.png</texture>
+		</control>	
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>black.png</texture>
+			<colordiffuse>73FFFFFF</colordiffuse>
+		</control> 
+
+		<include>FusionStyles</include>
+
+		<control type="group">
+			<animation type="Conditional" condition="Window.IsVisible(126) | Window.IsVisible(2000)">
+				<effect type="fade" start="100" end="0" time="400" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="350" delay="0" />
+			</animation> 
+			<control type="image">
+				<posx>110</posx>
+				<posy>130</posy>
+				<width>1072</width>
+				<height>496</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>settings/listbg.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="550" delay="0" />
+				</animation>
+			</control> 
+
+			<!-- Lefthand List -->
+			<control type="list" id="9000">
+				<description>Button Area</description>
+				<posx>115</posx>
+				<posy>144</posy>
+				<width>250</width>
+				<height>480</height>
+				<itemgap>.5</itemgap>
+				<onleft>9010</onleft>
+				<onright>9010</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<orientation>vertical</orientation>
+				<pagecontrol>-</pagecontrol>
+				<itemlayout height="43.5" width="810">
+					<control type="label">
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<height>43.5</height>
+						<width>810</width>
+						<font>homemenu3</font>
+						<textcolor>4ec0c0c0</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="43.5" width="810">
+					<control type="image">
+						<height>43.5</height>
+						<width>810</width>
+						<texture>settings/white.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>1FFFFFFF</colordiffuse>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(9000)">Conditional</animation>
+					</control>
+					<control type="label">
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<height>43.5</height>
+						<width>810</width>
+						<font>homemenu3</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>31407</label>
+						<onclick>SetFocus(9001)</onclick>
+					</item>
+					<item id="2">
+						<label>31408</label>
+						<onclick>SetFocus(9002)</onclick>
+					</item>
+					<item id="3">
+						<label>31409</label>
+						<onclick>SetFocus(9003)</onclick>
+					</item>
+					<item id="4">
+						<label>31410</label>
+						<onclick>SetFocus(9004)</onclick>
+					</item>
+					<item id="5">
+						<label>31411</label>
+						<onclick>SetFocus(9005)</onclick>
+					</item>
+					<item id="6">
+						<label>317804</label>
+						<onclick>SetFocus(9006)</onclick>
+					</item>
+				</content>
+			</control>
+
+			<!-- Righthand List -->
+			<control type="group" id="9010">
+
+				<!-- Main Items -->
+				<control type="grouplist" id="9001">
+					<description>Control Area</description>
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<posx>366</posx>
+					<posy>138</posy>
+					<width>811</width>
+					<height>480</height>
+					<itemgap>.5</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9001</onup>
+					<ondown>9001</ondown>
+					<control type="radiobutton" id="100">
+						<include>FusionSettingsButton</include>
+						<label>31412</label>
+						<onclick>Skin.ToggleSetting(VideoHome)</onclick>
+						<selected>Skin.HasSetting(VideoHome)</selected>
+					</control>
+					<control type="radiobutton" id="101">
+						<include>FusionSettingsButton</include>
+						<label>31413</label>
+						<onclick>Skin.ToggleSetting(MovieHome)</onclick>
+						<selected>Skin.HasSetting(MovieHome)</selected>
+					</control>
+					<control type="radiobutton" id="102">
+						<include>FusionSettingsButton</include>
+						<label>31414</label>
+						<onclick>Skin.ToggleSetting(TVHome)</onclick>
+						<selected>Skin.HasSetting(TVHome)</selected>
+					</control>
+					<control type="radiobutton" id="103">
+						<include>FusionSettingsButton</include>
+						<label>31415</label>
+						<onclick>Skin.ToggleSetting(MusicHome)</onclick>
+						<selected>Skin.HasSetting(MusicHome)</selected>
+					</control>
+					<control type="radiobutton" id="104">
+						<include>FusionSettingsButton</include>
+						<label>31416</label>
+						<onclick>Skin.ToggleSetting(PicsHome)</onclick>
+						<selected>Skin.HasSetting(PicsHome)</selected>
+					</control>
+					<control type="radiobutton" id="105">
+						<include>FusionSettingsButton</include>
+						<label>31417</label>
+						<onclick>Skin.ToggleSetting(ProgramsHome)</onclick>
+						<selected>Skin.HasSetting(ProgramsHome)</selected>
+					</control>
+					<control type="radiobutton" id="106">
+						<include>FusionSettingsButton</include>
+						<label>31418</label>
+						<onclick>Skin.ToggleSetting(WeatherHome)</onclick>
+						<selected>Skin.HasSetting(WeatherHome)</selected>
+					</control>
+					<control type="radiobutton" id="107">
+						<include>FusionSettingsButton</include>
+						<label>31419</label>
+						<onclick>Skin.ToggleSetting(AddonHome)</onclick>
+						<selected>Skin.HasSetting(AddonHome)</selected>
+					</control>
+					<control type="radiobutton" id="108">
+						<include>FusionSettingsButton</include>
+						<label>31420</label>
+						<onclick>Skin.ToggleSetting(PowerHome)</onclick>
+						<selected>Skin.HasSetting(PowerHome)</selected>
+					</control>
+				</control>
+				
+				<!-- Content -->
+				<control type="grouplist" id="9002">
+					<description>Control Area</description>
+					<visible>Container(9000).Hasfocus(2)</visible>
+					<posx>366</posx>
+					<posy>138</posy>
+					<width>810</width>
+					<height>440</height>
+					<itemgap>.5</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9002</onup>
+					<ondown>9002</ondown>
+					<control type="radiobutton" id="100">
+						<include>FusionSettingsButton</include>
+						<label>31421</label>
+						<onclick>Skin.ToggleSetting(HomeTotals)</onclick>
+						<selected>!Skin.HasSetting(HomeTotals)</selected>
+					</control>
+					<control type="radiobutton" id="101">
+						<include>FusionSettingsButton</include>
+						<label>31422</label>
+						<onclick>Skin.ToggleSetting(HomeSystemInfo)</onclick>
+						<selected>!Skin.HasSetting(HomeSystemInfo)</selected>
+					</control>
+					<!-- <control type="radiobutton" id="108">
+						<include>FusionSettingsButton</include>
+						<label>31426</label>
+						<onclick>Skin.ToggleSetting(HomeWatchlistAlbums)</onclick>
+						<onclick>Skin.Reset(HomeRecentlyAddedAlbums)</onclick>
+						<selected>Skin.HasSetting(HomeWatchlistAlbums)</selected>
+						<visible>Skin.HasSetting(HomeWatchlist)</visible>
+					</control> -->
+					<control type="radiobutton" id="108">
+						<include>FusionSettingsButton</include>
+						<label>31428</label>
+						<onclick>Skin.ToggleSetting(HomeWeatherInfo)</onclick>
+						<selected>!Skin.HasSetting(HomeWeatherInfo)</selected>
+					</control>
+					<control type="radiobutton" id="109">
+						<include>FusionSettingsButton</include>
+						<label>31429</label>
+						<onclick>Skin.ToggleSetting(HomeSubMenus)</onclick>
+						<selected>!Skin.HasSetting(HomeSubMenus)</selected>
+					</control>
+					<control type="radiobutton" id="111">
+						<include>FusionSettingsButton</include>
+						<label>31467</label>
+						<onclick>Skin.ToggleSetting(ZBarhome)</onclick>
+						<selected>Skin.HasSetting(ZBarhome)</selected>
+					</control>
+					<control type="radiobutton" id="110">
+						<include>FusionSettingsButton</include>
+						<label>31430</label>
+						<onclick>Skin.ToggleSetting(DiscLabel)</onclick>
+						<selected>Skin.HasSetting(DiscLabel)</selected>
+					</control>
+				</control>
+				
+				<!-- Behaviours -->
+				<control type="grouplist" id="9003">
+					<description>Control Area</description>
+					<visible>Container(9000).Hasfocus(3)</visible>
+					<posx>366</posx>
+					<posy>138</posy>
+					<width>810</width>
+					<height>480</height>
+					<itemgap>.5</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9003</onup>
+					<ondown>9003</ondown>
+					<control type="radiobutton" id="100">
+						<include>FusionSettingsButton</include>
+						<label>31431</label>
+						<onclick>Skin.ToggleSetting(MoviesHomeDefault)</onclick>
+						<selected>Skin.HasSetting(MoviesHomeDefault)</selected>
+					</control>
+					<control type="radiobutton" id="101">
+						<include>FusionSettingsButton</include>
+						<label>31432</label>
+						<onclick>Skin.ToggleSetting(TVHomeDefault)</onclick>
+						<selected>Skin.HasSetting(TVHomeDefault)</selected>
+					</control>
+					<control type="radiobutton" id="103">
+						<include>FusionSettingsButton</include>
+						<label>31433</label>
+						<onclick>Skin.ToggleSetting(MusicHomeAlbums)</onclick>
+						<onclick>Skin.Reset(MusicHomeArtists)</onclick>
+						<onclick>Skin.Reset(MusicHomeFiles)</onclick>
+						<selected>Skin.HasSetting(MusicHomeAlbums)</selected>
+					</control>
+					<control type="radiobutton" id="102">
+						<include>FusionSettingsButton</include>
+						<label>31434</label>
+						<onclick>Skin.ToggleSetting(MusicHomeArtists)</onclick>
+						<onclick>Skin.Reset(MusicHomeAlbums)</onclick>
+						<onclick>Skin.Reset(MusicHomeFiles)</onclick>
+						<selected>Skin.HasSetting(MusicHomeArtists)</selected>
+					</control>
+					<control type="radiobutton" id="104">
+						<include>FusionSettingsButton</include>
+						<label>31435</label>
+						<onclick>Skin.ToggleSetting(MusicHomeFiles)</onclick>
+						<onclick>Skin.Reset(MusicHomeAlbums)</onclick>
+						<onclick>Skin.Reset(MusicHomeArtists)</onclick>
+						<selected>Skin.HasSetting(MusicHomeFiles)</selected>
+					</control>
+					<control type="radiobutton" id="105">
+						<include>FusionSettingsButton</include>
+						<label>31436</label>
+						<onclick>Skin.ToggleSetting(VideosHomeDefault)</onclick>
+						<selected>Skin.HasSetting(VideosHomeDefault)</selected>
+					</control>
+				</control>
+				
+				<!-- Backgrounds -->
+				<control type="grouplist" id="9004">
+					<description>Control Area</description>
+					<visible>Container(9000).Hasfocus(4)</visible>
+					<posx>366</posx>
+					<posy>138</posy>
+					<width>810</width>
+					<height>440</height>
+					<itemgap>.5</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9004</onup>
+					<ondown>9004</ondown>
+					<control type="radiobutton" id="100">
+						<include>FusionSettingsButton</include>
+						<label>31437</label>
+						<onclick>Skin.ToggleSetting(CustomBackground)</onclick>
+						<onclick>Skin.Reset(CustomBackgroundImage)</onclick>
+						<selected>Skin.HasSetting(CustomBackground)</selected>
+					</control>
+					<control type="button" id="101">
+						<label>31438</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundImageVideos)][/COLOR]</label2>
+						<onclick>Skin.SetPath(CustomBackgroundImageVideos)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+					</control>
+					<control type="button" id="102">
+						<label>31439</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundImageMovie)][/COLOR]</label2>
+						<onclick>Skin.SetPath(CustomBackgroundImageMovie)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+					</control>
+					<control type="button" id="103">
+						<label>31440</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundImageTVShows)][/COLOR]</label2>
+						<onclick>Skin.SetPath(CustomBackgroundImageTVShows)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+					</control>
+					<control type="button" id="104">
+						<label>31441</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundImageMusic)][/COLOR]</label2>
+						<onclick>Skin.SetPath(CustomBackgroundImageMusic)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+					</control>
+					<control type="button" id="105">
+						<label>31442</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundImagePictures)][/COLOR]</label2>
+						<onclick>Skin.SetPath(CustomBackgroundImagePictures)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+					</control>
+					<control type="button" id="106">
+						<label>31443</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundImageSettings)][/COLOR]</label2>
+						<onclick>Skin.SetPath(CustomBackgroundImageSettings)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+					</control>
+					<control type="button" id="107">
+						<label>31444</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundImagePrograms)][/COLOR]</label2>
+						<onclick>Skin.SetPath(CustomBackgroundImagePrograms)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+					</control>
+					<control type="button" id="108">
+						<label>31445</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundImageAddons)][/COLOR]</label2>
+						<onclick>Skin.SetPath(CustomBackgroundImageAddons)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+					</control>
+					<control type="button" id="109">
+						<label>31446</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundWeather)][/COLOR]</label2>
+						<onclick>Skin.SetImage(CustomBackgroundWeather)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+					</control>
+					<control type="button" id="113">
+						<label>31447</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundImagePower)][/COLOR]</label2>
+						<onclick>Skin.SetPath(CustomBackgroundImagePower)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+					</control>
+					<control type="button" id="110">
+						<label>31448</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundPlayDisc)][/COLOR]</label2>
+						<onclick>Skin.SetImage(CustomBackgroundPlayDisc)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+					</control>
+					<control type="button" id="111">
+						<label>31449</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundImageGames)][/COLOR]</label2>
+						<onclick>Skin.SetPath(CustomBackgroundImageGames)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+						<enable>Skin.HasSetting(GamesHome)</enable>
+					</control>
+					<control type="button" id="112">
+						<label>31450</label>
+						<label2>[COLOR=white]$INFO[Skin.String(CustomBackgroundImageVOD)][/COLOR]</label2>
+						<onclick>Skin.SetPath(CustomBackgroundImageVOD)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<visible>Skin.HasSetting(CustomBackground)</visible>
+						<enable>Skin.HasSetting(VODHome)</enable>
+					</control>
+				</control>
+				
+				<!-- Extra Items -->
+				<control type="grouplist" id="9005">
+					<description>Control Area</description>
+					<visible>Container(9000).Hasfocus(5)</visible>
+					<posx>366</posx>
+					<posy>138</posy>
+					<width>810</width>
+					<height>480</height>
+					<itemgap>.5</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9005</onup>
+					<ondown>9005</ondown>
+					<control type="radiobutton" id="100">
+						<include>FusionSettingsButton</include>
+						<label>31451</label>
+						<onclick>Skin.ToggleSetting(HDMoviesHome)</onclick>
+						<selected>Skin.HasSetting(HDMoviesHome)</selected>
+					</control>
+					<control type="radiobutton" id="101">
+						<include>FusionSettingsButton</include>
+						<label>31452</label>
+						<onclick>Skin.ToggleSetting(VODHome)</onclick>
+						<selected>Skin.HasSetting(VODHome)</selected>
+					</control>
+					<control type="button" id="102">
+						<include>FusionSettingsButton</include>
+						<label>31453</label>
+						<label2>[COLOR=white]$INFO[Skin.String(HomeVOD_Addon1)][/COLOR]</label2>
+						<font>griddetails</font>
+						<onclick>Skin.SetAddon(HomeVOD_Addon1,xbmc.addon.video)</onclick>
+						<visible>Skin.HasSetting(VODHome)</visible>
+					</control>
+					<control type="button" id="103">
+						<include>FusionSettingsButton</include>
+						<label>31454</label>
+						<label2>[COLOR=white]$INFO[Skin.String(HomeVOD_Addon2)][/COLOR]</label2>
+						<font>griddetails</font>
+						<onclick>Skin.SetAddon(HomeVOD_Addon2,xbmc.addon.video)</onclick>
+						<visible>Skin.HasSetting(VODHome)</visible>
+					</control>
+					<control type="button" id="104">
+						<include>FusionSettingsButton</include>
+						<label>31455</label>
+						<label2>[COLOR=white]$INFO[Skin.String(HomeVOD_Addon3)][/COLOR]</label2>
+						<font>griddetails</font>
+						<onclick>Skin.SetAddon(HomeVOD_Addon3,xbmc.addon.video)</onclick>
+						<visible>Skin.HasSetting(VODHome)</visible>
+					</control>
+					<control type="button" id="105">
+						<include>FusionSettingsButton</include>
+						<label>31456</label>
+						<label2>[COLOR=white]$INFO[Skin.String(HomeVOD_Addon4)][/COLOR]</label2>
+						<font>griddetails</font>
+						<onclick>Skin.SetAddon(HomeVOD_Addon4,xbmc.addon.video)</onclick>
+						<visible>Skin.HasSetting(VODHome)</visible>
+					</control>
+					<control type="button" id="106">
+						<include>FusionSettingsButton</include>
+						<label>31457</label>
+						<label2>[COLOR=white]$INFO[Skin.String(HomeVOD_Addon5)][/COLOR]</label2>
+						<font>griddetails</font>
+						<onclick>Skin.SetAddon(HomeVOD_Addon5,xbmc.addon.video)</onclick>
+						<visible>Skin.HasSetting(VODHome)</visible>
+					</control>
+					<control type="radiobutton" id="107">
+						<include>FusionSettingsButton</include>
+						<label>31458</label>
+						<onclick>Skin.ToggleSetting(GamesHome)</onclick>
+						<selected>Skin.HasSetting(GamesHome)</selected>
+					</control>
+					<control type="button" id="108">
+						<include>FusionSettingsButton</include>
+						<label>31459</label>
+						<label2>[COLOR=white]$INFO[Skin.String(HomeGames_Addon)][/COLOR]</label2>
+						<font>griddetails</font>
+						<onclick>Skin.SetAddon(HomeGames_Addon,xbmc.python.pluginsource)</onclick>
+						<visible>Skin.HasSetting(GamesHome)</visible>
+					</control>
+				</control>
+
+				<!-- Extra Items -->
+				<control type="grouplist" id="9006">
+					<description>Control Area</description>
+					<visible>Container(9000).Hasfocus(6)</visible>
+					<posx>366</posx>
+					<posy>138</posy>
+					<width>810</width>
+					<height>480</height>
+					<itemgap>.5</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9005</onup>
+					<ondown>9005</ondown>
+					<control type="radiobutton" id="100">
+						<include>FusionSettingsButton</include>
+						<label>31423</label>
+						<onclick>Skin.ToggleSetting(HomeRecentlyAdded)</onclick>
+						<selected>!Skin.HasSetting(HomeRecentlyAdded)</selected>
+					</control>
+					<control type="radiobutton" id="101">
+						<include>FusionSettingsButton</include>
+						<label>31424</label>
+						<onclick>Skin.ToggleSetting(HomeRecentlyAddedMovies)</onclick>
+						<onclick>Skin.Reset(HomeWatchlistMovies)</onclick>
+						<selected>Skin.HasSetting(HomeRecentlyAddedMovies)</selected>
+						<visible>Skin.HasSetting(HomeRecentlyAdded)</visible>
+					</control>
+					<control type="radiobutton" id="102">
+						<include>FusionSettingsButton</include>
+						<label>31425</label>
+						<onclick>Skin.ToggleSetting(HomeRecentlyAddedEpisodes)</onclick>
+						<onclick>Skin.Reset(HomeWatchlistEpisodes)</onclick>
+						<selected>Skin.HasSetting(HomeRecentlyAddedEpisodes)</selected>
+						<visible>Skin.HasSetting(HomeRecentlyAdded)</visible>
+					</control>
+					
+					<control type="radiobutton" id="103">
+						<include>FusionSettingsButton</include>
+						<label>31427</label>
+						<onclick>Skin.ToggleSetting(HomeWatchlist)</onclick>
+						<selected>!Skin.HasSetting(HomeWatchlist)</selected>
+					</control>
+					<control type="radiobutton" id="104">
+						<include>FusionSettingsButton</include>
+						<label>31424</label>
+						<onclick>Skin.ToggleSetting(HomeWatchlistMovies)</onclick>
+						<onclick>Skin.Reset(HomeRecentlyAddedMovies)</onclick>
+						<selected>Skin.HasSetting(HomeWatchlistMovies)</selected>
+						<visible>Skin.HasSetting(HomeWatchlist)</visible>
+					</control>
+					<control type="radiobutton" id="105">
+						<include>FusionSettingsButton</include>
+						<label>31425</label>
+						<onclick>Skin.ToggleSetting(HomeWatchlistEpisodes)</onclick>
+						<onclick>Skin.Reset(HomeRecentlyAddedEpisodes)</onclick>
+						<selected>Skin.HasSetting(HomeWatchlistEpisodes)</selected>
+						<visible>Skin.HasSetting(HomeWatchlist)</visible>
+					</control>
+					<control type="radiobutton" id="106">
+						<include>FusionSettingsButton</include>
+						<label>317782</label>
+						<onclick>Skin.ToggleSetting(Homewidget10items)</onclick>
+						<selected>Skin.HasSetting(Homewidget10items)</selected>
+					</control>
+					<control type="radiobutton" id="107">
+						<include>FusionSettingsButton</include>
+						<label>317783</label>
+						<onclick>Skin.ToggleSetting(recentlyaddednav)</onclick>
+						<selected>Skin.HasSetting(recentlyaddednav)</selected>
+					</control>
+					<control type="radiobutton" id="108">
+						<include>FusionSettingsButton</include>
+						<label>317803</label>
+						<onclick>Skin.ToggleSetting(recentlyaddednavmovietraileron)</onclick>
+						<selected>Skin.HasSetting(recentlyaddednavmovietraileron)</selected>
+						<enable>Skin.HasSetting(recentlyaddednav)</enable>
+						<visible>Skin.HasSetting(recentlyaddednav)</visible>
+					</control>
+					<control type="radiobutton" id="109">
+						<include>FusionSettingsButton</include>
+						<label>317805</label>
+						<onclick>Skin.ToggleSetting(recentlyaddednavfanart)</onclick>
+						<selected>Skin.HasSetting(recentlyaddednavfanart)</selected>
+						<visible>Skin.HasSetting(recentlyaddednav) + Skin.HasSetting(recentlyaddednavfanart)</visible>
+					</control>
+					<control type="radiobutton" id="110">
+						<include>FusionSettingsButton</include>
+						<label>317786</label>
+						<onclick>Skin.ToggleSetting(recentlyaddednavfanart)</onclick>
+						<selected>Skin.HasSetting(recentlyaddednavfanart)</selected>
+						<visible>Skin.HasSetting(recentlyaddednav) + !Skin.HasSetting(recentlyaddednavfanart)</visible>
+					</control>
+				</control>
+			</control>
+		</control>
+
+		<control type="group">
+			<visible>Player.HasMedia</visible>
+			<control type="image">
+				<posx>0</posx>
+				<posy>654</posy>
+				<width>1280</width>
+				<height>70</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>black.png</texture>
+				<colordiffuse>A0FFFFFF</colordiffuse>
+				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture flipx="true">zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+				<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>654</posy>
+				<width>1280</width>
+				<height>1</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>white.png</texture>
+				<colordiffuse>20FFFFFF</colordiffuse>
+				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+			</control>
+		</control>
+		<include>MusicOverlay</include>
+		<include>VideoOverlay</include>
+		<include>nav</include>   
+	</controls>
+</window>

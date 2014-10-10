@@ -1,0 +1,119 @@
+<window id="34">
+<defaultcontrol always="true">4</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<coordinates>
+  <system>1</system>
+  <posx>0</posx>
+  <posy>0</posy>
+</coordinates>
+  
+<controls>
+    
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>bg2.png</texture>
+		<colordiffuse>FFCCCCCF</colordiffuse>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>black.png</texture>
+		<colordiffuse>50FFFFFF</colordiffuse>
+	</control>
+
+	<control type="group"> 
+	  <posx>296</posx>
+	  <posy>120</posy>
+	  <animation effect="fade" start="100" end="10" time="150" condition="Window.IsVisible(130)">Conditional</animation>	  
+		<control type="image">
+			<description>background image</description>
+			<posx>8</posx>
+			<posy>-6</posy>
+			<width>684</width>
+			<height>400</height>
+			<aspectratio>stretch</aspectratio>
+			<texture border="12">whitepanel.png</texture>
+			<colordiffuse>4dffffff</colordiffuse>
+		</control>	
+			
+		<control type="image">
+			<description>background image</description>
+			<posx>14</posx>
+			<posy>0</posy>
+			<width>672</width>
+			<height>388</height>
+			<aspectratio>stretch</aspectratio>
+			<texture border="12">whitepanel2.png</texture>
+			<colordiffuse>ddffffff</colordiffuse>
+		</control>
+  
+	<control type="radiobutton" id="4">
+		<description>Enable Login Screen</description>
+		<posx>20</posx>
+		<posy>40</posy>
+		<width>660</width>
+		<label>Use $LOCALIZE[20096]?</label>
+    <align>left</align>
+		<onright>2</onright>
+		<onleft>2</onleft>
+    <onup>2</onup>
+    <ondown>2</ondown>
+	</control>
+  
+  <control type="list" id="2">
+	  <posx>20</posx>
+	  <posy>80</posy>
+	  <width>660</width>
+	  <height>382</height>
+	  <onleft>4</onleft>
+	  <onright>4</onright>
+	  <onup>4</onup>
+	  <ondown>4</ondown>
+	  
+	  <itemlayout height="39">
+		<control type="image">
+			<width>660</width>
+			<height>39</height>
+			<texture>list/listline.png</texture>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width>650</width>
+			<height>39</height>
+			<font>recent</font>
+			<info>ListItem.Label</info>
+			<scroll>false</scroll>
+		 </control>
+	  </itemlayout>
+	  
+	  <focusedlayout height="39">
+		<control type="image">
+			<posy>-1</posy>
+			<width>660</width>
+			<height>39</height>
+			<texture>list/smalllistfo.png</texture>
+					<animation effect="fade" start="100" end="50" time="150" condition="Control.HasFocus(4)">Conditional</animation>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width>650</width>
+			<height>39</height>
+			<font>recent</font>
+			<textcolor>White</textcolor>
+			<info>ListItem.Label</info>
+		</control>
+	  </focusedlayout>
+  </control>
+ </control> 
+<include>nav</include>  
+</controls>
+  
+</window>

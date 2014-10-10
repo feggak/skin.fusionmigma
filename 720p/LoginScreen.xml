@@ -1,0 +1,208 @@
+<window id="29">
+<defaultcontrol always="true">52</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<controls>
+  	 <control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>bg2.png</texture>
+		<colordiffuse>FFCCCCCF</colordiffuse>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>black.png</texture>
+		<colordiffuse>50FFFFFF</colordiffuse>
+	</control> 
+
+	 <control type="group"> 
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="350" delay="0" />
+			<effect type="slide" start="0,0" end="0,700" time="550" delay="0" tween="sine" easing="out" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="350" delay="0" />
+			<effect type="slide" start="0,500" end="0,0" time="450" delay="0" tween="back" easing="out" />
+		</animation>
+			<control type="label">
+				<posx>0</posx>
+				<posy>320</posy>
+				<width>1280</width>
+				<height>35</height>
+				<font>movietitlebig</font>
+				<textcolor>bigtitle</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]welcome to fusion [/UPPERCASE]</label>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>145</posy>
+				<width>1280</width>
+				<height>35</height>
+				<font>movietitle3</font>
+				<textcolor>ffcfcfcf</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]welcome to fusion[/UPPERCASE]</label>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>465</posy>
+				<width>1280</width>
+				<height>35</height>
+				<font>heading</font>
+				<textcolor>ff757575</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]please login to your xbmc profile[/UPPERCASE]</label>
+			</control>
+	<control type="group"> 
+	  <posx>296</posx>
+	  <posy>185</posy>
+	  <animation effect="fade" start="10" end="100" time="150">WindowOpen</animation>	  
+		<control type="image">
+			<description>background image</description>
+			<posx>8</posx>
+			<posy>-6</posy>
+			<width>684</width>
+			<height>292</height>
+			<aspectratio>stretch</aspectratio>
+			<texture border="12">whitepanel.png</texture>
+			<colordiffuse>33ffffff</colordiffuse>
+		</control>	
+			
+		<control type="image">
+			<description>background image</description>
+			<posx>14</posx>
+			<posy>0</posy>
+			<width>672</width>
+			<height>280</height>
+			<aspectratio>stretch</aspectratio>
+			<texture border="12">whitepanel2.png</texture>
+			<colordiffuse>ddffffff</colordiffuse>
+		</control>
+  
+	<control type="list" id="52">
+		<description>Login Wraplist</description>
+		<posx>285</posx>
+		<posy>50</posy>
+		<width>393</width>
+		<height>500</height>
+    	<onup>52</onup>
+    	<ondown>52</ondown>
+		<onleft>52</onleft>
+		<onright>52</onright>
+		<viewtype label="loginlist">list</viewtype>
+    	<focusposition>1</focusposition>
+		<scrolltime>200</scrolltime>
+		<itemlayout height="39">
+		<control type="label">
+			<posx>30</posx>
+			<width>650</width>
+			<height>39</height>
+			<font>recent</font>
+			<textcolor>ff404040</textcolor>
+			<info>ListItem.Label</info>
+		</control>
+		</itemlayout>
+		<focusedlayout height="39">
+		<control type="image">
+			<posy>-1</posy>
+			<width>660</width>
+			<height>39</height>
+			<texture>list/smalllistfo.png</texture>
+		</control>	
+		<control type="label">
+			<posx>30</posx>
+			<width>650</width>
+			<height>39</height>
+			<font>recent</font>
+			<textcolor>White</textcolor>
+			<info>ListItem.Label</info>
+		</control>
+		</focusedlayout>
+	</control>
+ 				  <control type="image">
+					  <posx>26</posx>
+					  <posy>12</posy>
+					  <width>256</width>
+					  <height>256</height>
+					  <texture>grey.png</texture>
+					  <aspectratio>keep</aspectratio>
+					  <fadetime>300</fadetime>
+				  </control> 
+ 				  <control type="image">
+					  <posx>26</posx>
+					  <posy>12</posy>
+					  <width>256</width>
+					  <height>256</height>
+					  <texture>$INFO[listitem.thumb]</texture>
+					  <aspectratio>keep</aspectratio>
+					  <fadetime>300</fadetime>
+				  </control> 
+<!-- </control>  -->
+	<control type="label">
+		<posx>1000</posx>
+		<posy>628</posy>
+		<width>300</width>
+		<height>35</height>
+		<font>small2</font>
+		<textcolor>ff757575</textcolor>
+		<scroll>true</scroll>
+		<align>center</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]powered by[/UPPERCASE]</label>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="550" delay="800" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="350" delay="250" />
+				</animation>
+	</control>
+	<control type="image">
+		<posx>1080</posx>
+		<posy>660</posy>
+		<width>200</width>
+		<height>40</height>
+		<aspectratio>keep</aspectratio>
+		<texture>settings/logo.png</texture>
+		<colordiffuse>1CFFFFFF</colordiffuse>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="550" delay="800" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="350" delay="250" />
+				</animation>
+	</control>
+	
+	<control type="image">
+		<posx>0</posx>
+		<posy>620</posy>
+		<width>269</width>
+		<height>89</height>
+		<aspectratio>keep</aspectratio>
+		<texture>flogo.png</texture>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="550" delay="800" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="350" delay="250" />
+				</animation>
+	</control> 
+	</control> 
+</control> 
+</controls>
+  
+</window>

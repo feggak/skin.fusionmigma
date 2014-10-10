@@ -1,0 +1,143 @@
+<window id="104">
+  
+<controls>
+
+<!--Volume while video/music backgrounded-->
+
+	<control type="group">   
+		<control type="image">
+			<posx>270r</posx>
+			<posy>0</posy>
+			<width>144</width>
+			<height>53</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>nav/taskbg.png</texture>
+			<visible>!Skin.HasSetting(BlackNavBar)</visible>
+			<visible>!Window.IsVisible(2005) + !Window.IsVisible(2006)</visible>
+		</control> 
+		<control type="image">
+			<posx>270r</posx>
+			<posy>0</posy>
+			<width>144</width>
+			<height>53</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>nav/taskbgalt.png</texture>
+			<visible>Skin.HasSetting(BlackNavBar)</visible>
+			<visible>!Window.IsVisible(2005) + !Window.IsVisible(2006)</visible>
+		</control>	
+		<control type="image">
+			<posx>260r</posx>
+			<posy>12</posy>
+			<width>35</width>
+			<height>31</height>
+			<aspectratio>keep</aspectratio>
+			<texture>nav/volumeicon.png</texture>
+			<include>OpenCloseAnimation</include>
+			<colordiffuse>CFFFFFFF</colordiffuse>
+			<visible>!Window.IsVisible(2005) + !Window.IsVisible(2006)</visible>
+		</control> 
+		<control type="label">
+			<description>DB Label</description>
+			<posx>135r</posx>
+			<posy>11</posy>
+			<width>80</width>
+			<label>$INFO[player.volume]</label>
+			<font>volume</font>
+			<textcolor>taskbar</textcolor>
+			<align>right</align>
+			<include>OpenCloseAnimation</include>
+			<visible>!Window.IsVisible(2005) + !Window.IsVisible(2006)</visible>
+		</control>
+	</control>
+
+<!--Volume while video/music is fullscreen-->
+	
+	<control type="group">   
+		<control type="image">
+			<posx>348r</posx>
+			<posy>-1</posy>
+			<width>448</width>
+			<height>31</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>misc/altvolbg.png</texture>
+			<colordiffuse>CFFFFFFF</colordiffuse>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="200" />
+				<effect type="slide" start="400,0" end="0,0" time="400" />	
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="300" delay="300" />
+				<effect type="slide" start="0,0" end="400,0" time="300" delay="250"/>
+			</animation>
+			<visible>Window.IsVisible(2005) | Window.IsVisible(2006)</visible>
+		</control> 
+		
+		<!--control type="image">
+			<posx>240r</posx>
+			<posy>6</posy>
+			<width>24</width>
+			<height>20</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>nav/volumeicon.png</texture>
+			<colordiffuse>BFFFFFFF</colordiffuse>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="200" />
+				<effect type="slide" start="400,0" end="0,0" time="400" />	
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="300" delay="300" />
+				<effect type="slide" start="0,0" end="400,0" time="300" delay="250"/>
+			</animation>
+			<visible>Window.IsVisible(2005) | Window.IsVisible(2006)</visible>
+		</control--> 
+		
+		<control type="label">
+			<description>Volume Label</description>
+			<posx>15r</posx>
+			<posy>-2</posy>
+			<width>150</width>
+			<height>35</height>
+			<label>31654</label>
+			<font>musicinfo</font>
+			<textcolor>F0C0C0C0</textcolor>
+			<align>right</align>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="200" />
+				<effect type="slide" start="400,0" end="0,0" time="400" />	
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="300" delay="300" />
+				<effect type="slide" start="0,0" end="400,0" time="300" delay="250"/>
+			</animation>
+			<visible>Window.IsVisible(2005) | Window.IsVisible(2006)</visible>
+		</control>
+		
+		
+		<control type="progress" id="1">
+			<description>Progressbar</description>
+			<posx>242r</posx>
+			<posy>5</posy>
+			<width>145</width>
+			<height>18</height>
+			<info>Player.Volume</info>
+			<texturebg>volume-slider-back.png</texturebg>
+			<lefttexture>-</lefttexture>
+			<midtexture>volume-slider-full.png</midtexture>
+			<righttexture>-</righttexture>
+			<overlaytexture>-</overlaytexture>
+			<visible>true</visible>
+			<reveal>true</reveal>
+			<visible>Window.IsVisible(2005) | Window.IsVisible(2006)</visible>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="200" />
+				<effect type="slide" start="400,0" end="0,0" time="400" />	
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="300" delay="300" />
+				<effect type="slide" start="0,0" end="400,0" time="300" delay="250"/>
+			</animation>
+		</control>
+	</control>	
+</controls>
+  
+</window>

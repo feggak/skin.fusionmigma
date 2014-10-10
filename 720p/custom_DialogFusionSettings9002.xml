@@ -1,0 +1,196 @@
+<window id="9002">
+	<defaultcontrol>9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>Home/bg2.png</texture>
+		</control>	
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>black.png</texture>
+			<colordiffuse>73FFFFFF</colordiffuse>
+		</control> 
+
+		<include>FusionStyles</include>
+
+		<control type="group">
+			<animation type="Conditional" condition="Window.IsVisible(126) | Window.IsVisible(2000)">
+				<effect type="fade" start="100" end="0" time="400" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="350" delay="0" />
+			</animation> 
+			<control type="image">
+				<posx>110</posx>
+				<posy>130</posy>
+				<width>1072</width>
+				<height>496</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>settings/listbg.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="550" delay="0" />
+				</animation>
+			</control> 
+
+			<!-- Lefthand List -->
+			<control type="list" id="9000">
+				<description>Button Area</description>
+				<posx>115</posx>
+				<posy>144</posy>
+				<width>250</width>
+				<height>480</height>
+				<itemgap>.5</itemgap>
+				<onleft>9010</onleft>
+				<onright>9010</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<scrolltime>0</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>-</pagecontrol>
+				<itemlayout height="43.5" width="810">
+					<control type="label">
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<height>43.5</height>
+						<width>810</width>
+						<font>homemenu3</font>
+						<textcolor>4ec0c0c0</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="43.5" width="810">
+					<control type="image">
+						<height>43.5</height>
+						<width>810</width>
+						<texture>settings/white.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>1FFFFFFF</colordiffuse>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(9000)">Conditional</animation>
+					</control>
+					<control type="label">
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<height>43.5</height>
+						<width>810</width>
+						<font>homemenu3</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>31528</label>
+						<onclick>SetFocus(9001)</onclick>
+					</item>
+				</content>
+			</control>
+
+			<!-- Righthand List -->
+			<control type="group" id="9010">
+			
+				<!-- Add-ons -->
+				<control type="grouplist" id="9001">
+					<description>Control Area</description>
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<posx>366</posx>
+					<posy>139</posy>
+					<width>810</width>
+					<height>440</height>
+					<itemgap>.5</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9001</onup>
+					<ondown>9001</ondown>
+					<control type="button" id="100">
+						<label>31529</label>
+						<label2>[COLOR=white]$INFO[Skin.String(OSDSubtitlePath)][/COLOR]</label2>
+						<onclick>Skin.SetAddon(OSDSubtitlePath,xbmc.python.subtitles)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+					</control>
+					<control type="button" id="101">
+						<label>31530</label>
+						<label2>[COLOR=white]$INFO[Skin.String(OSDLyricsPath)][/COLOR]</label2>
+						<onclick>Skin.SetAddon(OSDLyricsPath,xbmc.python.lyrics)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+					</control>
+					<control type="radiobutton" id="102">
+						<label>31531</label>
+						<onclick>Skin.ToggleSetting(oldosd)</onclick>
+						<selected>Skin.HasSetting(oldosd)</selected>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+					</control>
+					<control type="radiobutton" id="103">
+						<label>31532</label>
+						<onclick>Skin.ToggleSetting(oldosdmusic)</onclick>
+						<selected>Skin.HasSetting(oldosdmusic)</selected>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+					</control>
+				</control>
+				
+		</control>
+
+		<control type="group">
+			<visible>Player.HasMedia</visible>
+			<control type="image">
+				<posx>0</posx>
+				<posy>654</posy>
+				<width>1280</width>
+				<height>70</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>black.png</texture>
+				<colordiffuse>A0FFFFFF</colordiffuse>
+				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture flipx="true">zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+				<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>654</posy>
+				<width>1280</width>
+				<height>1</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>white.png</texture>
+				<colordiffuse>20FFFFFF</colordiffuse>
+				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+			</control>
+		</control>
+		</control>
+		<include>MusicOverlay</include>
+		<include>VideoOverlay</include>
+		<include>nav</include>   
+	</controls>
+</window>

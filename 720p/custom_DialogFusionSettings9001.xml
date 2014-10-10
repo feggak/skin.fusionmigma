@@ -1,0 +1,614 @@
+<window id="9001">
+	<defaultcontrol>9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>Home/bg2.png</texture>
+		</control>	
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>black.png</texture>
+			<colordiffuse>73FFFFFF</colordiffuse>
+		</control> 
+
+		<include>FusionStyles</include>
+
+		<control type="group">
+			<animation type="Conditional" condition="Window.IsVisible(126) | Window.IsVisible(2000)">
+				<effect type="fade" start="100" end="0" time="400" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="350" delay="0" />
+			</animation> 
+			<control type="image">
+				<posx>110</posx>
+				<posy>130</posy>
+				<width>1072</width>
+				<height>496</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>settings/listbg.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="550" delay="0" />
+				</animation>
+			</control>
+
+			<!-- Lefthand List -->
+			<control type="list" id="9000">
+				<description>Button Area</description>
+				<posx>115</posx>
+				<posy>144</posy>
+				<width>250</width>
+				<height>480</height>
+				<itemgap>.5</itemgap>
+				<onleft>9010</onleft>
+				<onright>9010</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<scrolltime>0</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>-</pagecontrol>
+				<itemlayout height="43.5" width="810">
+					<control type="label">
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<height>43.5</height>
+						<width>810</width>
+						<font>homemenu3</font>
+						<textcolor>4ec0c0c0</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="43.5" width="810">
+					<control type="image">
+						<height>43.5</height>
+						<width>810</width>
+						<texture>settings/white.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>1FFFFFFF</colordiffuse>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(9000)">Conditional</animation>
+					</control>
+					<control type="label">
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<height>43.5</height>
+						<width>810</width>
+						<font>homemenu3</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>31460</label>
+						<onclick>SetFocus(9001)</onclick>
+					</item>
+					<item id="2">
+						<label>31461</label>
+						<onclick>SetFocus(9002)</onclick>
+					</item>
+					<item id="3">
+						<label>31462</label>
+						<onclick>SetFocus(9003)</onclick>
+					</item>
+					<item id="4">
+						<label>31463</label>
+						<onclick>SetFocus(9004)</onclick>
+					</item>
+				</content>
+			</control>
+
+			<!-- Righthand List -->
+			<control type="group" id="9010">
+			
+				<!-- General -->
+				<control type="grouplist" id="9001">
+					<description>Control Area</description>
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<posx>366</posx>
+					<posy>138</posy>
+					<width>810</width>
+					<height>440</height>
+					<itemgap>0</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9001</onup>
+					<ondown>9001</ondown>
+					<control type="radiobutton" id="100">
+						<include>FusionSettingsButton</include>
+						<label>31464</label>
+						<onclick>Skin.ToggleSetting(BlackNavBar)</onclick>
+						<selected>Skin.HasSetting(BlackNavBar)</selected>
+					</control>
+					<control type="radiobutton" id="101">
+						<include>FusionSettingsButton</include>
+						<label>31465</label>
+						<onclick>Skin.ToggleSetting(HideNavBar)</onclick>
+						<selected>Skin.HasSetting(HideNavBar)</selected>
+					</control>
+					<control type="radiobutton" id="102">
+						<include>FusionSettingsButton</include>
+						<label>31466</label>
+						<onclick>Skin.ToggleSetting(WatchedOverlays)</onclick>
+						<selected>Skin.HasSetting(WatchedOverlays)</selected>
+					</control>
+					<control type="radiobutton" id="103">
+						<include>FusionSettingsButton</include>
+						<label>31467</label>
+						<onclick>Skin.ToggleSetting(ZBar)</onclick>
+						<selected>Skin.HasSetting(ZBar)</selected>
+					</control>
+					<control type="radiobutton" id="104">
+						<include>FusionSettingsButton</include>
+						<label>31468</label>
+						<onclick>Skin.ToggleSetting(HideDropDown)</onclick>
+						<selected>Skin.HasSetting(HideDropDown)</selected>
+					</control>
+					<control type="radiobutton" id="105">
+						<include>FusionSettingsButton</include>
+						<label>31469</label>
+						<onclick>Skin.ToggleSetting(HideSD)</onclick>
+						<selected>Skin.HasSetting(HideSD)</selected>
+					</control>
+					<control type="radiobutton" id="106">
+						<include>FusionSettingsButton</include>
+						<label>31470</label>
+						<onclick>Skin.ToggleSetting(HideFlags)</onclick>
+						<selected>Skin.HasSetting(HideFlags)</selected>
+					</control>
+					<control type="radiobutton" id="108">
+						<include>FusionSettingsButton</include>
+						<label>31471</label>
+						<onclick>Skin.ToggleSetting(UseIMDBRating)</onclick>
+						<selected>Skin.HasSetting(UseIMDBRating)</selected>
+					</control>
+					<control type="radiobutton" id="109">
+						<include>FusionSettingsButton</include>
+						<label>31472</label>
+						<onclick>Skin.ToggleSetting(Banner.jpg)</onclick>
+						<selected>Skin.HasSetting(Banner.jpg)</selected>
+					</control>
+					<control type="radiobutton" id="110">
+						<include>FusionSettingsButton</include>
+						<label>31473</label>
+						<onclick>Skin.ToggleSetting(Landscape.jpg)</onclick>
+						<selected>Skin.HasSetting(Landscape.jpg)</selected>
+					</control>
+				</control>
+			
+				<!-- Viewtypes -->
+				<control type="grouplist" id="9002">
+					<description>Control Area</description>
+					<visible>Container(9000).Hasfocus(2)</visible>
+					<posx>366</posx>
+					<posy>138</posy>
+					<width>810</width>
+					<height>484</height>
+					<itemgap>.1</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9002</onup>
+					<ondown>9002</ondown>
+					<scrolltime>0</scrolltime>
+					<control type="radiobutton" id="101">
+						<include>FusionSettingsButton</include>
+						<label>31474</label>
+						<onclick>Skin.ToggleSetting(HideInfoList)</onclick>
+						<selected>Skin.HasSetting(HideInfoList)</selected>
+					</control>
+					<control type="radiobutton" id="102">
+						<include>FusionSettingsButton</include>
+						<label>31475</label>
+						<onclick>Skin.ToggleSetting(HideBigList)</onclick>
+						<selected>Skin.HasSetting(HideBigList)</selected>
+					</control>
+					<control type="radiobutton" id="103">
+						<include>FusionSettingsButton</include>
+						<label>31476</label>
+						<onclick>Skin.ToggleSetting(HideBigList2)</onclick>
+						<selected>Skin.HasSetting(HideBigList2)</selected>
+					</control>
+					<control type="radiobutton" id="104">
+						<include>FusionSettingsButton</include>
+						<label>31477</label>
+						<onclick>Skin.ToggleSetting(HideLowList)</onclick>
+						<selected>Skin.HasSetting(HideLowList)</selected>
+					</control>
+					<control type="radiobutton" id="105">
+						<include>FusionSettingsButton</include>
+						<label>31478</label>
+						<onclick>Skin.ToggleSetting(HidePosterWrap)</onclick>
+						<selected>Skin.HasSetting(HidePosterWrap)</selected>
+					</control>
+					<control type="radiobutton" id="106">
+						<include>FusionSettingsButton</include>
+						<label>31479</label>
+						<onclick>Skin.ToggleSetting(HidePosterWrap2)</onclick>
+						<selected>Skin.HasSetting(HidePosterWrap2)</selected>
+					</control>
+					<control type="radiobutton" id="107">
+						<include>FusionSettingsButton</include>
+						<label>31480</label>
+						<onclick>Skin.ToggleSetting(HidePosterWrap3)</onclick>
+						<selected>Skin.HasSetting(HidePosterWrap3)</selected>
+					</control>
+					<control type="radiobutton" id="108">
+						<include>FusionSettingsButton</include>
+						<label>31481</label>
+						<onclick>Skin.ToggleSetting(HideFanWrap)</onclick>
+						<selected>Skin.HasSetting(HideFanWrap)</selected>
+					</control>
+					<control type="radiobutton" id="109">
+						<include>FusionSettingsButton</include>
+						<label>31482</label>
+						<onclick>Skin.ToggleSetting(HideEpisodeWrap)</onclick>
+						<selected>Skin.HasSetting(HideEpisodeWrap)</selected>
+					</control>
+					<control type="radiobutton" id="110">
+						<include>FusionSettingsButton</include>
+						<label>31483</label>
+						<onclick>Skin.ToggleSetting(HideBanners)</onclick>
+						<selected>Skin.HasSetting(HideBanners)</selected>
+					</control>
+					<control type="radiobutton" id="111">
+						<include>FusionSettingsButton</include>
+						<label>31484</label>
+						<onclick>Skin.ToggleSetting(HideIcon)</onclick>
+						<selected>Skin.HasSetting(HideIcon)</selected>
+					</control>
+					<control type="radiobutton" id="112">
+						<include>FusionSettingsButton</include>
+						<label>31485</label>
+						<onclick>Skin.ToggleSetting(HideIcon2)</onclick>
+						<selected>Skin.HasSetting(HideIcon2)</selected>
+					</control>
+					<control type="radiobutton" id="113">
+						<include>FusionSettingsButton</include>
+						<label>31486</label>
+						<onclick>Skin.ToggleSetting(HideIcon3)</onclick>
+						<selected>Skin.HasSetting(HideIcon3)</selected>
+					</control>
+					<control type="radiobutton" id="114">
+						<include>FusionSettingsButton</include>
+						<label>31487</label>
+						<onclick>Skin.ToggleSetting(HideWideIcon)</onclick>
+						<selected>Skin.HasSetting(HideWideIcon)</selected>
+					</control>
+					<control type="radiobutton" id="115">
+						<include>FusionSettingsButton</include>
+						<label>31488</label>
+						<onclick>Skin.ToggleSetting(HideWideIcon2)</onclick>
+						<selected>Skin.HasSetting(HideWideIcon2)</selected>
+					</control>
+					<control type="radiobutton" id="116">
+						<include>FusionSettingsButton</include>
+						<label>31489</label>
+						<onclick>Skin.ToggleSetting(HideInfoWrap)</onclick>
+						<selected>Skin.HasSetting(HideInfoWrap)</selected>
+					</control>
+					<control type="radiobutton" id="117">
+						<include>FusionSettingsButton</include>
+						<label>31490</label>
+						<onclick>Skin.ToggleSetting(HideEpisodes)</onclick>
+						<selected>Skin.HasSetting(HideEpisodes)</selected>
+					</control>
+					<control type="radiobutton" id="118">
+						<include>FusionSettingsButton</include>
+						<label>31491</label>
+						<onclick>Skin.ToggleSetting(HideEpisodes2)</onclick>
+						<selected>Skin.HasSetting(HideEpisodes2)</selected>
+					</control>
+					<control type="radiobutton" id="119">
+						<include>FusionSettingsButton</include>
+						<label>31492</label>
+						<onclick>Skin.ToggleSetting(HideBigFan)</onclick>
+						<selected>Skin.HasSetting(HideBigFan)</selected>
+					</control>
+					<control type="radiobutton" id="120">
+						<include>FusionSettingsButton</include>
+						<label>31493</label>
+						<onclick>Skin.ToggleSetting(HidePosterShelf)</onclick>
+						<selected>Skin.HasSetting(HidePosterShelf)</selected>
+					</control>
+					<control type="radiobutton" id="121">
+						<include>FusionSettingsButton</include>
+						<label>31494</label>
+						<onclick>Skin.ToggleSetting(HideWall)</onclick>
+						<selected>Skin.HasSetting(HideWall)</selected>
+					</control>
+					<control type="radiobutton" id="122">
+						<include>FusionSettingsButton</include>
+						<label>31495</label>
+						<onclick>Skin.ToggleSetting(HideHulu)</onclick>
+						<selected>Skin.HasSetting(HideHulu)</selected>
+					</control>
+					<control type="radiobutton" id="123">
+						<include>FusionSettingsButton</include>
+						<label>31496</label>
+						<onclick>Skin.ToggleSetting(HideAlbumWrap)</onclick>
+						<selected>Skin.HasSetting(HideAlbumWrap)</selected>
+					</control>
+					<control type="radiobutton" id="124">
+						<include>FusionSettingsButton</include>
+						<label>31497</label>
+						<onclick>Skin.ToggleSetting(HideSeasonWrap)</onclick>
+						<selected>Skin.HasSetting(HideSeasonWrap)</selected>
+					</control>
+					<control type="radiobutton" id="126">
+						<include>FusionSettingsButton</include>
+						<label>31498</label>
+						<onclick>Skin.ToggleSetting(HideCoverWrap)</onclick>
+						<selected>Skin.HasSetting(HideCoverWrap)</selected>
+					</control>
+					<control type="radiobutton" id="127">
+						<include>FusionSettingsButton</include>
+						<label>31499</label>
+						<onclick>Skin.ToggleSetting(HideCoverWrap2)</onclick>
+						<selected>Skin.HasSetting(HideCoverWrap2)</selected>
+					</control>
+					<control type="radiobutton" id="128">
+						<include>FusionSettingsButton</include>
+						<label>31500</label>
+						<onclick>Skin.ToggleSetting(HideSongList)</onclick>
+						<selected>Skin.HasSetting(HideSongList)</selected>
+					</control>
+					<control type="radiobutton" id="129">
+						<include>FusionSettingsButton</include>
+						<label>31501</label>
+						<onclick>Skin.ToggleSetting(HideGrid)</onclick>
+						<selected>Skin.HasSetting(HideGrid)</selected>
+					</control>
+					<control type="radiobutton" id="130">
+						<include>FusionSettingsButton</include>
+						<label>31502</label>
+						<onclick>Skin.ToggleSetting(HidePosterFix)</onclick>
+						<selected>Skin.HasSetting(HidePosterFix)</selected>
+					</control>
+					<control type="radiobutton" id="131">
+						<include>FusionSettingsButton</include>
+						<label>31503</label>
+						<onclick>Skin.ToggleSetting(HidePosterFix2)</onclick>
+						<selected>Skin.HasSetting(HidePosterFix2)</selected>
+					</control>
+					<control type="radiobutton" id="132">
+						<include>FusionSettingsButton</include>
+						<label>31504</label>
+						<onclick>Skin.ToggleSetting(HidePosterFix3)</onclick>
+						<selected>Skin.HasSetting(HidePosterFix3)</selected>
+					</control>
+					<control type="radiobutton" id="133">
+						<include>FusionSettingsButton</include>
+						<label>31505</label>
+						<onclick>Skin.ToggleSetting(HideCoverFix2)</onclick>
+						<selected>Skin.HasSetting(HideCoverFix2)</selected>
+					</control>
+					<control type="radiobutton" id="134">
+						<include>FusionSettingsButton</include>
+						<label>31506</label>
+						<onclick>Skin.ToggleSetting(HideCoverFix)</onclick>
+						<selected>Skin.HasSetting(HideCoverFix)</selected>
+					</control>
+					<control type="radiobutton" id="135">
+						<include>FusionSettingsButton</include>
+						<label>31507</label>
+						<onclick>Skin.ToggleSetting(HideMusicSquare)</onclick>
+						<selected>Skin.HasSetting(HideMusicSquare)</selected>
+					</control>
+					<control type="radiobutton" id="136">
+						<include>FusionSettingsButton</include>
+						<label>31508</label>
+						<onclick>Skin.ToggleSetting(HideMusicSquareFix)</onclick>
+						<selected>Skin.HasSetting(HideMusicSquareFix)</selected>
+					</control>
+				</control>
+
+				<!-- Styles -->
+				<control type="grouplist" id="9003">
+					<description>Control Area</description>
+					<visible>Container(9000).Hasfocus(3)</visible>
+					<posx>366</posx>
+					<posy>138</posy>
+					<width>810</width>
+					<height>400</height>
+					<itemgap>0</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9003</onup>
+					<ondown>9003</ondown>
+					<control type="radiobutton" id="100">
+						<include>FusionSettingsButton</include>
+						<label>31509</label>
+						<onclick>Skin.ToggleSetting(Blue)</onclick>
+						<selected>Skin.HasSetting(Blue)</selected>
+					</control>
+					<control type="radiobutton" id="101">
+						<include>FusionSettingsButton</include>
+						<label>31510</label>
+						<onclick>Skin.ToggleSetting(Red)</onclick>
+						<selected>Skin.HasSetting(Red)</selected>
+					</control>
+					<control type="radiobutton" id="102">
+						<include>FusionSettingsButton</include>
+						<label>31511</label>
+						<onclick>Skin.ToggleSetting(Grunge)</onclick>
+						<selected>Skin.HasSetting(Grunge)</selected>
+					</control>
+					<control type="radiobutton" id="103">
+						<include>FusionSettingsButton</include>
+						<label>31512</label>
+						<onclick>Skin.ToggleSetting(Grunge2)</onclick>
+						<selected>Skin.HasSetting(Grunge2)</selected>
+					</control>
+					<control type="radiobutton" id="104">
+						<include>FusionSettingsButton</include>
+						<label>31513</label>
+						<onclick>Skin.ToggleSetting(Grunge3)</onclick>
+						<selected>Skin.HasSetting(Grunge3)</selected>
+					</control>
+					<control type="radiobutton" id="105">
+						<include>FusionSettingsButton</include>
+						<label>31514</label>
+						<onclick>Skin.ToggleSetting(Classy)</onclick>
+						<selected>Skin.HasSetting(Classy)</selected>
+					</control>
+					<control type="radiobutton" id="106">
+						<include>FusionSettingsButton</include>
+						<label>31515</label>
+						<onclick>Skin.ToggleSetting(Burst)</onclick>
+						<selected>Skin.HasSetting(Burst)</selected>
+					</control>
+					<control type="radiobutton" id="107">
+						<include>FusionSettingsButton</include>
+						<label>31516</label>
+						<onclick>Skin.ToggleSetting(Diags)</onclick>
+						<selected>Skin.HasSetting(Diags)</selected>
+					</control>
+					<control type="radiobutton" id="108">
+						<include>FusionSettingsButton</include>
+						<label>31517</label>
+						<onclick>Skin.ToggleSetting(Digital)</onclick>
+						<selected>Skin.HasSetting(Digital)</selected>
+					</control>
+					<control type="radiobutton" id="109">
+						<include>FusionSettingsButton</include>
+						<label>31518</label>
+						<onclick>Skin.ToggleSetting(Circles)</onclick>
+						<selected>Skin.HasSetting(Circles)</selected>
+					</control>
+					<control type="radiobutton" id="110">
+						<include>FusionSettingsButton</include>
+						<label>31519</label>
+						<onclick>Skin.ToggleSetting(Plaid)</onclick>
+						<selected>Skin.HasSetting(Plaid)</selected>
+					</control>
+					<control type="radiobutton" id="111">
+						<include>FusionSettingsButton</include>
+						<label>31520</label>
+						<onclick>Skin.ToggleSetting(Bloody)</onclick>
+						<selected>Skin.HasSetting(Bloody)</selected>
+					</control>
+				</control>
+
+				<!-- Video Info -->
+				<control type="grouplist" id="9004">
+					<description>Control Area</description>
+					<visible>Container(9000).Hasfocus(4)</visible>
+					<posx>366</posx>
+					<posy>138</posy>
+					<width>810</width>
+					<height>400</height>
+					<itemgap>0</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9004</onup>
+					<ondown>9004</ondown>
+					<control type="radiobutton" id="101">
+						<include>FusionSettingsButton</include>
+						<label>31521</label>
+						<onclick>Skin.ToggleSetting(HideFlagsInfo)</onclick>
+						<selected>Skin.HasSetting(HideFlagsInfo)</selected>
+					</control>
+					<control type="radiobutton" id="102">
+						<include>FusionSettingsButton</include>
+						<label>31522</label>
+						<onclick>Skin.ToggleSetting(InfoExtraThumbs)</onclick>
+						<selected>Skin.HasSetting(InfoExtraThumbs)</selected>
+					</control>
+					<control type="radiobutton" id="103">
+						<include>FusionSettingsButton</include>
+						<label>31523</label>
+						<onclick>Skin.ToggleSetting(SeasonThumbEpisodes)</onclick>
+						<selected>Skin.HasSetting(SeasonThumbEpisodes)</selected>
+					</control>
+					<control type="radiobutton" id="104">
+						<include>FusionSettingsButton</include>
+						<label>31524</label>
+						<onclick>Skin.ToggleSetting(FolderThumbVI)</onclick>
+						<selected>Skin.HasSetting(FolderThumbVI)</selected>
+						<onclick>Skin.Reset(PosterThumbVI)</onclick>
+					</control>
+					<control type="radiobutton" id="105">
+						<include>FusionSettingsButton</include>
+						<label>31525</label>
+						<onclick>Skin.ToggleSetting(PosterThumbVI)</onclick>
+						<selected>Skin.HasSetting(PosterThumbVI)</selected>
+						<onclick>Skin.Reset(FolderThumbVI)</onclick>
+					</control>
+					<control type="radiobutton" id="106">
+						<include>FusionSettingsButton</include>
+						<label>31526</label>
+						<onclick>Skin.ToggleSetting(VideoInfoStudios)</onclick>
+						<selected>Skin.HasSetting(VideoInfoStudios)</selected>
+					</control>
+					<control type="button" id="107">
+						<label>31527</label>
+						<label2>[COLOR=white]$INFO[Skin.String(StudiosFolderInfo)][/COLOR]</label2>
+						<onclick>Skin.SetPath(StudiosFolderInfo)</onclick>
+			            <include>FusionSettingsButton</include>
+						<font>griddetails</font>
+						<enable>Skin.HasSetting(VideoInfoStudios)</enable>
+					</control>
+			</control>
+			</control>
+
+		</control>
+
+		<control type="group">
+			<visible>Player.HasMedia</visible>
+			<control type="image">
+				<posx>0</posx>
+				<posy>654</posy>
+				<width>1280</width>
+				<height>70</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>black.png</texture>
+				<colordiffuse>A0FFFFFF</colordiffuse>
+				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture flipx="true">zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+				<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>654</posy>
+				<width>1280</width>
+				<height>1</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>white.png</texture>
+				<colordiffuse>20FFFFFF</colordiffuse>
+				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+			</control>
+		</control>
+		<include>MusicOverlay</include>
+		<include>VideoOverlay</include>
+		<include>nav</include>   
+	</controls>
+</window>

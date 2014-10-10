@@ -1,0 +1,280 @@
+<window id="4">
+	<defaultcontrol always="true">9500</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>Home/bg2.png</texture>
+		</control>	
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>black.png</texture>
+			<colordiffuse>73FFFFFF</colordiffuse>
+		</control> 
+
+		<include>FusionStyles</include>
+
+		<control type="image">
+			<posx>110</posx>
+			<posy>130</posy>
+			<width>1072</width>
+			<height>496</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>settings/bg.png</texture>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="200" delay="0" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="200" delay="0" />
+			</animation>
+		</control>  
+		<control type="image">
+			<posx>110</posx>
+			<posy>130</posy>
+			<width>1072</width>
+			<height>496</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>settings/bg.png</texture>
+			<colordiffuse>99FFFFFF</colordiffuse>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="200" delay="0" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="200" delay="0" />
+			</animation>
+		</control>
+
+		<control type="panel" id="9500">
+			<posx>130</posx>
+			<posy>150</posy>
+			<width>1055</width>
+			<height>510</height>
+			<onleft>9500</onleft>
+			<onright>9500</onright>
+			<onup>9500</onup>
+			<ondown>9500</ondown>
+			<scrolltime>200</scrolltime>
+			<viewtype label="icon">icon</viewtype>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="200" delay="150" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="200" delay="0" />
+			</animation>
+			<itemlayout height="255" width="175">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>158</width>
+					<height>157</height>
+					<fadetime>400</fadetime>
+					<aspectratio>stretch</aspectratio>
+					<texture>$INFO[ListItem.ActualIcon]</texture>
+					<colordiffuse>DDFFFFFF</colordiffuse>
+				</control>	
+				<control type="label">
+					<posx>79</posx>
+					<posy>165</posy>
+					<width>250</width>
+					<height>35</height>
+					<font>homemenu3</font>
+					<textcolor>cf707070</textcolor>
+					<align>center</align>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>158</width>
+					<height>157</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>settings/catbg.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>168</posy>
+					<width>160</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>settings/catfo.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>158</width>
+					<height>157</height>
+					<fadetime>400</fadetime>
+					<aspectratio>stretch</aspectratio>
+					<texture>$INFO[ListItem.ActualIcon]</texture>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+				</control>	
+				<control type="label">
+					<posx>79</posx>
+					<posy>165</posy>
+					<width>250</width>
+					<height>35</height>
+					<font>homemenu3</font>
+					<textcolor>white</textcolor>
+					<align>center</align>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<description>Video</description>
+					<label>317790</label>
+					<icon>settings/video.png</icon>
+					<onclick>activatewindow(MyVideosSettings)</onclick>
+				</item>
+				<item id="2">
+					<description>About</description>
+					<label>317789</label>
+					<icon>tvicon.png</icon>
+					<onclick>activatewindow(PVRSettings)</onclick>
+				</item>
+				<item id="3">
+					<description>Audio</description>
+					<label>317791</label>
+					<icon>settings/audio.png</icon>
+					<onclick>activatewindow(MyMusicSettings)</onclick>
+				</item>
+				<item id="4">
+					<description>Pics</description>
+					<label>317792</label>
+					<icon>settings/pics.png</icon>
+					<onclick>activatewindow(MyPicturesSettings)</onclick>
+				</item>
+				<item id="5">
+					<description>Weather</description>
+					<label>317793</label>
+					<icon>settings/weather.png</icon>
+					<onclick>activatewindow(MyWeatherSettings)</onclick>
+				</item>
+				<item id="6">
+					<description>Network</description>
+					<label>317794</label>
+					<icon>settings/network.png</icon>
+					<onclick>activatewindow(servicesettings)</onclick>
+				</item>
+				<item id="7">
+					<description>Addons</description>
+					<label>317795</label>
+					<icon>settings/addons.png</icon>
+					<onclick>xbmc.activatewindow(addonbrowser)</onclick>
+				</item>
+				<item id="8">
+					<description>Appearance</description>
+					<label>317796</label>
+					<icon>settings/appearance.png</icon>
+					<onclick>activatewindow(AppearanceSettings)</onclick>
+				</item>
+				<item id="9">
+					<description>Profiles</description>
+					<label>317797</label>
+					<icon>settings/profiles.png</icon>
+					<onclick>xbmc.activatewindow(34)</onclick>
+				</item>
+				<item id="10">
+					<description>Info</description>
+					<label>317798</label>
+					<icon>settings/info.png</icon>
+					<onclick>activatewindow(7)</onclick>
+				</item>
+				<!--item id="10">
+					<description>About</description>
+					<label>[LOWERCASE]about xbmc[/LOWERCASE]</label>
+					<icon>settings/aboutx.png</icon>
+					<onclick>activatewindow(9505)</onclick>
+				</item-->
+				<item id="11">
+					<description>System</description>
+					<label>317799</label>
+					<icon>settings/system.png</icon>
+					<onclick>activatewindow(SystemSettings)</onclick>
+				</item>
+				<item id="12">
+					<description>FusionSettings</description>
+					<label>317800</label>
+					<icon>settings/fusion.png</icon>
+					<onclick>activatewindow(SkinSettings)</onclick>
+				</item>
+			</content>
+		</control>
+
+		<!-- BOTTOM -->
+
+		<control type="group">
+			<visible>Player.HasMedia</visible>
+			<animation effect="slide" start="0,0" end="0,-100" delay="0" time="600"  reversable="false" condition="Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19)">conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-100" delay="0" time="500"  reversable="false" condition="Window.Previous(12) | Window.Previous(13) | Window.Previous(14) | Window.Previous(15) | Window.Previous(16) | Window.Previous(17) | Window.Previous(18) | Window.Previous(19)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" time="500" delay="0" reversable="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="0" time="600" reversable="false">WindowClose</animation>
+			<control type="image">
+				<posx>0</posx>
+				<posy>654</posy>
+				<width>1280</width>
+				<height>70</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>black.png</texture>
+				<colordiffuse>A0FFFFFF</colordiffuse>
+				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+				<animation effect="slide" start="0,0" end="0,-15" delay="0" time="600"  reversable="false" condition="Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19)">conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-15" delay="0" time="550"  reversable="false" condition="Window.Previous(12) | Window.Previous(13) | Window.Previous(14) | Window.Previous(15) | Window.Previous(16) | Window.Previous(17) | Window.Previous(18) | Window.Previous(19)">conditional</animation>
+				<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture flipx="true">zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+				<animation effect="slide" start="0,0" end="0,-15" delay="0" time="600"  reversable="false" condition="Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19)">conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-15" delay="0" time="550"  reversable="false" condition="Window.Previous(12) | Window.Previous(13) | Window.Previous(14) | Window.Previous(15) | Window.Previous(16) | Window.Previous(17) | Window.Previous(18) | Window.Previous(19)">conditional</animation>
+				<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
+				<animation effect="slide" start="0,15" end="0,0" time="550" delay="0" reversable="false">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>654</posy>
+				<width>1280</width>
+				<height>1</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>white.png</texture>
+				<colordiffuse>20FFFFFF</colordiffuse>
+				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+			</control>
+		</control>
+		<include>MusicOverlay</include>
+		<include>VideoOverlay</include>
+		<include>nav</include> 
+	</controls>
+
+</window>

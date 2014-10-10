@@ -1,0 +1,139 @@
+<window type="dialog" id="134">
+<defaultcontrol always="true">450</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+
+<coordinates>
+  <system>1</system>
+  <posx>0</posx>
+  <posy>0</posy>
+</coordinates>
+  
+<controls>
+    
+
+<control type="image">
+	<posx>0</posx>
+	<posy>218</posy>
+	<width>1280</width>
+	<height>437</height>
+	<texture>dialog/favsbg.png</texture>
+	  <animation type="WindowOpen" reversible="false">
+	  	  <effect type="slide" start="0,41" end="0,0" time="400" />
+		  <effect type="zoom" start="100,1" end="100,100" time="400" />
+	  </animation>
+	  <animation type="WindowClose" reversible="false">
+	  	  <effect type="slide" start="0,0" end="0,41" time="400" />
+		  <effect type="zoom" start="100,100" end="100,1" time="400" />
+		  <effect type="fade" start="100" end="0" time="150" delay="300" />
+	  </animation>
+</control> 
+
+		<control type="image">
+			<posx>15</posx>
+			<posy>451r</posy>
+			<width>32</width>
+			<height>32</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>Home/extras/featuredicon.png</texture>
+			<colordiffuse>ffffffff</colordiffuse>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="550"/>
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="80" />
+			</animation>				
+		</control>
+	  
+		<control type="label">
+			<posx>55</posx>
+			<posy>451r</posy>
+			<width>200</width>
+			<height>32</height>
+			<font>recent</font>
+			<textcolor>ffa0a0a0</textcolor>
+			<align>left</align>
+			<label>31603</label>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="550"/>
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="80" />
+			</animation>	
+		</control>
+
+
+  <control type="list" id="450">
+	  <posx>35</posx>
+	  <posy>300</posy>
+	  <width>1280</width>
+	  <height>382</height>
+	  <onleft>450</onleft>
+	  <onright>450</onright>
+	  <onup>PreviousMenu</onup>
+	  <ondown>PreviousMenu</ondown>
+	  <aligny>bottom</aligny>
+	  <orientation>horizontal</orientation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="550"/>
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="80" />
+			</animation>  
+	  <itemlayout height="300" width="320">
+	  <control type="image">
+		  <posy>2</posy>
+		  <width>250</width>
+		  <height>250</height>
+		  <texture border="12">grey3.png</texture>
+		  <colordiffuse>1fffffff</colordiffuse>
+	  </control>
+      <control type="image">
+		  <posx>24.5</posx>
+		  <posy>29</posy>
+		  <width>200</width>
+		  <height>200</height>
+		  <align>center</align>
+		  <aligny>center</aligny>
+		  <info>ListItem.Icon</info>
+      </control>
+	  </itemlayout>
+	  
+	  <focusedlayout height="300" width="320">
+	  <control type="image">
+		  <posy>2</posy>
+		  <width>250</width>
+		  <height>250</height>
+		  <texture border="12">grey3.png</texture>
+		  <colordiffuse>43ffffff</colordiffuse>
+	  </control>
+      <control type="image">
+		  <posx>24.5</posx>
+		  <posy>29</posy>
+		  <width>200</width>
+		  <height>200</height>
+		  <align>center</align>
+		  <aligny>center</aligny>
+		  <info>ListItem.Icon</info>
+      </control>
+	  </focusedlayout>
+  </control>
+	  <control type="label">
+		  <posx>0</posx>
+		  <posy>567</posy>
+		  <width>1280</width>
+		  <height>30</height>
+		  <info>ListItem.Label</info>
+		  <scroll>false</scroll>
+		  <align>center</align>
+		  <font>homemenu3caps</font>
+		  <textcolor>FFC0C0C0</textcolor>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="550"/>
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="50" />
+			</animation>
+	  </control>
+</controls>
+  
+</window>

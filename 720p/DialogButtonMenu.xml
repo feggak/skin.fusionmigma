@@ -1,0 +1,130 @@
+<window type="buttonMenu" id="111">
+<defaultcontrol always="true">11</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<coordinates>
+  <system>1</system>
+  <posx>0</posx>
+  <posy>0</posy>
+</coordinates>
+  
+<controls>
+
+<control type="image">
+	<posx>0</posx>
+	<posy>218</posy>
+	<width>1280</width>
+	<height>235</height>
+	<texture>dialog/shutdownbg.png</texture>
+	  <animation type="WindowOpen" reversible="false">
+	  	  <effect type="slide" start="0,42" end="0,0" time="350" />
+		  <effect type="zoom" start="100,1" end="100,100" time="350" />
+	  </animation>
+	  <animation type="WindowClose" reversible="false">
+	  	  <effect type="slide" start="0,0" end="0,42" time="350" />
+		  <effect type="zoom" start="100,100" end="100,1" time="350" />
+		  <effect type="fade" start="100" end="0" time="150" delay="200" />
+	  </animation>
+</control> 
+			<control type="label" id="3100">
+				<description>Label control</description>
+				<posx>315</posx>
+				<posy>370</posy>
+				<width>650</width>
+				<height>35</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>homemenu3caps</font>
+				<textcolor>FFC0C0C0</textcolor>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="350" delay="400"/>
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="80" />
+				</animation>	
+			</control>
+		<control type="group">
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="400"/>
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="80" />
+			</animation>			
+			<control type="grouplist">
+				<posx>320</posx>
+				<posy>260</posy>
+				<width>640</width>
+				<itemgap>20</itemgap>
+				<align>center</align>
+				<orientation>Horizontal</orientation>
+
+				<control type="button" id="11">
+					<description>Exit xbmc</description>
+					<width>115</width>
+					<height>119</height>
+					<texturefocus>dialog/exitfo.png</texturefocus>
+					<texturenofocus>dialog/exit.png</texturenofocus>
+					<onclick>XBMC.Quit()</onclick>
+					<pulseonselect>yes</pulseonselect>
+					<font>-</font>
+					<label>$LOCALIZE[13012]</label>
+				</control>
+			
+				<control type="group" id="13">
+					<width>115</width>
+					<defaultcontrol always="true">15</defaultcontrol>
+
+					<control type="button" id="15">
+						<description>Shutdown button</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>115</width>
+						<height>119</height>
+						<texturefocus>-</texturefocus>
+						<texturenofocus>dialog/shutdown.png</texturenofocus>
+						<onclick>XBMC.Shutdown()</onclick>
+						<pulseonselect>yes</pulseonselect>
+						<font>-</font>
+						<label>13005</label>
+						<onleft>11</onleft>
+						<onright>12</onright>
+						<onup>16</onup>
+						<ondown>17</ondown>
+					</control>
+					<control type="image">
+						<description>Shutdown focus image</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>115</width>
+						<height>119</height>
+						<texture>dialog/shutdownfo.png</texture>
+						<visible>Control.HasFocus(15) | Control.HasFocus(16) | Control.HasFocus(17)</visible>
+					</control>
+				</control>
+				<control type="button" id="12">
+					<description>Suspend xbmc</description>
+					<width>115</width>
+					<height>119</height>
+					<texturefocus>dialog/suspendfo.png</texturefocus>
+					<texturenofocus>dialog/suspend.png</texturenofocus>
+					<onclick>XBMC.Suspend()</onclick>
+					<pulseonselect>yes</pulseonselect>
+					<font>-</font>
+					<label>$LOCALIZE[13011]</label>
+				</control>
+				<control type="button" id="14">
+					<description>Reboot button</description>
+					<width>115</width>
+					<height>119</height>
+					<texturefocus>dialog/restartfo.png</texturefocus>
+					<texturenofocus>dialog/restart.png</texturenofocus>
+					<onclick>XBMC.Reset()</onclick>
+					<pulseonselect>yes</pulseonselect>
+					<font>-</font>
+					<label>13013</label>
+				</control>
+			</control> 
+			</control> 
+</controls>
+  
+</window>

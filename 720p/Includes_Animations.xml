@@ -1,0 +1,138 @@
+<includes>
+
+	<include name="BreadCrumb1">
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="450" delay="0" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="450" delay="0" />
+		</animation>
+	</include>
+
+	<include name="InfoOpenClose">
+		<animation effect="slide" start="0,0" end="0,-760" time="450" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+		<animation effect="slide" start="0,-760" end="0,0" time="450" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+	</include>
+
+	<include name="InfoOpenClose2">
+		<animation effect="fade" start="100" end="3" time="500" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+		<animation effect="fade" start="3" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+	</include>
+
+	<include name="Changes">
+		<animation effect="fade" start="100" end="3" time="300" reversible="false" condition="Window.IsVisible(2004)">Conditional</animation>
+		<animation effect="fade" start="3" end="100" time="200" delay="0" reversible="false" condition="!Window.IsVisible(2004)">Conditional</animation>
+	</include>	
+
+	<include name="MusicInfoOpenClose">
+		<animation effect="slide" start="0,0" end="0,-760" time="450" delay="0" reversible="false" condition="Window.IsVisible(2001)">Conditional</animation>
+		<animation effect="slide" start="0,-760" end="0,0" time="450" delay="0" reversible="false" condition="!Window.IsVisible(2001)">Conditional</animation>
+	</include>	
+	<include name="ViewWindowOC">
+		<animation effect="slide" start="1600,0" end="0,0" time="900" delay="0" tween="back" easing="out" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="-1600,0" time="550" delay="0" reversible="false">WindowClose</animation>
+	</include>
+
+	<include name="ContextFade">
+		<animation effect="fade" start="100" end="15" time="300" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		<animation effect="fade" start="15" end="100" time="200" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+		<animation effect="zoom" start="100" end="85" time="250" center="auto" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+	</include>
+
+	<include name="ContextFade2">
+		<animation effect="zoom" start="100" end="85" time="250" center="auto" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+	</include>	
+
+	<include name="Keyboard">
+		<animation effect="fade" start="100" end="5" time="300" reversible="false" condition="Window.IsVisible(103)">Conditional</animation>
+		<animation effect="fade" start="5" end="100" time="200" delay="0" reversible="false" condition="!Window.IsVisible(103)">Conditional</animation>
+	</include>
+
+	<include name="ContextFadeFanArt">
+		<animation effect="fade" start="100" end="15" time="300" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		<animation effect="fade" start="15" end="100" time="200" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+	</include>
+	<include name="ContextFade3">
+		<animation effect="fade" start="100" end="8" time="300" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		<animation effect="fade" start="8" end="100" time="200" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+	</include>
+	<include name="AddSource">
+		<animation type="Conditional" condition="Window.IsVisible(2002) | Window.IsVisible(129) | Window.IsVisible(132) | Window.IsVisible(10140) ">
+			<effect type="fade" start="100" end="0" time="400" />
+			<effect type="zoom" start="100" end="80" center="auto" time="300" />
+		</animation>
+	</include>
+	<include name="NowPlayingFullscreen">
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="800" />
+			<effect type="zoom" start="110" end="100" time="500" center="640,740" tween="back" easing="out" />
+		</animation>
+		<animation type="Visible" reversible="false">
+			<effect type="fade" start="0" end="100" time="800" />
+			<effect type="zoom" start="110" end="100" time="500" center="640,740" tween="back" easing="out" />
+		</animation>
+		<animation type="Hidden" reversible="false">
+			<effect type="zoom" start="100" end="90" time="800" center="640,740" tween="back" easing="inout" />
+			<effect type="fade" start="100" end="0" time="500" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="zoom" start="100" end="90" time="800" center="640,740" tween="back" easing="inout" />
+			<effect type="fade" start="100" end="0" time="500" />
+		</animation>
+	</include>
+	<include name="listfocusfade">
+		<animation effect="fade" start="10" end="100" time="200" delay="100" reversible="false" condition="Container(52).OnPrevious">focus</animation>
+		<animation effect="fade" start="10" end="100" time="200" delay="100" reversible="false" condition="Container(52).OnNext">focus</animation>
+	</include>			
+	<include name="wallanim">
+		<animation effect="slide" end="27,40" time="0" condition="Container(560).Row(0) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(1)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(2)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(3)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(4)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(5)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(6)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(7)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,40" time="0" condition="Container(560).Row(0) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+
+		<animation effect="slide" end="27,0" time="0" condition="Container(560).Row(1) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,0" time="0" condition="Container(560).Row(1) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+
+		<animation effect="slide" end="27,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(1)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(2)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(3)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(4)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(5)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(6)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(7)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+	</include>
+	<include name="wallpopupanim">
+		<animation effect="slide" end="27,0" time="0" condition="Container(560).Row(0) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,0" time="0" condition="Container(560).Row(0) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+
+		<animation effect="slide" end="27,0" time="0" condition="Container(560).Row(1) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,0" time="0" condition="Container(560).Row(1) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+
+		<animation effect="slide" end="27,0" time="0" condition="Container(560).Row(2) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,0" time="0" condition="Container(560).Row(2) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+	</include>
+
+	<include name="biglist_slide_duration">
+		<animation effect="slide" end="135,0" condition="Skin.HasSetting(biglist_hide_duration)">Conditional</animation>
+	</include>
+	<include name="biglist_slide_hd">
+		<animation effect="slide" end="69,0" condition="Skin.HasSetting(biglist_hide_hd)">Conditional</animation>
+	</include>
+	<include name="biglist_slide_watched">
+		<animation effect="slide" end="56,0" condition="Skin.HasSetting(biglist_hide_watched)">Conditional</animation>
+	</include>
+	<include name="biglist_slide_rating">
+		<animation effect="slide" end="170,0" condition="Skin.HasSetting(biglist_hide_rating)">Conditional</animation>
+	</include>
+	<include name="WallFloat">
+		<animation effect="slide" end="-355,0" time="350" tween="cubic" easing="inout" reversible="true" condition="Container(569).Column(1)">Conditional</animation>
+		<animation effect="slide" end="-355,0" time="350" tween="cubic" easing="inout" reversible="true" condition="Container(569).Column(2)">Conditional</animation>
+	</include>
+</includes>

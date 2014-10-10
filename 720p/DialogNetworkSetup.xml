@@ -1,0 +1,284 @@
+﻿<window id="128">
+<defaultcontrol always="true">10</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+
+<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+</coordinates>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="350" delay="0" />
+			<effect type="zoom" start="130" end="100" time="450" center="auto" delay="0" tween="back" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="250" delay="0" />
+			<effect type="zoom" start="100" end="130" time="300" center="auto" delay="0" />
+		</animation>  
+<controls>
+    
+		<control type="image">
+			<posx>180</posx>
+			<posy>111</posy>			
+			<width>942</width>
+			<height>482</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>dialog/setcontentbg.png</texture>
+		</control>
+	<control type="label" id="20">
+		<description>Heading</description>
+			<posx>222</posx>
+			<posy>145</posy>
+			<width>530</width>
+			<height>37</height>
+			<font>heading</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>FF474747</textcolor>
+			<label>$LOCALIZE[1007]</label>
+	</control>
+ 				<control type="image">
+					<posx>211</posx>
+					<posy>147</posy>
+					<width>689</width>
+					<height>37</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>list/listline.png</texture>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>211</posx>
+					<posy>184</posy>
+					<width>689</width>
+					<height>37</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>list/listline.png</texture>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>211</posx>
+					<posy>221</posy>
+					<width>689</width>
+					<height>37</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>list/listline.png</texture>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>211</posx>
+					<posy>258</posy>
+					<width>689</width>
+					<height>37</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>list/listline.png</texture>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>211</posx>
+					<posy>295</posy>
+					<width>689</width>
+					<height>37</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>list/listline.png</texture>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>211</posx>
+					<posy>332</posy>
+					<width>689</width>
+					<height>37</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>list/listline.png</texture>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>211</posx>
+					<posy>369</posy>
+					<width>689</width>
+					<height>37</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>list/listline.png</texture>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+				</control>  
+	<control type="spincontrolex" id="10">
+		<description>Protocol</description>
+			<posx>211</posx>
+			<posy>182</posy>
+			<width>689</width>
+			<height>37</height>
+			<font>recent</font>
+			<aligny>center</aligny>
+			<texturefocus>list/smalllistfo.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<label>$LOCALIZE[1008]</label>
+			<reverse>no</reverse>
+			<textoffsetx>20</textoffsetx>
+			<onup>15</onup>
+			<ondown>11</ondown>
+			<onleft>10</onleft>
+			<onright>9001</onright>
+			<textcolor>FF404040</textcolor>
+			<focusedcolor>FFE0E0E0</focusedcolor>
+			<pulseonselect>false</pulseonselect>
+
+	</control>
+	<control type="button" id="11">
+		<description>Server Address</description>
+			<posx>211</posx>
+			<posy>219</posy>
+			<width>530</width>
+			<height>37</height>
+			<font>recent</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>FF404040</textcolor>
+			<focusedcolor>FFE0E0E0</focusedcolor>
+			<texturefocus>list/smalllistfo.png</texturefocus>
+			<textoffsetx>20</textoffsetx>
+			<onup>10</onup>
+			<onleft>12</onleft>
+			<onright>12</onright>
+			<ondown>16</ondown>
+	</control>
+	<control type="button" id="12">
+		<description>Server Browse</description>
+		<posx>741</posx>
+		<posy>219</posy>
+   		<width>159</width>
+		<height>37</height>
+		<font>recent</font>
+		<label>$LOCALIZE[1024]</label>
+		<texturefocus>list/smalllistfo.png</texturefocus>
+    	<texturenofocus></texturenofocus>
+		<onup>10</onup>
+		<onleft>11</onleft>
+		<onright>9001</onright>
+		<ondown>16</ondown>
+	</control>
+	<control type="button" id="16">
+		<description>Remote</description>
+		<posx>211</posx>
+		<posy>256</posy>
+		<width>689</width>
+		<height>37</height>
+		<font>recent</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<texturefocus>list/smalllistfo.png</texturefocus>
+		<textoffsetx>20</textoffsetx>
+		<textcolor>FF404040</textcolor>
+		<focusedcolor>FFE0E0E0</focusedcolor>
+		<onup>11</onup>
+		<onleft>16</onleft>
+		<onright>9001</onright>
+		<ondown>13</ondown>
+	</control>
+	<control type="button" id="13">
+		<description>Port</description>
+		<posx>211</posx>
+		<posy>293</posy>
+		<width>689</width>
+		<height>37</height>
+		<font>recent</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<texturefocus>list/smalllistfo.png</texturefocus>
+		<textoffsetx>20</textoffsetx>
+			<textcolor>FF404040</textcolor>
+			<focusedcolor>FFE0E0E0</focusedcolor>
+		<label>$LOCALIZE[1013]</label>
+		<onup>16</onup>
+		<onleft>13</onleft>
+		<onright>9001</onright>
+		<ondown>14</ondown>
+	</control>
+	<control type="button" id="14">
+		<description>Username</description>
+		<posx>211</posx>
+		<posy>330</posy>
+		<width>689</width>
+		<height>37</height>
+		<font>recent</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<texturefocus>list/smalllistfo.png</texturefocus>
+		<textoffsetx>20</textoffsetx>
+			<textcolor>FF404040</textcolor>
+			<focusedcolor>FFE0E0E0</focusedcolor>
+		<label>$LOCALIZE[1014]</label>
+		<onup>13</onup>
+		<onleft>14</onleft>
+		<onright>9001</onright>
+		<ondown>15</ondown>
+	</control>
+	<control type="button" id="15">
+		<description>password</description>
+		<posx>211</posx>
+		<posy>367</posy>
+		<width>689</width>
+		<height>37</height>
+		<font>recent</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<texturefocus>list/smalllistfo.png</texturefocus>
+		<textoffsetx>20</textoffsetx>
+			<textcolor>FF404040</textcolor>
+			<focusedcolor>FFE0E0E0</focusedcolor>
+		<label>15052</label>
+		<onup>14</onup>
+		<onleft>15</onleft>
+		<onright>9001</onright>
+		<ondown>10</ondown>
+	</control>
+  
+		<control type="group" id="9001">
+			<posx>916</posx>
+			<posy>170</posy>
+			<control type="button" id="18">
+				<description>Ok Button</description>
+				<label>186</label>
+				<width>160</width>
+				<height>37</height>		
+				<onup>20</onup>
+				<onleft>10</onleft>
+				<onright>-</onright>
+				<ondown>19</ondown>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textoffsetx>5</textoffsetx>
+				<textoffsety>6</textoffsety>
+				<texturefocus>dialog/button.png</texturefocus>
+     			<texturenofocus>-</texturenofocus>
+				<colordiffuse>DCFFFFFF</colordiffuse>
+				<font>homemenu3</font>
+				<textcolor>ff707070</textcolor>
+				<focusedcolor>ffffffff</focusedcolor>
+				<disabledcolor>F99c9c9c</disabledcolor>
+			</control>
+			<control type="button" id="19">
+				<description>Cancel Button</description>
+				<posy>55</posy>
+				<label>222</label>
+				<width>160</width>
+				<height>37</height>	
+				<onup>18</onup>
+				<onleft>10</onleft>
+				<onright>-</onright>
+				<ondown>11</ondown>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textoffsetx>5</textoffsetx>
+				<textoffsety>6</textoffsety>
+				<texturefocus>dialog/button.png</texturefocus>
+     			<texturenofocus>-</texturenofocus>
+				<colordiffuse>DCFFFFFF</colordiffuse>
+				<font>homemenu3</font>
+				<textcolor>ff707070</textcolor>
+				<focusedcolor>ffffffff</focusedcolor>
+				<disabledcolor>F99c9c9c</disabledcolor>
+			</control>
+		</control>
+  
+	</controls>
+
+</window>

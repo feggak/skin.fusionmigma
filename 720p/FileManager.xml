@@ -1,0 +1,281 @@
+<window id="3">
+<defaultcontrol always="true">20</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<controls>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>bg2.png</texture>
+		<colordiffuse>FFCCCCCF</colordiffuse>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>black.png</texture>
+		<colordiffuse>50FFFFFF</colordiffuse>
+	</control>  
+ 
+ 	<include>FusionStyles</include>
+  
+<!-- Left -->
+
+	<control type="image">
+		<posx>105</posx>
+		<posy>130</posy>
+		<width>507</width>
+		<height>494</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>filemanager/bg.png</texture>
+	</control>
+
+  <control type="group">
+    <posx>109</posx>
+    <posy>135</posy>
+    <control type="label" id="101">
+      <description>Header Label</description>
+      <posx>15</posx>
+      <width>420</width>
+      <height>45</height>
+      <align>left</align>
+      
+	  <font>griddetails</font>
+      <textcolor>White</textcolor>
+    </control>
+	
+    <control type="list" id="20">
+      <description>Left File List</description>
+      <posx>0</posx>
+      <posy>48</posy>
+      <width>499</width>
+      <height>436</height>
+      <onleft>21</onleft>
+      <onright>21</onright>
+      <onup>20</onup>
+      <ondown>20</ondown>
+	  <scrolltime>0</scrolltime>
+      <itemlayout height="44" width="320">
+
+        <control type="image">
+          <posx>8</posx>
+          <posy>5</posy>
+          <width>32</width>
+          <height>32</height>
+          <info>ListItem.Icon</info>
+          <aspectratio aligny="left">keep</aspectratio>
+        </control>
+        <control type="label">
+          <posx>50</posx>
+		  <posy>-1</posy>
+          <width>280</width>
+          <height>44</height>
+          <align>left</align>
+	 	  <font>aired</font>
+          <textcolor>White</textcolor>
+          <info>ListItem.Label</info>
+          <scroll>false</scroll>
+        </control>
+        <control type="label">
+          <posx>488</posx>
+		  <posy>-1</posy>
+          <width>280</width>
+          <height>44</height>
+          <align>right</align>
+	 	  <font>aired</font>
+          <textcolor>White</textcolor>
+          <info>ListItem.Label2</info>
+          <scroll>false</scroll>
+        </control>
+      </itemlayout>
+      <focusedlayout height="44" width="320">
+        <control type="image">
+          <width>499</width>
+          <height>44</height>
+          <texture>filemanager/listfo.png</texture>
+          <aspectratio aligny="middle">keep</aspectratio>
+          <visible>Control.HasFocus(20)</visible>
+        </control>
+        <control type="image">
+          <posx>8</posx>
+          <posy>5</posy>
+          <width>32</width>
+          <height>32</height>
+          <info>ListItem.Icon</info>
+          <aspectratio aligny="left">keep</aspectratio>
+        </control>
+        <control type="label">
+          <posx>50</posx>
+		  <posy>-1</posy>
+          <width>280</width>
+          <height>44</height>
+          <align>left</align>
+	 	  <font>aired</font>
+          <textcolor>White</textcolor>
+          <info>ListItem.Label</info>
+          <scroll>false</scroll>
+        </control>
+        <control type="label">
+          <posx>488</posx>
+		  <posy>-1</posy>
+          <width>280</width>
+          <height>44</height>
+          <align>right</align>
+	 	  <font>aired</font>
+          <textcolor>White</textcolor>
+          <info>ListItem.Label2</info>
+          <scroll>false</scroll>
+        </control>
+      </focusedlayout>
+    </control>
+  </control>
+
+	<control type="group">
+		<posx>580</posx>
+		<posy>620</posy>
+    <control type="label" id="12">
+      <description>Footer Label</description>
+      <posx>15</posx>
+      <width>320</width>
+      <height>45</height>
+      <align>right</align>
+      
+      <textcolor>White</textcolor>
+    </control>
+	</control>
+<!-- Right -->
+
+	<control type="image">
+		<posx>705</posx>
+		<posy>130</posy>
+		<width>507</width>
+		<height>494</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>filemanager/bg.png</texture>
+	</control>
+  <control type="group">
+    <posx>709</posx>
+    <posy>135</posy>
+    <control type="label" id="102">
+      <description>Header Label</description>
+      <posx>15</posx>
+      <width>420</width>
+      <height>45</height>
+      <align>left</align>
+      
+	  <font>griddetails</font>
+      <textcolor>White</textcolor>
+    </control>
+	
+    <control type="list" id="21">
+      <description>Left File List</description>
+      <posx>0</posx>
+      <posy>48</posy>
+      <width>499</width>
+      <height>436</height>
+      <onleft>20</onleft>
+      <onright>20</onright>
+      <onup>21</onup>
+      <ondown>21</ondown>
+	  <scrolltime>0</scrolltime>
+      <itemlayout height="44" width="320">
+
+        <control type="image">
+          <posx>8</posx>
+          <posy>5</posy>
+          <width>32</width>
+          <height>32</height>
+          <info>ListItem.Icon</info>
+          <aspectratio aligny="left">keep</aspectratio>
+        </control>
+        <control type="label">
+          <posx>50</posx>
+		  <posy>-1</posy>
+          <width>280</width>
+          <height>44</height>
+          <align>left</align>
+	 	  <font>aired</font>
+          <textcolor>White</textcolor>
+          <info>ListItem.Label</info>
+          <scroll>false</scroll>
+        </control>
+        <control type="label">
+          <posx>488</posx>
+		  <posy>-1</posy>
+          <width>280</width>
+          <height>44</height>
+          <align>right</align>
+	 	  <font>aired</font>
+          <textcolor>White</textcolor>
+          <info>ListItem.Label2</info>
+          <scroll>false</scroll>
+        </control>
+      </itemlayout>
+      <focusedlayout height="44" width="320">
+        <control type="image">
+          <width>499</width>
+          <height>44</height>
+          <texture>filemanager/listfo.png</texture>
+          <aspectratio aligny="middle">keep</aspectratio>
+          <visible>Control.HasFocus(21)</visible>
+        </control>
+        <control type="image">
+          <posx>8</posx>
+          <posy>5</posy>
+          <width>32</width>
+          <height>32</height>
+          <info>ListItem.Icon</info>
+          <aspectratio aligny="left">keep</aspectratio>
+        </control>
+        <control type="label">
+          <posx>50</posx>
+		  <posy>-1</posy>
+          <width>280</width>
+          <height>44</height>
+          <align>left</align>
+	 	  <font>aired</font>
+          <textcolor>White</textcolor>
+          <info>ListItem.Label</info>
+          <scroll>false</scroll>
+        </control>
+        <control type="label">
+          <posx>488</posx>
+		  <posy>-1</posy>
+          <width>280</width>
+          <height>44</height>
+          <align>right</align>
+	 	  <font>aired</font>
+          <textcolor>White</textcolor>
+          <info>ListItem.Label2</info>
+          <scroll>false</scroll>
+        </control>
+      </focusedlayout>
+    </control>
+  </control>
+
+    
+	<control type="group">
+		<posx>1180</posx>
+		<posy>620</posy>
+    <control type="label" id="13">
+      <description>Footer Label</description>
+      <posx>15</posx>
+      <width>320</width>
+      <height>45</height>
+      <align>right</align>
+      
+      <textcolor>White</textcolor>
+    </control>
+	</control>
+  
+
+  
+<include>nav</include> 
+</controls>
+
+</window>

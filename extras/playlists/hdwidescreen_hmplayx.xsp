@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Widescreen Only</name>
+    <match>all</match>
+    <rule field="videoaspect" operator="greaterthan">1.65</rule>
+	<rule field="videoaspect" operator="lessthan">1.86</rule>
+	<rule field="videoresolution" operator="greaterthan">700</rule>
+    <order direction="ascending">title</order>
+</smartplaylist>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Surround Sound Only</name>
+    <match>all</match>
+    <rule field="videoresolution" operator="greaterthan">700</rule>
+	<rule field="audiochannels" operator="greaterthan">4</rule>
+    <order direction="ascending">title</order>
+</smartplaylist>

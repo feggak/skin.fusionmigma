@@ -1,0 +1,545 @@
+<window id="7">
+<defaultcontrol always="true">9000</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<controls>
+
+  	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>Home/bg2.png</texture>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>black.png</texture>
+		<colordiffuse>73FFFFFF</colordiffuse>
+	</control>  
+	
+	<control type="image">
+		<posx>110</posx>
+		<posy>130</posy>
+		<width>1072</width>
+		<height>496</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>settings/listbg.png</texture>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="550" delay="0" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="350" delay="0" />
+				</animation>
+	</control>
+
+	<control type="group">
+		<posy>50</posy>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="550" delay="250" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="250" delay="0" />
+				</animation>   
+		<control type="grouplist" id="9000">
+			<posx>115</posx>
+      		<posy>132</posy>
+			<width>249</width>
+			<height>550</height>
+			<itemgap>0</itemgap>
+			<onleft>-</onleft>
+			<onright>-</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<control type="button" id="95">
+				<description>General</description>
+				<label>$LOCALIZE[128]</label>
+				<height>43.5</height>
+				<width>249</width>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<font>homemenu3</font>
+				<textcolor>4ec0c0c0</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus>settings/white.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<colordiffuse>1FFFFFFF</colordiffuse>
+			</control>
+			<control type="button" id="94">
+				<description>Storage</description>
+				<label>$LOCALIZE[13277]</label>
+				<height>43.5</height>
+				<width>249</width>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<font>homemenu3</font>
+				<textcolor>4ec0c0c0</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus>settings/white.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<colordiffuse>1FFFFFFF</colordiffuse>
+      		</control>
+			<control type="button" id="96">
+				<description>Network</description>
+				<label>$LOCALIZE[13279]</label>
+				<height>43.5</height>
+				<width>249</width>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<font>homemenu3</font>
+				<textcolor>4ec0c0c0</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus>settings/white.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<colordiffuse>1FFFFFFF</colordiffuse>
+			</control>
+			<control type="button" id="97">
+				<description>Video</description>
+				<label>$LOCALIZE[13280]</label>
+				<height>43.5</height>
+				<width>249</width>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<font>homemenu3</font>
+				<textcolor>4ec0c0c0</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus>settings/white.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<colordiffuse>1FFFFFFF</colordiffuse>
+			</control>
+			<control type="button" id="98">
+				<description>Hardware</description>
+				<label>$LOCALIZE[13281]</label>
+				<height>43.5</height>
+				<width>249</width>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<font>homemenu3</font>
+				<textcolor>4ec0c0c0</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus>settings/white.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<colordiffuse>1FFFFFFF</colordiffuse>
+			</control>
+      		<control type="button" id="99">
+        		<description>HDD</description>
+        		<label>$LOCALIZE[13275]</label>
+				<height>43.5</height>
+				<width>249</width>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<font>homemenu3</font>
+				<textcolor>4ec0c0c0</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus>settings/white.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<colordiffuse>1FFFFFFF</colordiffuse>
+			</control>
+			<control type="button" id="100">
+				<description>DVD</description>
+				<label>$LOCALIZE[13276]</label>
+				<height>43.5</height>
+				<width>249</width>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<font>homemenu3</font>
+				<textcolor>4ec0c0c0</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus>settings/white.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<colordiffuse>1FFFFFFF</colordiffuse>
+			</control>
+		</control>
+		
+	<control type="group">
+			<control type="grouplist">
+				<posx>366</posx>
+				<posy>90</posy>
+				<width>810</width>
+				<height>480</height>
+				<itemgap>0</itemgap>
+				<description>General</description>
+				<visible>!Control(9000).HasFocus(99) + !Control(9000).HasFocus(100)</visible>
+			<control type="label" id="2">
+				<description>2</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label" id="3">
+				<description>3</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label" id="4">
+				<description>4</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label" id="5">
+				<description>5</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label" id="6">
+				<description>6</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label" id="7">
+				<description>7</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label" id="8">
+				<description>8</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label" id="9">
+				<description>9</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label" id="10">
+				<description>10</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label" id="11">
+				<description>11</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label" id="12">
+				<description>12</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label" id="52">
+				<description>XBMC BUILD Version</description>
+				<posy>55</posy>
+				
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>CPU Text</description>
+				<posy>55</posy>
+				<label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>Memory Text</description>
+				<posy>55</posy>
+				<label>$LOCALIZE[31309] $INFO[system.memory(used.percent)]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+		</control>
+		
+			<control type="grouplist">
+				<posx>366</posx>
+				<posy>90</posy>
+				<width>810</width>
+				<height>480</height>
+				<itemgap>0</itemgap>
+			<description>Harddisk Contents</description>
+			<visible>Control(9000).HasFocus(99)</visible>
+			<control type="label">
+				<description>2</description>
+				<posy>55</posy>
+				<label>$INFO[System.HddInfoModel]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>3</description>
+				<posy>90</posy>
+				<label>$INFO[System.HddInfoserial]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>4</description>
+				<posy>125</posy>
+				<label>$INFO[System.HddInfoFirmware]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>5</description>
+				<posy>160</posy>
+				<label>$INFO[System.HddInfoPW]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>6</description>
+				<posy>195</posy>
+				<label>$INFO[System.HddInfoLockState]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>7</description>
+				<posy>230</posy>
+				<label>$INFO[System.HddLockKey]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>8</description>
+				<posy>265</posy>
+				<label>$INFO[System.HddBootDate]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>9</description>
+				<posy>300</posy>
+				<label>$INFO[System.HddCycleCount]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>10</description>
+				<posy>335</posy>
+				<label>$INFO[System.HddTemperature]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+		</control>
+
+			<control type="grouplist">
+				<posx>366</posx>
+				<posy>90</posy>
+				<width>810</width>
+				<height>480</height>
+				<itemgap>0</itemgap>
+			<description>DVD Rom Contents</description>
+			<visible>Control(9000).HasFocus(100)</visible>
+			<control type="label">
+				<description>2</description>
+				<posy>55</posy>
+				<label>$INFO[System.DvdInfoModel]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>3</description>
+				<posy>90</posy>
+				<label>$INFO[System.DvdInfoFirmware]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>4</description>
+				<posy>125</posy>
+				<label>$INFO[System.DvdZone]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+			<control type="label">
+				<description>5</description>
+				<posy>160</posy>
+				<label>$INFO[System.DvdTrayState]</label>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<height>43.5</height>
+				<width>810</width>
+				<font>recent</font>
+				<textcolor>ampm</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>12ffffff</disabledcolor>
+			</control>
+		</control>
+	</control>
+	</control>
+<include>nav</include> 
+</controls>
+  
+</window>

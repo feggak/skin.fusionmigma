@@ -1,0 +1,510 @@
+<window id="2001">
+<defaultcontrol always="true">6</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<coordinates>
+  <system>1</system>
+  <posx>0</posx>
+  <posy>0</posy>
+</coordinates>
+  
+<controls>
+	<control type="group">
+		<posy>-30</posy>
+        <animation effect="slide" start="0,760" end="0,0" time="450" delay="0" reversible="false">WindowOpen</animation>
+        <animation effect="slide" start="0,0" end="0,760" time="450" delay="0" reversible="false">WindowClose</animation>
+		<animation type="Conditional" condition="Window.IsVisible(126)">
+			<effect type="fade" start="100" end="0" time="400" />
+		</animation>
+	<control type="group">
+			<posx>145</posx>
+			<posy>60</posy>
+					<control type="image">
+						<posx>11</posx>
+						<posy>71</posy>
+						<width>259</width>
+						<height>259</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<fadetime>300</fadetime>
+						<texture background="true" diffuse="poster/posterdiffuse.png">$INFO[ListItem.Icon]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<visible>Container.Content(Songs) | Container.Content(Albums) | Container.Content(Artists)</visible>
+					</control>					
+					<control type="image">
+						<posx>11</posx>
+						<posy>343.5</posy>
+						<width>259</width>
+						<height>259</height>
+						<aspectratio>keep</aspectratio>
+						<fadetime>300</fadetime>
+						<texture flipy="true" background="true" diffuse="list/albumreflectdiffuse.png">$INFO[ListItem.Icon]</texture>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+						<visible>Container.Content(Songs) | Container.Content(Albums) | Container.Content(Artists)</visible>
+					</control>
+					<control type="image">
+						<posx>-24.5</posx>
+						<posy>36</posy>
+						<width>329</width>
+						<height>329</height>
+						<aspectratio>keep</aspectratio>
+						<texture>list/albumborder.png</texture>
+						<visible>Container.Content(Songs) | Container.Content(Albums) | Container.Content(Artists)</visible>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="image">
+						<posx>-32</posx>
+						<posy>320</posy>
+						<width>337</width>
+						<height>52</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>list/postershadow.png</texture>
+						<visible>Container.Content(Songs) | Container.Content(Albums) | Container.Content(Artists)</visible>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+					</control>				
+					<control type="image">
+						<posx>-24.5</posx>
+						<posy>311.5</posy>
+						<width>329</width>
+						<height>115</height>
+						<aspectratio>keep</aspectratio>
+						<texture>list/albumreflectborder.png</texture>
+						<visible>Container.Content(Songs) | Container.Content(Albums) | Container.Content(Artists)</visible>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="image">
+						<posx>654</posx>
+						<posy>127</posy>
+						<width>362</width>
+						<height>204</height>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>350</fadetime>
+						<texture background="true" diffuse="info/fandiffuse.png" fallback="nofanart.png">$INFO[ListItem.Property(Fanart_Image)]</texture>	
+					</control>
+					<control type="image">
+						<posx>654</posx>
+						<posy>342.5</posy>
+						<width>362</width>
+						<height>259</height>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>350</fadetime>
+						<texture flipy="true" background="true" diffuse="list/albumreflectdiffuse.png" fallback="nofanart.png">$INFO[ListItem.Property(Fanart_Image)]</texture>	
+					</control>
+					<control type="image">
+						<posx>634</posx>
+						<posy>108</posy>
+						<width>400.5</width>
+						<height>245</height>
+						<aspectratio>stretch</aspectratio>
+					<texture>grid/fanborder.png</texture>
+					</control>
+					<control type="image">
+						<posx>634</posx>
+						<posy>321</posy>
+						<width>401.5</width>
+						<height>245</height>
+						<aspectratio>stretch</aspectratio>
+					<texture flipy="true" diffuse="list/albumreflectdiffuse.png">info/fanborder.png</texture>
+					</control>
+	</control>
+	<control type="group">
+			<posx>130</posx>
+			<posy>10</posy>	
+	  <control type="label" id="20">
+		  <description>Title</description>
+		  <posx>330</posx>
+		  <posy>125</posy>
+		  <width>940</width>
+		  <font>infotitle</font>
+		  <label>$INFO[ListItem.Album]</label>
+		  <textcolor>itemdetail</textcolor>
+		  <scroll>true</scroll>
+	  </control>
+	  <control type="label" id="21">
+		  <description>Title</description>
+		  <posx>330</posx>
+		  <posy>125</posy>
+		  <width>940</width>
+		  <font>infotitle</font>
+		  <label>$INFO[ListItem.Artist]</label>
+		  <textcolor>itemdetail</textcolor>
+		  <scroll>true</scroll>
+		  <visible>!Control.IsVisible(20) | Container.Content(Artists)</visible>
+	  </control> 
+<!--Buttons-->
+  
+	<control type="grouplist" id="1">
+		<posx>322</posx>
+		<posy>165</posy>
+		<width>474</width>
+		<height>222</height>
+		<itemgap>3</itemgap>
+		<onup>1</onup>
+		<ondown>1</ondown>
+		<onright>50</onright>
+		<onleft>50</onleft>
+		<orientation>vertical</orientation>
+	  
+	  <control type="togglebutton" id ="9">
+		<description>Album/Tracks</description>
+		<label>31215</label>
+		<altlabel>31601</altlabel>
+		<width>202</width>
+		<height>34</height>
+		<align>left</align>
+		<aligny>top</aligny>
+		<textoffsetx>41</textoffsetx>
+		<textoffsety>1</textoffsety>
+		<texturefocus>info/ButtonFoLong.png</texturefocus>
+ 		<texturenofocus>-</texturenofocus>
+      	<alttexturenofocus>-</alttexturenofocus>
+		<alttexturefocus>info/ButtonFoLong.png</alttexturefocus>
+		<textcolor>itemdetail3</textcolor>
+		<focusedcolor>itemdetailb</focusedcolor>
+		<disabledcolor>22ffffff</disabledcolor>
+		<colordiffuse>85FFFFFF</colordiffuse>
+		<onclick>SendClick(2003,5)</onclick>
+		<visible>Container.Content(Artists)</visible>
+		<font>plot</font>
+	  </control>
+	    
+	  <control type="button" id ="10">
+		<description>get thumb</description>
+		<label>31216</label>
+		<width>180</width>
+		<height>34</height>
+		<align>left</align>
+		<aligny>top</aligny>
+		<textoffsetx>41</textoffsetx>
+		<textoffsety>1</textoffsety>
+		<texturefocus>info/ButtonFoLong.png</texturefocus>
+ 		<texturenofocus>-</texturenofocus>
+		<textcolor>itemdetail3</textcolor>
+		<focusedcolor>itemdetailb</focusedcolor>
+		<disabledcolor>55ffffff</disabledcolor>
+		<colordiffuse>85FFFFFF</colordiffuse>
+		<font>plot</font>
+	  </control>
+	  
+    <control type="button" id="12">
+		<description>get fanart</description>
+		<label>31217</label>
+		<width>180</width>
+		<height>34</height>
+		<align>left</align>
+		<aligny>top</aligny>
+		<textoffsetx>41</textoffsetx>
+		<textoffsety>1</textoffsety>
+		<texturefocus>info/ButtonFoLong.png</texturefocus>
+ 		<texturenofocus>-</texturenofocus>
+		<textcolor>itemdetail3</textcolor>
+		<focusedcolor>itemdetailb</focusedcolor>
+		<disabledcolor>55ffffff</disabledcolor>
+		<colordiffuse>85FFFFFF</colordiffuse>
+		<font>plot</font>
+    </control>
+	
+    <control type="button" id="6">
+		<description>refresh</description>
+		<label>31599</label>
+		<width>180</width>
+		<height>34</height>
+		<align>left</align>
+		<aligny>top</aligny>
+		<textoffsetx>41</textoffsetx>
+		<textoffsety>1</textoffsety>
+		<texturefocus>info/ButtonFoLong.png</texturefocus>
+ 		<texturenofocus>-</texturenofocus>
+		<textcolor>itemdetail3</textcolor>
+		<focusedcolor>itemdetailb</focusedcolor>
+		<disabledcolor>55ffffff</disabledcolor>
+		<colordiffuse>85FFFFFF</colordiffuse>
+		<font>plot</font>
+    </control>
+	
+	</control>
+  
+	<!-- this is here as i use a sendclick button to use this so i can have a custom label -->
+	<control type="button" id="5">
+			<description>Album/Songs</description>
+			<visible>false</visible>
+	</control>
+</control>
+ <control type="group">
+ 	<posy>15</posy> 
+ 		<control type="image">
+			<posx>128</posx>
+			<posy>431</posy>
+			<width>1045</width>
+			<height>41</height>
+			<aspectratio>keep</aspectratio>
+			<texture>info/infobar2.png</texture>
+			<colordiffuse>60FFFFFF</colordiffuse>
+		</control> 
+							
+		<control type="grouplist">
+			<posx>150</posx>
+			<posy>430</posy>
+			<width>1008</width>
+			<align>left</align>
+			<orientation>horizontal</orientation>
+			<visible>!Container.Content(TVShows)</visible>
+			<animation effect="fade" start="100" end="0" time="300"  condition="Control.IsVisible(50)">conditional</animation>				
+
+			<control type="label">
+			<description>Director</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width min="29" max="600">auto</width>
+			<height>41</height>	
+			<font>infobar2</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>itemdetailc</textcolor>
+			<label>31213</label>
+			<visible>!Container.Content(Artists)</visible>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="350" delay="0" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="500" />
+			</animation>
+			</control>
+
+					
+			<control type="label">
+			<description>Year</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width min="29" max="600">auto</width>
+			<height>39</height>	
+			<font>infobar</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>itemdetailb</textcolor>
+			<label>[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]   </label>
+			<visible>!Container.Content(Artists)</visible>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="350" delay="0" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="500" />
+			</animation>
+			</control>
+			
+			<control type="label">
+			<description>Label</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width min="29" max="600">auto</width>
+			<height>41</height>	
+			<font>infobar2</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>itemdetailc</textcolor>
+			<label>31600</label>
+			<visible>!Container.Content(Artists)</visible>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="350" delay="0" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="500" />
+			</animation>
+			</control>
+
+			<control type="label">
+			<description>Label</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width min="29" max="600">auto</width>
+			<height>39</height>	
+			<font>infobar</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>itemdetailb</textcolor>
+			<label>[UPPERCASE]$INFO[ListItem.Property(Album_Label)][/UPPERCASE]   </label>
+			<visible>!Container.Content(Artists)</visible>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="350" delay="0" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="500" />
+			</animation>
+			</control>
+			
+			<control type="label">
+			<description>Label</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width min="29" max="600">auto</width>
+			<height>41</height>	
+			<font>infobar2</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>itemdetailc</textcolor>
+			<label>31224</label>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="350" delay="0" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="500" />
+			</animation>
+			</control>
+			
+			<control type="label">
+			<description>Label</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width min="29" max="600">auto</width>
+			<height>39</height>	
+			<font>infobar</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>itemdetailb</textcolor>
+			<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="350" delay="0" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="500" />
+			</animation>
+			</control>
+		</control>
+		<control type="textbox" id="4">
+			<description>Plot</description>
+			<posx>130</posx>
+			<posy>482</posy>
+			<width>1035</width>
+			<height>137</height>
+			<spinposx>500</spinposx>
+			<spinposy>-30</spinposy>
+			<spinwidth>20</spinwidth>
+			<spinheight>11</spinheight>
+			<font>plot</font>
+			<align>justify</align>
+			<textcolor>infoplot</textcolor>
+			<textureup>-</textureup>
+			<texturedown flipy="true">-</texturedown>
+			<textureupfocus>-</textureupfocus>
+			<texturedownfocus flipy="true">-</texturedownfocus>
+			<autoscroll delay="15000" time="2500" repeat="10000"></autoscroll>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="350" delay="0" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="350" delay="550" />
+			</animation>
+  		</control>
+	</control>
+	
+		<!-- Cast -->
+	
+	<control type="wraplist" id="50">
+			<posx>132.5</posx>
+			<posy>420</posy>
+			<width>1030</width>
+			<height>545</height>
+			<onleft>50</onleft>
+			<onright>50</onright>
+			<onup>1</onup>
+			<ondown>1</ondown>
+			<scrolltime>200</scrolltime>
+			<focusposition>3</focusposition>
+			<orientation>horizontal</orientation>
+			
+		<itemlayout height="150" width="150">
+			<control type="image">
+					<description>Actor image</description>
+					<posx>15</posx>
+					<posy>100</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture>$INFO[listitem.Icon]</texture>
+					<aspectratio>stretch</aspectratio>
+					<include>thumbfade</include>
+			</control>
+			<control type="image">
+					<description>Actor image</description>
+					<posx>15</posx>
+					<posy>100</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture>$INFO[listitem.Thumb]</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>Control.IsVisible(50) + !Player.HasVideo</visible>
+					<include>thumbfade</include>
+			</control>
+			<control type="image">
+					<description>Overlay image</description>
+					<posx>10</posx>
+					<posy>93</posy>
+					<width>116</width>
+					<height>116</height>
+					<texture>poster/glassoverlay.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>Control.IsVisible(50) + !Player.HasVideo</visible>
+					<include>thumbfade</include>
+			</control>
+			<control type="label">
+					<visible>Control.IsVisible(50) + !Player.HasVideo</visible>
+			</control>	
+		</itemlayout>
+		<focusedlayout height="150" width="150">
+			<control type="image">
+					<description>Actor image</description>
+					<posx>15</posx>
+					<posy>100</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture>$INFO[listitem.ActualIcon]</texture>
+					<bordertexture border="3">info/frame.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio>stretch</aspectratio>
+					<visible>Control.IsVisible(50) + !Player.HasVideo + IsEmpty(ListItem.Thumb)</visible>
+					<include>thumbfade</include>
+					<animation reversible="false" effect="zoom" start="15,100,100,100" end="-13,80,160,160" time="200">focus</animation>
+			</control>
+			<control type="image">
+					<description>Actor image</description>
+					<posx>15</posx>
+					<posy>100</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture diffuse="poster/posterdiffusesmall.png">$INFO[listitem.Thumb]</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>Control.IsVisible(50) + !Player.HasVideo</visible>
+					<include>thumbfade</include>
+					<animation reversible="false" effect="zoom" start="15,100,100,100" end="-13,80,160,160" time="200">focus</animation>
+			</control>
+			<control type="image">
+					<description>Overlay image</description>
+					<posx>10</posx>
+					<posy>93</posy>
+					<width>116</width>
+					<height>116</height>
+					<texture>poster/glassoverlay.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>Control.IsVisible(50) + !Player.HasVideo</visible>
+					<include>thumbfade</include>
+					<animation reversible="false" effect="zoom" start="10,93,116,116" end="-23,70,187,187" time="200">focus</animation>
+			</control>
+			<control type="label">
+					<posx>70</posx>
+					<posy>0</posy>
+					<width>1010</width>
+					<height>92</height>
+					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					<font>infobar</font>
+					<textcolor>itemdetailb</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<visible>Control.IsVisible(50) + !Player.HasVideo</visible>
+					<animation effect="fade" start="0" end="100" time="300" delay="200" condition="Control.IsVisible(50)">conditional</animation>
+					<include>thumbfade</include>
+			</control>	
+		</focusedlayout>
+	</control>
+			  				
+</control>
+</controls>
+  
+</window>

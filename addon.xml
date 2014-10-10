@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+  id="skin.fusionmigma"
+  version="2.0.0"
+  name="Fusion Migma"
+  provider-name="butchabay">
+  <requires>
+    <import addon="xbmc.gui" version="5.0.0"/>
+    <import addon="service.skin.widgets" version="0.0.17"/>
+    <import addon="script.favourites" version="4.0.4"/>
+    <import addon="script.artistslideshow" version="1.4.6"/>
+    <import addon="script.artwork.downloader" version="12.0.12"/>
+    <import addon="script.tv.show.next.aired" version="5.0.3"/>
+    <import addon="script.tvtunes" version="3.0.1"/>
+    </requires>
+    <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1" debugging="false">
+    <res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
+    </extension>
+    <extension point="xbmc.addon.metadata">
+    <summary lang="en">fusion skin by arcanthur modded by frellAn and butchabay, ZombieRobot</summary> 
+    <description lang="en">fusion is all about simplicity, usability, and refinement. taking what others have achieved in the past and making an attempt to improve upon those ideas. this version is a mod by butchabay, frellAn and more.</description>
+    <disclaimer lang="en"></disclaimer>
+    <platform>all</platform> 
+    </extension>
+</addon>

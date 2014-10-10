@@ -1,0 +1,1703 @@
+<includes>
+
+<!-- START -->
+<include file="Defaults.xml" />
+<include file="Include_Views.xml" />
+<include file="Includes_Home.xml" />
+<include file="Includes_Nav.xml" />
+<include file="Includes_Animations.xml" />
+<include file="Includes_DropDownBar.xml" />
+<include file="Includes_Info.xml" />
+<include file="Includes_Flags.xml" />
+<include file="Includes_RecentlyAdded.xml" />
+<include file="Includes_NextAiredInfo.xml" />
+
+
+<include name="color_flags">
+	<include>StudioflagsTV</include>
+	<include>StudioflagsMovies</include>
+	<include>VideoTypeHackFlaggingConditions</include>
+	<include>VideoCodecFlaggingConditions</include>
+	<include>AudioCodecFlaggingConditions</include>
+	<include>AspectCodecFlaggingConditions</include>
+	<include>VideoMPAAFlaggingConditions</include>
+</include>
+	
+	
+<include name="OpenCloseAnimation">
+	<animation type="WindowOpen" reversible="false">
+		<effect type="fade" start="0" end="100" time="200" delay="0" />
+	</animation>
+	<animation type="Visible" reversible="false">
+		<effect type="fade" start="0" end="100" time="200" delay="0" />
+	</animation>
+	<animation type="WindowClose" reversible="false">
+		<effect type="fade" start="100" end="0" time="200" />
+	</animation>
+	<animation type="Hidden" reversible="false">
+		<effect type="fade" start="100" end="0" time="200" />
+	</animation>
+</include>
+
+
+<include name="OpenCloseAnimationDelay">
+	<animation type="WindowOpen" reversible="false">
+		<effect type="fade" start="0" end="100" time="200" />
+	</animation>
+	<animation type="Visible" reversible="false">
+		<effect type="fade" start="0" end="100" time="200" />
+	</animation>
+	<animation type="WindowClose" reversible="false">
+		<effect type="fade" start="100" end="0" time="200" delay="150" />
+	</animation>
+	<animation type="Hidden" reversible="false">
+		<effect type="fade" start="100" end="0" time="200" delay="150" />
+	</animation>
+</include>
+
+
+<include name="RecentlyAddedExtraNavAnimation">
+	<animation type="Conditional" condition="Control.HasFocus(3012) + Skin.HasSetting(recentlyaddednav) |
+		Control.HasFocus(3010) + Skin.HasSetting(recentlyaddednav)">
+		<effect type="slide" start="0" end="-784" time="390" delay="0" tween="sine" easing="inout" />
+	</animation>
+</include>
+
+<!-- VIDEO OVERLAY ON HOMESCREEN -->
+<include name="VideoOverlayHome">
+	<control type="group">
+			<visible>Window.IsActive(0)</visible>
+			<animation effect="slide" start="-90,0" end="0,0" delay="850" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="-200,0" delay="50" time="300" reversible="false">WindowClose</animation>
+			<animation effect="slide" start="0,0" end="-350,0" delay="0" time="300"  reversible="false" condition="Window.Next(25) | Window.Next(502)">conditional</animation>
+			<animation effect="slide" start="-300,0" end="0,0" delay="600" time="300"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<include>RecentlyAddedExtraNavAnimation</include>
+		<control type="image">
+			<posx>18</posx>
+			<posy>143r</posy>
+			<width>226</width>
+			<height>130</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>Home/npoverlay.png</texture>
+			<colordiffuse>afffffff</colordiffuse>
+			<visible>Player.HasVideo</visible>
+		</control>
+		<control type="image">
+			<posx>23</posx>
+			<posy>139r</posy>
+			<width>216</width>
+			<height>122</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>black.png</texture>
+			<colordiffuse>ffffffff</colordiffuse>
+			<visible>Player.HasVideo</visible>
+		</control>
+		<control type="videowindow" id="1">
+			<posx>23</posx>
+			<posy>139r</posy>
+			<width>216</width>
+			<height>122</height>
+			<aspectratio>scale</aspectratio>
+			<align>center</align>
+		</control>
+	</control>
+
+	<control type="label">
+		<description>Video Title</description>
+		<posx>256</posx>
+		<posy>87r</posy>
+		<width>248</width>
+		<label>$INFO[VideoPlayer.Title]</label>
+		<align>left</align>
+		<font>homemenu3</font>
+		<textcolor>ff909090</textcolor>
+		<visible>Window.IsVisible(0)</visible>
+		<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502)">conditional</animation>
+		<animation effect="slide" start="0,200" end="0,0" delay="250" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+		<animation effect="slide" start="0,100" end="0,0" delay="950" time="300" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
+		<include>RecentlyAddedExtraNavAnimation</include>
+	</control>
+
+	<control type="label">
+		<description>TVShow Title</description>
+		<posx>256</posx>
+		<posy>61r</posy>
+		<width>248</width>
+		<label>$INFO[VideoPlayer.TVShowTitle]</label>
+		<align>left</align>
+		<font>recent2</font>
+		<textcolor>cc707070</textcolor>
+		<visible>Window.IsVisible(0)</visible>
+		<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502)">conditional</animation>
+		<animation effect="slide" start="0,200" end="0,0" delay="400" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+		<animation effect="slide" start="0,100" end="0,0" delay="1100" time="300" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+		<include>RecentlyAddedExtraNavAnimation</include>
+	</control>
+
+	<control type="label">
+		<description>Video Genre</description>
+		<posx>256</posx>
+		<posy>61r</posy>
+		<width>248</width>
+		<label>$INFO[VideoPlayer.Genre]</label>
+		<scroll>false</scroll>
+		<align>left</align>
+		<font>recent2</font>
+		<textcolor>cc707070</textcolor>
+		<visible>Window.IsVisible(0)</visible>
+		<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502)">conditional</animation>
+		<animation effect="slide" start="0,200" end="0,0" delay="400" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+		<animation effect="slide" start="0,100" end="0,0" delay="1100" time="300" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+		<include>RecentlyAddedExtraNavAnimation</include>
+	</control>
+
+	<control type="label">
+		<description>Video Year</description>
+		<posx>256</posx>
+		<posy>38r</posy>
+		<width>248</width>
+		<label>$INFO[VideoPlayer.Year]</label>
+		<align>left</align>
+		<font>recent2</font>
+		<textcolor>cc707070</textcolor>
+		<visible>Window.IsVisible(0)</visible>
+		<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502)">conditional</animation>
+		<animation effect="slide" start="0,200" end="0,0" delay="400" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+		<animation effect="slide" start="0,100" end="0,0" delay="1100" time="300" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+		<include>RecentlyAddedExtraNavAnimation</include>
+	</control>
+</include>
+
+<!-- MUSIC OVERLAY ON HOMESCREEN -->
+<include name="MusicOverlayHome">
+	<control type="group">
+		<visible>Window.IsActive(0)</visible>
+		<animation effect="slide" start="-200,0" end="0,0" delay="850" time="300" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="-200,0" delay="50" time="300" reversible="false">WindowClose</animation>
+		<animation effect="slide" start="0,0" end="-200,0" delay="0" time="300"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
+		<animation effect="slide" start="-200,0" end="0,0" delay="600" time="300"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+		<include>RecentlyAddedExtraNavAnimation</include>
+
+		<!-- CDART -->
+		<control type="image">
+			<visible>Skin.HasSetting(UseCDArt)</visible>
+		    <description>Disc</description>
+		    <posx>70</posx>
+		    <posy>134r</posy>
+		    <width>118</width>
+		    <height>118</height>
+		    <texture fallback="DefaultCD.png">$INFO[Player.FolderPath]cdart.png</texture>
+		    <aspectratio align="bottom">keep</aspectratio>
+		    <animation effect="rotate" end="-360" center="auto" time="3000" loop="true" reversible="true" condition="!Player.Paused">Conditional</animation>
+	        <visible>player.hasmedia</visible>
+		</control>
+
+		<!-- NO CDART -->
+		<control type="image">
+			<description>Album Thumb</description>
+			<posx>15</posx>
+			<posy>140r</posy>
+			<width>130</width>
+			<height>130</height>
+			<texture>$INFO[MusicPlayer.Cover]</texture>
+			<bordertexture border="3">border.png</bordertexture>
+			<bordersize>6</bordersize>
+			<aspectratio>stretch</aspectratio>
+		</control>
+    </control>
+
+    <!-- NO CDART OVERLAY -->
+	<control type="group">
+		<visible>!Skin.HasSetting(UseCDArt)</visible>
+		<include>RecentlyAddedExtraNavAnimation</include>
+		<control type="label">
+			<description>Song Title</description>
+			<posx>160</posx>
+			<posy>82r</posy>
+			<width>334</width>
+			<label>$INFO[MusicPlayer.Title]</label>
+			<align>left</align>
+			<font>homemenu3</font>
+			<scroll>false</scroll>
+			<textcolor>ff909090</textcolor>
+			<visible>Window.IsVisible(0)</visible>
+			<animation effect="fade" start="100" end="0" time="200" delay="200" reversible="false" condition="Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="250" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="950" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
+		</control>
+
+		<control type="label">
+			<description>Song Title</description>
+			<posx>160</posx>
+			<posy>82r</posy>
+			<width>600</width>
+			<label>$INFO[MusicPlayer.Title]</label>
+			<align>left</align>
+			<font>homemenu3</font>
+			<scroll>false</scroll>
+			<textcolor>ff909090</textcolor>
+			<visible>Window.IsVisible(0) + [Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)]</visible>
+			<animation effect="fade" start="0" end="100" time="200" reversible="false" condition="Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="250" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="950" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
+		</control>
+
+		<control type="label">
+			<description>Artist Label</description>
+			<posx>160</posx>
+			<posy>57r</posy>
+			<width>334</width>
+			<label>$INFO[MusicPlayer.Artist]</label>
+			<align>left</align>
+			<font>recent2</font>
+			<scroll>false</scroll>
+			<textcolor>white</textcolor>
+			<visible>Window.IsVisible(0)</visible>
+			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="400" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="1100" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+		</control>
+
+		<control type="label">
+			<description>Album Label</description>
+			<posx>160</posx>
+			<posy>36r</posy>
+			<width>334</width>
+			<label>$INFO[MusicPlayer.Album]</label>
+			<align>left</align>
+			<font>recent2</font>
+			<scroll>false</scroll>
+			<textcolor>cc707070</textcolor>
+			<visible>Window.IsVisible(0)</visible>
+			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="400" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="1100" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+		</control>
+	</control>
+
+	<!-- CDART OVERLAY -->
+	<control type="group">
+		<visible>Skin.HasSetting(UseCDArt)</visible>
+		<include>RecentlyAddedExtraNavAnimation</include>
+		<control type="label">
+			<description>Song Title</description>
+			<posx>200</posx>
+			<posy>82r</posy>
+			<width>294</width>
+			<label>$INFO[MusicPlayer.Title]</label>
+			<align>left</align>
+			<font>homemenu3</font>
+			<scroll>false</scroll>
+			<textcolor>ff909090</textcolor>
+			<visible>Window.IsVisible(0)</visible>
+			<animation effect="fade" start="100" end="0" time="200" delay="200" reversible="false" condition="Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="250" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="950" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
+		</control>
+
+		<control type="label">
+			<description>Song Title</description>
+			<posx>200</posx>
+			<posy>82r</posy>
+			<width>600</width>
+			<label>$INFO[MusicPlayer.Title]</label>
+			<align>left</align>
+			<font>homemenu3</font>
+			<scroll>false</scroll>
+			<textcolor>ff909090</textcolor>
+			<visible>Window.IsVisible(0) + [Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)]</visible>
+			<animation effect="fade" start="0" end="100" time="200" reversible="false" condition="Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="250" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="950" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
+		</control>
+
+		<control type="label">
+			<description>Artist Label</description>
+			<posx>200</posx>
+			<posy>57r</posy>
+			<width>292</width>
+			<label>$INFO[MusicPlayer.Artist]</label>
+			<align>left</align>
+			<font>recent2</font>
+			<scroll>false</scroll>
+			<textcolor>white</textcolor>
+			<visible>Window.IsVisible(0)</visible>
+			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="400" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="1100" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+		</control>
+
+		<control type="label">
+			<description>\Album Label</description>
+			<posx>200</posx>
+			<posy>36r</posy>
+			<width>292</width>
+			<label>$INFO[MusicPlayer.Album]</label>
+			<align>left</align>
+			<font>recent2</font>
+			<scroll>false</scroll>
+			<textcolor>cc707070</textcolor>
+			<visible>Window.IsVisible(0)</visible>
+			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="400" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="1100" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+		</control>
+	</control>
+</include>
+	
+<!-- VIDEO OVERLAY IN REST OF SKIN -->
+<include name="VideoOverlay">
+	<control type="group">
+		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+		<animation effect="slide" start="0,0" end="-200,0" delay="0" time="250"  reversible="false" condition="Window.Next(0)">conditional</animation>
+		<animation effect="slide" start="-90,0" end="0,0" delay="800" time="300" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="-200,0" delay="0" time="300"  reversible="false">WindowClose</animation>
+		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+		<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		<include>RecentlyAddedExtraNavAnimation</include>
+
+		<control type="image">
+			<posx>6</posx>
+			<posy>61r</posy>
+			<width>91</width>
+			<height>52</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>white.png</texture>
+			<colordiffuse>70ffffff</colordiffuse>
+			<visible>Player.HasVideo</visible>
+		</control>
+
+		<control type="image">
+			<posx>7</posx>
+			<posy>60r</posy>
+			<width>89</width>
+			<height>50</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>black.png</texture>
+			<colordiffuse>ffffffff</colordiffuse>
+			<visible>Player.HasVideo</visible>
+		</control>
+
+		<control type="videowindow" id="1">
+			<posx>7</posx>
+			<posy>60r</posy>
+			<width>89</width>
+			<height>50</height>
+			<aspectratio>scale</aspectratio>
+			<align>center</align>
+			<visible>!Window.IsActive(2003)</visible>
+		</control>
+	</control>
+
+	<control type="label">
+		<description>Video Title</description>
+		<posx>105</posx>
+		<posy>62r</posy>
+		<width>640</width>
+		<label>$INFO[VideoPlayer.Title]</label>
+		<align>left</align>
+		<font>homemenu3</font>
+		<textcolor>ffababab</textcolor>
+		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(0)">conditional</animation>
+		<animation effect="slide" start="0,100" end="0,0" delay="850" time="300" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
+		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+		<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+	</control>
+
+	<control type="label">
+		<description>TVShow Title + Genre</description>
+		<posx>105</posx>
+		<posy>37r</posy>
+		<width>640</width>
+		<label>$INFO[VideoPlayer.TVShowTitle,, • ]$INFO[VideoPlayer.Year]$INFO[VideoPlayer.Genre, • ,]</label>
+		<align>left</align>
+		<font>recent2</font>
+		<textcolor>fc9f9f9f</textcolor>
+		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="true" condition="Window.Next(0)">conditional</animation>
+		<animation effect="slide" start="0,100" end="0,0" delay="900" time="300" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+		<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+	</control>
+</include>
+
+<!-- MUSIC OVERLAY IN REST OF SKIN -->
+<include name="MusicOverlay">
+	<control type="group">
+		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+		<animation effect="slide" start="0,0" end="-200,0" delay="0" time="250"  reversible="false" condition="Window.Next(0)">conditional</animation>
+		<animation effect="slide" start="-90,0" end="0,0" delay="800" time="300" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="-200,0" delay="0" time="300"  reversible="false">WindowClose</animation>
+		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+		<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		<include>RecentlyAddedExtraNavAnimation</include>
+
+		<control type="image">
+			<description>Album Thumb</description>
+			<posx>12</posx>
+			<posy>60r</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture diffuse="infowrap/albumdiffuse.png">$INFO[MusicPlayer.Cover]</texture>
+			<bordertexture border="8">border.png</bordertexture>
+			<bordersize>4</bordersize>
+			<aspectratio>stretch</aspectratio>
+		</control>
+	</control>
+
+	<control type="label">
+		<description>Song Title</description>
+		<posx>70</posx>
+		<posy>62r</posy>
+		<width>640</width>
+		<label>$INFO[MusicPlayer.Title]</label>
+		<align>left</align>
+		<font>homemenu3</font>
+		<textcolor>ffababab</textcolor>
+		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(0)">conditional</animation>
+		<animation effect="slide" start="0,100" end="0,0" delay="850" time="300" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
+		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+		<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+	</control>
+
+	<control type="label">
+		<description>Artist and Album Labels</description>
+		<posx>70</posx>
+		<posy>37r</posy>
+		<width>640</width>
+		<label>$INFO[MusicPlayer.Artist,, • ]$INFO[MusicPlayer.Album]</label>
+		<align>left</align>
+		<font>recent2</font>
+		<textcolor>fc9f9f9f</textcolor>
+		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="true" condition="Window.Next(0)">conditional</animation>
+		<animation effect="slide" start="0,100" end="0,0" delay="900" time="300" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+		<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+	</control>
+</include>
+
+<!-- HD FLAGS -->
+<include name="MovieHDFlags">
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>39</height>
+		<width>75</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/sd.png</texture>
+		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+		<visible>!Skin.HasSetting(HideSD)</visible>
+		<animation effect="fade" start="0" end="100" time="500" delay="0" >WindowOpen</animation>
+		<animation effect="fade" start="0" end="100" time="500" delay="200" >Visible</animation>
+		<animation effect="fade" start="100" end="0" time="50" delay="0" >Hidden</animation>
+		<animation effect="fade" start="100" end="0" time="50" delay="0" >WindowClose</animation>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>39</height>
+		<width>75</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/hd.png</texture>
+		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+		<animation effect="fade" start="0" end="100" time="500" delay="0" >WindowOpen</animation>
+		<animation effect="fade" start="0" end="100" time="500" delay="200" >Visible</animation>
+		<animation effect="fade" start="100" end="0" time="50" delay="0" >Hidden</animation>
+		<animation effect="fade" start="100" end="0" time="50" delay="0" >WindowClose</animation>
+	</control>
+</include>
+
+<include name="MovieHDFlagsListView">
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>39</height>
+		<width>75</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/sd.png</texture>
+		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+		<visible>!Skin.HasSetting(HideSD)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>39</height>
+		<width>75</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/hd.png</texture>
+		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+	</control>
+</include>
+
+<include name="MovieHDFlagsListViewFocus">
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>39</height>
+		<width>75</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/sdfo.png</texture>
+		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+		<visible>!Skin.HasSetting(HideSD)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>39</height>
+		<width>75</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/hdfo.png</texture>
+		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+	</control>
+</include>
+
+<include name="MovieHDFlagsPoster">
+	<control type="image">
+		<posx>0</posx>
+		<posy>-5</posy>
+		<height>34</height>
+		<width>70</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/sdfo.png</texture>
+		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+		<visible>!Skin.HasSetting(HideSD)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>-5</posy>
+		<height>34</height>
+		<width>70</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/hdfo.png</texture>
+		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+	</control>
+</include>
+
+<include name="MovieHDFlagsDialog">
+	<control type="image">
+		<posx>0</posx>
+		<posy>-5</posy>
+		<height>34</height>
+		<width>70</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/sdfo.png</texture>
+		<visible>!IsEmpty(VideoPlayer.videoresolution) + !IntegerGreaterThan(VideoPlayer.videoresolution,719)</visible>
+		<visible>!Skin.HasSetting(HideSD)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>-5</posy>
+		<height>34</height>
+		<width>70</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/hdfo.png</texture>
+		<visible>IntegerGreaterThan(VideoPlayer.videoresolution,719)</visible>
+	</control>
+</include>
+
+<include name="MovieHDFlagsBigFan">
+	<control type="image">
+		<posx>0</posx>
+		<posy>5</posy>
+		<height>26</height>
+		<width>60</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/sdfo.png</texture>
+		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+		<visible>!Skin.HasSetting(HideSD)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>5</posy>
+		<height>26</height>
+		<width>60</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/hdfo.png</texture>
+		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+	</control>
+</include>
+
+<include name="MovieHDFlagsPosterShelf">
+	<control type="image">
+		<posx>-5</posx>
+		<posy>0</posy>
+		<height>26</height>
+		<width>60</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/sd.png</texture>
+		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+		<visible>!Skin.HasSetting(HideSD)</visible>
+	</control>
+	<control type="image">
+		<posx>-5</posx>
+		<posy>0</posy>
+		<height>26</height>
+		<width>60</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>c4ffffff</colordiffuse>
+		<texture>flags/defs/hd.png</texture>
+		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+	</control>
+</include>
+
+<include name="MovieHDFlagsBigList">
+	<control type="image">
+		<posx>0</posx>
+		<posy>4</posy>
+		<height>34</height>
+		<width>37</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>ffffffff</colordiffuse>
+		<texture>flags/defs/blhd.png</texture>
+		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>4</posy>
+		<height>34</height>
+		<width>37</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>ffffffff</colordiffuse>
+		<texture>flags/defs/blsd.png</texture>
+		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719) + !Skin.HasSetting(biglist_hide_sd)</visible>
+		<visible>!Skin.HasSetting(HideSD)</visible>
+	</control>
+</include>
+
+<include name="MovieHDFlagsLowList">
+	<control type="image">
+		<posx>0</posx>
+		<posy>4</posy>
+		<height>24</height>
+		<width>28</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>ffffffff</colordiffuse>
+		<texture>flags/defs/blhd.png</texture>
+		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>4</posy>
+		<height>24</height>
+		<width>28</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>ffffffff</colordiffuse>
+		<texture>flags/defs/blsd.png</texture>
+		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+		<visible>!Skin.HasSetting(HideSD)</visible>
+	</control>
+</include>
+
+<include name="MovieHDFlagsBigListFo">
+	<control type="image">
+		<posx>0</posx>
+		<posy>4</posy>
+		<height>34</height>
+		<width>37</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>ffffffff</colordiffuse>
+		<texture>flags/defs/blhdfo.png</texture>
+		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>4</posy>
+		<height>34</height>
+		<width>37</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>ffffffff</colordiffuse>
+		<texture>flags/defs/blsdfo.png</texture>
+		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719) + !Skin.HasSetting(biglist_hide_sd)</visible>
+		<visible>!Skin.HasSetting(HideSD)</visible>
+	</control>
+</include>			
+		
+<include name="MovieHDFlagsLowListFo">
+	<control type="image">
+		<posx>0</posx>
+		<posy>4</posy>
+		<height>24</height>
+		<width>28</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>ffffffff</colordiffuse>
+		<texture>flags/defs/blhdfo.png</texture>
+		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>4</posy>
+		<height>24</height>
+		<width>28</width>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>ffffffff</colordiffuse>
+		<texture>flags/defs/blsdfo.png</texture>
+		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719) + !Skin.HasSetting(biglist_hide_sd)</visible>
+		<visible>!Skin.HasSetting(HideSD)</visible>
+	</control>
+</include>
+
+<!-- MPAA FLAGS -->
+<include name="MPAA">
+	<control type="label">
+		<description>G Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>aired</font>
+		<textcolor>movietitleb2</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31722][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated G) | substring(listitem.MPAA,USA:G)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>aired</font>
+		<textcolor>movietitleb2</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31723][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,Rated PG) | substring(listitem.MPAA,USA:PG)] + !substring(listitem.MPAA,13)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG-13 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>aired</font>
+		<textcolor>movietitleb2</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31724][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,PG-13) | substring(listitem.MPAA,USA:PG-13)] + [!substring(listitem.MPAA,USA:R) + !substring(listitem.MPAA,rated R)]</visible>
+	</control>
+
+	<control type="label">
+		<description>R Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>aired</font>
+		<textcolor>movietitleb2</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31725][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated R) | substring(listitem.MPAA,USA:R)</visible>
+	</control>
+
+	<control type="label">
+		<description>NC-17 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>aired</font>
+		<textcolor>movietitleb2</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31726][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,NC-17) | substring(listitem.MPAA,USA:NC-17)</visible>
+	</control>
+
+	<control type="label">
+		<description>Unrated label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>aired</font>
+		<textcolor>movietitleb2</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31727][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,unrated) | substring(listitem.MPAA,USA:unrated)</visible>
+	</control>	
+</include>
+
+<include name="MPAA2">
+	<control type="label">
+		<description>G Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31722][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated G) | substring(listitem.MPAA,USA:G)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31723][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,Rated PG) | substring(listitem.MPAA,USA:PG)] + !substring(listitem.MPAA,13)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG-13 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31724][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,PG-13) | substring(listitem.MPAA,USA:PG-13)] + [!substring(listitem.MPAA,USA:R) + !substring(listitem.MPAA,rated R)]</visible>
+	</control>
+
+	<control type="label">
+		<description>R Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+	    <label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31725][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated R) | substring(listitem.MPAA,USA:R)</visible>
+	</control>
+
+	<control type="label">
+		<description>NC-17 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31726][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,NC-17) | substring(listitem.MPAA,USA:NC-17)</visible>
+	</control>
+
+	<control type="label">
+		<description>Unrated label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[31618][UPPERCASE]$LOCALIZE[31727][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,unrated) | substring(listitem.MPAA,USA:unrated)</visible>
+	</control>	
+</include>
+
+<include name="MPAABIGLIST">
+	<control type="label">
+		<description>G Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>list</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31728][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated G) | substring(listitem.MPAA,USA:G)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>list</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31729][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,Rated PG) | substring(listitem.MPAA,USA:PG)] + !substring(listitem.MPAA,13)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG-13 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>list</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31730][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,PG-13) | substring(listitem.MPAA,USA:PG-13)] + [!substring(listitem.MPAA,USA:R) + !substring(listitem.MPAA,rated R)]</visible>
+	</control>
+
+	<control type="label">
+		<description>R Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>list</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31731][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated R) | substring(listitem.MPAA,USA:R)</visible>
+	</control>
+
+	<control type="label">
+		<description>NC-17 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>list</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31732][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,NC-17) | substring(listitem.MPAA,USA:NC-17)</visible>
+	</control>
+
+	<control type="label">
+		<description>Unrated label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>list</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31733][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,unrated) | substring(listitem.MPAA,USA:unrated)</visible>
+	</control>	
+</include>
+	
+<include name="MPAALOWLIST">
+	<control type="label">
+		<description>G Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>e7c0c0c0</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31728][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated G) | substring(listitem.MPAA,USA:G)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>e7c0c0c0</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31729][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,Rated PG) | substring(listitem.MPAA,USA:PG)] + !substring(listitem.MPAA,13)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG-13 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>e7c0c0c0</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31730][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,PG-13) | substring(listitem.MPAA,USA:PG-13)] + [!substring(listitem.MPAA,USA:R) + !substring(listitem.MPAA,rated R)]</visible>
+	</control>
+
+	<control type="label">
+		<description>R Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>e7c0c0c0</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31731][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated R) | substring(listitem.MPAA,USA:R)</visible>
+	</control>
+
+	<control type="label">
+		<description>NC-17 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>e7c0c0c0</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31732][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,NC-17) | substring(listitem.MPAA,USA:NC-17)</visible>
+	</control>
+
+	<control type="label">
+		<description>Unrated label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>list</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+	    <label>[UPPERCASE]$LOCALIZE[31733][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,unrated) | substring(listitem.MPAA,USA:unrated)</visible>
+	</control>	
+</include>
+	
+<include name="MPAABIGLISTFO">
+	<control type="label">
+		<description>G Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>white</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31728][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated G) | substring(listitem.MPAA,USA:G)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>white</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+	    <label>[UPPERCASE]$LOCALIZE[31729][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,Rated PG) | substring(listitem.MPAA,USA:PG)] + !substring(listitem.MPAA,13)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG-13 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>white</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31730][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,PG-13) | substring(listitem.MPAA,USA:PG-13)] + [!substring(listitem.MPAA,USA:R) + !substring(listitem.MPAA,rated R)]</visible>
+	</control>
+
+	<control type="label">
+		<description>R Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>white</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31731][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated R) | substring(listitem.MPAA,USA:R)</visible>
+	</control>
+
+	<control type="label">
+		<description>NC-17 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>white</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31732][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,NC-17) | substring(listitem.MPAA,USA:NC-17)</visible>
+	</control>	
+
+	<control type="label">
+		<description>Unrated label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>white</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31733][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,unrated) | substring(listitem.MPAA,USA:unrated)</visible>
+	</control>	
+</include>
+
+<include name="MPAAEP2">
+	<control type="label">
+		<description>G Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31728][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated G) | substring(listitem.MPAA,USA:G)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31729][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,Rated PG) | substring(listitem.MPAA,USA:PG)] + !substring(listitem.MPAA,13)</visible>
+	</control>
+
+	<control type="label">
+		<description>PG-13 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31730][/UPPERCASE]</label>
+		<visible>[substring(listitem.MPAA,PG-13) | substring(listitem.MPAA,USA:PG-13)] + [!substring(listitem.MPAA,USA:R) + !substring(listitem.MPAA,rated R)]</visible>
+	</control>
+
+	<control type="label">
+		<description>R Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31731][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,Rated R) | substring(listitem.MPAA,USA:R)</visible>
+	</control>
+
+	<control type="label">
+		<description>NC-17 Rating label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31732][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,NC-17) | substring(listitem.MPAA,USA:NC-17)</visible>
+	</control>
+
+	<control type="label">
+		<description>Unrated label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$LOCALIZE[31733][/UPPERCASE]</label>
+		<visible>substring(listitem.MPAA,unrated) | substring(listitem.MPAA,USA:unrated)</visible>
+	</control>	
+</include>
+
+<!-- SETTINGS BUTTON -->
+<include name="FusionSettingsButton">
+	<description>Default Radio Button</description>
+	<height>43.5</height>
+	<width>810</width>
+	<textcolor>ampm</textcolor>
+	<focusedcolor>white</focusedcolor>
+	<disabledcolor>12ffffff</disabledcolor>
+	<texturefocus>settings/listfo.png</texturefocus>
+	<texturenofocus>-</texturenofocus>
+	<textoffsetx>20</textoffsetx>
+	<radioposx>743</radioposx>
+	<align>left</align>
+</include>
+
+<include name="Background">
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>bg2.png</texture>
+		<colordiffuse>FFCCCCCF</colordiffuse>
+	</control>
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>black.png</texture>
+		<colordiffuse>50FFFFFF</colordiffuse>
+	</control> 
+</include>
+
+<!-- STYLES -->
+<include name="FusionStyles">
+	<control type="group">
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="650" delay="0" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="650" delay="0" />
+		</animation>	
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/bluewall.png</texture>
+			<colordiffuse>D0FFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Blue)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/netflix.png</texture>
+			<colordiffuse>D0FFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Red)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/grunge.png</texture>
+			<colordiffuse>A0FFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Grunge)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>	
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/grunge.png</texture>
+			<colordiffuse>A0FFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Grunge)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/grunge2.png</texture>
+			<colordiffuse>27FFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Grunge2)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/grunge3.png</texture>
+			<colordiffuse>1FFFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Grunge3)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/classywall.png</texture>
+			<colordiffuse>EFFFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Classy)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/burst.png</texture>
+			<colordiffuse>10FFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Burst)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/diags.png</texture>
+			<colordiffuse>09FFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Diags)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/digital.png</texture>
+			<colordiffuse>0FFFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Digital)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/circles.png</texture>
+			<colordiffuse>2FFFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Circles)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/plaid.png</texture>
+			<colordiffuse>2FFFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Plaid)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>overlays/bloodywall.png</texture>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(Bloody)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+		</control>
+		
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>overlays/netflix.png</texture>
+		<aspectratio>stretch</aspectratio>
+			<visible>substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+			<colordiffuse>CFFFFFFF</colordiffuse>	
+		</control>
+	</control>
+</include>
+
+<!-- IMDB LABELS -->
+<include name="IMDB">
+	<control type="label">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>aired</font>
+		<textcolor>movietitleb2</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$INFO[ListItem.Rating, • RATE  ,]</label>
+		<visible>!Container.Content(TVShows)</visible>
+		<visible>!Container.Content(Episodes)</visible>				
+		<visible>!Container.Content(Albums)</visible>				
+	</control>
+</include>
+
+<include name="IMDB2">
+	<control type="label">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$INFO[ListItem.Rating,• ,]</label>
+		<visible>!Container.Content(TVShows)</visible>
+		<visible>!Container.Content(Episodes)</visible>				
+		<visible>!Container.Content(Albums)</visible>				
+	</control>
+</include>
+
+<include name="IMDBBIGLIST">
+	<control type="label">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>list</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>$INFO[ListItem.Rating,,]</label>
+	</control>
+</include>
+
+<include name="IMDBLOWLIST">
+	<control type="label">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>e7c0c0c0</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>$INFO[ListItem.Rating,,]</label>
+	</control>
+</include>
+
+<include name="IMDBBIGLISTFO">
+	<control type="label">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>movietitle2</font>
+		<textcolor>white</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>$INFO[ListItem.Rating,,]</label>
+	</control>
+</include>
+
+<include name="IMDBEP2">
+	<control type="label">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="900">auto</width>
+		<height>35</height>
+		<font>homemenu3</font>
+		<textcolor>ff575757</textcolor>
+		<scroll>true</scroll>
+		<align>right</align>
+		<aligny>center</aligny>
+		<label>$INFO[ListItem.Rating,,]</label>
+	</control>
+</include>
+	
+<include name="ScrollOffsetLabel">
+	<control type="group">
+		<visible>Container.Scrolling + [StringCompare(Container.SortMethod,$LOCALIZE[551]) | StringCompare(Container.SortMethod,$LOCALIZE[561]) | StringCompare(Container.SortMethod,$LOCALIZE[558]) | StringCompare(Container.SortMethod,$LOCALIZE[557]) | StringCompare(Container.SortMethod,$LOCALIZE[556]) | StringCompare(Container.SortMethod,$LOCALIZE[566])]</visible>
+		<animation effect="fade" start="0" end="100" time="100">Visible</animation>
+		<animation effect="fade" start="100" end="0" delay="500" time="300">Hidden</animation>
+		<posx>540</posx>
+		<posy>260</posy>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>200</width>
+			<height>200</height>
+			<texture>scrollpopup.png</texture>
+		</control>
+
+		<control type="label">
+			<posx>60</posx>
+			<posy>60</posy>
+			<width>80</width>
+			<height>80</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<label>$INFO[ListItem.SortLetter]</label>
+			<textcolor>black</textcolor>
+			<font>scrolloffset</font>
+		</control>
+	</control>
+
+	<control type="group">
+		<visible>Container.Scrolling + StringCompare(Container.SortMethod,$LOCALIZE[562])</visible>
+		<animation effect="fade" start="0" end="100" time="100">Visible</animation>
+		<animation effect="fade" start="100" end="0" delay="500" time="300">Hidden</animation>
+		<posx>450</posx>
+		<posy>260</posy>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>384</width>
+			<height>200</height>
+			<texture>scrollpopupyear.png</texture>
+		</control>
+
+		<control type="label">
+			<posx>133</posx>
+			<posy>60</posy>
+			<width>120</width>
+			<height>80</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<label>$INFO[ListItem.Year]</label>
+			<textcolor>black</textcolor>
+			<font>scrolloffset</font>
+		</control>
+	</control>
+</include>
+  
+<!-- END -->
+</includes>

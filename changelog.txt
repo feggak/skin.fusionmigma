@@ -1,0 +1,59 @@
+Changelog: 0.1.5 (20.05.2013)
+
+- Added disc art to 4 more views (added option to toggle on and off off by default)
+
+Changelog: 0.1.5 (18.05.2013)
+
+- Added red zbar to home
+- Added option to toggle on and off zbar in home menu.
+- Fixed text height code in settinggscategory.xml to match rest of settings
+- Added 10 items to music section in home menu to match tv shows and movies
+
+Changelog: 0.1.5 (12.05.2013)
+
+- Added option to toggle on and off trailer in recently added extra info.
+- Fixed some navigation problems in home menu
+
+Changelog: 0.1.4 (11.05.2013)
+
+- Removed dialogmusicscan.xml (frodo)
+- Added new icon for live tv in settings.xml
+- Removed about section in settings.xml (for new to make room for live tv)
+
+Changelog: 0.1.3 (07.05.2013)
+
+- Changed settings.xml text to strings for later translation
+- New Feature, added new extra info for recently added tv shows and movies. (can be toggled on and off in fusion settings)
+- Added option to view trailer in recently added extra info
+- Code cleanup
+- Added live tv section in settings.xml
+- Changed some labels to strings for later translation.
+- New option in settings to toggle on 10 items for recently added sections (previously only had 4)
+- Added option to switch between fanart and episode art in extra recently added info.
+
+Changelog: 0.1.2 (01.05.2013)
+
+- Frodo code update changed networksettings to servicesettings (line 166 settings.xml)
+- Added previous view button to drop down menu in videos, pictures and music (lines 129,314,365 Includes_DropDownBar.xml)
+- Fixed zbar bug (textures needed adjusting when zbar is turned off in postershelf view to hide gap where bar was located)
+- Fixed rating off label in biglist view (Line 582 Includes_DropDownBar.xml).
+
+Changelog: 0.1.1 (29.04.2013)
+
+- Red Zbar now visible in postershelf view to keep in theme with all other views.
+- New volume bar for playing video fullscreen.
+
+Changelog: 0.1.0 (28.04.2013)
+
+- Added update library to tvshow and movies submenu's.
+- Added restart to home power submenu.
+- Added spinning disc art to postershelf, posterwrap and posterfix views.
+- Fixed plot height in postershelf view (some text was getting cut off at the bottom).
+- Now in Postershelf view when mediaflags are turned off plot expands to fill up empty space where mediaflags were located.
+
+
+
+
+
+
+

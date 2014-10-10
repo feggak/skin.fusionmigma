@@ -1,0 +1,195 @@
+<window type="dialog" id="400">
+<defaultcontrol always="true">1</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<coordinates>
+  <system>1</system>
+  <posx>0</posx>
+  <posy>0</posy>
+</coordinates>
+  
+<controls>
+
+
+  <control type="label">
+    <label>PlayerControls.xml</label>
+  </control>
+
+	 <control type="group" id="1">
+               <posx>100</posx>
+               <posy>-45</posy>
+			   <visible>Window.IsVisible(0)</visible>
+                <control type="button" id="2">
+                    <posx>64</posx>
+                    <posy>44</posy>
+                    <description>Previous</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus flipx="true">osdold/nextfo.png</texturefocus>
+                    <texturenofocus flipx="true">osdold/nextnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(previous)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>6</onleft>
+                    <onright>3</onright>
+                    <onup>-</onup>
+                    <ondown>-</ondown>
+                </control>
+                <control type="button" id="3">
+                    <posx>110</posx>
+                    <posy>44</posy>
+                    <description>Rewind</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus flipx="true">osdold/fffo.png</texturefocus>
+                    <texturenofocus flipx="true">osdold/ffnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(rewind)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>2</onleft>
+                    <onright>4</onright>
+                    <onup>-</onup>
+                    <ondown>-</ondown>
+                </control>
+                <control type="togglebutton" id="4">
+                    <description>Play</description>
+                    <posx>155</posx>
+                    <posy>38</posy>
+                    <height>68</height>
+                    <width>68</width>
+                    <texturefocus>osdold/pausefo.png</texturefocus>
+                    <texturenofocus>osdold/pausenf.png</texturenofocus>
+                    <usealttexture>Player.Paused</usealttexture>
+                    <alttexturefocus>osdold/playfo.png</alttexturefocus>
+                    <alttexturenofocus>osdold/playnf.png</alttexturenofocus>
+                    <onclick>playercontrol(play)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onup>-</onup>
+                    <ondown>-</ondown>
+                    <onleft>3</onleft>
+                    <onright>5</onright>
+                </control>
+                <control type="button" id="5">
+                    <posx>213</posx>
+                    <posy>44</posy>
+                    <description>Fast Forward</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/fffo.png</texturefocus>
+                    <texturenofocus>osdold/ffnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(forward)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>4</onleft>
+                    <onright>6</onright>
+                    <onup>-</onup>
+                    <ondown>-</ondown>
+                </control>
+                <control type="button" id="6">
+                    <posx>259</posx>
+                    <posy>44</posy>
+                    <description>Next</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/nextfo.png</texturefocus>
+                    <texturenofocus>osdold/nextnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(next)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>5</onleft>
+                    <onright>2</onright>
+                    <onup>-</onup>
+                    <ondown>-</ondown>
+                </control>
+            </control>
+			 <control type="group" id="1">
+               <posx>450</posx>
+               <posy>615</posy>
+			   <visible>!Window.IsVisible(0)</visible>
+                <control type="button" id="2">
+                    <posx>64</posx>
+                    <posy>44</posy>
+                    <description>Previous</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus flipx="true">osdold/nextfo.png</texturefocus>
+                    <texturenofocus flipx="true">osdold/nextnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(previous)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>6</onleft>
+                    <onright>3</onright>
+                    <onup>-</onup>
+                    <ondown>-</ondown>
+                </control>
+                <control type="button" id="3">
+                    <posx>110</posx>
+                    <posy>44</posy>
+                    <description>Rewind</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus flipx="true">osdold/fffo.png</texturefocus>
+                    <texturenofocus flipx="true">osdold/ffnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(rewind)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>2</onleft>
+                    <onright>4</onright>
+                    <onup>1</onup>
+                    <ondown>3</ondown>
+                </control>
+                <control type="togglebutton" id="4">
+                    <description>Play</description>
+                    <posx>155</posx>
+                    <posy>38</posy>
+                    <height>68</height>
+                    <width>68</width>
+                    <texturefocus>osdold/pausefo.png</texturefocus>
+                    <texturenofocus>osdold/pausenf.png</texturenofocus>
+                    <usealttexture>Player.Paused</usealttexture>
+                    <alttexturefocus>osdold/playfo.png</alttexturefocus>
+                    <alttexturenofocus>osdold/playnf.png</alttexturenofocus>
+                    <onclick>playercontrol(play)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onup>1</onup>
+                    <ondown>-</ondown>
+                    <onleft>3</onleft>
+                    <onright>5</onright>
+                </control>
+                <control type="button" id="5">
+                    <posx>213</posx>
+                    <posy>44</posy>
+                    <description>Fast Forward</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/fffo.png</texturefocus>
+                    <texturenofocus>osdold/ffnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(forward)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>4</onleft>
+                    <onright>6</onright>
+                    <onup>1</onup>
+                    <ondown>6</ondown>
+                </control>
+                <control type="button" id="6">
+                    <posx>259</posx>
+                    <posy>44</posy>
+                    <description>Next</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/nextfo.png</texturefocus>
+                    <texturenofocus>osdold/nextnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(next)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>5</onleft>
+                    <onright>2</onright>
+                    <onup>1</onup>
+                    <ondown>7</ondown>
+                </control>
+            </control>
+  
+</controls>
+  
+</window>

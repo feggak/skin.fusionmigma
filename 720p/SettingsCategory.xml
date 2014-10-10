@@ -1,0 +1,178 @@
+<window id="12">
+<defaultcontrol always="true">3</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+
+<controls>
+ 	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>Home/bg2.png</texture>
+	</control>	
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>black.png</texture>
+		<colordiffuse>73FFFFFF</colordiffuse>
+	</control> 
+
+	<include>FusionStyles</include>
+	<!-- Main List -->
+	<control type="group">
+		<animation type="Conditional" condition="Window.IsVisible(126) | Window.IsVisible(2000)">
+			<effect type="fade" start="100" end="0" time="200" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="200" delay="0" />
+		</animation> 
+	<control type="image">
+		<posx>110</posx>
+		<posy>130</posy>
+		<width>1072</width>
+		<height>496</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>settings/listbg.png</texture>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="200" delay="0" />
+		</animation>
+	</control>
+	<!-- Lefthand List -->
+	<control type="grouplist" id="3">
+		<description>Button Area</description>
+		<posx>115</posx>
+		<posy>144</posy>
+		<width>250</width>
+		<height>400</height>
+		<itemgap>.5</itemgap>
+		<onleft>5</onleft>
+		<onright>5</onright>
+		<onup>3</onup>
+		<ondown>3</ondown>
+		<orientation>vertical</orientation>
+	</control>
+	<!-- Righthand List -->
+	<control type="grouplist" id="5">
+		<description>Control Area</description>
+		<posx>366</posx>
+		<posy>138</posy>
+		<width>810</width>
+		<height>484</height>
+		<itemgap>.5</itemgap>
+		<onleft>3</onleft>
+		<onright>3</onright>
+		<onup>5</onup>
+		<ondown>5</ondown>
+		<orientation>vertical</orientation>
+	</control>
+	<!-- Buttons -->
+	<control type="button" id="7">
+		<description>Default Button</description>
+		<align>left</align>
+		<textoffsetx>18</textoffsetx>
+		<height>43</height>
+		<width>810</width>
+   		<font>recent</font>
+		<textcolor>ampm</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<disabledcolor>12ffffff</disabledcolor>
+		<texturefocus>settings/listfo.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+	</control>
+	<control type="radiobutton" id="8">
+		<description>Default Radio Button</description>
+		<height>43</height>
+		<width>810</width>
+		<textcolor>ampm</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<disabledcolor>12ffffff</disabledcolor>
+		<texturefocus>settings/listfo.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<textoffsetx>20</textoffsetx>
+		<radioposx>743</radioposx>
+   		<align>left</align>
+	</control>
+	<control type="spincontrolex" id="9">
+		<description>Default Spin Control</description>
+		<height>43</height>
+		<width>810</width>
+   		<font>recent</font>
+		<textcolor>ampm</textcolor>
+		<textoffsetx>20</textoffsetx>
+		<focusedcolor>white</focusedcolor>
+		<disabledcolor>12ffffff</disabledcolor>
+		<texturefocus>settings/listfo.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+    	<align>left</align>
+	</control>
+	<control type="button" id="10">
+		<description>Default Category Button</description>
+		<height>43.5</height>
+    	<width>249</width>
+		<align>left</align>
+		<textoffsetx>20</textoffsetx>
+		<font>homemenu3</font>
+        <textcolor>4ec0c0c0</textcolor>
+		<focusedcolor>white</focusedcolor>
+    	<texturefocus>settings/white.png</texturefocus>
+    	<texturenofocus>-</texturenofocus>
+		<colordiffuse>1FFFFFFF</colordiffuse>
+	</control>
+</control>
+
+<control type="group">
+	<visible>Player.HasMedia</visible>
+	<control type="image">
+		<posx>0</posx>
+		<posy>654</posy>
+		<width>1280</width>
+		<height>70</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>black.png</texture>
+		<colordiffuse>A0FFFFFF</colordiffuse>
+		<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>715</posy>
+		<width>1280</width>
+		<height>5</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>zbase.png</texture>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<visible>!Skin.HasSetting(ZBar)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>715</posy>
+		<width>1280</width>
+		<height>5</height>
+		<aspectratio>stretch</aspectratio>
+		<texture flipx="true">zbase.png</texture>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<visible>!Skin.HasSetting(ZBar)</visible>
+		<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>654</posy>
+		<width>1280</width>
+		<height>1</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>white.png</texture>
+		<colordiffuse>20FFFFFF</colordiffuse>
+		<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+	</control>
+</control>
+
+<include>MusicOverlay</include>
+<include>VideoOverlay</include>
+<include>nav</include>   
+</controls>
+
+</window>
