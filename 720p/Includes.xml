@@ -11,6 +11,7 @@
 <include file="Includes_Info.xml" />
 <include file="Includes_Flags.xml" />
 <include file="Includes_RecentlyAdded.xml" />
+<include file="Includes_Featured.xml" />
 <include file="Includes_NextAiredInfo.xml" />
 
 
@@ -32,12 +33,9 @@
     <posy>275</posy>
     <width>250</width>
     <height>430</height>
-    <onleft>3011</onleft>
-    <onright>3010</onright>
     <onup>540</onup>
     <pagecontrol>777</pagecontrol>
-    <scrolltime>200</scrolltime>
-    <focusposition>3</focusposition>
+    <focusposition>0</focusposition>
     <orientation>vertical</orientation>
     <preloaditems>3</preloaditems>
 
@@ -80,8 +78,8 @@
             <animation effect="fade" start="50" end="100" time="100" reversible="false" condition="Container(200).OnPrevious">Focus</animation>
             <animation effect="fade" start="50" end="100" time="100" reversible="false" condition="Container(200).OnNext">Focus</animation>
             <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(540)">Conditional</animation>
+            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(1010)">Conditional</animation>
             <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(3010)">Conditional</animation>
-            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(3011)">Conditional</animation>
         </control>
     </focusedlayout>
 </include>

@@ -196,12 +196,6 @@
 					<icon>settings/info.png</icon>
 					<onclick>activatewindow(7)</onclick>
 				</item>
-				<!--item id="10">
-					<description>About</description>
-					<label>[LOWERCASE]about xbmc[/LOWERCASE]</label>
-					<icon>settings/aboutx.png</icon>
-					<onclick>activatewindow(9505)</onclick>
-				</item-->
 				<item id="11">
 					<description>System</description>
 					<label>317799</label>

@@ -547,7 +547,7 @@
 						<selected>Skin.HasSetting(HomeRecentlyAddedEpisodes)</selected>
 						<visible>Skin.HasSetting(HomeRecentlyAdded)</visible>
 					</control>
-					
+					<!--
 					<control type="radiobutton" id="103">
 						<include>FusionSettingsButton</include>
 						<label>31427</label>
@@ -604,6 +604,7 @@
 						<selected>Skin.HasSetting(recentlyaddednavfanart)</selected>
 						<visible>Skin.HasSetting(recentlyaddednav) + !Skin.HasSetting(recentlyaddednavfanart)</visible>
 					</control>
+                    -->
 				</control>
 			</control>
 		</control>

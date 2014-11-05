@@ -1,31 +1,14 @@
 <window id="0">
 <defaultcontrol always="true">540</defaultcontrol>
 
-<!-- GENERATE RANDOMLAST ITEMS -->
-<onload condition="Skin.HasSetting(HomeLatestPlaylist1) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Movie,unwatched=True,limit=4,method=Last,playlist=$INFO[Skin.String(Menu_Custom11_Path)],menu=Menu1)</onload>
-<onload condition="Skin.HasSetting(HomeLatestPlaylist1) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Movie,unwatched=True,limit=10,method=Random,playlist=$INFO[Skin.String(Menu_Custom11_Path)],menu=Menu1)</onload>
-
-<onload condition="Skin.HasSetting(HomeLatestPlaylist2) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Movie,unwatched=True,limit=4,method=Last,playlist=$INFO[Skin.String(Menu_Custom12_Path)],menu=Menu2)</onload>
-<onload condition="Skin.HasSetting(HomeLatestPlaylist2) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Movie,unwatched=True,limit=10,method=Random,playlist=$INFO[Skin.String(Menu_Custom12_Path)],menu=Menu2)</onload>
-
-<onload condition="Skin.HasSetting(HomeLatestPlaylist3) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Movie,unwatched=True,limit=4,method=Last,playlist=$INFO[Skin.String(Menu_Custom13_Path)],menu=Menu3)</onload>
-<onload condition="Skin.HasSetting(HomeLatestPlaylist3) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Movie,unwatched=True,limit=10,method=Random,playlist=$INFO[Skin.String(Menu_Custom13_Path)],menu=Menu3)</onload>
-
-<onload condition="Skin.HasSetting(HomeLatestTVPlaylist1) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Episode,unwatched=True,limit=4,method=Last,playlist=$INFO[Skin.String(Menu_Custom14_Path)],menu=Menu4)</onload>
-<onload condition="Skin.HasSetting(HomeLatestTVPlaylist1) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Episode,unwatched=True,limit=10,method=Random,playlist=$INFO[Skin.String(Menu_Custom14_Path)],menu=Menu4)</onload>
-
-<onload condition="Skin.HasSetting(HomeLatestTVPlaylist2) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Episode,unwatched=True,limit=4,method=Last,playlist=$INFO[Skin.String(Menu_Custom15_Path)],menu=Menu5)</onload>
-<onload condition="Skin.HasSetting(HomeLatestTVPlaylist2) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Episode,unwatched=True,limit=10,method=Random,playlist=$INFO[Skin.String(Menu_Custom15_Path)],menu=Menu5)</onload>
-
-<onload condition="Skin.HasSetting(HomeLatestTVPlaylist3) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Episode,unwatched=True,limit=4,method=Last,playlist=$INFO[Skin.String(Menu_Custom16_Path)],menu=Menu6)</onload>
-<onload condition="Skin.HasSetting(HomeLatestTVPlaylist3) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems,type=Episode,unwatched=True,limit=10,method=Random,playlist=$INFO[Skin.String(Menu_Custom16_Path)],menu=Menu6)</onload>
-
 <allowoverlay>yes</allowoverlay>
 
 <controls>
 
+    <!-- BACKGROUNDS -->
     <control type="group" id="12">
 
+        <!-- WINDOW BACKGROUND -->
         <include>FusionStyles</include>
         <include>HomeBG</include>
         <control type="image">
@@ -483,6 +466,8 @@
             <!-- MOVIES -->
             <control type="list" id="640">
                 <include>HomeSubMenuCommonValues</include>
+                <onleft>1010</onleft>
+                <onright>3010</onright>
                 <ondown>640</ondown>
                 <visible>Container(540).HasFocus(2)</visible>
 
@@ -545,6 +530,8 @@
             <!-- TV SHOWS -->
             <control type="list" id="642">
                 <include>HomeSubMenuCommonValues</include>
+                <onleft>1010</onleft>
+                <onright>3010</onright>
                 <ondown>642</ondown>
                 <visible>Container(540).HasFocus(3)</visible>
 
@@ -628,6 +615,8 @@
             <!-- MUSIC -->
             <control type="list" id="646">
                 <include>HomeSubMenuCommonValues</include>
+                <onleft>1014</onleft>
+                <onright>3010</onright>
                 <ondown>646</ondown>
                 <visible>Container(540).HasFocus(4)</visible>
 
@@ -696,7 +685,7 @@
                   <item id="1">
                       <description>Skin Settings</description>
                       <label>[LOWERCASE]$LOCALIZE[31672][/LOWERCASE]</label>
-                      <onclick>ActivateWindow(56)</onclick>
+                      <onclick>activatewindow(SkinSettings)</onclick>
                   </item>
                   <item id="2">
                       <description>Favorites</description>
@@ -1014,45 +1003,141 @@
             </control>
         </control>
 
+        <!-- <<< FEATURED PANEL -->
+        <control type="group">
+
+            <!-- ICONS AND HEADER -->
+            <control type="group">
+                <posx>12</posx>
+                <posy>452r</posy>
+                <animation type="Conditional" condition="Container(540).HasFocus(2) |
+                Container(540).HasFocus(14) | Container(540).HasFocus(3) |
+                Container(540).HasFocus(4) | Container(540).HasFocus(7) |
+                Container(540).HasFocus(8) | Container(540).HasFocus(9)" reversible="false">
+                    <effect type="fade" start="0" end="100" time="100" />
+                </animation>
+                <animation type="Conditional" condition="!Container(540).HasFocus(2) +
+                !Container(540).HasFocus(14) + !Container(540).HasFocus(3) +
+                !Container(540).HasFocus(4) + !Container(540).HasFocus(7) +
+                !Container(540).HasFocus(8) + !Container(540).HasFocus(9)" reversible="false">
+                    <effect type="fade" start="100" end="0" time="100" />
+                </animation>
+
+                <control type="image">
+                    <width>32</width>
+                    <height>32</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/featuredicon.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                    <visible>Container(540).HasFocus(2) | Container(540).HasFocus(14) |
+                        Container(540).HasFocus(3) | Container(540).HasFocus(4) |
+                        Container(540).HasFocus(8)</visible>
+                </control>
+                <control type="image">
+                    <width>32</width>
+                    <height>32</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/currentweathericon.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                    <visible>Container(540).HasFocus(7)</visible>
+                </control>
+                <control type="image">
+                    <width>32</width>
+                    <height>32</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/spaceicon.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                    <visible>Container(540).HasFocus(9)</visible>
+                </control>
+
+                <control type="label">
+                    <posx>39</posx>
+                    <posy>448r</posy>
+                    <width>250</width>
+                    <height>32</height>
+                    <font>recent</font>
+                    <textcolor>ffa0a0a0</textcolor>
+                    <align>left</align>
+                    <label>[LOWERCASE]$LOCALIZE[31696][/LOWERCASE]</label>
+                    <visible>Container(540).HasFocus(2) | Container(540).HasFocus(14)</visible>
+                </control>
+                <control type="label">
+                    <posx>39</posx>
+                    <posy>448r</posy>
+                    <width>250</width>
+                    <height>32</height>
+                    <font>recent</font>
+                    <textcolor>ffa0a0a0</textcolor>
+                    <align>left</align>
+                    <label>[LOWERCASE]$LOCALIZE[31697][/LOWERCASE]</label>
+                    <visible>Container(540).HasFocus(3)</visible>
+                </control>
+                <control type="label">
+                    <posx>39</posx>
+                    <posy>448r</posy>
+                    <width>250</width>
+                    <height>32</height>
+                    <font>recent</font>
+                    <textcolor>ffa0a0a0</textcolor>
+                    <align>left</align>
+                    <label>[LOWERCASE]$LOCALIZE[31698][/LOWERCASE]</label>
+                    <visible>Container(540).HasFocus(4)</visible>
+                </control>
+                <control type="label">
+                    <posx>39</posx>
+                    <posy>448r</posy>
+                    <width>200</width>
+                    <height>32</height>
+                    <font>recent</font>
+                    <textcolor>ffa0a0a0</textcolor>
+                    <align>left</align>
+                    <label>[LOWERCASE]$LOCALIZE[31712][/LOWERCASE]</label>
+                    <visible>Container(540).HasFocus(7)</visible>
+                </control>
+                <control type="label">
+                    <posx>39</posx>
+                    <posy>448r</posy>
+                    <width>250</width>
+                    <height>32</height>
+                    <font>recent</font>
+                    <textcolor>ffa0a0a0</textcolor>
+                    <align>left</align>
+                    <label>[LOWERCASE]$LOCALIZE[31699][/LOWERCASE]</label>
+                    <visible>Container(540).HasFocus(8)</visible>
+                </control>
+                <control type="label">
+                    <posx>39</posx>
+                    <posy>448r</posy>
+                    <width>200</width>
+                    <height>32</height>
+                    <font>recent</font>
+                    <textcolor>ffa0a0a0</textcolor>
+                    <align>left</align>
+                    <label>[LOWERCASE]$LOCALIZE[31711][/LOWERCASE]</label>
+                    <visible>Container(540).HasFocus(9)</visible>
+                </control>
+            </control>
+
+            <!-- CONTENT -->
+            <include>FeaturedMovie</include>
+            <include>FeaturedEpisode</include>
+            <include>FeaturedAlbum</include>
+
+        </control>
+
         <!-- BOTTOM LEFT INFO PANEL -->
         <control type="group">
-            <description>Library Totals</description>
-            <posy>534</posy>
-            <animation type="Visible" condition="Container(540).HasFocus(2) | Container(540).HasFocus(13) | Container(540).HasFocus(14) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(9)" reversible="false">
-                <effect type="fade" start="0" end="100" time="100" />
-            </animation>
-            <animation type="Hidden" reversible="false">
-                <effect type="fade" start="100" end="0" time="100" />
-            </animation>
+            <description>Info panel</description>
+            <posy>538</posy>
             <include>RecentlyAddedExtraNavAnimation</include>
-            <visible>Container(540).HasFocus(2) | Container(540).HasFocus(13) | Container(540).HasFocus(14) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(9)</visible>
             <visible>!Player.HasMedia</visible>
             <visible>Skin.HasSetting(HomeTotals)</visible>
-            <visible>!Container(540).HasFocus(7)</visible>
 
+            <!-- STATIC PANEL -->
             <control type="image">
-                <posx>15</posx>
-                <posy>0</posy>
-                <width>32</width>
-                <height>32</height>
-                <aspectratio>stretch</aspectratio>
-                <texture border="12">Home/extras/libraryicon.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-            </control>
-            <control type="label">
-                <posx>55</posx>
-                <posy>7</posy>
-                <width>500</width>
-                <height>20</height>
-                <align>left</align>
-                <font>recent</font>
-                <textcolor>ffa0a0a0</textcolor>
-                <label fallback="-">library totals</label>
-            </control>
-            <control type="image">
-                <posx>15</posx>
+                <posx>14</posx>
                 <posy>33</posy>
-                <width>484</width>
+                <width>485</width>
                 <height>136</height>
                 <aspectratio>stretch</aspectratio>
                 <texture border="12">whitepanel2.png</texture>
@@ -1066,13 +1151,37 @@
                 <aspectratio>stretch</aspectratio>
                 <texture>white.png</texture>
                 <colordiffuse>24ffffff</colordiffuse>
+                <visible>!Container(540).HasFocus(7)</visible>
             </control>
 
-            <!--LIBRARY TOTALS-->
+            <!-- LIBRARY TOTALS -->
             <control type="group">
-                <posx>42</posx>
-                <posy>58</posy>
+                <posx>39</posx>
+                <posy>59</posy>
                 <visible>!Container(540).HasFocus(7)</visible>
+                <!-- HEADER -->
+                <control type="image">
+                    <posx>-25</posx>
+                    <posy>-59</posy>
+                    <width>32</width>
+                    <height>32</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture border="12">Home/extras/libraryicon.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                    <visible>!Container(540).HasFocus(7)</visible>
+                </control>
+                <control type="label">
+                    <posx>14</posx>
+                    <posy>-49</posy>
+                    <width>500</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>recent</font>
+                    <textcolor>ffa0a0a0</textcolor>
+                    <label fallback="-">library totals</label>
+                    <visible>!Container(540).HasFocus(7)</visible>
+                </control>
+                <!-- /HEADER -->
                 <control type="label">
                     <width>500</width>
                     <height>20</height>
@@ -1080,7 +1189,7 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Movies.Count),, movies]</label>
-                    <visible>!Player.HasMedia + [Container(540).HasFocus(2) | Container(540).HasFocus(14)]</visible>
+                    <visible>Container(540).HasFocus(2) | Container(540).HasFocus(14)</visible>
                 </control>
                 <control type="label">
                     <posy>30</posy>
@@ -1090,7 +1199,7 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Movies.Watched),, watched]</label>
-                    <visible>!Player.HasMedia + [Container(540).HasFocus(2) | Container(540).HasFocus(14)]</visible>
+                    <visible>Container(540).HasFocus(2) | Container(540).HasFocus(14)</visible>
                 </control>
                 <control type="label">
                     <posy>60</posy>
@@ -1100,7 +1209,7 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Movies.Unwatched),, unwatched]</label>
-                    <visible>!Player.HasMedia + [Container(540).HasFocus(2) | Container(540).HasFocus(14)]</visible>
+                    <visible>Container(540).HasFocus(2) | Container(540).HasFocus(14)</visible>
                 </control>
                 <control type="label">
                     <posy>0</posy>
@@ -1110,7 +1219,7 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(TVShows.Count),, tv shows]</label>
-                    <visible>!Player.HasMedia + Container(540).HasFocus(3)</visible>
+                    <visible>Container(540).HasFocus(3)</visible>
                 </control>
                 <control type="label">
                     <posy>30</posy>
@@ -1120,7 +1229,7 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Episodes.Count),, episodes]</label>
-                    <visible>!Player.HasMedia + Container(540).HasFocus(3)</visible>
+                    <visible>Container(540).HasFocus(3)</visible>
                 </control>
                 <control type="label">
                     <posy>60</posy>
@@ -1130,7 +1239,7 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Episodes.Unwatched),, unwatched]</label>
-                    <visible>!Player.HasMedia + Container(540).HasFocus(3)</visible>
+                    <visible>Container(540).HasFocus(3)</visible>
                 </control>
                 <control type="label">
                     <posy>0</posy>
@@ -1140,7 +1249,7 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Movies.Count),, movies]</label>
-                    <visible>!Player.HasMedia + [Container(540).HasFocus(4) | Container(540).HasFocus(9)]</visible>
+                    <visible>!Container(540).HasFocus(2) + !Container(540).HasFocus(3)</visible>
                 </control>
                 <control type="label">
                     <posy>30</posy>
@@ -1150,7 +1259,7 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(TVShows.Count),, tv shows]</label>
-                    <visible>!Player.HasMedia + [Container(540).HasFocus(4) | Container(540).HasFocus(9)]</visible>
+                    <visible>!Container(540).HasFocus(2) + !Container(540).HasFocus(3)</visible>
                 </control>
                 <control type="label">
                     <posy>60</posy>
@@ -1160,10 +1269,10 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Episodes.Count),, episodes]</label>
-                    <visible>!Player.HasMedia + [Container(540).HasFocus(4) | Container(540).HasFocus(9)]</visible>
+                    <visible>!Container(540).HasFocus(2) + !Container(540).HasFocus(3)</visible>
                 </control>
                 <control type="label">
-                    <posx>257</posx>
+                    <posx>240</posx>
                     <posy>0</posy>
                     <width>500</width>
                     <height>20</height>
@@ -1171,10 +1280,9 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Music.ArtistsCount),, artists]</label>
-                    <visible>!Player.HasMedia</visible>
                 </control>
                 <control type="label">
-                    <posx>257</posx>
+                    <posx>240</posx>
                     <posy>30</posy>
                     <width>500</width>
                     <height>20</height>
@@ -1182,10 +1290,9 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Music.AlbumsCount),, albums]</label>
-                    <visible>!Player.HasMedia</visible>
                 </control>
                 <control type="label">
-                    <posx>257</posx>
+                    <posx>240</posx>
                     <posy>60</posy>
                     <width>500</width>
                     <height>20</height>
@@ -1193,25 +1300,16 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Music.SongsCount),, songs]</label>
-                    <visible>!Player.HasMedia</visible>
                 </control>
             </control>
 
             <!-- WEATHER INFO -->
             <control type="group">
-                <animation type="Visible" condition="Container(540).HasFocus(7)" reversible="false">
-                    <effect type="fade" start="0" end="100" time="100" />
-                </animation>
-                <animation type="Hidden" reversible="false">
-                    <effect type="fade" start="100" end="0" time="100" />
-                </animation>
                 <visible>Container(540).HasFocus(7)</visible>
-                <visible>!Player.HasMedia</visible>
-                <visible>Skin.HasSetting(HomeTotals)</visible>
-
+                <!-- HEADER -->
                 <control type="image">
-                    <posx>15</posx>
-                    <posy>961</posy>
+                    <posx>14</posx>
+                    <posy>0</posy>
                     <width>32</width>
                     <height>32</height>
                     <aspectratio>stretch</aspectratio>
@@ -1219,8 +1317,8 @@
                     <colordiffuse>ffffffff</colordiffuse>
                 </control>
                 <control type="label">
-                    <posx>55</posx>
-                    <posy>968</posy>
+                    <posx>54</posx>
+                    <posy>10</posy>
                     <width>500</width>
                     <height>20</height>
                     <align>left</align>
@@ -1228,69 +1326,43 @@
                     <textcolor>ffa0a0a0</textcolor>
                     <label fallback="-">weather info</label>
                 </control>
-                <control type="image">
-                    <posx>15</posx>
-                    <posy>993</posy>
-                    <width>484</width>
-                    <height>132</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture border="12">whitepanel2.png</texture>
-                    <colordiffuse>0effffff</colordiffuse>
-                </control>
-
-                <!-- CONTENT -->
+                <!-- /HEADER -->
                 <control type="group">
-                    <posx>45</posx>
-                    <posy>28</posy>
+                    <posx>40</posx>
+                    <posy>59</posy>
                     <control type="label">
-                        <posx>7</posx>
-                        <posy>990</posy>
+                        <posy>0</posy>
                         <width>500</width>
                         <height>20</height>
                         <align>left</align>
                         <font>homemenu3</font>
                         <textcolor>ff7777777</textcolor>
                         <label fallback="-">• updated $INFO[Window(Weather).Property(Updated)]</label>
-                        <visible>!Player.HasMedia + Container(540).HasFocus(7)</visible>
                     </control>
                     <control type="label">
-                        <posx>7</posx>
-                        <posy>1020</posy>
+                        <posy>30</posy>
                         <width>500</width>
                         <height>20</height>
                         <align>left</align>
                         <font>homemenu3</font>
                         <textcolor>ff7777777</textcolor>
                         <label fallback="-">• location is [LOWERCASE]$INFO[Window(Weather).Property(Location)][/LOWERCASE]</label>
-                        <visible>!Player.HasMedia + Container(540).HasFocus(7)</visible>
                     </control>
                     <control type="label">
-                        <posx>7</posx>
-                        <posy>1050</posy>
+                        <posy>60</posy>
                         <width>500</width>
                         <height>20</height>
                         <align>left</align>
                         <font>homemenu3</font>
                         <textcolor>ff7777777</textcolor>
-                        <label fallback="-">• using built-in xbmc weather add-on</label>
-                        <visible>!Player.HasMedia + Container(540).HasFocus(7) + !system.hasaddon(weather.weatherplus)</visible>
-                    </control>
-                    <control type="label">
-                        <posx>7</posx>
-                        <posy>1050</posy>
-                        <width>500</width>
-                        <height>20</height>
-                        <align>left</align>
-                        <font>homemenu3</font>
-                        <textcolor>ff7777777</textcolor>
-                        <label fallback="-">• using weather.plus add-on</label>
-                        <visible>!Player.HasMedia + Container(540).HasFocus(7) + system.hasaddon(weather.weatherplus)</visible>
+                        <label fallback="-">• provided by [LOWERCASE]$INFO[Window(Weather).Property(WeatherProvider)][/LOWERCASE]</label>
                     </control>
                 </control>
             </control>
+
         </control>
 
-        <!-- RECENTLY ADDED AND FEATURED -->
+        <!-- RECENTLY ADDED AND FEATURED (MOVIES, TVSHOWS, MUSIC, etc) -->
         <control type="group">
             <visible>Skin.HasSetting(HomeRecentlyAdded)</visible>
 
@@ -1389,1058 +1461,786 @@
                 <visible>Container(540).HasFocus(4)</visible>
             </control>
 
-            <!-- featured icon and text -->
-            <control type="image">
-                <posx>15</posx>
-                <posy>452r</posy>
-                <width>32</width>
-                <height>32</height>
-                <aspectratio>stretch</aspectratio>
-                <texture>Home/extras/featuredicon.png</texture>
-                <colordiffuse>ffffffff</colordiffuse>
-                <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(14) | Container(540).HasFocus(3) | Container(540).HasFocus(4)" reversible="false">
-                    <effect type="fade" start="0" end="100" time="250" />
-                </animation>
-                <animation type="Hidden" reversible="false">
-                    <effect type="fade" start="100" end="0" time="250" />
-                </animation>
-                <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-                <animation type="WindowClose" reversible="false">
-                    <effect type="fade" start="100" end="0" time="200" />
-                </animation>
-                <visible>Container(540).HasFocus(2) | Container(540).HasFocus(14) | Container(540).HasFocus(3) | Container(540).HasFocus(4)| Container(540).HasFocus(8)</visible>
-            </control>
-
-            <control type="label">
-                <posx>55</posx>
-                <posy>451r</posy>
-                <width>250</width>
-                <height>32</height>
-                <font>recent</font>
-                <textcolor>ffa0a0a0</textcolor>
-                <align>left</align>
-                <label>[LOWERCASE]$LOCALIZE[31696][/LOWERCASE]</label>
-                <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(14)" reversible="false">
-                    <effect type="fade" start="0" end="100" time="250" />
-                </animation>
-                <animation type="Hidden" reversible="false">
-                    <effect type="fade" start="100" end="0" time="250" />
-                </animation>
-                <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-                <animation type="WindowClose" reversible="false">
-                    <effect type="fade" start="100" end="0" time="200" />
-                </animation>
-                <visible>Container(540).HasFocus(2) | Container(540).HasFocus(14)</visible>
-            </control>
-
-            <control type="label">
-                <posx>55</posx>
-                <posy>451r</posy>
-                <width>250</width>
-                <height>32</height>
-                <font>recent</font>
-                <textcolor>ffa0a0a0</textcolor>
-                <align>left</align>
-                <label>[LOWERCASE]$LOCALIZE[31697][/LOWERCASE]</label>
-                <animation type="Conditional" condition="Container(540).HasFocus(3)" reversible="false">
-                    <effect type="fade" start="0" end="100" time="250" />
-                </animation>
-                <animation type="Hidden" reversible="false">
-                    <effect type="fade" start="100" end="0" time="250" />
-                </animation>
-                <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-                <animation type="WindowClose" reversible="false">
-                    <effect type="fade" start="100" end="0" time="200" />
-                </animation>
-                <visible>Container(540).HasFocus(3)</visible>
-            </control>
-
-            <control type="label">
-                <posx>55</posx>
-                <posy>451r</posy>
-                <width>250</width>
-                <height>32</height>
-                <font>recent</font>
-                <textcolor>ffa0a0a0</textcolor>
-                <align>left</align>
-                <label>[LOWERCASE]$LOCALIZE[31698][/LOWERCASE]</label>
-                <animation type="Conditional" condition="Container(540).HasFocus(4)" reversible="false">
-                    <effect type="fade" start="0" end="100" time="250" />
-                </animation>
-                <animation type="Hidden" reversible="false">
-                    <effect type="fade" start="100" end="0" time="250" />
-                </animation>
-                <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-                <animation type="WindowClose" reversible="false">
-                    <effect type="fade" start="100" end="0" time="200" />
-                </animation>
-                <visible>Container(540).HasFocus(4)</visible>
-            </control>
-
-            <control type="label">
-                <posx>55</posx>
-                <posy>451r</posy>
-                <width>250</width>
-                <height>32</height>
-                <font>recent</font>
-                <textcolor>ffa0a0a0</textcolor>
-                <align>left</align>
-                <label>[LOWERCASE]$LOCALIZE[31699][/LOWERCASE]</label>
-                <animation type="Conditional" condition="Container(540).HasFocus(4)" reversible="false">
-                    <effect type="fade" start="0" end="100" time="250" />
-                </animation>
-                <animation type="Hidden" reversible="false">
-                    <effect type="fade" start="100" end="0" time="250" />
-                </animation>
-                <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-                <animation type="WindowClose" reversible="false">
-                    <effect type="fade" start="100" end="0" time="200" />
-                </animation>
-                <visible>Container(540).HasFocus(8)</visible>
-            </control>
             <include>RecentlyAddedMovies</include>
             <include>RecentlyAddedEpisodes</include>
             <include>RecentlyAddedAlbums</include>
             <include>RecentlyAddedAddons</include>
 
-            <!-- Recently Added and Featured Items -->
+        </control>
+
+        <!-- SYSTEM INFO (SETTINGS) -->
+        <control type="group">
+            <visible>Skin.HasSetting(HomeSystemInfo)</visible>
             <control type="image">
-                <posx>500</posx>
-                <posy>500</posy>
-                <width>320</width>
-                <height>180</height>
-                <texture background="true">$INFO[Container(1).ListItem.Property(FanartImage)]</texture>
-                <fadetime>600</fadetime>
+                <posx>500r</posx>
+                <posy>451r</posy>
+                <width>32</width>
+                <height>32</height>
+                <aspectratio>stretch</aspectratio>
+                <texture>Home/extras/systemicon.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(9)" reversible="false">
+                    <effect type="fade" start="0" end="100" time="250" />
+                </animation>
+                <animation type="Hidden" reversible="false">
+                    <effect type="fade" start="100" end="0" time="250" />
+                </animation>
+                <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
+                <animation type="WindowClose" reversible="false">
+                    <effect type="fade" start="100" end="0" time="200" />
+                </animation>
+                <visible>Container(540).HasFocus(9)</visible>
             </control>
+
+            <control type="label">
+                <posx>460r</posx>
+                <posy>451r</posy>
+                <width>200</width>
+                <height>32</height>
+                <font>recent</font>
+                <textcolor>ffa0a0a0</textcolor>
+                <align>left</align>
+                <label>[LOWERCASE]$LOCALIZE[31675][/LOWERCASE]</label>
+                <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(9)" reversible="false">
+                    <effect type="fade" start="0" end="100" time="250" />
+                </animation>
+                <animation type="Hidden" reversible="false">
+                    <effect type="fade" start="100" end="0" time="250" />
+                </animation>
+                <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
+                <animation type="WindowClose" reversible="false">
+                    <effect type="fade" start="100" end="0" time="200" />
+                </animation>
+                <visible>Container(540).HasFocus(9)</visible>
+            </control>
+
+            <control type="group">
+                <posx>800</posx>
+                <posy>326</posy>
+                <animation type="Visible" condition="Container(540).HasFocus(9)" reversible="false">
+                    <effect type="fade" start="0" end="100" time="250" />
+                </animation>
+                <animation type="Hidden" reversible="false">
+                    <effect type="fade" start="100" end="0" time="250" />
+                </animation>
+                <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
+                <animation type="WindowClose" reversible="false">
+                    <effect type="fade" start="100" end="0" time="200" />
+                </animation>
+                <visible>Container(540).HasFocus(9)</visible>
+
+                <control type="image">
+                    <posx>-20</posx>
+                    <posy>-17</posy>
+                    <width>484</width>
+                    <height>338</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture border="12">whitepanel2.png</texture>
+                    <colordiffuse>0effffff</colordiffuse>
+                </control>
+
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>460</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <scroll>false</scroll>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31700][/COLOR] $INFO[System.Date][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>40</posy>
+                    <width>460</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <scroll>false</scroll>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31701][/COLOR] $INFO[System.Uptime][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>80</posy>
+                    <width>460</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <visible>SubString(System.ScreenResolution,1920x1080)</visible>
+                    <label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31702][/COLOR] $LOCALIZE[31703][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>80</posy>
+                    <width>460</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <visible>SubString(System.ScreenResolution,1280x720)</visible>
+                    <label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31702][/COLOR] $LOCALIZE[31704][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>80</posy>
+                    <width>460</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <visible>!SubString(System.ScreenResolution,1280x720) + !SubString(System.ScreenResolution,1920x1080)</visible>
+                    <label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31702][/COLOR] [COLOR red]$LOCALIZE[31705][/COLOR] $INFO[System.ScreenWidth]x$INFO[System.ScreenHeight][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>120</posy>
+                    <width>460</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <scroll>false</scroll>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31706][/COLOR] $INFO[System.FPS][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>160</posy>
+                    <width>460</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <scroll>false</scroll>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31707][/COLOR] $INFO[System.CpuFrequency][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>200</posy>
+                    <width>460</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <scroll>false</scroll>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31708][/COLOR] $INFO[System.FreeMemory][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>240</posy>
+                    <width>460</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <scroll>false</scroll>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31709][/COLOR] $INFO[System.BuildVersion][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>280</posy>
+                    <width>360</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <textcolor>ff7777777</textcolor>
+                    <wrapmultiline>true</wrapmultiline>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31710][/COLOR][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>90</posx>
+                    <posy>280</posy>
+                    <width>360</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <textcolor>ff7777777</textcolor>
+                    <scroll>true</scroll>
+                    <scrollspeed>50</scrollspeed>
+                    <scrollsuffix>-</scrollsuffix>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">[LOWERCASE]$INFO[System.InternetState] [/LOWERCASE]</label>
+                </control>
+            </control>
+
+            <!-- Storage Space Info on Settings Home -->
+            <control type="group">
+                <posx>35</posx>
+                <posy>326</posy>
+                <animation type="Conditional" condition="Container(540).HasFocus(9)" reversible="false">
+                    <effect type="fade" start="0" end="100" time="250" />
+                </animation>
+                <animation type="Hidden" reversible="false">
+                    <effect type="fade" start="100" end="0" time="250" />
+                </animation>
+                <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
+                <animation type="WindowClose" reversible="false">
+                    <effect type="fade" start="100" end="0" time="200" />
+                </animation>
+                <visible>Container(540).HasFocus(9)</visible>
+
+                <control type="image">
+                    <posx>-20</posx>
+                    <posy>-17</posy>
+                    <width>484</width>
+                    <height>220</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture border="12">whitepanel2.png</texture>
+                    <colordiffuse>0effffff</colordiffuse>
+                </control>
+
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>500</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">$LOCALIZE[31618] [LOWERCASE]$INFO[System.UsedSpacePercent][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>40</posy>
+                    <width>500</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">$LOCALIZE[31618] [LOWERCASE]$INFO[System.FreeSpacePercent][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>80</posy>
+                    <width>500</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">$LOCALIZE[31618] [LOWERCASE]$INFO[System.TotalSpace][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>120</posy>
+                    <width>500</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">$LOCALIZE[31618] [LOWERCASE]$INFO[System.UsedSpace][/LOWERCASE]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>160</posy>
+                    <width>500</width>
+                    <height>20</height>
+                    <align>left</align>
+                    <font>homemenu3</font>
+                    <textcolor>ff7777777</textcolor>
+                    <visible>Container(540).HasFocus(9)</visible>
+                    <label fallback="-">$LOCALIZE[31618] [LOWERCASE]$INFO[System.FreeSpace][/LOWERCASE]</label>
+                </control>
+            </control>
+        </control>
+
+        <!-- WEATHER INFO (WEATHER) -->
+        <control type="group">
+            <visible>Skin.HasSetting(HomeWeatherInfo)</visible>
+            <visible>Container(540).HasFocus(7)</visible>
+            <animation type="Conditional" condition="Container(540).HasFocus(7)" reversible="false">
+                <effect type="fade" start="0" end="100" time="250" />
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" start="100" end="0" time="250" />
+            </animation>
+            <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+
+            <!-- CURRENT WEATHER (LEFT) -->
+            <control type="group">
+
+                <!-- INFO -->
+                <control type="group">
+                    <posx>35</posx>
+                    <posy>323</posy>
+                    <control type="image">
+                        <posx>-20</posx>
+                        <posy>-17</posy>
+                        <width>485</width>
+                        <height>220</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture border="12">whitepanel2.png</texture>
+                        <colordiffuse>0effffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <description>current weather icon</description>
+                        <posx>10</posx>
+                        <posy>5</posy>
+                        <height>180</height>
+                        <width>180</width>
+                        <texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+                        <visible>!Skin.HasSetting(weatherwindowanimated)</visible>
+                    </control>
+                    <control type="label">
+                        <description>current temp value</description>
+                        <posx>220</posx>
+                        <posy>25</posy>
+                        <width>300</width>
+                        <height>30</height>
+                        <font>weatherlarge</font>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[Window(Weather).Property(Current.Temperature)][COLOR=BBE0E0E0]$INFO[System.TemperatureUnits][/COLOR]</label>
+                        <textcolor>ffffffff</textcolor>
+                    </control>
+                    <control type="label">
+                        <description>conditions label</description>
+                        <posx>220</posx>
+                        <posy>85</posy>
+                        <width>250</width>
+                        <info>Window(Weather).Property(Day0.Outlook)</info>
+                        <font>context</font>
+                        <align>left</align>
+                        <textcolor>dfDDDDDD</textcolor>
+                    </control>
+                    <control type="label">
+                        <posx>220</posx>
+                        <posy>130</posy>
+                        <width>500</width>
+                        <height>20</height>
+                        <align>left</align>
+                        <font>homemenu3</font>
+                        <textcolor>ffffffff</textcolor>
+                        <label fallback="-">[COLOR=BBE0E0E0]$LOCALIZE[31713][/COLOR] $INFO[Window(Weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits]</label>
+                    </control>
+                    <control type="label">
+                        <posx>220</posx>
+                        <posy>160</posy>
+                        <width>500</width>
+                        <height>20</height>
+                        <align>left</align>
+                        <font>homemenu3</font>
+                        <textcolor>ffffffff</textcolor>
+                        <label fallback="-">[COLOR=BBE0E0E0]$LOCALIZE[31714][/COLOR] $INFO[Window(Weather).Property(Current.Humidity)]</label>
+                    </control>
+                </control>
+            </control>
+
+            <!-- FUTURE WEATHER (RIGHT) -->
+            <control type="group">
+                <posx>504r</posx>
+                <!-- HEADER -->
+                <control type="image">
+                    <posx>2</posx>
+                    <posy>450r</posy>
+                    <width>32</width>
+                    <height>32</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/futureweathericon.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>460r</posx>
+                    <posy>447r</posy>
+                    <width>260</width>
+                    <height>32</height>
+                    <font>recent</font>
+                    <textcolor>ffa0a0a0</textcolor>
+                    <align>left</align>
+                    <label>[LOWERCASE]$LOCALIZE[31715][/LOWERCASE]</label>
+                </control>
+                <!-- DAY0 INFO -->
+                <control type="group">
+                    <describtion>Day 0 Info</describtion>
+                    <posy>305</posy>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>492</width>
+                        <height>104</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>Home/extras/recentnf.png</texture>
+                        <colordiffuse>ffffffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>19</posx>
+                        <posy>12</posy>
+                        <width>75</width>
+                        <height>75</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>
+                        <colordiffuse>ffffffff</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>105</posx>
+                        <posy>12</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>homemenu3</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$INFO[Window(Weather).Property(Day0.Title)]</label>
+                        <scroll>false</scroll>
+                    </control>
+                    <control type="label">
+                        <posx>106</posx>
+                        <posy>35</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>recent2</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$LOCALIZE[31716] [COLOR=White]$INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits][/COLOR] $LOCALIZE[31717] [COLOR=White]$INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <posx>106</posx>
+                        <posy>55</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>recent2</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$INFO[Window(Weather).Property(Day0.Outlook)]</label>
+                    </control>
+                </control>
+                <!-- DAY1 INFO -->
+                <control type="group">
+                    <describtion>Day 1 Info</describtion>
+                    <posy>405</posy>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>492</width>
+                        <height>104</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>Home/extras/recentnf.png</texture>
+                        <colordiffuse>ffffffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>19</posx>
+                        <posy>12</posy>
+                        <width>75</width>
+                        <height>75</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>
+                        <colordiffuse>ffffffff</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>105</posx>
+                        <posy>12</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>homemenu3</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$INFO[Window(Weather).Property(Day1.Title)]</label>
+                        <scroll>false</scroll>
+                    </control>
+                    <control type="label">
+                        <posx>106</posx>
+                        <posy>35</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>recent2</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$LOCALIZE[31716] [COLOR=White]$INFO[Window(Weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits][/COLOR] $LOCALIZE[31717] [COLOR=White]$INFO[Window(Weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <posx>106</posx>
+                        <posy>55</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>recent2</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$INFO[Window(Weather).Property(Day1.Outlook)]</label>
+                    </control>
+                </control>
+                <!-- DAY2 INFO -->
+                <control type="group">
+                    <describtion>Day 2 Info</describtion>
+                    <posy>505</posy>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>492</width>
+                        <height>104</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>Home/extras/recentnf.png</texture>
+                        <colordiffuse>ffffffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>19</posx>
+                        <posy>12</posy>
+                        <width>75</width>
+                        <height>75</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>
+                        <colordiffuse>ffffffff</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>105</posx>
+                        <posy>12</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>homemenu3</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$INFO[Window(Weather).Property(Day2.Title)]</label>
+                        <scroll>false</scroll>
+                    </control>
+                    <control type="label">
+                        <posx>106</posx>
+                        <posy>35</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>recent2</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$LOCALIZE[31716] [COLOR=White]$INFO[Window(Weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits][/COLOR] $LOCALIZE[31717] [COLOR=White]$INFO[Window(Weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <posx>106</posx>
+                        <posy>55</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>recent2</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$INFO[Window(Weather).Property(Day2.Outlook)]</label>
+                    </control>
+                </control>
+                <!-- DAY3 INFO -->
+                <control type="group">
+                    <describtion>Day 3 Info</describtion>
+                    <posy>605</posy>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>492</width>
+                        <height>104</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>Home/extras/recentnf.png</texture>
+                        <colordiffuse>ffffffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>19</posx>
+                        <posy>12</posy>
+                        <width>75</width>
+                        <height>75</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>
+                        <colordiffuse>ffffffff</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>105</posx>
+                        <posy>12</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>homemenu3</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$INFO[Window(Weather).Property(Day3.Title)]</label>
+                        <scroll>false</scroll>
+                    </control>
+                    <control type="label">
+                        <posx>106</posx>
+                        <posy>35</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>recent2</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$LOCALIZE[31716] [COLOR=White]$INFO[Window(Weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits][/COLOR] $LOCALIZE[31717] [COLOR=White]$INFO[Window(Weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <posx>106</posx>
+                        <posy>55</posy>
+                        <width>350</width>
+                        <height>35</height>
+                        <font>recent2</font>
+                        <textcolor>BBE0E0E0</textcolor>
+                        <align>left</align>
+                        <label>$INFO[Window(Weather).Property(Day3.Outlook)]</label>
+                    </control>
+                </control>
+            </control>
+        </control>
+
+        <!-- PLAY DISC LABEL (PLAY DISC) -->
+        <control type="image">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="200" delay="0" reversible="true"/>
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" start="0" end="100" time="200" delay="0" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="950"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>460</posy>
+            <width>1280</width>
+            <height>159</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>Home/menuback.png</texture>
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <visible>Container(540).HasFocus(12) + Skin.HasSetting(Disclabel)</visible>
+        </control>
+        <control type="image">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="200" delay="0" reversible="true"/>
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" start="0" end="100" time="200" delay="0" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="950"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>300</posy>
+            <width>1280</width>
+            <height>159</height>
+            <aspectratio>stretch</aspectratio>
+            <texture flipy="true">Home/menuback.png</texture>
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <visible>Container(540).HasFocus(12) + Skin.HasSetting(Disclabel)</visible>
+        </control>
+        <control type="label">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="200" delay="0" reversible="true"/>
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" start="0" end="100" time="200" delay="0" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="950"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>450</posy>
+            <width>1280</width>
+            <height>20</height>
+            <align>center</align>
+            <font>labeltitlehome</font>
+            <textcolor>time</textcolor>
+            <visible>Container(540).HasFocus(12) + Skin.HasSetting(Disclabel)</visible>
+            <label>$INFO[System.DVDLabel]</label>
         </control>
 
     </control>
 
-<!-- System Info on Settings Home -->
-<control type="group">
-				<visible>Skin.HasSetting(HomeSystemInfo)</visible>
-				  <control type="image">
-					  <posx>500r</posx>
-					  <posy>451r</posy>
-					  <width>32</width>
-					  <height>32</height>
-					  <aspectratio>stretch</aspectratio>
-					  <texture>Home/extras/systemicon.png</texture>
-					  <colordiffuse>ffffffff</colordiffuse>	
-					  <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(9)" reversible="false">
-						  <effect type="fade" start="0" end="100" time="250" />
-					  </animation>
-					  <animation type="Hidden" reversible="false">
-						  <effect type="fade" start="100" end="0" time="250" />
-					  </animation>					
-					  <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-					  <animation type="WindowClose" reversible="false">
-						  <effect type="fade" start="100" end="0" time="200" />
-					  </animation>	
-					  <visible>Container(540).HasFocus(9)</visible>			
-				  </control>
-				  
-				  <control type="label">
-					  <posx>460r</posx>
-					  <posy>451r</posy>
-					  <width>200</width>
-					  <height>32</height>
-					  <font>recent</font>
-					  <textcolor>ffa0a0a0</textcolor>
-					  <align>left</align>
-					  <label>[LOWERCASE]$LOCALIZE[31675][/LOWERCASE]</label>
-					  <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(9)" reversible="false">
-						  <effect type="fade" start="0" end="100" time="250" />
-					  </animation>
-					  <animation type="Hidden" reversible="false">
-						  <effect type="fade" start="100" end="0" time="250" />
-					  </animation>					
-					  <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-					  <animation type="WindowClose" reversible="false">
-						  <effect type="fade" start="100" end="0" time="200" />
-					  </animation>	
-					  <visible>Container(540).HasFocus(9)</visible>	
-				  </control>
-				  
-		<control type="group">
-				<posx>800</posx>
-				<posy>326</posy>
-				<animation type="Visible" condition="Container(540).HasFocus(9)" reversible="false">
-					<effect type="fade" start="0" end="100" time="250" />
-				</animation>
-				<animation type="Hidden" reversible="false">
-					<effect type="fade" start="100" end="0" time="250" />
-				</animation>					
-				<animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-				<visible>Container(540).HasFocus(9)</visible>
-		
-			<control type="image">
-				<posx>-20</posx>
-				<posy>-17</posy>
-				<width>484</width>
-				<height>338</height>
-				<aspectratio>stretch</aspectratio>
-				<texture border="12">whitepanel2.png</texture>
-				<colordiffuse>0effffff</colordiffuse>
-			</control>			
-		
-			<control type="label">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>460</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<scroll>false</scroll>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31700][/COLOR] $INFO[System.Date][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>40</posy>
-				<width>460</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<scroll>false</scroll>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31701][/COLOR] $INFO[System.Uptime][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>80</posy>
-				<width>460</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<visible>SubString(System.ScreenResolution,1920x1080)</visible>
-				<label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31702][/COLOR] $LOCALIZE[31703][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>80</posy>
-				<width>460</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<visible>SubString(System.ScreenResolution,1280x720)</visible>
-				<label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31702][/COLOR] $LOCALIZE[31704][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>80</posy>
-				<width>460</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<visible>!SubString(System.ScreenResolution,1280x720) + !SubString(System.ScreenResolution,1920x1080)</visible>
-				<label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31702][/COLOR] [COLOR red]$LOCALIZE[31705][/COLOR] $INFO[System.ScreenWidth]x$INFO[System.ScreenHeight][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>120</posy>
-				<width>460</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<scroll>false</scroll>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31706][/COLOR] $INFO[System.FPS][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>160</posy>
-				<width>460</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<scroll>false</scroll>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31707][/COLOR] $INFO[System.CpuFrequency][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>200</posy>
-				<width>460</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<scroll>false</scroll>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31708][/COLOR] $INFO[System.FreeMemory][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>240</posy>
-				<width>460</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<scroll>false</scroll>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31709][/COLOR] $INFO[System.BuildVersion][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>280</posy>
-				<width>360</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ff7777777</textcolor>
-				<wrapmultiline>true</wrapmultiline>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">[LOWERCASE][COLOR=ffa0a0a0]$LOCALIZE[31710][/COLOR][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>90</posx>
-				<posy>280</posy>
-				<width>360</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ff7777777</textcolor>
-				<scroll>true</scroll>
-				<scrollspeed>50</scrollspeed>
-				<scrollsuffix>-</scrollsuffix>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">[LOWERCASE]$INFO[System.InternetState] [/LOWERCASE]</label>
-			</control>
-			</control>
+    <!-- NOW PLAYING ICON AND TEXT -->
+    <control type="image">
+        <posx>15</posx>
+        <posy>179r</posy>
+        <width>32</width>
+        <height>32</height>
+        <aspectratio>stretch</aspectratio>
+        <texture>Home/extras/nowplayingicon.png</texture>
+        <colordiffuse>ffffffff</colordiffuse>
+        <animation type="Visible" reversible="false">
+            <effect type="fade" start="0" end="100" time="250" />
+        </animation>
+        <animation type="Hidden" reversible="false">
+            <effect type="fade" start="100" end="0" time="250" />
+        </animation>
+        <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" start="100" end="0" time="200" />
+        </animation>
+        <visible>Player.HasMedia</visible>
+        <include>recentlyaddedextranavanimation</include>
+    </control>
 
-<!-- Storage Space Info on Settings Home -->	
-				  <control type="image">
-					  <posx>15</posx>
-					  <posy>451r</posy>
-					  <width>32</width>
-					  <height>32</height>
-					  <aspectratio>stretch</aspectratio>
-					  <texture>Home/extras/spaceicon.png</texture>
-					  <colordiffuse>ffffffff</colordiffuse>	
-					  <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(9)" reversible="false">
-						  <effect type="fade" start="0" end="100" time="250" />
-					  </animation>
-					  <animation type="Hidden" reversible="false">
-						  <effect type="fade" start="100" end="0" time="250" />
-					  </animation>					
-					  <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-					  <animation type="WindowClose" reversible="false">
-						  <effect type="fade" start="100" end="0" time="200" />
-					  </animation>
-					  <visible>Container(540).HasFocus(9)</visible>			
-				  </control>
-				  
-				  <control type="label">
-					  <posx>55</posx>
-					  <posy>451r</posy>
-					  <width>200</width>
-					  <height>32</height>
-					  <font>recent</font>
-					  <textcolor>ffa0a0a0</textcolor>
-					  <align>left</align>
-					  <label>[LOWERCASE]$LOCALIZE[31711][/LOWERCASE]</label>
-					  <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(9)" reversible="false">
-						  <effect type="fade" start="0" end="100" time="250" />
-					  </animation>
-					  <animation type="Hidden" reversible="false">
-						  <effect type="fade" start="100" end="0" time="250" />
-					  </animation>					
-					  <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-					  <animation type="WindowClose" reversible="false">
-						  <effect type="fade" start="100" end="0" time="200" />
-					  </animation>
-					  <visible>Container(540).HasFocus(9)</visible>	
-				  </control>
+    <control type="label">
+        <posx>55</posx>
+        <posy>179r</posy>
+        <width>200</width>
+        <height>32</height>
+        <font>recent</font>
+        <textcolor>ffa0a0a0</textcolor>
+        <align>left</align>
+        <label>[LOWERCASE]$LOCALIZE[31718][/LOWERCASE]</label>
+        <animation type="Visible" reversible="false">
+            <effect type="fade" start="0" end="100" time="250" />
+        </animation>
+        <animation type="Hidden" reversible="false">
+            <effect type="fade" start="100" end="0" time="250" />
+        </animation>
+        <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" start="100" end="0" time="200" />
+        </animation>
+        <visible>Player.HasMedia</visible>
+        <include>recentlyaddedextranavanimation</include>
+    </control>
 
-		<control type="group">
-				<posx>35</posx>
-				<posy>326</posy>
-				<animation type="Conditional" condition="Container(540).HasFocus(9)" reversible="false">
-					<effect type="fade" start="0" end="100" time="250" />
-				</animation>
-				<animation type="Hidden" reversible="false">
-					<effect type="fade" start="100" end="0" time="250" />
-				</animation>					
-				<animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-				<visible>Container(540).HasFocus(9)</visible>
-				
-			<control type="image">
-				<posx>-20</posx>
-				<posy>-17</posy>
-				<width>484</width>
-				<height>220</height>
-				<aspectratio>stretch</aspectratio>
-				<texture border="12">whitepanel2.png</texture>
-				<colordiffuse>0effffff</colordiffuse>
-			</control>
-				
-			<control type="label">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>500</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">$LOCALIZE[31618] [LOWERCASE]$INFO[System.UsedSpacePercent][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>40</posy>
-				<width>500</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">$LOCALIZE[31618] [LOWERCASE]$INFO[System.FreeSpacePercent][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>80</posy>
-				<width>500</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">$LOCALIZE[31618] [LOWERCASE]$INFO[System.TotalSpace][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>120</posy>
-				<width>500</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">$LOCALIZE[31618] [LOWERCASE]$INFO[System.UsedSpace][/LOWERCASE]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>160</posy>
-				<width>500</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ff7777777</textcolor>
-				<visible>Container(540).HasFocus(9)</visible>
-				<label fallback="-">$LOCALIZE[31618] [LOWERCASE]$INFO[System.FreeSpace][/LOWERCASE]</label>
-			</control>
-			</control>
-		</control>
-			
-<!-- Current Weather Info on Weather Home -->
-<control type="group">
-				<visible>Skin.HasSetting(HomeWeatherInfo)</visible>
-				  <control type="image">
-					  <posx>15</posx>
-					  <posy>451r</posy>
-					  <width>32</width>
-					  <height>32</height>
-					  <aspectratio>stretch</aspectratio>
-					  <texture>Home/extras/currentweathericon.png</texture>
-					  <colordiffuse>ffffffff</colordiffuse>	
-					  <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(9)" reversible="false">
-						  <effect type="fade" start="0" end="100" time="250" />
-					  </animation>
-					  <animation type="Hidden" reversible="false">
-						  <effect type="fade" start="100" end="0" time="250" />
-					  </animation>					
-					  <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-					  <animation type="WindowClose" reversible="false">
-						  <effect type="fade" start="100" end="0" time="200" />
-					  </animation>
-					  <visible>Container(540).HasFocus(7)</visible>			
-				  </control>
-				  
-				  <control type="label">
-					  <posx>55</posx>
-					  <posy>451r</posy>
-					  <width>200</width>
-					  <height>32</height>
-					  <font>recent</font>
-					  <textcolor>ffa0a0a0</textcolor>
-					  <align>left</align>
-					  <label>[LOWERCASE]$LOCALIZE[31712][/LOWERCASE]</label>
-					  <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(9)" reversible="false">
-						  <effect type="fade" start="0" end="100" time="250" />
-					  </animation>
-					  <animation type="Hidden" reversible="false">
-						  <effect type="fade" start="100" end="0" time="250" />
-					  </animation>					
-					  <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-					  <animation type="WindowClose" reversible="false">
-						  <effect type="fade" start="100" end="0" time="200" />
-					  </animation>
-					  <visible>Container(540).HasFocus(7)</visible>	
-				  </control>
+    <!-- RSS FEED -->
+    <control type="image">
+        <posx>0</posx>
+        <posy>53</posy>
+        <width>1280</width>
+        <height>45</height>
+        <aspectratio>stretch</aspectratio>
+        <texture>Home/rssbar.png</texture>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" start="100" end="0" time="250" delay="200" />
+            <effect type="slide" start="0,0" end="0,-60" time="250" delay="0" />
+        </animation>
+        <animation type="WindowOpen" reversible="false">
+            <effect type="fade" start="100" end="100" time="250" delay="200" />
+            <effect type="slide" start="0,-60" end="0,0" time="250" delay="100" />
+        </animation>
+    </control>
+    <control type="rss">
+        <description>RSS Feed</description>
+        <posx>0</posx>
+        <posy>55.5</posy>
+        <width>1280</width>
+        <font>rss</font>
+        <urlset>1</urlset>
+        <titlecolor>RSStitle</titlecolor>
+        <headlinecolor>RSStext2</headlinecolor>
+        <textcolor>HomeMenuGrey</textcolor>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" start="100" end="0" time="250" delay="200" />
+            <effect type="slide" start="0,0" end="0,-60" time="250" delay="0" />
+        </animation>
+        <animation type="WindowOpen" reversible="false">
+            <effect type="fade" start="100" end="100" time="250" delay="200" />
+            <effect type="slide" start="0,-60" end="0,0" time="250" delay="100" />
+        </animation>
+    </control>
 
-		<control type="group">
-				<posx>35</posx>
-				<posy>323</posy>
-				<animation type="Conditional" condition="Container(540).HasFocus(7)" reversible="false">
-					<effect type="fade" start="0" end="100" time="250" />
-				</animation>
-				<animation type="Hidden" reversible="false">
-					<effect type="fade" start="100" end="0" time="250" />
-				</animation>					
-				<animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-				<visible>Container(540).HasFocus(7)</visible>
-				
-			<control type="image">
-				<posx>-20</posx>
-				<posy>-17</posy>
-				<width>484</width>
-				<height>220</height>
-				<aspectratio>stretch</aspectratio>
-				<texture border="12">whitepanel2.png</texture>
-				<colordiffuse>0effffff</colordiffuse>
-			</control>
-			
-			<control type="image">
-				<description>current weather icon</description>
-				<posx>10</posx>
-				<posy>5</posy>
-				<height>180</height>
-				<width>180</width>
-				<texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
-				<visible>!Skin.HasSetting(weatherwindowanimated)</visible>
-			</control>
-			<control type="label">
-				<description>current temp value</description>
-				<posx>220</posx>
-				<posy>25</posy>
-				<width>300</width>
-				<height>30</height>
-				<font>weatherlarge</font>
-				<align>left</align>
-				<aligny>center</aligny>
-				<label>$INFO[Window(Weather).Property(Current.Temperature)][COLOR=BBE0E0E0]$INFO[System.TemperatureUnits][/COLOR]</label>
-				<textcolor>ffffffff</textcolor>
-			</control>	
-			<control type="label">
-				<description>conditions label</description>
-				<posx>220</posx>
-				<posy>85</posy>
-				<width>250</width>
-				<info>Window(Weather).Property(Day0.Outlook)</info>
-				<font>context</font>
-				<align>left</align>
-				<textcolor>dfDDDDDD</textcolor>
-			</control>	
-			
-			<control type="label">
-				<posx>220</posx>
-				<posy>130</posy>
-				<width>500</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ffffffff</textcolor>
-				<label fallback="-">[COLOR=BBE0E0E0]$LOCALIZE[31713][/COLOR] $INFO[Window(Weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits]</label>
-			</control>
-			<control type="label">
-				<posx>220</posx>
-				<posy>160</posy>
-				<width>500</width>
-				<height>20</height>
-				<align>left</align>
-				<font>homemenu3</font>
-				<textcolor>ffffffff</textcolor>
-				<label fallback="-">[COLOR=BBE0E0E0]$LOCALIZE[31714][/COLOR] $INFO[Window(Weather).Property(Current.Humidity)]</label>
-			</control>
-			</control>
-			
-<!-- Future Weather Info on Weather Home -->	
-				  <control type="image">
-					  <posx>500r</posx>
-					  <posy>451r</posy>
-					  <width>32</width>
-					  <height>32</height>
-					  <aspectratio>stretch</aspectratio>
-					  <texture>Home/extras/futureweathericon.png</texture>
-					  <colordiffuse>ffffffff</colordiffuse>	
-					  <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(9)" reversible="false">
-						  <effect type="fade" start="0" end="100" time="250" />
-					  </animation>
-					  <animation type="Hidden" reversible="false">
-						  <effect type="fade" start="100" end="0" time="250" />
-					  </animation>					
-					  <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-					  <animation type="WindowClose" reversible="false">
-						  <effect type="fade" start="100" end="0" time="200" />
-					  </animation>	
-					  <visible>Container(540).HasFocus(7)</visible>			
-				  </control>
-				  
-				  <control type="label">
-					  <posx>460r</posx>
-					  <posy>451r</posy>
-					  <width>260</width>
-					  <height>32</height>
-					  <font>recent</font>
-					  <textcolor>ffa0a0a0</textcolor>
-					  <align>left</align>
-					  <label>[LOWERCASE]$LOCALIZE[31715][/LOWERCASE]</label>
-					  <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(9)" reversible="false">
-						  <effect type="fade" start="0" end="100" time="250" />
-					  </animation>
-					  <animation type="Hidden" reversible="false">
-						  <effect type="fade" start="100" end="0" time="250" />
-					  </animation>					
-					  <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-					  <animation type="WindowClose" reversible="false">
-						  <effect type="fade" start="100" end="0" time="200" />
-					  </animation>	
-					  <visible>Container(540).HasFocus(7)</visible>	
-				  </control>
-				  
-		<control type="group">
-		<describtion>Day 0 Info</describtion>
-				<posx>780</posx>
-				<posy>310</posy>
-				<animation type="Conditional" condition="Container(540).HasFocus(7)" reversible="false">
-					<effect type="fade" start="0" end="100" time="250" />
-				</animation>
-				<animation type="Hidden" reversible="false">
-					<effect type="fade" start="100" end="0" time="250" />
-				</animation>					
-				<animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-				<visible>Container(540).HasFocus(7)</visible>
-		
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>484</width>
-                    <height>104</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture>Home/extras/recentnf.png</texture>
-                    <colordiffuse>ffffffff</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>19</posx>
-                    <posy>12</posy>
-                    <width>75</width>
-                    <height>75</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>
-                    <colordiffuse>ffffffff</colordiffuse>
-                </control>
-                <control type="label">
-                    <posx>105</posx>
-                    <posy>12</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>homemenu3</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$INFO[Window(Weather).Property(Day0.Title)]</label>
-					<scroll>false</scroll>
-                </control>
-                <control type="label">
-                    <posx>106</posx>
-                    <posy>35</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>recent2</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$LOCALIZE[31716] [COLOR=White]$INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits][/COLOR] $LOCALIZE[31717] [COLOR=White]$INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
-                </control>
-                <control type="label">
-                    <posx>106</posx>
-                    <posy>55</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>recent2</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$INFO[Window(Weather).Property(Day0.Outlook)]</label>
-                </control>
-			</control>
-			
-		<control type="group">
-		<describtion>Day 1 Info</describtion>
-				<posx>780</posx>
-				<posy>410</posy>
-				<animation type="Conditional" condition="Container(540).HasFocus(7)" reversible="false">
-					<effect type="fade" start="0" end="100" time="250" />
-				</animation>
-				<animation type="Hidden" reversible="false">
-					<effect type="fade" start="100" end="0" time="250" />
-				</animation>					
-				<animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-				<visible>Container(540).HasFocus(7)</visible>
-		
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>484</width>
-                    <height>104</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture>Home/extras/recentnf.png</texture>
-                    <colordiffuse>ffffffff</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>19</posx>
-                    <posy>12</posy>
-                    <width>75</width>
-                    <height>75</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>
-                    <colordiffuse>ffffffff</colordiffuse>
-                </control>
-                <control type="label">
-                    <posx>105</posx>
-                    <posy>12</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>homemenu3</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$INFO[Window(Weather).Property(Day1.Title)]</label>
-					<scroll>false</scroll>
-                </control>
-                <control type="label">
-                    <posx>106</posx>
-                    <posy>35</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>recent2</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$LOCALIZE[31716] [COLOR=White]$INFO[Window(Weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits][/COLOR] $LOCALIZE[31717] [COLOR=White]$INFO[Window(Weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
-                </control>
-                <control type="label">
-                    <posx>106</posx>
-                    <posy>55</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>recent2</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$INFO[Window(Weather).Property(Day1.Outlook)]</label>
-                </control>
-			</control>
-			
-		<control type="group">
-		<describtion>Day 2 Info</describtion>
-				<posx>780</posx>
-				<posy>510</posy>
-				<animation type="Conditional" condition="Container(540).HasFocus(7)" reversible="false">
-					<effect type="fade" start="0" end="100" time="250" />
-				</animation>
-				<animation type="Hidden" reversible="false">
-					<effect type="fade" start="100" end="0" time="250" />
-				</animation>					
-				<animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-				<visible>Container(540).HasFocus(7)</visible>
-		
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>484</width>
-                    <height>104</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture>Home/extras/recentnf.png</texture>
-                    <colordiffuse>ffffffff</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>19</posx>
-                    <posy>12</posy>
-                    <width>75</width>
-                    <height>75</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>
-                    <colordiffuse>ffffffff</colordiffuse>
-                </control>
-                <control type="label">
-                    <posx>105</posx>
-                    <posy>12</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>homemenu3</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$INFO[Window(Weather).Property(Day2.Title)]</label>
-					<scroll>false</scroll>
-                </control>
-                <control type="label">
-                    <posx>106</posx>
-                    <posy>35</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>recent2</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$LOCALIZE[31716] [COLOR=White]$INFO[Window(Weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits][/COLOR] $LOCALIZE[31717] [COLOR=White]$INFO[Window(Weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
-                </control>
-                <control type="label">
-                    <posx>106</posx>
-                    <posy>55</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>recent2</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$INFO[Window(Weather).Property(Day2.Outlook)]</label>
-                </control>
-			</control>
-			
-		<control type="group">
-		<describtion>Day 3 Info</describtion>
-				<posx>780</posx>
-				<posy>610</posy>
-				<animation type="Conditional" condition="Container(540).HasFocus(7)" reversible="false">
-					<effect type="fade" start="0" end="100" time="250" />
-				</animation>
-				<animation type="Hidden" reversible="false">
-					<effect type="fade" start="100" end="0" time="250" />
-				</animation>					
-				<animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-				<visible>Container(540).HasFocus(7)</visible>
-		
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>484</width>
-                    <height>104</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture>Home/extras/recentnf.png</texture>
-                    <colordiffuse>ffffffff</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>19</posx>
-                    <posy>12</posy>
-                    <width>75</width>
-                    <height>75</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>
-                    <colordiffuse>ffffffff</colordiffuse>
-                </control>
-                <control type="label">
-                    <posx>105</posx>
-                    <posy>12</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>homemenu3</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$INFO[Window(Weather).Property(Day3.Title)]</label>
-					<scroll>false</scroll>
-                </control>
-                <control type="label">
-                    <posx>106</posx>
-                    <posy>35</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>recent2</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$LOCALIZE[31716] [COLOR=White]$INFO[Window(Weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits][/COLOR] $LOCALIZE[31717] [COLOR=White]$INFO[Window(Weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits][/COLOR]</label>
-                </control>
-                <control type="label">
-                    <posx>106</posx>
-                    <posy>55</posy>
-                    <width>350</width>
-                    <height>35</height>
-                    <font>recent2</font>
-                    <textcolor>BBE0E0E0</textcolor>
-                    <align>left</align>
-                    <label>$INFO[Window(Weather).Property(Day3.Outlook)]</label>
-                </control>
-			</control>
-			</control>
-			
-<!-- play disc label home -->	
-			<control type="image">
-				<animation type="Hidden">
-				<effect type="fade" start="100" end="0" time="200" delay="0" reversible="true"/>
-				</animation>
-				<animation type="Visible">
-				<effect type="fade" start="0" end="100" time="200" delay="0" reversible="true"/>
-				</animation>
-				<animation type="WindowOpen" reversible="false">
-				<effect type="fade" start="0" end="100" time="350" delay="950"/>
-				</animation>
-				<animation type="WindowClose" reversible="false">
-				<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-				<posx>0</posx>
-				<posy>460</posy>
-				<width>1280</width>
-				<height>159</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>Home/menuback.png</texture>
-				<colordiffuse>FFFFFFFF</colordiffuse>	
-				<visible>Container(540).HasFocus(12) + Skin.HasSetting(Disclabel)</visible>	
-			</control>
-			<control type="image">
-				<animation type="Hidden">
-				<effect type="fade" start="100" end="0" time="200" delay="0" reversible="true"/>
-				</animation>
-				<animation type="Visible">
-				<effect type="fade" start="0" end="100" time="200" delay="0" reversible="true"/>
-				</animation>
-				<animation type="WindowOpen" reversible="false">
-				<effect type="fade" start="0" end="100" time="350" delay="950"/>
-				</animation>
-				<animation type="WindowClose" reversible="false">
-				<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-				<posx>0</posx>
-				<posy>300</posy>
-				<width>1280</width>
-				<height>159</height>
-				<aspectratio>stretch</aspectratio>
-				<texture flipy="true">Home/menuback.png</texture>
-				<colordiffuse>FFFFFFFF</colordiffuse>	
-				<visible>Container(540).HasFocus(12) + Skin.HasSetting(Disclabel)</visible>				
-			</control>
-			<control type="label">
-				<animation type="Hidden">
-				<effect type="fade" start="100" end="0" time="200" delay="0" reversible="true"/>
-				</animation>
-				<animation type="Visible">
-				<effect type="fade" start="0" end="100" time="200" delay="0" reversible="true"/>
-				</animation>
-				<animation type="WindowOpen" reversible="false">
-				<effect type="fade" start="0" end="100" time="350" delay="950"/>
-				</animation>
-				<animation type="WindowClose" reversible="false">
-				<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-				<posx>0</posx>
-				<posy>450</posy>
-				<width>1280</width>
-				<height>20</height>
-				<align>center</align>
-				<font>labeltitlehome</font>
-				<textcolor>time</textcolor>
-				<visible>Container(540).HasFocus(12) + Skin.HasSetting(Disclabel)</visible>
-				<label>$INFO[System.DVDLabel]</label>
-			</control>
-				  
-<!-- now playing icon and text -->		
-				  <control type="image">
-					  <posx>15</posx>
-					  <posy>179r</posy>
-					  <width>32</width>
-					  <height>32</height>
-					  <aspectratio>stretch</aspectratio>
-					  <texture>Home/extras/nowplayingicon.png</texture>
-					  <colordiffuse>ffffffff</colordiffuse>
-					  <animation type="Visible" reversible="false">
-						  <effect type="fade" start="0" end="100" time="250" />
-					  </animation>	
-					  <animation type="Hidden" reversible="false">
-						  <effect type="fade" start="100" end="0" time="250" />
-					  </animation>					
-					  <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-					  <animation type="WindowClose" reversible="false">
-						  <effect type="fade" start="100" end="0" time="200" />
-					  </animation>
-					  <visible>Player.HasMedia</visible>
-					  <include>recentlyaddedextranavanimation</include>
-				  </control>
-				
-				  <control type="label">
-					  <posx>55</posx>
-					  <posy>179r</posy>
-					  <width>200</width>
-					  <height>32</height>
-					  <font>recent</font>
-					  <textcolor>ffa0a0a0</textcolor>
-					  <align>left</align>
-					  <label>[LOWERCASE]$LOCALIZE[31718][/LOWERCASE]</label>
-					  <animation type="Visible" reversible="false">
-						  <effect type="fade" start="0" end="100" time="250" />
-					  </animation>	
-					  <animation type="Hidden" reversible="false">
-						  <effect type="fade" start="100" end="0" time="250" />
-					  </animation>					
-					  <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-					  <animation type="WindowClose" reversible="false">
-						  <effect type="fade" start="100" end="0" time="200" />
-					  </animation>
-					  <visible>Player.HasMedia</visible>	
-					  <include>recentlyaddedextranavanimation</include>
-				  </control>
-				  
-		
-
-<!-- RSS -->
- 	<control type="image">
-		<posx>0</posx>
-		<posy>53</posy>
-		<width>1280</width>
-		<height>45</height>
-		<aspectratio>stretch</aspectratio>
-		<texture>Home/rssbar.png</texture>
-		<animation type="WindowClose" reversible="false">
-			<effect type="fade" start="100" end="0" time="450" delay="200" />
-			<effect type="slide" start="0,0" end="0,-60" time="450" delay="0" />			
-		</animation>
-		<animation type="WindowOpen" reversible="false">
-			<effect type="fade" start="100" end="100" time="450" delay="200" />
-			<effect type="slide" start="0,-60" end="0,0" time="450" delay="500" />			
-		</animation>
-	</control> 
-	<control type="rss">
-		<description>RSS Feed</description>
-		<posx>0</posx>
-		<posy>55.5</posy>
-		<width>1280</width>
-		<font>rss</font>
-		<urlset>1</urlset>
-		<titlecolor>RSStitle</titlecolor>
-		<headlinecolor>RSStext2</headlinecolor>
-		<textcolor>HomeMenuGrey</textcolor>
-		<animation type="WindowClose" reversible="false">
-			<effect type="fade" start="100" end="0" time="450" delay="200" />
-			<effect type="slide" start="0,0" end="0,-60" time="450" delay="0" />			
-		</animation>
-		<animation type="WindowOpen" reversible="false">
-			<effect type="fade" start="100" end="100" time="450" delay="200" />
-			<effect type="slide" start="0,-60" end="0,0" time="450" delay="500" />			
-		</animation>
-	</control>
+    <!-- ZBAR -->
 	<control type="image">
 		<posx>0</posx>
 		<posy>715</posy>
@@ -2466,6 +2266,7 @@
 		<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
 		<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
 	</control>
+
 <include>nav</include>
 <include>MusicOverlayHome</include>
 <include>VideoOverlayHome</include>

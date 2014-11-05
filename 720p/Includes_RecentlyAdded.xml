@@ -1,0 +1,1565 @@
+<includes>
+	<include name="recentlyaddedextra">
+	<!--------FANART BACKGROUND FOR RECENTLY ADDED TV SHOWS HOME SCREEN----------->		
+		<control type="group">
+			<posy>24</posy>
+			<include>recentlyaddedextranavanimation</include>		
+			<control type="image">
+				<posx>1307</posx>
+				<posy>451r</posy>
+				<width>32</width>
+				<height>32</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>Home/extras/recenticon.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>	
+				<animation type="Conditional" condition="Control.HasFocus(3012) + Control.HasFocus(3010)" reversible="false">
+					<effect type="fade" start="0" end="100" time="250" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="250" />
+				</animation>					
+				<animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="200" />
+				</animation>	
+				<visible>Control.HasFocus(3012) | Control.HasFocus(3010)</visible>			
+			</control>	
+	<!-- recently added movies text -->	
+			<control type="label">
+				<posx>1347</posx>
+				<posy>451r</posy>
+				<width>250</width>
+				<height>32</height>
+				<font>recent</font>
+				<textcolor>ffa0a0a0</textcolor>
+				<align>left</align>
+				<label>[LOWERCASE]$LOCALIZE[317784][/LOWERCASE]</label>
+				<animation type="Conditional" condition="Control.HasFocus(3012)" reversible="false">
+					<effect type="fade" start="0" end="100" time="250" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="250" />
+				</animation>					
+				<animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="200" />
+				</animation>	
+				<visible>Control.HasFocus(3012)</visible>	
+			</control>
+			<control type="label">
+				<posx>1347</posx>
+				<posy>451r</posy>
+				<width>250</width>
+				<height>32</height>
+				<font>recent</font>
+				<textcolor>ffa0a0a0</textcolor>
+				<align>left</align>
+				<label>[LOWERCASE]$LOCALIZE[317785][/LOWERCASE]</label>
+				<animation type="Conditional" condition="Control.HasFocus(3010)" reversible="false">
+					<effect type="fade" start="0" end="100" time="250" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="250" />
+				</animation>					
+				<animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="200" />
+				</animation>	
+				<visible>Control.HasFocus(3010)</visible>	
+			</control>
+			
+			<control type="image">
+				<posx>1307</posx>
+				<posy>288</posy>
+				<width>729</width>
+				<height>410</height>
+				<texture background="true" diffuse="Home/extras/featureddifuse.png">black.png</texture>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>1307</posx>
+				<posy>288</posy>
+				<width>729</width>
+				<height>410</height>
+				<texture background="true"  fallback="nofanart2.png" diffuse="Home/extras/featureddifuse.png" >$INFO[Container(3012).ListItem.Property(Fanart)]</texture>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<visible>Control.HasFocus(3012) + Skin.HasSetting(recentlyaddednavfanart)</visible>
+			</control>
+			<control type="image">
+				<posx>1307</posx>
+				<posy>288</posy>
+				<width>729</width>
+				<height>410</height>
+				<texture background="true"  fallback="nofanart2.png" diffuse="Home/extras/featureddifuse.png" >$INFO[Container(3012).ListItem.Property(TVShowFanart)]</texture>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<visible>Control.HasFocus(3012) + !Skin.HasSetting(recentlyaddednavfanart)</visible>
+			</control>	
+			<control type="image">
+				<posx>1307</posx>
+				<posy>288</posy>
+				<width>729</width>
+				<height>410</height>
+				<texture background="true"  fallback="noposter2.png" diffuse="Home/extras/featureddifuse.png" >$INFO[Container(3010).ListItem.Property(Fanart)]</texture>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<visible>Control.HasFocus(3010)</visible>
+			</control>
+			<control type="image">
+				<posx>1307</posx>
+				<posy>575</posy>
+				<width>729</width>
+				<height>95</height>
+				<aspectratio>stretch</aspectratio>
+				<texture border="7,7,7,7">Home/extras/featuredname.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="250" delay="1200" />
+				</animation>
+			</control>	
+<!--Plot tv shows recently added extra nav-->			
+			<control type="textbox">
+				<description>Plot TV Shows</description>
+				<posx>1320</posx>
+				<posy>581</posy>
+				<height>84</height>
+				<width>700</width>
+				<font>homemenu3</font>
+				<textcolor>ff505050</textcolor>
+				<label fallback="317802">$INFO[Container(3012).ListItem.Property(plot)]</label>
+				<align>justify</align>
+				<autoscroll time="3000" delay="7000" repeat="5000">true</autoscroll>
+				<visible>Control.HasFocus(3012)</visible>	
+			</control>
+<!--Plot movies recently added extra nav-->				
+			<control type="textbox">
+				<description>Plot Movies</description>
+				<posx>1320</posx>
+				<posy>581</posy>
+				<height>84</height>
+				<width>700</width>
+				<font>homemenu3</font>
+				<textcolor>ff505050</textcolor>
+				<label fallback="317801">$INFO[Container(3010).ListItem.Property(plot)]</label>
+				<align>justify</align>
+				<autoscroll time="3000" delay="7000" repeat="5000">true</autoscroll>
+				<visible>Control.HasFocus(3010)</visible>	
+			</control>
+		</control>	
+	</include>	
+	<!-- RECENTLY ADDED MOVIES -->
+    <include name="RecentlyAddedMovies">
+        <animation type="Conditional" condition="Control.HasFocus(3010) + Skin.HasSetting(recentlyaddednav)">
+			<effect type="slide" start="0" end="-764" time="390" delay="0" tween="sine" easing="inout" />
+		</animation>		
+		<control type="list" id="3010">
+            <posx>500r</posx>
+            <posy>410r</posy>
+            <width>484</width>
+            <height>416</height>
+            <onleft>640</onleft>
+            <onright condition="Skin.HasSetting(recentlyaddednavmovietraileron)">PlayMedia($ESCINFO[Container(3010).ListItem.Property(Trailer)])</onright>
+			<onright condition="!Skin.HasSetting(recentlyaddednavmovietraileron)">540</onright>
+			<onup>540</onup>
+            <ondown>3010</ondown>
+            <scrolltime>300</scrolltime>
+            <focusposition>3</focusposition>
+            <orientation>vertical</orientation>
+            <animation type="Conditional" condition="Container(540).HasFocus(2) | Container(540).HasFocus(14)" reversible="false">
+                <effect type="fade" start="0" end="100" time="250"/>
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" start="100" end="0" time="250" />
+            </animation>
+            <animation type="WindowOpen" condition="Window.Previous(startup)">
+                <effect type="slide" start="4000,0" end="0,0" time="2000" />
+                <effect type="fade" start="0" end="100" time="400" />
+            </animation>
+            <animation type="WindowOpen" condition="!Window.Previous(startup)">
+                <effect type="slide" start="2000,0" end="0,0" time="1500" />
+                <effect type="fade" start="0" end="100" time="400" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="250" />
+            </animation>
+            <visible>Container(540).HasFocus(2) | Container(540).HasFocus(14)</visible>
+            <itemlayout height="102" width="484">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentnf.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>20</posx>
+                    <posy>12</posy>
+                    <width>130</width>
+                    <height>75</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture background="true" fallback="nofanart3.png" >$INFO[ListItem.ActualIcon]</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+				<control type="image">
+					<posx>12</posx>
+					<posy>4</posy>
+					<width>147</width>
+					<height>91</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>grid/fanborder.png</texture>
+				</control>
+                <control type="label">
+                    <posx>160</posx>
+                    <posy>12</posy>
+                    <width>314</width>
+                    <height>35</height>
+                    <font>homemenu3</font>
+					<scroll>false</scroll>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>35</posy>
+                    <width>250</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>af808080</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label2,, minutes]</label>
+					<visible>Skin.HasSetting(HomeRecentlyAddedMovies)</visible>
+                </control>
+				<control type="label">
+                    <posx>161</posx>
+                    <posy>35</posy>
+                    <width>250</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>af808080</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Property(RunningTime),, minutes]</label>
+					<visible>Skin.HasSetting(HomeWatchlistMovies)</visible>	
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>55</posy>
+                    <width>350</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Thumb]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout height="102" width="484">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentfo.png</texture>
+                    <colordiffuse>10ffffff</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentfo.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                    <animation effect="fade" start="8" end="100" time="200">Visible</animation>
+                    <visible>Control.HasFocus(3010)</visible>
+                </control>
+                <control type="image">
+                    <posx>20</posx>
+                    <posy>12</posy>
+                    <width>130</width>
+                    <height>75</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture background="true" fallback="nofanart3.png" >$INFO[ListItem.ActualIcon]</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+				<control type="image">
+					<posx>12</posx>
+					<posy>4</posy>
+					<width>147</width>
+					<height>91</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>grid/fanborder.png</texture>
+				</control>
+                <control type="label">
+                    <posx>160</posx>
+                    <posy>12</posy>
+                    <width>310</width>
+                    <height>35</height>
+                    <font>homemenu3</font>
+					<scroll>false</scroll>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>35</posy>
+                    <width>350</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>ff808080</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label2,, minutes]</label>
+					<visible>Skin.HasSetting(HomeRecentlyAddedMovies)</visible>
+                </control>
+				<control type="label">
+                    <posx>161</posx>
+                    <posy>35</posy>
+                    <width>250</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>af808080</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Property(RunningTime),, minutes]</label>
+					<visible>Skin.HasSetting(HomeWatchlistMovies)</visible>	
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>55</posy>
+                    <width>350</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Thumb]</label>
+                </control>
+            </focusedlayout>
+            <content>
+                <item id="1">
+					<icon>$INFO[Window.Property(RecentMovie.1.Art(fanart)]</icon>
+                    <label>$INFO[Window.Property(RecentMovie.1.Title)]</label>
+                    <label2>$INFO[Window.Property(RecentMovie.1.RunTime)]</label2>
+					<thumb>$INFO[Window.Property(RecentMovie.1.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentMovie.1.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentMovie.1.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecentMovie.1.Trailer)]</property>
+                    <onclick>$INFO[Window.Property(RecentMovie.1.Play)]</onclick>
+					<visible>!Skin.HasSetting(HomeWatchlistMovies)</visible>
+                    <visible>!IsEmpty(Window.Property(RecentMovie.1.Title))</visible>
+                </item>
+                <item id="2">
+                    <icon>$INFO[Window.Property(RecentMovie.2.Art(fanart)]</icon>
+                    <label>$INFO[Window.Property(RecentMovie.2.Title)]</label>
+                    <label2>$INFO[Window.Property(RecentMovie.2.RunTime)]</label2>
+					<thumb>$INFO[Window.Property(RecentMovie.2.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentMovie.2.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentMovie.2.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecentMovie.2.Trailer)]</property>
+                    <onclick>$INFO[Window.Property(RecentMovie.2.Play)]</onclick>
+					<visible>!Skin.HasSetting(HomeWatchlistMovies)</visible>
+                    <visible>!IsEmpty(Window.Property(RecentMovie.2.Title))</visible>
+                </item>
+                <item id="3">
+                    <icon>$INFO[Window.Property(RecentMovie.3.Art(fanart)]</icon>
+                    <label>$INFO[Window.Property(RecentMovie.3.Title)]</label>
+                    <label2>$INFO[Window.Property(RecentMovie.3.RunTime)]</label2>
+					<thumb>$INFO[Window.Property(RecentMovie.3.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentMovie.3.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentMovie.3.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecentMovie.3.Trailer)]</property>
+                    <onclick>$INFO[Window.Property(RecentMovie.3.Play)]</onclick>
+					<visible>!Skin.HasSetting(HomeWatchlistMovies)</visible>
+                    <visible>!IsEmpty(Window.Property(RecentMovie.3.Title))</visible>
+                </item>
+                <item id="4">
+                    <icon>$INFO[Window.Property(RecentMovie.4.Art(fanart)]</icon>
+                    <label>$INFO[Window.Property(RecentMovie.4.Title)]</label>
+                    <label2>$INFO[Window.Property(RecentMovie.4.RunTime)]</label2>
+					<thumb>$INFO[Window.Property(RecentMovie.4.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentMovie.4.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentMovie.4.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecentMovie.4.Trailer)]</property>
+                    <onclick>$INFO[Window.Property(RecentMovie.4.Play)]</onclick>
+					<visible>!Skin.HasSetting(HomeWatchlistMovies)</visible>
+                    <visible>!IsEmpty(Window.Property(RecentMovie.4.Title))</visible>
+                </item>
+				<item id="5">
+					<icon>$INFO[Window.Property(RecentMovie.5.Art(fanart)]</icon>
+                    <label>$INFO[Window.Property(RecentMovie.5.Title)]</label>
+                    <label2>$INFO[Window.Property(RecentMovie.5.RunTime)]</label2>
+					<thumb>$INFO[Window.Property(RecentMovie.5.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentMovie.5.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentMovie.5.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecentMovie.5.Trailer)]</property>
+                    <onclick>$INFO[Window.Property(RecentMovie.5.Play)]</onclick>
+					<visible>!Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+                    <visible>!IsEmpty(Window.Property(RecentMovie.5.Title))</visible>
+                </item>
+                <item id="6">
+                    <icon>$INFO[Window.Property(RecentMovie.6.Art(fanart)]</icon>
+                    <label>$INFO[Window.Property(RecentMovie.6.Title)]</label>
+                    <label2>$INFO[Window.Property(RecentMovie.6.RunTime)]</label2>
+					<thumb>$INFO[Window.Property(RecentMovie.6.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentMovie.6.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentMovie.6.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecentMovie.6.Trailer)]</property>
+                    <onclick>$INFO[Window.Property(RecentMovie.6.Play)]</onclick>
+					<visible>!Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+                    <visible>!IsEmpty(Window.Property(RecentMovie.6.Title))</visible>
+                </item>
+                <item id="7">
+                    <icon>$INFO[Window.Property(RecentMovie.7.Art(fanart)]</icon>
+                    <label>$INFO[Window.Property(RecentMovie.7.Title)]</label>
+                    <label2>$INFO[Window.Property(RecentMovie.7.RunTime)]</label2>
+					<thumb>$INFO[Window.Property(RecentMovie.7.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentMovie.7.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentMovie.7.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecentMovie.7.Trailer)]</property>
+                    <onclick>$INFO[Window.Property(RecentMovie.7.Play)]</onclick>
+					<visible>!Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+                    <visible>!IsEmpty(Window.Property(RecentMovie.7.Title))</visible>
+                </item>
+                <item id="8">
+                    <icon>$INFO[Window.Property(RecentMovie.8.Art(fanart)]</icon>
+                    <label>$INFO[Window.Property(RecentMovie.8.Title)]</label>
+                    <label2>$INFO[Window.Property(RecentMovie.8.RunTime)]</label2>
+					<thumb>$INFO[Window.Property(RecentMovie.8.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentMovie.8.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentMovie.8.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecentMovie.8.Trailer)]</property>
+                    <onclick>$INFO[Window.Property(RecentMovie.8.Play)]</onclick>
+					<visible>!Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+                    <visible>!IsEmpty(Window.Property(RecentMovie.8.Title))</visible>
+                </item>
+				<item id="9">
+                    <icon>$INFO[Window.Property(RecentMovie.9.Art(fanart)]</icon>
+                    <label>$INFO[Window.Property(RecentMovie.9.Title)]</label>
+                    <label2>$INFO[Window.Property(RecentMovie.9.RunTime)]</label2>
+					<thumb>$INFO[Window.Property(RecentMovie.9.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentMovie.9.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentMovie.9.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecentMovie.9.Trailer)]</property>
+                    <onclick>$INFO[Window.Property(RecentMovie.9.Play)]</onclick>
+					<visible>!Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+                    <visible>!IsEmpty(Window.Property(RecentMovie.9.Title))</visible>
+                </item>
+                <item id="10">
+                    <icon>$INFO[Window.Property(RecentMovie.10.Art(fanart)]</icon>
+                    <label>$INFO[Window.Property(RecentMovie.10.Title)]</label>
+                    <label2>$INFO[Window.Property(RecentMovie.10.RunTime)]</label2>
+					<thumb>$INFO[Window.Property(RecentMovie.10.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentMovie.10.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentMovie.10.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecentMovie.10.Trailer)]</property>
+                    <onclick>$INFO[Window.Property(RecentMovie.10.Play)]</onclick>
+					<visible>!Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+                    <visible>!IsEmpty(Window.Property(RecentMovie.10.Title))</visible>
+                </item>
+				<!-- IN PROGRESS MOVIES -->
+				
+				<item id="11">
+					<label>$INFO[Window.Property(RecommendedMovie.1.Title)]</label>
+					<label2>$INFO[Window.Property(RecommendedMovie.1.RunTime)]</label2>
+					<icon>$INFO[Window.Property(RecommendedMovie.1.Art(fanart)]</icon>
+					<thumb>$INFO[Window.Property(RecommendedMovie.1.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.1.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedMovie.1.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecommendedMovie.1.Trailer)]</property>
+					<onclick>$INFO[Window.Property(RecommendedMovie.1.Play)]</onclick>
+					<property name="RunningTime">$INFO[Window.Property(RecommendedMovie.1.RunTime)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistMovies)</visible>
+					<visible>!IsEmpty(Window.Property(RecommendedMovie.1.Title))</visible>
+                </item>
+				<item id="12">
+					<label>$INFO[Window.Property(RecommendedMovie.2.Title)]</label>
+					<label2>$INFO[Window.Property(RecommendedMovie.2.RunTime)]</label2>
+					<icon>$INFO[Window.Property(RecommendedMovie.2.Art(fanart)]</icon>
+					<thumb>$INFO[Window.Property(RecommendedMovie.2.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.2.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedMovie.2.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecommendedMovie.2.Trailer)]</property>
+					<onclick>$INFO[Window.Property(RecommendedMovie.2.Play)]</onclick>
+					<property name="RunningTime">$INFO[Window.Property(RecommendedMovie.2.RunTime)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistMovies)</visible>
+					<visible>!IsEmpty(Window.Property(RecommendedMovie.2.Title))</visible>
+					</item>
+                <item id="13">
+					<label>$INFO[Window.Property(RecommendedMovie.3.Title)]</label>
+					<label2>$INFO[Window.Property(RecommendedMovie.3.RunTime)]</label2>
+					<icon>$INFO[Window.Property(RecommendedMovie.3.Art(fanart)]</icon>
+					<thumb>$INFO[Window.Property(RecommendedMovie.3.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.3.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedMovie.3.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecommendedMovie.3.Trailer)]</property>
+					<onclick>$INFO[Window.Property(RecommendedMovie.3.Play)]</onclick>
+					<property name="RunningTime">$INFO[Window.Property(RecommendedMovie.3.RunTime)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistMovies)</visible>
+					<visible>!IsEmpty(Window.Property(RecommendedMovie.3.Title))</visible>
+                </item>
+                <item id="14">
+					<label>$INFO[Window.Property(RecommendedMovie.4.Title)]</label>
+					<label2>$INFO[Window.Property(RecommendedMovie.4.RunTime)]</label2>
+					<icon>$INFO[Window.Property(RecommendedMovie.4.Art(fanart)]</icon>
+					<thumb>$INFO[Window.Property(RecommendedMovie.4.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.4.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedMovie.4.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecommendedMovie.4.Trailer)]</property>
+					<onclick>$INFO[Window.Property(RecommendedMovie.4.Play)]</onclick>
+					<property name="RunningTime">$INFO[Window.Property(RecommendeTime)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistMovies)</visible>
+					<visible>!IsEmpty(Window.Property(RecommendedMovie.4.Title))</visible>
+                </item>
+				<item id="15">
+					<label>$INFO[Window.Property(RecommendedMovie.5.Title)]</label>
+					<label2>$INFO[Window.Property(RecommendedMovie.5.RunTime)]</label2>
+					<icon>$INFO[Window.Property(RecommendedMovie.5.Art(fanart)]</icon>
+					<thumb>$INFO[Window.Property(RecommendedMovie.5.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.5.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedMovie.5.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecommendedMovie.5.Trailer)]</property>
+					<onclick>$INFO[Window.Property(RecommendedMovie.5.Play)]</onclick>
+					<property name="RunningTime">$INFO[Window.Property(RecommendedMovie.5.RunTime)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+					<visible>!IsEmpty(Window.Property(RecommendedMovie.5.Title))</visible>
+                </item>
+				<item id="16">
+					<label>$INFO[Window.Property(RecommendedMovie.6.Title)]</label>
+					<label2>$INFO[Window.Property(RecommendedMovie.6.RunTime)]</label2>
+					<icon>$INFO[Window.Property(RecommendedMovie.6.Art(fanart)]</icon>
+					<thumb>$INFO[Window.Property(RecommendedMovie.6.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.6.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedMovie.6.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecommendedMovie.6.Trailer)]</property>
+					<onclick>$INFO[Window.Property(RecommendedMovie.6.Play)]</onclick>
+					<property name="RunningTime">$INFO[Window.Property(RecommendedMovie.6.RunTime)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+					<visible>!IsEmpty(Window.Property(RecommendedMovie.6.Title))</visible>
+					</item>
+                <item id="17">
+					<label>$INFO[Window.Property(RecommendedMovie.7.Title)]</label>
+					<label2>$INFO[Window.Property(RecommendedMovie.7.RunTime)]</label2>
+					<icon>$INFO[Window.Property(RecommendedMovie.7.Art(fanart)]</icon>
+					<thumb>$INFO[Window.Property(RecommendedMovie.7.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.7.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedMovie.7.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecommendedMovie.7.Trailer)]</property>
+					<onclick>$INFO[Window.Property(RecommendedMovie.7.Play)]</onclick>
+					<property name="RunningTime">$INFO[Window.Property(RecommendedMovie.7.RunTime)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+					<visible>!IsEmpty(Window.Property(RecommendedMovie.7.Title))</visible>
+                </item>
+                <item id="18">
+					<label>$INFO[Window.Property(RecommendedMovie.8.Title)]</label>
+					<label2>$INFO[Window.Property(RecommendedMovie.8.RunTime)]</label2>
+					<icon>$INFO[Window.Property(RecommendedMovie.8.Art(fanart)]</icon>
+					<thumb>$INFO[Window.Property(RecommendedMovie.8.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.8.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedMovie.8.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecommendedMovie.8.Trailer)]</property>
+					<onclick>$INFO[Window.Property(RecommendedMovie.8.Play)]</onclick>
+					<property name="RunningTime">$INFO[Window.Property(RecommendedMovie.8.RunTime)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+					<visible>!IsEmpty(Window.Property(RecommendedMovie.8.Title))</visible>
+                </item>
+				<item id="19">
+					<label>$INFO[Window.Property(RecommendedMovie.9.Title)]</label>
+					<label2>$INFO[Window.Property(RecommendedMovie.9.RunTime)]</label2>
+					<icon>$INFO[Window.Property(RecommendedMovie.9.Art(fanart)]</icon>
+					<thumb>$INFO[Window.Property(RecommendedMovie.9.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.9.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedMovie.9.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecommendedMovie.9.Trailer)]</property>
+					<onclick>$INFO[Window.Property(RecommendedMovie.9.Play)]</onclick>
+					<property name="RunningTime">$INFO[Window.Property(RecommendedMovie.9.RunTime)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+					<visible>!IsEmpty(Window.Property(RecommendedMovie.9.Title))</visible>
+                </item>
+                <item id="20">
+					<label>$INFO[Window.Property(RecommendedMovie.10.Title)]</label>
+					<label2>$INFO[Window.Property(RecommendedMovie.10.RunTime)]</label2>
+					<icon>$INFO[Window.Property(RecommendedMovie.10.Art(fanart)]</icon>
+					<thumb>$INFO[Window.Property(RecommendedMovie.10.Year)]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.10.Art(fanart))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedMovie.10.Plot)]</property>
+					<property name="Trailer">$INFO[Window(Home).Property(RecommendedMovie.10.Trailer)]</property>
+					<onclick>$INFO[Window.Property(RecommendedMovie.10.Play)]</onclick>
+					<property name="RunningTime">$INFO[Window.Property(RecommendedMovie.10.RunTime)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistMovies) + Skin.HasSetting(Homewidget10items)</visible>
+					<visible>!IsEmpty(Window.Property(RecommendedMovie.10.Title))</visible>
+                </item>
+            </content>
+        </control>
+    </include>
+
+	<!-- RECENTLY ADDED TV -->
+	
+    <include name="RecentlyAddedEpisodes">
+        <control type="list" id="3012">
+            <posx>500r</posx>
+            <posy>410r</posy>
+            <width>484</width>
+            <height>416</height>
+            <onleft>642</onleft>
+            <onright>540</onright>
+            <onup>540</onup>
+            <ondown>3012</ondown>
+            <scrolltime>300</scrolltime>
+            <focusposition>3</focusposition>
+            <orientation>vertical</orientation>
+            <visible>Container(540).HasFocus(3)</visible>
+            <animation type="Conditional" condition="Container(540).HasFocus(3)" reversible="false">
+                <effect type="fade" start="0" end="100" time="250" />
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" start="100" end="0" time="250" />
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="slide" start="2000,0" end="0,0" time="1500" />
+                <effect type="fade" start="0" end="100" time="400" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+			
+            
+            <itemlayout height="102" width="484">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentnf.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>20</posx>
+                    <posy>12</posy>
+                    <width>130</width>
+                    <height>75</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture background="true" fallback="nofanart3.png" >$INFO[ListItem.ActualIcon]</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+				<control type="image">
+					<posx>12</posx>
+					<posy>4</posy>
+					<width>147</width>
+					<height>91</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>grid/fanborder.png</texture>
+				</control>
+                <control type="label">
+                    <posx>160</posx>
+                    <posy>12</posy>
+                    <width>314</width>
+                    <height>35</height>
+                    <font>homemenu3</font>
+					<scroll>false</scroll>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>35</posy>
+                    <width>250</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>af808080</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label2]</label>
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>55</posy>
+                    <width>250</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>af707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Thumb]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout height="102" width="484">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentfo.png</texture>
+                    <colordiffuse>10ffffff</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentfo.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                    <visible>Control.HasFocus(3012)</visible>
+                    <animation effect="fade" start="8" end="100" time="200">Visible</animation>
+                </control>
+                <control type="image">
+                    <posx>20</posx>
+                    <posy>12</posy>
+                    <width>130</width>
+                    <height>75</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture background="true" fallback="nofanart3.png" >$INFO[ListItem.ActualIcon]</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+				<control type="image">
+					<posx>12</posx>
+					<posy>4</posy>
+					<width>147</width>
+					<height>91</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>grid/fanborder.png</texture>
+				</control>
+                <control type="label">
+                    <posx>160</posx>
+                    <posy>12</posy>
+                    <width>314</width>
+                    <height>35</height>
+                    <font>homemenu3</font>
+					<scroll>false</scroll>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>35</posy>
+                    <width>250</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>af808080</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label2]</label>
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>55</posy>
+                    <width>250</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>af707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Thumb]</label>
+                </control>
+            </focusedlayout>
+            <content>
+                <item id="1">
+                    <icon>$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</icon>
+                    <label>$INFO[Window(Home).Property(RecentEpisode.1.TVShowTitle)]</label>
+                    <label2>$INFO[Window(Home).Property(RecentEpisode.1.Title)]</label2>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecentEpisode.1.EpisodeNo)][/UPPERCASE]</thumb>
+                    <onclick>$INFO[Window(Home).Property(RecentEpisode.1.Play)]</onclick>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecentEpisode.1.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentEpisode.1.Plot)]</property>
+					<property name="Label">$INFO[Window(Home).Property(RecentEpisode.1.Title)]</property>
+					<property name="Logo">$INFO[Window(Home).Property(RecentEpisode.1.Art(clearlogo))]</property>
+					<visible>!Skin.HasSetting(HomeWatchlistEpisodes)</visible>
+                </item>
+                <item id="2">
+                    <icon>$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart))]</icon>
+                    <label>$INFO[Window(Home).Property(RecentEpisode.2.TVShowTitle)]</label>
+                    <label2>$INFO[Window(Home).Property(RecentEpisode.2.Title)]</label2>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecentEpisode.2.EpisodeNo)][/UPPERCASE]</thumb>
+                    <onclick>$INFO[Window(Home).Property(RecentEpisode.2.Play)]</onclick>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecentEpisode.2.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentEpisode.2.Plot)]</property>
+					<property name="Logo">$INFO[Window(Home).Property(RecentEpisode.2.Art(clearlogo))]</property>
+					<visible>!Skin.HasSetting(HomeWatchlistEpisodes)</visible>
+                </item>
+                <item id="3">
+                    <icon>$INFO[Window(Home).Property(RecentEpisode.3.Art(tvshow.fanart))]</icon>
+                    <label>$INFO[Window(Home).Property(RecentEpisode.3.TVShowTitle)]</label>
+                    <label2>$INFO[Window(Home).Property(RecentEpisode.3.Title)]</label2>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecentEpisode.3.EpisodeNo)][/UPPERCASE]</thumb>
+                    <onclick>$INFO[Window(Home).Property(RecentEpisode.3.Play)]</onclick>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.3.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecentEpisode.3.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentEpisode.3.Plot)]</property>
+					<property name="Logo">$INFO[Window(Home).Property(RecentEpisode.3.Art(clearlogo))]</property>
+					<visible>!Skin.HasSetting(HomeWatchlistEpisodes)</visible>
+                </item>
+                <item id="4">
+                    <icon>$INFO[Window(Home).Property(RecentEpisode.4.Art(tvshow.fanart))]</icon>
+                    <label>$INFO[Window(Home).Property(RecentEpisode.4.TVShowTitle)]</label>
+                    <label2>$INFO[Window(Home).Property(RecentEpisode.4.Title)]</label2>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecentEpisode.4.EpisodeNo)][/UPPERCASE]</thumb>
+                    <onclick>$INFO[Window(Home).Property(RecentEpisode.4.Play)]</onclick>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.4.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecentEpisode.4.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentEpisode.4.Plot)]</property>
+					<property name="Logo">$INFO[Window(Home).Property(RecentEpisode.4.Art(clearlogo))]</property>
+					<visible>!Skin.HasSetting(HomeWatchlistEpisodes)</visible>
+                </item>
+				<item id="9">
+                    <icon>$INFO[Window(Home).Property(RecentEpisode.5.Art(tvshow.fanart))]</icon>
+                    <label>$INFO[Window(Home).Property(RecentEpisode.5.TVShowTitle)]</label>
+                    <label2>$INFO[Window(Home).Property(RecentEpisode.5.Title)]</label2>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecentEpisode.5.EpisodeNo)][/UPPERCASE]</thumb>
+                    <onclick>$INFO[Window(Home).Property(RecentEpisode.5.Play)]</onclick>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.5.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecentEpisode.5.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentEpisode.5.Plot)]</property>
+					<visible>!Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+                <item id="10">
+                    <icon>$INFO[Window(Home).Property(RecentEpisode.6.Art(tvshow.fanart))]</icon>
+                    <label>$INFO[Window(Home).Property(RecentEpisode.6.TVShowTitle)]</label>
+                    <label2>$INFO[Window(Home).Property(RecentEpisode.6.Title)]</label2>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecentEpisode.6.EpisodeNo)][/UPPERCASE]</thumb>
+                    <onclick>$INFO[Window(Home).Property(RecentEpisode.6.Play)]</onclick>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.6.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecentEpisode.6.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentEpisode.6.Plot)]</property>
+					<visible>!Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+                <item id="11">
+                    <icon>$INFO[Window(Home).Property(RecentEpisode.7.Art(tvshow.fanart))]</icon>
+                    <label>$INFO[Window(Home).Property(RecentEpisode.7.TVShowTitle)]</label>
+                    <label2>$INFO[Window(Home).Property(RecentEpisode.7.Title)]</label2>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecentEpisode.7.EpisodeNo)][/UPPERCASE]</thumb>
+                    <onclick>$INFO[Window(Home).Property(RecentEpisode.7.Play)]</onclick>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.7.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecentEpisode.7.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentEpisode.7.Plot)]</property>
+					<visible>!Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+                <item id="12">
+                    <icon>$INFO[Window(Home).Property(RecentEpisode.8.Art(tvshow.fanart))]</icon>
+                    <label>$INFO[Window(Home).Property(RecentEpisode.8.TVShowTitle)]</label>
+                    <label2>$INFO[Window(Home).Property(RecentEpisode.8.Title)]</label2>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecentEpisode.8.EpisodeNo)][/UPPERCASE]</thumb>
+                    <onclick>$INFO[Window(Home).Property(RecentEpisode.8.Play)]</onclick>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.8.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecentEpisode.8.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentEpisode.8.Plot)]</property>
+					<visible>!Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+				<item id="13">
+                    <icon>$INFO[Window(Home).Property(RecentEpisode.9.Art(tvshow.fanart))]</icon>
+                    <label>$INFO[Window(Home).Property(RecentEpisode.9.TVShowTitle)]</label>
+                    <label2>$INFO[Window(Home).Property(RecentEpisode.9.Title)]</label2>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecentEpisode.9.EpisodeNo)][/UPPERCASE]</thumb>
+                    <onclick>$INFO[Window(Home).Property(RecentEpisode.9.Play)]</onclick>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.9.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecentEpisode.9.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentEpisode.9.Plot)]</property>
+					<visible>!Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+                <item id="14">
+                    <icon>$INFO[Window(Home).Property(RecentEpisode.10.Art(tvshow.fanart))]</icon>
+                    <label>$INFO[Window(Home).Property(RecentEpisode.10.TVShowTitle)]</label>
+                    <label2>$INFO[Window(Home).Property(RecentEpisode.10.Title)]</label2>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecentEpisode.10.EpisodeNo)][/UPPERCASE]</thumb>
+                    <onclick>$INFO[Window(Home).Property(RecentEpisode.10.Play)]</onclick>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.10.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecentEpisode.10.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecentEpisode.10.Plot)]</property>
+					<visible>!Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item> 
+				<item id="5">
+					<label>$INFO[Window(Home).Property(RecommendedEpisode.1.TVShowTitle)]</label>
+					<label2>$INFO[Window(Home).Property(RecommendedEpisode.1.Title)]</label2>
+					<onclick>$INFO[Window(Home).Property(RecommendedEpisode.1.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecommendedEpisode.1.EpisodeNo)][/UPPERCASE]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecommendedEpisode.1.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedEpisode.1.Plot)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistEpisodes)</visible>
+                </item>
+                <item id="6">
+					<label>$INFO[Window(Home).Property(RecommendedEpisode.2.TVShowTitle)]</label>
+					<label2>$INFO[Window(Home).Property(RecommendedEpisode.2.Title)]</label2>
+					<onclick>$INFO[Window(Home).Property(RecommendedEpisode.2.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecommendedEpisode.2.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecommendedEpisode.2.EpisodeNo)][/UPPERCASE]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.2.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecommendedEpisode.2.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedEpisode.2.Plot)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistEpisodes)</visible>
+                </item>
+                <item id="7">
+					<label>$INFO[Window(Home).Property(RecommendedEpisode.3.TVShowTitle)]</label>
+					<label2>$INFO[Window(Home).Property(RecommendedEpisode.3.Title)]</label2>
+					<onclick>$INFO[Window(Home).Property(RecommendedEpisode.3.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecommendedEpisode.3.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecommendedEpisode.3.EpisodeNo)][/UPPERCASE]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.3.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecommendedEpisode.3.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedEpisode.3.Plot)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistEpisodes)</visible>
+                </item>
+                <item id="8">
+					<label>$INFO[Window(Home).Property(RecommendedEpisode.4.TVShowTitle)]</label>
+					<label2>$INFO[Window(Home).Property(RecommendedEpisode.4.Title)]</label2>
+					<onclick>$INFO[Window(Home).Property(RecommendedEpisode.4.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecommendedEpisode.4.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecommendedEpisode.4.EpisodeNo)][/UPPERCASE]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.4.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecommendedEpisode.4.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedEpisode.4.Plot)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistEpisodes)</visible>
+                </item>
+				<item id="15">
+					<label>$INFO[Window(Home).Property(RecommendedEpisode.5.TVShowTitle)]</label>
+					<label2>$INFO[Window(Home).Property(RecommendedEpisode.5.Title)]</label2>
+					<onclick>$INFO[Window(Home).Property(RecommendedEpisode.5.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecommendedEpisode.5.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecommendedEpisode.5.EpisodeNo)][/UPPERCASE]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.5.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecommendedEpisode.5.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedEpisode.5.Plot)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+                <item id="16">
+					<label>$INFO[Window(Home).Property(RecommendedEpisode.6.TVShowTitle)]</label>
+					<label2>$INFO[Window(Home).Property(RecommendedEpisode.6.Title)]</label2>
+					<onclick>$INFO[Window(Home).Property(RecommendedEpisode.6.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecommendedEpisode.6.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecommendedEpisode.6.EpisodeNo)][/UPPERCASE]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.6.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecommendedEpisode.6.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedEpisode.6.Plot)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+                <item id="17">
+					<label>$INFO[Window(Home).Property(RecommendedEpisode.7.TVShowTitle)]</label>
+					<label2>$INFO[Window(Home).Property(RecommendedEpisode.7.Title)]</label2>
+					<onclick>$INFO[Window(Home).Property(RecommendedEpisode.7.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecommendedEpisode.7.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecommendedEpisode.7.EpisodeNo)][/UPPERCASE]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.7.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecommendedEpisode.7.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedEpisode.7.Plot)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+                <item id="18">
+					<label>$INFO[Window(Home).Property(RecommendedEpisode.8.TVShowTitle)]</label>
+					<label2>$INFO[Window(Home).Property(RecommendedEpisode.8.Title)]</label2>
+					<onclick>$INFO[Window(Home).Property(RecommendedEpisode.8.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecommendedEpisode.8.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecommendedEpisode.8.EpisodeNo)][/UPPERCASE]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.8.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecommendedEpisode.8.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedEpisode.8.Plot)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+				<item id="19">
+					<label>$INFO[Window(Home).Property(RecommendedEpisode.9.TVShowTitle)]</label>
+					<label2>$INFO[Window(Home).Property(RecommendedEpisode.9.Title)]</label2>
+					<onclick>$INFO[Window(Home).Property(RecommendedEpisode.9.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecommendedEpisode.9.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecommendedEpisode.9.EpisodeNo)][/UPPERCASE]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.9.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecommendedEpisode.9.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedEpisode.9.Plot)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+                <item id="20">
+					<label>$INFO[Window(Home).Property(RecommendedEpisode.10.TVShowTitle)]</label>
+					<label2>$INFO[Window(Home).Property(RecommendedEpisode.10.Title)]</label2>
+					<onclick>$INFO[Window(Home).Property(RecommendedEpisode.10.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecommendedEpisode.10.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(RecommendedEpisode.10.EpisodeNo)][/UPPERCASE]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.10.Art(tvshow.fanart))]</property>
+					<property name="TVShowFanart">$INFO[Window(Home).Property(RecommendedEpisode.10.Art(thumb))]</property>
+					<property name="Plot">$INFO[Window.Property(RecommendedEpisode.10.Plot)]</property>
+					<visible>Skin.HasSetting(HomeWatchlistEpisodes) + Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+             </content>
+         </control>
+
+    </include>	
+	
+	<!-- RECENTLY ADDED TV Playlist1 -->
+	
+    <include name="RecentlyAddedTVPlaylist1">
+        <control type="list" id="3036">
+		<visible>Skin.HasSetting(HomeLatestTVPlaylist1)</visible>
+            <posx>500r</posx>
+            <posy>410r</posy>
+            <width>484</width>
+            <height>416</height>
+            <onleft>3037</onleft>
+            <onright>3037</onright>
+            <onup>540</onup>
+            <ondown>3036</ondown>
+            <scrolltime>300</scrolltime>
+            <focusposition>3</focusposition>
+            <orientation>vertical</orientation>
+            <visible>Container(540).HasFocus(33)</visible>
+            <animation type="Conditional" condition="Container(540).HasFocus(33)" reversible="false">
+                <effect type="fade" start="0" end="100" time="250" />
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" start="100" end="0" time="250" />
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="slide" start="2000,0" end="0,0" time="1500" />
+                <effect type="fade" start="0" end="100" time="400" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <itemlayout height="100" width="484">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentnf.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>20</posx>
+                    <posy>12</posy>
+                    <width>130</width>
+                    <height>75</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture background="true" >$INFO[ListItem.ActualIcon]</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+				<control type="image">
+					<posx>12</posx>
+					<posy>4</posy>
+					<width>147</width>
+					<height>91</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>grid/fanborder.png</texture>
+				</control>
+                <control type="label">
+                    <posx>160</posx>
+                    <posy>12</posy>
+                    <width>314</width>
+                    <height>35</height>
+                    <font>homemenu3</font>
+					<scroll>false</scroll>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>35</posy>
+                    <width>250</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>af808080</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label2]</label>
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>55</posy>
+                    <width>250</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>af707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Thumb]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout height="100" width="484">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentfo.png</texture>
+                    <colordiffuse>10ffffff</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentfo.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                    <visible>Control.HasFocus(3036)</visible>
+                    <animation effect="fade" start="8" end="100" time="200">Visible</animation>
+                </control>
+                <control type="image">
+                    <posx>20</posx>
+                    <posy>12</posy>
+                    <width>130</width>
+                    <height>75</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture background="true" >$INFO[ListItem.ActualIcon]</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+				<control type="image">
+					<posx>12</posx>
+					<posy>4</posy>
+					<width>147</width>
+					<height>91</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>grid/fanborder.png</texture>
+				</control>
+                <control type="label">
+                    <posx>160</posx>
+                    <posy>12</posy>
+                    <width>314</width>
+                    <height>35</height>
+                    <font>homemenu3</font>
+					<scroll>false</scroll>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>35</posy>
+                    <width>250</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>af808080</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label2]</label>
+                </control>
+                <control type="label">
+                    <posx>161</posx>
+                    <posy>55</posy>
+                    <width>250</width>
+                    <height>35</height>
+                    <font>recent2</font>
+                    <textcolor>af707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Thumb]</label>
+                </control>
+            </focusedlayout>
+            <content>
+                <item id="1">
+                    <icon>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.1.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(PlaylistLastEpisodeMenu4.1.EpisodeNo)][/UPPERCASE]</thumb>
+					<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.1.Title)]</label2>
+				    <label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.1.TVShowTitle)]</label>
+				    <onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.1.Play)]</onclick>
+                </item>
+                <item id="2">
+                   <icon>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.2.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(PlaylistLastEpisodeMenu4.2.EpisodeNo)][/UPPERCASE]</thumb>
+					<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.2.Title)]</label2>
+				    <label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.2.TVShowTitle)]</label>
+				    <onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.2.Play)]</onclick>
+                </item>
+                <item id="3">
+                   <icon>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.3.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(PlaylistLastEpisodeMenu4.3.EpisodeNo)][/UPPERCASE]</thumb>
+					<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.3.Title)]</label2>
+				    <label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.3.TVShowTitle)]</label>
+				    <onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.3.Play)]</onclick>
+                </item>
+                <item id="4">
+                    <icon>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.4.Art(tvshow.fanart))]</icon>
+					<thumb>[UPPERCASE]$INFO[Window.Property(PlaylistLastEpisodeMenu4.4.EpisodeNo)][/UPPERCASE]</thumb>
+					<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.4.Title)]</label2>
+				    <label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.4.TVShowTitle)]</label>
+				    <onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu4.4.Play)]</onclick>
+                </item>
+            </content>
+        </control>
+    </include>
+	
+	<!-- RECENTLY ADDED MUSIC -->	
+	
+    <include name="RecentlyAddedAlbums">
+        <control type="list" id="3014">
+            <posx>500r</posx>
+            <posy>410r</posy>
+            <width>484</width>
+            <height>416</height>
+            <onleft>646</onleft>
+            <onright>540</onright>
+            <onup>540</onup>
+            <ondown>3014</ondown>
+            <scrolltime>300</scrolltime>
+            <focusposition>4</focusposition>
+            <orientation>vertical</orientation>
+            <visible>Container(540).HasFocus(4)</visible>
+            <animation type="Conditional" condition="Container(540).HasFocus(4)" reversible="false">
+                <effect type="fade" start="0" end="100" time="250" />
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" start="100" end="0" time="250" />
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="slide" start="2000,0" end="0,0" time="1500" />
+                <effect type="fade" start="0" end="100" time="400" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <itemlayout height="100" width="484">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentnf.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>19</posx>
+                    <posy>12</posy>
+                    <width>75</width>
+                    <height>75</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture background="true" diffuse="Home/extras/albumsmalldiffuse.png" fallback="noalbumsmall.png">$INFO[ListItem.ActualIcon]</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>8</posx>
+                    <posy>0</posy>
+                    <width>98</width>
+                    <height>98</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture>poster/squareborder.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>105</posx>
+                    <posy>12</posy>
+                    <width>350</width>
+                    <height>35</height>
+                    <font>homemenu3</font>
+					<scroll>false</scroll>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label]</label>
+					<scroll>false</scroll>
+                </control>
+                <control type="label">
+                    <posx>106</posx>
+                    <posy>35</posy>
+                    <width>350</width>
+                    <height>35</height>
+                    <font>recent2</font>
+					<scroll>false</scroll>
+                    <textcolor>af808080</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label2]</label>
+                </control>
+                <control type="label">
+                    <posx>106</posx>
+                    <posy>55</posy>
+                    <width>350</width>
+                    <height>35</height>
+                    <font>recent2</font>
+					<scroll>false</scroll>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Thumb]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout height="100" width="484">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentfo.png</texture>
+                    <colordiffuse>10ffffff</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>484</width>
+                    <height>104</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>Home/extras/recentfo.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                    <visible>Control.HasFocus(3014)</visible>
+                    <animation effect="fade" start="8" end="100" time="200">Visible</animation>
+                </control>
+                <control type="image">
+                    <posx>19</posx>
+                    <posy>12</posy>
+                    <width>75</width>
+                    <height>75</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture background="true" diffuse="Home/extras/albumsmalldiffuse.png" fallback="noalbumsmall.png">$INFO[ListItem.ActualIcon]</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>8</posx>
+                    <posy>0</posy>
+                    <width>98</width>
+                    <height>98</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture>poster/squareborder.png</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>105</posx>
+                    <posy>12</posy>
+                    <width>350</width>
+                    <height>35</height>
+                    <font>homemenu3</font>
+					<scroll>false</scroll>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <posx>106</posx>
+                    <posy>35</posy>
+                    <width>365</width>
+                    <height>35</height>
+                    <font>recent2</font>
+					<scroll>false</scroll>
+                    <textcolor>ff808080</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label2]</label>
+                </control>
+                <control type="label">
+                    <posx>106</posx>
+                    <posy>55</posy>
+                    <width>350</width>
+                    <height>35</height>
+                    <font>recent2</font>
+					<scroll>false</scroll>
+                    <textcolor>ff707070</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Thumb]</label>
+                </control>
+            </focusedlayout>
+            <content>
+                <item id="1">
+					<icon>$INFO[Window(Home).Property(RecentAlbum.1.Thumb)]</icon>
+					<label>$INFO[Window(Home).Property(RecentAlbum.1.Title)]</label>
+					<label2>$INFO[Window(Home).Property(RecentAlbum.1.Artist)]</label2>
+					<thumb>$INFO[Window(Home).Property(RecentAlbum.1.year)]</thumb>
+					<onclick>PlayList.Clear</onclick>
+					<onclick>$INFO[Window(Home).Property(RecentAlbum.1.Play)]</onclick>
+                </item>
+                <item id="2">
+                    <icon>$INFO[Window(Home).Property(RecentAlbum.2.Thumb)]</icon>
+					<label>$INFO[Window(Home).Property(RecentAlbum.2.Title)]</label>
+					<label2>$INFO[Window(Home).Property(RecentAlbum.2.Artist)]</label2>
+					<thumb>$INFO[Window(Home).Property(RecentAlbum.2.Year)]</thumb>
+					<onclick>PlayList.Clear</onclick>
+					<onclick>$INFO[Window(Home).Property(RecentAlbum.2.Play)]</onclick>
+                </item>
+                <item id="3">
+                    <icon>$INFO[Window(Home).Property(RecentAlbum.3.Thumb)]</icon>
+					<label>$INFO[Window(Home).Property(RecentAlbum.3.Title)]</label>
+					<label2>$INFO[Window(Home).Property(RecentAlbum.3.Artist)]</label2>
+					<thumb>$INFO[Window(Home).Property(RecentAlbum.3.Year)]</thumb>
+					<onclick>PlayList.Clear</onclick>
+					<onclick>$INFO[Window(Home).Property(RecentAlbum.3.Play)]</onclick>
+                </item>
+                <item id="4">
+                   <icon>$INFO[Window(Home).Property(RecentAlbum.4.Thumb)]</icon>
+					<label>$INFO[Window(Home).Property(RecentAlbum.4.Title)]</label>
+					<label2>$INFO[Window(Home).Property(RecentAlbum.4.Artist)]</label2>
+					<thumb>$INFO[Window(Home).Property(RecentAlbum.4.Year)]</thumb>
+					<onclick>PlayList.Clear</onclick>
+					<onclick>$INFO[Window(Home).Property(RecentAlbum.4.Play)]</onclick>
+                </item>
+				<item id="5">
+                   <icon>$INFO[Window(Home).Property(RecentAlbum.5.Thumb)]</icon>
+					<label>$INFO[Window(Home).Property(RecentAlbum.5.Title)]</label>
+					<label2>$INFO[Window(Home).Property(RecentAlbum.5.Artist)]</label2>
+					<thumb>$INFO[Window(Home).Property(RecentAlbum.5.Year)]</thumb>
+					<onclick>PlayList.Clear</onclick>
+					<onclick>$INFO[Window(Home).Property(RecentAlbum.5.Play)]</onclick>
+					<visible>Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+				<item id="6">
+                   <icon>$INFO[Window(Home).Property(RecentAlbum.6.Thumb)]</icon>
+					<label>$INFO[Window(Home).Property(RecentAlbum.6.Title)]</label>
+					<label2>$INFO[Window(Home).Property(RecentAlbum.6.Artist)]</label2>
+					<thumb>$INFO[Window(Home).Property(RecentAlbum.6.Year)]</thumb>
+					<onclick>PlayList.Clear</onclick>
+					<onclick>$INFO[Window(Home).Property(RecentAlbum.6.Play)]</onclick>
+					<visible>Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+				<item id="7">
+                   <icon>$INFO[Window(Home).Property(RecentAlbum.7.Thumb)]</icon>
+					<label>$INFO[Window(Home).Property(RecentAlbum.7.Title)]</label>
+					<label2>$INFO[Window(Home).Property(RecentAlbum.7.Artist)]</label2>
+					<thumb>$INFO[Window(Home).Property(RecentAlbum.7.Year)]</thumb>
+					<onclick>PlayList.Clear</onclick>
+					<onclick>$INFO[Window(Home).Property(RecentAlbum.7.Play)]</onclick>
+					<visible>Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+				<item id="8">
+                   <icon>$INFO[Window(Home).Property(RecentAlbum.8.Thumb)]</icon>
+					<label>$INFO[Window(Home).Property(RecentAlbum.8.Title)]</label>
+					<label2>$INFO[Window(Home).Property(RecentAlbum.8.Artist)]</label2>
+					<thumb>$INFO[Window(Home).Property(RecentAlbum.8.Year)]</thumb>
+					<onclick>PlayList.Clear</onclick>
+					<onclick>$INFO[Window(Home).Property(RecentAlbum.8.Play)]</onclick>
+					<visible>Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+				<item id="9">
+                   <icon>$INFO[Window(Home).Property(RecentAlbum.9.Thumb)]</icon>
+					<label>$INFO[Window(Home).Property(RecentAlbum.9.Title)]</label>
+					<label2>$INFO[Window(Home).Property(RecentAlbum.9.Artist)]</label2>
+					<thumb>$INFO[Window(Home).Property(RecentAlbum.9.Year)]</thumb>
+					<onclick>PlayList.Clear</onclick>
+					<onclick>$INFO[Window(Home).Property(RecentAlbum.9.Play)]</onclick>
+					<visible>Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+				<item id="10">
+                   <icon>$INFO[Window(Home).Property(RecentAlbum.10.Thumb)]</icon>
+					<label>$INFO[Window(Home).Property(RecentAlbum.10.Title)]</label>
+					<label2>$INFO[Window(Home).Property(RecentAlbum.10.Artist)]</label2>
+					<thumb>$INFO[Window(Home).Property(RecentAlbum.10.Year)]</thumb>
+					<onclick>PlayList.Clear</onclick>
+					<onclick>$INFO[Window(Home).Property(RecentAlbum.10.Play)]</onclick>
+					<visible>Skin.HasSetting(Homewidget10items)</visible>
+                </item>
+            </content>
+        </control>
+		
+    </include>
+	
+	<!-- RECENTLY ADDED ADDONS -->	
+
+    <include name="RecentlyAddedAddons">
+
+			<!-- FEATURED ADDON -->
+			
+			<control type="image">
+				<posx>15</posx>
+				<posy>256</posy>
+				<width>491</width>
+				<height>370</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>Home/extras/featuredfo.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>	
+				<visible>Control.HasFocus(3017)</visible>
+				<animation type="Conditional" condition="Control.HasFocus(3015)" reversible="false">
+					<effect type="fade" start="0" end="100" time="400" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="250" />
+				</animation>
+				<animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>	
+			</control>
+			<control type="list" id="3017">
+				<posx>17</posx>
+				<posy>273</posy>
+				<width>479</width>
+				<height>275</height>
+				<onleft>540</onleft>
+				<onright>652</onright>
+				<onup>540</onup>
+				<ondown>540</ondown>
+				<scrolltime>300</scrolltime>
+				<orientation>vertical</orientation>
+				<animation type="Conditional" condition="Container(540).HasFocus(8)" reversible="false">
+					<effect type="fade" start="0" end="100" time="250" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="250" />
+				</animation>					
+				<animation type="WindowOpen" reversible="false">
+					<effect type="slide" start="-2000,0" end="0,0" time="1500" />
+					<effect type="fade" start="0" end="100" time="400" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="200" />
+				</animation>
+				<visible>Container(540).HasFocus(8)</visible>
+				<itemlayout height="275" width="479">	
+				</itemlayout>
+				<focusedlayout height="275" width="479">
+				  <control type="image">
+					  <posx>0</posx>
+					  <posy>38</posy>
+					  <width>479</width>
+					  <height>222</height>
+					  <aspectratio>stretch</aspectratio>
+					  <texture border="7,7,7,7">Home/extras/musicfeaturebg.png</texture>
+					  <colordiffuse>10ffffff</colordiffuse>
+					  <visible>!Control.HasFocus(3017)</visible>	
+				  </control>
+				  <control type="image">
+					  <posx>0</posx>
+					  <posy>38</posy>
+					  <width>479</width>
+					  <height>222</height>
+					  <aspectratio>stretch</aspectratio>
+					  <texture>Home/extras/musicfeaturebgfo.png</texture>
+					  <colordiffuse>ffffffff</colordiffuse>
+					  <animation effect="fade" start="0" end="100" time="400" delay="0" condition="Control.HasFocus(3017)">conditional</animation>
+					  <visible>!Control.HasFocus(540)</visible>
+					  <visible>!Control.HasFocus(652)</visible>
+					  <visible>!Control.HasFocus(3014)</visible>
+				  </control>		
+				  <control type="image">
+					  <posx>10</posx>
+					  <posy>48</posy>
+					  <width>201</width>
+					  <height>201</height>
+					  <aspectratio>stretch</aspectratio>
+					  <texture background="true" diffuse="infowrap/albumdiffuse.png">$INFO[ListItem.Icon]</texture>
+					  <colordiffuse>ffffffff</colordiffuse>				
+				  </control>				
+				  <control type="label">
+					  <posx>220</posx>
+					  <posy>178</posy>
+					  <width>260</width>
+					  <height>35</height>
+					  <font>homemenu3</font>
+					  <textcolor>ff9a9a9a</textcolor>
+					  <scroll>false</scroll>
+					  <align>left</align>
+					  <label>$INFO[ListItem.Label]</label>
+					  <visible>!Control.HasFocus(3017)</visible>
+				  </control>	
+				  <control type="label">
+					  <posx>220</posx>
+					  <posy>178</posy>
+					  <width>260</width>
+					  <height>35</height>
+					  <font>homemenu3</font>
+					  <textcolor>ff505050</textcolor>
+					  <scroll>false</scroll>
+					  <align>left</align>
+					  <label>$INFO[ListItem.Label]</label>
+					  <animation effect="fade" start="0" end="100" time="0" delay="0" condition="Control.HasFocus(3017)">conditional</animation>
+					  <visible>Control.HasFocus(3017)</visible>
+				  </control>
+				  <control type="textbox">
+					  <posx>220</posx>
+					  <posy>208</posy>
+					  <width>248</width>
+					  <height>40</height>
+					  <font>recent2</font>
+					  <textcolor>ff7a7a7a</textcolor>
+					  <scroll>false</scroll>
+					  <align>left</align>
+					  <label>$INFO[ListItem.Label2]</label>
+				  </control>
+				</focusedlayout>	
+					<content>
+						<item id="1">
+							<icon>$INFO[Window(Home).Property(RandomAddon.1.Thumb)]</icon>
+							<label2>$INFO[Window(Home).Property(RandomAddon.1.Author)]</label2>
+							<label>$INFO[Window(Home).Property(RandomAddon.1.Title)]</label>
+							<onclick>RunAddon($INFO[Window(Home).Property(RandomAddon.1.Path)])</onclick>
+						</item>
+					</content>
+				</control>	
+    </include>
+</includes>
