@@ -5,6 +5,7 @@
 <include file="Include_Views.xml" />
 <include file="Includes_Home.xml" />
 <include file="Includes_Nav.xml" />
+<include file="Includes_HomeBG.xml" />
 <include file="Includes_Animations.xml" />
 <include file="Includes_DropDownBar.xml" />
 <include file="Includes_Info.xml" />
@@ -23,7 +24,68 @@
 	<include>VideoMPAAFlaggingConditions</include>
 </include>
 	
-	
+<include name="HomeSubMenuCommonValues">
+    <animation type="VisibleChange" reversible="false">
+        <effect type="fade" start="0" end="100" time="100" />
+    </animation>
+    <posx>515</posx>
+    <posy>275</posy>
+    <width>250</width>
+    <height>430</height>
+    <onleft>3011</onleft>
+    <onright>3010</onright>
+    <onup>540</onup>
+    <pagecontrol>777</pagecontrol>
+    <scrolltime>200</scrolltime>
+    <focusposition>3</focusposition>
+    <orientation>vertical</orientation>
+    <preloaditems>3</preloaditems>
+
+    <itemlayout height="47" width="250">
+        <control type="label">
+            <posx>30</posx>
+            <posy>1</posy>
+            <width>250</width>
+            <height>35</height>
+            <font>homemenu3</font>
+            <textcolor>cf606060</textcolor>
+            <align>left</align>
+            <label>$INFO[ListItem.Label]</label>
+        </control>
+    </itemlayout>
+
+    <focusedlayout height="47" width="250">
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>250</width>
+            <height>47</height>
+            <aspectratio>stretch</aspectratio>
+            <texture border="14">Home/menufocus2.png</texture>
+            <colordiffuse>CFFFFFFF</colordiffuse>
+            <visible>ControlGroup(200).HasFocus(0)</visible>
+            <animation effect="fade" start="0" end="100" time="150" delay="0">Visible</animation>
+            <animation effect="slide" start="0,14" end="0,0" time="100" reversible="false" tween="back" easing="out" condition="Container(200).OnPrevious">Focus</animation>
+            <animation effect="slide" start="0,-14" end="0,0" time="100" reversible="false" tween="back" easing="out" condition="Container(200).OnNext">Focus</animation>
+        </control>
+        <control type="label">
+            <posx>30</posx>
+            <posy>1</posy>
+            <width>250</width>
+            <height>35</height>
+            <font>homemenu3</font>
+            <textcolor>ffffffff</textcolor>
+            <align>left</align>
+            <label>$INFO[ListItem.Label]</label>
+            <animation effect="fade" start="50" end="100" time="100" reversible="false" condition="Container(200).OnPrevious">Focus</animation>
+            <animation effect="fade" start="50" end="100" time="100" reversible="false" condition="Container(200).OnNext">Focus</animation>
+            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(540)">Conditional</animation>
+            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(3010)">Conditional</animation>
+            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(3011)">Conditional</animation>
+        </control>
+    </focusedlayout>
+</include>
+
 <include name="OpenCloseAnimation">
 	<animation type="WindowOpen" reversible="false">
 		<effect type="fade" start="0" end="100" time="200" delay="0" />

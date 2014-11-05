@@ -1,0 +1,366 @@
+<includes>
+
+	<include name="HomeBG">
+
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>bg2.png</texture>
+            <colordiffuse>FFCCCCCF</colordiffuse>
+        </control>
+
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>black.png</texture>
+            <colordiffuse>70FFFFFF</colordiffuse>
+        </control>
+
+        <!--  CUSTOM BACKGROUNDS -->
+        <!-- BG Videos -->
+        <control type="multiimage">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="650" delay="50" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="500"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>5000</timeperimage>
+            <fadetime>1000</fadetime>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Skin.String(CustomBackgroundImageVideos)]</imagepath>
+            <colordiffuse>ff404040</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(1)</visible>
+        </control>
+
+        <!-- BG Movies -->
+        <control type="multiimage">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="650" delay="50" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="500"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>5000</timeperimage>
+            <fadetime>1000</fadetime>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Skin.String(CustomBackgroundImageMovie)]</imagepath>
+            <colordiffuse>ff404040</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(2) | Container(540).HasFocus(14)</visible>
+        </control>
+
+        <!-- BG TVShows -->
+        <control type="multiimage">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="650" delay="50" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="500"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>5000</timeperimage>
+            <fadetime>1000</fadetime>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Skin.String(CustomBackgroundImageTVShows)]</imagepath>
+            <colordiffuse>ff404040</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(3)</visible>
+        </control>
+
+        <!-- BG Music -->
+        <control type="multiimage">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="650" delay="50" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="500"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>5000</timeperimage>
+            <fadetime>1000</fadetime>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Skin.String(CustomBackgroundImageMusic)]</imagepath>
+            <colordiffuse>ff404040</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(4)</visible>
+        </control>
+
+        <!-- BG Pictures -->
+        <control type="multiimage">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="650" delay="50" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="500"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>5000</timeperimage>
+            <fadetime>1000</fadetime>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Skin.String(CustomBackgroundImagePictures)]</imagepath>
+            <colordiffuse>ff707070</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(5)</visible>
+        </control>
+
+        <!-- BG Programs -->
+        <control type="multiimage">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="650" delay="50" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="500"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>5000</timeperimage>
+            <fadetime>1000</fadetime>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Skin.String(CustomBackgroundImagePrograms)]</imagepath>
+            <colordiffuse>ff707070</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(10)</visible>
+        </control>
+
+        <!-- BG Addons -->
+        <control type="multiimage">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="650" delay="50" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="500"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>5000</timeperimage>
+            <fadetime>1000</fadetime>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Skin.String(CustomBackgroundImageAddons)]</imagepath>
+            <colordiffuse>ff707070</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(8)</visible>
+        </control>
+
+        <!-- BG Settings -->
+        <control type="multiimage">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="650" delay="50" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="500"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>5000</timeperimage>
+            <fadetime>1000</fadetime>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Skin.String(CustomBackgroundImageSettings)]</imagepath>
+            <colordiffuse>ff505050</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(9)</visible>
+        </control>
+
+        <!-- BG Power -->
+        <control type="multiimage">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="650" delay="50" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="500"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>5000</timeperimage>
+            <fadetime>1000</fadetime>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Skin.String(CustomBackgroundImagePower)]</imagepath>
+            <colordiffuse>ff505050</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(15)</visible>
+        </control>
+
+        <!-- BG Weather -->
+        <control type="image">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="600" delay="0" reversible="true"/>
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" start="0" end="100" time="1000" delay="0" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="950"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <texture background="true">$INFO[Skin.String(CustomBackgroundWeather)]</texture>
+            <colordiffuse>ff505050</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(7)</visible>
+        </control>
+
+        <!-- BG Play Disc -->
+        <control type="image">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="600" delay="0" reversible="true"/>
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" start="0" end="100" time="1000" delay="0" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="950"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <texture background="true">$INFO[Skin.String(CustomBackgroundPlayDisc)]</texture>
+            <colordiffuse>ff606060</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(12)</visible>
+        </control>
+
+        <!-- EXTRA -->
+        <!-- BG Games -->
+        <control type="multiimage">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="650" delay="50" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="500"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>5000</timeperimage>
+            <fadetime>1000</fadetime>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Skin.String(CustomBackgroundImageGames)]</imagepath>
+            <colordiffuse>ff707070</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(11)</visible>
+        </control>
+
+        <!-- EXTRA -->
+        <!-- BG VOD -->
+        <control type="multiimage">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="650" delay="50" reversible="true"/>
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="350" delay="500"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <posx>0</posx>
+            <posy>260</posy>
+            <width>1280</width>
+            <height>590</height>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>5000</timeperimage>
+            <fadetime>1000</fadetime>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true">$INFO[Skin.String(CustomBackgroundImageVOD)]</imagepath>
+            <colordiffuse>ff858585</colordiffuse>
+            <visible>Skin.HasSetting(CustomBackground)</visible>
+            <visible>Container(540).HasFocus(13)</visible>
+        </control>
+
+	</include>
+
+</includes>

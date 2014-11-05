@@ -22,6 +22,7 @@
 	</control> 
 
 	<include>FusionStyles</include>
+
 	<!-- Main List -->
 	<control type="group">
 		<animation type="Conditional" condition="Window.IsVisible(126) | Window.IsVisible(2000)">
@@ -42,6 +43,7 @@
 			<effect type="fade" start="0" end="100" time="200" delay="0" />
 		</animation>
 	</control>
+
 	<!-- Lefthand List -->
 	<control type="grouplist" id="3">
 		<description>Button Area</description>
@@ -56,11 +58,12 @@
 		<ondown>3</ondown>
 		<orientation>vertical</orientation>
 	</control>
+
 	<!-- Righthand List -->
 	<control type="grouplist" id="5">
 		<description>Control Area</description>
 		<posx>366</posx>
-		<posy>138</posy>
+		<posy>136</posy>
 		<width>810</width>
 		<height>484</height>
 		<itemgap>.5</itemgap>
@@ -70,6 +73,7 @@
 		<ondown>5</ondown>
 		<orientation>vertical</orientation>
 	</control>
+
 	<!-- Buttons -->
 	<control type="button" id="7">
 		<description>Default Button</description>
@@ -125,6 +129,7 @@
 	</control>
 </control>
 
+<!--BOTTOM-->
 <control type="group">
 	<visible>Player.HasMedia</visible>
 	<control type="image">

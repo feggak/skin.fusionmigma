@@ -1,0 +1,937 @@
+<includes>
+		
+		<!-- ============== -->
+		<!-- ============== -->
+		<!-- Navigation Bar -->
+		<!-- ============== -->
+		<!-- ============== -->
+
+<include name="nav">
+	<control type="group">
+		<animation effect="slide" start="0,0" end="0,-760" time="1000" delay="0" reversible="false" condition="Window.IsVisible(12005)">Conditional</animation>
+		<control type="image">
+			<posx>-70</posx>
+			<posy>50</posy>
+			<width>1440</width>
+			<height>82</height>
+			<aspectratio>stretch</aspectratio>
+			<animation effect="rotatex" start="0" end="180" center="36,36" time="1110" condition="true">conditional</animation>
+			<texture>nav/barbg.png</texture>
+			<visible>!Skin.HasSetting(BlackNavBar)</visible>
+		</control> 
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>62</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>nav/barbgalt.png</texture>
+			<visible>Skin.HasSetting(BlackNavBar)</visible>
+		</control>
+		
+<!--Breadcrumbs-->
+		<control type="grouplist">
+			<posx>20</posx>
+			<posy>0</posy>
+			<width>1000</width>
+			<align>left</align>
+			<orientation>horizontal</orientation>
+
+<!--First Set-->			
+			<control type="label">
+				<description>Home Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="29" max="200">auto</width>
+				<height>53</height>	
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[10000][/UPPERCASE]</label>
+				<visible>Window.IsVisible(0)</visible>
+					<animation type="WindowClose" reversible="false">
+							<effect type="fade" start="100" end="0" time="350" delay="0" />
+					</animation>
+					<animation type="WindowOpen" reversible="false">
+							<effect type="fade" start="0" end="100" time="350" delay="0" />
+					</animation>
+			</control>	
+			<control type="label">
+				<description>Videos Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[10006][/UPPERCASE]</label>
+				<visible>!Substring(Container.FolderPath,videodb://1/,Left) + !Substring(Container.FolderPath,videodb://4/,Left) + !Substring(Container.FolderPath,videodb://2/,Left) + !Substring(Container.FolderPath,videodb://5/,Left) + !SubString(Container.FolderPath,_hmplay.xsp,right) + !SubString(Container.FolderPath,_hmplayx.xsp,right) + !SubString(Container.FolderPath,inprogress.xsp,right)</visible>
+				<visible>!Window.IsVisible(0) + !Window.IsVisible(1) + !Window.IsVisible(2) + !Window.IsVisible(3) + !Window.IsVisible(4) + !Window.IsVisible(7) + !Window.IsVisible(12) + !Window.IsVisible(13) + !Window.IsVisible(14) + !Window.IsVisible(15) + !Window.IsVisible(16) + !Window.IsVisible(17) + !Window.IsVisible(18) +  !Window.IsVisible(19) + !Window.IsVisible(40) + !Window.IsVisible(501) + !Window.IsVisible(502) + !Window.IsVisible(2600) + !Window.IsVisible(9505) + !Window.IsVisible(34) + !Window.IsVisible(56) + !Window.IsVisible(503) + !Window.IsVisible(9000) + !Window.IsVisible(9001) + !Window.IsVisible(9002) + !Window.IsVisible(9003)</visible>	
+				<include>BreadCrumb1</include>
+			</control>	
+			<control type="label">
+				<description>Movies Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[20342][/UPPERCASE]</label>
+				<visible>Substring(Container.FolderPath,videodb://1/,Left) | Substring(Container.FolderPath,videodb://4/,Left) | SubString(Container.FolderPath,_hmplayx.xsp,right) | SubString(Container.FolderPath,moviesinprogress.xsp)</visible>
+				<include>BreadCrumb1</include>
+			</control>
+			<control type="label">
+				<description>TV Shows Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[20343][/UPPERCASE]</label>
+				<visible></visible>
+				<visible>Substring(Container.FolderPath,videodb://2/,Left) | Substring(Container.FolderPath,videodb://5/,Left) | SubString(Container.FolderPath,episodesinprogress.xsp)</visible>
+				<include>BreadCrumb1</include>
+			</control>
+			<control type="label">
+				<description>Music Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[2][/UPPERCASE]</label>
+				<visible></visible>
+				<visible>Window.IsVisible(501) | Window.IsVisible(502) | Window.IsVisible(503)</visible>
+				<include>BreadCrumb1</include>
+			</control>	
+			<control type="label">
+				<description>Pictures Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[1][/UPPERCASE]</label>
+				<visible></visible>
+				<visible>Window.IsVisible(2)</visible>
+				<include>BreadCrumb1</include>
+			</control>
+			<control type="label">
+				<description>Programs Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[0][/UPPERCASE]</label>
+				<visible></visible>
+				<visible>Window.IsVisible(1)</visible>
+				<visible>!substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
+				<include>BreadCrumb1</include>
+			</control>
+			<control type="label">
+				<description>Weather Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[8][/UPPERCASE]</label>
+				<visible></visible>
+				<visible>Window.IsVisible(2600)</visible>
+				<include>BreadCrumb1</include>
+			</control>
+			<control type="label">
+				<description>Settings Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[5][/UPPERCASE]</label>
+				<visible>Window.IsVisible(4) | Window.IsVisible(12) | Window.IsVisible(13) | Window.IsVisible(14) | Window.IsVisible(15) | Window.IsVisible(16) | Window.IsVisible(17) | Window.IsVisible(18) | Window.IsVisible(19) | Window.IsVisible(34) | Window.IsVisible(56) | Window.IsVisible(9000) | Window.IsVisible(9001) | Window.IsVisible(9002) | Window.IsVisible(9003)</visible>	
+				<include>BreadCrumb1</include>
+			</control>
+			<control type="label">
+				<description>Add-Ons Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[31528][/UPPERCASE]</label>
+				<visible>Window.IsVisible(40)</visible>	
+				<include>BreadCrumb1</include>
+			</control>
+			<control type="label">
+				<description>File Manager</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[31674][/UPPERCASE]</label>
+				<visible>Window.IsVisible(3)</visible>	
+				<include>BreadCrumb1</include>
+			</control>	
+			<control type="label">
+				<description>System Info Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[10007][/UPPERCASE]</label>
+				<visible>Window.IsVisible(7)</visible>	
+				<include>BreadCrumb1</include>
+			</control>	
+			<control type="label">
+				<description>About Label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[31761][/UPPERCASE]</label>
+				<visible>Window.IsVisible(9505)</visible>	
+				<include>BreadCrumb1</include>
+			</control>	
+			<control type="label">
+				<description>ADD-ONS ALA</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="0" max="400">auto</width>
+				<height>53</height>		
+				<font>breadcrumb</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>time</textcolor>
+				<label>[UPPERCASE]$LOCALIZE[31528][/UPPERCASE]</label>
+				<visible>substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
+				<include>BreadCrumb1</include>
+			</control>
+			<control type="image">
+				<description>Home only breadcrumb</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="53" max="53">auto</width>
+				<height>53</height>
+				<aspectratio>keep</aspectratio>
+				<texture>nav/breadcrumb.png</texture>
+				<visible>Window.IsVisible(0)</visible>
+				<visible>!Skin.HasSetting(BlackNavBar)</visible>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="450"/>
+				</animation>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="450"/>
+				</animation>	
+			</control> 
+			<control type="image">
+				<description>Settings only breadcrumb</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="53" max="53">auto</width>
+				<height>53</height>
+				<aspectratio>keep</aspectratio>
+				<texture>nav/breadcrumb.png</texture>
+				<visible>!Skin.HasSetting(BlackNavBar)</visible>
+				<visible>Window.IsVisible(4) | Window.IsVisible(12) | Window.IsVisible(13) | Window.IsVisible(14) | Window.IsVisible(15) | Window.IsVisible(16) | Window.IsVisible(17) | Window.IsVisible(18) | Window.IsVisible(19) | Window.IsVisible(34)</visible>
+			</control>
+			<control type="image">
+				<description>Main breadcrumb</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="53" max="53">auto</width>
+				<height>53</height>
+				<aspectratio>keep</aspectratio>
+				<texture>nav/breadcrumb.png</texture>
+				<visible>!Skin.HasSetting(BlackNavBar)</visible>
+				<visible>!Window.IsVisible(0)</visible>
+				<visible>!Window.IsVisible(3)</visible>	
+				<visible>!Window.IsVisible(4) + !Window.IsVisible(12) + !Window.IsVisible(13) + !Window.IsVisible(14) + !Window.IsVisible(15) + !Window.IsVisible(16) + !Window.IsVisible(17) + !Window.IsVisible(18) + !Window.IsVisible(19) + !Window.IsVisible(34)</visible>	
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="450" delay="550" />
+				</animation>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="450" delay="0" />
+				</animation>	
+			</control>
+			<control type="image">
+				<description>Home only breadcrumb</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="53" max="53">auto</width>
+				<height>53</height>
+				<aspectratio>keep</aspectratio>
+				<texture>nav/breadcrumbalt.png</texture>
+				<visible>Window.IsVisible(0)</visible>
+				<visible>Skin.HasSetting(BlackNavBar)</visible>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="450"/>
+				</animation>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="450"/>
+				</animation>	
+			</control> 
+			<control type="image">
+				<description>Settings only breadcrumb</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="53" max="53">auto</width>
+				<height>53</height>
+				<aspectratio>keep</aspectratio>
+				<texture>nav/breadcrumbalt.png</texture>
+				<visible>Skin.HasSetting(BlackNavBar)</visible>
+				<visible>Window.IsVisible(4) | Window.IsVisible(12) | Window.IsVisible(13) | Window.IsVisible(14) | Window.IsVisible(15) | Window.IsVisible(16) | Window.IsVisible(17) | Window.IsVisible(18) | Window.IsVisible(19) | Window.IsVisible(34)</visible>
+			</control>
+			<control type="image">
+				<description>Main breadcrumb</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width min="53" max="53">auto</width>
+				<height>53</height>
+				<aspectratio>keep</aspectratio>
+				<texture>nav/breadcrumbalt.png</texture>
+				<visible>Skin.HasSetting(BlackNavBar)</visible>
+				<visible>!Window.IsVisible(0)</visible>
+				<visible>!Window.IsVisible(3)</visible>	
+				<visible>!Window.IsVisible(4) + !Window.IsVisible(12) + !Window.IsVisible(13) + !Window.IsVisible(14) + !Window.IsVisible(15) + !Window.IsVisible(16) + !Window.IsVisible(17) + !Window.IsVisible(18) + !Window.IsVisible(19) + !Window.IsVisible(34)</visible>	
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="450" delay="550" />
+				</animation>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="450" delay="0" />
+				</animation>	
+			</control>
+<!--End First Set-->
+<!--Second Set-->
+	<control type="label">
+		<description>FolderName</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="600">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$INFO[Container.FolderName][/UPPERCASE]</label>
+		<visible>[!Window.IsVisible(2003) + !Container.Content(Songs) + !Container.Content(Episodes) + !SubString(Container.FolderPath,_hmplayx.xsp,right) + !IsEmpty(Container.FolderPath) + !IsEmpty(Container.FolderName) + !Substring(Container.FolderPath,videodb://2/5,Left)] | SubString(Container.FolderPath,episodesinprogress.xsp)</visible>
+		<scroll>false</scroll>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>ArtistName</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="500">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$INFO[ListItem.Artist][/UPPERCASE]</label>
+		<visible>!Window.IsVisible(2003) + Container.Content(Songs)</visible>
+		<scroll>false</scroll>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>TVShowName</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="500">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
+		<visible>!Window.IsVisible(2003) + Container.Content(Episodes) + !SubString(Container.FolderPath,episodesinprogress.xsp)</visible>
+		<scroll>false</scroll>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>TVShow Networks</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="500">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[31762][/UPPERCASE]</label>
+		<visible>!Window.IsVisible(2003) + !SubString(Container.FolderPath,episodesinprogress.xsp) + Substring(Container.FolderPath,videodb://2/5,Left)</visible>
+		<scroll>false</scroll>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Add-On Settings</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="460">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[31763][/UPPERCASE]</label>
+		<visible>Window.IsVisible(10140)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Add Source</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="360">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[31764][/UPPERCASE]</label>
+		<visible>Window.IsVisible(129)</visible>
+		<include>BreadCrumb1</include>
+	</control>	
+	<control type="label">
+		<description>Weather Location Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="0" max="785">auto</width>
+		<height>53</height>		
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$INFO[Weather.Location][/UPPERCASE]</label>
+		<visible>Window.IsVisible(2600)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<!--HDMOVIES PLAYLISTS-->
+		<control type="label">
+		<description>HD Movies Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="200">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[31016][/UPPERCASE]</label>
+		<visible>SubString(Container.FolderPath,_hmplayx.xsp,right)</visible>
+		<visible>!Window.IsVisible(12003)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Files Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="100">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[744][/UPPERCASE]</label>
+		<visible>Window.IsVisible(24)</visible>
+		<visible>!Window.IsVisible(129)</visible>
+		<visible>!Window.IsVisible(132)</visible>	
+		<visible>!Substring(Container.FolderPath,addons://sources/)</visible>
+		<include>BreadCrumb1</include>
+	</control>	
+	<control type="label">
+		<description>Plugins Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="200">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[31002][/UPPERCASE]</label>
+		<visible>Substring(Container.FolderPath,plugin://video/,Left) | Substring(Container.FolderPath,plugin://programs/,Left)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Photos / Video, Folder Name Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="785">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$INFO[Container.FolderName][/UPPERCASE]</label>
+		<visible>Window.IsVisible(2)</visible>
+		<visible>!Substring(Container.FolderPath,addons://sources/)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Games Library Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="200">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE] - $LOCALIZE[14022][/UPPERCASE]</label>
+		<animation type="Conditional" condition="Window.IsVisible(2003)" reversible="false">
+		<effect type="fade" start="100" end="0" time="200" delay="0" />
+		</animation>
+		<visible>substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
+		<visible>!Window.IsVisible(1122)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+        <control type="label">
+		<description>Games Info Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="200">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[31765][/UPPERCASE]</label>
+		<animation type="Conditional" condition="Window.IsVisible(2003)" reversible="false">
+		<effect type="fade" start="100" end="0" time="200" delay="0" />
+		</animation>
+		<visible>substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
+		<visible>Window.IsVisible(1122)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<!-- FUSION SETTINGS -->
+	<control type="label">
+		<description>Fusion Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="300">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[31766][/UPPERCASE]</label>
+		<visible>Window.IsVisible(56) | Window.IsVisible(9000) | Window.IsVisible(9001) | Window.IsVisible(9002) | Window.IsVisible(9003)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Fusion Home Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="300">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE] $LOCALIZE[31402][/UPPERCASE]</label>
+		<visible>Window.IsVisible(9000)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Fusion Views Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="300">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE] $LOCALIZE[31403][/UPPERCASE]</label>
+		<visible>Window.IsVisible(9001)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Fusion OSD Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="300">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE] $LOCALIZE[31404][/UPPERCASE]</label>
+		<visible>Window.IsVisible(9002)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Fusion Extras Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="300">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE] $LOCALIZE[31767][/UPPERCASE]</label>
+		<visible>Window.IsVisible(9003)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Profiles Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="300">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[13200][/UPPERCASE]</label>
+		<visible>Window.IsVisible(34)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Information Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="300">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[19033][/UPPERCASE]</label>
+		<visible>Window.IsVisible(2003)</visible>
+		<include>BreadCrumb1</include>
+	</control>	
+	<control type="label">
+		<description>Set Content Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="300">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[20333][/UPPERCASE]</label>
+		<visible>Window.IsVisible(132)</visible>
+		<include>BreadCrumb1</include>
+	</control>		
+	<control type="label">
+		<description>Video Settings Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="200">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[291][/UPPERCASE]</label>
+		<visible>Window.IsVisible(17)</visible>
+		<include>BreadCrumb1</include>
+	</control>	
+	<control type="label">
+		<description>Audio Settings Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="200">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[292][/UPPERCASE]</label>
+		<visible>Window.IsVisible(15)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Pictures Settings Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="200">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[1][/UPPERCASE]</label>
+		<visible>Window.IsVisible(12)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Programs Settings Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="200">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[0][/UPPERCASE]</label>
+		<visible>Window.IsVisible(13)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Weather Settings Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="200">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[8][/UPPERCASE]</label>
+		<visible>Window.IsVisible(14)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Network Settings Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="200">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[705][/UPPERCASE]</label>
+		<visible>Window.IsVisible(18)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>System Settings Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="200">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[13000][/UPPERCASE]</label>
+		<visible>Window.IsVisible(16)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="label">
+		<description>Appearance Settings Label</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="250">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$LOCALIZE[480][/UPPERCASE]</label>
+		<visible>Window.IsVisible(19)</visible>
+		<include>BreadCrumb1</include>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="53" max="53">auto</width>
+		<height>53</height>
+		<aspectratio>keep</aspectratio>
+		<texture>nav/breadcrumb.png</texture>
+		<visible>!Window.IsVisible(0)</visible>
+		<visible>!Window.IsVisible(1)</visible>
+		<visible>!Window.IsVisible(2)</visible>
+		<visible>!Window.IsVisible(4)</visible>
+		<visible>!Window.IsVisible(7)</visible>
+		<visible>!Window.IsVisible(129)</visible>
+		<visible>!Window.IsVisible(132)</visible>
+		<visible>!Window.IsVisible(2600)</visible>
+		<visible>!Window.IsVisible(2003)</visible>
+		<visible>!Window.IsVisible(9505)</visible>
+		<visible>!Container.Content(Addons)</visible>
+		<visible>!SubString(Container.FolderPath,plugin)</visible>
+		<visible>!IsEmpty(Container.FolderPath)</visible>
+		<visible>!Skin.HasSetting(BlackNavBar)</visible>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="450" delay="0" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="450" delay="350" />
+		</animation>
+		<animation effect="fade" start="0" end="100" time="450" delay="350">Visible</animation>
+		<animation effect="fade" start="100" end="0" time="450">Hidden</animation>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="53" max="53">auto</width>
+		<height>53</height>
+		<aspectratio>keep</aspectratio>
+		<texture>nav/breadcrumbalt.png</texture>
+		<visible>!Window.IsVisible(0)</visible>
+		<visible>!Window.IsVisible(1)</visible>
+		<visible>!Window.IsVisible(2)</visible>
+		<visible>!Window.IsVisible(4)</visible>
+		<visible>![Window.IsVisible(40) + IsEmpty(Container.Property(reponame)) + IsEmpty(Container.Property(addoncategory))]</visible>
+		<!--<visible>![Window.IsVisible(24) + IsEmpty(Container.FolderPath)]</visible>-->
+		<visible>!Window.IsVisible(7)</visible>
+		<visible>!Window.IsVisible(129)</visible>
+		<visible>!Window.IsVisible(132)</visible>
+		<visible>!Window.IsVisible(2600)</visible>
+		<visible>!Window.IsVisible(2003)</visible>
+		<visible>!Window.IsVisible(9505)</visible>
+		<visible>!SubString(Container.FolderPath,plugin)</visible>
+		<visible>!IsEmpty(Container.FolderPath)</visible>
+		<visible>Skin.HasSetting(BlackNavBar)</visible>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="650" delay="0" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="650" delay="350" />
+		</animation>
+		<animation effect="fade" start="0" end="100" time="600" delay="0">Visible</animation>
+		<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
+	</control>
+
+<!--End Second Set-->
+<!--Third Set-->
+	<control type="label">
+		<description>FolderName</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="29" max="600">auto</width>
+		<height>53</height>	
+		<font>breadcrumb</font>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>[UPPERCASE]$INFO[Container.FolderName][/UPPERCASE]</label>
+		<visible>!Window.IsVisible(2003) + !SubString(Container.FolderPath,episodesinprogress.xsp) + [Container.Content(Songs) | Container.Content(Episodes) | SubString(Container.FolderPath,_hmplayx.xsp,right)]</visible>
+		<scroll>false</scroll>
+		<include>BreadCrumb1</include>
+	</control>
+	
+<!--End Third Set-->
+</control>
+<!-- End Breadcrumbs-->
+
+<!-- Time-->
+	<control type="label">
+		<posx>125r</posx>
+		<posy>12</posy>
+		<width>125</width>
+		<font>time</font>
+		<align>center</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+	    <info>System.Time(hh:mm)</info>
+		<visible>![substring(system.time,PM,right) | substring(system.time,AM,right)]</visible>
+	</control>
+	<control type="label">
+		<posx>125r</posx>
+		<posy>12</posy>
+		<width>125</width>
+		<font>time</font>
+		<align>center</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>$INFO[System.Time(hh:mm)][COLOR ampm]$LOCALIZE[378][/COLOR]</label>
+		<visible>substring(system.time,AM,right)</visible>
+	</control>
+		
+	<control type="label">
+		<posx>125r</posx>
+		<posy>12</posy>
+		<width>125</width>
+		<font>time</font>
+		<align>center</align>
+		<aligny>center</aligny>
+		<textcolor>time</textcolor>
+		<label>$INFO[System.Time(hh:mm)][COLOR ampm]$LOCALIZE[379][/COLOR]</label>
+		<visible>substring(system.time,PM,right)</visible>
+	</control>
+	
+<!-- End Time-->
+
+<control type="group">
+	<visible>System.HasNetwork + Weather.IsFetched</visible>
+	<control type="image">
+		<posx>270r</posx>
+		<posy>0</posy>
+		<width>144</width>
+		<height>53</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>nav/taskbg.png</texture>
+		<visible>!Skin.HasSetting(BlackNavBar)</visible>
+	</control> 
+	<control type="image">
+		<posx>270r</posx>
+		<posy>0</posy>
+		<width>144</width>
+		<height>53</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>nav/taskbgalt.png</texture>
+		<visible>Skin.HasSetting(BlackNavBar)</visible>
+	</control>	
+		<control type="label">
+		<posx>138r</posx>
+		<posy>12</posy>
+		<width>95</width>
+		<font>weather</font>
+		<align>right</align>
+		<aligny>center</aligny>
+		<textcolor>f0c7c7c7</textcolor>
+		<label>$INFO[Weather.Temperature]</label>
+		<visible>Weather.IsFetched</visible>
+		</control>
+	<control type="image">
+		<posx>257r</posx>
+		<posy>0</posy>
+		<width>46</width>
+		<height>53</height>
+		<aspectratio>keep</aspectratio>
+		<texture>$INFO[Weather.Conditions]</texture>
+	</control>
+		<animation effect="fade" start="0" end="100" time="450" delay="150" condition="Window.IsVisible(2600)">WindowClose</animation>
+		<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(2600)">WindowOpen</animation>
+</control>
+</control>
+	</include>
+</includes>

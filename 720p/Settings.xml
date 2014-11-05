@@ -20,7 +20,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>black.png</texture>
 			<colordiffuse>73FFFFFF</colordiffuse>
-		</control> 
+		</control>
 
 		<include>FusionStyles</include>
 
