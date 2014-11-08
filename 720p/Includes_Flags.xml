@@ -1,0 +1,529 @@
+<includes>
+
+	<!-- VIDEO CODEC FLAGS -->
+	<include name="VideoCodecFlaggingConditions">
+		<control type="image">
+			<description>Video rez Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.VideoResolution,flagging/video/,.png]</texture>
+		</control>
+
+		<control type="image">
+			<description>Xvid Codec Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/xvid.png</texture>
+			<visible>substring(ListItem.VideoCodec,xvid)</visible>
+		</control>
+
+		<control type="image">
+			<description>Mpeg4 Codec Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/mp4.png</texture>
+			<visible>substring(ListItem.VideoCodec,fmp4)</visible>
+		</control>
+
+		<control type="image">
+			<description>Divx Codec Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/divx.png</texture>
+			<visible>substring(ListItem.VideoCodec,divx)| substring(ListItem.VideoCodec,dx50) | substring(ListItem.VideoCodec,div3) |substring(ListItem.VideoCodec,div4) | substring(ListItem.VideoCodec,div5)</visible>
+		</control>
+
+		<control type="image">
+			<description>h264 Codec Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/h264.png</texture>
+			<visible>substring(ListItem.VideoCodec,h264)</visible>
+		</control>
+
+		<control type="image">
+			<description>avc1 Codec Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/avc1.png</texture>
+			<visible>substring(ListItem.VideoCodec,avc1)</visible>
+		</control>
+
+		<control type="image">
+			<description>wvc1 Codec Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/wvc1.png</texture>
+			<visible>substring(ListItem.VideoCodec,wvc1)</visible>
+		</control>
+
+		<control type="image">
+			<description>mpeg1video Codec Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/mpeg1video.png</texture>
+			<visible>substring(ListItem.VideoCodec,mpeg1video)</visible>
+		</control>
+
+		<control type="image">
+			<description>mpeg2video Codec Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/mpeg2video.png</texture>
+			<visible>substring(ListItem.VideoCodec,mpeg2video) | substring(ListItem.VideoCodec,v_mpeg2)</visible>
+		</control>
+	</include>
+
+	<!-- SOURCE FLAGS -->
+	<include name="VideoTypeHackFlaggingConditions">
+		<control type="image">
+			<description>Bluray Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/bluray.png</texture>
+			<visible>substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,brrip) | substring(ListItem.FilenameAndPath,bdrip) | substring(ListItem.FilenameAndPath,blu-ray)</visible>
+		</control>
+		<control type="image">
+			<description>HDDVD Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/hddvd.png</texture>
+			<visible>substring(ListItem.FilenameAndPath,hddvd) | substring(ListItem.FilenameAndPath,hd-dvd)</visible>
+		</control>
+		<control type="image">
+			<description>HDTV Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/hdtv.png</texture>
+			<visible>substring(ListItem.FilenameAndPath,hdtv) | substring(ListItem.FilenameAndPath,hd-tv)</visible>
+		</control>
+		<control type="image">
+			<description>SDTV Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/sdtv.png</texture>
+			<visible>substring(ListItem.FilenameAndPath,sdtv) | substring(ListItem.FilenameAndPath,pdtv)</visible>
+		</control>
+		<control type="image">
+			<description>DTheater Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/dtheater.png</texture>
+			<visible>substring(ListItem.FilenameAndPath,dtheater)</visible>
+		</control>
+		<control type="image">
+			<description>DVD Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/video/dvd.png</texture>
+			<visible>substring(ListItem.FilenameAndPath,dvd) + !substring(ListItem.FilenameAndPath,hddvd)</visible>
+		</control>
+	</include>
+
+	<!-- MPAA RATINGS FLAGS -->
+	<include name="VideoMPAAFlaggingConditions">
+
+		<!-- US -->
+		<control type="image">
+			<description>Rated G</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/mpaa_general.png</texture>
+			<visible>substring(listitem.mpaa,Rated G)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Rated PG</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/mpaa_pg.png</texture>
+			<visible>substring(listitem.mpaa,Rated PG) + !substring(listitem.mpaa,Rated PG-13)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Rated PG-13</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/mpaa_pg13.png</texture>
+			<visible>substring(listitem.mpaa,Rated PG-13)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Rated R</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/mpaa_restricted.png</texture>
+			<visible>substring(Listitem.mpaa,Rated R)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Rated NC-17</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/mpaa_nc17.png</texture>
+			<visible>substring(Listitem.mpaa,Rated NC)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<!-- Australia -->
+		<control type="image">
+			<description>Australia Rated G</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/australia_g.png</texture>
+			<visible>substring(listitem.mpaa,Australia:G)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Australia Rated PG</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/australia_pg.png</texture>
+			<visible>substring(listitem.mpaa,Australia:PG)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Australia Rated M</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/australia_m.png</texture>
+			<visible>substring(listitem.mpaa,Australia:M) + ! substring(listitem.mpaa,Australia:MA)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Australia Rated MA</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/australia_ma.png</texture>
+			<visible>substring(listitem.mpaa,Australia:MA)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Australia Rated R</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/australia_r.png</texture>
+			<visible>substring(Listitem.mpaa,Australia:R)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Australia Rated X</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/australia_x.png</texture>
+			<visible>substring(listitem.mpaa,Australia:X)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<!-- UK -->
+		<control type="image">
+			<description>UK Rated U</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/UK_u.png</texture>
+			<visible>substring(listitem.mpaa,UK:U)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>UK Rated PG</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/UK_pg.png</texture>
+			<visible>substring(listitem.mpaa,UK:PG)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>UK Rated 12</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/UK_12.png</texture>
+			<visible>substring(listitem.mpaa,UK:12)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>UK Rated 12a</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/UK_12a.png</texture>
+			<visible>substring(listitem.mpaa,UK:12a) + !substring(listitem.mpaa,UK:12)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>UK Rated 15</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/UK_15.png</texture>
+			<visible>substring(listitem.mpaa,UK:15)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>UK Rated 18</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/UK_18.png</texture>
+			<visible>substring(listitem.mpaa,UK:18)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>UK Rated R18</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/UK_r18.png</texture>
+			<visible>substring(listitem.mpaa,UK:R18)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<!-- Germany -->
+		<control type="image">
+			<description>Germany FSK 0</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/Germany0.png</texture>
+			<visible>substring(ListItem.mpaa,Germany:o.A.) | substring(ListItem.mpaa, o.A.)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Germany FSK 6</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/Germany6.png</texture>
+			<visible>substring(ListItem.mpaa,Germany:6) | substring(ListItem.mpaa,FSK 6)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Germany FSK 12</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/Germany12.png</texture>
+			<visible>substring(ListItem.mpaa,Germany:12) | substring(ListItem.mpaa,FSK 12)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Germany FSK 16</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/Germany16.png</texture>
+			<visible>substring(ListItem.mpaa,Germany:16) | substring(ListItem.mpaa,FSK 16)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+
+		<control type="image">
+			<description>Germany FSK 18</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/Germany18.png</texture>
+			<visible>substring(ListItem.mpaa,Germany:18) | substring(ListItem.mpaa,FSK 18)</visible>
+			<visible>[[StringCompare(Container.Viewmode,PosterShelf) | StringCompare(Container.Viewmode,PosterWrap) | StringCompare(Container.Viewmode,PosterWrap2) | StringCompare(Container.Viewmode,PosterWrap3) | StringCompare(Container.Viewmode,Icon) | StringCompare(Container.Viewmode,WideIcon) | StringCompare(Container.Viewmode,WideIcon2)] + Skin.HasSetting(UseIMDBRating)] | [StringCompare(Container.Viewmode,PosterGrid) | StringCompare(Container.Viewmode,Hulu) | StringCompare(Container.Viewmode,List) | StringCompare(Container.Viewmode,InfoList) | StringCompare(Container.Viewmode,BigList2) | StringCompare(Container.Viewmode,LowList) | StringCompare(Container.Viewmode,FanWrap) | StringCompare(Container.Viewmode,InfoWrap) | StringCompare(Container.Viewmode,Episode2)] | Window.IsVisible(12003)</visible>
+		</control>
+	</include>
+
+	<!-- AUDIO CODEC FLAGS -->
+	<include name="AudioCodecFlaggingConditions">
+		<control type="image">
+			<description>mp3 Codec Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/audio/mp3.png</texture>
+			<visible>substring(ListItem.AudioCodec,mp3)</visible>
+		</control>
+
+		<control type="image">
+			<description>dts Codec Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/audio/dts.png</texture>
+			<visible>substring(ListItem.AudioCodec,dca)</visible>
+		</control>
+
+		<control type="image">
+			<description>ac3 Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/audio/ac3.png</texture>
+			<visible>substring(ListItem.AudioCodec,ac3) + !substring(ListItem.AudioChannels,6)</visible>
+		</control>
+
+		<control type="image">
+			<description>aac Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/audio/aac.png</texture>
+			<visible>substring(ListItem.AudioCodec,aac)</visible>
+		</control>
+
+		<control type="image">
+			<description>Dolby Digital Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/audio/dolbydigital.png</texture>
+			<visible>substring(ListItem.AudioCodec,ac3) + substring(ListItem.AudioChannels,6)</visible>
+		</control>
+
+		<control type="image">
+			<description>WMA Pro Codec Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/audio/wmapro.png</texture>
+			<visible>substring(ListItem.AudioCodec,wmapro)</visible>
+		</control>
+
+		 <control type="image">
+			<description>vorbis Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/audio/vorbis.png</texture>
+			<visible>substring(ListItem.AudioCodec,vorbis)</visible>
+		</control>
+
+		<control type="image">
+			<description>Audio Channels Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.AudioChannels,flagging/audio/,.png]</texture>
+		</control>
+
+		<control type="image">
+			<description>dtsma Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/audio/dtsma.png</texture>
+			<visible>substring(ListItem.AudioCodec,dtsma) + substring(ListItem.AudioChannels,6)</visible>
+		</control>
+
+		<control type="image">
+			<description>truehd Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/audio/truehd.png</texture>
+			<visible>substring(ListItem.AudioCodec,truehd) + substring(ListItem.AudioChannels,6)</visible>
+		</control>
+
+		<control type="image">
+			<description>flac Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/audio/flac.png</texture>
+			<visible>substring(ListItem.AudioCodec,flac) + substring(ListItem.AudioChannels,6)</visible>
+		</control>
+	</include>
+
+	<!-- ASPECT RATIO FLAGS -->
+	<include name="AspectCodecFlaggingConditions">
+		<control type="image">
+			<description>Aspectratio Image</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.VideoAspect,flagging/aspectratio/,.png]</texture>
+		</control>
+	</include>
+
+	<!-- STUDIO LOGOS MOVIES -->
+	<include name="StudioflagsMovies">
+		<control type="image">
+			<description>Studio Images</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<visible>Skin.HasSetting(StudiosViewtypes)</visible>
+			<visible>Container.Content(Movies)</visible>
+			<visible>!Player.HasMedia + !Window.IsVisible(12003)</visible>
+			<texture background="true" fallback="$INFO[Skin.String(StudiosFolder)]default.png">$INFO[Skin.String(StudiosFolder)]$INFO[ListItem.Studio,,.png]</texture>
+			<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="250" delay="0" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="250" delay="750" />
+			</animation>
+			<animation effect="fade" start="0" end="100" time="400" delay="500" reversible="false" condition="!Window.IsVisible(2003)">Conditional</animation>
+		</control>
+	</include>
+
+	<!-- STUDIO LOGOS TV -->
+	<include name="StudioflagsTV">
+		<control type="image">
+			<description>Studio Images</description>
+			<width>73</width>
+			<height>48</height>
+			<aspectratio>keep</aspectratio>
+			<visible>Skin.HasSetting(StudiosViewtypes)</visible>
+			<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+			<visible>!Player.HasMedia + !Window.IsVisible(12003)</visible>
+			<texture background="true" fallback="$INFO[Skin.String(StudiosFolder)]default.png">$INFO[Skin.String(StudiosFolder)]$INFO[ListItem.Studio,,.png]</texture>
+			<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="250" delay="0" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="250" delay="750" />
+			</animation>
+			<animation effect="fade" start="0" end="100" time="400" delay="500" reversible="false" condition="!Window.IsVisible(2003)">Conditional</animation>
+		</control>
+	</include>
+</includes>

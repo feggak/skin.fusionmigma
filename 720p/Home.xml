@@ -1795,7 +1795,6 @@
         <control type="group">
             <description>Info panel</description>
             <posy>540</posy>
-            <include>RecentlyAddedExtraNavAnimation</include>
             <visible>!Player.HasMedia</visible>
             <visible>Skin.HasSetting(HomeTotals)</visible>
 
@@ -2028,6 +2027,42 @@
 
         </control>
 
+        <!-- NOW PLAYING ICON AND TEXT -->
+        <control type="image">
+            <posx>14</posx>
+            <posy>179r</posy>
+            <width>32</width>
+            <height>32</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>Home/extras/nowplayingicon.png</texture>
+            <colordiffuse>ffffffff</colordiffuse>
+            <animation type="Visible" reversible="false">
+                <effect type="fade" start="0" end="100" time="150" />
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" start="100" end="0" time="150" />
+            </animation>
+            <visible>Player.HasMedia</visible>
+        </control>
+
+        <control type="label">
+            <posx>53</posx>
+            <posy>178r</posy>
+            <width>200</width>
+            <height>32</height>
+            <font>recent</font>
+            <textcolor>ffa0a0a0</textcolor>
+            <align>left</align>
+            <label>[LOWERCASE]$LOCALIZE[31718][/LOWERCASE]</label>
+            <animation type="Visible" reversible="false">
+                <effect type="fade" start="0" end="100" time="250" />
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" start="100" end="0" time="250" />
+            </animation>
+            <visible>Player.HasMedia</visible>
+        </control>
+
         <!-- PLAY DISC LABEL (PLAY DISC) -->
         <control type="image">
             <animation type="Hidden">
@@ -2097,52 +2132,6 @@
             <label>$INFO[System.DVDLabel]</label>
         </control>
 
-    </control>
-
-    <!-- NOW PLAYING ICON AND TEXT -->
-    <control type="image">
-        <posx>15</posx>
-        <posy>179r</posy>
-        <width>32</width>
-        <height>32</height>
-        <aspectratio>stretch</aspectratio>
-        <texture>Home/extras/nowplayingicon.png</texture>
-        <colordiffuse>ffffffff</colordiffuse>
-        <animation type="Visible" reversible="false">
-            <effect type="fade" start="0" end="100" time="250" />
-        </animation>
-        <animation type="Hidden" reversible="false">
-            <effect type="fade" start="100" end="0" time="250" />
-        </animation>
-        <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-        <animation type="WindowClose" reversible="false">
-            <effect type="fade" start="100" end="0" time="200" />
-        </animation>
-        <visible>Player.HasMedia</visible>
-        <include>recentlyaddedextranavanimation</include>
-    </control>
-
-    <control type="label">
-        <posx>55</posx>
-        <posy>179r</posy>
-        <width>200</width>
-        <height>32</height>
-        <font>recent</font>
-        <textcolor>ffa0a0a0</textcolor>
-        <align>left</align>
-        <label>[LOWERCASE]$LOCALIZE[31718][/LOWERCASE]</label>
-        <animation type="Visible" reversible="false">
-            <effect type="fade" start="0" end="100" time="250" />
-        </animation>
-        <animation type="Hidden" reversible="false">
-            <effect type="fade" start="100" end="0" time="250" />
-        </animation>
-        <animation effect="fade" start="0" end="100" time="900" delay="800">WindowOpen</animation>
-        <animation type="WindowClose" reversible="false">
-            <effect type="fade" start="100" end="0" time="200" />
-        </animation>
-        <visible>Player.HasMedia</visible>
-        <include>recentlyaddedextranavanimation</include>
     </control>
 
     <!-- RSS FEED -->

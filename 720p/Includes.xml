@@ -118,13 +118,6 @@
 	</animation>
 </include>
 
-<include name="RecentlyAddedExtraNavAnimation">
-	<animation type="Conditional" condition="Control.HasFocus(3012) + Skin.HasSetting(recentlyaddednav) |
-		Control.HasFocus(3010) + Skin.HasSetting(recentlyaddednav)">
-		<effect type="slide" start="0" end="-784" time="390" delay="0" tween="sine" easing="inout" />
-	</animation>
-</include>
-
 <!-- VIDEO OVERLAY ON HOMESCREEN -->
 <include name="VideoOverlayHome">
 	<control type="group">
@@ -236,20 +229,21 @@
 
 <!-- MUSIC OVERLAY ON HOMESCREEN -->
 <include name="MusicOverlayHome">
+
+	<!-- ALBUM ART -->
 	<control type="group">
 		<visible>Window.IsActive(0)</visible>
-		<animation effect="slide" start="-200,0" end="0,0" delay="850" time="300" reversible="false">WindowOpen</animation>
-		<animation effect="slide" start="0,0" end="-200,0" delay="50" time="300" reversible="false">WindowClose</animation>
-		<animation effect="slide" start="0,0" end="-200,0" delay="0" time="300"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
-		<animation effect="slide" start="-200,0" end="0,0" delay="600" time="300"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
-		<include>RecentlyAddedExtraNavAnimation</include>
+		<animation effect="slide" start="-200,0" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="-200,0" delay="50" time="200" reversible="false">WindowClose</animation>
+		<animation effect="slide" start="0,0" end="-200,0" delay="0" time="200"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
+		<animation effect="slide" start="-200,0" end="0,0" delay="300" time="200"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
 
 		<!-- CDART -->
 		<control type="image">
 			<visible>Skin.HasSetting(UseCDArt)</visible>
 		    <description>Disc</description>
 		    <posx>70</posx>
-		    <posy>134r</posy>
+		    <posy>136r</posy>
 		    <width>118</width>
 		    <height>118</height>
 		    <texture fallback="DefaultCD.png">$INFO[Player.FolderPath]cdart.png</texture>
@@ -262,7 +256,7 @@
 		<control type="image">
 			<description>Album Thumb</description>
 			<posx>15</posx>
-			<posy>140r</posy>
+			<posy>142r</posy>
 			<width>130</width>
 			<height>130</height>
 			<texture>$INFO[MusicPlayer.Cover]</texture>
@@ -272,51 +266,31 @@
 		</control>
     </control>
 
-    <!-- NO CDART OVERLAY -->
+    <!-- TEXT (NO CDART) -->
 	<control type="group">
+		<posx>152</posx>
 		<visible>!Skin.HasSetting(UseCDArt)</visible>
-		<include>RecentlyAddedExtraNavAnimation</include>
 		<control type="label">
 			<description>Song Title</description>
-			<posx>160</posx>
 			<posy>82r</posy>
-			<width>334</width>
+			<width>346</width>
 			<label>$INFO[MusicPlayer.Title]</label>
 			<align>left</align>
 			<font>homemenu3</font>
 			<scroll>false</scroll>
 			<textcolor>ff909090</textcolor>
 			<visible>Window.IsVisible(0)</visible>
-			<animation effect="fade" start="100" end="0" time="200" delay="200" reversible="false" condition="Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" delay="100" reversible="false" condition="Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
-			<animation effect="slide" start="0,200" end="0,0" delay="250" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
-			<animation effect="slide" start="0,100" end="0,0" delay="950" time="300" reversible="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
-		</control>
-
-		<control type="label">
-			<description>Song Title</description>
-			<posx>160</posx>
-			<posy>82r</posy>
-			<width>600</width>
-			<label>$INFO[MusicPlayer.Title]</label>
-			<align>left</align>
-			<font>homemenu3</font>
-			<scroll>false</scroll>
-			<textcolor>ff909090</textcolor>
-			<visible>Window.IsVisible(0) + [Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)]</visible>
-			<animation effect="fade" start="0" end="100" time="200" reversible="false" condition="Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
-			<animation effect="slide" start="0,200" end="0,0" delay="250" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
-			<animation effect="slide" start="0,100" end="0,0" delay="950" time="300" reversible="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="100" time="300"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="50" time="200" reversible="false">WindowClose</animation>
 		</control>
 
 		<control type="label">
 			<description>Artist Label</description>
-			<posx>160</posx>
-			<posy>57r</posy>
-			<width>334</width>
+			<posy>58r</posy>
+			<width>346</width>
 			<label>$INFO[MusicPlayer.Artist]</label>
 			<align>left</align>
 			<font>recent2</font>
@@ -324,16 +298,15 @@
 			<textcolor>white</textcolor>
 			<visible>Window.IsVisible(0)</visible>
 			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
-			<animation effect="slide" start="0,200" end="0,0" delay="400" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
-			<animation effect="slide" start="0,100" end="0,0" delay="1100" time="300" reversible="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="100" time="300"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="50" time="200" reversible="false">WindowClose</animation>
 		</control>
 
 		<control type="label">
 			<description>Album Label</description>
-			<posx>160</posx>
 			<posy>36r</posy>
-			<width>334</width>
+			<width>346</width>
 			<label>$INFO[MusicPlayer.Album]</label>
 			<align>left</align>
 			<font>recent2</font>
@@ -341,19 +314,19 @@
 			<textcolor>cc707070</textcolor>
 			<visible>Window.IsVisible(0)</visible>
 			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
-			<animation effect="slide" start="0,200" end="0,0" delay="400" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
-			<animation effect="slide" start="0,100" end="0,0" delay="1100" time="300" reversible="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="100" time="300"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="50" time="200" reversible="false">WindowClose</animation>
 		</control>
 	</control>
 
-	<!-- CDART OVERLAY -->
+	<!-- TEXT (WITH CDART) -->
 	<control type="group">
+		<posx>192</posx>
 		<visible>Skin.HasSetting(UseCDArt)</visible>
 		<include>RecentlyAddedExtraNavAnimation</include>
 		<control type="label">
 			<description>Song Title</description>
-			<posx>200</posx>
 			<posy>82r</posy>
 			<width>294</width>
 			<label>$INFO[MusicPlayer.Title]</label>
@@ -364,33 +337,14 @@
 			<visible>Window.IsVisible(0)</visible>
 			<animation effect="fade" start="100" end="0" time="200" delay="200" reversible="false" condition="Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
-			<animation effect="slide" start="0,200" end="0,0" delay="250" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
-			<animation effect="slide" start="0,100" end="0,0" delay="950" time="300" reversible="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
-		</control>
-
-		<control type="label">
-			<description>Song Title</description>
-			<posx>200</posx>
-			<posy>82r</posy>
-			<width>600</width>
-			<label>$INFO[MusicPlayer.Title]</label>
-			<align>left</align>
-			<font>homemenu3</font>
-			<scroll>false</scroll>
-			<textcolor>ff909090</textcolor>
-			<visible>Window.IsVisible(0) + [Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)]</visible>
-			<animation effect="fade" start="0" end="100" time="200" reversible="false" condition="Container(540).HasFocus(10) | Container(540).HasFocus(11) | Container(540).HasFocus(12) | Container(540).HasFocus(13)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
-			<animation effect="slide" start="0,200" end="0,0" delay="250" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
-			<animation effect="slide" start="0,100" end="0,0" delay="950" time="300" reversible="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="100" time="300"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="50" time="200" reversible="false">WindowClose</animation>
 		</control>
 
 		<control type="label">
 			<description>Artist Label</description>
-			<posx>200</posx>
-			<posy>57r</posy>
+			<posy>58r</posy>
 			<width>292</width>
 			<label>$INFO[MusicPlayer.Artist]</label>
 			<align>left</align>
@@ -399,14 +353,13 @@
 			<textcolor>white</textcolor>
 			<visible>Window.IsVisible(0)</visible>
 			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
-			<animation effect="slide" start="0,200" end="0,0" delay="400" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
-			<animation effect="slide" start="0,100" end="0,0" delay="1100" time="300" reversible="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="100" time="300"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="50" time="200" reversible="false">WindowClose</animation>
 		</control>
 
 		<control type="label">
 			<description>\Album Label</description>
-			<posx>200</posx>
 			<posy>36r</posy>
 			<width>292</width>
 			<label>$INFO[MusicPlayer.Album]</label>
@@ -416,9 +369,9 @@
 			<textcolor>cc707070</textcolor>
 			<visible>Window.IsVisible(0)</visible>
 			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(25) | Window.Next(502) | Window.Next(24) | Window.Next(2006)">conditional</animation>
-			<animation effect="slide" start="0,200" end="0,0" delay="400" time="900"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
-			<animation effect="slide" start="0,100" end="0,0" delay="1100" time="300" reversible="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+			<animation effect="slide" start="0,200" end="0,0" delay="100" time="300"  reversible="false" condition="Window.IsActive(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="50" time="200" reversible="false">WindowClose</animation>
 		</control>
 	</control>
 </include>
@@ -509,13 +462,11 @@
 <include name="MusicOverlay">
 	<control type="group">
 		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
-		<animation effect="slide" start="0,0" end="-200,0" delay="0" time="250"  reversible="false" condition="Window.Next(0)">conditional</animation>
-		<animation effect="slide" start="-90,0" end="0,0" delay="800" time="300" reversible="false">WindowOpen</animation>
-		<animation effect="slide" start="0,0" end="-200,0" delay="0" time="300"  reversible="false">WindowClose</animation>
+		<animation effect="slide" start="-90,0" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="-200,0" delay="0" time="200"  reversible="false">WindowClose</animation>
 		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
 		<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
 		<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
-		<include>RecentlyAddedExtraNavAnimation</include>
 
 		<control type="image">
 			<description>Album Thumb</description>
@@ -540,9 +491,8 @@
 		<font>homemenu3</font>
 		<textcolor>ffababab</textcolor>
 		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
-		<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(0)">conditional</animation>
-		<animation effect="slide" start="0,100" end="0,0" delay="850" time="300" reversible="false">WindowOpen</animation>
-		<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
+		<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,100" delay="0" time="200" reversible="false">WindowClose</animation>
 		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
 		<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
 		<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
@@ -558,9 +508,8 @@
 		<font>recent2</font>
 		<textcolor>fc9f9f9f</textcolor>
 		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
-		<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="true" condition="Window.Next(0)">conditional</animation>
-		<animation effect="slide" start="0,100" end="0,0" delay="900" time="300" reversible="false">WindowOpen</animation>
-		<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+		<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,100" delay="0" time="200" reversible="false">WindowClose</animation>
 		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
 		<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
 		<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
