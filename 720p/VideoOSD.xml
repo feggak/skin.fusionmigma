@@ -1,0 +1,1126 @@
+<window id="2901">
+	<defaultcontrol always="true">4</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+	     <!-- Current Time -->
+				<control type="label">
+					<posx>30</posx>
+					<posy>20</posy>
+					<width>300</width>
+					<label>[B]$INFO[System.Time][/B]</label>
+					<textcolor>ff404040</textcolor>
+					<font>movietitle6</font>
+					<align>left</align>
+					<visible>!Skin.HasSetting(oldosd)</visible>
+				</control>
+		<control type="group">
+			<animation effect="slide" start="0,130" end="0,0" time="250" delay="0" reversable="false" tween="back" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,130" delay="0" time="250" reversable="false">WindowClose</animation>
+            <visible>!Skin.HasSetting(oldosd)</visible>
+			<control type="group">
+				<posx>0</posx>
+				<posy>123r</posy>
+			
+				<!-- BACKGROUND -->
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1280</width>
+					<height>250</height>
+					<texture>osd/infobg.png</texture>
+					<colordiffuse>33FFFFFF</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>	
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1280</width>
+					<height>250</height>
+					<texture>osd/musicbg.png</texture>
+					<colordiffuse>ffFFFFFF</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>	
+
+					
+				<!-- TITLE -->
+				<control type="grouplist">
+					<posx>300</posx>
+					<posy>15</posy>
+					<width>685</width>
+					<itemgap>0</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="5" max="627">auto</width>
+						<font>movietitle6</font>
+						<label>[UPPERCASE]$INFO[VideoPlayer.Title][/UPPERCASE]</label>
+						<textcolor>white</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+					<include>MovieHDFlagsDialog</include>
+				</control>
+
+					
+				<!-- MOVIE INFO -->
+				<control type="grouplist">
+					<visible>VideoPlayer.Content(Movies)</visible>
+					<posx>300</posx>
+					<posy>45</posy>
+					<width>685</width>
+					<itemgap>0</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="0" max="100">auto</width>
+						<font>aired</font>
+						<label>[UPPERCASE]$INFO[VideoPlayer.Year][/UPPERCASE]</label>
+						<textcolor>movietitleb2</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="0" max="30">auto</width>
+						<font>aired</font>
+						<label>[UPPERCASE] • [/UPPERCASE]</label>
+						<textcolor>movietitleb2</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+						<visible>!IsEmpty(VideoPlayer.Year) + !IsEmpty(VideoPlayer.Genre)</visible>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="0" max="500">auto</width>
+						<font>aired</font>
+						<label>[UPPERCASE]$INFO[VideoPlayer.Genre][/UPPERCASE]</label>
+						<textcolor>movietitleb2</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="0" max="30">auto</width>
+						<font>aired</font>
+						<label>[UPPERCASE] • [/UPPERCASE]</label>
+						<textcolor>movietitleb2</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+						<visible>!IsEmpty(VideoPlayer.Rating) + [!IsEmpty(VideoPlayer.Year) | !IsEmpty(VideoPlayer.Genre)]</visible>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="0" max="300">auto</width>
+						<font>aired</font>
+						<label>[UPPERCASE]$INFO[VideoPlayer.Rating,Rate ,][/UPPERCASE]</label>
+						<textcolor>movietitleb2</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+				</control>
+
+				<!-- EPISODE INFO -->
+				<control type="grouplist">
+					<visible>VideoPlayer.Content(Episodes)</visible>
+					<posx>300</posx>
+					<posy>45</posy>
+					<width>685</width>
+					<itemgap>0</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="0" max="400">auto</width>
+						<font>aired</font>
+						<label>[UPPERCASE]$INFO[VideoPlayer.TVShowTitle][/UPPERCASE]</label>
+						<textcolor>movietitleb2</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="0" max="30">auto</width>
+						<font>aired</font>
+						<label>[UPPERCASE] • [/UPPERCASE]</label>
+						<textcolor>movietitleb2</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+						<visible>!IsEmpty(VideoPlayer.TVShowTitle) + !IsEmpty(VideoPlayer.Season)</visible>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="0" max="200">auto</width>
+						<font>aired</font>
+						<label>[UPPERCASE]$INFO[VideoPlayer.Season,Season ][/UPPERCASE]</label>
+						<textcolor>movietitleb2</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="0" max="30">auto</width>
+						<font>aired</font>
+						<label>[UPPERCASE] • [/UPPERCASE]</label>
+						<textcolor>movietitleb2</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+						<visible>!IsEmpty(VideoPlayer.Episode) + [!IsEmpty(VideoPlayer.TVShowTitle) | !IsEmpty(VideoPlayer.Season)]</visible>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="0" max="200">auto</width>
+						<font>aired</font>
+						<label>[UPPERCASE]$INFO[VideoPlayer.Episode,Episode ,][/UPPERCASE]</label>
+						<textcolor>movietitleb2</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+				</control>
+				
+
+			</control>
+		
+
+			<!-- Z-BAR -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+				<animation effect="slide" start="0,15" end="0,0" time="550" delay="50" reversable="false">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture flipx="true">zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+				<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
+				<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
+			</control>
+	
+			<!-- PROGRESS BAR -->
+			<control type="progress" id="23">
+				<posx>300</posx>
+				<posy>41r</posy>
+				<width>946</width>
+				<height>4</height>
+				<info>Player.Progress</info>
+				<texturebg>white2.png</texturebg>
+				<lefttexture>-</lefttexture>
+				<midtexture>whiteprogress.png</midtexture>
+				<righttexture>-</righttexture>
+				<overlaytexture>-</overlaytexture>
+			</control>
+
+			<!-- TIMINGS -->
+			<control type="group">
+				<posy>34r</posy>
+
+				<!-- POSITION TIME -->
+				<control type="label">
+					<posx>300</posx>
+					<posy>0</posy>
+					<width min="50" max="250">auto</width>
+					<height>25</height>
+					<label>[B]$INFO[VideoPlayer.Time][/B]</label>
+					<textcolor>ffd0d0d0</textcolor>
+					<font>duration</font>
+					<align>left</align>
+				</control>
+	
+				<!-- FINISH TIME -->
+<!-- 				<control type="grouplist">
+					<posx>380</posx>
+					<width>300</width>
+					<orientation>horizontal</orientation>
+					<align>center</align>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="5" max="250">auto</width>
+						<height>25</height>
+						<label>[B][UPPERCASE]The End[/UPPERCASE][/B]</label>
+						<textcolor>f0a0a0a0</textcolor>
+						<font>duration</font>
+						<align>left</align>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="5" max="250">auto</width>
+						<height>25</height>
+						<label>[B]$INFO[Player.FinishTime][/B]</label>
+						<textcolor>ffd0d0d0</textcolor>
+						<font>duration</font>
+						<align>left</align>
+					</control>
+				</control>
+ -->				
+
+				<!-- RUNTIME TIME -->
+				<control type="label">
+					<posx>34r</posx>
+					<posy>0</posy>
+					<align>right</align>
+					<width>250</width>
+					<height>25</height>
+					<label>[B]$INFO[VideoPlayer.Duration][/B]</label>
+					<textcolor>ffd0d0d0</textcolor>
+					<font>duration</font>
+				</control>
+
+	
+				<!-- REWIND -->
+				<control type="group">
+                    <visible>Player.Rewinding2x</visible>
+					<posx>600</posx>
+					<width>346</width>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>25</height>
+						<label>[B][UPPERCASE]Rewind 2x[/UPPERCASE][/B]</label>
+						<textcolor>gray</textcolor>
+						<font>duration</font>
+						<align>center</align>
+					</control>
+				</control>
+				<control type="group">
+                    <visible>Player.Rewinding4x</visible>
+					<posx>600</posx>
+					<width>346</width>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>25</height>
+						<label>[B][UPPERCASE]Rewind 4x[/UPPERCASE][/B]</label>
+						<textcolor>gray</textcolor>
+						<font>duration</font>
+						<align>center</align>
+					</control>
+				</control>
+				<control type="group">
+                    <visible>Player.Rewinding8x</visible>
+					<posx>600</posx>
+					<width>346</width>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>25</height>
+						<label>[B][UPPERCASE]Rewind 8x[/UPPERCASE][/B]</label>
+						<textcolor>gray</textcolor>
+						<font>duration</font>
+						<align>center</align>
+					</control>
+				</control>
+				<control type="group">
+                    <visible>Player.Rewinding16x</visible>
+					<posx>600</posx>
+					<width>346</width>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>25</height>
+						<label>[B][UPPERCASE]Rewind 16x[/UPPERCASE][/B]</label>
+						<textcolor>gray</textcolor>
+						<font>duration</font>
+						<align>center</align>
+					</control>
+				</control>
+				<control type="group">
+                    <visible>Player.Rewinding32x</visible>
+					<posx>600</posx>
+					<width>346</width>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>25</height>
+						<label>[B][UPPERCASE]Rewind 32x[/UPPERCASE][/B]</label>
+						<textcolor>gray</textcolor>
+						<font>duration</font>
+						<align>center</align>
+					</control>
+				</control>
+
+				<!-- FORWARD -->
+				<control type="group">
+                    <visible>Player.Forwarding2x</visible>
+					<posx>600</posx>
+					<width>346</width>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>25</height>
+						<label>[B][UPPERCASE]Forward 2x[/UPPERCASE][/B]</label>
+						<textcolor>gray</textcolor>
+						<font>duration</font>
+						<align>center</align>
+					</control>
+				</control>
+				<control type="group">
+                    <visible>Player.Forwarding4x</visible>
+					<posx>600</posx>
+					<width>346</width>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>25</height>
+						<label>[B][UPPERCASE]Forward 4x[/UPPERCASE][/B]</label>
+						<textcolor>gray</textcolor>
+						<font>duration</font>
+						<align>center</align>
+					</control>
+				</control>
+				<control type="group">
+                    <visible>Player.Forwarding8x</visible>
+					<posx>600</posx>
+					<width>346</width>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>25</height>
+						<label>[B][UPPERCASE]Forward 8x[/UPPERCASE][/B]</label>
+						<textcolor>gray</textcolor>
+						<font>duration</font>
+						<align>center</align>
+					</control>
+				</control>
+				<control type="group">
+                    <visible>Player.Forwarding16x</visible>
+					<posx>600</posx>
+					<width>346</width>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>25</height>
+						<label>[B][UPPERCASE]Forward 16x[/UPPERCASE][/B]</label>
+						<textcolor>gray</textcolor>
+						<font>duration</font>
+						<align>center</align>
+					</control>
+				</control>
+				<control type="group">
+                    <visible>Player.Forwarding32x</visible>
+					<posx>600</posx>
+					<width>346</width>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>25</height>
+						<label>[B][UPPERCASE]Forward 32x[/UPPERCASE][/B]</label>
+						<textcolor>gray</textcolor>
+						<font>duration</font>
+						<align>center</align>
+					</control>
+				</control>
+				
+			
+
+			</control>
+
+			<!-- POSTER -->
+			<control type="group">
+				<animation effect="fade" start="100" end="0" delay="100" time="200" reversable="false">WindowClose</animation>
+				<visible>VideoPlayer.Content(movies)</visible>
+				<posx>40</posx>
+				<posy>340r</posy>
+				<control type="image">
+					<description>Poster</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>220</width>
+					<height>320</height>
+					<align>center</align>
+					<texture background="true" fallback="DefaultVideo.png">$INFO[videoplayer.cover]</texture>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<posx>-8</posx>
+					<posy>-10</posy>
+					<width>245</width>
+					<height>348</height>
+					<align>center</align>
+					<aspectratio>stretch</aspectratio>
+					<texture>poster/glassoverlay.png</texture>
+				</control>
+			</control>
+			
+			<!-- THUMB -->
+			<control type="group">
+				<animation effect="fade" start="100" end="0" delay="100" time="300" reversable="false">WindowClose</animation>
+				<visible>VideoPlayer.Content(episodes) | VideoPlayer.Content(files)</visible>
+				<posx>40</posx>
+				<posy>160r</posy>
+				<control type="image">
+					<description>thumb</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>220</width>
+					<height>140</height>
+					<align>center</align>
+					<texture background="true" fallback="DefaultVideo.png">$INFO[videoplayer.cover]</texture>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<posx>-22</posx>
+					<posy>-24</posy>
+					<width>264</width>
+					<height>188</height>
+					<align>center</align>
+					<aspectratio>stretch</aspectratio>
+					<texture>episodes/episodeframe.png</texture>
+				</control>
+			</control>
+
+			<!-- TVLOGO -->
+			<control type ="image">
+				<animation effect="fade" start="100" end="0" delay="100" time="300" reversable="false">WindowClose</animation>
+				<visible>VideoPlayer.Content(Episodes)</visible>
+				<posx>40</posx>     
+				<posy>255r</posy>    
+				<width>220</width>
+				<height>80</height>
+				<align>center</align>
+				<aligny>bottom</aligny>
+				<texture background="true">$INFO[Player.FolderPath]../logo.png</texture>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			</control>				
+				
+			<!-- CONTROL BUTTONS-->
+			<control type="group">
+				<posx>339r</posx>
+				<posy>153r</posy>	
+				<control type="button" id="2">
+					<posx>13</posx>
+					<posy>44</posy>		
+					<description>Previous</description>
+					<height>55</height>
+					<width>55</width>
+					<aspectratio>keep</aspectratio>
+					<texturefocus flipx="true">osd/nextfo.png</texturefocus>
+					<texturenofocus flipx="true">osd/nextnf.png</texturenofocus>
+					<onclick>xbmc.playercontrol(previous)</onclick>
+					<pulseonselect>yes</pulseonselect>
+					<onleft>6</onleft>
+					<onright>3</onright>
+					<onup>7</onup>
+					<ondown>1</ondown>
+				</control>
+				<control type="button" id="3">
+					<posx>59</posx>
+					<posy>44</posy>		
+					<description>Rewind</description>
+					<height>55</height>
+					<width>55</width>
+					<aspectratio>keep</aspectratio>
+					<texturefocus flipx="true">osd/fffo.png</texturefocus>
+					<texturenofocus flipx="true">osd/ffnf.png</texturenofocus>
+					<onclick>xbmc.playercontrol(rewind)</onclick>
+					<pulseonselect>yes</pulseonselect>
+					<onleft>2</onleft>
+					<onright>4</onright>
+					<onup>7</onup>
+					<ondown>1</ondown>
+				</control>
+				<control type="togglebutton" id="4">
+					<description>Play</description>
+					<posx>102</posx>
+					<posy>38</posy>
+					<height>68</height>
+					<width>68</width>
+					<texturefocus>osd/playfo.png</texturefocus>
+					<texturenofocus>osd/playnf.png</texturenofocus>
+					<usealttexture>Player.Playing</usealttexture>
+					<alttexturefocus>osd/pausefo.png</alttexturefocus>
+					<alttexturenofocus>osd/pausenf.png</alttexturenofocus>
+					<onclick>playercontrol(play)</onclick>
+					<pulseonselect>yes</pulseonselect>
+					<onup>7</onup>
+					<ondown>1</ondown>
+					<onleft>3</onleft>
+					<onright>7</onright>
+				</control>
+				<control type="button" id="7">
+					<description>Stop</description>
+					<posx>157</posx>
+					<posy>38</posy>
+					<height>68</height>
+					<width>68</width>
+					<texturefocus>osd/stopfo.png</texturefocus>
+					<texturenofocus>osd/stopnf.png</texturenofocus>
+					<onclick>playercontrol(stop)</onclick>
+					<pulseonselect>yes</pulseonselect>
+					<onup>-</onup>
+					<ondown>1</ondown>
+					<onleft>4</onleft>
+					<onright>5</onright>
+				</control>
+				<control type="button" id="5">
+					<posx>213</posx>
+					<posy>44</posy>		
+					<description>Fast Forward</description>
+					<height>55</height>
+					<width>55</width>
+					<aspectratio>keep</aspectratio>
+					<texturefocus>osd/fffo.png</texturefocus>
+					<texturenofocus>osd/ffnf.png</texturenofocus>
+					<onclick>xbmc.playercontrol(forward)</onclick>
+					<pulseonselect>yes</pulseonselect>
+					<onleft>7</onleft>
+					<onright>6</onright>
+					<onup>7</onup>
+					<ondown>1</ondown>
+				</control>
+				<control type="button" id="6">
+					<posx>259</posx>
+					<posy>44</posy>		
+					<description>Next</description>
+					<height>55</height>
+					<width>55</width>
+					<aspectratio>keep</aspectratio>
+					<texturefocus>osd/nextfo.png</texturefocus>
+					<texturenofocus>osd/nextnf.png</texturenofocus>
+					<onclick>xbmc.playercontrol(next)</onclick>
+					<pulseonselect>yes</pulseonselect>
+					<onleft>5</onleft>
+					<onright>2</onright>
+					<onup>7</onup>
+					<ondown>1</ondown>
+				</control>
+			</control>
+
+			<!-- EXTRA BUTTONS -->
+			<control type="grouplist" id="1">
+				<visible>!Player.Forwarding + !Player.Rewinding</visible>
+				<posx>300</posx>
+				<posy>36r</posy>
+				<width>946</width>
+				<height>30</height>
+				<itemgap>0</itemgap>
+				<align>center</align>
+				<orientation>horizontal</orientation>
+				<onleft>1</onleft>
+				<onright>1</onright>
+				<onup>4</onup>
+				<ondown>1</ondown>
+				<control type="button" id="8">
+					<description>Bookmarks</description>
+					<label>$LOCALIZE[298]</label>
+					<width>120</width>
+					<height>30</height>
+					<texturefocus border="1">button2fo.png</texturefocus>
+					<texturenofocus border="1">-</texturenofocus>
+					<onclick>XBMC.ActivateWindow(125)</onclick>
+				</control>
+				<control type="button" id="9">
+					<description>Audio Settings</description>
+					<label>Audio & Sub</label>
+					<width>120</width>
+					<height>30</height>
+					<texturefocus border="1">button2fo.png</texturefocus>
+					<texturenofocus border="1">-</texturenofocus>
+					<onclick>xbmc.activatewindow(124)</onclick>
+				</control>
+				<control type="button" id="10">
+					<description>Video Settings</description>
+					<label>$LOCALIZE[444]</label>
+					<width>120</width>
+					<height>30</height>
+					<texturefocus border="1">button2fo.png</texturefocus>
+					<texturenofocus border="1">-</texturenofocus>
+					<onclick>xbmc.activatewindow(123)</onclick>
+				</control>
+				<control type="button" id="11">
+					<description>Info</description>
+					<label>Cast</label>
+					<width>120</width>
+					<height>30</height>
+					<texturefocus border="1">button2fo.png</texturefocus>
+					<texturenofocus border="1">-</texturenofocus>
+				</control>
+				<control type="button" id="12">
+					<description>Subtitles</description>
+					<label>Get Subtitle</label>
+					<width>120</width>
+					<height>30</height>
+					<texturefocus border="1">button2fo.png</texturefocus>
+					<texturenofocus border="1">-</texturenofocus>
+					<onclick>Close</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(OSDSubtitlePath)])</onclick>
+				</control>
+				<control type="button" id="13">
+					<description>DVD Menu</description>
+					<label>$LOCALIZE[446]</label>
+					<width>120</width>
+					<height>30</height>
+					<texturefocus border="1">button2fo.png</texturefocus>
+					<texturenofocus border="1">-</texturenofocus>
+					<onclick>xbmc.playercontrol(showvideomenu)</onclick>
+					<visible>System.HasMediaDVD</visible>
+				</control>
+			</control>
+			<control type="group" id="20">
+			        <animation effect="slide" start="0,0" end="0,-760" time="450" delay="0" reversible="false" condition="!Control.HasFocus(11)">Conditional</animation>
+					<animation effect="slide" start="0,-760" end="0,0" time="450" delay="0" reversible="false" condition="Control.HasFocus(11)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-760" time="450" delay="0" reversible="false">WindowClose</animation>
+			       <posx>640</posx>
+				   <posy>190</posy>
+				   <control type="image">
+			       <posx>0</posx>
+			       <posy>0</posy>			
+			       <width>500</width>
+			       <height>600</height>
+			       <texture>shelf/infobubble.png</texture>
+				   <aspectratio>keep</aspectratio>
+		       </control>
+			  <control type="label">
+			<description>cast info</description>
+			<posx>5</posx>
+			<posy>200</posy>
+			<width>490</width>
+			<height>190</height>
+			<label>$INFO[VideoPlayer.CastandRole]</label>
+			<font>aired</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>ff404040</textcolor>
+		</control>
+		</control> 
+		</control> 
+		
+		 <!-- OLD OSD-->
+		
+<control type="group">
+            <animation effect="slide" start="0,130" end="0,0" time="400" delay="0" reversable="false" tween="back" easing="out">WindowOpen</animation>
+            <animation effect="slide" start="0,0" end="0,130" delay="0" time="400" reversable="false">WindowClose</animation>
+			 <visible>Skin.HasSetting(oldosd)</visible>
+            <!-- RE-ENABLING ORIGINAL OSD-->
+
+            <control type="image">
+                <posx>40</posx>
+                <posy>120r</posy>
+                <width>1200</width>
+                <height>122</height>
+                <aspectratio>keep</aspectratio>
+                <texture>osdold/osdbg.png</texture>
+                <colordiffuse>c4FFFFFF</colordiffuse>
+            </control>
+			 <!-- <control type="image">
+                <posx>40</posx>
+                <posy>250r</posy>
+                <width>1200</width>
+                <height>122</height>
+                <aspectratio>keep</aspectratio>
+                <texture>info/infobar.png</texture>
+				 <bordertexture border="6">info/infobar.png</bordertexture>
+		         <bordersize>6</bordersize>
+            </control> -->
+            <control type="progress" id="23">
+                <posx>95</posx>
+                <posy>62r</posy>
+                <width>820</width>
+                <height>10</height> <!-- 4 -->
+                <info>Player.Progress</info>
+                <texturebg>osdold/progressbg.png</texturebg> <!-- <texturebg>white2.png</texturebg> -->
+                <lefttexture>osdold/pleft.png</lefttexture> <!-- - -->
+                <midtexture>osdold/pcenter.png</midtexture> <!-- whiteprogress.png -->
+                <righttexture>osdold/pright.png</righttexture>
+                <overlaytexture>-</overlaytexture>
+            </control>
+			
+            <control type="label">
+                <posx>95</posx>
+                <posy>95r</posy>
+                <width>950</width>
+                <label>[B][UPPERCASE]$INFO[VideoPlayer.Title][/UPPERCASE][/B]</label>
+                <font>duration</font>
+                <textcolor>ff404040</textcolor>
+            </control>
+			
+			<control type="label">
+				<posx>95</posx>
+				<posy>50r</posy>
+				<width>500</width>
+				<label>[B][UPPERCASE]$INFO[VideoPlayer.Time][/UPPERCASE] / [COLOR=gray]$INFO[VideoPlayer.Duration][/COLOR][/B]</label>
+				<font>duration</font>
+				<textcolor>ff404040</textcolor>
+			</control>
+			
+			<!-- FINISH TIME -->
+			<control type="grouplist">
+				<posx>570</posx>
+				<posy>50r</posy>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width min="50" max="250">auto</width>
+					<height>25</height>
+					<label>[B][UPPERCASE]FINISHES:[/UPPERCASE][/B]</label>
+					<textcolor>ff404040</textcolor>
+					<font>duration</font>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width min="50" max="250">auto</width>
+					<height>25</height>
+					<label>[B]$INFO[Player.FinishTime][/B]</label>
+					<textcolor>gray</textcolor>
+					<font>duration</font>
+					<align>right</align>
+				</control>
+			</control>
+			<!-- Current TIME -->
+			<control type="grouplist">
+				<posx>660</posx>
+				<posy>90r</posy>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width min="50" max="250">auto</width>
+					<height>25</height>
+					<label>[B]$INFO[System.Time][/B]</label>
+					<textcolor>ff404040</textcolor>
+					<font>duration</font>
+					<align>right</align>
+				</control>
+			</control>
+			<!-- CHAPTER INFO
+            <control type="grouplist">
+                <posx>745</posx>
+                <posy>115r</posy>
+                <orientation>horizontal</orientation>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width min="50" max="250">auto</width>
+                    <height>25</height>
+                    <label>[B][UPPERCASE]CHAPTER:[/UPPERCASE][/B]</label>
+                    <textcolor>gray</textcolor>
+                    <font>duration</font>
+                    <align>left</align>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width min="50" max="250">auto</width>
+                    <height>25</height>
+                    <label>[B]$INFO[Player.Chapter]$INFO[Player.ChapterCount, / ][/B]</label>
+                    <textcolor>ffd0d0d0</textcolor>
+                    <font>duration</font>
+                    <align>left</align>
+                </control>
+            </control> -->
+
+            <control type="group">
+                <posx>395r</posx>
+                <posy>130r</posy>
+                <control type="button" id="2">
+                    <posx>64</posx>
+                    <posy>44</posy>
+                    <description>Previous</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus flipx="true">osdold/nextfo.png</texturefocus>
+                    <texturenofocus flipx="true">osdold/nextnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(previous)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>6</onleft>
+                    <onright>3</onright>
+                    <onup>1</onup>
+                    <ondown>2</ondown>
+                </control>
+                <control type="button" id="3">
+                    <posx>110</posx>
+                    <posy>44</posy>
+                    <description>Rewind</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus flipx="true">osdold/fffo.png</texturefocus>
+                    <texturenofocus flipx="true">osdold/ffnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(rewind)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>2</onleft>
+                    <onright>4</onright>
+                    <onup>1</onup>
+                    <ondown>3</ondown>
+                </control>
+                <control type="togglebutton" id="4">
+                    <description>Play</description>
+                    <posx>155</posx>
+                    <posy>38</posy>
+                    <height>68</height>
+                    <width>68</width>
+                    <texturefocus>osdold/pausefo.png</texturefocus>
+                    <texturenofocus>osdold/pausenf.png</texturenofocus>
+                    <usealttexture>Player.Paused</usealttexture>
+                    <alttexturefocus>osdold/playfo.png</alttexturefocus>
+                    <alttexturenofocus>osdold/playnf.png</alttexturenofocus>
+                    <onclick>playercontrol(play)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onup>1</onup>
+                    <ondown>-</ondown>
+                    <onleft>3</onleft>
+                    <onright>5</onright>
+                </control>
+                <control type="button" id="5">
+                    <posx>213</posx>
+                    <posy>44</posy>
+                    <description>Fast Forward</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/fffo.png</texturefocus>
+                    <texturenofocus>osdold/ffnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(forward)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>4</onleft>
+                    <onright>6</onright>
+                    <onup>1</onup>
+                    <ondown>6</ondown>
+                </control>
+                <control type="button" id="6">
+                    <posx>259</posx>
+                    <posy>44</posy>
+                    <description>Next</description>
+                    <height>55</height>
+                    <width>55</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/nextfo.png</texturefocus>
+                    <texturenofocus>osdold/nextnf.png</texturenofocus>
+                    <onclick>xbmc.playercontrol(next)</onclick>
+                    <pulseonselect>yes</pulseonselect>
+                    <onleft>5</onleft>
+                    <onright>2</onright>
+                    <onup>1</onup>
+                    <ondown>7</ondown>
+                </control>
+            </control>
+
+            <control type="grouplist" id="1">
+                <posx>430</posx>
+                <posy>145r</posy>
+                <width>780</width>
+                <height>40</height>
+                <itemgap>10</itemgap>
+                <align>right</align>
+                <orientation>horizontal</orientation>
+                <onleft>1</onleft>
+                <onright>1</onright>
+                <onup>1</onup>
+                <ondown>4</ondown>
+                 <control type="button" id="30">
+                    <description>Cast</description>
+                    <height>40</height>
+                    <width>40</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/xxinfofo.png</texturefocus>
+                    <texturenofocus>osdold/xxinfonf.png</texturenofocus>
+                </control>
+                <control type="button" id="9">
+                    <description>Audio Settings</description>
+                    <height>40</height>
+                    <width>40</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/xxaudiofo.png</texturefocus>
+                    <texturenofocus>osdold/xxaudionf.png</texturenofocus>
+                    <onclick>xbmc.activatewindow(124)</onclick>
+                </control>
+                <control type="button" id="10">
+                    <description>Video Settings</description>
+                    <height>40</height>
+                    <width>40</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/xxvidfo.png</texturefocus>
+                    <texturenofocus>osdold/xxvidnf.png</texturenofocus>
+                    <onclick>xbmc.activatewindow(123)</onclick>
+                </control>
+				<control type="button" id="8">
+                    <description>Bookmarks</description>
+                    <height>40</height>
+                    <width>40</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/xxbookmarksfo.png</texturefocus>
+                    <texturenofocus>osdold/xxbookmarksnf.png</texturenofocus>
+                    <onclick>XBMC.ActivateWindow(125)</onclick>
+                </control>
+                <control type="button" id="11">
+                    <description>Subtitles</description>
+                    <height>40</height>
+                    <width>40</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/xxsubsfo.png</texturefocus>
+                    <texturenofocus>osdold/xxsubsnf.png</texturenofocus>
+                    <onclick>Close</onclick>
+                    <onclick>XBMC.RunScript(script.xbmc.subtitles)</onclick>
+                </control>
+				<control type="button" id="12">
+					<description>Info</description>
+                    <height>40</height>
+                    <width>40</width>
+                    <aspectratio>keep</aspectratio>
+                    <texturefocus>osdold/xxinfofo.png</texturefocus>
+                    <texturenofocus>osdold/xxinfonf.png</texturenofocus>
+					<onclick>close</onclick>
+					<onclick>ActivateWindow(142)</onclick>
+				</control>
+                <control type="button" id="13">
+                    <description>DVD Menu</description>
+                    <height>40</height>
+					<width>40</width>
+                    <texturefocus border="1">button2fo.png</texturefocus>
+                    <texturenofocus border="1">-</texturenofocus>
+                    <onclick>xbmc.playercontrol(showvideomenu)</onclick>
+                    <visible>System.HasMediaDVD</visible>
+                </control>
+            </control>
+			 <control type="label">
+				    <posx>870</posx>
+                    <posy>145r</posy>
+                    <description>Bookmarks</description>
+                    <label>[B][UPPERCASE]$LOCALIZE[298][/UPPERCASE][/B]</label>
+                    <height>40</height>
+                    <width>200</width>
+					<font>duration</font>
+                    <textcolor>ffffffff</textcolor>
+					<align>right</align>
+                 <visible>Control.HasFocus(8)</visible>
+                </control>
+				 <control type="label">
+				    <posx>870</posx>
+                    <posy>145r</posy>
+                    <description>Audio Settings</description>
+                    <label>[B][UPPERCASE]$LOCALIZE[445][/UPPERCASE][/B]</label>
+                    <height>40</height>
+                    <width>200</width>
+					<font>duration</font>
+                   <textcolor>ffffffff</textcolor>
+					<align>right</align>
+                 <visible>Control.HasFocus(9)</visible>
+                </control>
+				 <control type="label">
+				    <posx>870</posx>
+                    <posy>145r</posy>
+                    <description>Video Settings</description>
+                    <label>[B][UPPERCASE]$LOCALIZE[444][/UPPERCASE][/B]</label>
+                    <height>40</height>
+                    <width>200</width>
+					<font>duration</font>
+                   <textcolor>ffffffff</textcolor>
+					<align>right</align>
+                 <visible>Control.HasFocus(10)</visible>
+                </control>
+				 <control type="label">
+				    <posx>870</posx>
+                    <posy>145r</posy>
+                    <description>Cast</description>
+                    <label>[B][UPPERCASE]Cast[/UPPERCASE][/B]</label>
+                    <height>40</height>
+                    <width>200</width>
+					<font>duration</font>
+                    <textcolor>ffffffff</textcolor>
+					<align>right</align>
+                 <visible>Control.HasFocus(30)</visible>
+                </control>
+				<control type="label">
+				    <posx>870</posx>
+                    <posy>145r</posy>
+                    <description>Subtitles</description>
+                    <label>[B][UPPERCASE]Subtitles[/UPPERCASE][/B]</label>
+                    <height>40</height>
+                    <width>200</width>
+					<align>right</align>
+					<font>duration</font>
+                    <textcolor>ffffffff</textcolor>
+                 <visible>Control.HasFocus(11)</visible>
+                </control>
+					<control type="label">
+				    <posx>870</posx>
+                    <posy>145r</posy>
+                    <description>Subtitles</description>
+                    <label>[B][UPPERCASE]Info[/UPPERCASE][/B]</label>
+                    <height>40</height>
+                    <width>200</width>
+					<align>right</align>
+					<font>duration</font>
+                    <textcolor>ffffffff</textcolor>
+                 <visible>Control.HasFocus(12)</visible>
+                </control>
+				<control type="label">
+				    <posx>870</posx>
+                    <posy>145r</posy>
+                    <description>DVD Menu</description>
+                    <label>$LOCALIZE[446]</label>
+                    <height>40</height>
+                    <width>200</width>
+					<font>duration</font>
+                    <textcolor>ffffffff</textcolor>
+					<align>right</align>
+                 <visible>Control.HasFocus(13)</visible>
+                </control>
+			<control type="group" id="40">
+			        <animation effect="slide" start="0,0" end="0,-760" time="450" delay="0" reversible="false" condition="!Control.HasFocus(30)">Conditional</animation>
+					<animation effect="slide" start="0,-760" end="0,0" time="450" delay="0" reversible="false" condition="Control.HasFocus(30)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-760" time="450" delay="0" reversible="false">WindowClose</animation>
+			       <posx>688</posx>
+				   <posy>160</posy>
+				   <control type="image">
+			       <posx>0</posx>
+			       <posy>0</posy>			
+			       <width>500</width>
+			       <height>600</height>
+			       <texture>shelf/infobubble.png</texture>
+				   <aspectratio>keep</aspectratio>
+		       </control>
+			  <control type="label">
+			<description>cast info</description>
+			<posx>5</posx>
+			<posy>200</posy>
+			<width>490</width>
+			<height>190</height>
+			<label>$INFO[VideoPlayer.CastandRole]</label>
+			<font>aired</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>ff404040</textcolor>
+		</control>
+		</control> 
+		</control> 
+		
+	</controls>
+</window>

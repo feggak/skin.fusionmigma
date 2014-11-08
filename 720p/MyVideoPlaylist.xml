@@ -1,0 +1,15 @@
+<window id="6">
+<defaultcontrol always="true">50</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+ <views>50</views>  
+<controls>
+
+<include>Background</include>
+<include>FusionStyles</include>
+<include>DropDownBar</include>
+<include>List</include>
+<include>nav</include>
+    
+</controls>
+
+</window>

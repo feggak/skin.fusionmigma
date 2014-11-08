@@ -1,0 +1,427 @@
+<window id="6">
+<defaultcontrol always="true">50</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
+<views>50,51,59,512,52,53,707,709,500,501,650,502,651,550,652,598,515,517,519,521,581,579,508,504,503,505,506,511,525,56,59,62,514,535,560,569,602,604</views>
+<controls>
+
+	<include>Background</include>
+	<include>FusionStyles</include>
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>53</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		<fadetime>200</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>[Container.Content(Movies) + [Skin.HasSetting(movies_fanart_light) | Skin.HasSetting(movies_fanart_med) | Skin.HasSetting(movies_fanart_heavy)]] | [Container.Content(TVShows) + [Skin.HasSetting(tvshows_fanart_light) | Skin.HasSetting(tvshows_fanart_med) | Skin.HasSetting(tvshows_fanart_heavy)]] | [Container.Content(Seasons) + [Skin.HasSetting(seasons_fanart_light) | Skin.HasSetting(seasons_fanart_med) | Skin.HasSetting(seasons_fanart_heavy)]] | [Container.Content(Episodes) + [Skin.HasSetting(episodes_fanart_light) | Skin.HasSetting(episodes_fanart_med) | Skin.HasSetting(episodes_fanart_heavy)]]</visible>
+		<visible>!Control.IsVisible(514)</visible>
+		<visible>!Control.IsVisible(560)</visible>
+		<visible>!Skin.HasSetting(HideNavBar)</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Movies) + Skin.HasSetting(movies_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Movies) + Skin.HasSetting(movies_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Movies) + Skin.HasSetting(movies_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_heavy)">Conditional</animation>
+		<include>ContextFadeFanArt</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="250" delay="0" />			
+		</animation>
+	</control>
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		<fadetime>200</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>[Container.Content(Movies) + [Skin.HasSetting(movies_fanart_light) | Skin.HasSetting(movies_fanart_med) | Skin.HasSetting(movies_fanart_heavy)]] | [Container.Content(TVShows) + [Skin.HasSetting(tvshows_fanart_light) | Skin.HasSetting(tvshows_fanart_med) | Skin.HasSetting(tvshows_fanart_heavy)]] | [Container.Content(Seasons) + [Skin.HasSetting(seasons_fanart_light) | Skin.HasSetting(seasons_fanart_med) | Skin.HasSetting(seasons_fanart_heavy)]] | [Container.Content(Episodes) + [Skin.HasSetting(episodes_fanart_light) | Skin.HasSetting(episodes_fanart_med) | Skin.HasSetting(episodes_fanart_heavy)]]</visible>
+		<visible>!Control.IsVisible(514)</visible>
+		<visible>!Control.IsVisible(560)</visible>
+		<visible>Skin.HasSetting(HideNavBar)</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Movies) + Skin.HasSetting(movies_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Movies) + Skin.HasSetting(movies_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Movies) + Skin.HasSetting(movies_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_heavy)">Conditional</animation>
+		<include>ContextFadeFanArt</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="250" delay="0" />			
+		</animation>
+	</control>
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>53</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</texture>
+		<fadetime>200</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>Container.Content(Genres) + [Skin.HasSetting(genres_fanart_light) | Skin.HasSetting(genres_fanart_med) | Skin.HasSetting(genres_fanart_heavy)]</visible>
+		<visible>!Skin.HasSetting(HideNavBar)</visible>
+		<visible>!Control.IsVisible(514)</visible>
+		<visible>!Control.IsVisible(560)</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_heavy)">Conditional</animation>
+		<include>ContextFadeFanArt</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="250" delay="0" />			
+		</animation>
+	</control>
+	
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</texture>
+		<fadetime>200</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>Container.Content(Genres) + [Skin.HasSetting(genres_fanart_light) | Skin.HasSetting(genres_fanart_med) | Skin.HasSetting(genres_fanart_heavy)]</visible>
+		<visible>Skin.HasSetting(HideNavBar)</visible>
+		<visible>!Control.IsVisible(514)</visible>
+		<visible>!Control.IsVisible(560)</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_heavy)">Conditional</animation>
+		<include>ContextFadeFanArt</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="250" delay="0" />			
+		</animation>
+	</control>
+
+<control type="group">
+	<animation effect="slide" start="0,100" end="0,0" time="350" delay="50" reversable="false">WindowOpen</animation>
+	<animation effect="slide" start="0,0" end="0,100" delay="0" time="400" reversable="false">WindowClose</animation>
+	<animation effect="slide" start="0,0" end="0,260" time="700" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+	<animation effect="slide" start="0,260" end="0,0" time="700" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+	<control type="image">
+		<posx>0</posx>
+		<posy>654</posy>
+		<width>1280</width>
+		<height>70</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>black.png</texture>
+		<colordiffuse>80FFFFFF</colordiffuse>
+		<animation effect="fade" start="100" end="60" time="0" condition="substring(container.folderpath,plugin://plugin.video.xbmcflicks)">Conditional</animation>
+		<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>715</posy>
+		<width>1280</width>
+		<height>5</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>zbase.png</texture>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<visible>!Skin.HasSetting(ZBar)</visible>
+		<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>715</posy>
+		<width>1280</width>
+		<height>5</height>
+		<aspectratio>stretch</aspectratio>
+		<texture flipx="true">zbase.png</texture>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<visible>!Skin.HasSetting(ZBar)</visible>
+		<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
+		<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>654</posy>
+		<width>1280</width>
+		<height>1</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>white.png</texture>
+		<colordiffuse>20FFFFFF</colordiffuse>
+		<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+	</control>
+</control>
+
+	<control type="grouplist">
+		<description>Media Codec Flagging Images</description>
+		<posx>4</posx>
+		<posy>661</posy>
+		<width>600</width>
+		<align>left</align>
+		<itemgap>0</itemgap>
+		<orientation>horizontal</orientation>
+		<include>color_flags</include>
+		<visible>!Control.IsVisible(514)</visible>
+		<visible>!Control.IsVisible(560)</visible>
+		<visible>!Substring(Container.FolderPath,plugin,Left)</visible>
+		<visible>!Skin.HasSetting(HideFlags)</visible>
+		<animation effect="fade" start="100" end="80" time="0" condition="true">true</animation>
+		<animation effect="zoom" start="100" end="100" time="0" condition="true">true</animation>
+		<animation effect="slide" start="-550,0" end="0,0" time="400" delay="400" tween="sine" easing="inout" reversable="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="-550,0" time="400" delay="0" tween="sine" easing="inout" reversable="false">WindowClose</animation>
+		<animation effect="slide" start="0,0" end="0,85" delay="0" time="150" condition="Player.HasMedia">Conditional</animation>
+		<animation effect="slide" start="0,85" end="0,0" time="350" condition="!Player.HasMedia">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,260" time="700" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+		<animation effect="slide" start="0,260" end="0,0" time="700" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+	</control>
+	
+<include>List</include>
+<include>TVList</include>
+<include>InfoList</include>
+<include>BigList</include>
+<include>BigList2</include>
+<include>LowList</include>
+<include>Banners</include>
+<include>PosterWrapView</include>
+<include>PosterWrapView2</include>
+<include>PosterWrapView3</include>
+<include>TVShowMusicDetail</include>
+<include>Grid</include>
+<include>Episodes</include>
+<include>Episodes2</include>
+<include>EpisodeWrap</include>
+<include>SeasonWrap</include>
+<include>BigFan</include>
+<include>Icon</include>
+<include>Icon2</include>
+<include>Icon3</include>
+<include>PosterShelf</include>
+<include>Wall</include>
+<include>Hulu</include>
+<include>SongList</include>
+<include>PosterFixView</include>
+<include>PosterFix2View</include>
+<include>PosterFix3View</include>
+
+<control type="group">
+<visible>!Control.IsVisible(514)</visible>
+<visible>!Control.IsVisible(545)</visible>
+<visible>!Control.IsVisible(535)</visible>
+<visible>!Control.IsVisible(560)</visible>
+<visible>!SubString(Window(10025).Property(tvtunesIsAlive),True)</visible>
+<include>MusicOverlay</include>
+</control>
+<control type="group">
+<visible>!Control.IsVisible(514)</visible>
+<visible>!Control.IsVisible(545)</visible>
+<visible>!Control.IsVisible(535)</visible>
+<visible>!Control.IsVisible(560)</visible>
+<include>VideoOverlay</include>
+</control>
+<control type="group">
+	<include>ViewWindowOC</include>
+	<include>InfoOpenClose</include>
+	<include>ContextFade</include>
+<visible>Container.Content(Seasons) + stringcompare(Container.ViewMode,SeasonWrap) + !Skin.HasSetting(Logos)</visible>
+	<posx>190</posx>
+	<posy>138</posy>
+	<animation effect="slide" end="0,-90" time="250" tween="circle" easing="inout" condition="Container.Content(Seasons)">Conditional</animation>
+		<control type="image">
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>481</height>
+			<aspectratio>stretch</aspectratio>
+			<fadetime>200</fadetime>
+			<texture background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		</control>
+		<control type="multiimage">
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>482</height>
+			<timeperimage>4000</timeperimage>
+			<fadetime>200</fadetime>
+			<pauseatend>false</pauseatend>
+			<randomize>true</randomize>
+			<loop>yes</loop>
+			<aspectratio>stretch</aspectratio>
+			<visible>Skin.HasSetting(ExtraFanartTV)</visible>
+			<imagepath background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.path,,extrafanart/]</imagepath>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>899</width>
+			<height>338</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>infowrap/fanartborder.png</texture>
+		</control>
+		<control type="image">
+			<posx>205</posx>
+			<posy>310</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.Overlay]</texture>
+		</control>
+</control>
+<!-- LOGOS ENABLED-->
+<control type="group">
+	<include>ViewWindowOC</include>
+	<include>InfoOpenClose</include>
+	<include>ContextFade</include>
+<visible>Container.Content(Seasons) + stringcompare(Container.ViewMode,SeasonWrap) + Skin.HasSetting(Logos)</visible>
+	<posx>190</posx>
+	<posy>186</posy>
+	<animation effect="slide" end="0,-140" time="250" tween="circle" easing="inout" condition="Container.Content(Seasons)">Conditional</animation>
+		<control type="image">
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>482</height>
+			<aspectratio>stretch</aspectratio>
+			<fadetime>200</fadetime>
+			<texture background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		</control>
+		<control type="multiimage">
+			<effect type="fade" start="0" end="100" delay="500" time="300" reversible="true" />
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>482</height>
+			<timeperimage>4000</timeperimage>
+			<fadetime>200</fadetime>
+			<pauseatend>false</pauseatend>
+			<randomize>true</randomize>
+			<loop>yes</loop>
+			<aspectratio>stretch</aspectratio>
+			<visible>Skin.HasSetting(ExtraFanartTV)</visible>
+			<imagepath background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.path,,extrafanart/]</imagepath>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>899</width>
+			<height>338</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>infowrap/fanartborder.png</texture>
+		</control>
+		<control type="image">
+			<posx>205</posx>
+			<posy>310</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.Overlay]</texture>
+		</control>
+</control>
+
+<control type="group">
+	<include>ViewWindowOC</include>
+	<include>InfoOpenClose</include>
+	<include>ContextFade</include>
+<visible>Container.Content(TVShows) + stringcompare(Container.ViewMode,infowrap) + !Skin.HasSetting(Logos)</visible>
+	<posx>190</posx>
+	<posy>138</posy>
+	<animation effect="slide" end="0,-90" time="250" tween="circle" easing="inout" condition="Container.Content(Seasons) + !Skin.HasSetting(Logos)">Conditional</animation>
+		<control type="image">
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>482</height>
+			<aspectratio>stretch</aspectratio>
+			<fadetime>300</fadetime>
+			<texture background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>899</width>
+			<height>338</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>infowrap/fanartborder.png</texture>
+		</control>
+		<control type="image">
+			<posx>205</posx>
+			<posy>310</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.Overlay]</texture>
+		</control>
+</control>
+
+<!-- LOGOS ENABLED-->
+<control type="group">
+	<include>ViewWindowOC</include>
+	<include>InfoOpenClose</include>
+	<include>ContextFade</include>
+<visible>Container.Content(TVShows) + stringcompare(Container.ViewMode,infowrap) + Skin.HasSetting(Logos)</visible>
+	<posx>190</posx>
+	<posy>186</posy>
+	<animation effect="slide" end="0,-140" time="250" tween="circle" easing="inout" condition="Container.Content(Seasons) + Skin.HasSetting(Logos)">Conditional</animation>
+		<control type="image">
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>482</height>
+			<aspectratio>stretch</aspectratio>
+			<fadetime>200</fadetime>
+			<texture background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>899</width>
+			<height>338</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>infowrap/fanartborder.png</texture>
+		</control>
+		<control type="image">
+			<posx>205</posx>
+			<posy>310</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.Overlay]</texture>
+		</control>
+</control>
+
+<include>Info</include>
+<control type="group">
+<visible>!Control.IsVisible(52)</visible>
+<visible>!Control.IsVisible(53)</visible>
+<visible>!Control.IsVisible(707)</visible>
+<include>EpisodeNextAiredInfo</include>
+<include>ScrollOffsetLabel</include>
+</control>
+
+<control type="group">
+	<posy>-53</posy>
+	<visible>Skin.HasSetting(HideNavBar)</visible>
+	<animation effect="slide" start="0,0" end="0,53" time="250" condition="Control.HasFocus(300)">Conditional</animation>
+	<include>DropDownBar</include>
+	<include>nav</include>
+</control>
+
+<control type="group">
+	<visible>!Skin.HasSetting(HideNavBar)</visible>
+	<include>DropDownBar</include>
+	<include>nav</include>
+</control>
+
+</controls>
+
+</window>

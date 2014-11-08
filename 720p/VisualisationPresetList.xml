@@ -1,0 +1,80 @@
+<window id="122">
+<defaultcontrol always="true">2</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<coordinates>
+  <system>1</system>
+  <posx>0</posx>
+  <posy>0</posy>
+</coordinates>
+  
+<controls>
+<control type="group">  
+	<posx>340</posx>
+	<posy>200</posy> 
+	
+ 	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>600</width>
+		<height>384</height>
+		<texture>black.png</texture>
+		<bordertexture border="1">whiteborder.png</bordertexture>
+		<bordersize>1</bordersize>
+		<aspectratio>stretch</aspectratio>
+		<colordiffuse>C4FFFFFF</colordiffuse>
+	</control>   
+
+	<control type="label">
+		<description>Header</description>
+		<posx>20</posx>
+		<posy>10</posy>
+		<align>left</align>
+		<font>heading</font>
+		<label>Select a Visualization Preset</label>
+		<textcolor>ffd0d0d0</textcolor>
+		<width>500</width>
+		<align>left</align>
+	</control>
+	
+  <control type="list" id="2">
+    <description>Preset List</description>
+	  <posx>10</posx>
+	  <posy>43</posy>
+      <width>580</width>
+	  <height>330</height>
+	  <onleft>-</onleft>
+	  <onright>-</onright>
+	  <onup>2</onup>
+	  <ondown>2</ondown>
+	  <itemlayout height="30">
+		  <control type="label">
+			  <posx>10</posx>
+			  <width>585</width>
+        	  <height>30</height>
+        	  <textcolor>FF707070</textcolor>
+			  <info>ListItem.Label</info>
+			  <font>button</font>
+        	  <scroll>false</scroll>
+		  </control>
+	  </itemlayout>
+	  <focusedlayout height="30">
+		  <control type="image">
+			  <width>585</width>
+			  <height>30</height>
+			  <texture>button2fo.png</texture>
+		  </control>
+		  <control type="label">
+			  <posx>10</posx>
+			  <width>560</width>
+			  <height>30</height>
+        	  <textcolor>White</textcolor>
+			  <font>button</font>
+			  <info>ListItem.Label</info>
+		  </control>
+	  </focusedlayout>
+  </control>
+</control> 
+</controls>
+
+</window>

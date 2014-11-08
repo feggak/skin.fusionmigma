@@ -1,0 +1,113 @@
+<window>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(1112)</onload>
+	<views>50,51,59,512,52,53,707,709,500,501,650,502,651,550,652,598,515,517,519,521,581,579,508,504,503,505,506,511,525,56,59,62,514,535,560,569,602,604</views>
+	<controls>
+		<include>Background</include>
+		<include>FusionStyles</include>
+		<control type="group">
+			<include>List</include>
+			<include>TVList</include>
+			<include>InfoList</include>
+			<include>BigList</include>
+			<include>BigList2</include>
+			<include>LowList</include>
+			<include>Banners</include>
+			<include>PosterWrapView</include>
+			<include>PosterWrapView2</include>
+			<include>PosterWrapView3</include>
+			<include>TVShowMusicDetail</include>
+			<include>Grid</include>
+			<include>Episodes</include>
+			<include>Episodes2</include>
+			<include>EpisodeWrap</include>
+			<include>SeasonWrap</include>
+			<include>BigFan</include>
+			<include>Icon</include>
+			<include>Icon2</include>
+			<include>Icon3</include>
+			<include>PosterShelf</include>
+			<include>Wall</include>
+			<include>Hulu</include>
+			<include>SongList</include>
+			<include>PosterFixView</include>
+			<include>PosterFix2View</include>
+			<include>PosterFix3View</include>
+		</control>
+		<include>CommonPageCount</include>
+		<include>CommonNowPlaying</include>
+		<include>MainWindowMouseButtons</include>
+		<include>BehindDialogFadeOut</include>
+		<include>ScrollOffsetLabel</include>
+		<control type="group">
+			<visible>!Control.IsVisible(514)</visible>
+			<visible>!Control.IsVisible(545)</visible>
+			<visible>!Control.IsVisible(535)</visible>
+			<visible>!Control.IsVisible(560)</visible>
+			<visible>!SubString(Window(10025).Property(tvtunesIsAlive),True)</visible>
+			<include>MusicOverlay</include>
+			</control>
+			<control type="group">
+			<visible>!Control.IsVisible(514)</visible>
+			<visible>!Control.IsVisible(545)</visible>
+			<visible>!Control.IsVisible(535)</visible>
+			<visible>!Control.IsVisible(560)</visible>
+			<include>VideoOverlay</include>
+			</control>
+		<control type="image">
+			<description>Section header image</description>
+			<posx>20</posx>
+			<posy>3</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>icon_pictures.png</texture>
+		</control>
+		<control type="grouplist">
+			<posx>65</posx>
+			<posy>5</posy>
+			<width>1000</width>
+			<height>30</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>5</itemgap>
+			<control type="label">
+				<include>WindowTitleCommons</include>
+				<label>$LOCALIZE[15016]</label>
+			</control>
+			<control type="label">
+				<include>WindowTitleCommons</include>
+				<label>[COLOR=blue] - [/COLOR]$INFO[Container.FolderName]</label>
+				<visible>!IsEmpty(Container.FolderName)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<posx>-250</posx>
+			<include>SideBladeLeft</include>
+				<control type="grouplist">
+				<description>Media Codec Flagging Images</description>
+				<posx>4</posx>
+				<posy>661</posy>
+				<width>600</width>
+				<align>left</align>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<include>color_flags</include>
+				<visible>!Control.IsVisible(514)</visible>
+				<visible>!Control.IsVisible(560)</visible>
+				<visible>!Substring(Container.FolderPath,plugin,Left)</visible>
+				<visible>!Skin.HasSetting(HideFlags)</visible>
+				<animation effect="fade" start="100" end="80" time="0" condition="true">true</animation>
+				<animation effect="zoom" start="100" end="100" time="0" condition="true">true</animation>
+				<animation effect="slide" start="-550,0" end="0,0" time="400" delay="400" tween="sine" easing="inout" reversable="false">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="-550,0" time="400" delay="0" tween="sine" easing="inout" reversable="false">WindowClose</animation>
+				<animation effect="slide" start="0,0" end="0,85" delay="0" time="150" condition="Player.HasMedia">Conditional</animation>
+				<animation effect="slide" start="0,85" end="0,0" time="350" condition="!Player.HasMedia">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,260" time="700" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+				<animation effect="slide" start="0,260" end="0,0" time="700" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+			</control>
+		</control>
+		<include>Clock</include>
+	</controls>
+</window>

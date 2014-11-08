@@ -1,0 +1,106 @@
+<window id="123">
+<defaultcontrol always="true">5</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<coordinates>
+  <system>1</system>
+  <posx>0</posx>
+  <posy>0</posy>
+</coordinates>
+  
+<controls>
+
+<control type="group">  
+	<posx>340</posx>
+	<posy>200</posy> 
+	
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>600</width>
+		<height>375</height>
+		<texture>black.png</texture>
+		<bordertexture border="1">whiteborder.png</bordertexture>
+		<bordersize>1</bordersize>
+		<aspectratio>stretch</aspectratio>
+		<colordiffuse>C4FFFFFF</colordiffuse>
+	</control>
+
+	<control type="label" id="2">
+		<description>Settings</description>
+		<posx>20</posx>
+		<posy>10</posy>
+		<align>left</align>
+		<font>heading</font>
+		<textcolor>ffd0d0d0</textcolor>
+		<width>500</width>
+		<align>left</align>
+	</control>
+  
+	<control type="grouplist" id="5">
+		<description>Control Area</description>
+		<posx>10</posx>
+		<posy>45</posy>
+		<width>580</width>
+		<height>325</height>
+		<itemgap>2</itemgap>
+		<orientation>vertical</orientation>
+		<pagecontrol>60</pagecontrol>
+		<onleft>28</onleft>
+		<onright>28</onright>
+		<onup>28</onup>
+		<ondown>28</ondown>
+	</control>
+	
+	<control type="button" id="7">
+		<height>30</height>
+		<align>left</align>
+		<font>button</font>
+		<textcolor>FF9F9F9F</textcolor>
+		<focusedcolor>FFFFFFFF</focusedcolor>
+		<disabledcolor>33FFFFFF</disabledcolor>
+		<textoffsetx>10</textoffsetx>
+		<texturefocus border="1">button2fo.png</texturefocus>
+		<texturenofocus border="1">-</texturenofocus>
+	</control>
+	
+	<control type="radiobutton" id="8">
+		<height>30</height>
+		<align>left</align>
+		<font>button</font>
+		<textcolor>FF9F9F9F</textcolor>
+		<focusedcolor>FFFFFFFF</focusedcolor>
+		<disabledcolor>33FFFFFF</disabledcolor>
+		<textoffsetx>10</textoffsetx>
+		<texturefocus border="1">button2fo.png</texturefocus>
+		<texturenofocus border="1">-</texturenofocus>
+	</control>
+	
+	<control type="spincontrolex" id="9">
+		<height>30</height>
+		<align>left</align>
+		<font>button</font>
+		<textcolor>FF9F9F9F</textcolor>
+		<focusedcolor>FFFFFFFF</focusedcolor>
+		<disabledcolor>33FFFFFF</disabledcolor>
+		<textoffsetx>10</textoffsetx>
+		<texturefocus border="1">button2fo.png</texturefocus>
+		<texturenofocus border="1">-</texturenofocus>
+	</control>
+	
+	<control type="sliderex" id="10">
+		<height>30</height>
+		<align>left</align>
+		<font>button</font>
+		<textcolor>FF9F9F9F</textcolor>
+		<focusedcolor>FFFFFFFF</focusedcolor>
+		<disabledcolor>33FFFFFF</disabledcolor>
+		<textoffsetx>10</textoffsetx>
+		<texturefocus border="1">button2fo.png</texturefocus>
+		<texturenofocus border="1">-</texturenofocus>
+	</control>
+	
+</control> 
+</controls>
+
+</window>

@@ -1,0 +1,462 @@
+<window id="502">
+<defaultcontrol always="true">50</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+ <views>50,523,654,600,653,657,658,508,526,515,579,595,602</views> 
+<controls>
+
+	<include>Background</include>
+	<include>FusionStyles</include>
+	
+	<control type="image">
+		<posx>0</posx>
+		<posy>53</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		<fadetime>300</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>!Skin.HasSetting(HideNavBar) + IsEmpty(Fanart.Image)</visible>
+		<visible>[Container.Content(Albums) + [Skin.HasSetting(albums_fanart_light) | Skin.HasSetting(albums_fanart_med) | Skin.HasSetting(albums_fanart_heavy)]] | [Container.Content(Songs) + [Skin.HasSetting(songs_fanart_light) | Skin.HasSetting(songs_fanart_med) | Skin.HasSetting(songs_fanart_heavy)]]</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_heavy)">Conditional</animation>
+		<include>ContextFade</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="350" delay="0" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="650" delay="450" />
+		</animation>
+	</control>	
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		<fadetime>300</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>Skin.HasSetting(HideNavBar) + IsEmpty(Fanart.Image)</visible>
+		<visible>[Container.Content(Albums) + [Skin.HasSetting(albums_fanart_light) | Skin.HasSetting(albums_fanart_med) | Skin.HasSetting(albums_fanart_heavy)]] | [Container.Content(Songs) + [Skin.HasSetting(songs_fanart_light) | Skin.HasSetting(songs_fanart_med) | Skin.HasSetting(songs_fanart_heavy)]]</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_heavy)">Conditional</animation>
+		<include>ContextFade</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="350" delay="0" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="650" delay="450" />
+		</animation>
+	</control>
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>53</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		<fadetime>300</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>!Skin.HasSetting(HideNavBar)</visible>
+		<visible>Container.Content(Artists) + [Skin.HasSetting(artists_fanart_light) | Skin.HasSetting(artists_fanart_med) | Skin.HasSetting(artists_fanart_heavy)]</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_heavy)">Conditional</animation>
+		<include>ContextFade</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="350" delay="0" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="650" delay="450" />
+		</animation>
+	</control>
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		<fadetime>300</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>Skin.HasSetting(HideNavBar)</visible>
+		<visible>Container.Content(Artists) + [Skin.HasSetting(artists_fanart_light) | Skin.HasSetting(artists_fanart_med) | Skin.HasSetting(artists_fanart_heavy)]</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_heavy)">Conditional</animation>
+		<include>ContextFade</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="350" delay="0" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="650" delay="450" />
+		</animation>
+	</control>
+	
+	<control type="image">
+		<posx>0</posx>
+		<posy>53</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[Fanart.Image]</texture>
+		<fadetime>300</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>!Skin.HasSetting(HideNavBar)</visible>
+		<visible>[Container.Content(Albums) + [Skin.HasSetting(albums_fanart_light) | Skin.HasSetting(albums_fanart_med) | Skin.HasSetting(albums_fanart_heavy)]] | [Container.Content(Songs) + [Skin.HasSetting(songs_fanart_light) | Skin.HasSetting(songs_fanart_med) | Skin.HasSetting(songs_fanart_heavy)]]</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_heavy)">Conditional</animation>
+		<include>ContextFade</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="350" delay="0" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="650" delay="450" />
+		</animation>
+	</control>
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[Fanart.Image]</texture>
+		<fadetime>300</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>Skin.HasSetting(HideNavBar)</visible>
+		<visible>[Container.Content(Albums) + [Skin.HasSetting(albums_fanart_light) | Skin.HasSetting(albums_fanart_med) | Skin.HasSetting(albums_fanart_heavy)]] | [Container.Content(Songs) + [Skin.HasSetting(songs_fanart_light) | Skin.HasSetting(songs_fanart_med) | Skin.HasSetting(songs_fanart_heavy)]]</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_heavy)">Conditional</animation>
+		<include>ContextFade</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="350" delay="0" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="650" delay="450" />
+		</animation>
+	</control>
+	
+	<control type="image">
+		<posx>0</posx>
+		<posy>53</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[ListItem.Label,special://skin/extras/genre/music/fanart/,.jpg]</texture>
+		<fadetime>300</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>Container.Content(Genres) + [Skin.HasSetting(genres_fanart_light) | Skin.HasSetting(genres_fanart_med) | Skin.HasSetting(genres_fanart_heavy)]</visible>
+		<visible>!Skin.HasSetting(HideNavBar)</visible>
+		<visible>!Control.IsVisible(514)</visible>
+		<visible>!Control.IsVisible(560)</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_heavy)">Conditional</animation>
+		<include>ContextFadeFanArt</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="250" delay="0" />			
+		</animation>
+	</control>
+	
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture background="true">$INFO[ListItem.Label,special://skin/extras/genre/music/fanart/,.jpg]</texture>
+		<fadetime>300</fadetime>
+		<aspectratio>stretch</aspectratio>
+		<visible>Container.Content(Genres) + [Skin.HasSetting(genres_fanart_light) | Skin.HasSetting(genres_fanart_med) | Skin.HasSetting(genres_fanart_heavy)]</visible>
+		<visible>Skin.HasSetting(HideNavBar)</visible>
+		<visible>!Control.IsVisible(514)</visible>
+		<visible>!Control.IsVisible(560)</visible>
+		<animation effect="fade" start="100" end="6" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="35" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_heavy)">Conditional</animation>
+		<include>ContextFadeFanArt</include>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="250" delay="0" />			
+		</animation>
+	</control>
+	
+<control type="group">
+	<animation effect="slide" start="0,100" end="0,0" time="350" delay="50" reversable="false">WindowOpen</animation>
+	<animation effect="slide" start="0,0" end="0,100" delay="0" time="400" reversable="false">WindowClose</animation>
+	<control type="image">
+		<posx>0</posx>
+		<posy>654</posy>
+		<width>1280</width>
+		<height>70</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>black.png</texture>
+		<colordiffuse>80FFFFFF</colordiffuse>
+		<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>715</posy>
+		<width>1280</width>
+		<height>5</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>zbase.png</texture>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<visible>!Skin.HasSetting(ZBar)</visible>
+		<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>715</posy>
+		<width>1280</width>
+		<height>5</height>
+		<aspectratio>stretch</aspectratio>
+		<texture flipx="true">zbase.png</texture>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<visible>!Skin.HasSetting(ZBar)</visible>
+		<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
+		<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>654</posy>
+		<width>1280</width>
+		<height>1</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>white.png</texture>
+		<colordiffuse>20FFFFFF</colordiffuse>
+		<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+	</control>
+</control>
+
+<include>Info</include>	
+<include>Icon</include>	
+<include>MetroWrap</include>
+<include>SongList</include>
+<include>TVShowMusicDetail</include>
+<include>AlbumWrap</include>
+<include>List</include>
+<include>MusicPoster</include>
+<include>Grid</include>
+<include>Icon2</include>
+<include>MusicOverlay</include>
+<include>VideoOverlay</include>
+<include>MetroFix</include>
+<include>MusicPosterFix</include>
+<include>MusicSquare</include>
+<include>MusicSquareFix</include>
+
+<control type="group">
+	<include>ViewWindowOC</include>
+	<include>InfoOpenClose</include>
+	<include>MusicInfoOpenClose</include>
+	<include>ContextFade</include>
+<visible>Container.Content(Albums) + stringcompare(Container.ViewMode,AlbumWrap) + !Skin.HasSetting(MusicLogos)</visible>
+	<posx>190</posx>
+	<posy>146</posy>
+	<animation effect="slide" end="0,-90" time="350" tween="circle" easing="inout" condition="Container.Content(Albums)">Conditional</animation>
+		<control type="image">
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>481</height>
+			<aspectratio>stretch</aspectratio>
+			<fadetime>300</fadetime>
+			<texture background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>899</width>
+			<height>338</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>infowrap/fanartborder.png</texture>
+		</control>
+		<control type="image">
+			<posx>205</posx>
+			<posy>310</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.Overlay]</texture>
+		</control>
+</control>
+<!-- LOGOS ENABLED-->
+<control type="group">
+	<include>ViewWindowOC</include>
+	<include>InfoOpenClose</include>
+	<include>MusicInfoOpenClose</include>
+	<include>ContextFade</include>
+<visible>Container.Content(Albums) + stringcompare(Container.ViewMode,AlbumWrap) + Skin.HasSetting(MusicLogos)</visible>
+	<posx>190</posx>
+	<posy>186</posy>
+	<animation effect="slide" end="0,-140" time="350" tween="circle" easing="inout" condition="Container.Content(Albums)">Conditional</animation>
+		<control type="image">
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>482</height>
+			<aspectratio>stretch</aspectratio>
+			<fadetime>300</fadetime>
+			<texture background="true" diffuse="infowrap/fanartdiffuse.png" fallback="nofanart3.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		</control>
+		<control type="multiimage">
+			<effect type="fade" start="0" end="100" delay="500" time="300" reversible="true" />
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>482</height>
+			<timeperimage>4000</timeperimage>
+			<fadetime>200</fadetime>
+			<pauseatend>false</pauseatend>
+			<randomize>true</randomize>
+			<loop>yes</loop>
+			<aspectratio>stretch</aspectratio>
+			<imagepath background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.path,,extrafanart/]</imagepath>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>899</width>
+			<height>338</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>infowrap/fanartborder.png</texture>
+		</control>
+		<control type="image">
+			<posx>205</posx>
+			<posy>310</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.Overlay]</texture>
+		</control>
+</control>
+
+<control type="group">
+	<include>ViewWindowOC</include>
+	<include>InfoOpenClose</include>
+	<include>MusicInfoOpenClose</include>
+	<include>ContextFade</include>
+<visible>Container.Content(Artists) + stringcompare(Container.ViewMode,infowrap) + !Skin.HasSetting(MusicLogos)</visible>
+	<posx>190</posx>
+	<posy>138</posy>
+	<animation effect="slide" end="0,-90" time="350" tween="circle" easing="inout" condition="Container.Content(Albums) + !Skin.HasSetting(MusicLogos)">Conditional</animation>
+		<control type="image">
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>482</height>
+			<aspectratio>stretch</aspectratio>
+			<fadetime>300</fadetime>
+			<texture background="true" diffuse="infowrap/fanartdiffuse.png" fallback="nofanart3.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>899</width>
+			<height>338</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>infowrap/fanartborder.png</texture>
+		</control>
+		<control type="image">
+			<posx>205</posx>
+			<posy>310</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.Overlay]</texture>
+		</control>
+</control>
+
+<!-- LOGOS ENABLED-->
+<control type="group">
+	<include>ViewWindowOC</include>
+	<include>InfoOpenClose</include>
+	<include>MusicInfoOpenClose</include>	
+	<include>ContextFade</include>
+<visible>Container.Content(Artists) + stringcompare(Container.ViewMode,infowrap) + Skin.HasSetting(MusicLogos)</visible>
+	<posx>190</posx>
+	<posy>186</posy>
+	<animation effect="slide" end="0,-140" time="350" tween="circle" easing="inout" condition="Container.Content(Albums) + Skin.HasSetting(MusicLogos)">Conditional</animation>
+		<control type="image">
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>482</height>
+			<aspectratio>stretch</aspectratio>
+			<fadetime>300</fadetime>
+			<texture background="true" diffuse="infowrap/fanartdiffuse.png" fallback="nofanart3.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>899</width>
+			<height>338</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>infowrap/fanartborder.png</texture>
+		</control>
+		<control type="image">
+			<posx>205</posx>
+			<posy>310</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.Overlay]</texture>
+		</control>
+</control>
+
+<control type="group">
+	<posy>-53</posy>
+	<visible>Skin.HasSetting(HideNavBar)</visible>
+	<animation effect="slide" start="0,0" end="0,53" time="250" condition="Control.HasFocus(300)">conditional</animation>
+	<include>DropDownBar</include>
+	<include>nav</include>
+</control>
+
+<control type="group">
+	<visible>!Skin.HasSetting(HideNavBar)</visible>
+	<include>DropDownBar</include>
+	<include>nav</include>
+	<include>ScrollOffsetLabel</include>
+</control>
+</controls>
+  
+</window>
