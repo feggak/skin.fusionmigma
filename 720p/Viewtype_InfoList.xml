@@ -1,0 +1,381 @@
+<includes>
+	<include name="InfoList">
+    <description>Info List View</description>
+	<control type="group">
+		<posy>-5</posy>
+		<include>InfoOpenClose</include>
+		<include>ViewWindowOC</include>
+		<include>ContextFade</include>
+		<include>Keyboard</include>
+		<control type="image">
+			<posx>398</posx>
+			<posy>150</posy>
+			<width>808</width>
+			<height>398</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>list/listbg.png</texture> 
+			<visible>Control.IsVisible(512)</visible>
+		</control>
+			
+		<control type="list" id="512">
+			<posx>398</posx>
+			<posy>154</posy>
+			<width>808</width>
+			<height>390</height>
+			<onleft>300</onleft>
+			<onright>61</onright>
+            <focusposition>3</focusposition>
+			<movement>4</movement>
+			<preloaditems>2</preloaditems>
+			<spacebetweenitems>0</spacebetweenitems>
+			<onup>512</onup>
+			<ondown>512</ondown>
+			<pagecontrol>61</pagecontrol>
+			<viewtype label="InfoList">list</viewtype>
+			<visible>Container.Content(Movies)</visible>
+			<visible>!Substring(Container.FolderPath,videodb://1/1/) + !Substring(Container.FolderPath,videodb://1/3/) + !Substring(Container.FolderPath,videodb://1/4/) + !Substring(Container.FolderPath,videodb://1/5/) + !Substring(Container.FolderPath,videodb://1/6/) + !Substring(Container.FolderPath,videodb://1/7/) + !Substring(Container.FolderPath,videodb://1/8/)</visible>
+			<visible>!Substring(Container.FolderPath,videodb://2/1/) + !Substring(Container.FolderPath,videodb://2/3/) + !Substring(Container.FolderPath,videodb://2/4/) + !Substring(Container.FolderPath,videodb://2/5/)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.hulu)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+			<visible>!substring(container.folderpath,plugin://plugin.video.apple.movie.trailers.lite)</visible>
+			<visible>!Skin.HasSetting(HideInfoList)</visible>	
+			<scrolltime>120</scrolltime>
+					
+			<itemlayout height="39">
+			  <control type="image">
+				  <width>808</width>
+				  <height>39</height>
+				  <texture>list/listline.png</texture>
+			  </control>
+			  <control type="image">
+				  <posy>0</posy>
+				  <width>808</width>
+				  <height>38</height>
+				  <texture>list/collection.png</texture>
+				  <visible>Control.IsVisible(512) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+				  <animation effect="slide" start="0,30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(50).OnPrevious">focus</animation>
+				  <animation effect="slide" start="0,-30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(50).OnNext">focus</animation>
+				  <visible>!ListItem.IsFolder</visible>
+			  </control>
+			  <control type="image">
+				  <posy>5</posy>
+				  <posx>11</posx>
+				  <width>30</width>
+				  <height>35</height>
+				  <aspectratio>keep</aspectratio>
+				  <texture>watched.png</texture>
+				  <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+				  <visible>Skin.HasSetting(WatchedOverlays)</visible>
+				  <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+			  </control>
+			  <control type="image">
+				  <posy>5</posy>
+				  <posx>4</posx>
+				  <width>41</width>
+				  <height>35</height>
+				  <aspectratio>keep</aspectratio>
+				  <texture>unwatched.png</texture>
+				  <visible>stringcompare(ListItem.Overlay,OverlayUnwatched.png)</visible>
+				  <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+			  </control>
+			  <control type="group">
+				  <posy>0</posy> 
+				  <posx>630</posx>
+			   <include>MovieHDFlagsListView</include>
+			  </control>
+			  <control type="label">
+				  <posy>-3</posy>
+				  <posx>62</posx>
+				  <width>652</width>
+				  <height>39</height>
+				  <info>ListItem.Label</info>
+				  <textcolor>list</textcolor>
+				  <font>movietitle2</font>
+				  <scroll>false</scroll>
+			  </control>
+			  <control type="label">
+				  <posy>-3</posy>
+				  <posx>730</posx>
+				  <width>200</width>
+				  <height>39</height>
+				  <textcolor>list</textcolor>
+				  <font>movietitle2</font>
+				  <info>ListItem.Year</info>
+			  </control>
+			</itemlayout>
+	  
+			<focusedlayout height="117">
+			  <control type="image">
+				  <posy>-1</posy>
+				  <width>808</width>
+				  <height>117</height>
+				  <texture>list/listfo.png</texture>
+				  <animation effect="slide" start="0,30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(512).OnPrevious">focus</animation>
+				  <animation effect="slide" start="0,-30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(512).OnNext">focus</animation>
+			  </control>
+			  <control type="image">
+				  <posy>5</posy>
+				  <posx>11</posx>
+				  <width>30</width>
+				  <height>35</height>
+				  <aspectratio>keep</aspectratio>
+				  <texture>watched.png</texture>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+				  <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+				  <visible>Skin.HasSetting(WatchedOverlays)</visible>
+				  <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>		
+			  </control>
+			  <control type="image">
+				  <posy>5</posy>
+				  <posx>4</posx>
+				  <width>41</width>
+				  <height>35</height>
+				  <aspectratio>keep</aspectratio>
+				  <texture>unwatched.png</texture>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+				  <visible>stringcompare(ListItem.Overlay,OverlayUnwatched.png)</visible>
+				  <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>	
+			  </control>
+			  <control type="image">
+				<posy>9.5</posy>
+				<posx>12</posx>
+				<width>25</width>
+				<height>18</height>
+				<aspectratio>keep</aspectratio>
+				<texture>list/folder.png</texture>
+					  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+					  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+				<visible>Control.IsVisible(512) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>	
+			  </control>
+			  <control type="image">
+				<posy>4</posy>
+				<posx>712</posx>
+				<width>78</width>
+				<height>28</height>
+				<aspectratio>keep</aspectratio>
+				<texture>list/collectioncds.png</texture>
+					  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+					  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+				<visible>Control.IsVisible(512) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>	
+				<visible>!ListItem.IsFolder</visible>
+			  </control>
+			  <control type="group">
+				  <posy>-1</posy> 
+				  <posx>630</posx>
+			   <include>MovieHDFlagsListViewFocus</include>
+			  </control>
+			  <control type="image">
+				  <posy>43</posy>
+				  <posx>14</posx>
+				  <width>22</width>
+				  <height>29</height>
+				  <aspectratio>keep</aspectratio>
+				  <texture>list/directoricon.png</texture>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+				  <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+				  <visible>!IsEmpty(ListItem.foldername)</visible>		
+			  </control>
+			  <control type="image">
+				  <posy>82</posy>
+				  <posx>18</posx>
+				  <width>15</width>
+				  <height>25</height>
+				  <aspectratio>keep</aspectratio>
+				  <texture>list/writericon.png</texture>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+				  <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+				  <visible>!IsEmpty(ListItem.foldername)</visible>		
+			  </control>	
+			  <control type="label">
+				  <posy>-3</posy>
+				  <posx>62</posx>
+				  <width>652</width>
+				  <height>39</height>
+				  <textcolor>itemdetail</textcolor>
+				  <font>movietitle2</font>
+				  <info>ListItem.Label</info>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+			  </control>
+			  <control type="label">
+				  <posy>-3</posy>
+				  <posx>730</posx>
+				  <width>200</width>
+				  <height>39</height>
+				  <textcolor>itemdetail</textcolor>
+				  <font>movietitle2</font>
+				  <info>ListItem.Year</info>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+			  </control>
+			  <control type="label">
+				  <posy>56</posy>
+				  <posx>62</posx>
+				  <width>370</width>
+				  <height>39</height>
+				  <textcolor>itemdetail2</textcolor>
+				  <font>movietitle3</font>
+				  <label>MOVIE COLLECTION</label>
+				  <visible>Control.IsVisible(512) + IsEmpty(ListItem.foldername)</visible>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+				  <visible>!ListItem.IsFolder</visible>
+			  </control>		
+			  <control type="label">
+				  <posy>37</posy>
+				  <posx>60</posx>
+				  <width>520</width>
+				  <height>39</height>
+				  <textcolor>itemdetail2</textcolor>
+				  <font>listdetail2</font>
+				  <label>$INFO[ListItem.Director]</label>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+			  </control>
+			  <control type="label">
+				  <posy>73</posy>
+				  <posx>60</posx>
+				  <width>520</width>
+				  <height>39</height>
+				  <textcolor>itemdetail2</textcolor>
+				  <font>listdetail2</font>
+				  <label>$INFO[ListItem.Writer]</label>
+				  <scroll>false</scroll>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+				  <animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+			  </control>	
+			</focusedlayout>
+	</control>
+
+		<!--End List Control-->
+		<!--Start Posters/Icons-->
+	
+		<control type="image">
+			<posx>380</posx>
+			<posy>132</posy>
+			<width>844</width>
+			<height>434</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>list/listborder.png</texture>
+			<visible>Control.IsVisible(512)</visible>
+		</control>
+		<control type="image">
+			<posx>15</posx>
+			<posy>175</posy>
+			<width>102</width>
+			<height>202</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>collectioncd.png</texture>
+			<visible>Control.IsVisible(512) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+			<visible>!ListItem.IsFolder</visible>
+			<animation type="Visible" reversible="true">
+				<effect type="fade" start="0" end="100" time="350" delay="75" />
+				<effect type="slide" start="80,0" end="0,0" time="350" delay="75" />
+			</animation>
+			<animation type="Hidden" reversible="true">
+				<effect type="fade" start="100" end="0" time="250" delay="0" />
+			</animation>
+		</control>		
+		<control type="image">
+			<posx>15</posx>
+			<posy>250</posy>
+			<width>102</width>
+			<height>202</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>collectioncd.png</texture>
+			<visible>Control.IsVisible(512) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+			<visible>!ListItem.IsFolder</visible>
+			<animation type="Visible" reversible="true">
+				<effect type="fade" start="0" end="100" time="350" delay="350" />
+				<effect type="slide" start="80,0" end="0,0" time="350" delay="350" />
+			</animation>
+			<animation type="Hidden" reversible="true">
+				<effect type="fade" start="100" end="0" time="250" delay="0" />
+			</animation>
+		</control>
+		<control type="image">
+			<posx>15</posx>
+			<posy>325</posy>
+			<width>102</width>
+			<height>202</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>collectioncd.png</texture>
+			<visible>Control.IsVisible(512) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+			<visible>!ListItem.IsFolder</visible>
+			<animation type="Visible" reversible="true">
+				<effect type="fade" start="0" end="100" time="350" delay="750" />
+				<effect type="slide" start="80,0" end="0,0" time="350" delay="750" />
+			</animation>
+			<animation type="Hidden" reversible="true">
+				<effect type="fade" start="100" end="0" time="250" delay="0" />
+			</animation>
+		</control>
+			
+		<control type="group">
+			<posx>75</posx>
+			<posy>147</posy>
+			<visible>Control.IsVisible(512)</visible>		
+				<control type="image">
+					<posx>11</posx>
+					<posy>7</posy>
+					<width>259</width>
+					<height>389</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<fadetime>250</fadetime>
+					<texture background="true" diffuse="poster/posterdiffuse.png">$INFO[ListItem.Icon]</texture>
+					<animation reversible="false" effect="zoom" start="10,74,164,245" end="20,20,259,389" time="200">focus</animation>
+					<animation reversible="false" effect="zoom" end="10,74,164,245" start="20,20,259,389" time="200">unfocus</animation>
+				</control>
+				<control type="image">
+					<posx>1</posx>
+					<posy>-6</posy>
+					<width>289</width>
+					<height>424</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>poster/glassoverlay.png</texture>
+					<animation reversible="false" effect="zoom" start="-18,61,183,268" end="-24,0,289,424" time="200">focus</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0">unfocus</animation>	
+				</control>
+		</control>	
+						
+		<control type="label">
+			<posy>550</posy>
+			<posx>80</posx>
+			<width>270</width>
+			<height>39</height>
+			<align>center</align>
+			<textcolor>itemdetail</textcolor>
+			<font>tvtitle2</font>
+			<scroll>false</scroll>
+			<align>right</align>
+			<info>ListItem.Duration</info>
+			<visible>false</visible>
+			<animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnPrevious">focus</animation>
+			<animation effect="fade" start="10" end="100" time="500" delay="100" reversible="false" condition="Container(512).OnNext">focus</animation>
+        </control>	
+	
+		<!-- Scroll Bar -->
+
+		<control type="scrollbar" id="61">
+			<posx>1220</posx>
+			<posy>170</posy>
+			<width>5</width>
+			<height>350</height>
+			<visible allowhiddenfocus="true">Control.IsVisible(512) + Control.HasFocus(61)</visible>
+			<texturesliderbackground>white2.png</texturesliderbackground>
+			<textureslidernibfocus>white3v.png</textureslidernibfocus>
+			<onleft>512</onleft>
+			<onright>-</onright>
+			<showonepage>false</showonepage>
+			<orientation>vertical</orientation>
+			<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(61)">Conditional</animation>
+		</control>
+	</control>
+	</include>
+</includes>

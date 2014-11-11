@@ -5,16 +5,16 @@
 <include file="Include_Views.xml" />
 <include file="Includes_Home.xml" />
 <include file="Includes_Nav.xml" />
-<include file="Includes_HomeBG.xml" />
+<include file="Includes_Backgrounds.xml" />
 <include file="Includes_Animations.xml" />
 <include file="Includes_DropDownBar.xml" />
-<include file="Includes_Info.xml" />
+<include file="Includes_BtmInfo.xml" />
 <include file="Includes_Flags.xml" />
 <include file="Includes_HomeExtras.xml" />
 <include file="Includes_NextAiredInfo.xml" />
 
 <!-- VIDEO INFO FLAGS -->
-<include name="color_flags">
+<include name="ColorFlags">
 	<include>StudioflagsTV</include>
 	<include>StudioflagsMovies</include>
 	<include>VideoTypeHackFlaggingConditions</include>
@@ -23,101 +23,72 @@
 	<include>AspectCodecFlaggingConditions</include>
 	<include>VideoMPAAFlaggingConditions</include>
 </include>
-	
+
+<!-- HOME SUBMENUS -->
 <include name="HomeSubMenuCommonValues">
-    <animation type="VisibleChange" reversible="false">
-        <effect type="fade" start="0" end="100" time="100" />
-    </animation>
-    <posx>515</posx>
-    <posy>275</posy>
-    <width>250</width>
-    <height>430</height>
-    <onup>540</onup>
-    <pagecontrol>777</pagecontrol>
-    <focusposition>0</focusposition>
-    <orientation>vertical</orientation>
-    <preloaditems>3</preloaditems>
+		<animation type="VisibleChange" reversible="false">
+			<effect type="fade" start="0" end="100" time="100" />
+		</animation>
+		<posx>515</posx>
+		<posy>275</posy>
+		<width>250</width>
+		<height>430</height>
+		<onup>540</onup>
+		<pagecontrol>777</pagecontrol>
+		<focusposition>0</focusposition>
+		<orientation>vertical</orientation>
+		<preloaditems>3</preloaditems>
 
-    <itemlayout height="47" width="250">
-        <control type="label">
-            <posx>30</posx>
-            <posy>1</posy>
-            <width>250</width>
-            <height>35</height>
-            <font>homemenu3</font>
-            <textcolor>cf606060</textcolor>
-            <align>left</align>
-            <label>$INFO[ListItem.Label]</label>
-        </control>
-    </itemlayout>
+		<itemlayout height="47" width="250">
+			<control type="label">
+				<posx>30</posx>
+				<posy>1</posy>
+				<width>250</width>
+				<height>35</height>
+				<font>homemenu3</font>
+				<textcolor>cf606060</textcolor>
+				<align>left</align>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+		</itemlayout>
 
-    <focusedlayout height="47" width="250">
-        <control type="image">
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>250</width>
-            <height>47</height>
-            <aspectratio>stretch</aspectratio>
-            <texture border="14">Home/menufocus2.png</texture>
-            <colordiffuse>CFFFFFFF</colordiffuse>
-            <visible>ControlGroup(200).HasFocus(0)</visible>
-            <animation effect="fade" start="0" end="100" time="150" delay="0">Visible</animation>
-            <animation effect="slide" start="0,14" end="0,0" time="100" reversible="false" tween="back" easing="out" condition="Container(200).OnPrevious">Focus</animation>
-            <animation effect="slide" start="0,-14" end="0,0" time="100" reversible="false" tween="back" easing="out" condition="Container(200).OnNext">Focus</animation>
-        </control>
-        <control type="label">
-            <posx>30</posx>
-            <posy>1</posy>
-            <width>250</width>
-            <height>35</height>
-            <font>homemenu3</font>
-            <textcolor>ffffffff</textcolor>
-            <align>left</align>
-            <label>$INFO[ListItem.Label]</label>
-            <animation effect="fade" start="50" end="100" time="100" reversible="false" condition="Container(200).OnPrevious">Focus</animation>
-            <animation effect="fade" start="50" end="100" time="100" reversible="false" condition="Container(200).OnNext">Focus</animation>
-            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(540)">Conditional</animation>
-            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(1010)">Conditional</animation>
-            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(1012)">Conditional</animation>
-            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(1014)">Conditional</animation>
-            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(1016)">Conditional</animation>
-            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(2010)">Conditional</animation>
-            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(2012)">Conditional</animation>
-            <animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(2014)">Conditional</animation>
-        </control>
-    </focusedlayout>
-</include>
-
-<include name="OpenCloseAnimation">
-	<animation type="WindowOpen" reversible="false">
-		<effect type="fade" start="0" end="100" time="200" delay="0" />
-	</animation>
-	<animation type="Visible" reversible="false">
-		<effect type="fade" start="0" end="100" time="200" delay="0" />
-	</animation>
-	<animation type="WindowClose" reversible="false">
-		<effect type="fade" start="100" end="0" time="200" />
-	</animation>
-	<animation type="Hidden" reversible="false">
-		<effect type="fade" start="100" end="0" time="200" />
-	</animation>
-</include>
-
-<include name="OpenCloseAnimationDelay">
-	<animation type="WindowOpen" reversible="false">
-		<effect type="fade" start="0" end="100" time="200" />
-	</animation>
-	<animation type="Visible" reversible="false">
-		<effect type="fade" start="0" end="100" time="200" />
-	</animation>
-	<animation type="WindowClose" reversible="false">
-		<effect type="fade" start="100" end="0" time="200" delay="150" />
-	</animation>
-	<animation type="Hidden" reversible="false">
-		<effect type="fade" start="100" end="0" time="200" delay="150" />
-	</animation>
-</include>
-
+		<focusedlayout height="47" width="250">
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>250</width>
+				<height>47</height>
+				<aspectratio>stretch</aspectratio>
+				<texture border="14">Home/menufocus2.png</texture>
+				<colordiffuse>CFFFFFFF</colordiffuse>
+				<visible>ControlGroup(200).HasFocus(0)</visible>
+				<animation effect="fade" start="0" end="100" time="150" delay="0">Visible</animation>
+				<animation effect="slide" start="0,14" end="0,0" time="100" reversible="false" tween="back" easing="out" condition="Container(200).OnPrevious">Focus</animation>
+				<animation effect="slide" start="0,-14" end="0,0" time="100" reversible="false" tween="back" easing="out" condition="Container(200).OnNext">Focus</animation>
+			</control>
+			<control type="label">
+				<posx>30</posx>
+				<posy>1</posy>
+				<width>250</width>
+				<height>35</height>
+				<font>homemenu3</font>
+				<textcolor>ffffffff</textcolor>
+				<align>left</align>
+				<label>$INFO[ListItem.Label]</label>
+				<animation effect="fade" start="50" end="100" time="100" reversible="false" condition="Container(200).OnPrevious">Focus</animation>
+				<animation effect="fade" start="50" end="100" time="100" reversible="false" condition="Container(200).OnNext">Focus</animation>
+				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(540)">Conditional</animation>
+				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(1010)">Conditional</animation>
+				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(1012)">Conditional</animation>
+				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(1014)">Conditional</animation>
+				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(1016)">Conditional</animation>
+				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(2010)">Conditional</animation>
+				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(2012)">Conditional</animation>
+				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(2014)">Conditional</animation>
+			</control>
+		</focusedlayout>
+	</include>
+	
 <!-- VIDEO OVERLAY ON HOMESCREEN -->
 <include name="VideoOverlayHome">
 	<control type="group">
@@ -548,7 +519,6 @@
 		<animation effect="fade" start="100" end="0" time="50" delay="0" >WindowClose</animation>
 	</control>
 </include>
-
 <include name="MovieHDFlagsListView">
 	<control type="image">
 		<posx>0</posx>
@@ -572,7 +542,6 @@
 		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
 	</control>
 </include>
-
 <include name="MovieHDFlagsListViewFocus">
 	<control type="image">
 		<posx>0</posx>
@@ -596,7 +565,6 @@
 		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
 	</control>
 </include>
-
 <include name="MovieHDFlagsPoster">
 	<control type="image">
 		<posx>0</posx>
@@ -620,7 +588,6 @@
 		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
 	</control>
 </include>
-
 <include name="MovieHDFlagsDialog">
 	<control type="image">
 		<posx>0</posx>
@@ -644,7 +611,6 @@
 		<visible>IntegerGreaterThan(VideoPlayer.videoresolution,719)</visible>
 	</control>
 </include>
-
 <include name="MovieHDFlagsBigFan">
 	<control type="image">
 		<posx>0</posx>
@@ -668,7 +634,6 @@
 		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
 	</control>
 </include>
-
 <include name="MovieHDFlagsPosterShelf">
 	<control type="image">
 		<posx>-5</posx>
@@ -692,7 +657,6 @@
 		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
 	</control>
 </include>
-
 <include name="MovieHDFlagsBigList">
 	<control type="image">
 		<posx>0</posx>
@@ -716,7 +680,6 @@
 		<visible>!Skin.HasSetting(HideSD)</visible>
 	</control>
 </include>
-
 <include name="MovieHDFlagsLowList">
 	<control type="image">
 		<posx>0</posx>
@@ -740,7 +703,6 @@
 		<visible>!Skin.HasSetting(HideSD)</visible>
 	</control>
 </include>
-
 <include name="MovieHDFlagsBigListFo">
 	<control type="image">
 		<posx>0</posx>
@@ -763,8 +725,7 @@
 		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719) + !Skin.HasSetting(biglist_hide_sd)</visible>
 		<visible>!Skin.HasSetting(HideSD)</visible>
 	</control>
-</include>			
-		
+</include>
 <include name="MovieHDFlagsLowListFo">
 	<control type="image">
 		<posx>0</posx>
@@ -881,7 +842,6 @@
 		<visible>substring(listitem.MPAA,unrated) | substring(listitem.MPAA,USA:unrated)</visible>
 	</control>	
 </include>
-
 <include name="MPAA2">
 	<control type="label">
 		<description>G Rating label</description>
@@ -973,7 +933,6 @@
 		<visible>substring(listitem.MPAA,unrated) | substring(listitem.MPAA,USA:unrated)</visible>
 	</control>	
 </include>
-
 <include name="MPAABIGLIST">
 	<control type="label">
 		<description>G Rating label</description>
@@ -1065,7 +1024,6 @@
 		<visible>substring(listitem.MPAA,unrated) | substring(listitem.MPAA,USA:unrated)</visible>
 	</control>	
 </include>
-	
 <include name="MPAALOWLIST">
 	<control type="label">
 		<description>G Rating label</description>
@@ -1157,7 +1115,6 @@
 		<visible>substring(listitem.MPAA,unrated) | substring(listitem.MPAA,USA:unrated)</visible>
 	</control>	
 </include>
-	
 <include name="MPAABIGLISTFO">
 	<control type="label">
 		<description>G Rating label</description>
@@ -1249,7 +1206,6 @@
 		<visible>substring(listitem.MPAA,unrated) | substring(listitem.MPAA,USA:unrated)</visible>
 	</control>	
 </include>
-
 <include name="MPAAEP2">
 	<control type="label">
 		<description>G Rating label</description>
@@ -1357,26 +1313,59 @@
 	<align>left</align>
 </include>
 
-<include name="Background">
-	<control type="image">
-		<posx>0</posx>
-		<posy>0</posy>
-		<width>1280</width>
-		<height>720</height>
-		<aspectratio>stretch</aspectratio>
-		<texture>bg2.png</texture>
-		<colordiffuse>FFCCCCCF</colordiffuse>
+<!-- ZBAR -->
+<include name="ZBar">
+	<control type="group">
+		<animation effect="slide" start="0,100" end="0,0" time="350" delay="50" reversable="false">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,100" delay="0" time="400" reversable="false">WindowClose</animation>
+		<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+		<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+		<control type="image">
+			<posx>0</posx>
+			<posy>654</posy>
+			<width>1280</width>
+			<height>70</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>black.png</texture>
+			<colordiffuse>80FFFFFF</colordiffuse>
+			<animation effect="fade" start="100" end="60" time="0" condition="substring(container.folderpath,plugin://plugin.video.xbmcflicks)">Conditional</animation>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>715</posy>
+			<width>1280</width>
+			<height>5</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>zbase.png</texture>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<visible>!Skin.HasSetting(ZBar)</visible>
+			<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>715</posy>
+			<width>1280</width>
+			<height>5</height>
+			<aspectratio>stretch</aspectratio>
+			<texture flipx="true">zbase.png</texture>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<visible>!Skin.HasSetting(ZBar)</visible>
+			<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
+			<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>654</posy>
+			<width>1280</width>
+			<height>1</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>white.png</texture>
+			<colordiffuse>20FFFFFF</colordiffuse>
+			<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+		</control>
 	</control>
-
-	<control type="image">
-		<posx>0</posx>
-		<posy>0</posy>
-		<width>1280</width>
-		<height>720</height>
-		<aspectratio>stretch</aspectratio>
-		<texture>black.png</texture>
-		<colordiffuse>50FFFFFF</colordiffuse>
-	</control> 
 </include>
 
 <!-- STYLES -->
@@ -1575,7 +1564,6 @@
 		<visible>!Container.Content(Albums)</visible>				
 	</control>
 </include>
-
 <include name="IMDB2">
 	<control type="label">
 		<posx>0</posx>
@@ -1593,7 +1581,6 @@
 		<visible>!Container.Content(Albums)</visible>				
 	</control>
 </include>
-
 <include name="IMDBBIGLIST">
 	<control type="label">
 		<posx>0</posx>
@@ -1608,7 +1595,6 @@
 		<label>$INFO[ListItem.Rating,,]</label>
 	</control>
 </include>
-
 <include name="IMDBLOWLIST">
 	<control type="label">
 		<posx>0</posx>
@@ -1623,7 +1609,6 @@
 		<label>$INFO[ListItem.Rating,,]</label>
 	</control>
 </include>
-
 <include name="IMDBBIGLISTFO">
 	<control type="label">
 		<posx>0</posx>
@@ -1638,7 +1623,6 @@
 		<label>$INFO[ListItem.Rating,,]</label>
 	</control>
 </include>
-
 <include name="IMDBEP2">
 	<control type="label">
 		<posx>0</posx>
@@ -1709,6 +1693,5 @@
 		</control>
 	</control>
 </include>
-  
-<!-- END -->
+
 </includes>

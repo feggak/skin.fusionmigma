@@ -1,0 +1,792 @@
+<includes>	
+	<include name="EpisodeNextAiredInfo">
+		<control type="group">
+		<posy>625</posy>
+		<visible>!Control.IsVisible(50)</visible>
+		<animation effect="fade" start="100" end="0" time="100" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+		<animation effect="fade" start="0" end="100" time="400" delay="1500" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+		<include>OpenCloseAnimation</include>
+		<include>ViewWindowOC</include>
+			<control type="label">
+				<description>ID 1</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.1.LatestNumber)] "$INFO[Window(Home).Property(NextAired.1.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.1.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.1.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 1</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.1.NextNumber)] "$INFO[Window(Home).Property(NextAired.1.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.1.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.1.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 2</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.2.LatestNumber)] "$INFO[Window(Home).Property(NextAired.2.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.2.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.2.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 2</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.2.NextNumber)] "$INFO[Window(Home).Property(NextAired.2.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.2.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.2.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 3</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.3.LatestNumber)] "$INFO[Window(Home).Property(NextAired.3.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.3.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.3.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 3</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.3.NextNumber)] "$INFO[Window(Home).Property(NextAired.3.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.3.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.3.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 4</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.4.LatestNumber)] "$INFO[Window(Home).Property(NextAired.4.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.4.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.4.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 4</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.4.NextNumber)] "$INFO[Window(Home).Property(NextAired.4.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.4.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.4.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 5</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.5.LatestNumber)] "$INFO[Window(Home).Property(NextAired.5.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.5.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.5.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 5</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.5.NextNumber)] "$INFO[Window(Home).Property(NextAired.5.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.5.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.5.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 6</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.6.LatestNumber)] "$INFO[Window(Home).Property(NextAired.6.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.6.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.6.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 6</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.6.NextNumber)] "$INFO[Window(Home).Property(NextAired.6.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.6.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.6.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 7</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.7.LatestNumber)] "$INFO[Window(Home).Property(NextAired.7.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.7.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.7.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 7</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.7.NextNumber)] "$INFO[Window(Home).Property(NextAired.7.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.7.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.7.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 8</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.8.LatestNumber)] "$INFO[Window(Home).Property(NextAired.8.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.8.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.8.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 8</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.8.NextNumber)] "$INFO[Window(Home).Property(NextAired.8.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.8.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.8.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 9</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.9.LatestNumber)] "$INFO[Window(Home).Property(NextAired.9.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.9.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.9.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 9</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.9.NextNumber)] "$INFO[Window(Home).Property(NextAired.9.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.9.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.9.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 10</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.10.LatestNumber)] "$INFO[Window(Home).Property(NextAired.10.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.10.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.10.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 10</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.10.NextNumber)] "$INFO[Window(Home).Property(NextAired.10.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.10.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.10.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 11</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.11.LatestNumber)] "$INFO[Window(Home).Property(NextAired.11.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.11.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.11.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 11</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.11.NextNumber)] "$INFO[Window(Home).Property(NextAired.11.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.11.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.11.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 12</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.12.LatestNumber)] "$INFO[Window(Home).Property(NextAired.12.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.12.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.12.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 12</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.12.NextNumber)] "$INFO[Window(Home).Property(NextAired.12.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.12.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.12.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 13</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.13.LatestNumber)] "$INFO[Window(Home).Property(NextAired.13.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.13.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.13.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 13</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.13.NextNumber)] "$INFO[Window(Home).Property(NextAired.13.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.13.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.13.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 14</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.14.LatestNumber)] "$INFO[Window(Home).Property(NextAired.14.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.14.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.14.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 14</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.14.NextNumber)] "$INFO[Window(Home).Property(NextAired.14.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.14.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.14.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 15</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.15.LatestNumber)] "$INFO[Window(Home).Property(NextAired.15.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.15.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.15.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 15</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.15.NextNumber)] "$INFO[Window(Home).Property(NextAired.15.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.15.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.15.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 16</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.16.LatestNumber)] "$INFO[Window(Home).Property(NextAired.16.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.16.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.16.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 16</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.16.NextNumber)] "$INFO[Window(Home).Property(NextAired.16.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.16.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.16.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 17</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.17.LatestNumber)] "$INFO[Window(Home).Property(NextAired.17.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.17.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.17.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 17</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.17.NextNumber)] "$INFO[Window(Home).Property(NextAired.17.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.17.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.17.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 18</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.18.LatestNumber)] "$INFO[Window(Home).Property(NextAired.18.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.18.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.18.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 18</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.18.NextNumber)] "$INFO[Window(Home).Property(NextAired.18.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.18.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.18.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 19</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.19.LatestNumber)] "$INFO[Window(Home).Property(NextAired.19.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.19.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.19.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 19</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.19.NextNumber)] "$INFO[Window(Home).Property(NextAired.19.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.19.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.19.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 20</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.20.LatestNumber)] "$INFO[Window(Home).Property(NextAired.20.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.20.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.20.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 20</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.20.NextNumber)] "$INFO[Window(Home).Property(NextAired.20.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.20.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.20.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 21</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.21.LatestNumber)] "$INFO[Window(Home).Property(NextAired.21.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.21.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.21.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 21</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.21.NextNumber)] "$INFO[Window(Home).Property(NextAired.21.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.21.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.21.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 22</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.22.LatestNumber)] "$INFO[Window(Home).Property(NextAired.22.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.22.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.22.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 22</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.22.NextNumber)] "$INFO[Window(Home).Property(NextAired.22.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.22.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.22.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 23</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.23.LatestNumber)] "$INFO[Window(Home).Property(NextAired.23.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.23.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.23.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 23</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.23.NextNumber)] "$INFO[Window(Home).Property(NextAired.23.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.23.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.23.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 24</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.24.LatestNumber)] "$INFO[Window(Home).Property(NextAired.24.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.24.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.24.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 24</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.24.NextNumber)] "$INFO[Window(Home).Property(NextAired.24.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.24.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.24.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 25</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.25.LatestNumber)] "$INFO[Window(Home).Property(NextAired.25.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.25.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.25.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 25</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.25.NextNumber)] "$INFO[Window(Home).Property(NextAired.25.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.25.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.25.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 26</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.26.LatestNumber)] "$INFO[Window(Home).Property(NextAired.26.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.26.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.26.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 26</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.26.NextNumber)] "$INFO[Window(Home).Property(NextAired.26.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.26.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.26.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 27</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.27.LatestNumber)] "$INFO[Window(Home).Property(NextAired.27.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.27.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.27.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 27</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.27.NextNumber)] "$INFO[Window(Home).Property(NextAired.27.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.27.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.27.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 28</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.28.LatestNumber)] "$INFO[Window(Home).Property(NextAired.28.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.28.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.28.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 28</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.28.NextNumber)] "$INFO[Window(Home).Property(NextAired.28.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.28.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.28.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 29</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.29.LatestNumber)] "$INFO[Window(Home).Property(NextAired.29.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.29.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.29.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 29</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.29.NextNumber)] "$INFO[Window(Home).Property(NextAired.29.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.29.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.29.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 30</description>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31768] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.30.LatestNumber)] "$INFO[Window(Home).Property(NextAired.30.LatestTitle)]"[/COLOR] Aired: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.30.LatestDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>left</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.30.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="label">
+				<description>ID 30</description>
+				<posx>15r</posx>
+				<posy>0</posy>
+				<width>832</width>
+				<font>infotab</font>
+				<label>$LOCALIZE[31769] [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.30.NextNumber)] "$INFO[Window(Home).Property(NextAired.30.NextTitle)]"[/COLOR] Airs: [COLOR=movietitleb]$INFO[Window(Home).Property(NextAired.30.NextDate)][/COLOR]</label>
+				<textcolor>ffababab</textcolor>
+				<align>right</align>
+				<visible>Container.Content(TVShows) + StringCompare(Window(Home).Property(NextAired.30.ShowTitle),ListItem.TVShowTitle)</visible>
+				<animation effect="fade" start="0" end="100" time="600" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+		</control>
+	</include>
+</includes>

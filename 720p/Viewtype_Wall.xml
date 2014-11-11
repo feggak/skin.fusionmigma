@@ -1,0 +1,327 @@
+<includes>
+	<include name="Wall">
+		<control type="group">
+			<include>InfoOpenClose2</include>
+			<include>ContextFade3</include>
+			<include>Keyboard</include>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="450" delay="0" />
+				<effect type="zoom" start="250" end="100" time="350" center="auto" delay="0" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="350" delay="0" />
+				<effect type="zoom" start="100" end="250" time="300" center="auto" delay="0" />
+			</animation>
+			<control type="panel" id="560">
+				<viewtype label="Wall">icon</viewtype>
+				<posx>1</posx>
+				<posy>54</posy>
+				<width>1416</width>
+				<height>667</height>
+				<scrolltime>350</scrolltime>
+				<orientation>horizontal</orientation>
+				<onup>300</onup>
+				<ondown>71</ondown>
+				<onleft>560</onleft>
+				<onright>560</onright>
+				<pagecontrol>71</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<visible>Container.Content(Movies)</visible>
+				<visible>!Skin.HasSetting(HideWall)</visible>
+				<include condition="Window.IsActive(25) | Window.IsActive(24)">TallPanel2</include>
+			</control>
+
+			<!-- Scroll Bar -->
+
+			<control type="scrollbar" id="71">
+				<posx>320</posx>
+				<posy>17r</posy>
+				<width>640</width>
+				<height>6</height>
+				<texturesliderbackground>scroll/scrollbg.png</texturesliderbackground>
+				<textureslidernibfocus>scroll/scrollnibh3.png</textureslidernibfocus>
+				<textureslidernib>scroll/scrollnibh2.png</textureslidernib>
+				<onup>560</onup>
+				<onright>-</onright>
+				<showonepage>false</showonepage>
+				<orientation>horizontal</orientation>
+				<visible>Control.IsVisible(560)</visible>
+			</control>	
+			<control type="label">
+				<posx>975</posx>
+				<posy>33r</posy>
+				<width>300</width>
+				<height>35</height>
+				<font>about</font>
+				<textcolor>ee707070</textcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>page $INFO[Container().CurrentPage]/$INFO[Container().NumPages]</label>
+				<visible>Control.IsVisible(560)</visible>
+			</control>
+			<control type="label">
+				<posx>307</posx>
+				<posy>33r</posy>
+				<width>300</width>
+				<height>35</height>
+				<font>about</font>
+				<textcolor>ee707070</textcolor>
+				<scroll>true</scroll>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[Container().NumItems] items</label>
+				<visible>Control.IsVisible(560)</visible>
+			</control>
+		</control>
+	</include>
+
+	<!-- Layouts -->
+	<include name="TallPanel2">
+		<itemlayout width="142" height="213">
+
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>142</width>
+				<height>213</height>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+				<colordiffuse>EFFFFFFF</colordiffuse>
+			</control>
+
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>142</width>
+				<height>213</height>
+				<texture>wall/posteroverlay.png</texture>
+				<aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+				<colordiffuse>EFFFFFFF</colordiffuse>
+			</control>
+
+		</itemlayout>
+		<focusedlayout width="142" height="213">
+
+			<control type="group">
+				<include>wallpopupanim</include>
+				<visible>Container(560).Column(0) | Container(560).Column(1) | Container(560).Column(2) | Container(560).Column(3) | Container(560).Column(4)</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>142</width>
+					<height>213</height>
+					<texture>wall/popupbg.png</texture>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="350" />
+						<effect type="zoom" start="0,100" end="395,100" time="400" delay="1700" />
+					</animation>
+					<aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+				</control>
+
+				<control type="label">
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>280</width>
+					<label>$INFO[ListItem.Title]</label>
+					<font>homemenu3caps</font>
+					<textcolor>ffffffff</textcolor>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="350" delay="1800" />
+						<effect type="slide" start="0,0" end="198,0" time="300" delay="1700" />
+					</animation>
+					<visible>!IsEmpty(ListItem.Title)</visible>					
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>280</width>
+					<label>$INFO[ListItem.Title]</label>
+					<font>homemenu3caps</font>
+					<textcolor>ffffffff</textcolor>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="350" delay="1800" />
+						<effect type="slide" start="0,0" end="198,0" time="300" delay="1700" />
+					</animation>
+					<visible>!IsEmpty(ListItem.Title)</visible>					
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>42.5</posy>
+					<width>280</width>
+					<label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , Minutes]</label>
+					<font>about</font>
+					<textcolor>ffffffff</textcolor>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="350" delay="1700" />
+						<effect type="slide" start="0,0" end="198,0" time="300" delay="1700" />
+					</animation>
+					<visible>!IsEmpty(ListItem.Title)</visible>					
+				</control>
+
+				<control type="label">
+					<posx>0</posx>
+					<posy>42.5</posy>
+					<width>280</width>
+					<label>movie collection</label>
+					<font>about</font>
+					<textcolor>ffffffff</textcolor>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="350" delay="1700" />
+						<effect type="slide" start="0,0" end="198,0" time="300" delay="1700" />
+					</animation>
+					<visible>!IsEmpty(ListItem.Title) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>			
+				</control>
+
+				<control type="textbox">
+					<posx>0</posx>
+					<posy>77</posy>
+					<width>280</width>
+					<height>120</height>
+					<align>justify</align>
+					<label>$INFO[ListItem.PlotOutline]</label>
+					<font>about</font>
+					<textcolor>ffcacaca</textcolor>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" delay="1900"/>
+						<effect type="slide" start="0,0" end="198,0" time="0" delay="1700" />
+					</animation>
+				</control>
+			</control>
+
+			<control type="group">
+				<include>wallpopupanim</include>
+				<visible>Container(560).Column(5) | Container(560).Column(6) | Container(560).Column(7) | Container(560).Column(8)</visible>
+
+				<control type="image">
+					<posx>-40</posx>
+					<posy>0</posy>
+					<width>142</width>
+					<height>213</height>
+					<texture>wall/popupbg.png</texture>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="350" />
+						<effect type="zoom" start="0,100" end="-415,100" time="360" delay="1700" />
+					</animation>
+					<aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+				</control>
+
+				<control type="label">
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>280</width>
+					<label>$INFO[ListItem.Title]</label>
+					<font>homemenu3caps</font>
+					<textcolor>ffffffff</textcolor>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="350" delay="1800" />
+						<effect type="slide" start="0,0" end="-342,0" time="300" delay="1700" />
+					</animation>
+					<visible>!IsEmpty(ListItem.Title)</visible>					
+				</control>
+				
+				<control type="label">
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>280</width>
+					<label>$INFO[ListItem.Title]</label>
+					<font>homemenu3caps</font>
+					<textcolor>ffffffff</textcolor>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="350" delay="1800" />
+						<effect type="slide" start="0,0" end="-342,0" time="300" delay="1700" />
+					</animation>
+					<visible>!IsEmpty(ListItem.Title)</visible>					
+				</control>
+				
+				<control type="label">
+					<posx>0</posx>
+					<posy>42.5</posy>
+					<width>280</width>
+					<label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , Minutes]</label>
+					<font>about</font>
+					<textcolor>ffffffff</textcolor>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="350" delay="1700" />
+						<effect type="slide" start="0,0" end="-342,0" time="300" delay="1700" />
+					</animation>
+					<visible>!IsEmpty(ListItem.Title)</visible>					
+				</control>
+
+				<control type="label">
+					<posx>0</posx>
+					<posy>42.5</posy>
+					<width>280</width>
+					<label>Movie Collection</label>
+					<font>about</font>
+					<textcolor>ffffffff</textcolor>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="350" delay="1700" />
+						<effect type="slide" start="0,0" end="-342,0" time="300" delay="1700" />
+					</animation>
+					<visible>!IsEmpty(ListItem.Title) + IsEmpty(ListItem.FileName)</visible>					
+				</control>
+
+				<control type="textbox">
+					<posx>0</posx>
+					<posy>77</posy>
+					<width>280</width>
+					<height>120</height>
+					<align>justify</align>
+					<label>$INFO[ListItem.PlotOutline]</label>
+					<font>about</font>
+					<textcolor>ffcacaca</textcolor>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" delay="1900"/>
+						<effect type="slide" start="0,0" end="-342,0" time="0" delay="1700" />
+					</animation>
+				</control>
+			</control>		
+
+			<control type="group">
+				<include>wallanim</include>
+				<control type="image">
+					<posx>0</posx>
+					<posy>9</posy>
+					<width>142</width>
+					<height>193</height>
+					<texture>wall/postershadow.png</texture>
+					<animation type="Focus" reversible="false">
+						<effect type="zoom" center="auto" start="80" end="185" time="250" tween="sine" easing="inout" />
+						<effect type="fade" start="80" end="90" time="400" />
+					</animation>
+					<aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+				</control>
+
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>144</width>
+					<height>213</height>
+					<texture>white.png</texture>
+					<animation type="Focus" reversible="false">
+						<effect type="zoom" center="auto" start="80" end="138" time="250" tween="sine" easing="inout" />
+						<effect type="fade" start="80" end="100" time="400" />
+					</animation>
+					<aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+					<colordiffuse>efffffff</colordiffuse>
+				</control>
+
+				<control type="image">
+					<posx>1</posx>
+					<posy>0</posy>
+					<width>142</width>
+					<height>213</height>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<animation type="Focus" reversible="false">
+						<effect type="zoom" center="auto" start="80" end="135" time="250" tween="sine" easing="inout" />
+						<effect type="fade" start="80" end="100" time="400" />
+					</animation>
+					<aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+				</control>
+			</control>
+
+
+		</focusedlayout>
+	</include>
+</includes>

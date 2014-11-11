@@ -224,7 +224,7 @@
                         <colordiffuse>8EC0C0C0</colordiffuse>
                     </control>
                     <control type="label">
-                        <posx>0</posx>
+                        <posx>-125</posx>
                         <posy>120</posy>
                         <width>250</width>
                         <height>35</height>
@@ -257,7 +257,7 @@
                         <colordiffuse>FFffffff</colordiffuse>
                     </control>
                     <control type="label">
-                        <posx>0</posx>
+                        <posx>-125</posx>
                         <posy>120</posy>
                         <width>250</width>
                         <height>35</height>
@@ -1253,8 +1253,9 @@
                     <control type="label">
                         <description>conditions label</description>
                         <posx>220</posx>
-                        <posy>88</posy>
+                        <posy>90</posy>
                         <width>250</width>
+                        <height>30</height>
                         <info>Window(Weather).Property(Day0.Outlook)</info>
                         <font>context</font>
                         <align>left</align>

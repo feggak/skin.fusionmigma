@@ -1,9 +1,6 @@
 <includes>
   
   <default type="label">
-    <posx>0</posx>
-    <posy>0</posy>
-    <height>30</height>
     <align>left</align>
     <aligny>center</aligny>
     <font>Small</font>

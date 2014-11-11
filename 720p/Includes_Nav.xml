@@ -857,6 +857,7 @@
 				<posx>125r</posx>
 				<posy>12</posy>
 				<width>125</width>
+				<height>35</height>
 				<font>time</font>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -868,6 +869,7 @@
 				<posx>125r</posx>
 				<posy>12</posy>
 				<width>125</width>
+				<height>35</height>
 				<font>time</font>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -880,6 +882,7 @@
 				<posx>125r</posx>
 				<posy>12</posy>
 				<width>125</width>
+				<height>35</height>
 				<font>time</font>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -913,6 +916,7 @@
 					<posx>138r</posx>
 					<posy>12</posy>
 					<width>95</width>
+					<height>35</height>
 					<font>weather</font>
 					<align>right</align>
 					<aligny>center</aligny>

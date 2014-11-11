@@ -1,0 +1,317 @@
+<includes>
+
+	
+	<include name="Hulu">
+
+		<control type="group">
+		<include>ContextFade</include>
+		<include>AddSource</include>		
+		<include>MusicInfoOpenClose</include>	
+		<include>InfoOpenClose</include>
+		<include>Keyboard</include>
+		<visible>substring(container.folderpath,plugin://plugin.video.hulu) | Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)</visible>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="550" delay="0" />
+			<effect type="zoom" start="155" end="100" time="350" center="auto" delay="0" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="350" delay="0" />
+			<effect type="zoom" start="100" end="155" time="300" center="auto" delay="0" />
+		</animation>		
+
+			<control type="panel" id="569">
+				<posx>0</posx>
+				<posy>84</posy>
+				<width>1760</width>
+				<height>570</height>
+				<onleft>569</onleft>
+				<onright>569</onright>
+				<onup>300</onup>
+				<ondown>570</ondown>
+				<scrolltime>280</scrolltime>
+				<orientation>horizontal</orientation>
+				<viewtype label="hulu">icon</viewtype>
+				<pagecontrol>570</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<visible>substring(container.folderpath,plugin://plugin.video.hulu) | Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)</visible>
+				<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+				<visible>!substring(container.folderpath,plugin://plugin.video.apple.movie.trailers.lite)</visible>
+				<visible>!Skin.HasSetting(HideHulu)</visible>
+				<include>WallFloat</include>
+				<animation effect="slide" end="0,15" time="400" delay="95" tween="cubic" easing="inout" condition="Control.HasFocus(300)">Conditional</animation>
+				<itemlayout height="285" width="500">
+					<control type="image">
+						<posx>9</posx>
+						<posy>9</posy>
+						<width>468</width>
+						<height>247</height>
+						<texture border="12">whitepanel2.png</texture>
+						<align>bottom</align>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>eeffffff</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>19</posx>
+						<posy>224</posy>
+						<width>449</width>
+						<height>1</height>
+						<texture>black.png</texture>
+						<align>bottom</align>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>3effffff</colordiffuse>
+					</control>					
+					<control type="image">
+						<posx>18</posx>
+						<posy>18</posy>
+						<width>450</width>
+						<height>176</height>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<align>bottom</align>
+						<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+						<visible>!Container.Content(Movies) + !Container.Content(TVShows)</visible>
+					</control>
+					<control type="image">
+						<posx>18</posx>
+						<posy>18</posy>
+						<width>450</width>
+						<height>176</height>
+						<texture background="true" fallback="nofanart2.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+						<align>bottom</align>
+						<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+						<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
+					</control>
+										
+				  <control type="label">
+					<posy>189</posy>
+					<posx>20</posx>
+					<width>448</width>
+					<height>39</height>
+					<info>ListItem.Label</info>
+					<scroll>false</scroll>
+					<textcolor>ff444444</textcolor>
+					<font>homemenu3</font>
+				  </control>
+				  
+				  <control type="label">
+					<posy>217</posy>
+					<posx>20</posx>
+					<width>448</width>
+					<height>39</height>
+					<label>$INFO[ListItem.Genre]</label>
+					<scroll>false</scroll>
+					<textcolor>ff5f5f5f</textcolor>
+					<font>about</font>
+					<visible>!Container.Content(TVShows)</visible>
+				  </control>
+				  
+				  <control type="label">
+					<posy>217</posy>
+					<posx>20</posx>
+					<width>448</width>
+					<height>39</height>
+					<label>$INFO[ListItem.Episode] $LOCALIZE[20360] • $INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]]</label>
+					<scroll>false</scroll>
+					<textcolor>ff5f5f5f</textcolor>
+					<font>about</font>
+					<visible>Container.Content(TVShows)</visible>
+				  </control>
+				  
+					<control type="label">
+					  <posy>217</posy>
+					  <posx>20</posx>
+					  <width>448</width>
+					  <height>39</height>
+					  <label>$INFO[ListItem.Date,Aired on: ]</label>
+					  <scroll>false</scroll>
+					  <textcolor>ff5f5f5f</textcolor>
+					  <font>about</font>
+					  <visible>Container.Content(Episodes)</visible>
+					</control>			  
+				  <control type="label">
+					<posy>217</posy>
+					<posx>20</posx>
+					<width>448</width>
+					<height>39</height>
+					<label>movie collection</label>
+					<scroll>false</scroll>
+					<textcolor>ff5f5f5f</textcolor>
+					<font>about</font>
+					<visible>Control.IsVisible(569) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+		  			<visible>Container.Content(Movies)</visible>
+					<visible>!ListItem.IsFolder</visible>
+				  </control>
+				  
+					<control type="image">
+						<posy>152</posy>
+						<posx>424</posx>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>keep</aspectratio>
+						<texture>watchedbadge2.png</texture>
+						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>Skin.HasSetting(WatchedOverlays)</visible>
+					</control>				  
+				</itemlayout>
+				
+				<focusedlayout height="285" width="500">
+					<control type="image">
+						<posx>2</posx>
+						<posy>3</posy>
+						<width>482</width>
+						<height>259</height>
+						<texture border="12">bluepanel.png</texture>
+						<align>bottom</align>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>f4ffffff</colordiffuse>
+						<animation type="Focus" reversible="false">
+							<effect type="fade" start="0" end="100" time="200" />
+							<effect type="zoom" start="110" end="100" time="500" center="auto" tween="back" easing="out" />
+						</animation>
+					</control>	
+					<control type="image">
+						<posx>9</posx>
+						<posy>9</posy>
+						<width>468</width>
+						<height>247</height>
+						<texture border="12">whitepanel2.png</texture>
+						<align>bottom</align>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>eeffffff</colordiffuse>
+					</control>	
+					<control type="image">
+						<posx>19</posx>
+						<posy>224</posy>
+						<width>449</width>
+						<height>1</height>
+						<texture>black.png</texture>
+						<align>bottom</align>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>3effffff</colordiffuse>
+					</control>				
+					<control type="image">
+						<posx>18</posx>
+						<posy>18</posy>
+						<width>450</width>
+						<height>176</height>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<align>bottom</align>
+						<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+						<visible>!Container.Content(Movies) + !Container.Content(TVShows)</visible>
+					</control>
+					<control type="image">
+						<posx>18</posx>
+						<posy>18</posy>
+						<width>450</width>
+						<height>176</height>
+						<texture background="true" fallback="nofanart2.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+						<align>bottom</align>
+						<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+						<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
+					</control>	
+					
+					<control type="label">
+					  <posy>189</posy>
+					  <posx>20</posx>
+					  <width>448</width>
+					  <height>39</height>
+					  <info>ListItem.Label</info>
+					  <scroll>false</scroll>
+					  <textcolor>ff444444</textcolor>
+					  <font>homemenu3</font>
+					</control>
+					
+					<control type="label">
+					<animation effect="fade" pulse="true" start="50" end="100" time="500" reversible="false" condition="Control.HasFocus(569)">Conditional</animation>
+					  <posy>84</posy>
+					  <posx>238</posx>
+					  <width>448</width>
+					  <height>39</height>
+					  <label>$INFO[ListItem.PercentPlayed] % Played</label>
+					  <scroll>false</scroll>
+					  <align>center</align>
+					  <textcolor>white</textcolor>
+					  <font>labeltitlehome</font>
+					  <visible>ListItem.IsResumable</visible>
+					</control>
+					
+				  <control type="label">
+					<posy>217</posy>
+					<posx>20</posx>
+					<width>448</width>
+					<height>39</height>
+					<label>$INFO[ListItem.Genre]</label>
+					<scroll>false</scroll>
+					<textcolor>ff5f5f5f</textcolor>
+					<font>about</font>
+					<visible>!Container.Content(TVShows)</visible>
+				  </control>
+				  
+				  <control type="label">
+					<posy>217</posy>
+					<posx>20</posx>
+					<width>448</width>
+					<height>39</height>
+					<label>$INFO[ListItem.Episode] $LOCALIZE[20360] • $INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]]</label>
+					<scroll>false</scroll>
+					<textcolor>ff5f5f5f</textcolor>
+					<font>about</font>
+					<visible>Container.Content(TVShows)</visible>
+				  </control>
+					<control type="label">
+					  <posy>217</posy>
+					  <posx>20</posx>
+					  <width>448</width>
+					  <height>39</height>
+					  <label>$INFO[ListItem.Date,Aired on: ]</label>
+					  <scroll>false</scroll>
+					  <textcolor>ff5f5f5f</textcolor>
+					  <font>about</font>
+					  <visible>Container.Content(Episodes)</visible>
+					</control>
+					
+				  <control type="label">
+					<posy>217</posy>
+					<posx>20</posx>
+					<width>448</width>
+					<height>39</height>
+					<label>movie collection</label>
+					<scroll>false</scroll>
+					<textcolor>ff5f5f5f</textcolor>
+					<font>about</font>
+					<visible>Control.IsVisible(569) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+		  			<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+					<visible>!ListItem.IsFolder</visible>
+				  </control>	
+				  
+					<control type="image">
+						<posy>152</posy>
+						<posx>424</posx>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>keep</aspectratio>
+						<texture>watchedbadge2.png</texture>
+						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>Skin.HasSetting(WatchedOverlays)</visible>
+					</control>
+									  
+				</focusedlayout>
+		</control>
+		
+		<control type="scrollbar" id="570">
+			<posx>0</posx>
+			<posy>649</posy>
+			<width>1280</width>
+			<height>5</height>
+			<visible allowhiddenfocus="true">Control.IsVisible(569) + Control.HasFocus(570)</visible>
+			<texturesliderbackground>white2.png</texturesliderbackground>
+			<textureslidernibfocus>white3.png</textureslidernibfocus>
+			<onup>569</onup>
+			<ondown>-</ondown>
+			<showonepage>false</showonepage>
+			<orientation>horizontal</orientation>
+			<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(570)">Conditional</animation>
+		</control>				
+		</control>
+	</include>
+	
+</includes>

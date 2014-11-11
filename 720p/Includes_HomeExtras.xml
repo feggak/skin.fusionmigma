@@ -328,7 +328,7 @@
                         <scroll>true</scroll>
                         <align>left</align>
                         <label>"$INFO[ListItem.Thumb]"</label>
-                        <visible>!Control.HasFocus(1014)</visible>
+                        <visible>!Control.HasFocus(1014) + !IsEmpty(ListItem.Thumb)</visible>
                     </control>
                     <control type="textbox">
                         <posx>222</posx>
@@ -341,7 +341,7 @@
                         <align>left</align>
                         <label>"$INFO[ListItem.Thumb]"</label>
                         <autoscroll delay="2000" time="1200" repeat="8000">Control.HasFocus(1014)</autoscroll>
-                        <visible>Control.HasFocus(1014)</visible>
+                        <visible>Control.HasFocus(1014) + !IsEmpty(ListItem.Thumb)</visible>
                     </control>
                 </focusedlayout>
                 <content>
@@ -1172,6 +1172,5 @@
         </control>
 
     </include>
-
 
 </includes>
