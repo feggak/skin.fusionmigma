@@ -286,7 +286,7 @@
                         <textcolor>ff505050</textcolor>
                         <scroll>true</scroll>
                         <scrollspeed>40</scrollspeed>
-                        <scrollsuffix>-</scrollsuffix>
+                        <scrollsuffix> - </scrollsuffix>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
                         <visible>Control.HasFocus(1014)</visible>

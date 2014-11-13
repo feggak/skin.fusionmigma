@@ -8,7 +8,7 @@
 <include file="Includes_Backgrounds.xml" />
 <include file="Includes_Animations.xml" />
 <include file="Includes_DropDownBar.xml" />
-<include file="Includes_BtmInfo.xml" />
+<include file="Includes_Bottom.xml" />
 <include file="Includes_Flags.xml" />
 <include file="Includes_HomeExtras.xml" />
 <include file="Includes_NextAiredInfo.xml" />
@@ -1304,61 +1304,6 @@
 	<textoffsetx>20</textoffsetx>
 	<radioposx>743</radioposx>
 	<align>left</align>
-</include>
-
-<!-- ZBAR -->
-<include name="ZBar">
-	<control type="group">
-		<animation effect="slide" start="0,100" end="0,0" time="350" delay="50" reversable="false">WindowOpen</animation>
-		<animation effect="slide" start="0,0" end="0,100" delay="0" time="400" reversable="false">WindowClose</animation>
-		<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
-		<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
-		<control type="image">
-			<posx>0</posx>
-			<posy>654</posy>
-			<width>1280</width>
-			<height>70</height>
-			<aspectratio>stretch</aspectratio>
-			<texture>black.png</texture>
-			<colordiffuse>80FFFFFF</colordiffuse>
-			<animation effect="fade" start="100" end="60" time="0" condition="substring(container.folderpath,plugin://plugin.video.xbmcflicks)">Conditional</animation>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>715</posy>
-			<width>1280</width>
-			<height>5</height>
-			<aspectratio>stretch</aspectratio>
-			<texture>zbase.png</texture>
-			<colordiffuse>FFFFFFFF</colordiffuse>
-			<visible>!Skin.HasSetting(ZBar)</visible>
-			<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>715</posy>
-			<width>1280</width>
-			<height>5</height>
-			<aspectratio>stretch</aspectratio>
-			<texture flipx="true">zbase.png</texture>
-			<colordiffuse>FFFFFFFF</colordiffuse>
-			<visible>!Skin.HasSetting(ZBar)</visible>
-			<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
-			<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>654</posy>
-			<width>1280</width>
-			<height>1</height>
-			<aspectratio>stretch</aspectratio>
-			<texture>white.png</texture>
-			<colordiffuse>20FFFFFF</colordiffuse>
-			<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
-		</control>
-	</control>
 </include>
 
 <!-- STYLES -->

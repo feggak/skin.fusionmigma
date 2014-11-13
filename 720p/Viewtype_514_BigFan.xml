@@ -15,8 +15,8 @@
 			<visible>Control.IsVisible(514)</visible>
 			<animation effect="fade" start="100" end="10" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003)">Conditional</animation>
 			<animation effect="fade" start="10" end="100" time="400" delay="100" reversible="false" condition="!Window.IsVisible(2003)">Conditional</animation>
-			<control type="wraplist" id="514">
 
+			<control type="wraplist" id="514">
 				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
 				<visible>!Skin.HasSetting(HideBigFan)</visible>
 				<posx>0</posx>
@@ -29,7 +29,7 @@
 				<ondown>-</ondown>
 				<viewtype label="BigFan">bigwrap</viewtype>
 				<pagecontrol>69</pagecontrol>
-				<scrolltime>500</scrolltime>
+				<scrolltime>400</scrolltime>
 				<focusposition>0</focusposition>
 				<orientation>horizontal</orientation>
 				<preloaditems>6</preloaditems>
@@ -96,7 +96,6 @@
 
 			<animation effect="slide" start="0,0" end="0,500" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003)">Conditional</animation>
 			<animation effect="fade" start="100" end="0" time="400" delay="150" reversible="false" condition="Window.IsVisible(2003)">Conditional</animation>
-
 			<animation effect="slide" start="0,350" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003)">Conditional</animation>
 			<animation effect="fade" start="0" end="100" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003)">Conditional</animation>
 			<control type="image">
@@ -174,7 +173,7 @@
 					<posy>111.5</posy>
 					<width>136</width>
 					<height>202</height>
-					<fadetime>275</fadetime>
+					<fadetime>200</fadetime>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" diffuse="poster/posterdiffuse.png">$INFO[ListItem.Icon]</texture>
 				</control>
@@ -244,7 +243,6 @@
 				<label>$INFO[ListItem.Duration,, Minutes]$LOCALIZE[31618]$INFO[ListItem.Genre]</label>
 				<visible>[Control.IsVisible(514) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
 			</control>
-
 			<control type="label">
 				<posx>235</posx>
 				<posy>84r</posy>

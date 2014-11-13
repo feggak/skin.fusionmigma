@@ -359,7 +359,7 @@
 				</focusedlayout>
 
 				<!-- FOCUSED INFO LAYOUT -->
-				<focusedlayout condition="!Container.Content(songs) + Skin.HasSetting(list_info)" height="117">
+				<focusedlayout condition="!Container.Content(songs) + Skin.HasSetting(list_info) + Container.Content(movies)" height="117">
 					<control type="image">
 						<posy>-1</posy>
 						<width>808</width>

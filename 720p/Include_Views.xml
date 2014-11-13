@@ -3,6 +3,7 @@
 		<!--  -->
 		<include file="_debug.xml" />
 		<include file="Viewtype_50_List.xml" />
+		<include file="Viewtype_514_BigFan.xml" />
 		<include file="Viewtype_707_LowList.xml" />
 
 		<include file="Viewtype_SquarePoster.xml" />
@@ -23,7 +24,6 @@
 		<include file="Viewtype_PosterShelf.xml" />
 		<include file="Viewtype_PictureShelf.xml" />
 		<include file="Viewtype_Grid.xml" />
-		<include file="Viewtype_BigFan.xml" />
 		<include file="Viewtype_BigList.xml" />
 		<include file="Viewtype_BigList2.xml" />
 		<include file="Viewtype_Icon.xml" />
