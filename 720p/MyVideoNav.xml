@@ -42,7 +42,7 @@
 		<!-- MEDIA CODEC FLAGS -->
 		<control type="grouplist">
 			<posx>4</posx>
-			<posy>661</posy>
+			<posy>660</posy>
 			<width>600</width>
 			<align>left</align>
 			<itemgap>0</itemgap>

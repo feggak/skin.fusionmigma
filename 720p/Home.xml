@@ -752,7 +752,7 @@
             <control type="list" id="652">
                 <include>HomeSubMenuCommonValues</include>
                 <onleft>1016</onleft>
-                <onright>3010</onright>
+                <onright>2016</onright>
                 <ondown>652</ondown>
                 <visible>Container(540).HasFocus(8)</visible>
 
@@ -771,7 +771,6 @@
 
             </control>
 
-            <!-- EXTRA -->
             <!-- HD MOVIES -->
             <control type="list" id="654">
                 <include>HomeSubMenuCommonValues</include>
@@ -879,130 +878,8 @@
 
             </control>
 
-            <!--  EXTRA -->
-            <!--  ADDONS VOD -->
-            <control type="list" id="658">
-                <posx>17</posx>
-                <posy>674</posy>
-                <width>1280</width>
-                <height>262</height>
-                <onleft>658</onleft>
-                <onright>658</onright>
-                <spacebetweenitems>2</spacebetweenitems>
-                <onup>540</onup>
-                <ondown>540</ondown>
-                <scrolltime>300</scrolltime>
-                <orientation>horizontal</orientation>
-                <animation type="Visible" condition="Container(540).HasFocus(13)" reversible="false">
-                    <effect type="fade" start="0" end="100" time="300" delay="250" />
-                </animation>
-                <animation type="Hidden" reversible="false">
-                    <effect type="fade" start="100" end="0" time="100" />
-                </animation>
-                <animation type="WindowOpen" reversible="false">
-                    <effect type="fade" start="0" end="100" time="800" delay="800"/>
-                </animation>
-                <animation type="WindowClose" reversible="false">
-                    <effect type="fade" start="100" end="0" time="200" />
-                </animation>
-                <visible>Container(540).HasFocus(13)</visible>
-                <itemlayout height="256" width="256">
-                  <control type="image">
-                      <posx>0</posx>
-                      <posy>38</posy>
-                      <width>222</width>
-                      <height>222</height>
-                      <aspectratio>stretch</aspectratio>
-                      <texture border="7,7,7,7">Home/extras/addonvodbg.png</texture>
-                      <colordiffuse>10ffffff</colordiffuse>
-                  </control>
-                  <control type="image">
-                      <posx>10</posx>
-                      <posy>48</posy>
-                      <width>201</width>
-                      <height>201</height>
-                      <aspectratio>stretch</aspectratio>
-                      <texture background="true" diffuse="poster/squarediffuse.png">$INFO[ListItem.Icon]</texture>
-                      <colordiffuse>ffffffff</colordiffuse>
-                  </control>
-                </itemlayout>
-                <focusedlayout height="256" width="256">
-                  <control type="image">
-                      <posx>0</posx>
-                      <posy>38</posy>
-                      <width>222</width>
-                      <height>222</height>
-                      <aspectratio>stretch</aspectratio>
-                      <texture border="7,7,7,7">Home/extras/addonvodbg.png</texture>
-                      <colordiffuse>10ffffff</colordiffuse>
-                  </control>
-                  <control type="image">
-                      <posx>0</posx>
-                      <posy>38</posy>
-                      <width>222</width>
-                      <height>222</height>
-                      <aspectratio>stretch</aspectratio>
-                      <texture>Home/extras/addonvodbgfo.png</texture>
-                      <colordiffuse>ffffffff</colordiffuse>
-                      <animation effect="fade" start="0" end="100" time="400" delay="0" condition="Control.HasFocus(654)">Conditional</animation>
-                      <visible>Control.HasFocus(654)</visible>
-                  </control>
-                  <control type="image">
-                      <posx>-12</posx>
-                      <posy>26</posy>
-                      <width>245</width>
-                      <height>245</height>
-                      <aspectratio>stretch</aspectratio>
-                      <texture>poster/squareborder.png</texture>
-                      <colordiffuse>ffffffff</colordiffuse>
-                      <animation effect="fade" start="0" end="100" time="400" delay="0" condition="Control.HasFocus(654)">Conditional</animation>
-                      <visible>Control.HasFocus(654)</visible>
-                  </control>
-                  <control type="image">
-                      <posx>10</posx>
-                      <posy>48</posy>
-                      <width>201</width>
-                      <height>201</height>
-                      <aspectratio>stretch</aspectratio>
-                      <texture background="true" diffuse="infowrap/albumdiffuse.png">$INFO[ListItem.Icon]</texture>
-                      <colordiffuse>ffffffff</colordiffuse>
-                  </control>
-                </focusedlayout>
+            <include>VODAddons</include>
 
-                <content>
-                    <item id="1">
-                        <icon>$INFO[system.addonicon(Skin.String(HomeVOD_Addon1))]</icon>
-                        <label>$INFO[system.addontitle(Skin.String(HomeVOD_Addon1))]</label>
-                        <onclick>RunAddon($INFO[Skin.String(HomeVOD_Addon1)])</onclick>
-                        <visible>!IsEmpty(Skin.String(HomeVOD_Addon1))</visible>
-                    </item>
-                    <item id="2">
-                        <icon>$INFO[system.addonicon(Skin.String(HomeVOD_Addon2))]</icon>
-                        <label>$INFO[system.addontitle(Skin.String(HomeVOD_Addon2))]</label>
-                        <onclick>RunAddon($INFO[Skin.String(HomeVOD_Addon2)])</onclick>
-                        <visible>!IsEmpty(Skin.String(HomeVOD_Addon2))</visible>
-                    </item>
-                    <item id="3">
-                        <icon>$INFO[system.addonicon(Skin.String(HomeVOD_Addon3))]</icon>
-                        <label>$INFO[system.addontitle(Skin.String(HomeVOD_Addon3))]</label>
-                        <onclick>RunAddon($INFO[Skin.String(HomeVOD_Addon3)])</onclick>
-                        <visible>!IsEmpty(Skin.String(HomeVOD_Addon3))</visible>
-                    </item>
-                    <item id="4">
-                        <icon>$INFO[system.addonicon(Skin.String(HomeVOD_Addon4))]</icon>
-                        <label>$INFO[system.addontitle(Skin.String(HomeVOD_Addon4))]</label>
-                        <onclick>RunAddon($INFO[Skin.String(HomeVOD_Addon4)])</onclick>
-                        <visible>!IsEmpty(Skin.String(HomeVOD_Addon4))</visible>
-                    </item>
-                    <item id="5">
-                        <icon>$INFO[system.addonicon(Skin.String(HomeVOD_Addon5))]</icon>
-                        <label>$INFO[system.addontitle(Skin.String(HomeVOD_Addon5))]</label>
-                        <onclick>RunAddon($INFO[Skin.String(HomeVOD_Addon5)])</onclick>
-                        <visible>!IsEmpty(Skin.String(HomeVOD_Addon5))</visible>
-                    </item>
-                </content>
-
-            </control>
         </control>
 
         <!-- FEATURED PANEL -->
@@ -1789,6 +1666,9 @@
                     </control>
                 </control>
             </control>
+
+            <!-- FAVORITE ADDONS -->
+            <include>FavoriteAddons</include>
 
         </control>
 

@@ -11,7 +11,6 @@
 			<visible>!Window.IsVisible(1122)</visible>
 		</control>
 	</include>
-
 	<include name="DropDownBarLabel">
 		<posx>-15</posx>
 		<posy>-2</posy>
@@ -39,29 +38,29 @@
 
 		<control type="grouplist" id="9000">
 			<visible>false</visible>	
-			<control type="togglebutton" id="4">
+			<control type="togglebutton" id="1">
 			</control>	
+			<control type="radiobutton" id="2">
+			</control>	
+			<control type="radiobutton" id="3">
+			</control>
+			<control type="radiobutton" id="4">
+			</control>
+			<control type="radiobutton" id="5">
+			</control>
 			<control type="radiobutton" id="6">
-			</control>	
+			</control>
 			<control type="radiobutton" id="7">
+			</control>
+			<control type="radiobutton" id="8">
 			</control>
 			<control type="radiobutton" id="9">
 			</control>
-			<control type="radiobutton" id="19">
+			<control type="radiobutton" id="10">
 			</control>
-			<control type="radiobutton" id="14">
+			<control type="radiobutton" id="11">
 			</control>
-			<control type="radiobutton" id="17">
-			</control>
-			<control type="radiobutton" id="20">
-			</control>
-			<control type="radiobutton" id="21">
-			</control>
-			<control type="radiobutton" id="22">
-			</control>
-			<control type="radiobutton" id="26">
-			</control>
-			<control type="radiobutton" id="28">
+			<control type="radiobutton" id="12">
 			</control>
 			<control type="button" id="8">
 			</control>
@@ -116,6 +115,7 @@
 
 			</control>
 		</control>
+
 	</include>
 
 	<include name="MusicPlaylistItems">
@@ -167,7 +167,6 @@
 			</item>		
 		</content>
 	</include>
-
 	<include name="VideoPlaylistItems">
 		<content>
 			<item id="1">
@@ -212,7 +211,6 @@
 			</item>		
 		</content>
 	</include>
-
 	<include name="ProgramsItems">
 		<content>
 			<item id="1">
@@ -296,7 +294,6 @@
 			</item>
 		</content>
 	</include>
-
 	<include name="PicturesItems">
 		<content>
 			<item id="1">
@@ -352,7 +349,6 @@
 			</item>
 		</content>
 	</include>
-
 	<include name="VideoLibraryItems">
 		<content>
 			<!-- SORT BY -->
@@ -372,10 +368,6 @@
 				<visible>container.sortdirection(descending)</visible>
 			</item>
 			<!-- VIEWMODE -->
-			<item id="3">
-				<label>[UPPERCASE]$LOCALIZE[317781][/UPPERCASE]</label>
-				<onclick>Container.PreviousViewMode</onclick>
-			</item>
 			<item id="3">
 				<label>[UPPERCASE]$LOCALIZE[31735] $INFO[Container.ViewMode][/UPPERCASE]</label>
 				<onclick>Container.NextViewMode</onclick>
@@ -682,7 +674,6 @@
 			</item>
 		</content>
 	</include>
-
 	<include name="VideoFilesItems">
 		<content>
 			<item id="1">
@@ -838,7 +829,6 @@
 			</item>
 		</content>
 	</include>
-
 	<include name="MusicLibraryItems">
 		<content>
 			<item id="1">
@@ -1052,7 +1042,6 @@
 			</item>
 		</content>
 	</include>
-
 	<include name="MusicFilesItems">
 		<content>
 			<item id="1">

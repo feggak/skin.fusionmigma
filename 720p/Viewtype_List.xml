@@ -721,6 +721,7 @@
 				</control>
 			</control>
 
+			<!-- THUMB LABELS -->
 			<control type="label">
 				<visible>Control.IsVisible(50)</visible>
 				<posy>465</posy>
@@ -733,7 +734,6 @@
 				<info>ListItem.Artist</info>
 				<visible>Container.Content(Albums)</visible>
 			</control>
-
 			<control type="label">
 				<visible>Control.IsVisible(50)</visible>
 				<posy>465</posy>
@@ -746,7 +746,6 @@
 				<info>ListItem.Album</info>
 				<visible>Container.Content(Songs)</visible>
 			</control>
-
 			<control type="label">
 				<visible>Control.IsVisible(50)</visible>
 				<posy>493</posy>
@@ -760,7 +759,7 @@
 				<visible>Container.Content(Songs)</visible>
 			</control>
 
-			<!-- Scroll Bar -->
+			<!-- SCROLL BAR -->
 			<control type="scrollbar" id="60">
 				<posx>1220</posx>
 				<posy>170</posy>
