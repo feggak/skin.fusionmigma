@@ -241,6 +241,7 @@
 						<width>28</width>
 						<aspectratio>keep</aspectratio>
 						<texture>watchedfo.png</texture>
+						<colordiffuse>e7c0c0c0</colordiffuse>
 						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
 					</control>
@@ -372,6 +373,7 @@
 						<width>28</width>
 						<aspectratio>keep</aspectratio>
 						<texture>watchedfo.png</texture>
+						<colordiffuse>white</colordiffuse>
 						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
 					</control>

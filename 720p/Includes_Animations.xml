@@ -1,5 +1,6 @@
 <includes>
 
+	<!-- NAV -->
 	<include name="BreadCrumb1">
 		<animation type="WindowClose" reversible="false">
 			<effect type="fade" start="100" end="0" time="450" delay="0" />
@@ -9,6 +10,7 @@
 		</animation>
 	</include>
 
+	<!-- FANART -->
 	<include name="FanartFade">
 		<!-- VIDEOS -->
 		<animation effect="fade" start="100" end="40" time="400" condition="Window.IsActive(2003)">Conditional</animation>
@@ -30,6 +32,7 @@
 		<animation effect="fade" start="100" end="40" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_heavy)">Conditional</animation>
 	</include>
 
+	<!-- WINDOWS -->
 	<include name="OpenCloseAnimation">
 		<animation type="WindowOpen" reversible="false">
 			<effect type="fade" start="0" end="100" time="200" delay="0" />
@@ -58,7 +61,6 @@
 			<effect type="fade" start="100" end="0" time="200" delay="150" />
 		</animation>
 	</include>
-
 	<include name="InfoOpenClose">
 		<animation effect="slide" start="0,0" end="0,-760" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
 		<animation effect="slide" start="0,-760" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
@@ -71,17 +73,22 @@
 		<animation effect="slide" start="0,0" end="0,-760" time="200" delay="0" reversible="false" condition="Window.IsVisible(2001)">Conditional</animation>
 		<animation effect="slide" start="0,-760" end="0,0" time="200" delay="0" reversible="false" condition="!Window.IsVisible(2001)">Conditional</animation>
 	</include>
-
 	<include name="Changes">
 		<animation effect="fade" start="100" end="3" time="300" reversible="false" condition="Window.IsVisible(2004)">Conditional</animation>
 		<animation effect="fade" start="3" end="100" time="200" delay="0" reversible="false" condition="!Window.IsVisible(2004)">Conditional</animation>
-	</include>	
-
+	</include>
 	<include name="ViewWindowOC">
 		<animation effect="slide" start="760,0" end="0,0" time="400" delay="0" tween="back" easing="out" reversible="false">WindowOpen</animation>
 		<animation effect="slide" start="0,0" end="-760,0" time="400" delay="0" reversible="false">WindowClose</animation>
 	</include>
 
+	<!-- VIEWTYPE_50_LIST -->
+	<include name="BrowseListAnimation">
+		<animation effect="fade" start="10" end="100" time="200" delay="0" reversible="false" condition="Container(50).OnPrevious">focus</animation>
+		<animation effect="fade" start="10" end="100" time="200" delay="0" reversible="false" condition="Container(50).OnNext">focus</animation>
+	</include>
+
+	<!-- MISC -->
 	<include name="ContextFade">
 		<animation effect="fade" start="100" end="15" time="300" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
 		<animation effect="fade" start="15" end="100" time="200" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>

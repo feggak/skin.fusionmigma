@@ -497,6 +497,17 @@
 				<onclick>Skin.SetBool(genres_fanart_off)</onclick>
 				<visible>Container.Content(Genres) + Skin.HasSetting(genres_fanart_heavy)</visible>
 			</item>
+			<!-- LIST: INFO -->
+			<item id="5">
+				<label>[UPPERCASE]$LOCALIZE[32759][/UPPERCASE]</label>
+				<onclick>Skin.SetBool(list_info)</onclick>
+				<visible>Control.IsVisible(50) + Container.Content(Movies) + !Skin.HasSetting(list_info)</visible>
+			</item>
+			<item id="5">
+				<label>[UPPERCASE]$LOCALIZE[32758][/UPPERCASE]</label>
+				<onclick>Skin.Reset(list_info)</onclick>
+				<visible>Control.IsVisible(50) + Container.Content(Movies) + Skin.HasSetting(list_info)</visible>
+			</item>
 			<!-- BIGLIST: YEAR -->
 			<item id="5">
 				<label>[UPPERCASE]$LOCALIZE[31743][/UPPERCASE]</label>
