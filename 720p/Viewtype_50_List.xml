@@ -51,7 +51,6 @@
 				<viewtype label="List">list</viewtype>
 				<scrolltime>0</scrolltime>
 				<visible>!Container.Content(Episodes)</visible>
-				<visible>!substring(container.folderpath,plugin://plugin.video.hulu)</visible>
 
 				<!-- LAYOUT -->
 				<itemlayout condition="!Container.Content(songs)" height="39">
@@ -61,17 +60,20 @@
 						<texture>list/listline.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
+
+					<!-- MOVIE COLLECTION -->
 					<control type="image">
 						<posy>0</posy>
 						<width>808</width>
 						<height>38</height>
 						<texture>list/collection.png</texture>
 						<visible>Control.IsVisible(50) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>Container.Content(Movies)</visible>
 						<animation effect="slide" start="0,30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(50).OnPrevious">focus</animation>
 						<animation effect="slide" start="0,-30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(50).OnNext">focus</animation>
 						<visible>!ListItem.IsFolder</visible>
 					</control>
+
 					<control type="image">
 						<posx>8</posx>
 						<posy>2</posy>
@@ -359,7 +361,7 @@
 				</focusedlayout>
 
 				<!-- FOCUSED INFO LAYOUT -->
-				<focusedlayout condition="!Container.Content(songs) + Skin.HasSetting(list_info) + Container.Content(movies)" height="117">
+				<focusedlayout condition="!Container.Content(songs) + Skin.HasSetting(list_info)" height="117">
 					<control type="image">
 						<posy>-1</posy>
 						<width>808</width>

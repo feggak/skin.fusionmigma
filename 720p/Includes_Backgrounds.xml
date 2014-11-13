@@ -31,7 +31,7 @@
             [Container.Content(TVShows) + !Skin.HasSetting(tvshows_fanart_off)] |
             [Container.Content(Seasons) + !Skin.HasSetting(seasons_fanart_off)] |
             [Container.Content(Episodes) + !Skin.HasSetting(episodes_fanart_off)]</visible>
-        <visible>!Control.IsVisible(514)</visible>
+        <visible>!Control.IsVisible(51)</visible>
         <visible>!Control.IsVisible(560)</visible>
         <include>FanartFade</include>
         <include>ContextFadeFanArt</include>
@@ -47,7 +47,7 @@
         <fadetime>200</fadetime>
         <aspectratio>stretch</aspectratio>
         <visible>Container.Content(Genres) + !Skin.HasSetting(genres_fanart_off)</visible>
-        <visible>!Control.IsVisible(514)</visible>
+        <visible>!Control.IsVisible(51)</visible>
         <visible>!Control.IsVisible(560)</visible>
         <include>FanartFade</include>
         <include>ContextFadeFanArt</include>

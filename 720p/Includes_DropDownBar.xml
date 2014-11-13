@@ -377,100 +377,100 @@
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(movies_fanart_light)</onclick>
 				<onclick>Skin.Reset(movies_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Movies) + !Skin.HasSetting(movies_fanart_light) + !Skin.HasSetting(movies_fanart_med) + !Skin.HasSetting(movies_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + !Skin.HasSetting(movies_fanart_light) + !Skin.HasSetting(movies_fanart_med) + !Skin.HasSetting(movies_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31740][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(movies_fanart_med)</onclick>
 				<onclick>Skin.Reset(movies_fanart_light)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_light)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_light)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31741][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(movies_fanart_heavy)</onclick>
 				<onclick>Skin.Reset(movies_fanart_med)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_med)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_med)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(movies_fanart_heavy)</onclick>
 				<onclick>Skin.SetBool(movies_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_heavy)</visible>
 			</item>
 			<!-- FANART TVSHOWS -->
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(tvshows_fanart_light)</onclick>
 				<onclick>Skin.Reset(tvshows_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(TVShows) + !Skin.HasSetting(tvshows_fanart_light) + !Skin.HasSetting(tvshows_fanart_med) + !Skin.HasSetting(tvshows_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(TVShows) + !Skin.HasSetting(tvshows_fanart_light) + !Skin.HasSetting(tvshows_fanart_med) + !Skin.HasSetting(tvshows_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31740][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(tvshows_fanart_med)</onclick>
 				<onclick>Skin.Reset(tvshows_fanart_light)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_light)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_light)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31741][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(tvshows_fanart_heavy)</onclick>
 				<onclick>Skin.Reset(tvshows_fanart_med)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_med)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_med)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(tvshows_fanart_heavy)</onclick>
 				<onclick>Skin.SetBool(tvshows_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_heavy)</visible>
 			</item>
 			<!-- FANART SEASONS -->
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(seasons_fanart_light)</onclick>
 				<onclick>Skin.Reset(seasons_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Seasons) + !Skin.HasSetting(seasons_fanart_light) + !Skin.HasSetting(seasons_fanart_med) + !Skin.HasSetting(seasons_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Seasons) + !Skin.HasSetting(seasons_fanart_light) + !Skin.HasSetting(seasons_fanart_med) + !Skin.HasSetting(seasons_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31740][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(seasons_fanart_med)</onclick>
 				<onclick>Skin.Reset(seasons_fanart_light)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_light)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_light)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31741][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(seasons_fanart_heavy)</onclick>
 				<onclick>Skin.Reset(seasons_fanart_med)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_med)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_med)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(seasons_fanart_heavy)</onclick>
 				<onclick>Skin.SetBool(seasons_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_heavy)</visible>
 			</item>
 			<!-- FANART EPISODES -->
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(episodes_fanart_light)</onclick>
 				<onclick>Skin.Reset(episodes_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Episodes) + !Skin.HasSetting(episodes_fanart_light) + !Skin.HasSetting(episodes_fanart_med) + !Skin.HasSetting(episodes_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Episodes) + !Skin.HasSetting(episodes_fanart_light) + !Skin.HasSetting(episodes_fanart_med) + !Skin.HasSetting(episodes_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31740][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(episodes_fanart_med)</onclick>
 				<onclick>Skin.Reset(episodes_fanart_light)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_light)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_light)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31741][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(episodes_fanart_heavy)</onclick>
 				<onclick>Skin.Reset(episodes_fanart_med)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_med)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_med)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(episodes_fanart_heavy)</onclick>
 				<onclick>Skin.SetBool(episodes_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_heavy)</visible>
 			</item>
 			<!-- FANART GENRES -->
 			<item id="4">
@@ -501,85 +501,85 @@
 			<item id="5">
 				<label>[UPPERCASE]$LOCALIZE[32759][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(list_info)</onclick>
-				<visible>Control.IsVisible(50) + Container.Content(Movies) + !Skin.HasSetting(list_info)</visible>
+				<visible>Control.IsVisible(50) + !Skin.HasSetting(list_info)</visible>
 			</item>
 			<item id="5">
 				<label>[UPPERCASE]$LOCALIZE[32758][/UPPERCASE]</label>
 				<onclick>Skin.Reset(list_info)</onclick>
-				<visible>Control.IsVisible(50) + Container.Content(Movies) + Skin.HasSetting(list_info)</visible>
+				<visible>Control.IsVisible(50) + Skin.HasSetting(list_info)</visible>
 			</item>
 			<!-- BIGLIST: YEAR -->
 			<item id="5">
 				<label>[UPPERCASE]$LOCALIZE[31743][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(biglist_hide_year)</onclick>
 				<selected>!Skin.HasSetting(nodiscart)</selected>
-				<visible>Control.IsVisible(52) + [Container.Content(Movies) | Container.Content(TVShows)] + !Skin.HasSetting(biglist_hide_year)</visible>
+				<visible>Control.IsVisible(100) + [Container.Content(Movies) | Container.Content(TVShows)] + !Skin.HasSetting(biglist_hide_year)</visible>
 			</item>
 			<item id="5">
 				<label>[UPPERCASE]$LOCALIZE[31744][/UPPERCASE]</label>
 				<onclick>Skin.Reset(biglist_hide_year)</onclick>
-				<visible>Control.IsVisible(52) + [Container.Content(Movies) | Container.Content(TVShows)] + Skin.HasSetting(biglist_hide_year)</visible>
+				<visible>Control.IsVisible(100) + [Container.Content(Movies) | Container.Content(TVShows)] + Skin.HasSetting(biglist_hide_year)</visible>
 			</item>
 			<!-- BiGLIST: MPAA -->
 			<item id="6">
 				<label>[UPPERCASE]$LOCALIZE[31745][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(biglist_hide_mpaa)</onclick>
-				<visible>Control.IsVisible(52) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_mpaa)</visible>
+				<visible>Control.IsVisible(100) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_mpaa)</visible>
 			</item>
 			<item id="6">
 				<label>[UPPERCASE]$LOCALIZE[31746][/UPPERCASE]</label>
 				<onclick>Skin.Reset(biglist_hide_mpaa)</onclick>
-				<visible>Control.IsVisible(52) + Container.Content(Movies) + Skin.HasSetting(biglist_hide_mpaa)</visible>
+				<visible>Control.IsVisible(100) + Container.Content(Movies) + Skin.HasSetting(biglist_hide_mpaa)</visible>
 			</item>
 			<!-- BIGLIST: DURATION -->
 			<item id="7">
 				<label>[UPPERCASE]$LOCALIZE[31747][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(biglist_hide_duration)</onclick>
-				<visible>Control.IsVisible(52) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_duration)</visible>
+				<visible>Control.IsVisible(100) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_duration)</visible>
 			</item>
 			<item id="7">
 				<label>[UPPERCASE]$LOCALIZE[31748][/UPPERCASE]</label>
 				<onclick>Skin.Reset(biglist_hide_duration)</onclick>
-				<visible>Control.IsVisible(52) + Container.Content(Movies) + Skin.HasSetting(biglist_hide_duration)</visible>
+				<visible>Control.IsVisible(100) + Container.Content(Movies) + Skin.HasSetting(biglist_hide_duration)</visible>
 			</item>
 			<!-- BIGLIST: HD -->
 			<item id="8">
 				<label>[UPPERCASE]$LOCALIZE[31749][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(biglist_hide_sd)</onclick>
 				<onclick>Skin.SetBool(biglist_hide_hd)</onclick>
-				<visible>Control.IsVisible(52) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_hd) + !Skin.HasSetting(biglist_hide_sd)</visible>
+				<visible>Control.IsVisible(100) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_hd) + !Skin.HasSetting(biglist_hide_sd)</visible>
 			</item>
 			<item id="8">
 				<label>[UPPERCASE]$LOCALIZE[31750][/UPPERCASE]</label>
 				<onclick>Skin.Reset(biglist_hide_hd)</onclick>
-				<visible>Control.IsVisible(52) + Container.Content(Movies) + Skin.HasSetting(biglist_hide_hd) + Skin.HasSetting(biglist_hide_sd)</visible>
+				<visible>Control.IsVisible(100) + Container.Content(Movies) + Skin.HasSetting(biglist_hide_hd) + Skin.HasSetting(biglist_hide_sd)</visible>
 			</item>
 			<item id="8">
 				<label>[UPPERCASE]$LOCALIZE[31751][/UPPERCASE]</label>
 				<onclick>Skin.Reset(biglist_hide_sd)</onclick>
-				<visible>Control.IsVisible(52) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_hd) + Skin.HasSetting(biglist_hide_sd)</visible>
+				<visible>Control.IsVisible(100) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_hd) + Skin.HasSetting(biglist_hide_sd)</visible>
 			</item>
 			<!-- BIGLIST: WATCHED -->
 			<item id="9">
 				<label>[UPPERCASE]$LOCALIZE[31752][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(biglist_hide_watched)</onclick>
-				<visible>Control.IsVisible(52) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_watched)</visible>
+				<visible>Control.IsVisible(100) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_watched)</visible>
 			</item>
 			<item id="9">
 				<label>[UPPERCASE]$LOCALIZE[31753][/UPPERCASE]</label>
 				<onclick>Skin.Reset(biglist_hide_watched)</onclick>
-				<visible>Control.IsVisible(52) + Container.Content(Movies) + Skin.HasSetting(biglist_hide_watched)</visible>
+				<visible>Control.IsVisible(100) + Container.Content(Movies) + Skin.HasSetting(biglist_hide_watched)</visible>
 			</item>
 			<!-- BIGLIST: RATING -->
 			<item id="10">
 				<label>[UPPERCASE]$LOCALIZE[31754][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(biglist_hide_rating)</onclick>
-				<visible>Control.IsVisible(52) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_rating)</visible>
+				<visible>Control.IsVisible(100) + Container.Content(Movies) + !Skin.HasSetting(biglist_hide_rating)</visible>
 			</item>
 			<item id="10">
 				<label>[UPPERCASE]$LOCALIZE[31755][/UPPERCASE]</label>
 				<onclick>Skin.Reset(biglist_hide_rating)</onclick>
-				<visible>Control.IsVisible(52) + Container.Content(Movies) + Skin.HasSetting(biglist_hide_rating)</visible>
+				<visible>Control.IsVisible(100) + Container.Content(Movies) + Skin.HasSetting(biglist_hide_rating)</visible>
 			</item>
 			<!-- DISC ART -->
 			<item id="11">
@@ -717,108 +717,108 @@
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(movies_fanart_light)</onclick>
 				<onclick>Skin.Reset(movies_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Movies) + !Skin.HasSetting(movies_fanart_light) + !Skin.HasSetting(movies_fanart_med) + !Skin.HasSetting(movies_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + !Skin.HasSetting(movies_fanart_light) + !Skin.HasSetting(movies_fanart_med) + !Skin.HasSetting(movies_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31740][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(movies_fanart_med)</onclick>
 				<onclick>Skin.Reset(movies_fanart_light)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_light)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_light)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31741][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(movies_fanart_heavy)</onclick>
 				<onclick>Skin.Reset(movies_fanart_med)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_med)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_med)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(movies_fanart_heavy)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(tvshows_fanart_light)</onclick>
 				<onclick>Skin.Reset(tvshows_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(TVShows) + !Skin.HasSetting(tvshows_fanart_light) + !Skin.HasSetting(tvshows_fanart_med) + !Skin.HasSetting(tvshows_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(TVShows) + !Skin.HasSetting(tvshows_fanart_light) + !Skin.HasSetting(tvshows_fanart_med) + !Skin.HasSetting(tvshows_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31740][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(tvshows_fanart_med)</onclick>
 				<onclick>Skin.Reset(tvshows_fanart_light)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_light)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_light)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31741][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(tvshows_fanart_heavy)</onclick>
 				<onclick>Skin.Reset(tvshows_fanart_med)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_med)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_med)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(tvshows_fanart_heavy)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(TVShows) + Skin.HasSetting(tvshows_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(seasons_fanart_light)</onclick>
 				<onclick>Skin.Reset(seasons_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Seasons) + !Skin.HasSetting(seasons_fanart_light) + !Skin.HasSetting(seasons_fanart_med) + !Skin.HasSetting(seasons_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Seasons) + !Skin.HasSetting(seasons_fanart_light) + !Skin.HasSetting(seasons_fanart_med) + !Skin.HasSetting(seasons_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31740][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(seasons_fanart_med)</onclick>
 				<onclick>Skin.Reset(seasons_fanart_light)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_light)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_light)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31741][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(seasons_fanart_heavy)</onclick>
 				<onclick>Skin.Reset(seasons_fanart_med)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_med)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_med)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(seasons_fanart_heavy)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Seasons) + Skin.HasSetting(seasons_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(episodes_fanart_light)</onclick>
 				<onclick>Skin.Reset(episodes_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Episodes) + !Skin.HasSetting(episodes_fanart_light) + !Skin.HasSetting(episodes_fanart_med) + !Skin.HasSetting(episodes_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Episodes) + !Skin.HasSetting(episodes_fanart_light) + !Skin.HasSetting(episodes_fanart_med) + !Skin.HasSetting(episodes_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31740][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(episodes_fanart_med)</onclick>
 				<onclick>Skin.Reset(episodes_fanart_light)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_light)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_light)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31741][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(episodes_fanart_heavy)</onclick>
 				<onclick>Skin.Reset(episodes_fanart_med)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_med)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_med)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(episodes_fanart_heavy)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(514) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_heavy)</visible>
 			</item>
 			<item id="6">
 				<description>Video Library</description>

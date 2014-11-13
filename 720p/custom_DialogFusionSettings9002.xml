@@ -154,7 +154,7 @@
 				<aspectratio>stretch</aspectratio>
 				<texture>black.png</texture>
 				<colordiffuse>A0FFFFFF</colordiffuse>
-				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+				<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
 			</control>
 			<control type="image">
 				<posx>0</posx>
@@ -185,7 +185,7 @@
 				<aspectratio>stretch</aspectratio>
 				<texture>white.png</texture>
 				<colordiffuse>20FFFFFF</colordiffuse>
-				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+				<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
 			</control>
 		</control>
 		</control>

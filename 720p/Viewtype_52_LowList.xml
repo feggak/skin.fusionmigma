@@ -17,7 +17,7 @@
 				<fadetime>300</fadetime>
 				<texture background="true" diffuse="fandiff.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
 				<visible>!Skin.HasSetting(HideNavBar)</visible>
-				<visible>Control.IsVisible(707)</visible>
+				<visible>Control.IsVisible(52)</visible>
 			</control>
 			<control type="image">
 				<posx>0</posx>
@@ -28,7 +28,7 @@
 				<fadetime>300</fadetime>
 				<texture background="true" diffuse="fandiff.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
 				<visible>Skin.HasSetting(HideNavBar)</visible>
-				<visible>Control.IsVisible(707)</visible>
+				<visible>Control.IsVisible(52)</visible>
 			</control>
 		</control>
 
@@ -56,7 +56,7 @@
 				<aspectratio>stretch</aspectratio>
 				<texture diffuse="list/lbgdif.png">black.png</texture>
 				<colordiffuse>5affffff</colordiffuse>
-				<visible>Control.IsVisible(707)</visible>
+				<visible>Control.IsVisible(52)</visible>
 			</control>
 			<control type="image">
 				<posx>-25</posx>
@@ -66,12 +66,12 @@
 				<aspectratio>stretch</aspectratio>
 				<texture diffuse="list/lbgdif.png">white.png</texture>
 				<colordiffuse>1fffffff</colordiffuse>
-				<visible>Control.IsVisible(707)</visible>
+				<visible>Control.IsVisible(52)</visible>
 			</control>
 
 			<!-- SEPARATORS -->
 			<control type="group">
-				<visible>Control.IsVisible(707)</visible>
+				<visible>Control.IsVisible(52)</visible>
 				<control type="group">
 					<visible>!Window.IsVisible(24)</visible>
 					<control type="image">
@@ -147,7 +147,7 @@
 			</control>
 
 			<!-- LIST -->
-			<control type="list" id="707">
+			<control type="list" id="52">
 				<posx>0</posx>
 				<posy>494</posy>
 				<width>1280</width>
@@ -156,18 +156,15 @@
 				<onright>708</onright>
 				<preloaditems>2</preloaditems>
 				<spacebetweenitems>0</spacebetweenitems>
-				<onup>707</onup>
-				<ondown>707</ondown>
+				<onup>52</onup>
+				<ondown>52</ondown>
 				<pagecontrol>708</pagecontrol>
 				<viewtype label="LowList">list</viewtype>
 				<scrolltime>0</scrolltime>
-				<visible>!Container.Content(Episodes)</visible>
-				<visible>!substring(container.folderpath,plugin://plugin.video.xbmcflicks)</visible>
+				<visible>Container.Content(Movies)</visible>
 				<visible>!Skin.HasSetting(HideLowList)</visible>
-				<visible>!Container.Content(genres) + !Container.Content(studios) + !Container.Content(actors) + !Container.Content(years)</visible>
 
-				<!-- REGULAR ITEMS -->
-				<itemlayout condition="!Container.Content(songs)" height="32">
+				<itemlayout height="32">
 					<control type="image">
 						<width>1280</width>
 						<height>32</height>
@@ -184,7 +181,7 @@
 						<aspectratio>stretch</aspectratio>
 						<texture diffuse="list/lbgdif.png">black.png</texture>
 						<colordiffuse>60ffffff</colordiffuse>
-						<visible>Control.IsVisible(707) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(52) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
 					</control>
 					<control type="image">
@@ -194,7 +191,7 @@
 						<height>18</height>
 						<aspectratio>keep</aspectratio>
 						<texture>list/folder.png</texture>
-						<visible>Control.IsVisible(707) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(52) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
 					</control>
 					<control type="label">
@@ -207,8 +204,7 @@
 						<textcolor>e7c0c0c0</textcolor>
 						<selectedcolor>ff2285ff</selectedcolor>
 						<font>movietitle2b</font>
-						<visible>Control.IsVisible(707) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>Control.IsVisible(52) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 						<visible>!ListItem.IsFolder</visible>
 					</control>
 
@@ -245,7 +241,6 @@
 						<texture>watchedfo.png</texture>
 						<colordiffuse>e7c0c0c0</colordiffuse>
 						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
 					</control>
 					<!-- RUNTIME -->
 					<control type="label">
@@ -257,8 +252,7 @@
 						<font>movietitle2b</font>
 						<align>right</align>
 						<label>$INFO[ListItem.Duration,, mins]</label>
-						<visible>Control.IsVisible(707) + !IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>Control.IsVisible(52) + !IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 					</control>
 					<!-- RATING -->
 					<control type="label">
@@ -270,7 +264,6 @@
 						<font>movietitle2b</font>
 						<align>left</align>
 						<label>$INFO[ListItem.Rating]</label>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
 					</control>
 					<!-- DIRECTOR -->
 					<control type="image">
@@ -280,7 +273,7 @@
 						<aspectratio>keep</aspectratio>
 						<texture>list/directoricon.png</texture>
 						<colordiffuse>e7c0c0c0</colordiffuse>
-						<visible>!IsEmpty(ListItem.Director) + Container.Content(Movies)</visible>
+						<visible>!IsEmpty(ListItem.Director)</visible>
 					</control>
 					<control type="label">
 						<posy>0</posy>
@@ -291,7 +284,7 @@
 						<font>movietitle2b</font>
 						<align>left</align>
 						<label>$INFO[ListItem.Director]</label>
-						<visible>!IsEmpty(ListItem.Director) + Container.Content(Movies)</visible>
+						<visible>!IsEmpty(ListItem.Director)</visible>
 					</control>
 					<!-- TOP 250 -->
 					<control type="label">
@@ -303,7 +296,7 @@
 						<font>movietitle2b</font>
 						<align>left</align>
 						<label>Top 250: #$INFO[ListItem.Top250]</label>
-						<visible>!IsEmpty(ListItem.Top250) + Container.Content(Movies)</visible>
+						<visible>!IsEmpty(ListItem.Top250)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="32">
@@ -327,7 +320,7 @@
 						<aspectratio>keep</aspectratio>
 						<texture>list/folder.png</texture>
 						<include>listfocusfade</include>
-						<visible>Control.IsVisible(707) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(52) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
 					</control>
 					<control type="label">
@@ -340,7 +333,7 @@
 						<textcolor>white</textcolor>
 						<font>movietitle2b</font>
 						<include>listfocusfade</include>
-						<visible>Control.IsVisible(707) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(52) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
 						<visible>!ListItem.IsFolder</visible>
 					</control>
@@ -389,7 +382,7 @@
 						<font>movietitle2b</font>
 						<align>right</align>
 						<label>$INFO[ListItem.Duration,, mins]</label>
-						<visible>Control.IsVisible(707) + !IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(52) + !IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
 					</control>
 					<!-- RATING -->
@@ -438,6 +431,7 @@
 						<visible>!IsEmpty(ListItem.Top250) + Container.Content(Movies)</visible>
 					</control>
 				</focusedlayout>
+
 			</control>
 
 			<control type="group">
@@ -450,7 +444,7 @@
 					<height>192</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>black.png</texture>
-					<visible>Control.IsVisible(707)</visible>
+					<visible>Control.IsVisible(52)</visible>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -460,7 +454,7 @@
 					<fadetime>250</fadetime>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<visible>Control.IsVisible(707)</visible>
+					<visible>Control.IsVisible(52)</visible>
 				</control>
 			</control>
 
@@ -477,7 +471,7 @@
 				<onright>300</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
-				<visible>Control.IsVisible(707)</visible>
+				<visible>Control.IsVisible(52)</visible>
 			</control>
 		</control>
 	</include>

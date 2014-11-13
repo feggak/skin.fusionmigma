@@ -185,7 +185,7 @@
 		<aspectratio>stretch</aspectratio>
 		<visible>Container.Content(Genres) + [Skin.HasSetting(genres_fanart_light) | Skin.HasSetting(genres_fanart_med) | Skin.HasSetting(genres_fanart_heavy)]</visible>
 		<visible>!Skin.HasSetting(HideNavBar)</visible>
-		<visible>!Control.IsVisible(514)</visible>
+		<visible>!Control.IsVisible(51)</visible>
 		<visible>!Control.IsVisible(560)</visible>
 		<animation effect="fade" start="100" end="6" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_light)">Conditional</animation>
 		<animation effect="fade" start="100" end="20" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_med)">Conditional</animation>
@@ -206,7 +206,7 @@
 		<aspectratio>stretch</aspectratio>
 		<visible>Container.Content(Genres) + [Skin.HasSetting(genres_fanart_light) | Skin.HasSetting(genres_fanart_med) | Skin.HasSetting(genres_fanart_heavy)]</visible>
 		<visible>Skin.HasSetting(HideNavBar)</visible>
-		<visible>!Control.IsVisible(514)</visible>
+		<visible>!Control.IsVisible(51)</visible>
 		<visible>!Control.IsVisible(560)</visible>
 		<animation effect="fade" start="100" end="6" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_light)">Conditional</animation>
 		<animation effect="fade" start="100" end="20" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_med)">Conditional</animation>
@@ -228,7 +228,7 @@
 		<aspectratio>stretch</aspectratio>
 		<texture>black.png</texture>
 		<colordiffuse>80FFFFFF</colordiffuse>
-		<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+		<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
 	</control>
 	<control type="image">
 		<posx>0</posx>
@@ -263,7 +263,7 @@
 		<aspectratio>stretch</aspectratio>
 		<texture>white.png</texture>
 		<colordiffuse>20FFFFFF</colordiffuse>
-		<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+		<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
 	</control>
 </control>
 

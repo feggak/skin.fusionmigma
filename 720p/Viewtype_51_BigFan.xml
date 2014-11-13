@@ -12,11 +12,11 @@
 			<animation type="WindowClose" reversible="false">
 				<effect type="fade" start="100" end="0" time="400" delay="0" />
 			</animation>
-			<visible>Control.IsVisible(514)</visible>
+			<visible>Control.IsVisible(51)</visible>
 			<animation effect="fade" start="100" end="10" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003)">Conditional</animation>
 			<animation effect="fade" start="10" end="100" time="400" delay="100" reversible="false" condition="!Window.IsVisible(2003)">Conditional</animation>
 
-			<control type="wraplist" id="514">
+			<control type="wraplist" id="51">
 				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
 				<visible>!Skin.HasSetting(HideBigFan)</visible>
 				<posx>0</posx>
@@ -84,7 +84,7 @@
 
 		<!-- ALL CONTENT -->
 		<control type="group">
-			<visible>Control.IsVisible(514)</visible>
+			<visible>Control.IsVisible(51)</visible>
 			<animation type="WindowOpen" reversible="false">
 				<effect type="fade" start="0" end="100" time="400" delay="100" />
 				<effect type="slide" start="0,250" end="0,0" time="300" delay="100" reversible="false" />
@@ -118,7 +118,7 @@
 				<texture>Home/extras/leftarrow.png</texture>
 				<colordiffuse>78ffffff</colordiffuse>
 				<animation effect="fade" time="400" delay="50">Visible</animation>
-				<visible>!Container(514).OnPrevious</visible>
+				<visible>!Container(51).OnPrevious</visible>
 			</control>
 			<control type="image">
 				<posx>15</posx>
@@ -133,7 +133,7 @@
 					<effect type="fade" start="100" end="0" time="300" reversible="false" />
 					<effect type="zoom" start="125" end="100" center="auto" time="300" reversible="false" />
 				</animation>
-				<visible>Container(514).OnPrevious</visible>
+				<visible>Container(51).OnPrevious</visible>
 			</control>
 
 			<!-- RIGHT ARROW -->
@@ -146,7 +146,7 @@
 				<texture flipx="true">Home/extras/leftarrow.png</texture>
 				<colordiffuse>78ffffff</colordiffuse>
 				<animation effect="fade" time="400" delay="50">Visible</animation>
-				<visible>!Container(514).OnNext</visible>
+				<visible>!Container(51).OnNext</visible>
 			</control>
 			<control type="image">
 				<posx>49r</posx>
@@ -161,7 +161,7 @@
 					<effect type="fade" start="100" end="0" time="300" reversible="false" />
 					<effect type="zoom" start="125" end="100" center="auto" time="300" reversible="false" />
 				</animation>
-				<visible>Container(514).OnNext</visible>
+				<visible>Container(51).OnNext</visible>
 			</control>
 
 			<!-- POSTER -->
@@ -203,7 +203,7 @@
 					<textcolor>movietitleb</textcolor>
 					<scroll>false</scroll>
 					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-					<visible>[Control.IsVisible(514) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
+					<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
 				</control>
 				<include>MovieHDFlagsBigFan</include>
 				<control type="image">
@@ -228,7 +228,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>[B]$INFO[ListItem.Year][/B]$INFO[ListItem.Studio,$LOCALIZE[31618]]</label>
-				<visible>[Control.IsVisible(514) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
+				<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
 			</control>
 			<control type="label">
 				<posx>235</posx>
@@ -241,7 +241,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Duration,, Minutes]$LOCALIZE[31618]$INFO[ListItem.Genre]</label>
-				<visible>[Control.IsVisible(514) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
+				<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
 			</control>
 			<control type="label">
 				<posx>235</posx>
@@ -254,7 +254,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>Movie Collection</label>
-				<visible>Control.IsVisible(514) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+				<visible>Control.IsVisible(51) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 				<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
 			</control>
 			<control type="image">
@@ -263,7 +263,7 @@
 				<width>78</width>
 				<height>28</height>
 				<texture>list/collectioncds.png</texture>
-				<visible>Control.IsVisible(514) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+				<visible>Control.IsVisible(51) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 				<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
 			</control>
 
@@ -272,7 +272,7 @@
 				<posy>590</posy>
 				<width>820</width>
 				<height>15</height>
-				<visible allowhiddenfocus="true">Control.IsVisible(514) + Control.HasFocus(69)</visible>
+				<visible allowhiddenfocus="true">Control.IsVisible(51) + Control.HasFocus(69)</visible>
 				<texturesliderbackground border="2,2,2,2">scroll/scrollbg.png</texturesliderbackground>
 				<textureslidernibfocus border="2,2,2,2">scroll/scrollnibh.png</textureslidernibfocus>
 				<onup>-</onup>

@@ -3,8 +3,9 @@
 		<!--  -->
 		<include file="_debug.xml" />
 		<include file="Viewtype_50_List.xml" />
-		<include file="Viewtype_514_BigFan.xml" />
-		<include file="Viewtype_707_LowList.xml" />
+		<include file="Viewtype_51_BigFan.xml" />
+		<include file="Viewtype_52_LowList.xml" />
+		<include file="Viewtype_56_59_62_Grids.xml" />
 
 		<include file="Viewtype_SquarePoster.xml" />
 		<include file="Viewtype_PosterWrap.xml" />
@@ -31,7 +32,6 @@
 		<include file="Viewtype_Icon3.xml" />
 		<include file="Viewtype_Wall.xml" />
 		<include file="Viewtype_Hulu.xml" />
-		<include file="Viewtype_Grid.xml" />
 		<include file="Views_AdvancedLauncher.xml" />
 		<include file="Views_AdvancedLauncher_Poster.xml" />
 		<include file="Views_AdvancedLauncher_Square.xml" />

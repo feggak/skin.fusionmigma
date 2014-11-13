@@ -8,6 +8,8 @@
 			<include>ContextFade</include>
 			<include>Keyboard</include>
 			<visible>!Window.IsVisible(1122)</visible>
+
+			<!-- POSTER GRID -->
 			<control type="panel" id="56">
 				<viewtype label="PosterGrid">icon</viewtype>
 				<visible>Container.Content(movies) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
@@ -27,6 +29,8 @@
 				<visible>!Skin.HasSetting(HideGrid)</visible>
 				<include>TallPanel</include>
 			</control>
+
+			<!-- WIDE GRID -->
 			<control type="panel" id="59">
 				<viewtype label="WideGrid">icon</viewtype>
 				<visible>Container.Content(tvshows) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
@@ -45,9 +49,11 @@
 				<visible>!Skin.HasSetting(HideGrid)</visible>
 				<include>WidePanel</include>
 			</control>
+
+			<!-- SQUARE GRID -->
 			<control type="panel" id="62">
 				<viewtype label="SquareGrid">icon</viewtype>
-				<visible>!Container.Content(Seasons) + !Container.Content(Movies) + Window.IsVisible(Videos,Files) + !Container.Content(genres) | substring(container.folderpath,plugin://plugin.program.advanced.launcher) | Window.IsActive(1)</visible>
+				<visible>substring(container.folderpath,plugin://plugin.program.advanced.launcher) | Window.IsActive(1)</visible>
 				<posx>524</posx>
 				<posy>128</posy>
 				<width>800</width>
@@ -65,12 +71,13 @@
 				<include>SquarePanel</include>
 			</control>
 
-			<!-- Info Panel -->
+			<!-- INFO PANEL -->
 			<control type="group">
 				<posx>-36</posx>
 				<posy>-5</posy>
 				<visible>Container.Content(Movies) | Container.Content(TVShows) | SubString(Container.Folderpath,plugin://plugin.program.advanced.launcher) | Window.IsActive(1) | Window.IsVisible(Videos,Files)</visible>
 				<visible>Control.IsVisible(56) | Control.IsVisible(59) | Control.IsVisible(62)</visible>
+
 				<!-- FANART + BORDER -->
 				<control type="image">
 					<posx>78</posx>
@@ -100,6 +107,7 @@
 					<texture>grid/fanborder.png</texture>
 					<colordiffuse>E0FFFFFF</colordiffuse>
 				</control>
+
 				<!-- GLOBAL TITLE -->
 				<control type="label">
 					<posx>80</posx>
@@ -113,6 +121,7 @@
 					<label>[UPPERCASE]$INFO[ListItem.Label]  $INFO[ListItem.Property(Addon.Version)][/UPPERCASE]</label>
 					<visible>IsEmpty(Control.GetLabel(44))</visible>
 				</control>
+
 				<!-- MOVIE INFO -->
 				<control type="label">
 					<visible>Container.Content(Movies) + !IsEmpty(ListItem.FileName)</visible>
@@ -123,7 +132,7 @@
 					<font>tvtitle3</font>
 					<scroll>false</scroll>
 					<textcolor>movietitleb2</textcolor>
-					<label>Released: [COLOR=white]$INFO[ListItem.Year][/COLOR] Runtime: [COLOR=white]$INFO[ListItem.Duration,, Minutes][/COLOR]</label>
+					<label>Released: [COLOR=white]$INFO[ListItem.Year][/COLOR]  Runtime: [COLOR=white]$INFO[ListItem.Duration,, Minutes][/COLOR]</label>
 				</control>
 				<control type="label">
 					<visible>Container.Content(Movies) + IsEmpty(ListItem.FileName)</visible>
@@ -137,6 +146,18 @@
 					<label>Movie Collection</label>
 					<visible>!ListItem.IsFolder</visible>
 				</control>
+				<!-- TVSHOW INFO -->
+				<control type="label">
+					<visible>Container.Content(TVShows)</visible>
+					<posx>80</posx>
+					<posy>406</posy>
+					<width>440</width>
+					<height>35</height>
+					<font>tvtitle3</font>
+					<scroll>false</scroll>
+					<textcolor>movietitleb2</textcolor>
+					<label>Genre: [COLOR=white]$INFO[ListItem.Genre][/COLOR]</label>
+				</control>
 				<!-- ADVANCED LAUNCHER INFO -->
 				<control type="label">
 					<visible>SubString(Container.Folderpath,plugin://plugin.program.advanced.launcher)</visible>
@@ -147,9 +168,10 @@
 					<font>tvtitle3</font>
 					<scroll>false</scroll>
 					<textcolor>movietitleb2</textcolor>
-					<label>Released: [COLOR=white]$INFO[ListItem.Premiered][/COLOR] Genre: [COLOR=white]$INFO[ListItem.Genre][/COLOR]</label>
+					<label>Released: [COLOR=white]$INFO[ListItem.Premiered][/COLOR]  Genre: [COLOR=white]$INFO[ListItem.Genre][/COLOR]</label>
 				</control>
-				<!-- GLOBAL PLOT FIELD -->
+
+				<!-- MOVIE PLOT FIELD -->
 				<control type="textbox">
 					<posx>80</posx>
 					<posy>440</posy>
@@ -161,6 +183,20 @@
 					<align>justify</align>
 					<autoscroll delay="12000" time="3000" repeat="10000" />
 					<label>$INFO[ListItem.PlotOutline]</label>
+				</control>
+				<!-- TVSHOWS PLOT FIELD -->
+				<control type="textbox">
+					<posx>80</posx>
+					<posy>440</posy>
+					<width>442</width>
+					<height>162</height>
+					<font>about</font>
+					<textcolor>white</textcolor>
+					<scroll>true</scroll>
+					<align>justify</align>
+					<autoscroll delay="12000" time="3000" repeat="10000" />
+					<label>$INFO[ListItem.Plot]</label>
+					<visible>!Container.Content(Movies)</visible>
 				</control>
 				<!-- ADDON PLOT FIELD -->
 				<control type="textbox">
@@ -175,7 +211,8 @@
 					<autoscroll delay="12000" time="3000" repeat="10000" />
 					<label>$INFO[ListItem.Property(Addon.Description)]</label>
 				</control>
-				<!-- IMDB TOP 250 & PERCENT PLAYED-->
+
+				<!-- IMDB TOP 250 & PERCENT PLAYED -->
 				<control type="grouplist">
 					<posx>80</posx>
 					<posy>610</posy>
@@ -183,6 +220,7 @@
 					<height>40</height>
 					<align>left</align>
 					<orientation>horizontal</orientation>
+					<!-- MOVIES -->
 					<control type="label">
 						<visible>!IsEmpty(ListItem.Top250)</visible>
 						<width min="29" max="400">auto</width>
@@ -192,16 +230,6 @@
 						<scroll>false</scroll>
 						<textcolor>movietitleb2</textcolor>
 						<label>Top 250: # [COLOR=white]$INFO[ListItem.Top250][/COLOR]</label>
-					</control>
-					<control type="label">
-						<visible>SubString(Container.Folderpath,plugin://plugin.program.advanced.launcher)</visible>
-						<width>500</width>
-						<height>40</height>
-						<height>35</height>
-						<font>tvtitle3</font>
-						<scroll>false</scroll>
-						<textcolor>movietitleb2</textcolor>
-						<label>$INFO[ListItem.Studio]</label>
 					</control>
 					<control type="label">
 						<visible>!IsEmpty(ListItem.Top250) + !StringCompare(ListItem.PercentPlayed,0)</visible>
@@ -221,10 +249,22 @@
 						<textcolor>movietitleb2</textcolor>
 						<label>[COLOR=white]$INFO[ListItem.PercentPlayed,, %][/COLOR] Played</label>
 					</control>
+					<!-- ADVANCED LAUNCHER -->
+					<control type="label">
+						<visible>SubString(Container.Folderpath,plugin://plugin.program.advanced.launcher)</visible>
+						<width>500</width>
+						<height>40</height>
+						<height>35</height>
+						<font>tvtitle3</font>
+						<scroll>false</scroll>
+						<textcolor>movietitleb2</textcolor>
+						<label>$INFO[ListItem.Studio]</label>
+					</control>
 				</control>
+
 			</control>
 
-			<!-- Info Panel TV Logos Enabled-->
+			<!-- INFO PANEL LOGOS -->
 			<control type="group">
 				<posx>-36</posx>
 				<posy>59</posy>
@@ -256,7 +296,7 @@
 				</control>
 			</control>
 
-			<!-- Scroll Bar -->
+			<!-- SCROLL BAR SQUARE -->
 			<control type="scrollbar" id="71">
 				<posx>1264</posx>
 				<posy>136</posy>
@@ -272,7 +312,7 @@
 				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(71)">Conditional</animation>
 			</control>
 
-			<!-- Scroll Bar -->
+			<!-- SCROLL BAR WIDE -->
 			<control type="scrollbar" id="70">
 				<posx>1264</posx>
 				<posy>146</posy>
@@ -288,7 +328,7 @@
 				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(70)">Conditional</animation>
 			</control>
 
-			<!-- Scroll Bar -->
+			<!-- SCROLL BAR POSTER -->
 			<control type="scrollbar" id="69">
 				<posx>1260</posx>
 				<posy>148</posy>
@@ -306,7 +346,7 @@
 		</control>
 	</include>
 
-	<!-- Layouts -->
+	<!-- LAYOUTS -->
 	<include name="SquarePanel">
 		<itemlayout width="120" height="120">
 			<control type="image">
@@ -423,156 +463,86 @@
 	</include>
 
 	<include name="WidePanel">
-		<itemlayout width="340" height="70">
+		<itemlayout width="188" height="120">
 			<control type="image">
-				<posx>6</posx>
-				<posy>6</posy>
-				<width>569</width>
-				<height>105</height>
-				<texture>$INFO[listitem.actualicon]</texture>
-				<aspectratio scalediffuse="false">keep</aspectratio>
-				<fadetime>300</fadetime>
-				<visible>IsEmpty(ListItem.Thumb)</visible>
-			</control>
-			<control type="image">
-				<posx>6</posx>
-				<posy>6</posy>
-				<width>569</width>
-				<height>105</height>
-				<texture background="true" diffuse="grid/widediffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+				<posx>14</posx>
+				<posy>14</posy>
+				<width>174</width>
+				<height>93</height>
+				<texture background="true" diffuse="icon/episodediffuse.png" fallback="nofanart.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+				<align>bottom</align>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<colordiffuse>A0ffffff</colordiffuse>
-				<visible>!Container.Content(Episodes) + !Skin.HasSetting(Landscape.jpg) + !substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
-			</control>
-			<!--BANNER.JPG SETTING-->
-			<control type="image">
-				<posx>6</posx>
-				<posy>6</posy>
-				<width>285</width>
-				<height>53</height>
-				<texture background="true" diffuse="banner/bannerdiff.png">$INFO[ListItem.Path]banner.jpg</texture>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<colordiffuse>A0ffffff</colordiffuse>
-				<visible>!Container.Content(Episodes) + Skin.HasSetting(Banner.jpg) + !substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
-			</control>
-			<!--GAME POSTER-->
-			<control type="image">
-				<posx>6</posx>
-				<posy>6</posy>
-				<width>170</width>
-				<height>110</height>
-				<texture background="true" diffuse="grid/widediffuse.png">$INFO[ListItem.Thumb]</texture>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<colordiffuse>A0ffffff</colordiffuse>
-				<visible>substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
+				<visible>Container.Content(TVShows)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
 			</control>
 			<control type="image">
-				<posx>6</posx>
-				<posy>6</posy>
-				<width>170</width>
-				<height>110</height>
-				<texture background="true" diffuse="grid/widediffuse.png">$INFO[ListItem.Icon]</texture>
+				<posx>14</posx>
+				<posy>108</posy>
+				<width>174</width>
+				<height>93</height>
+				<texture background="true" flipy="true" diffuse="icon/episodereflectdiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+				<colordiffuse>89ffffff</colordiffuse>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<colordiffuse>A0ffffff</colordiffuse>
-				<visible>Container.Content(Episodes) | Window.IsActive(pictures)</visible>
+				<visible>Container.Content(TVShows)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
+			</control>
+			<control type="image">
+				<posy>89</posy>
+				<posx>170</posx>
+				<width>27</width>
+				<height>45</height>
+				<aspectratio>keep</aspectratio>
+				<texture>watchedbadgesmall.png</texture>
+				<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+				<visible>Skin.HasSetting(WatchedOverlays)</visible>
 			</control>
 		</itemlayout>
-		<focusedlayout width="350" height="80">
+		<focusedlayout width="188" height="124">
 			<control type="image">
-				<posx>6</posx>
-				<posy>6</posy>
-				<width>170</width>
-				<height>110</height>
-				<texture background="true" diffuse="grid/widefodiffuse.png">$INFO[ListItem.Icon]</texture>
-				<animation type="Focus" reversible="false">
-					<effect type="zoom" center="auto" start="80" end="120" time="200" tween="sine" easing="inout" />
-					<effect type="fade" start="80" end="100" time="400" />
-				</animation>
+				<posx>14</posx>
+				<posy>14</posy>
+				<width>174</width>
+				<height>93</height>
+				<texture background="true" diffuse="icon/episodediffusefo.png" fallback="nofanart.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>IsEmpty(ListItem.Thumb)</visible>
+				<animation effect="zoom" end="140" center="auto" tween="back" easing="out" time="250">focus</animation>
+				<visible>Container.Content(TVShows)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
 			</control>
 			<control type="image">
-				<posx>6</posx>
-				<posy>6</posy>
-				<width>170</width>
-				<height>110</height>
-				<texture diffuse="grid/widefodiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
-				<animation type="Focus" reversible="false">
-					<effect type="zoom" center="auto" start="80" end="120" time="200" tween="sine" easing="inout" />
-					<effect type="fade" start="80" end="100" time="400" />
-				</animation>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>!Container.Content(Episodes)+ !Skin.HasSetting(Landscape.jpg)</visible>
-			</control>
-			<!--BANNER.JPG SETTING-->
-			<control type="image">
-				<posx>6</posx>
-				<posy>6</posy>
-				<width>285</width>
-				<height>53</height>
-				<texture background="true" diffuse="banner/bannerdiff.png">$INFO[ListItem.Path]banner.jpg</texture>
-				<animation type="Focus" reversible="false">
-					<effect type="zoom" center="auto" start="80" end="120" time="200" tween="sine" easing="inout" />
-					<effect type="fade" start="80" end="100" time="400" />
-				</animation>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<visible>!Container.Content(Episodes) + Skin.HasSetting(Banner.jpg)</visible>
-			</control>
-			<!--GAME POSTER-->
-			<control type="image">
-				<posx>6</posx>
-				<posy>6</posy>
-				<width>170</width>
-				<height>110</height>
-				<texture diffuse="grid/widefodiffuse.png">$INFO[ListItem.Thumb]</texture>
-				<animation type="Focus" reversible="false">
-					<effect type="zoom" center="auto" start="80" end="120" time="200" tween="sine" easing="inout" />
-					<effect type="fade" start="80" end="100" time="400" />
-				</animation>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<visible>substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
-			</control>
-			<control type="image">
-				<posx>6</posx>
-				<posy>6</posy>
-				<width>170</width>
-				<height>110</height>
-				<texture background="true" diffuse="grid/widefodiffuse.png">$INFO[ListItem.Icon]</texture>
-				<animation type="Focus" reversible="false">
-					<effect type="zoom" center="auto" start="80" end="120" time="200" tween="sine" easing="inout" />
-					<effect type="fade" start="80" end="100" time="400" />
-				</animation>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<visible>Container.Content(Episodes) | Window.IsActive(pictures)</visible>
-			</control>
-			<control type="image">
-				<posx>6</posx>
-				<posy>6</posy>
-				<width>170</width>
-				<height>110</height>
-				<texture>$INFO[listitem.actualicon]</texture>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<fadetime>300</fadetime>
-				<visible>IsEmpty(ListItem.Thumb)</visible>
-				<animation type="Focus" reversible="false">
-					<effect type="zoom" center="auto" start="80" end="120" time="200" tween="sine" easing="inout" />
-				</animation>
-			</control>
-
-
-			<!--control type="image">
-				<posx>21</posx>
-				<posy>8</posy>
-				<width>440</width>
-				<height>104</height>
-				<texture>grid/wideborder.png</texture>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<posx>40</posx>
+				<posy>24</posy>
+				<width>121</width>
+				<height>74</height>
+				<texture>icon/episodeborder.png</texture>
 				<visible>!IsEmpty(ListItem.Thumb)</visible>
-				<animation type="Focus" reversible="false">
-					<effect type="zoom" center="auto" start="100" end="200" time="200" tween="sine" easing="inout" />
-					<effect type="fade" start="80" end="100" time="400" />
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<animation type="focus">
+					<effect type="zoom" end="246" center="auto" tween="back" easing="out" time="250" />
+					<effect type="fade" end="100" time="200" />
 				</animation>
-			</control-->
+			</control>
+			<control type="image">
+				<posy>182</posy>
+				<posx>280</posx>
+				<width>36</width>
+				<height>36</height>
+				<aspectratio>keep</aspectratio>
+				<texture>watchedbadge2.png</texture>
+				<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+				<visible>Skin.HasSetting(WatchedOverlays)</visible>
+				<animation type="Focus" reversible="false">
+					<effect type="slide" start="0,0" end="41,0" time="0" />
+					<effect type="fade" start="0" end="100" time="100" delay="150" />
+					<effect type="zoom" start="100" end="150" time="350" center="auto" />
+				</animation>
+				<animation type="UnFocus" reversible="false">
+					<effect type="slide" start="41,0" end="0,0" time="0" />
+					<effect type="fade" start="100" end="0" time="0" delay="0" />
+					<effect type="zoom" start="150" end="100" time="0" center="auto" />
+				</animation>
+			</control>
 		</focusedlayout>
 	</include>
+
 </includes>

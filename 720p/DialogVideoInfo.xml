@@ -21,7 +21,32 @@
 				<texture>black.png</texture>
 				<colordiffuse>A0FFFFFF</colordiffuse>
 				<animation effect="fade" start="100" end="60" time="0" condition="substring(container.folderpath,plugin://plugin.video.xbmcflicks)">conditional</animation>
-				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+				<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+				<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>715</posy>
+				<width>1280</width>
+				<height>5</height>
+				<aspectratio>stretch</aspectratio>
+				<texture flipx="true">zbase.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<visible>!Skin.HasSetting(ZBar)</visible>
+				<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
+				<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
 			</control>
 			<control type="image">
 				<posx>0</posx>
@@ -31,7 +56,7 @@
 				<aspectratio>stretch</aspectratio>
 				<texture>white.png</texture>
 				<colordiffuse>20FFFFFF</colordiffuse>
-				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+				<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
 			</control>
 		</control>
 
@@ -229,6 +254,7 @@
 			<control type="group">
 				<posx>-6</posx>
 				<posy>2</posy>
+				<!-- GLOBAL TITLE -->
 				<control type="label" id="20">
 					<description>Title</description>
 					<posx>20</posx>
@@ -240,6 +266,7 @@
 					<textcolor>itemdetail</textcolor>
 					<scroll>true</scroll>
 				</control>
+				<!-- MOVIE TAGLINE -->
 				<control type="label" id="20">
 					<description>Tagline</description>
 					<posx>20</posx>
@@ -250,16 +277,25 @@
 					<label>$INFO[ListItem.Tagline]</label>
 					<textcolor>fce7e7e7</textcolor>
 					<textcolor>itemdetail</textcolor>
-					<scrollout>false</scrollout>
-					<scrollspeed>50</scrollspeed>
 					<visible>Container.Content(Movies)</visible>
+				</control>
+				<!-- TVSHOWS PREMIERED -->
+				<control type="label" id="20">
+					<description>Premiered</description>
+					<posx>20</posx>
+					<posy>121</posy>
+					<width>665</width>
+					<font>tagline</font>
+					<label>$LOCALIZE[31637]: $INFO[ListItem.Premiered]</label>
+					<textcolor>fce7e7e7</textcolor>
+					<textcolor>itemdetail</textcolor>
+					<visible>Container.Content(TVShows)</visible>
 				</control>
 				<control type="fadelabel" id="20">
 					<description>Season</description>
 					<posx>20</posx>
-					<posy>122</posy>
+					<posy>121</posy>
 					<width>665</width>
-					<scrollsuffix> </scrollsuffix>
 					<font>tagline</font>
 					<label>$LOCALIZE[31633] $INFO[ListItem.Season]$LOCALIZE[31618]$LOCALIZE[31634] $INFO[ListItem.Episode]</label>
 					<label>$INFO[Listitem.FilenameAndPath]</label>
@@ -273,7 +309,7 @@
 				<control type="fadelabel" id="20">
 					<description>Season</description>
 					<posx>20</posx>
-					<posy>122</posy>
+					<posy>121</posy>
 					<width>665</width>
 					<scrollsuffix> </scrollsuffix>
 					<font>tagline</font>
@@ -286,26 +322,10 @@
 					<pauseatend>5000</pauseatend>
 					<visible>Container.Content(Episodes) + IsEmpty(ListItem.Season)</visible>
 				</control>
-				<control type="fadelabel" id="20">
-					<description>Premiered</description>
-					<posx>20</posx>
-					<posy>122</posy>
-					<width>665</width>
-					<scrollsuffix> </scrollsuffix>
-					<font>tagline</font>
-					<label>$LOCALIZE[31637] $INFO[ListItem.Premiered] </label>
-					<label>$INFO[Listitem.FilenameAndPath]</label>
-					<textcolor>fce7e7e7</textcolor>
-					<textcolor>itemdetail</textcolor>
-					<scrollout>false</scrollout>
-					<scrollspeed>50</scrollspeed>
-					<pauseatend>5000</pauseatend>
-					<visible>Container.Content(TVShows)</visible>
-				</control>
 				<control type="label" id="20">
 					<description>FileName</description>
 					<posx>20</posx>
-					<posy>122</posy>
+					<posy>121</posy>
 					<width>665</width>
 					<scrollsuffix> </scrollsuffix>
 					<font>tagline</font>
@@ -558,7 +578,7 @@
 			</control>
 			<!-- INFO TVEPISODES - AIRDATE ETC -->
 			<control type="group">
-				<posx>116</posx>
+				<posx>110</posx>
 				<posy>8</posy>
 				<control type="label" id="20">
 					<description>First Aired</description>
@@ -585,7 +605,7 @@
 			</control>
 			<!-- INFO TVSHOWS - TOTAL EPISODES ETC-->
 			<control type="group">
-				<posx>116</posx>
+				<posx>110</posx>
 				<posy>8</posy>
 				<control type="label" id="20">
 					<description>Total Episodes</description>
@@ -941,15 +961,9 @@
 				<width>630</width>
 				<label>$INFO[ListItem.Studio]</label>
 				<font>homemenu3</font>
-				<textcolor>itemdetail3</textcolor>
+				<textcolor>ffababab</textcolor>
 				<scroll>false</scroll>
 				<visible>Container.Content(movies) + Skin.HasSetting(VideoInfoStudios) + !SubString(Container.FolderPath,plugin://plugin,Left)</visible>
-				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="350" delay="0" />
-				</animation>
-				<animation type="WindowOpen" reversible="false">
-					<effect type="fade" start="0" end="100" time="350" delay="850" />
-				</animation>
 			</control>
 			<control type="label">
 				<description>Genre</description>
@@ -958,16 +972,10 @@
 				<width>630</width>
 				<label>$INFO[ListItem.Year]</label>
 				<font>homemenu3</font>
-				<textcolor>itemdetail3</textcolor>
+				<textcolor>ffababab</textcolor>
 				<scroll>false</scroll>
 				<visible>Container.Content(tvshows) + Skin.HasSetting(VideoInfoStudios) + !SubString(Container.FolderPath,plugin://plugin,Left)</visible>
 				<visible>!SubString(Container.FolderPath,plugin://plugin.video.the.trailers)</visible>
-				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="350" delay="0" />
-				</animation>
-				<animation type="WindowOpen" reversible="false">
-					<effect type="fade" start="0" end="100" time="350" delay="850" />
-				</animation>
 			</control>
 			<control type="label">
 				<description>Genre</description>
@@ -976,15 +984,9 @@
 				<width>630</width>
 				<label>$INFO[ListItem.Duration,, $LOCALIZE[31650]$LOCALIZE[31618]]$INFO[ListItem.Genre]</label>
 				<font>recent2</font>
-				<textcolor>itemdetail3</textcolor>
+				<textcolor>fc9f9f9f</textcolor>
 				<scroll>false</scroll>
 				<visible>Skin.HasSetting(VideoInfoStudios) + !SubString(Container.FolderPath,plugin://plugin,Left)</visible>
-				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="350" delay="0" />
-				</animation>
-				<animation type="WindowOpen" reversible="false">
-					<effect type="fade" start="0" end="100" time="350" delay="850" />
-				</animation>
 			</control>
 
 			<!-- STUDIO/DURATION/GENRE NO STUDIOS-->
@@ -995,7 +997,7 @@
 				<width>630</width>
 				<label>$INFO[ListItem.Studio]$LOCALIZE[31618]$INFO[ListItem.Country]</label>
 				<font>homemenu3</font>
-				<textcolor>itemdetail3</textcolor>
+				<textcolor>ffababab</textcolor>
 				<scroll>false</scroll>
 				<visible>Container.Content(movies) + !Skin.HasSetting(VideoInfoStudios)</visible>
 			</control>
@@ -1004,9 +1006,9 @@
 				<posx>14</posx>
 				<posy>59r</posy>
 				<width>630</width>
-				<label>$INFO[ListItem.Year]</label>
+				<label>$INFO[ListItem.Studio]</label>
 				<font>homemenu3</font>
-				<textcolor>itemdetail3</textcolor>
+				<textcolor>ffababab</textcolor>
 				<scroll>false</scroll>
 				<visible>[Container.Content(tvshows) + !Skin.HasSetting(VideoInfoStudios)] | SubString(Container.FolderPath,plugin://plugin,Left)</visible>
 			</control>
@@ -1017,7 +1019,7 @@
 				<width>630</width>
 				<label>$INFO[ListItem.Duration,, $LOCALIZE[31650]$LOCALIZE[31618]]$INFO[ListItem.Genre,, $LOCALIZE[31618]]$INFO[ListItem.Mpaa]</label>
 				<font>recent2</font>
-				<textcolor>itemdetail3</textcolor>
+				<textcolor>fc9f9f9f</textcolor>
 				<scroll>false</scroll>
 				<visible>!Skin.HasSetting(VideoInfoStudios) | SubString(Container.FolderPath,plugin://plugin,Left)</visible>
 			</control>

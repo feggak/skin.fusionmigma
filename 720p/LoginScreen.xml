@@ -1,5 +1,5 @@
 <window id="29">
-<defaultcontrol always="true">52</defaultcontrol>
+<defaultcontrol always="true">100</defaultcontrol>
 <allowoverlay>yes</allowoverlay>
   
 <controls>
@@ -93,7 +93,7 @@
 			<colordiffuse>ddffffff</colordiffuse>
 		</control>
   
-	<control type="list" id="52">
+	<control type="list" id="100">
 		<description>Login Wraplist</description>
 		<posx>285</posx>
 		<posy>50</posy>

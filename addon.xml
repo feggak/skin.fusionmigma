@@ -10,8 +10,8 @@
     <import addon="script.favourites" version="4.0.4"/>
     <import addon="script.artistslideshow" version="1.4.6"/>
     <import addon="script.artwork.downloader" version="12.0.12"/>
-    <import addon="script.tv.show.next.aired" version="5.0.3"/>
-    </requires>
+    <import addon="script.tv.show.next.aired" version="6.0.12"/>
+  </requires>
     <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1" debugging="false">
     <res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
     </extension>

@@ -745,7 +745,6 @@
                       <onclick>xbmc.activatewindow(weathersettings,return)</onclick>
                   </item>
                 </content>
-
             </control>
 
             <!-- ADDONS -->

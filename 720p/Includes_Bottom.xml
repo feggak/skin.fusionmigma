@@ -50,7 +50,7 @@
 				<aspectratio>stretch</aspectratio>
 				<texture>white.png</texture>
 				<colordiffuse>20FFFFFF</colordiffuse>
-				<visible>!Control.IsVisible(52) + !Control.IsVisible(53)</visible>
+				<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
 			</control>
 		</control>
 	</include>
@@ -62,7 +62,7 @@
 			<visible>!Control.IsVisible(560)</visible>
 			<visible>!Control.IsVisible(545)</visible>
 			<visible>!Control.IsVisible(535)</visible>
-			<visible>!Control.IsVisible(514)</visible>
+			<visible>!Control.IsVisible(51)</visible>
 			<animation effect="slide" start="500,0" end="0,0" delay="0" time="700"  reversable="false">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="500,0" delay="0" time="300"  reversable="false">WindowClose</animation>
 			<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
@@ -71,6 +71,57 @@
 			<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
 			<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
 
+			<!-- LEFT TVSHOWS STUDIO -->
+			<control type="group">
+				<!-- STUDIOS -->
+				<control type="label">
+					<description>Studie</description>
+					<posx>110</posx>
+					<posy>61r</posy>
+					<width>630</width>
+					<label>$INFO[ListItem.Studio]</label>
+					<font>homemenu3</font>
+					<textcolor>ffababab</textcolor>
+					<scroll>false</scroll>
+					<visible>Container.Content(tvshows) + Skin.HasSetting(VideoInfoStudios)</visible>
+				</control>
+				<control type="label">
+					<description>MPAA</description>
+					<posx>110</posx>
+					<posy>37r</posy>
+					<width>630</width>
+					<label>$INFO[ListItem.Mpaa]</label>
+					<font>recent2</font>
+					<textcolor>fc9f9f9f</textcolor>
+					<scroll>false</scroll>
+					<visible>Container.Content(tvshows) + Skin.HasSetting(VideoInfoStudios)</visible>
+				</control>
+
+				<!-- NO STUDIOS -->
+				<control type="label">
+					<description>Studio</description>
+					<posx>14</posx>
+					<posy>61r</posy>
+					<width>630</width>
+					<label>$INFO[ListItem.Studio]</label>
+					<font>homemenu3</font>
+					<textcolor>ffababab</textcolor>
+					<scroll>false</scroll>
+					<visible>Container.Content(tvshows) + !Skin.HasSetting(VideoInfoStudios)</visible>
+				</control>
+				<control type="label">
+					<description>MPAA</description>
+					<posx>14</posx>
+					<posy>37r</posy>
+					<width>630</width>
+					<label>$INFO[ListItem.Mpaa]</label>
+					<font>recent2</font>
+					<textcolor>fc9f9f9f</textcolor>
+					<scroll>false</scroll>
+					<visible>Container.Content(tvshows) + !Skin.HasSetting(VideoInfoStudios)</visible>
+				</control>
+			</control>
+			<!-- MUSIC -->
 			<control type="image">
 				<description>Rating Info</description>
 				<posx>170r</posx>
@@ -83,6 +134,7 @@
 				<visible>!Window.IsVisible(2003)</visible>
 				<visible>!IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 			</control>
+			<!-- RATING EPISODES -->
 			<control type="image">
 				<description>Rating Info</description>
 				<posx>170r</posx>
@@ -96,6 +148,7 @@
 				<visible>!Window.IsVisible(2003)</visible>
 				<visible>!IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 			</control>
+			<!-- RATING VIDEOS-->
 			<control type="image">
 				<description>Rating Info</description>
 				<posx>170r</posx>
@@ -122,9 +175,10 @@
 				<visible>Container.Content(Episodes) + Control.IsVisible(504) | Control.IsVisible(51) | Control.IsVisible(519) | Control.IsVisible(521)</visible>
 				<visible>!IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 			</control>
+			<!-- MOVIE GENRE -->
 			<control type="label">
 				<posx>15r</posx>
-				<posy>66r</posy>
+				<posy>64r</posy>
 				<width>600</width>
 				<height>39</height>
 				<textcolor>ffababab</textcolor>
@@ -136,9 +190,10 @@
 				<visible>!Control.IsVisible(569)</visible>
 				<scroll>false</scroll>
 			</control>
+			<!-- TVSHOWS GENRE -->
 			<control type="label">
 				<posx>15r</posx>
-				<posy>66r</posy>
+				<posy>64r</posy>
 				<width>300</width>
 				<height>39</height>
 				<textcolor>ffababab</textcolor>
@@ -149,9 +204,10 @@
 				<visible>Control.IsVisible(569)</visible>
 				<scroll>false</scroll>
 			</control>
+			<!-- TVSHOWS -->
 			<control type="label">
 				<posx>15r</posx>
-				<posy>66r</posy>
+				<posy>64r</posy>
 				<width>1280</width>
 				<height>35</height>
 				<font>homemenu3</font>
@@ -159,14 +215,15 @@
 				<scroll>true</scroll>
 				<align>right</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Episode,, $LOCALIZE[20360] •] $INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]]</label>
+				<label>$INFO[ListItem.Episode,, $LOCALIZE[20360] •] $INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[16101]]</label>
 				<visible>!Window.IsVisible(VideoFiles) + Container.Content(TVShows) | Container.Content(Seasons) </visible>
 				<visible>!Window.IsVisible(2003)</visible>
 				<visible>!Control.IsVisible(569)</visible>
 			</control>
+			<!-- SEASONS -->
 			<control type="label">
 				<posx>15r</posx>
-				<posy>66r</posy>
+				<posy>64r</posy>
 				<width>1280</width>
 				<height>35</height>
 				<font>homemenu3</font>
@@ -178,9 +235,10 @@
 				<visible>Container.Content(Episodes) | substring(container.folderpath,plugin://plugin.video.hulu)</visible>
 				<visible>!Window.IsVisible(2003)</visible>
 			</control>
+			<!-- ADVANCED LAUNCHER -->
 			<control type="label">
 				<posx>15r</posx>
-				<posy>66r</posy>
+				<posy>64r</posy>
 				<width>1280</width>
 				<height>35</height>
 				<font>homemenu3</font>
@@ -193,7 +251,7 @@
 			</control>
 			<control type="label">
 				<posx>15r</posx>
-				<posy>66r</posy>
+				<posy>64r</posy>
 				<width>1280</width>
 				<height>35</height>
 				<font>homemenu3</font>
@@ -204,6 +262,7 @@
 				<label>$INFO[ListItem.Premiered]</label>
 				<visible>substring(container.folderpath,plugin://plugin.program.advanced.launcher) + SubString(Container.Viewmode,Coverwrap)</visible>
 			</control>
+			<!-- PAGES/TOTAL TIME -->
 			<control type="label">
 				<posx>15r</posx>
 				<posy>40r</posy>
