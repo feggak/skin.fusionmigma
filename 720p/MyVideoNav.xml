@@ -3,7 +3,7 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
 	<onload>RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<views>50,51,52,56,59,62</views>
+	<views>50,51,52,53,54,56,59,62</views>
 	<!--<views>50,51,59,52,53,707,709,500,501,650,502,651,550,652,598,515,517,519,521,581,579,508,504,503,505,506,511,525,56,59,62,514,535,560,569,602,604</views>-->
 	<controls>
 
@@ -28,13 +28,13 @@
 		<control type="image">
 			<posx>0</posx>
 			<posy>53</posy>
-			<include>FanartGenres</include>
+			<include>FanartVideoGenres</include>
 			<visible>!Skin.HasSetting(HideNavBar)</visible>
 		</control>
 		<control type="image">
 			<posx>0</posx>
 			<posy>0</posy>
-			<include>FanartGenres</include>
+			<include>FanartVideoGenres</include>
 			<visible>Skin.HasSetting(HideNavBar)</visible>
 		</control>
 
@@ -51,7 +51,6 @@
 			<orientation>horizontal</orientation>
 			<include>ColorFlags</include>
 			<visible>!Control.IsVisible(51)</visible>
-			<visible>!Control.IsVisible(560)</visible>
 			<visible>!Substring(Container.FolderPath,plugin,Left)</visible>
 			<visible>!Skin.HasSetting(HideFlags)</visible>
 			<animation effect="fade" start="100" end="80" time="0" condition="true">true</animation>
@@ -64,40 +63,16 @@
 			<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
 		</control>
 
-		<!-- IMPORT ALL VIEWTYPES -->
+		<!-- VIEWTYPES -->
 		<include>List</include>
-		<include>TVList</include>
-		<include>BigList</include>
-		<include>BigList2</include>
-		<include>LowList</include>
-		<include>Banners</include>
-		<include>PosterWrapView</include>
-		<include>PosterWrapView2</include>
-		<include>PosterWrapView3</include>
-		<include>TVShowMusicDetail</include>
-		<include>Grid</include>
-		<include>Episodes</include>
-		<include>Episodes2</include>
-		<include>EpisodeWrap</include>
-		<include>SeasonWrap</include>
 		<include>BigFan</include>
-		<include>Icon</include>
-		<include>Icon2</include>
-		<include>Icon3</include>
-		<include>PosterShelf</include>
-		<include>Wall</include>
-		<include>Hulu</include>
-		<include>SongList</include>
-		<include>PosterFixView</include>
-		<include>PosterFix2View</include>
-		<include>PosterFix3View</include>
+		<include>LowList</include>
+		<include>InfoWrap</include>
+		<include>Grid</include>
 
 		<!-- MUSIC OVERLAY -->
 		<control type="group">
 			<visible>!Control.IsVisible(51)</visible>
-			<visible>!Control.IsVisible(545)</visible>
-			<visible>!Control.IsVisible(535)</visible>
-			<visible>!Control.IsVisible(560)</visible>
 			<visible>!SubString(Window(10025).Property(tvtunesIsAlive),True)</visible>
 			<include>MusicOverlay</include>
 		</control>
@@ -105,9 +80,6 @@
 		<!-- VIDEO OVERLAY -->
 		<control type="group">
 			<visible>!Control.IsVisible(51)</visible>
-			<visible>!Control.IsVisible(545)</visible>
-			<visible>!Control.IsVisible(535)</visible>
-			<visible>!Control.IsVisible(560)</visible>
 			<include>VideoOverlay</include>
 		</control>
 
@@ -280,8 +252,6 @@
 
 		<!-- NEXT AIRED -->
 		<control type="group">
-			<visible>!Control.IsVisible(100)</visible>
-			<visible>!Control.IsVisible(53)</visible>
 			<visible>!Control.IsVisible(52)</visible>
 			<include>EpisodeNextAiredInfo</include>
 			<include>ScrollOffsetLabel</include>

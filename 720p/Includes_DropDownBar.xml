@@ -586,13 +586,13 @@
 				<label>[UPPERCASE]$LOCALIZE[317778][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(nodiscart)</onclick>
 				<selected>Skin.HasSetting(nodiscart)</selected>
-				<visible>!Container.Content(tvshows) + Control.IsVisible(501) + Skin.HasSetting(nodiscart) | Control.IsVisible(650) + Skin.HasSetting(nodiscart) | Control.IsVisible(535) + Skin.HasSetting(nodiscart) | Control.IsVisible(502) + Skin.HasSetting(nodiscart) | Control.IsVisible(651) + Skin.HasSetting(nodiscart) | Control.IsVisible(550) + Skin.HasSetting(nodiscart) | Control.IsVisible(652) + Skin.HasSetting(nodiscart)</visible>
+				<visible>!Container.Content(TVShows) + Control.IsVisible(501) + Skin.HasSetting(nodiscart) | Control.IsVisible(650) + Skin.HasSetting(nodiscart) | Control.IsVisible(535) + Skin.HasSetting(nodiscart) | Control.IsVisible(502) + Skin.HasSetting(nodiscart) | Control.IsVisible(651) + Skin.HasSetting(nodiscart) | Control.IsVisible(550) + Skin.HasSetting(nodiscart) | Control.IsVisible(652) + Skin.HasSetting(nodiscart)</visible>
 			</item>
 			<item id="11">
 				<label>[UPPERCASE]$LOCALIZE[317777][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(nodiscart)</onclick>
 				<selected>!Skin.HasSetting(nodiscart)</selected>
-				<visible>!Container.Content(tvshows) + Control.IsVisible(501) + !Skin.HasSetting(nodiscart) | Control.IsVisible(650) + !Skin.HasSetting(nodiscart) | Control.IsVisible(535) + !Skin.HasSetting(nodiscart) | Control.IsVisible(502) + !Skin.HasSetting(nodiscart) | Control.IsVisible(651) + !Skin.HasSetting(nodiscart) | Control.IsVisible(550) + !Skin.HasSetting(nodiscart) | Control.IsVisible(652) + !Skin.HasSetting(nodiscart)</visible>
+				<visible>!Container.Content(TVShows) + Control.IsVisible(501) + !Skin.HasSetting(nodiscart) | Control.IsVisible(650) + !Skin.HasSetting(nodiscart) | Control.IsVisible(535) + !Skin.HasSetting(nodiscart) | Control.IsVisible(502) + !Skin.HasSetting(nodiscart) | Control.IsVisible(651) + !Skin.HasSetting(nodiscart) | Control.IsVisible(550) + !Skin.HasSetting(nodiscart) | Control.IsVisible(652) + !Skin.HasSetting(nodiscart)</visible>
 			</item>
 			<!-- WATCHED/UNWATCHED-->
 			<item id="12">
@@ -842,11 +842,12 @@
 	</include>
 	<include name="MusicLibraryItems">
 		<content>
+			<!-- SORT BY -->
 			<item id="1">
-				<description>Sort By</description>
 				<label>[UPPERCASE]$LOCALIZE[31734] $INFO[Container.SortMethod][/UPPERCASE]</label>
 				<onclick>Container.NextSortMethod</onclick>
 			</item>
+			<!-- ASCENDING/DESCENDING -->
 			<item id="2">
 				<label>[UPPERCASE]$LOCALIZE[21430][/UPPERCASE]</label>
 				<onclick>SendClick(4)</onclick>
@@ -857,43 +858,41 @@
 				<onclick>SendClick(4)</onclick>
 				<visible>container.sortdirection(descending)</visible>
 			</item>
-			<item id="11">
-				<description>View</description>
-				<label>[UPPERCASE]$LOCALIZE[317781][/UPPERCASE]</label>
-				<onclick>Container.PreviousViewMode</onclick>
-			</item>
+			<!-- VIEWMODE -->
 			<item id="3">
-				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31735] $INFO[Container.ViewMode][/UPPERCASE]</label>
 				<onclick>Container.NextViewMode</onclick>
 			</item>
+			<!-- FANART ARTISTS -->
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(artists_fanart_light)</onclick>
 				<onclick>Skin.Reset(artists_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + Container.Content(Artists) + !Skin.HasSetting(artists_fanart_light) + !Skin.HasSetting(artists_fanart_med) + !Skin.HasSetting(artists_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + Container.Content(Artists) + Skin.HasSetting(artists_fanart_light) + !Skin.HasSetting(artists_fanart_med) + !Skin.HasSetting(artists_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31740][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(artists_fanart_med)</onclick>
 				<onclick>Skin.Reset(artists_fanart_light)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + Container.Content(Artists) + Skin.HasSetting(artists_fanart_light)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + Container.Content(Artists) + Skin.HasSetting(artists_fanart_light)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31741][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(artists_fanart_heavy)</onclick>
 				<onclick>Skin.Reset(artists_fanart_med)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + Container.Content(Artists) + Skin.HasSetting(artists_fanart_med)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + Container.Content(Artists) + Skin.HasSetting(artists_fanart_med)</visible>
 			</item>
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(artists_fanart_heavy)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + Container.Content(Artists) + Skin.HasSetting(artists_fanart_heavy)</visible>
+				<onclick>Skin.SetBool(artists_fanart_off)</onclick>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + Container.Content(Artists) + Skin.HasSetting(artists_fanart_heavy)</visible>
 			</item>
+			<!-- FANART ALBUMS -->
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
@@ -919,8 +918,10 @@
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(albums_fanart_heavy)</onclick>
+				<onclick>Skin.SetBool(albums_fanart_off)</onclick>
 				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + Container.Content(Albums) + Skin.HasSetting(albums_fanart_heavy)</visible>
 			</item>
+			<!-- FANART SONGS -->
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
@@ -946,8 +947,10 @@
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(songs_fanart_heavy)</onclick>
+				<onclick>Skin.SetBool(songs_fanart_off)</onclick>
 				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + Container.Content(Songs) + Skin.HasSetting(songs_fanart_heavy)</visible>
 			</item>
+			<!-- FANART GENRES -->
 			<item id="4">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
@@ -970,27 +973,42 @@
 				<visible>Container.Content(Genres) + Skin.HasSetting(genres_fanart_med)</visible>
 			</item>
 			<item id="4">
-				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(genres_fanart_heavy)</onclick>
+				<onclick>Skin.SetBool(genres_fanart_off)</onclick>
 				<visible>Container.Content(Genres) + Skin.HasSetting(genres_fanart_heavy)</visible>
 			</item>
+			<!-- LIST: INFO -->
+			<item id="5">
+				<label>[UPPERCASE]$LOCALIZE[32759][/UPPERCASE]</label>
+				<onclick>Skin.SetBool(list_info)</onclick>
+				<visible>Control.IsVisible(50) + !Skin.HasSetting(list_info)</visible>
+			</item>
+			<item id="5">
+				<label>[UPPERCASE]$LOCALIZE[32758][/UPPERCASE]</label>
+				<onclick>Skin.Reset(list_info)</onclick>
+				<visible>Control.IsVisible(50) + Skin.HasSetting(list_info)</visible>
+			</item>
+			<!-- FILES -->
 			<item id="6">
 				<description>Music Files</description>
 				<label>[UPPERCASE]$LOCALIZE[2] $LOCALIZE[744][/UPPERCASE]</label>
 				<onclick>replacewindow(musicfiles)</onclick>
 				<onclick>setfocus(50)</onclick>
 			</item>
+			<!-- PARTY MODE -->
 			<item id="7">
 				<description>Party Mode</description>
 				<label>[UPPERCASE]$LOCALIZE[589][/UPPERCASE]</label>
 				<onclick>SendClick(16)</onclick>
 			</item>
+			<!-- SEARCH -->
 			<item id="8">
 				<description>Search</description>
 				<label>[UPPERCASE]$LOCALIZE[137][/UPPERCASE]</label>
 				<onclick>SendClick(8)</onclick>
 			</item>
+			<!-- FILTER -->
 			<item id="9">
 				<description>Filter</description>
 				<label>[UPPERCASE]$LOCALIZE[587] $LOCALIZE[351][/UPPERCASE]</label>
@@ -1003,13 +1021,14 @@
 				<onclick>SendClick(19)</onclick>
 				<visible>SubString(Control.GetLabel(19),$LOCALIZE[31756])</visible>
 			</item>
+			<!-- WRAP VIEWS: HIDE LABELS-->
 			<item id="10">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31736][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViewsMusic)</onclick>
 				<visible>!Skin.HasSetting(HideLabelWrapViewsMusic) + Control.IsVisible(600)</visible>
 			</item>
-			 <item id="10">
+			<item id="10">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31737][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViewsMusic)</onclick>
@@ -1021,7 +1040,7 @@
 				<onclick>Skin.ToggleSetting(HideLabelWrapViewsMusic)</onclick>
 				<visible>!Skin.HasSetting(HideLabelWrapViewsMusic) + Control.IsVisible(653)</visible>
 			</item>
-			 <item id="10">
+			<item id="10">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31737][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViewsMusic)</onclick>
@@ -1033,7 +1052,7 @@
 				<onclick>Skin.ToggleSetting(HideLabelMusicSquareViews)</onclick>
 				<visible>!Skin.HasSetting(HideLabelMusicSquareViews) + Control.IsVisible(657)</visible>
 			</item>
-			 <item id="10">
+			<item id="10">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31737][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelMusicSquareViews)</onclick>
@@ -1045,7 +1064,7 @@
 				<onclick>Skin.ToggleSetting(HideLabelMusicSquareFixViews)</onclick>
 				<visible>!Skin.HasSetting(HideLabelMusicSquareFixViews) + Control.IsVisible(658)</visible>
 			</item>
-			 <item id="10">
+			<item id="10">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31737][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelMusicSquareFixViews)</onclick>

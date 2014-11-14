@@ -13,6 +13,14 @@
 <include file="Includes_HomeExtras.xml" />
 <include file="Includes_NextAiredInfo.xml" />
 
+<!-- VIEWTYPE XMLS -->
+<include file="_debug.xml" />
+<include file="Viewtype_50_List.xml" />
+<include file="Viewtype_51_BigFan.xml" />
+<include file="Viewtype_52_LowList.xml" />
+<include file="Viewtype_53_InfoWrap.xml" />
+<include file="Viewtype_56_59_62_Grids.xml" />
+
 <!-- VIDEO INFO FLAGS -->
 <include name="ColorFlags">
 	<include>StudioflagsTV</include>

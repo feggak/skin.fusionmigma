@@ -1,0 +1,221 @@
+<includes>
+
+<!--TVSHOW and Music Fanart Info View -->
+	
+	<include name="AlbumWrap">
+	<control type="group">
+		<include>InfoOpenClose</include>
+		<include>MusicInfoOpenClose</include>	
+		<include>ViewWindowOC</include>
+		<include>ContextFade</include>
+		<include>Keyboard</include>
+		<visible>!Window.IsVisible(1122)</visible>
+		<control type="group">
+			<visible>Control.IsVisible(526)</visible>
+			<posx>0</posx>
+			<posy>60</posy>
+
+			<control type="image">
+				<posx>100</posx>
+				<posy>412</posy>
+				<width>34</width>
+				<height>34</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>Home/extras/leftarrow.png</texture>
+				<colordiffuse>78ffffff</colordiffuse>
+				<animation effect="fade" time="400" delay="50">Visible</animation>
+				<visible>!Container(526).OnPrevious</visible>					
+			</control>
+			<control type="image">
+				<posx>100</posx>
+				<posy>412</posy>
+				<width>34</width>
+				<height>34</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>Home/extras/leftarrow.png</texture>
+				<colordiffuse>78ffffff</colordiffuse>
+				<animation type="Hidden">
+					<effect type="slide" start="-10" end="0" center="auto" time="300" reversible="false" />
+					<effect type="fade" start="100" end="0" time="300" reversible="false" />
+					<effect type="zoom" start="125" end="100" center="auto" time="300" reversible="false" />					
+				</animation>
+				<visible>Container(526).OnPrevious</visible>					
+			</control>			
+			
+			
+			<control type="image">
+				<posx>1140</posx>
+				<posy>412</posy>
+				<width>34</width>
+				<height>34</height>
+				<aspectratio>stretch</aspectratio>
+				<texture flipx="true">Home/extras/leftarrow.png</texture>
+				<colordiffuse>78ffffff</colordiffuse>	
+				<animation effect="fade" time="400" delay="50">Visible</animation>
+				<visible>!Container(526).OnNext</visible>				
+			</control>
+			<control type="image">
+				<posx>1140</posx>
+				<posy>412</posy>
+				<width>34</width>
+				<height>34</height>
+				<aspectratio>stretch</aspectratio>
+				<texture flipx="true">Home/extras/leftarrow.png</texture>
+				<colordiffuse>78ffffff</colordiffuse>
+				<animation type="Hidden">
+					<effect type="slide" start="10" end="0" center="auto" time="300" reversible="false" />
+					<effect type="fade" start="100" end="0" time="300" reversible="false" />
+					<effect type="zoom" start="125" end="100" center="auto" time="300" reversible="false" />					
+				</animation>
+				<visible>Container(526).OnNext</visible>				
+			</control>
+		<control type="group">
+			<visible>Control.IsVisible(526)</visible>
+			<posx>0</posx>
+			<posy>80</posy>
+			<control type="wraplist" id="526">
+				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Albums) | SubString(Container.Folderpath,plugin://plugin.program.advanced.launcher)</visible>
+				<visible>!Skin.HasSetting(HideAlbumWrap)</visible>
+				<posx>168</posx>
+				<posy>190</posy>
+				<width>960</width>
+				<height>560</height>
+				<onleft>57</onleft>
+				<onright>57</onright>
+				<onup>300</onup>
+				<ondown>66</ondown>
+				<viewtype label="AlbumWrap">bigwrap</viewtype>
+				<pagecontrol>66</pagecontrol>
+				<scrolltime>250</scrolltime>
+				<focusposition>2</focusposition>
+				<orientation>horizontal</orientation>
+				<itemlayout height="310" width="195">
+					<control type="image">
+						<posx>0</posx>
+						<posy>83</posy>
+						<width>150</width>
+						<height>150</height>
+						<bordersize>2</bordersize>
+						<aspectratio>stretch</aspectratio>
+						<texture background="true" diffuse="poster/posterdiffusesmall.png">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>180</posy>
+						<width>150</width>
+						<height>150</height>
+						<bordersize>2</bordersize>
+						<aspectratio>stretch</aspectratio>
+						<texture background="true" flipy="true" diffuse="poster/posterreflectdiffuse.png">$INFO[ListItem.Icon]</texture>
+						<colordiffuse>72ffffff</colordiffuse>
+					</control>
+				</itemlayout>
+				<focusedlayout height="310" width="208">
+					<control type="image">
+						<posx>0</posx>
+						<posy>83</posy>
+						<width>150</width>
+						<height>150</height>
+						<bordersize>2</bordersize>
+						<aspectratio>stretch</aspectratio>
+						<texture background="true" diffuse="infowrap/albumdiffuse.png">$INFO[ListItem.Icon]</texture>
+						<animation reversible="false" effect="zoom" start="100" end="132" center="50,110" time="250">focus</animation>
+						<animation reversible="false" effect="zoom" start="132" end="100" center="50,110" time="250">unfocus</animation>	
+					</control>
+					<control type="image">
+						<posx>-39</posx>
+						<posy>52</posy>
+						<width>244</width>
+						<height>244</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>infowrap/albumfocusborder.png</texture>
+						<visible>!Control.HasFocus(300)</visible>
+						<visible>!Control.HasFocus(66)</visible>
+						<animation reversible="false" effect="zoom" start="77" end="100" center="50,110" time="250">focus</animation>
+						<animation reversible="false" effect="zoom" start="100" end="77" center="50,110" time="250">unfocus</animation>
+					</control>
+					<control type="image">
+						<posx>205</posx>
+						<posy>310</posy>
+						<width>35</width>
+						<height>35</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[ListItem.Overlay]</texture>
+						<animation type="focus">
+							<effect type="fade" start="0" end="100" time="0" />
+							<effect type="slide" start="0,0" end="40,40" time="0" />
+						</animation>
+						<animation type="unfocus">
+							<effect type="fade" start="100" end="0" time="200" />
+							<effect type="slide" end="0,0" start="40,40" time="200" />
+						</animation>
+					</control>
+				</focusedlayout>
+			</control>	
+			<control type="label">
+				<posx>0</posx>
+				<posy>475</posy>
+				<width>1280</width>
+				<height>35</height>
+				<font>tvtitle2</font>
+				<textcolor>movietitleb</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+			</control>
+	</control>
+	</control>
+	<control type="group">
+	
+<visible>Control.IsVisible(526) + SubString(Container.Folderpath,plugin://plugin.program.advanced.launcher)</visible>
+	<posx>190</posx>
+	<posy>146</posy>
+	<animation effect="slide" end="0,-90" time="350" tween="circle" easing="inout" condition="SubString(Container.Folderpath,plugin://plugin.program.advanced.launcher)">Conditional</animation>
+		<control type="image">
+			<posx>22</posx>
+			<posy>-17</posy>
+			<width>854</width>
+			<height>481</height>
+			<aspectratio>stretch</aspectratio>
+			<fadetime>300</fadetime>
+			<texture background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>899</width>
+			<height>338</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>infowrap/fanartborder.png</texture>
+		</control>
+		<control type="image">
+			<posx>205</posx>
+			<posy>310</posy>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$INFO[ListItem.Overlay]</texture>
+		</control>
+</control>
+		<control type="scrollbar" id="66">
+			<posx>0</posx>
+			<posy>649</posy>
+			<width>1280</width>
+			<height>5</height>
+			<visible allowhiddenfocus="true">Control.IsVisible(526) + Control.HasFocus(66)</visible>
+			<texturesliderbackground>white2.png</texturesliderbackground>
+			<textureslidernibfocus>white3.png</textureslidernibfocus>
+			<onup>526</onup>
+			<ondown condition="substring(container.folderpath,plugin://plugin.program.advanced.launcher)">ActivateWindow(1122)</ondown>
+			<showonepage>true</showonepage>
+			<orientation>horizontal</orientation>
+			<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(66)">Conditional</animation>
+		</control>	
+
+	</control>
+	</include>
+
+
+	
+</includes>

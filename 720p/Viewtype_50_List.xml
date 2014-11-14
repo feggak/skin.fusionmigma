@@ -21,7 +21,7 @@
 				<height>398</height>
 				<aspectratio>stretch</aspectratio>
 				<texture>list/listbg.png</texture>
-				<visible>Control.IsVisible(50) + !Container.Content(Addons)</visible>
+				<visible>Control.IsVisible(50) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Albums)]</visible>
 			</control>
 			<control type="image">
 				<posx>398</posx>
@@ -30,7 +30,7 @@
 				<height>398</height>
 				<aspectratio>stretch</aspectratio>
 				<texture>list/listbgaddons.png</texture>
-				<visible>Control.IsVisible(50) + Container.Content(Addons)</visible>
+				<visible>Control.IsVisible(50) + [!Container.Content(Movies) + !Container.Content(TVShows) + !Container.Content(Albums)]</visible>
 			</control>
 
 			<!-- MAIN LIST -->
@@ -49,11 +49,66 @@
 				<ondown>50</ondown>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="List">list</viewtype>
-				<scrolltime>0</scrolltime>
 				<visible>!Container.Content(Episodes)</visible>
 
 				<!-- LAYOUT -->
-				<itemlayout condition="!Container.Content(songs)" height="39">
+				<itemlayout condition="!Container.Content(Songs) + !Container.Content(Movies) + !Container.Content(TVShows)" height="39">
+					<control type="image">
+						<width>808</width>
+						<height>39</height>
+						<texture>list/listline.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<!-- TITLE -->
+					<control type="label">
+						<posy>-3</posy>
+						<posx>12</posx>
+						<width>618</width>
+						<height>39</height>
+						<info>ListItem.Label</info>
+						<scroll>false</scroll>
+						<textcolor>list</textcolor>
+						<selectedcolor>ff2285ff</selectedcolor>
+						<font>movietitle2</font>
+					</control>
+					<!-- YEAR -->
+					<control type="label">
+						<posy>-3</posy>
+						<posx>730</posx>
+						<width>200</width>
+						<height>39</height>
+						<textcolor>list</textcolor>
+						<font>movietitle2</font>
+						<info>ListItem.Year</info>
+					</control>
+					<!-- ADDONS -->
+					<control type="label">
+						<posy>-3</posy>
+						<posx>786</posx>
+						<width>618</width>
+						<height>39</height>
+						<textcolor>list</textcolor>
+						<selectedcolor>ff2285ff</selectedcolor>
+						<font>movietitle2</font>
+						<align>right</align>
+						<info>ListItem.Property(Addon.Status)</info>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<posy>-3</posy>
+						<posx>800</posx>
+						<width>106</width>
+						<height>39</height>
+						<align>right</align>
+						<textcolor>list</textcolor>
+						<font>movietitle2</font>
+						<info>ListItem.Size</info>
+						<visible>Window.IsVisible(24)</visible>
+					</control>
+				</itemlayout>
+
+				<!-- MOVIES/TVSHOWS LAYOUT -->
+				<itemlayout condition="Container.Content(Movies) | Container.Content(TVShows)" height="39">
 					<control type="image">
 						<width>808</width>
 						<height>39</height>
@@ -161,7 +216,7 @@
 				</itemlayout>
 
 				<!-- SONGS LAYOUT -->
-				<itemlayout condition="Container.Content(songs)" height="39">
+				<itemlayout condition="Container.Content(Songs)" height="39">
 					<control type="image">
 						<width>808</width>
 						<height>39</height>
@@ -233,7 +288,7 @@
 				</itemlayout>
 
 				<!-- FOCUSED LAYOUT -->
-				<focusedlayout condition="!Container.Content(songs) + !Skin.HasSetting(list_info)" height="39">
+				<focusedlayout condition="!Container.Content(Songs) + !Container.Content(Movies) + !Container.Content(TVShows) + !Skin.HasSetting(list_info)" height="39">
 					<control type="image">
 						<posy>-1</posy>
 						<width>808</width>
@@ -243,77 +298,10 @@
 						<animation effect="slide" start="0,30" end="0,0" time="200" reversible="false" tween="back" easing="out" condition="Container(50).OnPrevious">focus</animation>
 						<animation effect="slide" start="0,-30" end="0,0" time="200" reversible="false" tween="back" easing="out" condition="Container(50).OnNext">focus</animation>
 					</control>
-					<control type="image">
-						<posx>8</posx>
-						<posy>2</posy>
-						<width>35</width>
-						<height>35</height>
-						<texture background="true">$INFO[listitem.thumb]</texture>
-						<aspectratio>keep</aspectratio>
-						<fadetime>200</fadetime>
-						<visible>!IsEmpty(ListItem.Thumb) + !Container.Content(Movies)</visible>
-						<include>BrowseListAnimation</include>
-					</control>
-					<control type="image">
-						<posx>8</posx>
-						<posy>2</posy>
-						<width>35</width>
-						<height>35</height>
-						<texture>$INFO[listitem.actualicon]</texture>
-						<aspectratio>keep</aspectratio>
-						<fadetime>200</fadetime>
-						<visible>IsEmpty(ListItem.Thumb)</visible>
-						<include>BrowseListAnimation</include>
-						</control>
-					<control type="image">
-						<posy>5</posy>
-						<posx>11</posx>
-						<width>30</width>
-						<height>35</height>
-						<aspectratio>keep</aspectratio>
-						<texture>watched.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
-						<visible>Skin.HasSetting(WatchedOverlays)</visible>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-						<include>BrowseListAnimation</include>
-					</control>
-					<control type="image">
-						<posy>5</posy>
-						<posx>4</posx>
-						<width>41</width>
-						<height>35</height>
-						<aspectratio>keep</aspectratio>
-						<texture>unwatched.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnwatched.png)</visible>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-						<include>BrowseListAnimation</include>
-					</control>
-					<control type="image">
-						<posy>9.5</posy>
-						<posx>12</posx>
-						<width>25</width>
-						<height>18</height>
-						<aspectratio>keep</aspectratio>
-						<texture>list/folder.png</texture>
-						<visible>Control.IsVisible(50) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-						<include>BrowseListAnimation</include>
-					</control>
-					<control type="image">
-						<posy>4</posy>
-						<posx>712</posx>
-						<width>78</width>
-						<height>28</height>
-						<aspectratio>keep</aspectratio>
-						<texture>list/collectioncds.png</texture>
-						<visible>Control.IsVisible(50) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-						<visible>!ListItem.IsFolder</visible>
-						<include>BrowseListAnimation</include>
-					</control>
+					<!-- TITLE -->
 					<control type="label">
 						<posy>-3</posy>
-						<posx>62</posx>
+						<posx>12</posx>
 						<width>618</width>
 						<height>39</height>
 						<textcolor>f0e7e7e7</textcolor>
@@ -323,6 +311,7 @@
 						<scroll>false</scroll>
 						<include>BrowseListAnimation</include>
 					</control>
+					<!-- ADDONS -->
 					<control type="label">
 						<posy>-3</posy>
 						<posx>786</posx>
@@ -338,16 +327,6 @@
 					</control>
 					<control type="label">
 						<posy>-3</posy>
-						<posx>730</posx>
-						<width>200</width>
-						<height>39</height>
-						<textcolor>itemdetail</textcolor>
-						<font>movietitle2</font>
-						<info>ListItem.Year</info>
-						<include>BrowseListAnimation</include>
-					</control>
-					<control type="label">
-						<posy>-3</posy>
 						<posx>800</posx>
 						<width>106</width>
 						<height>39</height>
@@ -358,10 +337,127 @@
 						<visible>Window.IsVisible(24)</visible>
 						<include>BrowseListAnimation</include>
 					</control>
+					<!-- MUSIC -->
+					<control type="label">
+						<posy>-3</posy>
+						<posx>730</posx>
+						<width>200</width>
+						<height>39</height>
+						<textcolor>itemdetail</textcolor>
+						<font>movietitle2</font>
+						<info>ListItem.Year</info>
+						<include>BrowseListAnimation</include>
+					</control>
 				</focusedlayout>
 
-				<!-- FOCUSED INFO LAYOUT -->
-				<focusedlayout condition="!Container.Content(songs) + Skin.HasSetting(list_info)" height="117">
+				<!-- FOCUSED MOVIES/TVSHOWS LAYOUT -->
+				<focusedlayout condition="[Container.Content(Movies) | Container.Content(TVShows)] + !Skin.HasSetting(list_info)" height="39">
+					<control type="image">
+						<posy>-1</posy>
+						<width>808</width>
+						<height>39</height>
+						<texture>list/smalllistfo.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<animation effect="slide" start="0,30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(50).OnPrevious">focus</animation>
+						<animation effect="slide" start="0,-30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(50).OnNext">focus</animation>
+					</control>
+					<control type="image">
+						<posx>8</posx>
+						<posy>2</posy>
+						<width>35</width>
+						<height>35</height>
+						<texture background="true">$INFO[listitem.thumb]</texture>
+						<aspectratio>keep</aspectratio>
+						<fadetime>300</fadetime>
+						<visible>!IsEmpty(ListItem.Thumb) + !Container.Content(Movies)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+					<control type="image">
+						<posx>8</posx>
+						<posy>2</posy>
+						<width>35</width>
+						<height>35</height>
+						<texture>$INFO[listitem.actualicon]</texture>
+						<aspectratio>keep</aspectratio>
+						<fadetime>300</fadetime>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+
+					<!-- WATCHED -->
+					<control type="image">
+						<posy>5</posy>
+						<posx>11</posx>
+						<width>30</width>
+						<height>35</height>
+						<aspectratio>keep</aspectratio>
+						<texture>watched.png</texture>
+						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>Skin.HasSetting(WatchedOverlays)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+					<control type="image">
+						<posy>5</posy>
+						<posx>4</posx>
+						<width>41</width>
+						<height>35</height>
+						<aspectratio>keep</aspectratio>
+						<texture>unwatched.png</texture>
+						<visible>stringcompare(ListItem.Overlay,OverlayUnwatched.png)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+
+					<!-- COLLECTION -->
+					<control type="image">
+						<posy>9.5</posy>
+						<posx>12</posx>
+						<width>25</width>
+						<height>18</height>
+						<aspectratio>keep</aspectratio>
+						<texture>list/folder.png</texture>
+						<visible>Control.IsVisible(50) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+					<control type="image">
+						<posy>4</posy>
+						<posx>712</posx>
+						<width>78</width>
+						<height>28</height>
+						<aspectratio>keep</aspectratio>
+						<texture>list/collectioncds.png</texture>
+						<visible>Control.IsVisible(50) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>!ListItem.IsFolder</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+
+					<!-- TITLE -->
+					<control type="label">
+						<posy>-3</posy>
+						<posx>62</posx>
+						<width>618</width>
+						<height>39</height>
+						<textcolor>f0e7e7e7</textcolor>
+						<selectedcolor>ff7acafe</selectedcolor>
+						<font>movietitle2</font>
+						<info>ListItem.Label</info>
+						<scroll>false</scroll>
+						<include>BrowseListAnimation</include>
+					</control>
+					<!-- YEAR -->
+					<control type="label">
+						<posy>-3</posy>
+						<posx>730</posx>
+						<width>200</width>
+						<height>39</height>
+						<textcolor>itemdetail</textcolor>
+						<font>movietitle2</font>
+						<info>ListItem.Year</info>
+						<include>BrowseListAnimation</include>
+					</control>
+				</focusedlayout>
+
+				<!-- FOCUSED MOVIES/TVSHOWS INFO LAYOUT -->
+				<focusedlayout condition="[Container.Content(Movies) | Container.Content(TVShows)] + Skin.HasSetting(list_info)" height="117">
 					<control type="image">
 						<posy>-1</posy>
 						<width>808</width>
@@ -493,8 +589,91 @@
 					</control>
 				</focusedlayout>
 
+				<!-- FOCUSED MUSIC INFO LAYOUT -->
+				<focusedlayout condition="[Container.Content(Artists) | Container.Content(Albums)] + Skin.HasSetting(list_info)" height="117">
+					<control type="image">
+						<posy>-1</posy>
+						<width>808</width>
+						<height>117</height>
+						<texture>list/listfo.png</texture>
+						<animation effect="slide" start="0,30" end="0,0" time="200" reversible="false" tween="back" easing="out" condition="Container(50).OnPrevious">focus</animation>
+						<animation effect="slide" start="0,-30" end="0,0" time="200" reversible="false" tween="back" easing="out" condition="Container(50).OnNext">focus</animation>
+					</control>
+					<!-- TITLE -->
+					<control type="label">
+						<posy>-3</posy>
+						<posx>12</posx>
+						<width>652</width>
+						<height>39</height>
+						<textcolor>itemdetail</textcolor>
+						<font>movietitle2</font>
+						<info>ListItem.Label</info>
+						<include>BrowseListAnimation</include>
+					</control>
+					<!-- YEAR -->
+					<control type="label">
+						<posy>-3</posy>
+						<posx>730</posx>
+						<width>200</width>
+						<height>39</height>
+						<textcolor>itemdetail</textcolor>
+						<font>movietitle2</font>
+						<info>ListItem.Year</info>
+						<include>BrowseListAnimation</include>
+					</control>
+					<!-- INFO -->
+					<control type="label">
+						<posy>37</posy>
+						<posx>14</posx>
+						<width>780</width>
+						<height>39</height>
+						<textcolor>itemdetail2</textcolor>
+						<font>listdetail2</font>
+						<label>[COLOR=itemdetail]Formed:[/COLOR] $INFO[ListItem.Property(Artist_Formed)]</label>
+						<visible>Container.Content(Artists)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+					<control type="label">
+						<posy>73</posy>
+						<posx>14</posx>
+						<width>780</width>
+						<height>39</height>
+						<textcolor>itemdetail2</textcolor>
+						<font>listdetail2</font>
+						<scroll>false</scroll>
+						<scrollspeed>0</scrollspeed>
+						<label>[COLOR=itemdetail]Styles:[/COLOR] $INFO[ListItem.Property(Artist_Style)]</label>
+						<visible>Container.Content(Artists)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+					<control type="label">
+						<posy>37</posy>
+						<posx>14</posx>
+						<width>780</width>
+						<height>39</height>
+						<textcolor>itemdetail2</textcolor>
+						<font>listdetail2</font>
+						<label>[COLOR=itemdetail]Label:[/COLOR] $INFO[ListItem.Property(Album_Label)]</label>
+						<visible>Container.Content(Albums)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+					<control type="label">
+						<posy>73</posy>
+						<posx>14</posx>
+						<width>780</width>
+						<height>39</height>
+						<textcolor>itemdetail2</textcolor>
+						<font>listdetail2</font>
+						<scroll>false</scroll>
+						<scrollspeed>0</scrollspeed>
+						<label>[COLOR=itemdetail]Styles:[/COLOR] $INFO[ListItem.Property(Album_Style)]</label>
+						<visible>Container.Content(Albums)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+				</focusedlayout>
+
 				<!-- FOCUSED SONGS LAYOUT -->
-				<focusedlayout condition="Container.Content(songs)" height="39">
+				<focusedlayout condition="Container.Content(Songs)" height="39">
 					<control type="image">
 						<posy>-1</posy>
 						<width>808</width>
@@ -837,18 +1016,6 @@
 			</control>
 
 			<!-- THUMB LABELS -->
-			<control type="label">
-				<visible>Control.IsVisible(50)</visible>
-				<posy>465</posy>
-				<posx>80</posx>
-				<width>270</width>
-				<height>39</height>
-				<align>center</align>
-				<textcolor>itemdetail</textcolor>
-				<font>tvtitle2</font>
-				<info>ListItem.Artist</info>
-				<visible>Container.Content(Albums)</visible>
-			</control>
 			<control type="label">
 				<visible>Control.IsVisible(50)</visible>
 				<posy>465</posy>

@@ -856,7 +856,7 @@
 					<colordiffuse>2DFFFFFF</colordiffuse>
 					<font>plot</font>
 					<onclick>XBMC.RunScript(script.tvtunes,mode=solo&amp;tvpath=$INFO[ListItem.FilenameAndPath]&amp;tvname=$INFO[ListItem.TVShowTitle])</onclick>
-					<visible>Container.Content(tvshows) + system.hasaddon(script.tvtunes)</visible>
+					<visible>Container.Content(TVShows) + system.hasaddon(script.tvtunes)</visible>
 				</control>
 				<control type="button" id="17">
 					<description>Refresh</description>
@@ -892,10 +892,10 @@
 					<colordiffuse>2DFFFFFF</colordiffuse>
 					<font>plot</font>
 					<onclick>Dialog.Close(MovieInformation)</onclick>
-					<onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
+					<onclick condition="Container.Content(TVShows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick condition="Container.Content(musicvideos)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=musicvideo, dbid=$INFO[ListItem.DBID])</onclick>
-					<visible>[Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)] + system.hasaddon(script.artwork.downloader)</visible>
+					<visible>[Container.Content(TVShows) | Container.Content(movies) | Container.Content(musicvideos)] + system.hasaddon(script.artwork.downloader)</visible>
 					<visible>!SubString(Container.FolderPath,plugin://plugin.video.the.trailers)</visible>
 				</control>
 			</control>
@@ -974,7 +974,7 @@
 				<font>homemenu3</font>
 				<textcolor>ffababab</textcolor>
 				<scroll>false</scroll>
-				<visible>Container.Content(tvshows) + Skin.HasSetting(VideoInfoStudios) + !SubString(Container.FolderPath,plugin://plugin,Left)</visible>
+				<visible>Container.Content(TVShows) + Skin.HasSetting(VideoInfoStudios) + !SubString(Container.FolderPath,plugin://plugin,Left)</visible>
 				<visible>!SubString(Container.FolderPath,plugin://plugin.video.the.trailers)</visible>
 			</control>
 			<control type="label">
@@ -1010,7 +1010,7 @@
 				<font>homemenu3</font>
 				<textcolor>ffababab</textcolor>
 				<scroll>false</scroll>
-				<visible>[Container.Content(tvshows) + !Skin.HasSetting(VideoInfoStudios)] | SubString(Container.FolderPath,plugin://plugin,Left)</visible>
+				<visible>[Container.Content(TVShows) + !Skin.HasSetting(VideoInfoStudios)] | SubString(Container.FolderPath,plugin://plugin,Left)</visible>
 			</control>
 			<control type="label">
 				<description>Genre</description>

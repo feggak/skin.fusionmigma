@@ -37,6 +37,7 @@
 			<posy>-31</posy>
 			<include>AddSource</include>
 			<include>Keyboard</include>
+			<visible>Control.IsVisible(52)</visible>
 			<animation type="WindowOpen" reversible="false">
 				<effect type="fade" start="0" end="100" time="550" delay="0" />
 				<effect type="zoom" start="175" end="100" time="350" center="auto" delay="0" />
@@ -56,7 +57,6 @@
 				<aspectratio>stretch</aspectratio>
 				<texture diffuse="list/lbgdif.png">black.png</texture>
 				<colordiffuse>5affffff</colordiffuse>
-				<visible>Control.IsVisible(52)</visible>
 			</control>
 			<control type="image">
 				<posx>-25</posx>
@@ -66,12 +66,10 @@
 				<aspectratio>stretch</aspectratio>
 				<texture diffuse="list/lbgdif.png">white.png</texture>
 				<colordiffuse>1fffffff</colordiffuse>
-				<visible>Control.IsVisible(52)</visible>
 			</control>
 
 			<!-- SEPARATORS -->
 			<control type="group">
-				<visible>Control.IsVisible(52)</visible>
 				<control type="group">
 					<visible>!Window.IsVisible(24)</visible>
 					<control type="image">
@@ -132,7 +130,6 @@
 						<texture>white.png</texture>
 						<colordiffuse>0fffffff</colordiffuse>
 					</control>
-
 					<control type="image">
 						<posy>556</posy>
 						<posx>1145</posx>
@@ -434,6 +431,7 @@
 
 			</control>
 
+			<!-- THUMB -->
 			<control type="group">
 				<posx>0</posx>
 				<posy>382</posy>
@@ -444,7 +442,6 @@
 					<height>192</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>black.png</texture>
-					<visible>Control.IsVisible(52)</visible>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -454,7 +451,6 @@
 					<fadetime>250</fadetime>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<visible>Control.IsVisible(52)</visible>
 				</control>
 			</control>
 

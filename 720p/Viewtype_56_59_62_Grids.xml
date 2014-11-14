@@ -33,7 +33,7 @@
 			<!-- WIDE GRID -->
 			<control type="panel" id="59">
 				<viewtype label="WideGrid">icon</viewtype>
-				<visible>Container.Content(tvshows) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
+				<visible>Container.Content(TVShows) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
 				<posx>595</posx>
 				<posy>128</posy>
 				<width>800</width>

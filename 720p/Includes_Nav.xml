@@ -877,7 +877,6 @@
 				<label>$INFO[System.Time(hh:mm)][COLOR ampm]$LOCALIZE[378][/COLOR]</label>
 				<visible>substring(system.time,AM,right)</visible>
 			</control>
-
 			<control type="label">
 				<posx>125r</posx>
 				<posy>12</posy>

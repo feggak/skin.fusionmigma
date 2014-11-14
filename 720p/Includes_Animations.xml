@@ -26,6 +26,16 @@
 		<animation effect="fade" start="100" end="12" condition="Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_light)">Conditional</animation>
 		<animation effect="fade" start="100" end="26" condition="Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_med)">Conditional</animation>
 		<animation effect="fade" start="100" end="40" condition="Container.Content(Episodes) + Skin.HasSetting(episodes_fanart_heavy)">Conditional</animation>
+		<!-- MUSIC -->
+		<animation effect="fade" start="100" end="12" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="26" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="40" condition="Container.Content(Artists) + Skin.HasSetting(artists_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="12" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="26" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="40" condition="Container.Content(Albums) + Skin.HasSetting(albums_fanart_heavy)">Conditional</animation>
+		<animation effect="fade" start="100" end="12" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_light)">Conditional</animation>
+		<animation effect="fade" start="100" end="26" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_med)">Conditional</animation>
+		<animation effect="fade" start="100" end="40" condition="Container.Content(Songs) + Skin.HasSetting(songs_fanart_heavy)">Conditional</animation>
 		<!-- GENRES -->
 		<animation effect="fade" start="100" end="12" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_light)">Conditional</animation>
 		<animation effect="fade" start="100" end="26" condition="Container.Content(Genres) + Skin.HasSetting(genres_fanart_med)">Conditional</animation>

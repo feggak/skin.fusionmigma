@@ -58,123 +58,78 @@
 	<!-- INFO -->
 	<include name="BtmInfo">
 
+		<!-- LEFT -->
 		<control type="group">
-			<visible>!Control.IsVisible(560)</visible>
-			<visible>!Control.IsVisible(545)</visible>
-			<visible>!Control.IsVisible(535)</visible>
 			<visible>!Control.IsVisible(51)</visible>
-			<animation effect="slide" start="500,0" end="0,0" delay="0" time="700"  reversable="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="500,0" delay="0" time="300"  reversable="false">WindowClose</animation>
+			<visible>Container.Content(TVShows)</visible>
+			<visible>!Player.HasMedia</visible>
+			<animation effect="slide" start="-500,0" end="0,0" delay="0" time="700" reversable="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="-500,0" delay="0" time="300" reversable="false">WindowClose</animation>
 			<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
 			<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
 			<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
 			<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
 
-			<!-- LEFT TVSHOWS STUDIO -->
-			<control type="group">
-				<!-- STUDIOS -->
-				<control type="label">
-					<description>Studie</description>
-					<posx>110</posx>
-					<posy>61r</posy>
-					<width>630</width>
-					<label>$INFO[ListItem.Studio]</label>
-					<font>homemenu3</font>
-					<textcolor>ffababab</textcolor>
-					<scroll>false</scroll>
-					<visible>Container.Content(tvshows) + Skin.HasSetting(VideoInfoStudios)</visible>
-				</control>
-				<control type="label">
-					<description>MPAA</description>
-					<posx>110</posx>
-					<posy>37r</posy>
-					<width>630</width>
-					<label>$INFO[ListItem.Mpaa]</label>
-					<font>recent2</font>
-					<textcolor>fc9f9f9f</textcolor>
-					<scroll>false</scroll>
-					<visible>Container.Content(tvshows) + Skin.HasSetting(VideoInfoStudios)</visible>
-				</control>
+			<!-- STUDIOS -->
+			<control type="label">
+				<description>Studie</description>
+				<posx>110</posx>
+				<posy>61r</posy>
+				<width>630</width>
+				<label>$INFO[ListItem.Studio]</label>
+				<font>homemenu3</font>
+				<textcolor>ffababab</textcolor>
+				<scroll>false</scroll>
+				<visible>Skin.HasSetting(VideoInfoStudios)</visible>
+			</control>
+			<control type="label">
+				<description>MPAA</description>
+				<posx>110</posx>
+				<posy>37r</posy>
+				<width>630</width>
+				<label>$INFO[ListItem.Mpaa]</label>
+				<font>recent2</font>
+				<textcolor>fc9f9f9f</textcolor>
+				<scroll>false</scroll>
+				<visible>Skin.HasSetting(VideoInfoStudios)</visible>
+			</control>
+			<!-- NO STUDIOS -->
+			<control type="label">
+				<description>Studio</description>
+				<posx>14</posx>
+				<posy>61r</posy>
+				<width>630</width>
+				<label>$INFO[ListItem.Studio]</label>
+				<font>homemenu3</font>
+				<textcolor>ffababab</textcolor>
+				<scroll>false</scroll>
+				<visible>!Skin.HasSetting(VideoInfoStudios)</visible>
+			</control>
+			<control type="label">
+				<description>MPAA</description>
+				<posx>14</posx>
+				<posy>37r</posy>
+				<width>630</width>
+				<label>$INFO[ListItem.Mpaa]</label>
+				<font>recent2</font>
+				<textcolor>fc9f9f9f</textcolor>
+				<scroll>false</scroll>
+				<visible>!Skin.HasSetting(VideoInfoStudios)</visible>
+			</control>
+		</control>
 
-				<!-- NO STUDIOS -->
-				<control type="label">
-					<description>Studio</description>
-					<posx>14</posx>
-					<posy>61r</posy>
-					<width>630</width>
-					<label>$INFO[ListItem.Studio]</label>
-					<font>homemenu3</font>
-					<textcolor>ffababab</textcolor>
-					<scroll>false</scroll>
-					<visible>Container.Content(tvshows) + !Skin.HasSetting(VideoInfoStudios)</visible>
-				</control>
-				<control type="label">
-					<description>MPAA</description>
-					<posx>14</posx>
-					<posy>37r</posy>
-					<width>630</width>
-					<label>$INFO[ListItem.Mpaa]</label>
-					<font>recent2</font>
-					<textcolor>fc9f9f9f</textcolor>
-					<scroll>false</scroll>
-					<visible>Container.Content(tvshows) + !Skin.HasSetting(VideoInfoStudios)</visible>
-				</control>
-			</control>
-			<!-- MUSIC -->
-			<control type="image">
-				<description>Rating Info</description>
-				<posx>170r</posx>
-				<posy>130r</posy>
-				<width>165</width>
-				<height>165</height>
-				<info>ListItem.StarRating</info>
-				<fadetime>250</fadetime>
-				<visible>Container.Content(Songs) | Container.Content(Albums) | Container.Content(Artists)</visible>
-				<visible>!Window.IsVisible(2003)</visible>
-				<visible>!IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-			</control>
-			<!-- RATING EPISODES -->
-			<control type="image">
-				<description>Rating Info</description>
-				<posx>170r</posx>
-				<posy>130r</posy>
-				<width>165</width>
-				<height>165</height>
-				<info>ListItem.StarRating</info>
-				<fadetime>250</fadetime>
-				<visible>!Window.IsVisible(VideoFiles) + Container.Content(Episodes)</visible>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(59) + [Container.Content(Episodes)]]</visible>
-				<visible>!Window.IsVisible(2003)</visible>
-				<visible>!IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-			</control>
-			<!-- RATING VIDEOS-->
-			<control type="image">
-				<description>Rating Info</description>
-				<posx>170r</posx>
-				<posy>158r</posy>
-				<width>165</width>
-				<height>165</height>
-				<info>ListItem.StarRating</info>
-				<fadetime>250</fadetime>
-				<visible>false</visible>
-				<visible>!Window.IsVisible(VideoFiles) + Container.Content(Movies) | Container.Content(TVShows)</visible>
-				<visible>Control.IsVisible(521)| Control.IsVisible(517) | Control.IsVisible(512) | Control.IsVisible(50) | [Control.IsVisible(56) | Control.IsVisible(59) | Control.IsVisible(501) | Control.IsVisible(508) | Control.IsVisible(525) + [Container.Content(TVShows)]]</visible>
-				<visible>!Window.IsVisible(2003)</visible>
-				<visible>!IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-			</control>
-			<control type="image">
-				<description>Rating Info</description>
-				<posx>170r</posx>
-				<posy>158r</posy>
-				<width>165</width>
-				<height>165</height>
-				<info>ListItem.StarRating</info>
-				<fadetime>250</fadetime>
-				<visible>false</visible>
-				<visible>Container.Content(Episodes) + Control.IsVisible(504) | Control.IsVisible(51) | Control.IsVisible(519) | Control.IsVisible(521)</visible>
-				<visible>!IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-			</control>
+		<!-- RIGHT -->
+		<control type="group">
+			<visible>!Control.IsVisible(51)</visible>
+			<animation effect="slide" start="500,0" end="0,0" delay="0" time="700" reversable="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="500,0" delay="0" time="300" reversable="false">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+			<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+			<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+
 			<!-- MOVIE GENRE -->
 			<control type="label">
 				<posx>15r</posx>
@@ -187,7 +142,6 @@
 				<label>$INFO[ListItem.Genre]</label>
 				<visible>Container.Content(Movies)</visible>
 				<visible>!Window.IsVisible(2003)</visible>
-				<visible>!Control.IsVisible(569)</visible>
 				<scroll>false</scroll>
 			</control>
 			<!-- TVSHOWS GENRE -->
@@ -202,6 +156,32 @@
 				<label>$INFO[ListItem.Genre]</label>
 				<visible>Container.Content(TVShows)</visible>
 				<visible>Control.IsVisible(569)</visible>
+				<scroll>false</scroll>
+			</control>
+			<!-- MUSIC GENRE -->
+			<control type="label">
+				<posx>15r</posx>
+				<posy>64r</posy>
+				<width>300</width>
+				<height>39</height>
+				<textcolor>ffababab</textcolor>
+				<font>homemenu3</font>
+				<align>right</align>
+				<label>$INFO[ListItem.Genre]</label>
+				<visible>Container.Content(Albums) | Container.Content(Songs)</visible>
+				<scroll>false</scroll>
+			</control>
+			<!-- ARTIST GENRE -->
+			<control type="label">
+				<posx>15r</posx>
+				<posy>64r</posy>
+				<width>300</width>
+				<height>39</height>
+				<textcolor>ffababab</textcolor>
+				<font>homemenu3</font>
+				<align>right</align>
+				<label>$INFO[ListItem.Property(Artist_Genre)]</label>
+				<visible>Container.Content(Artists)</visible>
 				<scroll>false</scroll>
 			</control>
 			<!-- TVSHOWS -->

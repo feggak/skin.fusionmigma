@@ -13,8 +13,8 @@
 				<effect type="fade" start="100" end="0" time="400" delay="0" />
 			</animation>
 			<visible>Control.IsVisible(51)</visible>
-			<animation effect="fade" start="100" end="10" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003)">Conditional</animation>
-			<animation effect="fade" start="10" end="100" time="400" delay="100" reversible="false" condition="!Window.IsVisible(2003)">Conditional</animation>
+			<animation effect="fade" start="100" end="10" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(2001)">Conditional</animation>
+			<animation effect="fade" start="10" end="100" time="400" delay="100" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(2001)">Conditional</animation>
 
 			<control type="wraplist" id="51">
 				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
@@ -94,10 +94,10 @@
 				<effect type="slide" start="0,0" end="0,300" time="350" reversible="false" />
 			</animation>
 
-			<animation effect="slide" start="0,0" end="0,500" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003)">Conditional</animation>
-			<animation effect="fade" start="100" end="0" time="400" delay="150" reversible="false" condition="Window.IsVisible(2003)">Conditional</animation>
-			<animation effect="slide" start="0,350" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003)">Conditional</animation>
-			<animation effect="fade" start="0" end="100" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,500" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(2001)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" delay="150" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(2001)">Conditional</animation>
+			<animation effect="slide" start="0,350" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(2001)">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(2001)">Conditional</animation>
 			<control type="image">
 				<posx>0</posx>
 				<posy>130r</posy>
@@ -168,6 +168,7 @@
 			<control type="group">
 				<posx>-36</posx>
 				<posy>382</posy>
+				<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
 				<control type="image">
 					<posx>109</posx>
 					<posy>111.5</posy>
@@ -187,7 +188,31 @@
 				</control>
 			</control>
 
-			<!-- DYNAMIC LABEL LIST -->
+			<!-- THUMB -->
+			<control type="group">
+				<posx>0</posx>
+				<posy>390</posy>
+				<visible>Container.Content(Artists)</visible>
+				<control type="image">
+					<posx>75</posx>
+					<posy>100</posy>
+					<width>204</width>
+					<height>204</height>
+					<fadetime>200</fadetime>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true" diffuse="icon/fodiffuse.png">$INFO[ListItem.Icon]</texture>
+				</control>
+				<control type="image">
+					<posx>44</posx>
+					<posy>70</posy>
+					<width>265</width>
+					<height>265</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>icon/foborder.png</texture>
+				</control>
+			</control>
+
+			<!-- DYNAMIC LABEL LIST VIDEOS -->
 			<control type="grouplist">
 				<posx>235</posx>
 				<posy>106r</posy>
@@ -203,7 +228,7 @@
 					<textcolor>movietitleb</textcolor>
 					<scroll>false</scroll>
 					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-					<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
+					<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows)</visible>
 				</control>
 				<include>MovieHDFlagsBigFan</include>
 				<control type="image">
@@ -217,6 +242,26 @@
 					<visible>Container.Content(Movies)</visible>
 				</control>
 			</control>
+			<!-- DYNAMIC LABEL LIST ARTISTS -->
+			<control type="grouplist">
+				<posx>304</posx>
+				<posy>106r</posy>
+				<width>1280</width>
+				<height>40</height>
+				<align>left</align>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<posx>0</posx>
+					<width min="29" max="900">auto</width>
+					<height>25</height>
+					<font>infobar</font>
+					<textcolor>movietitleb</textcolor>
+					<scroll>false</scroll>
+					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					<visible>Control.IsVisible(51) + Container.Content(Artists)</visible>
+				</control>
+			</control>
+			<!-- VIDEO YEAR/STUDIO -->
 			<control type="label">
 				<posx>235</posx>
 				<posy>79r</posy>
@@ -228,8 +273,9 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>[B]$INFO[ListItem.Year][/B]$INFO[ListItem.Studio,$LOCALIZE[31618]]</label>
-				<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
+				<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows)</visible>
 			</control>
+			<!-- MOVIE RUNTIME/GENRE -->
 			<control type="label">
 				<posx>235</posx>
 				<posy>50r</posy>
@@ -241,8 +287,23 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Duration,, Minutes]$LOCALIZE[31618]$INFO[ListItem.Genre]</label>
-				<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)</visible>
+				<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies)</visible>
 			</control>
+			<!-- TVSHOW GENRE -->
+			<control type="label">
+				<posx>235</posx>
+				<posy>50r</posy>
+				<width>1280</width>
+				<height>35</height>
+				<font>homemenu3</font>
+				<textcolor>cccdcdcd</textcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Genre]</label>
+				<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + Container.Content(TVShows)</visible>
+			</control>
+			<!-- MOVIE COLLECTION -->
 			<control type="label">
 				<posx>235</posx>
 				<posy>84r</posy>
@@ -255,7 +316,7 @@
 				<aligny>center</aligny>
 				<label>Movie Collection</label>
 				<visible>Control.IsVisible(51) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-				<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+				<visible>Container.Content(Movies)</visible>
 			</control>
 			<control type="image">
 				<posx>235</posx>
@@ -264,9 +325,38 @@
 				<height>28</height>
 				<texture>list/collectioncds.png</texture>
 				<visible>Control.IsVisible(51) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-				<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+				<visible>Container.Content(Movies)</visible>
+			</control>
+			<!-- ARTIST -->
+			<control type="label">
+				<posx>304</posx>
+				<posy>79r</posy>
+				<width>900</width>
+				<height>35</height>
+				<font>homemenu3</font>
+				<textcolor>cccdcdcd</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]Formed:[/B] $INFO[ListItem.Property(Artist_Formed)]</label>
+				<visible>Control.IsVisible(51) + Container.Content(Artists)</visible>
+			</control>
+			<!-- ARTIST -->
+			<control type="label">
+				<posx>304</posx>
+				<posy>50r</posy>
+				<width>920</width>
+				<height>35</height>
+				<font>homemenu3</font>
+				<textcolor>cccdcdcd</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]Styles:[/B] $INFO[ListItem.Property(Artist_Style)]</label>
+				<visible>Control.IsVisible(51) + Container.Content(Artists)</visible>
 			</control>
 
+			<!-- SCROLLBAR -->
 			<control type="scrollbar" id="69">
 				<posx>230</posx>
 				<posy>590</posy>
