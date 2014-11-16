@@ -22,6 +22,7 @@
 <include file="Viewtype_59_Episodes.xml" />
 <include file="Viewtype_60_Episodes2.xml" />
 <include file="Viewtype_61_EpisodeWrap.xml" />
+<include file="Viewtype_62_CoverWrap.xml" />
 
 <!-- VIDEO INFO FLAGS -->
 <include name="ColorFlags">
