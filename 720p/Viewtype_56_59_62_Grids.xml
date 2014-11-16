@@ -119,7 +119,6 @@
 					<scroll>false</scroll>
 					<textcolor>white</textcolor>
 					<label>[UPPERCASE]$INFO[ListItem.Label]  $INFO[ListItem.Property(Addon.Version)][/UPPERCASE]</label>
-					<visible>IsEmpty(Control.GetLabel(44))</visible>
 				</control>
 
 				<!-- MOVIE INFO -->

@@ -83,112 +83,15 @@
 			<include>VideoOverlay</include>
 		</control>
 
-		<!-- MORE FANART -->
+		<!-- INFOWRAP FANART (NO LOGOS) -->
 		<control type="group">
 			<include>ViewWindowOC</include>
 			<include>InfoOpenClose</include>
 			<include>ContextFade</include>
-			<visible>Container.Content(Seasons) + stringcompare(Container.ViewMode,SeasonWrap) + !Skin.HasSetting(Logos)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(54)] + !Skin.HasSetting(Logos)</visible>
 			<posx>190</posx>
 			<posy>138</posy>
-			<animation effect="slide" end="0,-90" time="250" tween="circle" easing="inout" condition="Container.Content(Seasons)">Conditional</animation>
-			<control type="image">
-				<posx>22</posx>
-				<posy>-17</posy>
-				<width>854</width>
-				<height>481</height>
-				<aspectratio>stretch</aspectratio>
-				<fadetime>200</fadetime>
-				<texture background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
-			</control>
-			<control type="multiimage">
-				<posx>22</posx>
-				<posy>-17</posy>
-				<width>854</width>
-				<height>482</height>
-				<timeperimage>4000</timeperimage>
-				<fadetime>200</fadetime>
-				<pauseatend>false</pauseatend>
-				<randomize>true</randomize>
-				<loop>yes</loop>
-				<aspectratio>stretch</aspectratio>
-				<visible>Skin.HasSetting(ExtraFanartTV)</visible>
-				<imagepath background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.path,,extrafanart/]</imagepath>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>899</width>
-				<height>338</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>infowrap/fanartborder.png</texture>
-			</control>
-			<control type="image">
-				<posx>205</posx>
-				<posy>310</posy>
-				<width>35</width>
-				<height>35</height>
-				<aspectratio>keep</aspectratio>
-				<texture>$INFO[ListItem.Overlay]</texture>
-			</control>
-		</control>
-		<control type="group">
-			<include>ViewWindowOC</include>
-			<include>InfoOpenClose</include>
-			<include>ContextFade</include>
-			<visible>Container.Content(Seasons) + stringcompare(Container.ViewMode,SeasonWrap) + Skin.HasSetting(Logos)</visible>
-			<posx>190</posx>
-			<posy>186</posy>
-			<animation effect="slide" end="0,-140" time="250" tween="circle" easing="inout" condition="Container.Content(Seasons)">Conditional</animation>
-			<control type="image">
-				<posx>22</posx>
-				<posy>-17</posy>
-				<width>854</width>
-				<height>482</height>
-				<aspectratio>stretch</aspectratio>
-				<fadetime>200</fadetime>
-				<texture background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
-			</control>
-			<control type="multiimage">
-				<effect type="fade" start="0" end="100" delay="500" time="300" reversible="true" />
-				<posx>22</posx>
-				<posy>-17</posy>
-				<width>854</width>
-				<height>482</height>
-				<timeperimage>4000</timeperimage>
-				<fadetime>200</fadetime>
-				<pauseatend>false</pauseatend>
-				<randomize>true</randomize>
-				<loop>yes</loop>
-				<aspectratio>stretch</aspectratio>
-				<visible>Skin.HasSetting(ExtraFanartTV)</visible>
-				<imagepath background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.path,,extrafanart/]</imagepath>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>899</width>
-				<height>338</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>infowrap/fanartborder.png</texture>
-			</control>
-			<control type="image">
-				<posx>205</posx>
-				<posy>310</posy>
-				<width>35</width>
-				<height>35</height>
-				<aspectratio>keep</aspectratio>
-				<texture>$INFO[ListItem.Overlay]</texture>
-			</control>
-		</control>
-		<control type="group">
-			<include>ViewWindowOC</include>
-			<include>InfoOpenClose</include>
-			<include>ContextFade</include>
-			<visible>Container.Content(TVShows) + stringcompare(Container.ViewMode,infowrap) + !Skin.HasSetting(Logos)</visible>
-			<posx>190</posx>
-			<posy>138</posy>
-			<animation effect="slide" end="0,-90" time="250" tween="circle" easing="inout" condition="Container.Content(Seasons) + !Skin.HasSetting(Logos)">Conditional</animation>
+			<animation effect="slide" end="0,-92" time="250" tween="back" easing="inout" condition="Container.Content(Seasons)">Conditional</animation>
 			<control type="image">
 				<posx>22</posx>
 				<posy>-17</posy>
@@ -215,11 +118,12 @@
 				<texture>$INFO[ListItem.Overlay]</texture>
 			</control>
 		</control>
+		<!-- INFOWRAP FANART (LOGOS) -->
 		<control type="group">
 			<include>ViewWindowOC</include>
 			<include>InfoOpenClose</include>
 			<include>ContextFade</include>
-			<visible>Container.Content(TVShows) + stringcompare(Container.ViewMode,infowrap) + Skin.HasSetting(Logos)</visible>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(54)] + Skin.HasSetting(Logos)</visible>
 			<posx>190</posx>
 			<posy>186</posy>
 			<animation effect="slide" end="0,-140" time="250" tween="circle" easing="inout" condition="Container.Content(Seasons) + Skin.HasSetting(Logos)">Conditional</animation>

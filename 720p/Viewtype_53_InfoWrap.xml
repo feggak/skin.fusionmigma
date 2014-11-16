@@ -191,12 +191,25 @@
 
 			<!-- SECOND LEVEL -->
 			<control type="group">
-				<visible>Control.IsVisible(54)</visible>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="200" delay="100" />
+				</animation>
+				<animation type="Visible" reversible="false">
+					<effect type="fade" start="0" end="100" time="200" delay="100" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="200" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="200" />
+				</animation>
+				<visible>Control.IsVisible(54) | Control.IsVisible(55)</visible>
 				<posx>0</posx>
 				<posy>100</posy>
 
-				<!-- NAVIGATION ARROWS -->
+				<!-- NAVIGATION ARROWS SEASONS -->
 				<control type="group">
+					<visible>Control.IsVisible(54)</visible>
 					<control type="image">
 						<posx>180</posx>
 						<posy>362</posy>
@@ -252,23 +265,81 @@
 					</control>
 				</control>
 
-				<!-- LIST -->
+				<!-- NAVIGATION ARROWS ALBUMS -->
+				<control type="group">
+					<visible>Control.IsVisible(55)</visible>
+					<control type="image">
+						<posx>128</posx>
+						<posy>372</posy>
+						<width>34</width>
+						<height>34</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>Home/extras/leftarrow.png</texture>
+						<colordiffuse>78ffffff</colordiffuse>
+						<animation effect="fade" time="400" delay="50">Visible</animation>
+						<visible>!Container(55).OnPrevious</visible>
+					</control>
+					<control type="image">
+						<posx>128</posx>
+						<posy>372</posy>
+						<width>34</width>
+						<height>34</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>Home/extras/leftarrow.png</texture>
+						<colordiffuse>78ffffff</colordiffuse>
+						<animation type="Hidden">
+							<effect type="slide" start="-10" end="0" center="auto" time="300" reversible="false" />
+							<effect type="fade" start="100" end="0" time="300" reversible="false" />
+							<effect type="zoom" start="125" end="100" center="auto" time="300" reversible="false" />
+						</animation>
+						<visible>Container(55).OnPrevious</visible>
+					</control>
+
+					<control type="image">
+						<posx>1110</posx>
+						<posy>372</posy>
+						<width>34</width>
+						<height>34</height>
+						<aspectratio>stretch</aspectratio>
+						<texture flipx="true">Home/extras/leftarrow.png</texture>
+						<colordiffuse>78ffffff</colordiffuse>
+						<animation effect="fade" time="400" delay="50">Visible</animation>
+						<visible>!Container(55).OnNext</visible>
+					</control>
+					<control type="image">
+						<posx>1110</posx>
+						<posy>372</posy>
+						<width>34</width>
+						<height>34</height>
+						<aspectratio>stretch</aspectratio>
+						<texture flipx="true">Home/extras/leftarrow.png</texture>
+						<colordiffuse>78ffffff</colordiffuse>
+						<animation type="Hidden">
+							<effect type="slide" start="10" end="0" center="auto" time="300" reversible="false" />
+							<effect type="fade" start="100" end="0" time="300" reversible="false" />
+							<effect type="zoom" start="125" end="100" center="auto" time="300" reversible="false" />
+						</animation>
+						<visible>Container(55).OnNext</visible>
+					</control>
+				</control>
+
+				<!-- SEASONS -->
 				<control type="group">
 					<visible>Control.IsVisible(54)</visible>
 					<posx>0</posx>
-					<posy>80</posy>
+					<posy>78</posy>
 					<control type="wraplist" id="54">
-						<visible>Container.Content(Seasons) | Container.Content(Albums)</visible>
+						<visible>Container.Content(Seasons)</visible>
 						<visible>!Skin.HasSetting(HideSeasonWrap)</visible>
 						<posx>232</posx>
 						<posy>120</posy>
 						<width>820</width>
 						<height>560</height>
-						<onleft>57</onleft>
-						<onright>57</onright>
+						<onleft>54</onleft>
+						<onright>54</onright>
 						<onup>300</onup>
 						<ondown>62</ondown>
-						<viewtype label="InfoWrap">bigwrap</viewtype>
+						<viewtype label="SeasonWrap">bigwrap</viewtype>
 						<pagecontrol>62</pagecontrol>
 						<scrolltime>200</scrolltime>
 						<focusposition>2</focusposition>
@@ -337,12 +408,102 @@
 					</control>
 
 				</control>
+
+				<!-- ALBUMS -->
+				<control type="group">
+					<visible>Control.IsVisible(55)</visible>
+					<posx>0</posx>
+					<posy>26</posy>
+					<control type="wraplist" id="55">
+						<visible>Container.Content(Albums)</visible>
+						<visible>!Skin.HasSetting(HideAlbumWrap)</visible>
+						<posx>176</posx>
+						<posy>240</posy>
+						<width>924</width>
+						<height>560</height>
+						<onleft>55</onleft>
+						<onright>5</onright>
+						<onup>300</onup>
+						<ondown>66</ondown>
+						<viewtype label="AlbumWrap">bigwrap</viewtype>
+						<pagecontrol>66</pagecontrol>
+						<scrolltime>250</scrolltime>
+						<focusposition>2</focusposition>
+						<orientation>horizontal</orientation>
+						<itemlayout height="310" width="185">
+							<control type="image">
+								<posx>0</posx>
+								<posy>40</posy>
+								<width>160</width>
+								<height>160</height>
+								<bordersize>2</bordersize>
+								<aspectratio>stretch</aspectratio>
+								<texture background="true" diffuse="poster/posterdiffusesmall.png">$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>200</posy>
+								<width>160</width>
+								<height>160</height>
+								<bordersize>2</bordersize>
+								<aspectratio>stretch</aspectratio>
+								<texture background="true" flipy="true" diffuse="poster/posterreflectdiffuse.png">$INFO[ListItem.Icon]</texture>
+								<colordiffuse>72ffffff</colordiffuse>
+							</control>
+						</itemlayout>
+						<focusedlayout height="310" width="210">
+							<control type="image">
+								<posx>0</posx>
+								<posy>40</posy>
+								<width>160</width>
+								<height>160</height>
+								<bordersize>2</bordersize>
+								<aspectratio>scale</aspectratio>
+								<texture background="true" diffuse="infowrap/albumdiffuse.png">$INFO[ListItem.Icon]</texture>
+								<animation reversible="false" effect="zoom" start="100" end="130.5" center="38,100" time="200">focus</animation>
+								<animation reversible="false" effect="zoom" start="130.5" end="100" center="38,100" time="200">unfocus</animation>
+							</control>
+							<control type="image">
+								<posx>-39</posx>
+								<posy>-7</posy>
+								<width>265</width>
+								<height>265</height>
+								<aspectratio>scale</aspectratio>
+								<texture>infowrap/albumfocusborder.png</texture>
+								<visible>!Control.HasFocus(300)</visible>
+								<visible>!Control.HasFocus(66)</visible>
+								<visible>!IsEmpty(ListItem.Icon)</visible>
+								<animation type="Focus">
+									<effect type="zoom" start="77" end="100" center="38,100" time="200" reversible="false"/>
+									<effect type="fade" start="0" end="100" time="200" reversible="false"/>
+								</animation>
+								<animation type="Unfocus">
+									<effect type="zoom" start="100" end="77" center="38,100" time="200" reversible="false"/>
+									<effect type="fade" start="100" end="0" time="200" reversible="false"/>
+								</animation>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>488</posy>
+						<width>1280</width>
+						<height>35</height>
+						<font>tvtitle2</font>
+						<textcolor>movietitleb</textcolor>
+						<scroll>true</scroll>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					</control>
+				</control>
+
 			</control>
 
 			<!-- LABELS -->
 			<control type="group">
 				<posy>20</posy>
-				<visible>Control.IsVisible(53)</visible>
+				<visible>Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(55)</visible>
 				<control type="grouplist">
 					<posx>0</posx>
 					<posy>90</posy>
@@ -365,7 +526,7 @@
 						<visible>!Skin.HasSetting(Logos)</visible>
 					</control>
 
-					<!-- TVSHOWS/ARTISTS -->
+					<!-- TVSHOWS -->
 					<control type="label">
 						<posx>0</posx>
 						<width min="29" max="900">auto</width>
@@ -373,10 +534,32 @@
 						<font>movietitle3</font>
 						<textcolor>movietitleb</textcolor>
 						<scroll>false</scroll>
-						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-						<visible>Control.IsVisible(53) + !Window.IsVisible(VideoFiles)</visible>
-						<visible>!Container.Content(Movies)</visible>
+						<label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
+						<visible>!Window.IsVisible(VideoFiles)</visible>
+						<visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
 						<visible>!Skin.HasSetting(Logos)</visible>
+						<animation type="Conditional" condition="Container.Content(Seasons)">
+							<effect type="fade" start="100" end="0" time="200"/>
+							<effect type="slide" end="0,-90" time="250" tween="back" easing="inout"/>
+						</animation>
+					</control>
+
+					<!-- ARTISTS -->
+					<control type="label">
+						<posx>0</posx>
+						<width min="29" max="900">auto</width>
+						<height>36</height>
+						<font>movietitle3</font>
+						<textcolor>movietitleb</textcolor>
+						<scroll>false</scroll>
+						<label>[UPPERCASE]$INFO[ListItem.Artist][/UPPERCASE]</label>
+						<visible>!Window.IsVisible(VideoFiles)</visible>
+						<visible>Container.Content(Artists) | Container.Content(Albums)</visible>
+						<visible>!Skin.HasSetting(Logos)</visible>
+						<animation type="Conditional" condition="Container.Content(Albums)">
+							<effect type="fade" start="100" end="0" time="200"/>
+							<effect type="slide" end="0,-88" time="350" tween="back" easing="inout"/>
+						</animation>
 					</control>
 
 					<!-- LOGO FALLBACKS -->
@@ -431,7 +614,7 @@
 				<!-- PLOT (NO LOGOS) -->
 				<control type="textbox">
 					<posx>215</posx>
-					<posy>442</posy>
+					<posy>446</posy>
 					<width>850</width>
 					<height>132</height>
 					<font>homemenu3</font>
@@ -440,11 +623,11 @@
 					<align>justify</align>
 					<autoscroll delay="12000" time="2000" repeat="10000" />
 					<label>$INFO[ListItem.Plot]</label>
-					<visible>Container.Content(Movies) |  [Container.Content(Artists) + !Skin.HasSetting(MusicLogos)] | [Container.Content(TVShows) + !Skin.HasSetting(Logos)]</visible>
+					<visible>Container.Content(Movies) | [Container.Content(TVShows) + !Skin.HasSetting(Logos)]</visible>
 				</control>
 				<control type="textbox">
 					<posx>215</posx>
-					<posy>442</posy>
+					<posy>446</posy>
 					<width>850</width>
 					<height>132</height>
 					<font>homemenu3</font>

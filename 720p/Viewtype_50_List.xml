@@ -605,7 +605,7 @@
 						<posx>12</posx>
 						<width>652</width>
 						<height>39</height>
-						<textcolor>itemdetail</textcolor>
+						<textcolor>f0e7e7e7</textcolor>
 						<font>movietitle2</font>
 						<info>ListItem.Label</info>
 						<include>BrowseListAnimation</include>
