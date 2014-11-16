@@ -3,7 +3,7 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
 	<onload>RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<views>50,51,52,53,54,56,57</views>
+	<views>50,51,52,53,54,56,57,59</views>
 	<controls>
 
 		<include>Background</include>
@@ -68,6 +68,7 @@
 		<include>LowList</include>
 		<include>InfoWrap</include>
 		<include>Grid</include>
+		<include>Episodes</include>
 
 		<!-- MUSIC OVERLAY -->
 		<control type="group">

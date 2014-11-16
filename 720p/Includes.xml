@@ -20,6 +20,7 @@
 <include file="Viewtype_52_LowList.xml" />
 <include file="Viewtype_53_InfoWrap.xml" />
 <include file="Viewtype_56_Grid.xml" />
+<include file="Viewtype_59_Episodes.xml" />
 
 <!-- VIDEO INFO FLAGS -->
 <include name="ColorFlags">
@@ -46,7 +47,6 @@
 		<focusposition>0</focusposition>
 		<orientation>vertical</orientation>
 		<preloaditems>3</preloaditems>
-
 		<itemlayout height="47" width="250">
 			<control type="label">
 				<posx>30</posx>
@@ -59,7 +59,6 @@
 				<label>$INFO[ListItem.Label]</label>
 			</control>
 		</itemlayout>
-
 		<focusedlayout height="47" width="250">
 			<control type="image">
 				<posx>0</posx>
@@ -93,6 +92,7 @@
 				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(2010)">Conditional</animation>
 				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(2012)">Conditional</animation>
 				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(2014)">Conditional</animation>
+				<animation effect="fade" start="100" end="27" time="0" delay="0" condition="Control.HasFocus(2016)">Conditional</animation>
 			</control>
 		</focusedlayout>
 	</include>
@@ -433,7 +433,8 @@
 <!-- MUSIC OVERLAY IN REST OF SKIN -->
 <include name="MusicOverlay">
 	<control type="group">
-		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+		<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
 		<animation effect="slide" start="-90,0" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
 		<animation effect="slide" start="0,0" end="-200,0" delay="0" time="200"  reversible="false">WindowClose</animation>
 		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
@@ -462,7 +463,8 @@
 		<align>left</align>
 		<font>homemenu3</font>
 		<textcolor>ffababab</textcolor>
-		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+		<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
 		<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
 		<animation effect="slide" start="0,0" end="0,100" delay="0" time="200" reversible="false">WindowClose</animation>
 		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
@@ -479,7 +481,8 @@
 		<align>left</align>
 		<font>recent2</font>
 		<textcolor>fc9f9f9f</textcolor>
-		<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+		<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
 		<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
 		<animation effect="slide" start="0,0" end="0,100" delay="0" time="200" reversible="false">WindowClose</animation>
 		<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>

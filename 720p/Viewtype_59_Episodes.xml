@@ -1,0 +1,201 @@
+<includes>
+
+	<include name="Episodes">
+		<control type="group">
+			<include>InfoOpenClose</include>
+			<include>ViewWindowOC</include>
+			<include>ContextFade</include>
+			<include>Keyboard</include>
+			<control type="fixedlist" id="59">
+				<viewtype label="Episodes">list</viewtype>
+				<posx>170</posx>
+				<posy>90</posy>
+				<width>933</width>
+				<height>520</height>
+				<scrolltime>200</scrolltime>
+				<orientation>vertical</orientation>
+				<movement>4</movement>
+				<focusposition>2</focusposition>
+				<onup>59</onup>
+				<ondown>59</ondown>
+				<onleft>300</onleft>
+				<onright>65</onright>
+				<pagecontrol>65</pagecontrol>
+				<visible>Window.IsActive(25)</visible>
+				<visible>Container.Content(episodes)</visible>
+				<itemlayout width="633" height="70">
+					<control type="label">
+						<posx>100</posx>
+						<posy>0</posy>
+						<width>90</width>
+						<height>60</height>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Episode]</label>
+						<font>episodenumber</font>
+						<textcolor>ampm</textcolor>
+						<selectedcolor>ampm</selectedcolor>
+					</control>
+					<control type="label">
+						<posx>125</posx>
+						<posy>8</posy>
+						<width>633</width>
+						<height>60</height>
+						<align>left</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>tvtitle</font>
+						<textcolor>taskbar</textcolor>
+						<selectedcolor>taskbar</selectedcolor>
+						<visible>IsEmpty(ListItem.Title)</visible>
+					</control>
+					<control type="label">
+						<posx>125</posx>
+						<posy>-9</posy>
+						<width>633</width>
+						<height>60</height>
+						<align>left</align>
+						<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+						<font>tvtitle2</font>
+						<textcolor>taskbar</textcolor>
+						<selectedcolor>taskbar</selectedcolor>
+						<visible>!IsEmpty(ListItem.Title)</visible>
+					</control>
+					<control type="label">
+						<posx>125</posx>
+						<posy>15</posy>
+						<width>633</width>
+						<height>60</height>
+						<align>left</align>
+						<label>$INFO[ListItem.Date,Aired on: ]</label>
+						<font>aired</font>
+						<textcolor>movietitleb2</textcolor>
+						<selectedcolor>movietitleb2</selectedcolor>
+					</control>
+				</itemlayout>
+
+				<focusedlayout width="633" height="189">
+					<control type="image">
+						<posx>19</posx>
+						<posy>20</posy>
+						<width>253</width>
+						<height>139</height>
+						<texture background="true" diffuse="episodes/episodediffuse.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio scalediffuse="false">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
+						</animation>
+						<visible>IsEmpty(ListItem.Title)</visible>
+					</control>
+					<control type="image">
+						<posx>19</posx>
+						<posy>20</posy>
+						<width>253</width>
+						<height>139</height>
+						<texture background="true" diffuse="episodes/episodediffuse.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
+						</animation>
+						<visible>!IsEmpty(ListItem.Title)</visible>
+					</control>
+					<control type="image">
+						<posx>-6</posx>
+						<posy>-5</posy>
+						<width>303</width>
+						<height>189</height>
+						<texture>episodes/episodeframe.png</texture>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
+							<effect type="fade" start="0" end="100" time="200" />
+						</animation>
+					</control>
+
+					<control type="label">
+						<posx>300</posx>
+						<posy>25</posy>
+						<width>43</width>
+						<label>[UPPERCASE]$INFO[ListItem.Episode][/UPPERCASE]</label>
+						<font>episodenumber2</font>
+						<textcolor>taskbar</textcolor>
+						<selectedcolor>taskbar</selectedcolor>
+						<animation type="Focus" reversible="false">
+							<effect type="fade" start="0" end="100" time="200" />
+						</animation>
+						<visible>!IsEmpty(ListItem.Title)</visible>
+					</control>
+
+					<control type="label">
+						<posx>345</posx>
+						<posy>25</posy>
+						<width>520</width>
+						<height>34</height>
+						<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+						<font>tvtitle</font>
+						<textcolor>taskbar</textcolor>
+						<selectedcolor>taskbar</selectedcolor>
+						<animation type="Focus" reversible="false">
+							<effect type="fade" start="0" end="100" time="200" />
+						</animation>
+						<visible>!IsEmpty(ListItem.Title)</visible>
+					</control>
+					<control type="image">
+						<posy>25</posy>
+						<posx>880</posx>
+						<width>30</width>
+						<height>35</height>
+						<aspectratio>keep</aspectratio>
+						<texture>watched.png</texture>
+						<animation type="Focus" reversible="false">
+							<effect type="fade" start="0" end="100" time="200" />
+						</animation>
+						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>Skin.HasSetting(WatchedOverlays)</visible>
+					</control>
+					<control type="image">
+						<posy>25</posy>
+						<posx>880</posx>
+						<width>41</width>
+						<height>35</height>
+						<aspectratio>keep</aspectratio>
+						<texture>unwatched.png</texture>
+						<animation type="Focus" reversible="false">
+							<effect type="fade" start="0" end="100" time="200" />
+						</animation>
+						<visible>stringcompare(ListItem.Overlay,OverlayUnwatched.png)</visible>
+					</control>
+
+					<control type="textbox">
+						<posx>302</posx>
+						<posy>59</posy>
+						<width>628</width>
+						<height>97</height>
+						<align>justify</align>
+						<info>ListItem.Plot</info>
+						<font>about</font>
+						<textcolor>movietitleb2</textcolor>
+						<animation type="Focus" reversible="false">
+							<effect type="fade" start="0" end="100" time="200" />
+						</animation>
+					</control>
+				</focusedlayout>
+			</control>
+
+			<!-- Scroll Bar -->
+			<control type="scrollbar" id="65">
+				<posx>1240</posx>
+				<posy>130</posy>
+				<width>5</width>
+				<height>450</height>
+				<visible allowhiddenfocus="true">Control.IsVisible(59) + Control.HasFocus(65)</visible>
+				<texturesliderbackground>white2.png</texturesliderbackground>
+				<textureslidernibfocus>white3v.png</textureslidernibfocus>
+				<onleft>59</onleft>
+				<onright>-</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(65)">Conditional</animation>
+			</control>
+		</control>
+	</include>
+
+</includes>

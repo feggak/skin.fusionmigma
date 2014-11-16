@@ -8,7 +8,7 @@
     <!-- 2010 Recently Added Movies -->
     <!-- 2012 Recently Added Episodes -->
     <!-- 2014 Recently Added Albums -->
-    <!-- 2016 xxx -->
+    <!-- 2016 Configure Addons -->
 
     <!-- FEATURED MOVIE -->
     <include name="FeaturedMovie">
@@ -1103,8 +1103,8 @@
         </control>
     </include>
 
-    <!-- FAVORITE ADDONS -->
-    <include name="FavoriteAddons">
+    <!-- CONFIGURE ADDONS -->
+    <include name="ConfigureAddons">
         <control type="list" id="2016">
             <posx>506r</posx>
             <posy>415r</posy>
@@ -1261,36 +1261,22 @@
             </focusedlayout>
             <content>
                 <item id="1">
-                    <icon>$INFO[Window(Home).Property(LatestAlbum.1.Thumb)]</icon>
-                    <label>$INFO[Window(Home).Property(LatestAlbum.1.Title)]</label>
-                    <label2>$INFO[Window(Home).Property(LatestAlbum.1.Artist)]</label2>
-                    <thumb>$INFO[Window(Home).Property(LatestAlbum.1.Year)]</thumb>
-                    <onclick>PlayList.Clear</onclick>
-                    <onclick>PlayMedia($ESCINFO[Window.Property(LatestAlbum.1.Path)])</onclick>
+                    <icon>$INFO[System.AddonIcon(script.artwork.downloader)]</icon>
+                    <label>Configure Artwork Downloader</label>
+                    <label2>Set how Kodi fetches extra artwork</label2>
+                    <onclick>Addon.OpenSettings(script.artwork.downloader)</onclick>
                 </item>
                 <item id="2">
-                    <icon>$INFO[Window(Home).Property(LatestAlbum.2.Thumb)]</icon>
-                    <label>$INFO[Window(Home).Property(LatestAlbum.2.Title)]</label>
-                    <label2>$INFO[Window(Home).Property(LatestAlbum.2.Artist)]</label2>
-                    <thumb>$INFO[Window(Home).Property(LatestAlbum.2.Year)]</thumb>
-                    <onclick>PlayList.Clear</onclick>
-                    <onclick>PlayMedia($ESCINFO[Window.Property(LatestAlbum.2.Path)])</onclick>
+                    <icon>$INFO[System.AddonIcon(service.library.data.provider)]</icon>
+                    <label>Configure Library Data Provider</label>
+                    <label2>Settings for featured and recent items</label2>
+                    <onclick>Addon.OpenSettings(service.library.data.provider)</onclick>
                 </item>
                 <item id="3">
-                    <icon>$INFO[Window(Home).Property(LatestAlbum.3.Thumb)]</icon>
-                    <label>$INFO[Window(Home).Property(LatestAlbum.3.Title)]</label>
-                    <label2>$INFO[Window(Home).Property(LatestAlbum.3.Artist)]</label2>
-                    <thumb>$INFO[Window(Home).Property(LatestAlbum.3.Year)]</thumb>
-                    <onclick>PlayList.Clear</onclick>
-                    <onclick>PlayMedia($ESCINFO[Window.Property(LatestAlbum.3.Path)])</onclick>
-                </item>
-                <item id="4">
-                    <icon>$INFO[Window(Home).Property(LatestAlbum.4.Thumb)]</icon>
-                    <label>$INFO[Window(Home).Property(LatestAlbum.4.Title)]</label>
-                    <label2>$INFO[Window(Home).Property(LatestAlbum.4.Artist)]</label2>
-                    <thumb>$INFO[Window(Home).Property(LatestAlbum.4.Year)]</thumb>
-                    <onclick>PlayList.Clear</onclick>
-                    <onclick>PlayMedia($ESCINFO[Window.Property(LatestAlbum.4.Path)])</onclick>
+                    <icon>$INFO[System.AddonIcon(script.artistslideshow)]</icon>
+                    <label>Configure Artist Slideshow</label>
+                    <label2>Set script for music visualisation</label2>
+                    <onclick>Addon.OpenSettings(script.artistslideshow)</onclick>
                 </item>
             </content>
         </control>

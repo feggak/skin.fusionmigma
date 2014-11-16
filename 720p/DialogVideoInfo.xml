@@ -145,7 +145,7 @@
 					<width>400</width>
 					<height>600</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<texture background="true">$INFO[Container.SeasonThumb]</texture>
+					<texture background="true">$INFO[ListItem.Art(season.poster)]</texture>
 					<visible>Container.Content(Episodes) + Skin.HasSetting(SeasonThumbEpisodes)</visible>
 				</control>
 				<control type="image">
@@ -154,7 +154,7 @@
 					<width>400</width>
 					<height>600</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<texture background="true">$INFO[Container.TVShowThumb]</texture>
+					<texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
 					<visible>Container.Content(Episodes) + !Skin.HasSetting(SeasonThumbEpisodes)</visible>
 				</control>
 				<!-- addons thumbs -->
@@ -264,7 +264,19 @@
 					<label>[UPPERCASE]$INFO[ListItem.Title] ($INFO[ListItem.Year])[/UPPERCASE]</label>
 					<textcolor>fce7e7e7</textcolor>
 					<textcolor>itemdetail</textcolor>
-					<scroll>true</scroll>
+					<visible>!Container.Content(Episodes</visible>
+				</control>
+				<!-- GLOBAL TITLE -->
+				<control type="label" id="20">
+					<description>Title</description>
+					<posx>20</posx>
+					<posy>90</posy>
+					<width>838</width>
+					<font>infobar</font>
+					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+					<textcolor>fce7e7e7</textcolor>
+					<textcolor>itemdetail</textcolor>
+					<visible>Container.Content(Episodes</visible>
 				</control>
 				<!-- MOVIE TAGLINE -->
 				<control type="label" id="20">
@@ -291,19 +303,16 @@
 					<textcolor>itemdetail</textcolor>
 					<visible>Container.Content(TVShows)</visible>
 				</control>
-				<control type="fadelabel" id="20">
+				<!-- EPISODES SEASON -->
+				<control type="label" id="20">
 					<description>Season</description>
 					<posx>20</posx>
 					<posy>121</posy>
 					<width>665</width>
 					<font>tagline</font>
 					<label>$LOCALIZE[31633] $INFO[ListItem.Season]$LOCALIZE[31618]$LOCALIZE[31634] $INFO[ListItem.Episode]</label>
-					<label>$INFO[Listitem.FilenameAndPath]</label>
 					<textcolor>fce7e7e7</textcolor>
 					<textcolor>itemdetail</textcolor>
-					<scrollout>false</scrollout>
-					<scrollspeed>50</scrollspeed>
-					<pauseatend>5000</pauseatend>
 					<visible>Container.Content(Episodes) + !IsEmpty(ListItem.Season)</visible>
 				</control>
 				<control type="fadelabel" id="20">
@@ -999,7 +1008,7 @@
 				<font>homemenu3</font>
 				<textcolor>ffababab</textcolor>
 				<scroll>false</scroll>
-				<visible>Container.Content(movies) + !Skin.HasSetting(VideoInfoStudios)</visible>
+				<visible>Container.Content(Movies) + !Skin.HasSetting(VideoInfoStudios)</visible>
 			</control>
 			<control type="label">
 				<description>Genre</description>
@@ -1010,7 +1019,18 @@
 				<font>homemenu3</font>
 				<textcolor>ffababab</textcolor>
 				<scroll>false</scroll>
-				<visible>[Container.Content(TVShows) + !Skin.HasSetting(VideoInfoStudios)] | SubString(Container.FolderPath,plugin://plugin,Left)</visible>
+				<visible>Container.Content(TVShows) + !Skin.HasSetting(VideoInfoStudios)</visible>
+			</control>
+			<control type="label">
+				<description>Genre</description>
+				<posx>14</posx>
+				<posy>59r</posy>
+				<width>630</width>
+				<label>$INFO[ListItem.TVShowTitle]</label>
+				<font>homemenu3</font>
+				<textcolor>ffababab</textcolor>
+				<scroll>false</scroll>
+				<visible>Container.Content(Episodes) + !Skin.HasSetting(VideoInfoStudios)</visible>
 			</control>
 			<control type="label">
 				<description>Genre</description>
@@ -1021,7 +1041,7 @@
 				<font>recent2</font>
 				<textcolor>fc9f9f9f</textcolor>
 				<scroll>false</scroll>
-				<visible>!Skin.HasSetting(VideoInfoStudios) | SubString(Container.FolderPath,plugin://plugin,Left)</visible>
+				<visible>!Skin.HasSetting(VideoInfoStudios)</visible>
 			</control>
 
 			<!-- CAST -->
