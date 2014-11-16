@@ -374,7 +374,7 @@
 								<width>129</width>
 								<height>180</height>
 								<bordersize>2</bordersize>
-								<aspectratio>stretch</aspectratio>
+								<aspectratio>scale</aspectratio>
 								<texture background="true" diffuse="poster/posterdiffusesmall.png">$INFO[ListItem.Icon]</texture>
 								<animation reversible="false" effect="zoom" start="100" end="130" center="50,95" time="250">focus</animation>
 								<animation reversible="false" effect="zoom" start="130" end="100" center="50,95" time="250">unfocus</animation>
@@ -387,8 +387,14 @@
 								<aspectratio>stretch</aspectratio>
 								<texture>infowrap/focusborder.png</texture>
 								<visible>!Control.HasFocus(300)</visible>
-								<animation reversible="false" effect="zoom" start="77" end="100" center="50,95" time="250">focus</animation>
-								<animation reversible="false" effect="zoom" start="100" end="77" center="50,95" time="250">unfocus</animation>
+								<animation type="Focus">
+									<effect type="zoom" start="77" end="100" center="38,100" time="200" reversible="false"/>
+									<effect type="fade" start="0" end="100" time="200" reversible="false"/>
+								</animation>
+								<animation type="Unfocus">
+									<effect type="zoom" start="100" end="77" center="38,100" time="200" reversible="false"/>
+									<effect type="fade" start="100" end="0" time="200" reversible="false"/>
+								</animation>
 							</control>
 						</focusedlayout>
 					</control>
@@ -540,7 +546,7 @@
 						<visible>!Skin.HasSetting(Logos)</visible>
 						<animation type="Conditional" condition="Container.Content(Seasons)">
 							<effect type="fade" start="100" end="0" time="200"/>
-							<effect type="slide" end="0,-90" time="250" tween="back" easing="inout"/>
+							<effect type="slide" end="0,-90" time="350" tween="back" easing="inout"/>
 						</animation>
 					</control>
 
@@ -548,7 +554,7 @@
 					<control type="label">
 						<posx>0</posx>
 						<width min="29" max="900">auto</width>
-						<height>36</height>
+						<height>38</height>
 						<font>movietitle3</font>
 						<textcolor>movietitleb</textcolor>
 						<scroll>false</scroll>

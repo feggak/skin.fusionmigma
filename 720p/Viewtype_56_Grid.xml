@@ -31,7 +31,7 @@
 			</control>
 
 			<!-- WIDE GRID -->
-			<control type="panel" id="59">
+			<control type="panel" id="57">
 				<viewtype label="WideGrid">icon</viewtype>
 				<visible>Container.Content(TVShows) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
 				<posx>595</posx>
@@ -40,8 +40,8 @@
 				<height>485</height>
 				<scrolltime>200</scrolltime>
 				<orientation>vertical</orientation>
-				<onup>59</onup>
-				<ondown>59</ondown>
+				<onup>57</onup>
+				<ondown>57</ondown>
 				<onleft>300</onleft>
 				<onright>70</onright>
 				<pagecontrol>70</pagecontrol>
@@ -51,9 +51,9 @@
 			</control>
 
 			<!-- SQUARE GRID -->
-			<control type="panel" id="62">
+			<control type="panel" id="58">
 				<viewtype label="SquareGrid">icon</viewtype>
-				<visible>substring(container.folderpath,plugin://plugin.program.advanced.launcher) | Window.IsActive(1)</visible>
+				<visible>Container.Content(Artists) | Container.Content(Albums) | Window.IsActive(1) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
 				<posx>524</posx>
 				<posy>128</posy>
 				<width>800</width>
@@ -75,8 +75,7 @@
 			<control type="group">
 				<posx>-36</posx>
 				<posy>-5</posy>
-				<visible>Container.Content(Movies) | Container.Content(TVShows) | SubString(Container.Folderpath,plugin://plugin.program.advanced.launcher) | Window.IsActive(1) | Window.IsVisible(Videos,Files)</visible>
-				<visible>Control.IsVisible(56) | Control.IsVisible(59) | Control.IsVisible(62)</visible>
+				<visible>Control.IsVisible(56) | Control.IsVisible(57) | Control.IsVisible(58)</visible>
 
 				<!-- FANART + BORDER -->
 				<control type="image">
@@ -157,6 +156,30 @@
 					<textcolor>movietitleb2</textcolor>
 					<label>Genre: [COLOR=white]$INFO[ListItem.Genre][/COLOR]</label>
 				</control>
+				<!-- ARTIST INFO -->
+				<control type="label">
+					<visible>Container.Content(Artists)</visible>
+					<posx>80</posx>
+					<posy>406</posy>
+					<width>440</width>
+					<height>35</height>
+					<font>tvtitle3</font>
+					<scroll>false</scroll>
+					<textcolor>movietitleb2</textcolor>
+					<label>Formed: [COLOR=white]$INFO[ListItem.Property(Artist_Formed)][/COLOR]</label>
+				</control>
+				<!-- ALBUM INFO -->
+				<control type="label">
+					<visible>Container.Content(Albums)</visible>
+					<posx>80</posx>
+					<posy>406</posy>
+					<width>440</width>
+					<height>35</height>
+					<font>tvtitle3</font>
+					<scroll>false</scroll>
+					<textcolor>movietitleb2</textcolor>
+					<label>Released: [COLOR=white]$INFO[ListItem.Year][/COLOR]</label>
+				</control>
 				<!-- ADVANCED LAUNCHER INFO -->
 				<control type="label">
 					<visible>SubString(Container.Folderpath,plugin://plugin.program.advanced.launcher)</visible>
@@ -182,8 +205,9 @@
 					<align>justify</align>
 					<autoscroll delay="12000" time="3000" repeat="10000" />
 					<label>$INFO[ListItem.PlotOutline]</label>
+					<visible>Container.Content(Movies)</visible>
 				</control>
-				<!-- TVSHOWS PLOT FIELD -->
+				<!-- TVSHOW PLOT FIELD -->
 				<control type="textbox">
 					<posx>80</posx>
 					<posy>440</posy>
@@ -195,7 +219,35 @@
 					<align>justify</align>
 					<autoscroll delay="12000" time="3000" repeat="10000" />
 					<label>$INFO[ListItem.Plot]</label>
-					<visible>!Container.Content(Movies)</visible>
+					<visible>Container.Content(TVShows)</visible>
+				</control>
+				<!-- ARTIST PLOT FIELD -->
+				<control type="textbox">
+					<posx>80</posx>
+					<posy>440</posy>
+					<width>442</width>
+					<height>162</height>
+					<font>about</font>
+					<textcolor>white</textcolor>
+					<scroll>true</scroll>
+					<align>justify</align>
+					<autoscroll delay="12000" time="3000" repeat="10000" />
+					<label>$INFO[ListItem.Property(Artist_Description)]</label>
+					<visible>Container.Content(Artists)</visible>
+				</control>
+				<!-- ALBUM PLOT FIELD -->
+				<control type="textbox">
+					<posx>80</posx>
+					<posy>440</posy>
+					<width>442</width>
+					<height>162</height>
+					<font>about</font>
+					<textcolor>white</textcolor>
+					<scroll>true</scroll>
+					<align>justify</align>
+					<autoscroll delay="12000" time="3000" repeat="10000" />
+					<label fallback="No album description available">$INFO[ListItem.Property(Album_Description)]</label>
+					<visible>Container.Content(Albums)</visible>
 				</control>
 				<!-- ADDON PLOT FIELD -->
 				<control type="textbox">
@@ -266,9 +318,9 @@
 			<!-- INFO PANEL LOGOS -->
 			<control type="group">
 				<posx>-36</posx>
-				<posy>59</posy>
+				<posy>57</posy>
 				<visible>Container.Content(TVShows) + Skin.HasSetting(Logos)</visible>
-				<visible>Control.IsVisible(56) | Control.IsVisible(59) | Control.IsVisible(62)</visible>
+				<visible>Control.IsVisible(56) | Control.IsVisible(57) | Control.IsVisible(58)</visible>
 				<!-- LOGO -->
 				<control type="largeimage" id="44">
 					<posx>80</posx>
@@ -301,10 +353,10 @@
 				<posy>136</posy>
 				<width>8</width>
 				<height>450</height>
-				<visible allowhiddenfocus="true">Control.IsVisible(62) + Control.HasFocus(71)</visible>
+				<visible allowhiddenfocus="true">Control.IsVisible(58) + Control.HasFocus(71)</visible>
 				<texturesliderbackground>scroll/scrollbg.png</texturesliderbackground>
 				<textureslidernibfocus>scroll/scrollnib.png</textureslidernibfocus>
-				<onleft>62</onleft>
+				<onleft>58</onleft>
 				<onright>300</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
@@ -317,10 +369,10 @@
 				<posy>146</posy>
 				<width>8</width>
 				<height>450</height>
-				<visible allowhiddenfocus="true">Control.IsVisible(59) + Control.HasFocus(70)</visible>
+				<visible allowhiddenfocus="true">Control.IsVisible(57) + Control.HasFocus(70)</visible>
 				<texturesliderbackground>scroll/scrollbg.png</texturesliderbackground>
 				<textureslidernibfocus>scroll/scrollnib.png</textureslidernibfocus>
-				<onleft>59</onleft>
+				<onleft>57</onleft>
 				<onright>300</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
@@ -354,7 +406,7 @@
 				<width>110</width>
 				<height>110</height>
 				<texture background="true" diffuse="square/squarematteNF.png">$INFO[ListItem.Icon]</texture>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<aspectratio scalediffuse="false">scale</aspectratio>
 			</control>
 		</itemlayout>
 		<focusedlayout width="120" height="120">
@@ -365,10 +417,10 @@
 				<height>110</height>
 				<texture background="true" diffuse="square/squarematteFO.png">$INFO[ListItem.Icon]</texture>
 				<animation type="Focus" reversible="false">
-					<effect type="zoom" center="auto" start="80" end="120" time="400" tween="back" easing="out" />
-					<effect type="fade" start="80" end="100" time="400" />
+					<effect type="zoom" center="auto" start="80" end="120" time="300" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="300" />
 				</animation>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<aspectratio scalediffuse="false">scale</aspectratio>
 			</control>
 			<control type="image">
 				<posx>-7</posx>
@@ -377,8 +429,8 @@
 				<height>134</height>
 				<texture>grid/squareborder.png</texture>
 				<animation type="Focus" reversible="false">
-					<effect type="zoom" center="auto" start="80" end="120" time="400" tween="back" easing="out" />
-					<effect type="fade" start="80" end="100" time="400" />
+					<effect type="zoom" center="auto" start="80" end="120" time="300" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="300" />
 				</animation>
 			</control>
 		</focusedlayout>

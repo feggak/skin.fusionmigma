@@ -3,8 +3,7 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
 	<onload>RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<views>50,51,52,53,54,56,59,62</views>
-	<!--<views>50,51,59,52,53,707,709,500,501,650,502,651,550,652,598,515,517,519,521,581,579,508,504,503,505,506,511,525,56,59,62,514,535,560,569,602,604</views>-->
+	<views>50,51,52,53,54,56,57</views>
 	<controls>
 
 		<include>Background</include>
@@ -91,7 +90,7 @@
 			<visible>[Control.IsVisible(53) | Control.IsVisible(54)] + !Skin.HasSetting(Logos)</visible>
 			<posx>190</posx>
 			<posy>138</posy>
-			<animation effect="slide" end="0,-92" time="250" tween="back" easing="inout" condition="Container.Content(Seasons)">Conditional</animation>
+			<animation effect="slide" end="0,-92" time="350" tween="back" easing="inout" condition="Container.Content(Seasons)">Conditional</animation>
 			<control type="image">
 				<posx>22</posx>
 				<posy>-17</posy>
@@ -100,6 +99,19 @@
 				<aspectratio>stretch</aspectratio>
 				<fadetime>300</fadetime>
 				<texture background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+			</control>
+			<control type="multiimage">
+				<posx>22</posx>
+				<posy>-17</posy>
+				<width>854</width>
+				<height>482</height>
+				<aspectratio>stretch</aspectratio>
+				<fadetime>300</fadetime>
+				<timeperimage>5000</timeperimage>
+				<randomize>true</randomize>
+				<imagepath background="true" diffuse="infowrap/fanartdiffuse.png">$INFO[ListItem.Path,,extrafanart/]</imagepath>
+				<animation effect="fade" start="0" end="100" time="300" delay="1000">Visible</animation>
+				<visible>Container.Content(Seasons)</visible>
 			</control>
 			<control type="image">
 				<posx>0</posx>
