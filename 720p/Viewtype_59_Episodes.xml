@@ -22,7 +22,7 @@
 				<onright>65</onright>
 				<pagecontrol>65</pagecontrol>
 				<visible>Window.IsActive(25)</visible>
-				<visible>Container.Content(episodes)</visible>
+				<visible>Container.Content(Episodes)</visible>
 				<itemlayout width="633" height="70">
 					<control type="label">
 						<posx>100</posx>
