@@ -40,14 +40,14 @@
 				<width>808</width>
 				<height>390</height>
 				<onleft>300</onleft>
-				<onright>60</onright>
+				<onright>49</onright>
 				<focusposition>5</focusposition>
 				<movement>10</movement>
 				<preloaditems>2</preloaditems>
 				<spacebetweenitems>0</spacebetweenitems>
 				<onup>50</onup>
 				<ondown>50</ondown>
-				<pagecontrol>60</pagecontrol>
+				<pagecontrol>49</pagecontrol>
 				<viewtype label="List">list</viewtype>
 				<visible>!Container.Content(Episodes)</visible>
 
@@ -1042,19 +1042,19 @@
 			</control>
 
 			<!-- SCROLL BAR -->
-			<control type="scrollbar" id="60">
+			<control type="scrollbar" id="49">
 				<posx>1220</posx>
 				<posy>170</posy>
 				<width>5</width>
 				<height>350</height>
-				<visible allowhiddenfocus="true">Control.IsVisible(50) + Control.HasFocus(60)</visible>
+				<visible allowhiddenfocus="true">Control.IsVisible(50) + Control.HasFocus(49)</visible>
 				<texturesliderbackground>white2.png</texturesliderbackground>
 				<textureslidernibfocus>white3v.png</textureslidernibfocus>
 				<onleft>50</onleft>
 				<onright>-</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(49)">Conditional</animation>
 			</control>
 		</control>
 	</include>
