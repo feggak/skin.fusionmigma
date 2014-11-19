@@ -1,0 +1,238 @@
+<includes>
+
+	<include name="SongList">
+		<control type="group">
+			<animation effect="slide" start="0,0" end="-55,0" time="250" delay="100">Focus</animation>
+			<animation effect="slide" start="0,0" end="-55,0" time="0" condition="Control.HasFocus(300)">Conditional</animation>
+			<animation effect="fade" start="100" end="15" time="600" condition="Window.IsVisible(135)">Conditional</animation>
+			<include>MusicInfoOpenClose</include>
+			<include>ViewWindowOC</include>
+			<include>ContextFade</include>
+			<include>Keyboard</include>
+			<control type="list" id="63">
+				<viewtype label="SongList">list</viewtype>
+				<posx>585</posx>
+				<posy>125</posy>
+				<width>900</width>
+				<height>453</height>
+				<scrolltime>200</scrolltime>
+				<orientation>vertical</orientation>
+				<onup>63</onup>
+				<ondown>63</ondown>
+				<onleft>300</onleft>
+				<onright>603</onright>
+				<pagecontrol>603</pagecontrol>
+				<visible>Container.Content(Songs)</visible>
+				<visible>!Skin.HasSetting(HideSongList)</visible>
+				<itemlayout width="633" height="56">
+
+					<!--Track # Less than 10-->
+					<control type="label">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>652</width>
+						<height>40</height>
+						<textcolor>9bffffff</textcolor>
+						<selectedcolor>ff7acafe</selectedcolor>
+						<font>tvtitle</font>
+						<align>left</align>
+						<label>$INFO[ListItem.TrackNumber,0]</label>
+						<visible>!IntegerGreaterThan(ListItem.TrackNumber,9) + !substring(Container.Listitem.Label,..,left)</visible>
+					</control>
+					<!--Track # Greater than 10-->
+					<control type="label">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>652</width>
+						<height>40</height>
+						<textcolor>9bffffff</textcolor>
+						<selectedcolor>ff7acafe</selectedcolor>
+						<font>tvtitle</font>
+						<align>left</align>
+						<label>$INFO[ListItem.TrackNumber]</label>
+						<visible>IntegerGreaterThan(ListItem.TrackNumber,9) + !substring(Container.Listitem.Label,..,left)</visible>
+					</control>
+
+					<control type="label">
+						<posx>50</posx>
+						<posy>0</posy>
+						<width>633</width>
+						<height>40</height>
+						<align>left</align>
+						<label>$INFO[ListItem.Title]</label>
+						<scroll>false</scroll>
+						<font>movietitle6</font>
+						<textcolor>9bffffff</textcolor>
+						<selectedcolor>ff7acafe</selectedcolor>
+					</control>
+
+					<control type="label">
+						<posy>0</posy>
+						<posx>672</posx>
+						<width>200</width>
+						<height>39</height>
+						<textcolor>9bffffff</textcolor>
+						<selectedcolor>ff7acafe</selectedcolor>
+						<font>movietitle6</font>
+						<align>right</align>
+						<info>ListItem.Duration</info>
+					</control>
+				</itemlayout>
+
+				<focusedlayout width="633" height="56">
+
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>708</width>
+						<height>58</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture border="12">whitepanel2.png</texture>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="fade" start="9" end="9" time="0" />
+							<effect type="slide" start="0,0" end="-18,-10" time="0" />
+						</animation>
+					</control>
+
+					<!--Track # Less than 10-->
+					<control type="label">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>652</width>
+						<height>40</height>
+						<textcolor>ffffffff</textcolor>
+						<selectedcolor>ff7acafe</selectedcolor>
+						<font>tvtitle</font>
+						<align>left</align>
+						<label>$INFO[ListItem.TrackNumber,0]</label>
+						<visible>!IntegerGreaterThan(ListItem.TrackNumber,9) + !substring(Container.Listitem.Label,..,left)</visible>
+					</control>
+
+					<!--Track # Greater than 10-->
+					<control type="label">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>652</width>
+						<height>40</height>
+						<textcolor>ffffffff</textcolor>
+						<selectedcolor>ff7acafe</selectedcolor>
+						<font>tvtitle</font>
+						<align>left</align>
+						<label>$INFO[ListItem.TrackNumber]</label>
+						<visible>IntegerGreaterThan(ListItem.TrackNumber,9) + !substring(Container.Listitem.Label,..,left)</visible>
+					</control>
+
+					<control type="label">
+						<posx>50</posx>
+						<posy>0</posy>
+						<width>633</width>
+						<height>40</height>
+						<align>left</align>
+						<label>$INFO[ListItem.Title]</label>
+						<font>movietitle6</font>
+						<textcolor>ffffffff</textcolor>
+						<selectedcolor>ff7acafe</selectedcolor>
+					</control>
+
+					<control type="label">
+						<posy>0</posy>
+						<posx>672</posx>
+						<width>200</width>
+						<height>39</height>
+						<textcolor>ffffffff</textcolor>
+						<selectedcolor>ff7acafe</selectedcolor>
+						<font>movietitle6</font>
+						<align>right</align>
+						<info>ListItem.Duration</info>
+					</control>
+				</focusedlayout>
+			</control>
+
+
+			<control type="group">
+				<visible>Control.IsVisible(63)</visible>
+				<control type="image" id="44">
+					<animation effect="slide" time="700" start="0,70" end="0,0" tween="cubic" easing="out">WindowOpen</animation>
+					<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="StringCompare(ListItem.Album,MusicPlayer.Album)">Conditional</animation>
+					<visible>Skin.HasSetting(UseCDArt)</visible>
+					<description>Disc</description>
+					<posx>136</posx>
+					<posy>70</posy>
+					<width>410</width>
+					<height>410</height>
+					<texture>$INFO[ListItem.Path]cdart.png</texture>
+					<aspectratio align="bottom">keep</aspectratio>
+				</control>
+				<control type="image">
+					<posx>118</posx>
+					<posy>118</posy>
+					<width>446</width>
+					<height>446</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture border="12">whitepanel2.png</texture>
+				</control>
+				<control type="image">
+					<posx>130</posx>
+					<posy>130</posy>
+					<width>422</width>
+					<height>422</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture fallback="noalbum.png">$INFO[ListItem.Thumb]</texture>
+				</control>
+			</control>
+
+			<control type="group">
+				<posy>80</posy>
+				<visible>Control.IsVisible(63)</visible>
+
+				<control type="grouplist">
+					<posx>125</posx>
+					<posy>488</posy>
+					<width>1280</width>
+					<height>40</height>
+					<align>left</align>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<posx>0</posx>
+						<width min="29" max="1050">auto</width>
+						<height>38</height>
+						<font>movietitle6</font>
+						<textcolor>E0F0F0F0</textcolor>
+						<scroll>false</scroll>
+						<label>[UPPERCASE]$INFO[ListItem.Album][/UPPERCASE]</label>
+					</control>
+				</control>
+				<control type="label">
+					<posx>125</posx>
+					<posy>518</posy>
+					<width>914</width>
+					<height>35</height>
+					<font>aired</font>
+					<textcolor>movietitleb2</textcolor>
+					<scroll>true</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>[UPPERCASE]$INFO[ListItem.Artist,, • ]$INFO[ListItem.Year][/UPPERCASE]</label>
+					<visible>Container.Content(Songs)</visible>
+				</control>
+			</control>
+
+			<!-- Scroll Bar -->
+			<control type="scrollbar" id="603">
+				<posx>1280</posx>
+				<posy>130</posy>
+				<width>6</width>
+				<height>420</height>
+				<visible allowhiddenfocus="true">Control.IsVisible(63) + Control.HasFocus(603)</visible>
+				<texturesliderbackground>white2.png</texturesliderbackground>
+				<textureslidernibfocus>white3v.png</textureslidernibfocus>
+				<onleft>63</onleft>
+				<onright>-</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(603)">Conditional</animation>
+			</control>
+		</control>
+	</include>
+
+</includes>

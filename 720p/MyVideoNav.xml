@@ -13,13 +13,27 @@
 		<control type="image">
 			<posx>0</posx>
 			<posy>53</posy>
-			<include>FanartVideoViews</include>
+			<include>FanartVideo</include>
 			<visible>!Skin.HasSetting(HideNavBar)</visible>
 		</control>
 		<control type="image">
 			<posx>0</posx>
 			<posy>0</posy>
-			<include>FanartVideoViews</include>
+			<include>FanartVideo</include>
+			<visible>Skin.HasSetting(HideNavBar)</visible>
+		</control>
+
+		<!-- SEASONS/EPISODES FANART -->
+		<control type="image">
+			<posx>0</posx>
+			<posy>53</posy>
+			<include>FanartSeasonEpisode</include>
+			<visible>!Skin.HasSetting(HideNavBar)</visible>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<include>FanartSeasonEpisode</include>
 			<visible>Skin.HasSetting(HideNavBar)</visible>
 		</control>
 

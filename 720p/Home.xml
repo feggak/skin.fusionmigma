@@ -1220,7 +1220,6 @@
                 </control>
 
                 <control type="label">
-                    <visible>Skin.HasSetting(HomeRecentlyAddedMovies)</visible>
                     <posx>39</posx>
                     <posy>2</posy>
                     <width>250</width>

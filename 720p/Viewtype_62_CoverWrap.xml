@@ -54,7 +54,7 @@
 								<posy>65</posy>
 								<width>312</width>
 								<height>312</height>
-								<aspectratio>stretch</aspectratio>
+								<aspectratio>scale</aspectratio>
 								<texture background="true" fallback="noalbum.png">$INFO[ListItem.Thumb]</texture>
 							</control>
 							<control type="image">
@@ -62,7 +62,7 @@
 								<posy>65</posy>
 								<width>312</width>
 								<height>312</height>
-								<aspectratio>stretch</aspectratio>
+								<aspectratio>scale</aspectratio>
 								<visible>Container.Content(genres)</visible>
 								<texture background="true" fallback="special://skin/extras/genre/music/icon/default.jpg">$INFO[ListItem.Label,special://skin/extras/genre/music/icon/,.jpg]</texture>
 							</control>
@@ -77,11 +77,11 @@
 								<height>446</height>
 								<aspectratio>stretch</aspectratio>
 								<texture border="12">whitepanel2.png</texture>
-								<animation type="focus">
+								<animation type="Focus">
 									<effect type="fade" start="50" end="100" time="150" />
 									<effect type="zoom" start="39,55,334,334" end="0,0,446,446" time="200" />
 								</animation>
-								<animation reversible="false" effect="fade" start="100" end="0" time="0">unfocus</animation>
+								<animation reversible="false" effect="fade" start="100" end="0" time="0">Unfocus</animation>
 								<visible>!Control.IsVisible(601) + !Control.HasFocus(300)</visible>
 							</control>
 							<control type="image">
@@ -98,7 +98,7 @@
 								<posy>65</posy>
 								<width>312</width>
 								<height>312</height>
-								<aspectratio>stretch</aspectratio>
+								<aspectratio>scale</aspectratio>
 								<texture background="true" fallback="noalbum.png">$INFO[ListItem.Thumb]</texture>
 								<animation reversible="false" effect="zoom" start="100" end="135" center="auto" time="200">focus</animation>
 								<animation reversible="false" effect="zoom" start="135" end="100" center="auto" time="200">unfocus</animation>
@@ -108,7 +108,7 @@
 								<posy>65</posy>
 								<width>312</width>
 								<height>312</height>
-								<aspectratio>stretch</aspectratio>
+								<aspectratio>scale</aspectratio>
 								<visible>Container.Content(genres)</visible>
 								<texture background="true" fallback="special://skin/extras/genre/music/icon/default.jpg">$INFO[ListItem.Label,special://skin/extras/genre/music/icon/,.jpg]</texture>
 								<animation reversible="false" effect="zoom" start="100" end="135" center="auto" time="200">focus</animation>
@@ -192,7 +192,7 @@
 				<ondown>-</ondown>
 				<showonepage>true</showonepage>
 				<orientation>horizontal</orientation>
-				<animation effect="fade" start="0" end="100" time="300" condition="Control.HasFocus(601)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="00" condition="Control.HasFocus(601)">Conditional</animation>
 			</control>
 		</control>
 	</include>
