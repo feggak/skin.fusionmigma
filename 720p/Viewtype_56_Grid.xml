@@ -12,7 +12,7 @@
 			<!-- POSTER GRID -->
 			<control type="panel" id="56">
 				<viewtype label="PosterGrid">icon</viewtype>
-				<visible>Container.Content(movies) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
+				<visible>Container.Content(Movies) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
 				<posx>520</posx>
 				<posy>132</posy>
 				<width>800</width>

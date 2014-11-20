@@ -19,20 +19,20 @@
 	  <texture>nav/taskbg.png</texture>
 	  <visible>!Skin.HasSetting(BlackNavBar)</visible>
 	  <animation type="WindowOpen" reversible="false">
-		  <effect type="fade" start="0" end="100" time="350" />
-		  <effect type="zoom" start="-50,100" end="-100,100" time="300" delay="500" />
+		  <effect type="fade" start="0" end="100" time="175" />
+		  <effect type="zoom" start="-50,100" end="-100,100" time="150" delay="250" />
 	  </animation>
 	  <animation type="Visible" reversible="false">
-		  <effect type="fade" start="0" end="100" time="350" />
-		  <effect type="zoom" start="-50,100" end="-100,100" time="300" delay="500" />
+		  <effect type="fade" start="0" end="100" time="175" />
+		  <effect type="zoom" start="-50,100" end="-100,100" time="150" delay="250" />
 	  </animation>
 	  <animation type="WindowClose" reversible="false">
-		  <effect type="fade" start="100" end="0" time="350" delay="1200" />
-		  <effect type="zoom" start="-100,100" end="-50,100" time="300" delay="400" />
+		  <effect type="fade" start="100" end="0" time="175" delay="600" />
+		  <effect type="zoom" start="-100,100" end="-50,100" time="150" delay="200" />
 	  </animation>
 	  <animation type="Hidden" reversible="false">
-		  <effect type="fade" start="100" end="0" time="350" delay="1200" />
-		  <effect type="zoom" start="-100,100" end="-50,100" time="300" delay="400" />
+		  <effect type="fade" start="100" end="0" time="175" delay="600" />
+		  <effect type="zoom" start="-100,100" end="-50,100" time="150" delay="200" />
 	  </animation>
   </control>
   <control type="image">
@@ -44,20 +44,20 @@
 	  <texture>nav/taskbgalt.png</texture>
 	  <visible>Skin.HasSetting(BlackNavBar)</visible>
 	  <animation type="WindowOpen" reversible="false">
-		  <effect type="fade" start="0" end="100" time="350" />
-		  <effect type="zoom" start="-50,100" end="-100,100" time="300" delay="500" />
+		  <effect type="fade" start="0" end="100" time="175" />
+		  <effect type="zoom" start="-50,100" end="-100,100" time="150" delay="250" />
 	  </animation>
 	  <animation type="Visible" reversible="false">
-		  <effect type="fade" start="0" end="100" time="350" />
-		  <effect type="zoom" start="-50,100" end="-100,100" time="300" delay="500" />
+		  <effect type="fade" start="0" end="100" time="175" />
+		  <effect type="zoom" start="-50,100" end="-100,100" time="150" delay="250" />
 	  </animation>
 	  <animation type="WindowClose" reversible="false">
-		  <effect type="fade" start="100" end="0" time="350" delay="1200" />
-		  <effect type="zoom" start="-100,100" end="-50,100" time="300" delay="400" />
+		  <effect type="fade" start="100" end="0" time="175" delay="600" />
+		  <effect type="zoom" start="-100,100" end="-50,100" time="150" delay="200" />
 	  </animation>
 	  <animation type="Hidden" reversible="false">
-		  <effect type="fade" start="100" end="0" time="350" delay="1200" />
-		  <effect type="zoom" start="-100,100" end="-50,100" time="300" delay="400" />
+		  <effect type="fade" start="100" end="0" time="175" delay="600" />
+		  <effect type="zoom" start="-100,100" end="-50,100" time="150" delay="200" />
 	  </animation>
   </control>
   
@@ -69,10 +69,10 @@
 	  <aspectratio>stretch</aspectratio>
 	  <texture>nav/kai.png</texture>
 	  <animation type="WindowOpen" reversible="false">
-		  <effect type="fade" start="0" end="100" time="350" delay="800" />
+		  <effect type="fade" start="0" end="100" time="175" delay="400" />
 	  </animation>
 	  <animation type="WindowClose" reversible="false">
-		  <effect type="fade" start="100" end="0" time="350" delay="0" />
+		  <effect type="fade" start="100" end="0" time="175" delay="0" />
 	  </animation>
   </control>
   
@@ -84,10 +84,10 @@
 	<font>listdetail3</font>
 	<textcolor>taskbar</textcolor>
 	  <animation type="WindowOpen" reversible="false">
-		  <effect type="fade" start="0" end="100" time="350" delay="800" />
+		  <effect type="fade" start="0" end="100" time="175" delay="400" />
 	  </animation>
 	  <animation type="WindowClose" reversible="false">
-		  <effect type="fade" start="100" end="0" time="350" delay="0" />
+		  <effect type="fade" start="100" end="0" time="175" delay="0" />
 	  </animation>
   </control>
   
@@ -104,10 +104,10 @@
 	  <righttexture>osd/mprogright.png</righttexture>
 	  <overlaytexture>-</overlaytexture>
 	  <animation type="WindowOpen" reversible="false">
-		  <effect type="fade" start="0" end="100" time="350" delay="800" />
+		  <effect type="fade" start="0" end="100" time="175" delay="400" />
 	  </animation>
 	  <animation type="WindowClose" reversible="false">
-		  <effect type="fade" start="100" end="0" time="350" delay="0" />
+		  <effect type="fade" start="100" end="0" time="175" delay="0" />
 	  </animation>
   </control>
   

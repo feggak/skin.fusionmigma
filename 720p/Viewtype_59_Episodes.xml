@@ -20,7 +20,7 @@
 				<ondown>59</ondown>
 				<onleft>300</onleft>
 				<onright>65</onright>
-				<pagecontrol>65</pagecontrol>
+				<pagecontrol>650</pagecontrol>
 				<visible>Window.IsActive(25)</visible>
 				<visible>Container.Content(Episodes)</visible>
 				<itemlayout width="633" height="70">
@@ -38,20 +38,8 @@
 					</control>
 					<control type="label">
 						<posx>125</posx>
-						<posy>8</posy>
-						<width>633</width>
-						<height>60</height>
-						<align>left</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>tvtitle</font>
-						<textcolor>taskbar</textcolor>
-						<selectedcolor>taskbar</selectedcolor>
-						<visible>IsEmpty(ListItem.Title)</visible>
-					</control>
-					<control type="label">
-						<posx>125</posx>
 						<posy>-9</posy>
-						<width>633</width>
+						<width>800</width>
 						<height>60</height>
 						<align>left</align>
 						<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
@@ -181,7 +169,7 @@
 			</control>
 
 			<!-- Scroll Bar -->
-			<control type="scrollbar" id="65">
+			<control type="scrollbar" id="650">
 				<posx>1240</posx>
 				<posy>130</posy>
 				<width>5</width>

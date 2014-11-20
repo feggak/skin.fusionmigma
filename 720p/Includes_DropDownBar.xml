@@ -646,38 +646,44 @@
 				<onclick>SendClick(17)</onclick>
 				<visible>SubString(Control.GetLabel(17),$LOCALIZE[31756])</visible>
 			</item>
-			<!-- WRAP VIEWS: HIDE LABELS-->
+			<!-- UPDATE LIBRARY -->
 			<item id="18">
+				<description>Update Library</description>
+				<label>[UPPERCASE]$LOCALIZE[653][/UPPERCASE]</label>
+				<onclick>UpdateLibrary(Video)</onclick>
+			</item>
+			<!-- WRAP VIEWS: HIDE LABELS-->
+			<item id="19">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31736][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViews)</onclick>
 				<visible>!Skin.HasSetting(HideLabelWrapViews) + Control.IsVisible(502)</visible>
 			</item>
-			<item id="18">
+			<item id="19">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31737][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViews)</onclick>
 				<visible>Skin.HasSetting(HideLabelWrapViews) + Control.IsVisible(502)</visible>
 			</item>
-			<item id="18">
+			<item id="19">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31736][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViews)</onclick>
 				<visible>!Skin.HasSetting(HideLabelWrapViews) + Control.IsVisible(550)</visible>
 			</item>
-			<item id="18">
+			<item id="19">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31737][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViews)</onclick>
 				<visible>Skin.HasSetting(HideLabelWrapViews) + Control.IsVisible(550)</visible>
 			</item>
-			<item id="18">
+			<item id="19">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31736][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViews)</onclick>
 				<visible>!Skin.HasSetting(HideLabelWrapViews) + Control.IsVisible(598)</visible>
 			</item>
-			<item id="18">
+			<item id="19">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31737][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViews)</onclick>
@@ -1021,50 +1027,56 @@
 				<onclick>SendClick(19)</onclick>
 				<visible>SubString(Control.GetLabel(19),$LOCALIZE[31756])</visible>
 			</item>
-			<!-- WRAP VIEWS: HIDE LABELS-->
+			<!-- UPDATE LIBRARY -->
 			<item id="10">
+				<description>Update Library</description>
+				<label>[UPPERCASE]$LOCALIZE[653][/UPPERCASE]</label>
+				<onclick>UpdateLibrary(music)</onclick>
+			</item>
+			<!-- WRAP VIEWS: HIDE LABELS-->
+			<item id="11">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31736][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViewsMusic)</onclick>
 				<visible>!Skin.HasSetting(HideLabelWrapViewsMusic) + Control.IsVisible(600)</visible>
 			</item>
-			<item id="10">
+			<item id="11">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31737][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViewsMusic)</onclick>
 				<visible>Skin.HasSetting(HideLabelWrapViewsMusic) + Control.IsVisible(600)</visible>
 			</item>
-			<item id="10">
+			<item id="11">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31736][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViewsMusic)</onclick>
 				<visible>!Skin.HasSetting(HideLabelWrapViewsMusic) + Control.IsVisible(653)</visible>
 			</item>
-			<item id="10">
+			<item id="11">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31737][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelWrapViewsMusic)</onclick>
 				<visible>Skin.HasSetting(HideLabelWrapViewsMusic) + Control.IsVisible(653)</visible>
 			</item>
-			<item id="10">
+			<item id="11">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31736][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelMusicSquareViews)</onclick>
 				<visible>!Skin.HasSetting(HideLabelMusicSquareViews) + Control.IsVisible(657)</visible>
 			</item>
-			<item id="10">
+			<item id="11">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31737][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelMusicSquareViews)</onclick>
 				<visible>Skin.HasSetting(HideLabelMusicSquareViews) + Control.IsVisible(657)</visible>
 			</item>
-			<item id="10">
+			<item id="11">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31736][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelMusicSquareFixViews)</onclick>
 				<visible>!Skin.HasSetting(HideLabelMusicSquareFixViews) + Control.IsVisible(658)</visible>
 			</item>
-			<item id="10">
+			<item id="11">
 				<description>Hide Labels</description>
 				<label>[UPPERCASE]$LOCALIZE[31737][/UPPERCASE]</label>
 				<onclick>Skin.ToggleSetting(HideLabelMusicSquareFixViews)</onclick>

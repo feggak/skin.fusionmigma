@@ -136,7 +136,7 @@
                 <onright>642</onright>
                 <onup>540</onup>
                 <orientation>vertical</orientation>
-                <visible>Container(540).HasFocus(3) | Container(540).HasFocus(14)</visible>
+                <visible>Container(540).HasFocus(3)</visible>
                 <itemlayout height="275" width="479">
                 </itemlayout>
                 <focusedlayout height="275" width="479">

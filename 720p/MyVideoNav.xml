@@ -3,7 +3,7 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
 	<onload>RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<views>50,51,52,53,54,56,57,59,60,61</views>
+	<views>50,51,52,53,54,56,57,59,60,61,64,65</views>
 	<controls>
 
 		<include>Background</include>
@@ -56,8 +56,9 @@
 
 		<!-- MEDIA CODEC FLAGS -->
 		<control type="grouplist">
+			<animation effect="slide" end="0,-10" time="0" condition="Skin.HasSetting(ZBar)">Conditional</animation>
 			<posx>4</posx>
-			<posy>660</posy>
+			<posy>673</posy>
 			<width>600</width>
 			<align>left</align>
 			<itemgap>0</itemgap>
@@ -85,6 +86,7 @@
 		<include>Episodes</include>
 		<include>Episodes2</include>
 		<include>EpisodeWrap</include>
+		<include>Icon</include>
 
 		<!-- MUSIC OVERLAY -->
 		<control type="group">

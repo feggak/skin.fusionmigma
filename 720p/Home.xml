@@ -1220,6 +1220,7 @@
                 </control>
 
                 <control type="label">
+                    <visible>Skin.HasSetting(HomeRecentlyAdded)</visible>
                     <posx>39</posx>
                     <posy>2</posy>
                     <width>250</width>
@@ -1255,7 +1256,7 @@
                     <visible>Container(540).HasFocus(8)</visible>
                 </control>
                 <control type="label">
-                    <visible>Skin.HasSetting(HomeRecentlyAddedEpisodes)</visible>
+                    <visible>Skin.HasSetting(HomeRecentlyAdded)</visible>
                     <posx>39</posx>
                     <posy>2</posy>
                     <width>250</width>
@@ -1814,7 +1815,7 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Movies.Count),, movies]</label>
-                    <visible>!Container(540).HasFocus(2) + !Container(540).HasFocus(3)</visible>
+                    <visible>!Container(540).HasFocus(2) + !Container(540).HasFocus(3) + !Container(540).HasFocus(14)</visible>
                 </control>
                 <control type="label">
                     <posy>30</posy>
@@ -1824,7 +1825,7 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(TVShows.Count),, tv shows]</label>
-                    <visible>!Container(540).HasFocus(2) + !Container(540).HasFocus(3)</visible>
+                    <visible>!Container(540).HasFocus(2) + !Container(540).HasFocus(3) + !Container(540).HasFocus(14)</visible>
                 </control>
                 <control type="label">
                     <posy>60</posy>
@@ -1834,7 +1835,7 @@
                     <font>homemenu3</font>
                     <textcolor>ff7777777</textcolor>
                     <label fallback="-">• $INFO[Window.Property(Episodes.Count),, episodes]</label>
-                    <visible>!Container(540).HasFocus(2) + !Container(540).HasFocus(3)</visible>
+                    <visible>!Container(540).HasFocus(2) + !Container(540).HasFocus(3) + !Container(540).HasFocus(14)</visible>
                 </control>
                 <control type="label">
                     <posx>240</posx>
