@@ -85,8 +85,8 @@
 		<animation effect="fade" start="3" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
 	</include>
 	<include name="MusicInfoOpenClose">
-		<animation effect="slide" start="0,0" end="0,-760" time="200" delay="0" reversible="false" condition="Window.IsVisible(2001)">Conditional</animation>
-		<animation effect="slide" start="0,-760" end="0,0" time="200" delay="0" reversible="false" condition="!Window.IsVisible(2001)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-760" time="400" delay="0" reversible="false" condition="Window.IsVisible(2001)">Conditional</animation>
+		<animation effect="slide" start="0,-760" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2001)">Conditional</animation>
 	</include>
 	<include name="Changes">
 		<animation effect="fade" start="100" end="3" time="300" reversible="false" condition="Window.IsVisible(2004)">Conditional</animation>

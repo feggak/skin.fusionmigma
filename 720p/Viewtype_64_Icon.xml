@@ -18,132 +18,6 @@
 				<effect type="zoom" start="100" end="155" time="300" center="auto" delay="0" />
 			</animation>
 
-			<!-- MUSIC -->
-			<control type="panel" id="515">
-				<visible>!Container.Content(Songs)</visible>
-				<visible>!Container.Content(Movies)</visible>
-				<visible>!Container.Content(TVShows)</visible>
-				<visible>!Container.Content(Seasons)</visible>
-				<visible>!Container.Content(Episodes)</visible>
-				<visible>Window.IsActive(2) | Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(501)  | Window.IsActive(502) | Window.IsActive(40)</visible>
-				<visible>!Skin.HasSetting(HideIcon)</visible>
-				<visible>!Container.Content(genres) + !Container.Content(years)</visible>
-				<posx>64</posx>
-				<posy>90</posy>
-				<width>1152</width>
-				<height>460</height>
-				<onleft>515</onleft>
-				<onright>515</onright>
-				<onup>300</onup>
-				<ondown>516</ondown>
-				<scrolltime>200</scrolltime>
-				<orientation>horizontal</orientation>
-				<viewtype label="icon">icon</viewtype>
-				<pagecontrol>516</pagecontrol>
-				<preloaditems>2</preloaditems>
-				<itemlayout height="224" width="192">
-					<control type="image">
-						<posx>14</posx>
-						<posy>179</posy>
-						<width>164</width>
-						<height>164</height>
-						<texture background="true" flipy="true" diffuse="poster/posterreflectdiffuse.png">$INFO[ListItem.Icon]</texture>
-						<colordiffuse>79ffffff</colordiffuse>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<visible>!IsEmpty(ListItem.Thumb)</visible>
-						<visible>Container.Content(Artists) | Container.Content(Albums) | Window.IsVisible(2) | Window.IsActive(24) | Window.IsActive(501) </visible>
-						<animation type="VisibleChange">
-							<effect type="fade" end="0" time="500" />
-						</animation>
-					</control>
-					<control type="image">
-						<posx>14</posx>
-						<posy>179</posy>
-						<width>164</width>
-						<height>164</height>
-						<texture background="true" flipy="true" diffuse="poster/posterreflectdiffuse.png">$INFO[ListItem.Icon]</texture>
-						<colordiffuse>79ffffff</colordiffuse>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<visible>Window.IsVisible(40)</visible>
-						<animation type="VisibleChange">
-							<effect type="fade" end="0" time="500" />
-						</animation>
-					</control>
-					<control type="image">
-						<posx>14</posx>
-						<posy>14</posy>
-						<width>164</width>
-						<height>164</height>
-						<texture background="true" diffuse="poster/posterdiffusesmall.png">$INFO[ListItem.Icon]</texture>
-						<align>bottom</align>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<visible>!Container.Content(studios)</visible>
-					</control>
-					<!-- STUDIO ICON -->
-					<control type="image">
-						<posx>14</posx>
-						<posy>14</posy>
-						<width>129</width>
-						<height>129</height>
-						<texture background="true" fallback="flagging/studios/default.png" diffuse="poster/posterdiffusesmall.png">$INFO[ListItem.label,flagging/studios/,.png]</texture>
-						<align>bottom</align>
-						<aspectratio scalediffuse="false">keep</aspectratio>
-						<visible>Container.Content(studios)</visible>
-					</control>
-				</itemlayout>
-
-				<focusedlayout height="224" width="192">
-					<control type="image">
-						<posx>14</posx>
-						<posy>10</posy>
-						<width>164</width>
-						<height>164</height>
-						<texture diffuse="icon/fodiffuse.png">$INFO[ListItem.Icon]</texture>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<animation effect="zoom" end="125" center="auto" tween="back" easing="out" time="250">focus</animation>
-						<visible>!Container.Content(studios)</visible>
-					</control>
-					<!-- STUDIO ICON -->
-					<control type="image">
-						<posx>14</posx>
-						<posy>10</posy>
-						<width>129</width>
-						<height>129</height>
-						<texture fallback="flagging/studios/default.png" diffuse="icon/fodiffuse.png">$INFO[ListItem.label,flagging/studios/,.png]</texture>
-						<aspectratio scalediffuse="false">keep</aspectratio>
-						<animation effect="zoom" end="125" center="auto" tween="back" easing="out" time="250">focus</animation>
-						<visible>Container.Content(studios)</visible>
-					</control>
-					<control type="image">
-						<posx>29</posx>
-						<posy>26</posy>
-						<width>133</width>
-						<height>133</height>
-						<texture>icon/foborder.png</texture>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<visible>!IsEmpty(ListItem.Thumb)</visible>
-						<visible>Container.Content(Artists) | Container.Content(Albums) | Window.IsVisible(2) | Window.IsActive(24) | Window.IsActive(501)</visible>
-						<animation type="focus">
-							<effect type="zoom" end="200" center="auto" tween="back" easing="out" time="250" />
-							<effect type="fade" end="100" time="200" />
-						</animation>
-					</control>
-					<control type="image">
-						<posx>29</posx>
-						<posy>26</posy>
-						<width>133</width>
-						<height>133</height>
-						<texture>icon/foborder.png</texture>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<visible>Window.IsVisible(40)</visible>
-						<animation type="focus">
-							<effect type="zoom" end="200" center="auto" tween="back" easing="out" time="250" />
-							<effect type="fade" end="100" time="200" />
-						</animation>
-					</control>
-				</focusedlayout>
-			</control>
-
 			<!-- MOVIES -->
 			<control type="panel" id="64">
 				<visible>Container.Content(Movies)</visible>
@@ -396,9 +270,102 @@
 				</focusedlayout>
 			</control>
 
+			<!-- MUSIC -->
+			<control type="panel" id="66">
+				<!--<visible>Window.IsActive(2) | Window.IsActive(40)</visible>-->
+				<visible>!Skin.HasSetting(HideIcon)</visible>
+				<visible>Container.Content(Artists) | Container.Content(Albums)</visible>
+				<posx>64</posx>
+				<posy>90</posy>
+				<width>1152</width>
+				<height>460</height>
+				<onleft>66</onleft>
+				<onright>66</onright>
+				<onup>300</onup>
+				<ondown>516</ondown>
+				<scrolltime>200</scrolltime>
+				<orientation>horizontal</orientation>
+				<viewtype label="icon">Icon</viewtype>
+				<pagecontrol>516</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<itemlayout height="224" width="192">
+					<control type="image">
+						<posx>14</posx>
+						<posy>179</posy>
+						<width>164</width>
+						<height>164</height>
+						<texture background="true" flipy="true" diffuse="poster/posterreflectdiffuse.png">$INFO[ListItem.Icon]</texture>
+						<colordiffuse>79ffffff</colordiffuse>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<animation type="VisibleChange">
+							<effect type="fade" end="0" time="500" />
+						</animation>
+					</control>
+					<control type="image">
+						<posx>14</posx>
+						<posy>14</posy>
+						<width>164</width>
+						<height>164</height>
+						<texture background="true" diffuse="poster/posterdiffusesmall.png">$INFO[ListItem.Icon]</texture>
+						<align>bottom</align>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<visible>!Container.Content(Studios)</visible>
+					</control>
+					<!-- STUDIO ICON -->
+					<control type="image">
+						<posx>14</posx>
+						<posy>14</posy>
+						<width>129</width>
+						<height>129</height>
+						<texture background="true" fallback="flagging/studios/default.png" diffuse="poster/posterdiffusesmall.png">$INFO[ListItem.label,flagging/studios/,.png]</texture>
+						<align>bottom</align>
+						<aspectratio scalediffuse="false">keep</aspectratio>
+						<visible>Container.Content(Studios)</visible>
+					</control>
+				</itemlayout>
+
+				<focusedlayout height="224" width="192">
+					<control type="image">
+						<posx>14</posx>
+						<posy>10</posy>
+						<width>164</width>
+						<height>164</height>
+						<texture diffuse="icon/fodiffuse.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<animation effect="zoom" end="125" center="auto" tween="back" easing="out" time="150">focus</animation>
+						<visible>!Container.Content(Studios)</visible>
+					</control>
+					<!-- STUDIO ICON -->
+					<control type="image">
+						<posx>14</posx>
+						<posy>10</posy>
+						<width>129</width>
+						<height>129</height>
+						<texture fallback="flagging/studios/default.png" diffuse="icon/fodiffuse.png">$INFO[ListItem.label,flagging/studios/,.png]</texture>
+						<aspectratio scalediffuse="false">keep</aspectratio>
+						<animation effect="zoom" end="125" center="auto" tween="back" easing="out" time="150">focus</animation>
+						<visible>Container.Content(Studios)</visible>
+					</control>
+					<control type="image">
+						<posx>29</posx>
+						<posy>26</posy>
+						<width>133</width>
+						<height>133</height>
+						<texture>icon/foborder.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<animation type="focus">
+							<effect type="zoom" end="200" center="auto" tween="back" easing="out" time="150" />
+							<effect type="fade" end="100" time="100" />
+						</animation>
+					</control>
+				</focusedlayout>
+			</control>
+
 			<!-- LABELS -->
 			<control type="group">
-				<visible>Control.IsVisible(64)</visible>
+				<visible>Control.IsVisible(64) | Control.IsVisible(65) | Control.IsVisible(66)</visible>
 				<control type="grouplist">
 					<posx>0</posx>
 					<posy>550</posy>
@@ -677,10 +644,10 @@
 				<posy>649</posy>
 				<width>1280</width>
 				<height>5</height>
-				<visible allowhiddenfocus="true">Control.IsVisible(515) + Control.HasFocus(516)</visible>
+				<visible allowhiddenfocus="true">Control.IsVisible(66) + Control.HasFocus(516)</visible>
 				<texturesliderbackground>white2.png</texturesliderbackground>
 				<textureslidernibfocus>white3.png</textureslidernibfocus>x
-				<onup>515</onup>
+				<onup>66</onup>
 				<onleft>516</onleft>
 				<onright>516</onright>
 				<showonepage>false</showonepage>
@@ -714,35 +681,6 @@
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(520)">Conditional</animation>
-			</control>
-			<control type="scrollbar" id="522">
-				<posx>1120</posx>
-				<posy>112</posy>
-				<width>5</width>
-				<height>425</height>
-				<visible allowhiddenfocus="true">Control.IsVisible(521) + Control.HasFocus(522)</visible>
-				<texturesliderbackground>white2.png</texturesliderbackground>
-				<textureslidernibfocus>white3v.png</textureslidernibfocus>
-				<onleft>50</onleft>
-				<onright>50</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(522)">Conditional</animation>
-			</control>
-			<control type="scrollbar" id="524">
-				<posx>1120</posx>
-				<posy>112</posy>
-				<width>5</width>
-				<height>425</height>
-				<visible allowhiddenfocus="true">Control.IsVisible(523) + Control.HasFocus(524)</visible>
-				<visible>!Window.IsActive(523)</visible>
-				<texturesliderbackground>white2.png</texturesliderbackground>
-				<textureslidernibfocus>white3v.png</textureslidernibfocus>
-				<onleft>50</onleft>
-				<onright>50</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(524)">Conditional</animation>
 			</control>
 		</control>
 	</include>

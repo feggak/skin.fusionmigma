@@ -1,7 +1,7 @@
 <window id="502">
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<views>50,51,52,53,55,58,62,63</views>
+	<views>50,51,52,53,55,58,62,63,66</views>
 	<controls>
 
 		<include>Background</include>
@@ -60,6 +60,7 @@
 		<include>Grid</include>
 		<include>CoverWrap</include>
 		<include>SongList</include>
+		<include>Icon</include>
 
 		<!-- MUSIC OVERLAY -->
 		<control type="group">
