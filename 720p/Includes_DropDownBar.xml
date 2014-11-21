@@ -995,6 +995,17 @@
 				<onclick>Skin.Reset(list_info)</onclick>
 				<visible>Control.IsVisible(50) + Skin.HasSetting(list_info)</visible>
 			</item>
+			<!-- ICON: SIZE -->
+			<item id="5">
+				<label>[UPPERCASE]$LOCALIZE[32760][/UPPERCASE]</label>
+				<onclick>Skin.SetBool(icon_small)</onclick>
+				<visible>Control.IsVisible(66) + !Skin.HasSetting(icon_small)</visible>
+			</item>
+			<item id="5">
+				<label>[UPPERCASE]$LOCALIZE[32761][/UPPERCASE]</label>
+				<onclick>Skin.Reset(icon_small)</onclick>
+				<visible>Control.IsVisible(66) + Skin.HasSetting(icon_small)</visible>
+			</item>
 			<!-- FILES -->
 			<item id="6">
 				<description>Music Files</description>

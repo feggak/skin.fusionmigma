@@ -466,8 +466,8 @@
 								<bordersize>2</bordersize>
 								<aspectratio>scale</aspectratio>
 								<texture background="true" diffuse="infowrap/albumdiffuse.png">$INFO[ListItem.Icon]</texture>
-								<animation reversible="false" effect="zoom" start="100" end="130.5" center="38,100" time="200">focus</animation>
-								<animation reversible="false" effect="zoom" start="130.5" end="100" center="38,100" time="200">unfocus</animation>
+								<animation reversible="false" effect="zoom" start="100" end="130.5" center="38,100" time="150">focus</animation>
+								<animation reversible="false" effect="zoom" start="130.5" end="100" center="38,100" time="150">unfocus</animation>
 							</control>
 							<control type="image">
 								<posx>-39</posx>
@@ -480,11 +480,11 @@
 								<visible>!Control.HasFocus(66)</visible>
 								<visible>!IsEmpty(ListItem.Icon)</visible>
 								<animation type="Focus">
-									<effect type="zoom" start="77" end="100" center="38,100" time="200" reversible="false"/>
+									<effect type="zoom" start="77" end="100" center="38,100" time="150" reversible="false"/>
 									<effect type="fade" start="0" end="100" time="200" reversible="false"/>
 								</animation>
 								<animation type="Unfocus">
-									<effect type="zoom" start="100" end="77" center="38,100" time="200" reversible="false"/>
+									<effect type="zoom" start="100" end="77" center="38,100" time="150" reversible="false"/>
 									<effect type="fade" start="100" end="0" time="200" reversible="false"/>
 								</animation>
 							</control>

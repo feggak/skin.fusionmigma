@@ -10,12 +10,12 @@
 			<include>InfoOpenClose</include>
 			<include>Keyboard</include>
 			<animation type="WindowOpen" reversible="false">
-				<effect type="fade" start="0" end="100" time="550" delay="0" />
-				<effect type="zoom" start="155" end="100" time="350" center="auto" delay="0" />
+				<effect type="fade" start="0" end="100" time="450" delay="0" />
+				<effect type="zoom" start="155" end="100" time="250" center="auto" delay="0" />
 			</animation>
 			<animation type="WindowClose" reversible="false">
 				<effect type="fade" start="100" end="0" time="350" delay="0" />
-				<effect type="zoom" start="100" end="155" time="300" center="auto" delay="0" />
+				<effect type="zoom" start="100" end="155" time="250" center="auto" delay="0" />
 			</animation>
 
 			<!-- MOVIES -->
@@ -288,7 +288,9 @@
 				<viewtype label="icon">Icon</viewtype>
 				<pagecontrol>516</pagecontrol>
 				<preloaditems>2</preloaditems>
-				<itemlayout height="224" width="192">
+
+				<!-- BIG ICONS -->
+				<itemlayout condition="!Skin.HasSetting(icon_small)" height="224" width="192">
 					<control type="image">
 						<posx>14</posx>
 						<posy>179</posy>
@@ -324,11 +326,37 @@
 						<visible>Container.Content(Studios)</visible>
 					</control>
 				</itemlayout>
+				<!-- SMALL ICONS -->
+				<itemlayout condition="Skin.HasSetting(icon_small)" height="144" width="144">
+					<control type="image">
+						<posx>6</posx>
+						<posy>6</posy>
+						<width>146</width>
+						<height>142</height>
+						<texture>poster/postershadow.png</texture>
+						<align>bottom</align>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>90ffffff</colordiffuse>
+						<animation type="conditional" condition="true" reversible="false">
+							<effect type="slide" start="0,0" end="-9,-7" time="0" />
+						</animation>
+					</control>
+					<control type="image">
+						<posx>6</posx>
+						<posy>6</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<align>bottom</align>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+				</itemlayout>
 
-				<focusedlayout height="224" width="192">
+				<!-- BIG ICONS -->
+				<focusedlayout condition="!Skin.HasSetting(icon_small)" height="224" width="192">
 					<control type="image">
 						<posx>14</posx>
-						<posy>10</posy>
+						<posy>6</posy>
 						<width>164</width>
 						<height>164</height>
 						<texture diffuse="icon/fodiffuse.png">$INFO[ListItem.Icon]</texture>
@@ -339,7 +367,7 @@
 					<!-- STUDIO ICON -->
 					<control type="image">
 						<posx>14</posx>
-						<posy>10</posy>
+						<posy>6</posy>
 						<width>129</width>
 						<height>129</height>
 						<texture fallback="flagging/studios/default.png" diffuse="icon/fodiffuse.png">$INFO[ListItem.label,flagging/studios/,.png]</texture>
@@ -349,7 +377,7 @@
 					</control>
 					<control type="image">
 						<posx>29</posx>
-						<posy>26</posy>
+						<posy>22</posy>
 						<width>133</width>
 						<height>133</height>
 						<texture>icon/foborder.png</texture>
@@ -361,19 +389,49 @@
 						</animation>
 					</control>
 				</focusedlayout>
+				<!-- SMALL ICONS -->
+				<focusedlayout condition="Skin.HasSetting(icon_small)" height="144" width="144">
+					<control type="image">
+						<posx>6</posx>
+						<posy>10</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<align>bottom</align>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="100" end="125" time="150" center="auto" tween="back" easing="out" />
+						</animation>
+					</control>
+					<control type="image">
+						<posx>-13</posx>
+						<posy>-9</posy>
+						<width>166</width>
+						<height>166</height>
+						<texture>icon/foborder.png</texture>
+						<align>bottom</align>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>f4ffffff</colordiffuse>
+						<animation type="Focus" reversible="false">
+							<effect type="fade" start="0" end="100" time="100" />
+							<effect type="zoom" start="100" end="125" time="150" center="auto" tween="back" easing="out" />
+						</animation>
+					</control>
+				</focusedlayout>
 			</control>
 
 			<!-- LABELS -->
 			<control type="group">
 				<visible>Control.IsVisible(64) | Control.IsVisible(65) | Control.IsVisible(66)</visible>
+				<!-- ARTISTS -->
 				<control type="grouplist">
 					<posx>0</posx>
-					<posy>550</posy>
+					<posy>560</posy>
 					<width>1280</width>
 					<height>40</height>
 					<align>center</align>
 					<orientation>horizontal</orientation>
-					<visible>!Container.Content(Episodes) + Container.Content(Artists)</visible>
+					<visible>Container.Content(Artists)</visible>
 					<control type="label">
 						<posx>0</posx>
 						<width min="29" max="900">auto</width>
@@ -384,6 +442,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 				</control>
+				<!-- MOVIES AND TVSHOWS -->
 				<control type="grouplist">
 					<posx>0</posx>
 					<posy>572</posy>
@@ -402,7 +461,6 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 				</control>
-
 				<!-- EPISODES -->
 				<control type="grouplist">
 					<posx>0</posx>
@@ -421,8 +479,8 @@
 						<scroll>false</scroll>
 						<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
 					</control>
-					<include>MovieHDFlagsPoster</include>
 				</control>
+				<!-- MOVIES INFO -->
 				<control type="grouplist">
 					<posx>0</posx>
 					<posy>605</posy>
@@ -443,14 +501,11 @@
 						<aligny>center</aligny>
 						<label>[UPPERCASE]$INFO[ListItem.Year,, • ]$INFO[ListItem.Duration] minutes[/UPPERCASE]</label>
 						<visible>Control.IsVisible(64) + !IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-						<visible>!Window.IsActive(502)</visible>
-						<visible>!Window.IsActive(535)</visible>
-						<visible>!Container.Content(TVShows)</visible>
-						<visible>!Container.Content(Seasons)</visible>
-						<visible>!Container.Content(Episodes)</visible>
+						<visible>Container.Content(Movies)</visible>
 					</control>
 					<include condition="Skin.HasSetting(UseIMDBRating)">IMDB</include>
 				</control>
+				<!-- TVSHOWS INFO -->
 				<control type="label">
 					<posx>183</posx>
 					<posy>605</posy>
@@ -465,6 +520,7 @@
 					<visible>Container.Content(TVShows)</visible>
 					<visible>!IsEmpty(ListItem.foldername)</visible>
 				</control>
+				<!-- EPISODES INFO -->
 				<control type="grouplist">
 					<posx>0</posx>
 					<posy>611</posy>
@@ -473,7 +529,6 @@
 					<align>center</align>
 					<orientation>horizontal</orientation>
 					<visible>!Window.IsActive(535)</visible>
-
 					<control type="label">
 						<posx>183</posx>
 						<posy>608</posy>
@@ -510,7 +565,7 @@
 						<visible>Container.Content(Episodes)</visible>
 					</control>
 				</control>
-
+				<!-- PICTURES -->
 				<control type="label">
 					<posx>183</posx>
 					<posy>605</posy>
@@ -524,25 +579,10 @@
 					<label>[UPPERCASE]$INFO[ListItem.PictureDateTime,, • ]$INFO[ListItem.PictureResolution][/UPPERCASE]</label>
 					<visible>StringCompare(Container.Viewmode,icon)</visible>
 				</control>
-				<control type="label">
-					<posx>260</posx>
-					<posy>602</posy>
-					<width>762</width>
-					<height>35</height>
-					<font>aired</font>
-					<scrollsuffix>/</scrollsuffix>
-					<textcolor>movietitleb2</textcolor>
-					<scroll>false</scroll>
-					<align>center</align>
-					<aligny>center</aligny>
-					<scrollspeed>40</scrollspeed>
-					<label>[UPPERCASE]$INFO[ListItem.Property(Artist_Style)][/UPPERCASE]</label>
-				</control>
-
 				<!-- ARTIST INFO -->
 				<control type="grouplist">
 					<posx>8</posx>
-					<posy>581</posy>
+					<posy>591</posy>
 					<align>center</align>
 					<orientation>horizontal</orientation>
 					<control type="label">
@@ -593,10 +633,26 @@
 						<textcolor>movietitleb2</textcolor>
 						<scroll>false</scroll>
 						<scrollspeed>40</scrollspeed>
-						<label>[UPPERCASE][COLOR=white]No additional info[/COLOR][/UPPERCASE]</label>
+						<label>[UPPERCASE]No additional info[/UPPERCASE]</label>
 						<visible>IsEmpty(ListItem.Property(Artist_Formed)) + IsEmpty(ListItem.Property(Artist_Born)) + IsEmpty(ListItem.Property(Artist_YearsActive)) + Container.Content(Artists)</visible>
 					</control>
 				</control>
+				<!-- ARTIST INFO -->
+				<control type="label">
+					<posx>90</posx>
+					<posy>613</posy>
+					<width>1100</width>
+					<height>35</height>
+					<font>aired</font>
+					<scrollsuffix>/</scrollsuffix>
+					<textcolor>movietitleb2</textcolor>
+					<scroll>false</scroll>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scrollspeed>40</scrollspeed>
+					<label>[UPPERCASE]$INFO[ListItem.Property(Artist_Style)][/UPPERCASE]</label>
+				</control>
+				<!-- ALBUMS INFO -->
 				<control type="label">
 					<posx>183</posx>
 					<posy>600</posy>
@@ -610,6 +666,7 @@
 					<label>[UPPERCASE]$INFO[ListItem.Artist,, • ]$INFO[ListItem.Year][/UPPERCASE]</label>
 					<visible>Container.Content(Albums)</visible>
 				</control>
+				<!-- MOVIE COLLECTION -->
 				<control type="label">
 					<posx>0</posx>
 					<posy>604</posy>
@@ -625,6 +682,7 @@
 					<visible>Container.Content(Movies)</visible>
 					<visible>!ListItem.IsFolder</visible>
 				</control>
+				<!-- ADDON INFO -->
 				<control type="label">
 					<posx>240</posx>
 					<posy>614</posy>

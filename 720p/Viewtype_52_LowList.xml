@@ -280,6 +280,7 @@
 						<textcolor>e7c0c0c0</textcolor>
 						<font>movietitle2b</font>
 						<align>left</align>
+						<scroll>false</scroll>
 						<label>$INFO[ListItem.Director]</label>
 						<visible>!IsEmpty(ListItem.Director)</visible>
 					</control>
@@ -412,6 +413,7 @@
 						<textcolor>white</textcolor>
 						<font>movietitle2b</font>
 						<align>left</align>
+						<scroll>false</scroll>
 						<label>$INFO[ListItem.Director]</label>
 						<visible>!IsEmpty(ListItem.Director) + Container.Content(Movies)</visible>
 					</control>
