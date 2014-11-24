@@ -83,7 +83,7 @@
 					</control>
 					<control type="image">
 						<posy>494</posy>
-						<posx>787</posx>
+						<posx>767</posx>
 						<width>1</width>
 						<height>192</height>
 						<aspectratio>stretch</aspectratio>
@@ -92,7 +92,7 @@
 					</control>
 					<control type="image">
 						<posy>494</posy>
-						<posx>870</posx>
+						<posx>850</posx>
 						<width>1</width>
 						<height>192</height>
 						<aspectratio>stretch</aspectratio>
@@ -101,7 +101,7 @@
 					</control>
 					<control type="image">
 						<posy>494</posy>
-						<posx>913</posx>
+						<posx>893</posx>
 						<width>1</width>
 						<height>192</height>
 						<aspectratio>stretch</aspectratio>
@@ -110,7 +110,7 @@
 					</control>
 					<control type="image">
 						<posy>494</posy>
-						<posx>1158</posx>
+						<posx>1138</posx>
 						<width>1</width>
 						<height>192</height>
 						<aspectratio>stretch</aspectratio>
@@ -232,7 +232,7 @@
 					<!-- WATCHED -->
 					<control type="image">
 						<posy>6</posy>
-						<posx>752</posx>
+						<posx>732</posx>
 						<width>28</width>
 						<aspectratio>keep</aspectratio>
 						<texture>watchedfo.png</texture>
@@ -242,7 +242,7 @@
 					<!-- RUNTIME -->
 					<control type="label">
 						<posy>0</posy>
-						<posx>661</posx>
+						<posx>641</posx>
 						<width>200</width>
 						<height>32</height>
 						<textcolor>e7c0c0c0</textcolor>
@@ -254,7 +254,7 @@
 					<!-- RATING -->
 					<control type="label">
 						<posy>0</posy>
-						<posx>880</posx>
+						<posx>860</posx>
 						<width>40</width>
 						<height>32</height>
 						<textcolor>e7c0c0c0</textcolor>
@@ -265,7 +265,7 @@
 					<!-- DIRECTOR -->
 					<control type="image">
 						<posy>0</posy>
-						<posx>923</posx>
+						<posx>903</posx>
 						<width>18</width>
 						<aspectratio>keep</aspectratio>
 						<texture>list/directoricon.png</texture>
@@ -274,7 +274,7 @@
 					</control>
 					<control type="label">
 						<posy>0</posy>
-						<posx>948</posx>
+						<posx>928</posx>
 						<width>200</width>
 						<height>32</height>
 						<textcolor>e7c0c0c0</textcolor>
@@ -287,7 +287,7 @@
 					<!-- TOP 250 -->
 					<control type="label">
 						<posy>0</posy>
-						<posx>1168</posx>
+						<posx>1148</posx>
 						<width>150</width>
 						<height>32</height>
 						<textcolor>e7c0c0c0</textcolor>
@@ -362,7 +362,7 @@
 					<!-- WATCHED -->
 					<control type="image">
 						<posy>6</posy>
-						<posx>752</posx>
+						<posx>732</posx>
 						<width>28</width>
 						<aspectratio>keep</aspectratio>
 						<texture>watchedfo.png</texture>
@@ -373,7 +373,7 @@
 					<!-- RUNTIME -->
 					<control type="label">
 						<posy>0</posy>
-						<posx>661</posx>
+						<posx>641</posx>
 						<width>200</width>
 						<height>32</height>
 						<textcolor>white</textcolor>
@@ -386,7 +386,7 @@
 					<!-- RATING -->
 					<control type="label">
 						<posy>0</posy>
-						<posx>880</posx>
+						<posx>860</posx>
 						<width>40</width>
 						<height>32</height>
 						<textcolor>white</textcolor>
@@ -398,7 +398,7 @@
 					<!-- DIRECTOR -->
 					<control type="image">
 						<posy>0</posy>
-						<posx>923</posx>
+						<posx>903</posx>
 						<width>18</width>
 						<aspectratio>keep</aspectratio>
 						<texture>list/directoricon.png</texture>
@@ -407,7 +407,7 @@
 					</control>
 					<control type="label">
 						<posy>0</posy>
-						<posx>948</posx>
+						<posx>928</posx>
 						<width>200</width>
 						<height>32</height>
 						<textcolor>white</textcolor>
@@ -420,7 +420,7 @@
 					<!-- TOP 250 -->
 					<control type="label">
 						<posy>0</posy>
-						<posx>1168</posx>
+						<posx>1148</posx>
 						<width>150</width>
 						<height>32</height>
 						<textcolor>white</textcolor>
@@ -459,17 +459,17 @@
 			<!-- SCROLL BAR -->
 			<control type="scrollbar" id="708">
 				<posx>1266</posx>
-				<posy>496</posy>
+				<posy>500</posy>
 				<width>6</width>
-				<height>188</height>
+				<height>178</height>
 				<texturesliderbackground>white2.png</texturesliderbackground>
-				<textureslidernibfocus>bluefo.png</textureslidernibfocus>
-				<textureslidernib>white3v.png</textureslidernib>
-				<onleft>707</onleft>
+				<textureslidernibfocus>white3v.png</textureslidernibfocus>
+				<onleft>52</onleft>
 				<onright>300</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
-				<visible>Control.IsVisible(52)</visible>
+				<visible allowhiddenfocus="true">Control.IsVisible(52) + Control.HasFocus(708)</visible>
+				<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(708)">Conditional</animation>
 			</control>
 		</control>
 	</include>

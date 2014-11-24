@@ -67,10 +67,10 @@
 		</control>
 
 		<control type="group">
-			<animation reversible="false" effect="slide" start="0,-70" end="0,0" time="250" delay="0" condition="Control.HasFocus(300)">conditional</animation>
-			<animation reversible="false" effect="fade" start="0" end="100" time="250" delay="0" condition="Control.HasFocus(300)">conditional</animation>
-			<animation reversible="false" effect="slide" start="0,0" end="0,-70" time="250" delay="0" center="95,45" condition="!Control.HasFocus(300)">conditional</animation>
-			<animation reversible="false" effect="fade" start="100" end="0" time="200" delay="250" condition="!Control.HasFocus(300)">conditional</animation>
+			<animation reversible="false" effect="slide" start="0,-70" end="0,0" time="150" delay="0" condition="Control.HasFocus(300)">conditional</animation>
+			<animation reversible="false" effect="fade" start="0" end="100" time="150" delay="0" condition="Control.HasFocus(300)">conditional</animation>
+			<animation reversible="false" effect="slide" start="0,0" end="0,-70" time="150" delay="0" center="95,45" condition="!Control.HasFocus(300)">conditional</animation>
+			<animation reversible="false" effect="fade" start="100" end="0" time="150" delay="0" condition="!Control.HasFocus(300)">conditional</animation>
 
 			<include>DropDownBarImage</include>
 
@@ -85,7 +85,7 @@
 				<ondown>50</ondown>
 				<orientation>horizontal</orientation>
 				<focusposition>2</focusposition>
-				<scrolltime>200</scrolltime>
+				<scrolltime>100</scrolltime>
 				<visible>!Skin.HasSetting(HideDropDown)</visible>
 				<itemlayout width="250" height="55">
 					<control type="label">
@@ -102,7 +102,6 @@
 						<include>DropDownBarLabel</include>
 						<textcolor>F0C8C8C8</textcolor>
 					</control>
-
 				</focusedlayout>
 				<include condition="Window.IsActive(musicplaylist)">MusicPlaylistItems</include>
 				<include condition="Window.IsActive(videoplaylist)">VideoPlaylistItems</include>

@@ -710,7 +710,7 @@
 				<onright>516</onright>
 				<showonepage>false</showonepage>
 				<orientation>horizontal</orientation>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(580)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(580)">Conditional</animation>
 			</control>
 			<control type="scrollbar" id="518">
 				<posx>1117</posx>
@@ -724,7 +724,7 @@
 				<onright>50</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(518)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(518)">Conditional</animation>
 			</control>
 			<control type="scrollbar" id="520">
 				<posx>1120</posx>
@@ -738,7 +738,7 @@
 				<onright>50</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(520)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(520)">Conditional</animation>
 			</control>
 		</control>
 	</include>

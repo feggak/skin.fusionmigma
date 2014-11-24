@@ -262,4 +262,146 @@
 
 	</include>
 
+	<!-- VIDEO OVERLAY -->
+	<include name="VideoOverlay">
+		<control type="group">
+			<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+			<animation effect="slide" start="0,0" end="-200,0" delay="0" time="250"  reversible="false" condition="Window.Next(0)">conditional</animation>
+			<animation effect="slide" start="-90,0" end="0,0" delay="800" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="-200,0" delay="0" time="300"  reversible="false">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+			<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+			<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+
+			<control type="image">
+				<posx>6</posx>
+				<posy>61r</posy>
+				<width>91</width>
+				<height>52</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>white.png</texture>
+				<colordiffuse>70ffffff</colordiffuse>
+				<visible>Player.HasVideo</visible>
+			</control>
+
+			<control type="image">
+				<posx>7</posx>
+				<posy>60r</posy>
+				<width>89</width>
+				<height>50</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>black.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>
+				<visible>Player.HasVideo</visible>
+			</control>
+
+			<control type="videowindow" id="1">
+				<posx>7</posx>
+				<posy>60r</posy>
+				<width>89</width>
+				<height>50</height>
+				<aspectratio>scale</aspectratio>
+				<align>center</align>
+				<visible>!Window.IsActive(2003)</visible>
+			</control>
+		</control>
+
+		<control type="label">
+			<description>Video Title</description>
+			<posx>105</posx>
+			<posy>62r</posy>
+			<width>640</width>
+			<label>$INFO[VideoPlayer.Title]</label>
+			<align>left</align>
+			<font>homemenu3</font>
+			<textcolor>ffababab</textcolor>
+			<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="false" condition="Window.Next(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="850" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="50" time="300" reversible="false">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+			<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+			<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		</control>
+
+		<control type="label">
+			<description>TVShow Title + Genre</description>
+			<posx>105</posx>
+			<posy>37r</posy>
+			<width>640</width>
+			<label>$INFO[VideoPlayer.TVShowTitle,, • ]$INFO[VideoPlayer.Year]$INFO[VideoPlayer.Genre, • ,]</label>
+			<align>left</align>
+			<font>recent2</font>
+			<textcolor>fc9f9f9f</textcolor>
+			<animation effect="fade" start="100" end="0" delay="0" time="400" condition="Window.IsActive(2003) | Window.IsActive(2006)">conditional</animation>
+			<animation effect="slide" start="0,0" end="0,200" delay="0" time="400"  reversible="true" condition="Window.Next(0)">conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="900" time="300" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="0" time="300" reversible="false">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+			<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+			<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		</control>
+	</include>
+
+	<!-- MUSIC OVERLAY -->
+	<include name="MusicOverlay">
+		<control type="group">
+			<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="-90,0" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="-200,0" delay="0" time="200"  reversible="false">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+			<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+			<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+
+			<control type="image">
+				<description>Album Thumb</description>
+				<posx>12</posx>
+				<posy>58r</posy>
+				<width>50</width>
+				<height>50</height>
+				<texture diffuse="infowrap/albumdiffuse.png">$INFO[MusicPlayer.Cover]</texture>
+				<bordertexture border="8">border.png</bordertexture>
+				<bordersize>4</bordersize>
+				<aspectratio>stretch</aspectratio>
+			</control>
+		</control>
+
+		<control type="label">
+			<description>Song Title</description>
+			<posx>70</posx>
+			<posy>60r</posy>
+			<width>640</width>
+			<label>$INFO[MusicPlayer.Title]</label>
+			<align>left</align>
+			<font>homemenu3</font>
+			<textcolor>ffababab</textcolor>
+			<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="0" time="200" reversible="false">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+			<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+			<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		</control>
+
+		<control type="label">
+			<description>Artist and Album Labels</description>
+			<posx>70</posx>
+			<posy>36r</posy>
+			<width>640</width>
+			<label>$INFO[MusicPlayer.Artist,, • ]$INFO[MusicPlayer.Album]</label>
+			<align>left</align>
+			<font>recent2</font>
+			<textcolor>fc9f9f9f</textcolor>
+			<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,100" end="0,0" delay="400" time="200" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="0" time="200" reversible="false">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+			<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
+			<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
+		</control>
+	</include>
+
 </includes>
