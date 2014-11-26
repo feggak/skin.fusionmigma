@@ -100,6 +100,7 @@
 					<aligny>center</aligny>
 					<textcolor>time</textcolor>
 					<label>[UPPERCASE]$VAR[Breadcrumbs2][/UPPERCASE]</label>
+					<visible>!SubString(Container.FolderPath,_hmplayx.xsp,right)</visible>
 					<scroll>false</scroll>
 					<include>BreadCrumb1</include>
 				</control>
@@ -116,77 +117,6 @@
 					<label>[UPPERCASE]$LOCALIZE[31016][/UPPERCASE]</label>
 					<visible>SubString(Container.FolderPath,_hmplayx.xsp,right)</visible>
 					<visible>!Window.IsVisible(12003)</visible>
-					<include>BreadCrumb1</include>
-				</control>
-				<!-- FUSION SETTINGS -->
-				<control type="label">
-					<description>Fusion Label</description>
-					<posx>0</posx>
-					<posy>0</posy>
-					<width min="29" max="300">auto</width>
-					<height>53</height>
-					<font>breadcrumb</font>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textcolor>time</textcolor>
-					<label>[UPPERCASE]$LOCALIZE[31766][/UPPERCASE]</label>
-					<visible>Window.IsVisible(56) | Window.IsVisible(9000) | Window.IsVisible(9001) | Window.IsVisible(9002) | Window.IsVisible(9003)</visible>
-					<include>BreadCrumb1</include>
-				</control>
-				<control type="label">
-					<description>Fusion Home Label</description>
-					<posx>0</posx>
-					<posy>0</posy>
-					<width min="29" max="300">auto</width>
-					<height>53</height>
-					<font>breadcrumb</font>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textcolor>time</textcolor>
-					<label>[UPPERCASE] $LOCALIZE[31402][/UPPERCASE]</label>
-					<visible>Window.IsVisible(9000)</visible>
-					<include>BreadCrumb1</include>
-				</control>
-				<control type="label">
-					<description>Fusion Views Label</description>
-					<posx>0</posx>
-					<posy>0</posy>
-					<width min="29" max="300">auto</width>
-					<height>53</height>
-					<font>breadcrumb</font>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textcolor>time</textcolor>
-					<label>[UPPERCASE]$LOCALIZE[31403][/UPPERCASE]</label>
-					<visible>Window.IsVisible(9001)</visible>
-					<include>BreadCrumb1</include>
-				</control>
-				<control type="label">
-					<description>Fusion OSD Label</description>
-					<posx>0</posx>
-					<posy>0</posy>
-					<width min="29" max="300">auto</width>
-					<height>53</height>
-					<font>breadcrumb</font>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textcolor>time</textcolor>
-					<label>[UPPERCASE]$LOCALIZE[31404][/UPPERCASE]</label>
-					<visible>Window.IsVisible(9002)</visible>
-					<include>BreadCrumb1</include>
-				</control>
-				<control type="label">
-					<description>Fusion Extras Label</description>
-					<posx>0</posx>
-					<posy>0</posy>
-					<width min="29" max="300">auto</width>
-					<height>53</height>
-					<font>breadcrumb</font>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textcolor>time</textcolor>
-					<label>[UPPERCASE]$LOCALIZE[31767][/UPPERCASE]</label>
-					<visible>Window.IsVisible(9003)</visible>
 					<include>BreadCrumb1</include>
 				</control>
 				<control type="image">
@@ -244,7 +174,6 @@
 				</control>
 
 			</control>
-			<!-- End Breadcrumbs-->
 
 			<!-- Time-->
 			<control type="label">

@@ -595,13 +595,13 @@
 				<!-- LOGO -->
 				<control type="largeimage" id="44">
 					<posx>466</posx>
-					<posy>46</posy>
+					<posy>42</posy>
 					<width>335</width>
 					<height>130</height>
-					<texture>$INFO[ListItem.path]logo.png</texture>
+					<texture>$INFO[ListItem.Art(clearlogo)]</texture>
 					<fadetime>100</fadetime>
 					<aspectratio scalediffuse="false">keep</aspectratio>
-					<visible>Container.Content(TVShows) + Skin.HasSetting(Logos)</visible>
+					<visible>Skin.HasSetting(Logos)</visible>
 				</control>
 
 				<!-- ARTIST LOGO -->
@@ -649,7 +649,7 @@
 					<posx>215</posx>
 					<posy>492</posy>
 					<width>850</width>
-					<height>84</height>
+					<height>132</height>
 					<font>homemenu3</font>
 					<textcolor>movietitleb</textcolor>
 					<scroll>true</scroll>

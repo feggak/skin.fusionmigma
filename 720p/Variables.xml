@@ -17,6 +17,10 @@
     <variable name="Breadcrumbs2">
         <value condition="Container.Content(Episodes)">$INFO[ListItem.TVShowTitle]</value>
         <value condition="Container.Content(Songs)">$INFO[ListItem.Artist]</value>
+        <value condition="Window.IsVisible(9000)">$LOCALIZE[31402]</value>
+        <value condition="Window.IsVisible(9001)">$LOCALIZE[31403]</value>
+        <value condition="Window.IsVisible(9002)">$LOCALIZE[31404]</value>
+        <value condition="Window.IsVisible(9003)">$LOCALIZE[31767]</value>
         <value>$INFO[Container.FolderName]</value>
     </variable>
 </includes>
