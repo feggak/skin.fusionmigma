@@ -3,25 +3,8 @@
 	<allowoverlay>yes</allowoverlay>
 
 	<controls>
-		<!-- BACKGROUND -->
-		<control type="image">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1280</width>
-			<height>720</height>
-			<aspectratio>stretch</aspectratio>
-			<texture>Home/bg2.png</texture>
-		</control>	
-		<control type="image">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1280</width>
-			<height>720</height>
-			<aspectratio>stretch</aspectratio>
-			<texture>black.png</texture>
-			<colordiffuse>73FFFFFF</colordiffuse>
-		</control>  
 
+		<include>Background</include>
 		<include>FusionStyles</include>
 
 		<control type="group">
@@ -34,10 +17,10 @@
 				<texture>settings/bg.png</texture>
 				<colordiffuse>FFFFFFFF</colordiffuse>
 				<animation type="WindowOpen" reversible="false">
-					<effect type="fade" start="0" end="100" time="200" delay="0" />
+					<effect type="fade" start="0" end="100" time="100" delay="0" />
 				</animation>
 				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="200" delay="0" />
+					<effect type="fade" start="100" end="0" time="100" delay="0" />
 				</animation>
 			</control>  
 			<control type="image">
@@ -49,10 +32,10 @@
 				<texture>settings/bg.png</texture>
 				<colordiffuse>99FFFFFF</colordiffuse>
 				<animation type="WindowOpen" reversible="false">
-					<effect type="fade" start="0" end="100" time="200" delay="0" />
+					<effect type="fade" start="0" end="100" time="100" delay="0" />
 				</animation>
 				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="200" delay="0" />
+					<effect type="fade" start="100" end="0" time="100" delay="0" />
 				</animation>
 			</control> 
 			<!-- MAIN ICONS -->
@@ -69,10 +52,10 @@
 				<viewtype label="icon">icon</viewtype>
 				<pagecontrol>9501</pagecontrol>
 				<animation type="WindowOpen" reversible="false">
-					<effect type="fade" start="0" end="100" time="200" delay="150" />
+					<effect type="fade" start="0" end="100" time="100" delay="0" />
 				</animation>
 				<animation type="WindowClose" reversible="false">
-					<effect type="fade" start="100" end="0" time="200" delay="0" />
+					<effect type="fade" start="100" end="0" time="100" delay="0" />
 				</animation>
 				<itemlayout height="255" width="175">
 					<control type="image">
@@ -81,12 +64,12 @@
 						<width>158</width>
 						<height>157</height>
 						<fadetime>400</fadetime>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>scale</aspectratio>
 						<texture>$INFO[ListItem.ActualIcon]</texture>
 						<colordiffuse>DDFFFFFF</colordiffuse>
 					</control>	
 					<control type="label">
-						<posx>79</posx>
+						<posx>-48</posx>
 						<posy>165</posy>
 						<width>250</width>
 						<height>35</height>
@@ -119,12 +102,12 @@
 						<width>158</width>
 						<height>157</height>
 						<fadetime>400</fadetime>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>scale</aspectratio>
 						<texture>$INFO[ListItem.ActualIcon]</texture>
 						<colordiffuse>FFFFFFFF</colordiffuse>
 					</control>	
 					<control type="label">
-						<posx>79</posx>
+						<posx>-48</posx>
 						<posy>165</posy>
 						<width>250</width>
 						<height>35</height>
@@ -165,70 +148,7 @@
 			</control>
 		</control>
 
-		<!-- BOTTOM -->
-
-		<control type="group">
-			<visible>Player.HasMedia</visible>
-
-			<animation effect="slide" start="0,0" end="0,-100" delay="0" time="600"  reversable="false" condition="Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19)">conditional</animation>
-
-			<animation effect="slide" start="0,0" end="0,-100" delay="0" time="500"  reversable="false" condition="Window.Previous(12) | Window.Previous(13) | Window.Previous(14) | Window.Previous(15) | Window.Previous(16) | Window.Previous(17) | Window.Previous(18) | Window.Previous(19)">conditional</animation>
-
-			<animation effect="slide" start="0,100" end="0,0" time="500" delay="0" reversable="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,100" delay="0" time="600" reversable="false">WindowClose</animation>
-
-			<control type="image">
-				<posx>0</posx>
-				<posy>654</posy>
-				<width>1280</width>
-				<height>70</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>black.png</texture>
-				<colordiffuse>A0FFFFFF</colordiffuse>
-				<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>715</posy>
-				<width>1280</width>
-				<height>5</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>zbase.png</texture>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-				<visible>!Skin.HasSetting(ZBar)</visible>
-				<animation effect="slide" start="0,0" end="0,-15" delay="0" time="600"  reversable="false" condition="Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19)">conditional</animation>
-
-				<animation effect="slide" start="0,0" end="0,-15" delay="0" time="550"  reversable="false" condition="Window.Previous(12) | Window.Previous(13) | Window.Previous(14) | Window.Previous(15) | Window.Previous(16) | Window.Previous(17) | Window.Previous(18) | Window.Previous(19)">conditional</animation>
-				<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
-				<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>715</posy>
-				<width>1280</width>
-				<height>5</height>
-				<aspectratio>stretch</aspectratio>
-				<texture flipx="true">zbase.png</texture>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-				<visible>!Skin.HasSetting(ZBar)</visible>
-				<animation effect="slide" start="0,0" end="0,-15" delay="0" time="600"  reversable="false" condition="Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19)">conditional</animation>
-
-				<animation effect="slide" start="0,0" end="0,-15" delay="0" time="550"  reversable="false" condition="Window.Previous(12) | Window.Previous(13) | Window.Previous(14) | Window.Previous(15) | Window.Previous(16) | Window.Previous(17) | Window.Previous(18) | Window.Previous(19)">conditional</animation>
-				<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
-				<animation effect="slide" start="0,15" end="0,0" time="550" delay="0" reversable="false">WindowOpen</animation>
-				<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>654</posy>
-				<width>1280</width>
-				<height>1</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>white.png</texture>
-				<colordiffuse>20FFFFFF</colordiffuse>
-				<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
-			</control>
-		</control>
+		<include>ZBar</include>
 		<include>MusicOverlay</include>
 		<include>VideoOverlay</include>
 		<include>nav</include> 

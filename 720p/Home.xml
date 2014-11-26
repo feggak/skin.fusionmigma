@@ -771,8 +771,10 @@
             </control>
 
             <!-- HD MOVIES -->
-            <control type="list" id="654">
+            <control type="list" id="640">
                 <include>HomeSubMenuCommonValues</include>
+                <onleft>1010</onleft>
+                <onright>2010</onright>
                 <ondown>654</ondown>
                 <visible>Container(540).HasFocus(14)</visible>
 
@@ -1696,7 +1698,17 @@
         <control type="group">
             <description>Info panel</description>
             <posy>540</posy>
+            <animation type="Visible" reversible="false">
+                <effect type="fade" start="0" end="100" time="100" delay="0"/>
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" start="100" end="0" time="100" delay="0"/>
+            </animation>
             <visible>!Player.HasMedia</visible>
+            <visible>!Container(540).HasFocus(13) + !Container(540).HasFocus(5) +
+                !Container(540).HasFocus(10) + !Container(540).HasFocus(11) +
+                !Container(540).HasFocus(12) + !Container(540).HasFocus(15) +
+                !Container(540).HasFocus(15) + !Container(540).HasFocus(1)</visible>
             <visible>Skin.HasSetting(HomeTotals)</visible>
 
             <!-- STATIC PANEL -->
@@ -1931,24 +1943,24 @@
         <!-- NOW PLAYING ICON AND TEXT -->
         <control type="image">
             <posx>14</posx>
-            <posy>179r</posy>
+            <posy>180r</posy>
             <width>32</width>
             <height>32</height>
             <aspectratio>stretch</aspectratio>
             <texture>Home/extras/nowplayingicon.png</texture>
             <colordiffuse>ffffffff</colordiffuse>
             <animation type="Visible" reversible="false">
-                <effect type="fade" start="0" end="100" time="150" />
+                <effect type="fade" start="0" end="100" time="100" />
             </animation>
             <animation type="Hidden" reversible="false">
-                <effect type="fade" start="100" end="0" time="150" />
+                <effect type="fade" start="100" end="0" time="100" />
             </animation>
             <visible>Player.HasMedia</visible>
         </control>
 
         <control type="label">
             <posx>53</posx>
-            <posy>178r</posy>
+            <posy>177r</posy>
             <width>200</width>
             <height>32</height>
             <font>recent</font>

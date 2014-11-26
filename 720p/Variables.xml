@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <variable name="Breadcrumbs1">
+        <!-- MUSIC -->
+        <value condition="Window.IsVisible(501) | Window.IsVisible(502) | Window.IsVisible(503)">$LOCALIZE[2]</value>
+        <value condition="SubString(Container.FolderPath,videodb://tvshows/,left)">$LOCALIZE[20343]</value>
+        <value condition="SubString(Container.FolderPath,videodb://movies/,left)">$LOCALIZE[20342]</value>
+        <value condition="Window.IsVisible(40)">$LOCALIZE[24001]</value>
+        <!-- SKIN SETTINGS -->
+        <value condition="Window.IsVisible(9000) | Window.IsVisible(9001) | Window.IsVisible(9002) | Window.IsVisible(9003) | Window.IsVisible(9004)">$LOCALIZE[20077]</value>
+        <value condition="Window.IsActive(SkinSettings)">$LOCALIZE[20077]</value>
+        <value condition="Window.IsActive(TVChannels) | Window.IsActive(TVGuide) | Window.IsActive(TVRecordings) | Window.IsActive(TVTimers) | Window.IsActive(TVSearch)">$LOCALIZE[19020]</value>
+        <value condition="Window.IsActive(RadioChannels) | Window.IsActive(RadioGuide) | Window.IsActive(RadioRecordings) | Window.IsActive(RadioSearch)">$LOCALIZE[19183]</value>
+        <value condition="!IsEmpty(Container.FolderName)">$INFO[System.CurrentWindow]</value>
+        <value>$INFO[System.CurrentWindow]</value>
+    </variable>
+    <variable name="Breadcrumbs2">
+        <value condition="Container.Content(Episodes)">$INFO[ListItem.TVShowTitle]</value>
+        <value condition="Container.Content(Songs)">$INFO[ListItem.Artist]</value>
+        <value>$INFO[Container.FolderName]</value>
+    </variable>
+</includes>

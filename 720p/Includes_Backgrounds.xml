@@ -55,29 +55,14 @@
         </animation>
     </include>
 
-    <include name="FanartArtist">
+    <include name="FanartMusic">
         <width>1280</width>
         <height>720</height>
         <texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
         <fadetime>200</fadetime>
         <aspectratio>stretch</aspectratio>
-        <visible>Container.Content(Artists) + !Skin.HasSetting(artists_fanart_off)</visible>
-        <visible>!Control.IsVisible(51)</visible>
-        <visible>!Control.IsVisible(560)</visible>
-        <include>FanartFade</include>
-        <include>ContextFadeFanArt</include>
-        <animation type="WindowClose" reversible="false">
-            <effect type="fade" start="100" end="0" time="200" delay="0" />
-        </animation>
-    </include>
-
-    <include name="FanartAlbumSong">
-        <width>1280</width>
-        <height>720</height>
-        <texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
-        <fadetime>200</fadetime>
-        <aspectratio>stretch</aspectratio>
-        <visible>[Container.Content(Albums) + !Skin.HasSetting(albums_fanart_off)] |
+        <visible>[Container.Content(Artists) + !Skin.HasSetting(artists_fanart_off)] |
+            [Container.Content(Albums) + !Skin.HasSetting(albums_fanart_off)] |
             [Container.Content(Songs) + !Skin.HasSetting(songs_fanart_off)]</visible>
         <visible>!Control.IsVisible(51)</visible>
         <visible>!Control.IsVisible(560)</visible>

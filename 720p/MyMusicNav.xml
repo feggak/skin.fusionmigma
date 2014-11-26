@@ -11,27 +11,13 @@
 		<control type="image">
 			<posx>0</posx>
 			<posy>53</posy>
-			<include>FanartArtist</include>
+			<include>FanartMusic</include>
 			<visible>!Skin.HasSetting(HideNavBar)</visible>
 		</control>
 		<control type="image">
 			<posx>0</posx>
 			<posy>0</posy>
-			<include>FanartArtist</include>
-			<visible>Skin.HasSetting(HideNavBar)</visible>
-		</control>
-
-		<!-- ALBUM/SONGS FANART -->
-		<control type="image">
-			<posx>0</posx>
-			<posy>53</posy>
-			<include>FanartAlbumSong</include>
-			<visible>!Skin.HasSetting(HideNavBar)</visible>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>0</posy>
-			<include>FanartAlbumSong</include>
+			<include>FanartMusic</include>
 			<visible>Skin.HasSetting(HideNavBar)</visible>
 		</control>
 

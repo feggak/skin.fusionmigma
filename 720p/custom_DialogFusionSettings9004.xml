@@ -3,33 +3,20 @@
 	<allowoverlay>yes</allowoverlay>
 
 	<controls>
-		<control type="image">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1280</width>
-			<height>720</height>
-			<aspectratio>stretch</aspectratio>
-			<texture>Home/bg2.png</texture>
-		</control>	
-		<control type="image">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1280</width>
-			<height>720</height>
-			<aspectratio>stretch</aspectratio>
-			<texture>black.png</texture>
-			<colordiffuse>73FFFFFF</colordiffuse>
-		</control> 
 
+		<include>Background</include>
 		<include>FusionStyles</include>
 
 		<control type="group">
 			<animation type="Conditional" condition="Window.IsVisible(126) | Window.IsVisible(2000)">
-				<effect type="fade" start="100" end="0" time="400" />
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="100" delay="0" />
 			</animation>
 			<animation type="WindowClose" reversible="false">
-				<effect type="fade" start="100" end="0" time="350" delay="0" />
-			</animation> 
+				<effect type="fade" start="100" end="0" time="100" delay="0" />
+			</animation>
 			<control type="image">
 				<posx>110</posx>
 				<posy>130</posy>
@@ -38,18 +25,15 @@
 				<aspectratio>stretch</aspectratio>
 				<texture>settings/listbg.png</texture>
 				<colordiffuse>FFFFFFFF</colordiffuse>
-				<animation type="WindowOpen" reversible="false">
-					<effect type="fade" start="0" end="100" time="550" delay="0" />
-				</animation>
-			</control> 
+			</control>
 
 			<!-- Lefthand List -->
 			<control type="list" id="9000">
 				<description>Button Area</description>
 				<posx>115</posx>
-				<posy>144</posy>
+				<posy>135</posy>
 				<width>250</width>
-				<height>480</height>
+				<height>400</height>
 				<itemgap>.5</itemgap>
 				<onleft>9010</onleft>
 				<onright>9010</onright>
@@ -102,31 +86,29 @@
 
 			<!-- Righthand List -->
 			<control type="group" id="9010">
-			
+
 				<control type="grouplist" id="9004">
 					<description>Control Area</description>
 					<visible>Container(9000).Hasfocus(1)</visible>
 					<posx>366</posx>
-					<posy>139</posy>
+					<posy>136</posy>
 					<width>810</width>
-					<height>440</height>
-					<itemgap>0</itemgap>
+					<height>484</height>
+					<itemgap>.5</itemgap>
 					<onleft>9000</onleft>
 					<onright>9000</onright>
 					<onup>9004</onup>
 					<ondown>9004</ondown>
-					
-					 <!-- EXTRA ITEMS FAVOURITES 1-10 -->
-					
+
+					<!-- EXTRA ITEMS FAVOURITES 1-10 -->
 					<control type="radiobutton" id="199">
 						<include>FusionSettingsButton</include>
 						<label>31546</label>
 						<onclick>Skin.ToggleSetting(cust_favorite)</onclick>
 						<selected>Skin.HasSetting(cust_favorite)</selected>
 					</control>
-					
-					 <!-- EXTRA ITEMS FAVOURITES 1 -->
-					
+
+					<!-- EXTRA ITEMS FAVOURITES 1 -->
 					<control type="radiobutton" id="200">
 						<include>FusionSettingsButton</include>
 						<label>31547</label>
@@ -162,7 +144,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom1_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom1_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom1_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom1)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
@@ -170,7 +152,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_1_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_1_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_1_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_1_Folder_1)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom1)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
@@ -179,14 +161,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_1_Folder_1)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_1_Folder_1)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_1_Folder_1)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_1_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom1)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
-					
-					 <!-- EXTRA ITEMS FAVOURITES 2 -->
-					
+
+					<!-- EXTRA ITEMS FAVOURITES 2 -->
 					<control type="radiobutton" id="206">
 						<include>FusionSettingsButton</include>
 						<label>31548</label>
@@ -222,7 +203,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom2_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom2_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom2_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom2)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
@@ -230,7 +211,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_2_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_2_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_2_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_2_Folder_1)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom2)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
@@ -239,14 +220,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_2_Folder_2)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_2_Folder_2)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_2_Folder_2)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_2_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom2)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
-					
-					 <!-- EXTRA ITEMS FAVOURITES 3 -->
-					
+
+					<!-- EXTRA ITEMS FAVOURITES 3 -->
 					<control type="radiobutton" id="212">
 						<include>FusionSettingsButton</include>
 						<label>31549</label>
@@ -282,7 +262,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom3_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom3_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom3_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom3)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
@@ -290,7 +270,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_3_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_3_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_3_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_3_Folder_3)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom3)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
@@ -299,14 +279,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_3_Folder_3)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_3_Folder_3)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_3_Folder_3)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_3_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom3)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS FAVOURITES 4 -->
-					
 					<control type="radiobutton" id="218">
 						<include>FusionSettingsButton</include>
 						<label>31550</label>
@@ -342,7 +321,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom4_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom4_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom4_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom4)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
@@ -350,7 +329,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_4_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_4_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_4_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_4_Folder_3)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom4)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
@@ -359,14 +338,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_4_Folder_4)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_4_Folder_4)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_4_Folder_4)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_4_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom4)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS FAVOURITES 5 -->
-					
 					<control type="radiobutton" id="224">
 						<include>FusionSettingsButton</include>
 						<label>31551</label>
@@ -402,7 +380,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom5_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom5_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom5_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom5)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
@@ -410,7 +388,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_5_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_5_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_5_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_5_Folder_5)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom5)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
@@ -419,14 +397,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_5_Folder_5)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_5_Folder_5)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_5_Folder_5)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_5_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom5)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS FAVOURITES 6 -->
-					
 					<control type="radiobutton" id="230">
 						<include>FusionSettingsButton</include>
 						<label>31552</label>
@@ -462,7 +439,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom6_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom6_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom6_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom6)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
@@ -470,7 +447,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_6_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_6_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_6_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_6_Folder_6)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom6)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
@@ -479,14 +456,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_6_Folder_6)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_6_Folder_6)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_6_Folder_6)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_6_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom6)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS FAVOURITES 7 -->
-					
 					<control type="radiobutton" id="236">
 						<include>FusionSettingsButton</include>
 						<label>31553</label>
@@ -522,7 +498,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom7_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom7_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom7_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom7)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
@@ -530,7 +506,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_7_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_7_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_7_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_7_Folder_7)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom7)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
@@ -539,14 +515,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_7_Folder_7)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_7_Folder_7)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_7_Folder_7)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_7_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom7)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS FAVOURITES 8 -->
-					
 					<control type="radiobutton" id="242">
 						<include>FusionSettingsButton</include>
 						<label>31554</label>
@@ -582,7 +557,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom8_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom8_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom8_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom8)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
@@ -590,7 +565,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_8_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_8_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_8_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_8_Folder_8)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom8)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
@@ -599,14 +574,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_8_Folder_8)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_8_Folder_8)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_8_Folder_8)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_8_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom8)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS FAVOURITES 9 -->
-					
 					<control type="radiobutton" id="248">
 						<include>FusionSettingsButton</include>
 						<label>31555</label>
@@ -642,7 +616,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom9_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom9_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom9_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom9)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
@@ -650,7 +624,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_9_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_9_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_9_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_9_Folder_9)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom9)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
@@ -659,14 +633,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_9_Folder_9)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_9_Folder_9)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_9_Folder_9)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_9_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom9)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS FAVOURITES 10 -->
-					
 					<control type="radiobutton" id="254">
 						<include>FusionSettingsButton</include>
 						<label>31556</label>
@@ -702,7 +675,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom10_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom10_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom10_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom10)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
@@ -710,7 +683,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_10_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_10_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_10_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_10_Folder_10)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom10)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
@@ -719,24 +692,22 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_10_Folder_10)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_10_Folder_10)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_10_Folder_10)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_10_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom10)</visible>
 						<visible>Skin.HasSetting(cust_favorite)</visible>
 					</control>
-					
-					
+
+
 					<!-- EXTRA ITEMS PLAYLISTS 1-10 -->
-					
 					<control type="radiobutton" id="260">
 						<include>FusionSettingsButton</include>
 						<label>31573</label>
 						<onclick>Skin.ToggleSetting(cust_playlist)</onclick>
 						<selected>Skin.HasSetting(cust_playlist)</selected>
 					</control>
-					
+
 					<!-- EXTRA ITEMS PLAYLIST 1 -->
-					
 					<control type="radiobutton" id="261">
 						<include>FusionSettingsButton</include>
 						<label>31562</label>
@@ -771,7 +742,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom11_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom11_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom11_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom11)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
@@ -779,7 +750,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_11_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_11_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_11_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_11_Folder_11)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom11)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
@@ -788,14 +759,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_11_Folder_11)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_11_Folder_11)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_11_Folder_11)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_11_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom11)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS PLAYLIST 2 -->
-					
 					<control type="radiobutton" id="267">
 						<include>FusionSettingsButton</include>
 						<label>31563</label>
@@ -830,7 +800,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom12_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom12_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom12_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom12)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
@@ -838,7 +808,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_12_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_12_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_12_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_12_Folder_12)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom12)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
@@ -847,14 +817,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_12_Folder_12)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_12_Folder_12)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_12_Folder_12)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_12_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom12)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS PLAYLIST 3 -->
-					
 					<control type="radiobutton" id="273">
 						<include>FusionSettingsButton</include>
 						<label>31564</label>
@@ -889,7 +858,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom13_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom13_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom13_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom13)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
@@ -897,7 +866,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_13_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_13_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_13_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_13_Folder_13)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom13)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
@@ -906,14 +875,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_13_Folder_13)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_13_Folder_13)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_13_Folder_13)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_13_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom13)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS PLAYLIST 4 -->
-					
 					<control type="radiobutton" id="279">
 						<include>FusionSettingsButton</include>
 						<label>31565</label>
@@ -948,7 +916,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom14_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom14_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom14_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom14)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
@@ -956,7 +924,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_14_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_14_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_14_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_14_Folder_14)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom14)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
@@ -965,14 +933,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_14_Folder_14)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_14_Folder_14)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_14_Folder_14)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_14_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom14)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS PLAYLIST 5 -->
-					
 					<control type="radiobutton" id="285">
 						<include>FusionSettingsButton</include>
 						<label>31566</label>
@@ -1007,7 +974,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom15_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom15_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom15_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom15)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
@@ -1015,7 +982,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_15_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_15_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_15_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_15_Folder_15)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom15)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
@@ -1024,14 +991,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_15_Folder_15)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_15_Folder_15)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_15_Folder_15)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_15_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom15)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS PLAYLIST 6 -->
-					
 					<control type="radiobutton" id="291">
 						<include>FusionSettingsButton</include>
 						<label>31567</label>
@@ -1066,7 +1032,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom16_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom16_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom16_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom16)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
@@ -1074,7 +1040,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_16_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_16_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_16_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_16_Folder_16)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom16)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
@@ -1083,14 +1049,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_16_Folder_16)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_16_Folder_16)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_16_Folder_16)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_16_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom16)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS PLAYLIST 7 -->
-					
 					<control type="radiobutton" id="297">
 						<include>FusionSettingsButton</include>
 						<label>31568</label>
@@ -1125,7 +1090,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom17_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom17_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom17_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom17)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
@@ -1133,7 +1098,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_17_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_17_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_17_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_17_Folder_17)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom17)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
@@ -1142,14 +1107,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_17_Folder_17)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_17_Folder_17)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_17_Folder_17)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_17_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom17)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS PLAYLIST 8 -->
-					
 					<control type="radiobutton" id="303">
 						<include>FusionSettingsButton</include>
 						<label>31569</label>
@@ -1184,7 +1148,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom18_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom18_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom18_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom18)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
@@ -1192,7 +1156,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_18_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_18_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_18_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_18_Folder_18)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom18)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
@@ -1201,14 +1165,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_18_Folder_18)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_18_Folder_18)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_18_Folder_18)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_18_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom18)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS PLAYLIST 9 -->
-					
 					<control type="radiobutton" id="309">
 						<include>FusionSettingsButton</include>
 						<label>31570</label>
@@ -1243,7 +1206,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom19_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom19_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom19_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom19)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
@@ -1251,7 +1214,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_19_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_19_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_19_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_19_Folder_19)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom19)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
@@ -1260,14 +1223,13 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_19_Folder_19)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_19_Folder_19)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_19_Folder_19)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_19_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom19)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
-					
+
 					<!-- EXTRA ITEMS PLAYLIST 10 -->
-					
 					<control type="radiobutton" id="315">
 						<include>FusionSettingsButton</include>
 						<label>31571</label>
@@ -1302,7 +1264,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31559</label>
 						<label2>$INFO[Skin.String(Menu_Custom20_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom20_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom20_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom20)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
@@ -1310,7 +1272,7 @@
 						<include>FusionSettingsButton</include>
 						<label>31560</label>
 						<label2>$INFO[Skin.String(Menu_Custom_20_Folder)]</label2>
-				    	<onclick>Skin.SetImage(Menu_Custom_20_Folder)</onclick>
+						<onclick>Skin.SetImage(Menu_Custom_20_Folder)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_20_Folder_20)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom20)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
@@ -1319,15 +1281,14 @@
 						<include>FusionSettingsButton</include>
 						<label>31561</label>
 						<label2>$INFO[Skin.String(Menu_Custom_20_Folder_20)]</label2>
-				    	<onclick>Skin.SetPath(Menu_Custom_20_Folder_20)</onclick>
+						<onclick>Skin.SetPath(Menu_Custom_20_Folder_20)</onclick>
 						<onclick>Skin.Reset(Menu_Custom_20_Folder)</onclick>
 						<visible>Skin.HasSetting(Menu_Custom20)</visible>
 						<visible>Skin.HasSetting(cust_playlist)</visible>
 					</control>
 				</control>
-				 <!-- EXTRA ITEMS PLAYLIST 1-3 MOVIES -->
-				 
-				 
+
+				<!-- EXTRA ITEMS PLAYLIST 1-3 MOVIES -->
 				<control type="grouplist" id="9004">
 					<description>Control Area</description>
 					<visible>Container(9000).Hasfocus(2)</visible>
@@ -1340,101 +1301,56 @@
 					<onright>9000</onright>
 					<onup>9004</onup>
 					<ondown>9004</ondown>
-				<control type="radiobutton" id="321">
-					<include>FusionSettingsButton</include>
-					<label>31574</label>
-					<onclick>Skin.ToggleSetting(HomeLatestPlaylist1)</onclick>
-					<selected>Skin.HasSetting(HomeLatestPlaylist1)</selected>
-					<visible>Skin.HasSetting(Menu_Custom11)</visible>
-				</control>
-				<control type="radiobutton" id="322">
-					<include>FusionSettingsButton</include>
-					<label>31575</label>
-					<onclick>Skin.ToggleSetting(HomeLatestPlaylist2)</onclick>
-					<selected>Skin.HasSetting(HomeLatestPlaylist2)</selected>
-					<visible>Skin.HasSetting(Menu_Custom12)</visible>
-				</control>
+					<control type="radiobutton" id="321">
+						<include>FusionSettingsButton</include>
+						<label>31574</label>
+						<onclick>Skin.ToggleSetting(HomeLatestPlaylist1)</onclick>
+						<selected>Skin.HasSetting(HomeLatestPlaylist1)</selected>
+						<visible>Skin.HasSetting(Menu_Custom11)</visible>
+					</control>
+					<control type="radiobutton" id="322">
+						<include>FusionSettingsButton</include>
+						<label>31575</label>
+						<onclick>Skin.ToggleSetting(HomeLatestPlaylist2)</onclick>
+						<selected>Skin.HasSetting(HomeLatestPlaylist2)</selected>
+						<visible>Skin.HasSetting(Menu_Custom12)</visible>
+					</control>
 					<control type="radiobutton" id="323">
-					<include>FusionSettingsButton</include>
-					<label>31576</label>
-					<onclick>Skin.ToggleSetting(HomeLatestPlaylist3)</onclick>
-					<selected>Skin.HasSetting(HomeLatestPlaylist3)</selected>
-					<visible>Skin.HasSetting(Menu_Custom13)</visible>
-				</control>
-				
-				<!-- EXTRA ITEMS PLAYLIST 1-3 TVSHOWS -->
-				
-				<control type="radiobutton" id="324">
-					<include>FusionSettingsButton</include>
-					<label>31577</label>
-					<onclick>Skin.ToggleSetting(HomeLatestTVPlaylist1)</onclick>
-					<selected>Skin.HasSetting(HomeLatestTVPlaylist1)</selected>
-					<visible>Skin.HasSetting(Menu_Custom14)</visible>
-				</control>
-				<control type="radiobutton" id="325">
-					<include>FusionSettingsButton</include>
-					<label>31578</label>
-					<onclick>Skin.ToggleSetting(HomeLatestTVPlaylist2)</onclick>
-					<selected>Skin.HasSetting(HomeLatestTVPlaylist2)</selected>
-					<visible>Skin.HasSetting(Menu_Custom15)</visible>
-				</control>
-				<control type="radiobutton" id="326">
-					<include>FusionSettingsButton</include>
-					<label>31579</label>
-					<onclick>Skin.ToggleSetting(HomeLatestTVPlaylist3)</onclick>
-					<selected>Skin.HasSetting(HomeLatestTVPlaylist3)</selected>
-					<visible>Skin.HasSetting(Menu_Custom16)</visible>
-				</control>
-				</control>
-		</control>
+						<include>FusionSettingsButton</include>
+						<label>31576</label>
+						<onclick>Skin.ToggleSetting(HomeLatestPlaylist3)</onclick>
+						<selected>Skin.HasSetting(HomeLatestPlaylist3)</selected>
+						<visible>Skin.HasSetting(Menu_Custom13)</visible>
+					</control>
 
-		<control type="group">
-			<visible>Player.HasMedia</visible>
-			<control type="image">
-				<posx>0</posx>
-				<posy>654</posy>
-				<width>1280</width>
-				<height>70</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>black.png</texture>
-				<colordiffuse>A0FFFFFF</colordiffuse>
-				<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>715</posy>
-				<width>1280</width>
-				<height>5</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>zbase.png</texture>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-				<visible>!Skin.HasSetting(ZBar)</visible>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>715</posy>
-				<width>1280</width>
-				<height>5</height>
-				<aspectratio>stretch</aspectratio>
-				<texture flipx="true">zbase.png</texture>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-				<visible>!Skin.HasSetting(ZBar)</visible>
-				<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>654</posy>
-				<width>1280</width>
-				<height>1</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>white.png</texture>
-				<colordiffuse>20FFFFFF</colordiffuse>
-				<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
+					<!-- EXTRA ITEMS PLAYLIST 1-3 TVSHOWS -->
+					<control type="radiobutton" id="324">
+						<include>FusionSettingsButton</include>
+						<label>31577</label>
+						<onclick>Skin.ToggleSetting(HomeLatestTVPlaylist1)</onclick>
+						<selected>Skin.HasSetting(HomeLatestTVPlaylist1)</selected>
+						<visible>Skin.HasSetting(Menu_Custom14)</visible>
+					</control>
+					<control type="radiobutton" id="325">
+						<include>FusionSettingsButton</include>
+						<label>31578</label>
+						<onclick>Skin.ToggleSetting(HomeLatestTVPlaylist2)</onclick>
+						<selected>Skin.HasSetting(HomeLatestTVPlaylist2)</selected>
+						<visible>Skin.HasSetting(Menu_Custom15)</visible>
+					</control>
+					<control type="radiobutton" id="326">
+						<include>FusionSettingsButton</include>
+						<label>31579</label>
+						<onclick>Skin.ToggleSetting(HomeLatestTVPlaylist3)</onclick>
+						<selected>Skin.HasSetting(HomeLatestTVPlaylist3)</selected>
+						<visible>Skin.HasSetting(Menu_Custom16)</visible>
+					</control>
+				</control>
 			</control>
 		</control>
-		</control>
+		<include>ZBar</include>
 		<include>MusicOverlay</include>
 		<include>VideoOverlay</include>
-		<include>nav</include>   
+		<include>nav</include>
 	</controls>
 </window>

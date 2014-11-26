@@ -3,10 +3,10 @@
 	<!-- NAV -->
 	<include name="BreadCrumb1">
 		<animation type="WindowClose" reversible="false">
-			<effect type="fade" start="100" end="0" time="450" delay="0" />
+			<effect type="fade" start="100" end="0" time="200" delay="0" />
 		</animation>
 		<animation type="WindowOpen" reversible="false">
-			<effect type="fade" start="0" end="100" time="450" delay="0" />
+			<effect type="fade" start="0" end="100" time="200" delay="0" />
 		</animation>
 	</include>
 

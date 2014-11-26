@@ -39,7 +39,7 @@
 					<control type="label">
 						<posx>125</posx>
 						<posy>-9</posy>
-						<width>800</width>
+						<width>1200</width>
 						<height>60</height>
 						<align>left</align>
 						<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>

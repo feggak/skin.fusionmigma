@@ -305,7 +305,6 @@
 						<width>618</width>
 						<height>39</height>
 						<textcolor>f0e7e7e7</textcolor>
-						<selectedcolor>ff7acafe</selectedcolor>
 						<font>movietitle2</font>
 						<info>ListItem.Label</info>
 						<scroll>false</scroll>
@@ -539,7 +538,7 @@
 						<posx>62</posx>
 						<width>652</width>
 						<height>39</height>
-						<textcolor>itemdetail</textcolor>
+						<textcolor>f0e7e7e7</textcolor>
 						<font>movietitle2</font>
 						<info>ListItem.Label</info>
 						<include>BrowseListAnimation</include>
@@ -862,7 +861,7 @@
 						<width>259</width>
 						<height>165</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<fadetime>250</fadetime>
+						<fadetime>150</fadetime>
 						<texture background="true" diffuse="poster/posterdiffuse.png">$INFO[ListItem.Icon]</texture>
 						<animation reversible="false" effect="zoom" start="10,74,164,245" end="20,20,259,389" time="100">focus</animation>
 						<animation reversible="false" effect="zoom" end="10,74,164,245" start="20,20,259,389" time="100">unfocus</animation>
@@ -913,7 +912,7 @@
 					<width>256</width>
 					<height>256</height>
 					<aspectratio>keep</aspectratio>
-					<fadetime>300</fadetime>
+					<fadetime>150</fadetime>
 					<texture background="true" diffuse="poster/posterdiffuse.png">$INFO[ListItem.ActualIcon]</texture>
 					<visible>IsEmpty(ListItem.Thumb) + !Container.Content(genres)</visible>
 				</control>
@@ -923,7 +922,7 @@
 					<width>259</width>
 					<height>389</height>
 					<aspectratio>keep</aspectratio>
-					<fadetime>300</fadetime>
+					<fadetime>150</fadetime>
 					<texture flipy="true" background="true" diffuse="list/albumreflectdiffuse.png">$INFO[ListItem.ActualIcon]</texture>
 					<colordiffuse>FFFFFFFF</colordiffuse>
 					<visible>IsEmpty(ListItem.Thumb) + !Container.Content(genres)</visible>
@@ -933,8 +932,6 @@
 				<control type="group">
 					<visible>Container.Content(Songs) | Container.Content(Albums) | Container.Content(Artists) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(502) | Window.IsVisible(503) | Window.IsVisible(2) | Substring(Container.FolderPath,addons://,Left) | Substring(Container.FolderPath,plugin://,Left)</visible>
 					<visible>!IsEmpty(ListItem.Thumb)</visible>
-					<visible>!Substring(Container.FolderPath,plugin://plugin.video.apple.movie.trailers.lite,Left)</visible>
-					<visible>!Substring(Container.FolderPath,plugin://plugin.video.arrr.tv,Left)</visible>
 					<control type="image">
 						<posx>11</posx>
 						<posy>71</posy>

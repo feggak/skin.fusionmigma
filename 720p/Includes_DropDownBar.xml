@@ -227,11 +227,6 @@
 				<onclick>SendClick(4)</onclick>
 				<visible>container.sortdirection(descending)</visible>
 			</item>
-			<item id="6">
-				<description>View</description>
-				<label>[UPPERCASE]$LOCALIZE[317781][/UPPERCASE]</label>
-				<onclick>Container.PreviousViewMode</onclick>
-			</item>
 			<item id="3">
 				<description>View</description>
 				<label>[UPPERCASE]$LOCALIZE[31735] $INFO[Container.ViewMode][/UPPERCASE]</label>

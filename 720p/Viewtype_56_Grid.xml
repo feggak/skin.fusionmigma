@@ -386,8 +386,8 @@
 				<width>6</width>
 				<height>450</height>
 				<visible allowhiddenfocus="true">Control.IsVisible(56) + Control.HasFocus(69)</visible>
-				<texturesliderbackground>scroll/scrollbg.png</texturesliderbackground>
-				<textureslidernibfocus>scroll/scrollnib.png</textureslidernibfocus>
+				<texturesliderbackground>white2.png</texturesliderbackground>
+				<textureslidernibfocus>white3v.png</textureslidernibfocus>
 				<onleft>56</onleft>
 				<onright>300</onright>
 				<showonepage>false</showonepage>

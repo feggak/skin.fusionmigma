@@ -622,7 +622,7 @@
 							<scroll>true</scroll>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>[UPPERCASE]$INFO[ListItem.Year,, • ]$INFO[ListItem.Duration,,  minutes][/UPPERCASE]</label>
+							<label>[UPPERCASE]$INFO[ListItem.Year,, • ]$INFO[ListItem.Duration,, minutes][/UPPERCASE]</label>
 							<visible>Control.IsVisible(63) + !IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
 						</control>
 						<include condition="Skin.HasSetting(UseIMDBRating)">IMDB</include>

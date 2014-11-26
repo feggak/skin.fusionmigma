@@ -3,33 +3,20 @@
 	<allowoverlay>yes</allowoverlay>
 
 	<controls>
-		<control type="image">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1280</width>
-			<height>720</height>
-			<aspectratio>stretch</aspectratio>
-			<texture>Home/bg2.png</texture>
-		</control>	
-		<control type="image">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1280</width>
-			<height>720</height>
-			<aspectratio>stretch</aspectratio>
-			<texture>black.png</texture>
-			<colordiffuse>73FFFFFF</colordiffuse>
-		</control> 
 
+		<include>Background</include>
 		<include>FusionStyles</include>
 
 		<control type="group">
 			<animation type="Conditional" condition="Window.IsVisible(126) | Window.IsVisible(2000)">
-				<effect type="fade" start="100" end="0" time="400" />
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="100" delay="0" />
 			</animation>
 			<animation type="WindowClose" reversible="false">
-				<effect type="fade" start="100" end="0" time="350" delay="0" />
-			</animation> 
+				<effect type="fade" start="100" end="0" time="100" delay="0" />
+			</animation>
 			<control type="image">
 				<posx>110</posx>
 				<posy>130</posy>
@@ -38,18 +25,15 @@
 				<aspectratio>stretch</aspectratio>
 				<texture>settings/listbg.png</texture>
 				<colordiffuse>FFFFFFFF</colordiffuse>
-				<animation type="WindowOpen" reversible="false">
-					<effect type="fade" start="0" end="100" time="550" delay="0" />
-				</animation>
-			</control> 
+			</control>
 
 			<!-- Lefthand List -->
 			<control type="list" id="9000">
 				<description>Button Area</description>
 				<posx>115</posx>
-				<posy>144</posy>
+				<posy>135</posy>
 				<width>250</width>
-				<height>480</height>
+				<height>400</height>
 				<itemgap>.5</itemgap>
 				<onleft>9010</onleft>
 				<onright>9010</onright>
@@ -98,15 +82,15 @@
 
 			<!-- Righthand List -->
 			<control type="group" id="9010">
-			
+
 				<!-- Add-ons -->
 				<control type="grouplist" id="9001">
 					<description>Control Area</description>
 					<visible>Container(9000).Hasfocus(1)</visible>
 					<posx>366</posx>
-					<posy>139</posy>
+					<posy>136</posy>
 					<width>810</width>
-					<height>440</height>
+					<height>484</height>
 					<itemgap>.5</itemgap>
 					<onleft>9000</onleft>
 					<onright>9000</onright>
@@ -116,81 +100,37 @@
 						<label>31529</label>
 						<label2>[COLOR=white]$INFO[Skin.String(OSDSubtitlePath)][/COLOR]</label2>
 						<onclick>Skin.SetAddon(OSDSubtitlePath,xbmc.python.subtitles)</onclick>
-			            <include>FusionSettingsButton</include>
+						<include>FusionSettingsButton</include>
 						<font>griddetails</font>
 					</control>
 					<control type="button" id="101">
 						<label>31530</label>
 						<label2>[COLOR=white]$INFO[Skin.String(OSDLyricsPath)][/COLOR]</label2>
 						<onclick>Skin.SetAddon(OSDLyricsPath,xbmc.python.lyrics)</onclick>
-			            <include>FusionSettingsButton</include>
+						<include>FusionSettingsButton</include>
 						<font>griddetails</font>
 					</control>
 					<control type="radiobutton" id="102">
 						<label>31531</label>
 						<onclick>Skin.ToggleSetting(oldosd)</onclick>
 						<selected>Skin.HasSetting(oldosd)</selected>
-			            <include>FusionSettingsButton</include>
+						<include>FusionSettingsButton</include>
 						<font>griddetails</font>
 					</control>
 					<control type="radiobutton" id="103">
 						<label>31532</label>
 						<onclick>Skin.ToggleSetting(oldosdmusic)</onclick>
 						<selected>Skin.HasSetting(oldosdmusic)</selected>
-			            <include>FusionSettingsButton</include>
+						<include>FusionSettingsButton</include>
 						<font>griddetails</font>
 					</control>
 				</control>
-				
+			</control>
 		</control>
 
-		<control type="group">
-			<visible>Player.HasMedia</visible>
-			<control type="image">
-				<posx>0</posx>
-				<posy>654</posy>
-				<width>1280</width>
-				<height>70</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>black.png</texture>
-				<colordiffuse>A0FFFFFF</colordiffuse>
-				<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>715</posy>
-				<width>1280</width>
-				<height>5</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>zbase.png</texture>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-				<visible>!Skin.HasSetting(ZBar)</visible>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>715</posy>
-				<width>1280</width>
-				<height>5</height>
-				<aspectratio>stretch</aspectratio>
-				<texture flipx="true">zbase.png</texture>
-				<colordiffuse>FFFFFFFF</colordiffuse>
-				<visible>!Skin.HasSetting(ZBar)</visible>
-				<animation effect="fade" start="0" end="100" time="1600" condition="true" pulse="true">Conditional</animation>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>654</posy>
-				<width>1280</width>
-				<height>1</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>white.png</texture>
-				<colordiffuse>20FFFFFF</colordiffuse>
-				<visible>!Control.IsVisible(100) + !Control.IsVisible(53)</visible>
-			</control>
-		</control>
-		</control>
+		<include>ZBar</include>
 		<include>MusicOverlay</include>
 		<include>VideoOverlay</include>
-		<include>nav</include>   
+		<include>nav</include>
 	</controls>
 </window>
