@@ -199,8 +199,7 @@
 		<animation effect="slide" end="170,0" condition="Skin.HasSetting(biglist_hide_rating)">Conditional</animation>
 	</include>
 	<include name="WallFloat">
-		<animation effect="slide" end="-355,0" time="350" tween="cubic" easing="inout" reversible="true" condition="Container(569).Column(1)">Conditional</animation>
-		<animation effect="slide" end="-355,0" time="350" tween="cubic" easing="inout" reversible="true" condition="Container(569).Column(2)">Conditional</animation>
+		<animation effect="slide" end="-355,0" time="350" tween="cubic" easing="inout" reversible="true" condition="Container(569).Column(3)">Conditional</animation>
 	</include>
 
 </includes>

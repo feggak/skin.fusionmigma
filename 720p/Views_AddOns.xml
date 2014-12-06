@@ -1,0 +1,129 @@
+<includes>
+    <include name="VideoAddOnViews">
+        <control type="group">
+            <include>ContextFade</include>
+            <include>AddSource</include>
+            <include>InfoOpenClose</include>
+            <include>Keyboard</include>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="550" delay="0" />
+                <effect type="zoom" start="155" end="100" time="350" center="auto" delay="0" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="350" delay="0" />
+                <effect type="zoom" start="100" end="155" time="300" center="auto" delay="0" />
+            </animation>
+
+            <control type="panel" id="569">
+                <posx>0</posx>
+                <posy>84</posy>
+                <width>1760</width>
+                <height>570</height>
+                <onleft>569</onleft>
+                <onright>569</onright>
+                <onup>300</onup>
+                <ondown>570</ondown>
+                <scrolltime>280</scrolltime>
+                <orientation>horizontal</orientation>
+                <viewtype label="VOD">icon</viewtype>
+                <pagecontrol>570</pagecontrol>
+                <preloaditems>2</preloaditems>
+                <include>WallFloat</include>
+                <animation effect="slide" end="0,15" time="400" delay="95" tween="cubic" easing="inout" condition="Control.HasFocus(300)">Conditional</animation>
+                <itemlayout height="285" width="394">
+                    <control type="image">
+                        <posx>9</posx>
+                        <posy>9</posy>
+                        <width>384</width>
+                        <height>247</height>
+                        <texture border="12">whitepanel2.png</texture>
+                        <align>bottom</align>
+                        <aspectratio>stretch</aspectratio>
+                        <colordiffuse>eeffffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>18</posx>
+                        <posy>18</posy>
+                        <width>366</width>
+                        <height>204</height>
+                        <texture background="true">$INFO[ListItem.ActualIcon]</texture>
+                        <align>bottom</align>
+                        <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+                    </control>
+                    <control type="label">
+                        <posy>219</posy>
+                        <posx>20</posx>
+                        <width>360</width>
+                        <height>34</height>
+                        <info>ListItem.Label</info>
+                        <scroll>false</scroll>
+                        <textcolor>ff444444</textcolor>
+                        <font>tagline</font>
+                    </control>
+                </itemlayout>
+
+                <focusedlayout height="285" width="394">
+                    <control type="image">
+                        <posx>2</posx>
+                        <posy>3</posy>
+                        <width>398</width>
+                        <height>259</height>
+                        <texture border="12">bluepanel.png</texture>
+                        <align>bottom</align>
+                        <aspectratio>stretch</aspectratio>
+                        <colordiffuse>f4ffffff</colordiffuse>
+                        <animation type="Focus" reversible="false">
+                            <effect type="fade" start="0" end="100" time="200" />
+                            <effect type="zoom" start="110" end="100" time="500" center="auto" tween="back" easing="out" />
+                        </animation>
+                    </control>
+                    <control type="image">
+                        <posx>9</posx>
+                        <posy>9</posy>
+                        <width>384</width>
+                        <height>247</height>
+                        <texture border="12">whitepanel2.png</texture>
+                        <align>bottom</align>
+                        <aspectratio>stretch</aspectratio>
+                        <colordiffuse>eeffffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>18</posx>
+                        <posy>18</posy>
+                        <width>366</width>
+                        <height>204</height>
+                        <texture background="true">$INFO[ListItem.ActualIcon]</texture>
+                        <align>bottom</align>
+                        <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+                    </control>
+                    <control type="label">
+                        <posy>219</posy>
+                        <posx>20</posx>
+                        <width>360</width>
+                        <height>34</height>
+                        <info>ListItem.Label</info>
+                        <scroll>false</scroll>
+                        <textcolor>ff444444</textcolor>
+                        <font>tagline</font>
+                    </control>
+
+                </focusedlayout>
+            </control>
+
+            <control type="scrollbar" id="570">
+                <posx>0</posx>
+                <posy>649</posy>
+                <width>1280</width>
+                <height>5</height>
+                <visible allowhiddenfocus="true">Control.IsVisible(569) + Control.HasFocus(570)</visible>
+                <texturesliderbackground>white2.png</texturesliderbackground>
+                <textureslidernibfocus>white3.png</textureslidernibfocus>
+                <onup>569</onup>
+                <ondown>-</ondown>
+                <showonepage>false</showonepage>
+                <orientation>horizontal</orientation>
+                <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(570)">Conditional</animation>
+            </control>
+        </control>
+    </include>
+</includes>

@@ -3,7 +3,7 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
 	<onload>RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<views>50,51,52,53,54,56,57,59,60,61,63,64,65</views>
+	<views>50,51,52,53,54,56,57,59,60,61,63,64,65,569</views>
 	<controls>
 
 		<include>Background</include>
@@ -88,6 +88,8 @@
 		<include>Wrap</include>
 		<include>Icon</include>
 
+		<include>VideoAddOnViews</include>
+
 		<!-- MUSIC OVERLAY -->
 		<control type="group">
 			<visible>!Control.IsVisible(51)</visible>
@@ -157,7 +159,7 @@
 			<visible>[Control.IsVisible(53) | Control.IsVisible(54)] + Skin.HasSetting(Logos) + !Container.Content(Movies)</visible>
 			<posx>190</posx>
 			<posy>186</posy>
-			<animation effect="slide" end="0,-140" time="250" tween="circle" easing="inout" condition="Container.Content(Seasons) + Skin.HasSetting(Logos)">Conditional</animation>
+			<animation effect="slide" end="0,-140" time="350" tween="back" easing="inout" condition="Container.Content(Seasons)">Conditional</animation>
 			<control type="image">
 				<posx>22</posx>
 				<posy>-17</posy>

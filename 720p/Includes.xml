@@ -25,6 +25,7 @@
 <include file="Viewtype_61_Wrap.xml" />
 <include file="Viewtype_64_Icon.xml" />
 <include file="Viewtype_67_SongList.xml" />
+<include file="Views_AddOns.xml" />
 
 <!-- VIDEO INFO FLAGS -->
 <include name="ColorFlags">

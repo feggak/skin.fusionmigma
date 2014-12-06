@@ -208,7 +208,7 @@
 						<height>165</height>
 						<texture background="true" diffuse="icon/episodediffusefo.png">$INFO[ListItem.Icon]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<animation effect="zoom" end="125" center="auto" tween="back" easing="out" time="250">focus</animation>
+						<animation effect="zoom" end="125" center="auto" tween="back" easing="out" time="150">focus</animation>
 						<visible>Container.Content(Episodes)</visible>
 					</control>
 					<control type="image">
@@ -218,7 +218,7 @@
 						<height>165</height>
 						<texture background="true" diffuse="icon/episodediffusefo.png" fallback="nofanart.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<animation effect="zoom" end="125" center="auto" tween="back" easing="out" time="250">focus</animation>
+						<animation effect="zoom" end="125" center="auto" tween="back" easing="out" time="150">focus</animation>
 						<visible>Container.Content(TVShows) + !Skin.HasSetting(Landscape.jpg)</visible>
 						<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
 					</control>
@@ -230,7 +230,7 @@
 						<height>165</height>
 						<texture background="true" diffuse="icon/episodediffusefo.png" fallback="nofanart.png">$INFO[ListItem.Art(landscape)]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<animation effect="zoom" end="125" center="auto" tween="back" easing="out" time="250">focus</animation>
+						<animation effect="zoom" end="125" center="auto" tween="back" easing="out" time="150">focus</animation>
 						<visible>Container.Content(TVShows) + Skin.HasSetting(Landscape.jpg)</visible>
 						<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
 					</control>
@@ -243,7 +243,7 @@
 						<visible>!IsEmpty(ListItem.Thumb)</visible>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<animation type="focus">
-							<effect type="zoom" end="186" center="auto" tween="back" easing="out" time="250" />
+							<effect type="zoom" end="186" center="auto" tween="back" easing="out" time="150" />
 							<effect type="fade" end="100" time="200" />
 						</animation>
 					</control>
@@ -257,12 +257,10 @@
 						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						<visible>Skin.HasSetting(WatchedOverlays)</visible>
 						<animation type="Focus" reversible="false">
-							<effect type="slide" start="0,0" end="41,0" time="0" />
-							<effect type="fade" start="0" end="100" time="100" delay="150" />
-							<effect type="zoom" start="100" end="150" time="350" center="auto" />
+							<effect type="fade" start="0" end="100" time="100" delay="0" />
+							<effect type="zoom" start="100" end="150" time="150" center="auto" />
 						</animation>
 						<animation type="UnFocus" reversible="false">
-							<effect type="slide" start="41,0" end="0,0" time="0" />
 							<effect type="fade" start="100" end="0" time="0" delay="0" />
 							<effect type="zoom" start="150" end="100" time="0" center="auto" />
 						</animation>
