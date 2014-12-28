@@ -450,6 +450,7 @@
 						<control type="group">
 							<posy>25</posy>
 							<posx>16</posx>
+							<visible>ListItem.IsFolder + !Control.HasFocus(300)</visible>
 							<control type="image">
 								<posx>188</posx>
 								<posy>25</posy>
@@ -457,13 +458,9 @@
 								<height>336</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>poster/collectionshadow.png</texture>
-								<visible>!Container.OnNext</visible>
-								<visible>!Control.HasFocus(300) + !Control.HasFocus(567)</visible>
-								<visible>Control.IsVisible(63) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-								<visible>!ListItem.IsFolder</visible>
 								<animation effect="zoom" start="100" end="118" time="0" condition="true">true</animation>
 								<animation type="Focus" reversible="false">
-									<effect type="fade" start="0" end="75" time="500" delay="1000" />
+									<effect type="fade" start="0" end="75" time="500" delay="200" />
 								</animation>
 								<animation type="UnFocus" reversible="false">
 									<effect type="fade" start="100" end="0" time="0" delay="0" />
@@ -477,13 +474,9 @@
 								<height>202</height>
 								<aspectratio>stretch</aspectratio>
 								<texture flipx="true">collectioncd.png</texture>
-								<visible>!Container.OnNext</visible>
-								<visible>!Control.HasFocus(300) + !Control.HasFocus(567)</visible>
-								<visible>Control.IsVisible(63) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-								<visible>!ListItem.IsFolder</visible>
 								<animation type="Focus" reversible="false">
-									<effect type="fade" start="0" end="100" time="500" delay="350" />
-									<effect type="slide" start="0,0" end="240,0" time="500" delay="350" />
+									<effect type="fade" start="0" end="100" time="400" delay="100" />
+									<effect type="slide" start="0,0" end="240,0" time="400" delay="100" />
 								</animation>
 								<animation type="UnFocus" reversible="false">
 									<effect type="fade" start="100" end="0" time="0" delay="0" />
@@ -495,14 +488,10 @@
 								<width>102</width>
 								<height>202</height>
 								<aspectratio>stretch</aspectratio>
-								<visible>!Container.OnNext</visible>
-								<visible>!Control.HasFocus(300) + !Control.HasFocus(567)</visible>
 								<texture flipx="true">collectioncd.png</texture>
-								<visible>Control.IsVisible(63) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-								<visible>!ListItem.IsFolder</visible>
 								<animation type="Focus" reversible="false">
-									<effect type="fade" start="0" end="100" time="500" delay="550" />
-									<effect type="slide" start="0,0" end="240,0" time="500" delay="550" />
+									<effect type="fade" start="0" end="100" time="400" delay="250" />
+									<effect type="slide" start="0,0" end="240,0" time="400" delay="250" />
 								</animation>
 								<animation type="UnFocus" reversible="false">
 									<effect type="fade" start="100" end="0" time="0" delay="0" />
@@ -515,13 +504,9 @@
 								<height>202</height>
 								<aspectratio>stretch</aspectratio>
 								<texture flipx="true">collectioncd.png</texture>
-								<visible>!Container.OnNext</visible>
-								<visible>Control.IsVisible(63) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-								<visible>!Control.HasFocus(300) + !Control.HasFocus(567)</visible>
-								<visible>!ListItem.IsFolder</visible>
 								<animation type="Focus" reversible="false">
-									<effect type="fade" start="0" end="100" time="500" delay="750" />
-									<effect type="slide" start="0,0" end="240,0" time="500" delay="750" />
+									<effect type="fade" start="0" end="100" time="400" delay="400" />
+									<effect type="slide" start="0,0" end="240,0" time="400" delay="400" />
 								</animation>
 								<animation type="UnFocus" reversible="false">
 									<effect type="fade" start="100" end="0" time="0" delay="0" />
@@ -541,7 +526,7 @@
 								<effect type="fade" start="100" end="0" time="0" delay="0" />
 								<effect type="zoom" start="115" end="100" time="0" center="auto" />
 							</animation>
-							<visible>!Control.HasFocus(300) + !Control.HasFocus(567)</visible>
+							<visible>!Control.HasFocus(300)</visible>
 						</control>
 						<control type="image">
 							<posx>-15</posx>
@@ -582,6 +567,7 @@
 						</control>
 					</focusedlayout>
 				</control>
+
 				<!-- LABELS -->
 				<control type="group">
 					<posy>0</posy>
@@ -623,7 +609,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>[UPPERCASE]$INFO[ListItem.Year,, • ]$INFO[ListItem.Duration,, minutes][/UPPERCASE]</label>
-							<visible>Control.IsVisible(63) + !IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+							<visible>Control.IsVisible(63) + !ListItem.IsFolder</visible>
 						</control>
 						<include condition="Skin.HasSetting(UseIMDBRating)">IMDB</include>
 
@@ -653,8 +639,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>MOVIE COLLECTION</label>
-						<visible>Control.IsVisible(63) + IsEmpty(ListItem.foldername)</visible>
-						<visible>!ListItem.IsFolder</visible>
+						<visible>Control.IsVisible(63) + ListItem.IsFolder</visible>
 					</control>
 				</control>
 			</control>
