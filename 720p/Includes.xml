@@ -381,33 +381,11 @@
 		<width>60</width>
 		<aspectratio>keep</aspectratio>
 		<colordiffuse>c4ffffff</colordiffuse>
-		<texture>flags/defs/sdfo.png</texture>
-		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719)</visible>
-		<visible>!Skin.HasSetting(HideSD)</visible>
-	</control>
-	<control type="image">
-		<posx>0</posx>
-		<posy>5</posy>
-		<height>26</height>
-		<width>60</width>
-		<aspectratio>keep</aspectratio>
-		<colordiffuse>c4ffffff</colordiffuse>
 		<texture>flags/defs/hdfo.png</texture>
 		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
 	</control>
 </include>
 <include name="MovieHDFlagsPosterShelf">
-	<control type="image">
-		<posx>-5</posx>
-		<posy>0</posy>
-		<height>26</height>
-		<width>60</width>
-		<aspectratio>keep</aspectratio>
-		<colordiffuse>c4ffffff</colordiffuse>
-		<texture>flags/defs/sd.png</texture>
-		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719)</visible>
-		<visible>!Skin.HasSetting(HideSD)</visible>
-	</control>
 	<control type="image">
 		<posx>-5</posx>
 		<posy>0</posy>
@@ -430,17 +408,6 @@
 		<texture>flags/defs/blhd.png</texture>
 		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
 	</control>
-	<control type="image">
-		<posx>0</posx>
-		<posy>4</posy>
-		<height>34</height>
-		<width>37</width>
-		<aspectratio>keep</aspectratio>
-		<colordiffuse>ffffffff</colordiffuse>
-		<texture>flags/defs/blsd.png</texture>
-		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719) + !Skin.HasSetting(biglist_hide_sd)</visible>
-		<visible>!Skin.HasSetting(HideSD)</visible>
-	</control>
 </include>
 <include name="MovieHDFlagsBigListFo">
 	<control type="image">
@@ -452,17 +419,6 @@
 		<colordiffuse>ffffffff</colordiffuse>
 		<texture>flags/defs/blhdfo.png</texture>
 		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
-	</control>
-	<control type="image">
-		<posx>0</posx>
-		<posy>4</posy>
-		<height>34</height>
-		<width>37</width>
-		<aspectratio>keep</aspectratio>
-		<colordiffuse>ffffffff</colordiffuse>
-		<texture>flags/defs/blsdfo.png</texture>
-		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719) + !Skin.HasSetting(biglist_hide_sd)</visible>
-		<visible>!Skin.HasSetting(HideSD)</visible>
 	</control>
 </include>
 

@@ -525,7 +525,7 @@
 						<font>movietitle3</font>
 						<textcolor>movietitleb</textcolor>
 						<scroll>false</scroll>
-						<label>[UPPERCASE]$INFO[ListItem.Label] ($INFO[ListItem.Year])[/UPPERCASE]</label>
+						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 						<visible>Control.IsVisible(53) + !Window.IsVisible(VideoFiles)</visible>
 						<visible>Container.Content(Movies)</visible>
 						<visible>!Skin.HasSetting(Logos)</visible>

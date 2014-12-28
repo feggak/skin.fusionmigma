@@ -314,7 +314,7 @@
 				<texturesliderbackground>white2.png</texturesliderbackground>
 				<textureslidernibfocus>white3v.png</textureslidernibfocus>
 				<onleft>60</onleft>
-				<onright>-</onright>
+				<onright>300</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<animation effect="fade" start="0" end="100" time="300" condition="Control.HasFocus(507)">Conditional</animation>

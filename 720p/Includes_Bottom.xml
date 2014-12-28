@@ -235,7 +235,7 @@
 			<control type="label">
 				<posx>15r</posx>
 				<posy>37r</posy>
-				<width>360</width>
+				<width>500</width>
 				<height>35</height>
 				<font>recent2</font>
 				<textcolor>fc9f9f9f</textcolor>
@@ -248,7 +248,7 @@
 			<control type="label">
 				<posx>15r</posx>
 				<posy>37r</posy>
-				<width>360</width>
+				<width>500</width>
 				<height>35</height>
 				<font>recent2</font>
 				<textcolor>fc9f9f9f</textcolor>
