@@ -497,7 +497,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>[UPPERCASE]$INFO[ListItem.Year,, • ]$INFO[ListItem.Duration] minutes[/UPPERCASE]</label>
-						<visible>Control.IsVisible(64) + !IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(64) + !ListItem.IsFolder</visible>
 						<visible>Container.Content(Movies)</visible>
 					</control>
 					<include condition="Skin.HasSetting(UseIMDBRating)">IMDB</include>
@@ -675,9 +675,8 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>MOVIE COLLECTION</label>
-					<visible>IsEmpty(ListItem.foldername)</visible>
+					<visible>ListItem.IsFolder</visible>
 					<visible>Container.Content(Movies)</visible>
-					<visible>!ListItem.IsFolder</visible>
 				</control>
 				<!-- ADDON INFO -->
 				<control type="label">

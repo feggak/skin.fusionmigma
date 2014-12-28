@@ -122,11 +122,11 @@
 						<width>808</width>
 						<height>38</height>
 						<texture>list/collection.png</texture>
-						<visible>Control.IsVisible(50) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(50)</visible>
+						<visible>ListItem.IsFolder</visible>
 						<visible>Container.Content(Movies)</visible>
 						<animation effect="slide" start="0,30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(50).OnPrevious">focus</animation>
 						<animation effect="slide" start="0,-30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(50).OnNext">focus</animation>
-						<visible>!ListItem.IsFolder</visible>
 					</control>
 
 					<control type="image">
@@ -159,6 +159,7 @@
 						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						<visible>Skin.HasSetting(WatchedOverlays)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>!ListItem.IsFolder</visible>
 					</control>
 					<control type="image">
 						<posy>5</posy>
@@ -169,6 +170,7 @@
 						<texture>unwatched.png</texture>
 						<visible>stringcompare(ListItem.Overlay,OverlayUnwatched.png)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>!ListItem.IsFolder</visible>
 					</control>
 					<control type="label">
 						<posy>-3</posy>
@@ -201,6 +203,7 @@
 						<textcolor>list</textcolor>
 						<font>movietitle2</font>
 						<info>ListItem.Year</info>
+						<visible>!ListItem.IsFolder</visible>
 					</control>
 					<control type="label">
 						<posy>-3</posy>
@@ -393,6 +396,7 @@
 						<texture>watched.png</texture>
 						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						<visible>Skin.HasSetting(WatchedOverlays)</visible>
+						<visible>!ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="image">
@@ -403,6 +407,7 @@
 						<aspectratio>keep</aspectratio>
 						<texture>unwatched.png</texture>
 						<visible>stringcompare(ListItem.Overlay,OverlayUnwatched.png)</visible>
+						<visible>!ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 
@@ -414,7 +419,8 @@
 						<height>18</height>
 						<aspectratio>keep</aspectratio>
 						<texture>list/folder.png</texture>
-						<visible>Control.IsVisible(50) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(50)</visible>
+						<visible>ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="image">
@@ -424,8 +430,8 @@
 						<height>28</height>
 						<aspectratio>keep</aspectratio>
 						<texture>list/collectioncds.png</texture>
-						<visible>Control.IsVisible(50) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-						<visible>!ListItem.IsFolder</visible>
+						<visible>Control.IsVisible(50)</visible>
+						<visible>ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 
@@ -452,6 +458,7 @@
 						<font>movietitle2</font>
 						<info>ListItem.Year</info>
 						<include>BrowseListAnimation</include>
+						<visible>!ListItem.IsFolder</visible>
 					</control>
 				</focusedlayout>
 
@@ -475,6 +482,7 @@
 						<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						<visible>Skin.HasSetting(WatchedOverlays)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>!ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="image">
@@ -486,6 +494,7 @@
 						<texture>unwatched.png</texture>
 						<visible>stringcompare(ListItem.Overlay,OverlayUnwatched.png)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>!ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="image">
@@ -495,8 +504,9 @@
 						<height>18</height>
 						<aspectratio>keep</aspectratio>
 						<texture>list/folder.png</texture>
-						<visible>Control.IsVisible(50) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(50)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="image">
@@ -506,9 +516,8 @@
 						<height>28</height>
 						<aspectratio>keep</aspectratio>
 						<texture>list/collectioncds.png</texture>
-						<visible>Control.IsVisible(50) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(50) + ListItem.IsFolder</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-						<visible>!ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="image">
@@ -519,7 +528,7 @@
 						<aspectratio>keep</aspectratio>
 						<texture>list/directoricon.png</texture>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-						<visible>!IsEmpty(ListItem.foldername)</visible>
+						<visible>!ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="image">
@@ -530,7 +539,7 @@
 						<aspectratio>keep</aspectratio>
 						<texture>list/writericon.png</texture>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-						<visible>!IsEmpty(ListItem.foldername)</visible>
+						<visible>!ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="label">
@@ -551,6 +560,7 @@
 						<textcolor>itemdetail</textcolor>
 						<font>movietitle2</font>
 						<info>ListItem.Year</info>
+						<visible>!ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="label">
@@ -561,8 +571,7 @@
 						<textcolor>itemdetail2</textcolor>
 						<font>movietitle3</font>
 						<label>MOVIE COLLECTION</label>
-						<visible>Control.IsVisible(50) + IsEmpty(ListItem.foldername)</visible>
-						<visible>!ListItem.IsFolder</visible>
+						<visible>Control.IsVisible(50) + ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="label">

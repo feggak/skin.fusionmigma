@@ -178,22 +178,34 @@
 						<aspectratio>stretch</aspectratio>
 						<texture diffuse="list/lbgdif.png">black.png</texture>
 						<colordiffuse>60ffffff</colordiffuse>
-						<visible>Control.IsVisible(52) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(52)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>ListItem.IsFolder</visible>
 					</control>
 					<control type="image">
 						<posy>8</posy>
-						<posx>145</posx>
+						<posx>144</posx>
 						<width>25</width>
 						<height>18</height>
 						<aspectratio>keep</aspectratio>
 						<texture>list/folder.png</texture>
-						<visible>Control.IsVisible(52) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<colordiffuse>e7c0c0c0</colordiffuse>
+						<visible>Control.IsVisible(52)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>ListItem.IsFolder</visible>
+					</control>
+					<control type="image">
+						<posy>4</posy>
+						<posx>770</posx>
+						<height>22</height>
+						<aspectratio>keep</aspectratio>
+						<texture>list/collectioncds.png</texture>
+						<colordiffuse>e8c0c0c0</colordiffuse>
+						<visible>ListItem.IsFolder</visible>
 					</control>
 					<control type="label">
 						<posy>0</posy>
-						<posx>970</posx>
+						<posx>904</posx>
 						<width>618</width>
 						<height>32</height>
 						<label>MOVIE COLLECTION</label>
@@ -201,8 +213,8 @@
 						<textcolor>e7c0c0c0</textcolor>
 						<selectedcolor>ff2285ff</selectedcolor>
 						<font>movietitle2b</font>
-						<visible>Control.IsVisible(52) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
-						<visible>!ListItem.IsFolder</visible>
+						<visible>Control.IsVisible(52)</visible>
+						<visible>ListItem.IsFolder</visible>
 					</control>
 
 					<!-- YEAR -->
@@ -215,6 +227,7 @@
 						<font>movietitle2b</font>
 						<align>left</align>
 						<info>ListItem.Year</info>
+						<visible>!ListItem.IsFolder</visible>
 					</control>
 					<!-- TITLE -->
 					<control type="label">
@@ -249,7 +262,8 @@
 						<font>movietitle2b</font>
 						<align>right</align>
 						<label>$INFO[ListItem.Duration,, mins]</label>
-						<visible>Control.IsVisible(52) + !IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(52)</visible>
+						<visible>!ListItem.IsFolder</visible>
 					</control>
 					<!-- RATING -->
 					<control type="label">
@@ -312,28 +326,35 @@
 					<!-- MOVIE COLLECTIONS -->
 					<control type="image">
 						<posy>8</posy>
-						<posx>145</posx>
+						<posx>144</posx>
 						<width>25</width>
 						<height>18</height>
 						<aspectratio>keep</aspectratio>
 						<texture>list/folder.png</texture>
-						<include>listfocusfade</include>
-						<visible>Control.IsVisible(52) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(52)</visible>
+						<visible>ListItem.IsFolder</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+					</control>
+					<control type="image">
+						<posy>4</posy>
+						<posx>770</posx>
+						<height>22</height>
+						<aspectratio>keep</aspectratio>
+						<texture>list/collectioncds.png</texture>
+						<visible>ListItem.IsFolder</visible>
 					</control>
 					<control type="label">
 						<posy>0</posy>
-						<posx>970</posx>
+						<posx>904</posx>
 						<width>618</width>
 						<height>32</height>
 						<label>MOVIE COLLECTION</label>
 						<scroll>false</scroll>
 						<textcolor>white</textcolor>
 						<font>movietitle2b</font>
-						<include>listfocusfade</include>
-						<visible>Control.IsVisible(52) + IsEmpty(ListItem.foldername) + !substring(Container.Listitem.Label,..,left)</visible>
+						<visible>Control.IsVisible(52)</visible>
+						<visible>ListItem.IsFolder</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-						<visible>!ListItem.IsFolder</visible>
 					</control>
 
 					<!-- YEAR -->
@@ -346,6 +367,7 @@
 						<font>movietitle2b</font>
 						<align>left</align>
 						<info>ListItem.Year</info>
+						<visible>!ListItem.IsFolder</visible>
 					</control>
 					<!-- TITLE -->
 					<control type="label">

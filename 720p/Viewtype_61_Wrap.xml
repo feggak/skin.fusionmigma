@@ -460,7 +460,7 @@
 								<texture>poster/collectionshadow.png</texture>
 								<animation effect="zoom" start="100" end="118" time="0" condition="true">true</animation>
 								<animation type="Focus" reversible="false">
-									<effect type="fade" start="0" end="75" time="500" delay="200" />
+									<effect type="fade" start="0" end="50" time="400" delay="600" />
 								</animation>
 								<animation type="UnFocus" reversible="false">
 									<effect type="fade" start="100" end="0" time="0" delay="0" />

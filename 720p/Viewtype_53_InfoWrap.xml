@@ -629,6 +629,21 @@
 					<autoscroll delay="12000" time="2000" repeat="10000" />
 					<label>$INFO[ListItem.Plot]</label>
 					<visible>Container.Content(Movies) | [Container.Content(TVShows) + !Skin.HasSetting(Logos)]</visible>
+					<visible>!ListItem.IsFolder</visible>
+				</control>
+				<control type="textbox">
+					<posx>215</posx>
+					<posy>446</posy>
+					<width>850</width>
+					<height>132</height>
+					<font>homemenu3</font>
+					<textcolor>movietitleb</textcolor>
+					<scroll>true</scroll>
+					<align>justify</align>
+					<autoscroll delay="12000" time="2000" repeat="10000" />
+					<label>MOVIE COLLECTION</label>
+					<visible>Container.Content(Movies) | [Container.Content(TVShows) + !Skin.HasSetting(Logos)]</visible>
+					<visible>ListItem.IsFolder</visible>
 				</control>
 				<control type="textbox">
 					<posx>215</posx>
