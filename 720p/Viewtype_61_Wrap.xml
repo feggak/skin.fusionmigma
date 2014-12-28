@@ -451,6 +451,7 @@
 							<posy>25</posy>
 							<posx>16</posx>
 							<visible>ListItem.IsFolder + !Control.HasFocus(300)</visible>
+							<visible>Container.Content(Movies)</visible>
 							<control type="image">
 								<posx>188</posx>
 								<posy>25</posy>
@@ -640,6 +641,7 @@
 						<aligny>center</aligny>
 						<label>MOVIE COLLECTION</label>
 						<visible>Control.IsVisible(63) + ListItem.IsFolder</visible>
+						<visible>Container.Content(Movies)</visible>
 					</control>
 				</control>
 			</control>

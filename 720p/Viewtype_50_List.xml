@@ -360,8 +360,8 @@
 						<height>39</height>
 						<texture>list/smalllistfo.png</texture>
 						<aspectratio>stretch</aspectratio>
-						<animation effect="slide" start="0,30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(50).OnPrevious">focus</animation>
-						<animation effect="slide" start="0,-30" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(50).OnNext">focus</animation>
+						<animation effect="slide" start="0,30" end="0,0" time="200" reversible="false" tween="back" easing="out" condition="Container(50).OnPrevious">focus</animation>
+						<animation effect="slide" start="0,-30" end="0,0" time="200" reversible="false" tween="back" easing="out" condition="Container(50).OnNext">focus</animation>
 					</control>
 					<control type="image">
 						<posx>8</posx>
@@ -421,6 +421,7 @@
 						<texture>list/folder.png</texture>
 						<visible>Control.IsVisible(50)</visible>
 						<visible>ListItem.IsFolder</visible>
+						<visible>Container.Content(Movies)</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="image">
@@ -432,6 +433,7 @@
 						<texture>list/collectioncds.png</texture>
 						<visible>Control.IsVisible(50)</visible>
 						<visible>ListItem.IsFolder</visible>
+						<visible>Container.Content(Movies)</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 
@@ -473,6 +475,28 @@
 						<animation effect="slide" start="0,-30" end="0,0" time="200" reversible="false" tween="back" easing="out" condition="Container(50).OnNext">focus</animation>
 					</control>
 					<control type="image">
+						<posx>8</posx>
+						<posy>2</posy>
+						<width>35</width>
+						<height>35</height>
+						<texture background="true">$INFO[listitem.thumb]</texture>
+						<aspectratio>keep</aspectratio>
+						<fadetime>300</fadetime>
+						<visible>!IsEmpty(ListItem.Thumb) + !Container.Content(Movies)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+					<control type="image">
+						<posx>8</posx>
+						<posy>2</posy>
+						<width>35</width>
+						<height>35</height>
+						<texture>$INFO[listitem.actualicon]</texture>
+						<aspectratio>keep</aspectratio>
+						<fadetime>300</fadetime>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+					<control type="image">
 						<posy>5</posy>
 						<posx>11</posx>
 						<width>30</width>
@@ -505,7 +529,7 @@
 						<aspectratio>keep</aspectratio>
 						<texture>list/folder.png</texture>
 						<visible>Control.IsVisible(50)</visible>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>Container.Content(Movies)</visible>
 						<visible>ListItem.IsFolder</visible>
 						<include>BrowseListAnimation</include>
 					</control>
@@ -517,7 +541,7 @@
 						<aspectratio>keep</aspectratio>
 						<texture>list/collectioncds.png</texture>
 						<visible>Control.IsVisible(50) + ListItem.IsFolder</visible>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						<visible>Container.Content(Movies)</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="image">
@@ -572,6 +596,7 @@
 						<font>movietitle3</font>
 						<label>MOVIE COLLECTION</label>
 						<visible>Control.IsVisible(50) + ListItem.IsFolder</visible>
+						<visible>Container.Content(Movies)</visible>
 						<include>BrowseListAnimation</include>
 					</control>
 					<control type="label">

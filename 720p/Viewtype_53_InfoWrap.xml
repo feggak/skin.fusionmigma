@@ -629,7 +629,6 @@
 					<autoscroll delay="12000" time="2000" repeat="10000" />
 					<label>$INFO[ListItem.Plot]</label>
 					<visible>Container.Content(Movies) | [Container.Content(TVShows) + !Skin.HasSetting(Logos)]</visible>
-					<visible>!ListItem.IsFolder</visible>
 				</control>
 				<control type="textbox">
 					<posx>215</posx>
@@ -642,7 +641,7 @@
 					<align>justify</align>
 					<autoscroll delay="12000" time="2000" repeat="10000" />
 					<label>MOVIE COLLECTION</label>
-					<visible>Container.Content(Movies) | [Container.Content(TVShows) + !Skin.HasSetting(Logos)]</visible>
+					<visible>Container.Content(Movies) + !Skin.HasSetting(Logos)]</visible>
 					<visible>ListItem.IsFolder</visible>
 				</control>
 				<control type="textbox">

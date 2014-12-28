@@ -273,8 +273,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>[B]$INFO[ListItem.Year][/B]$INFO[ListItem.Studio,$LOCALIZE[31618]]</label>
-				<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + Container.Content(Movies) | Container.Content(TVShows)</visible>
-				<visible>!ListItem.IsFolder</visible>
+				<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + [Container.Content(Movies) + !ListItem.IsFolder] | Container.Content(TVShows)</visible>
 			</control>
 			<!-- MOVIE RUNTIME/GENRE -->
 			<control type="label">

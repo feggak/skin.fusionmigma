@@ -412,10 +412,10 @@
   <string id="31703">True 1080p</string>
   <string id="31704">True 720p</string>
   <string id="31705">NOT TRUE HD</string>
-  <string id="31706">FPS:</string>
+  <string id="31706">Refresh Rate:</string>
   <string id="31707">CPU:</string>
   <string id="31708">Free RAM:</string>
-  <string id="31709">XBMC Version:</string>
+  <string id="31709">KODI Version:</string>
   <string id="31710">Internet:</string>
   <string id="31711">Storage Space Info</string>
   <string id="31712">Current Weather</string>
