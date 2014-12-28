@@ -22,15 +22,16 @@
 			<control type="panel" id="64">
 				<visible>Container.Content(Movies)</visible>
 				<visible>!Skin.HasSetting(HideIcon)</visible>
-				<posx>178</posx>
-				<posy>120</posy>
-				<width>951</width>
+				<posx>105</posx>
+				<posy>98</posy>
+				<width>1068</width>
 				<height>460</height>
-				<onleft>300</onleft>
-				<onright>518</onright>
-				<onup>64</onup>
-				<ondown>64</ondown>
-				<scrolltime>200</scrolltime>
+				<onleft>64</onleft>
+				<onright>64</onright>
+				<onup>300</onup>
+				<ondown>518</ondown>
+				<scrolltime>150</scrolltime>
+				<orientation>horizontal</orientation>
 				<viewtype label="PosterIcon">icon</viewtype>
 				<pagecontrol>518</pagecontrol>
 				<itemlayout height="224" width="133">
@@ -80,11 +81,10 @@
 						<width>106</width>
 						<height>144</height>
 						<texture>icon/posterfo.png</texture>
-						<visible>!IsEmpty(ListItem.Thumb)</visible>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<animation type="focus">
 							<effect type="zoom" end="200" center="auto" tween="back" easing="out" time="150" />
-							<effect type="fade" end="100" time="200" />
+							<effect type="fade" end="100" time="150" />
 						</animation>
 					</control>
 					<control type="image">
@@ -270,7 +270,6 @@
 
 			<!-- MUSIC -->
 			<control type="panel" id="66">
-				<!--<visible>Window.IsActive(2) | Window.IsActive(40)</visible>-->
 				<visible>!Skin.HasSetting(HideIcon)</visible>
 				<visible>Container.Content(Artists) | Container.Content(Albums)</visible>
 				<posx>64</posx>
@@ -708,20 +707,21 @@
 				<onright>516</onright>
 				<showonepage>false</showonepage>
 				<orientation>horizontal</orientation>
-				<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(580)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(516)">Conditional</animation>
 			</control>
 			<control type="scrollbar" id="518">
-				<posx>1117</posx>
-				<posy>155</posy>
-				<width>5</width>
-				<height>350</height>
+				<posx>0</posx>
+				<posy>649</posy>
+				<width>1280</width>
+				<height>5</height>
 				<visible allowhiddenfocus="true">Control.IsVisible(64) + Control.HasFocus(518)</visible>
 				<texturesliderbackground>white2.png</texturesliderbackground>
-				<textureslidernibfocus>white3v.png</textureslidernibfocus>
-				<onleft>50</onleft>
-				<onright>50</onright>
+				<textureslidernibfocus>white3.png</textureslidernibfocus>x
+				<onup>64</onup>
+				<onleft>516</onleft>
+				<onright>516</onright>
 				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
+				<orientation>horizontal</orientation>
 				<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(518)">Conditional</animation>
 			</control>
 			<control type="scrollbar" id="520">

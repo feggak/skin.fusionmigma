@@ -458,8 +458,8 @@
 
 			<!-- SCROLL BAR -->
 			<control type="scrollbar" id="708">
-				<posx>1266</posx>
-				<posy>500</posy>
+				<posx>1267</posx>
+				<posy>502</posy>
 				<width>6</width>
 				<height>178</height>
 				<texturesliderbackground>white2.png</texturesliderbackground>
