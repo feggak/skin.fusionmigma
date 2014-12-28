@@ -56,7 +56,7 @@
 
 		<!-- MEDIA CODEC FLAGS -->
 		<control type="grouplist">
-			<animation effect="slide" end="0,-10" time="0" condition="Skin.HasSetting(ZBar)">Conditional</animation>
+			<animation effect="slide" end="0,-10" time="0" condition="!Skin.HasSetting(ZBar)">Conditional</animation>
 			<posx>4</posx>
 			<posy>673</posy>
 			<width>600</width>

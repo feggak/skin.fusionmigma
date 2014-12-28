@@ -341,21 +341,6 @@
 		<width>75</width>
 		<aspectratio>keep</aspectratio>
 		<colordiffuse>c4ffffff</colordiffuse>
-		<texture>flags/defs/sd.png</texture>
-		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719)</visible>
-		<visible>!Skin.HasSetting(HideSD)</visible>
-		<animation effect="fade" start="0" end="100" time="500" delay="0" >WindowOpen</animation>
-		<animation effect="fade" start="0" end="100" time="500" delay="200" >Visible</animation>
-		<animation effect="fade" start="100" end="0" time="50" delay="0" >Hidden</animation>
-		<animation effect="fade" start="100" end="0" time="50" delay="0" >WindowClose</animation>
-	</control>
-	<control type="image">
-		<posx>0</posx>
-		<posy>0</posy>
-		<height>39</height>
-		<width>75</width>
-		<aspectratio>keep</aspectratio>
-		<colordiffuse>c4ffffff</colordiffuse>
 		<texture>flags/defs/hd.png</texture>
 		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
 		<animation effect="fade" start="0" end="100" time="500" delay="0" >WindowOpen</animation>
@@ -372,33 +357,11 @@
 		<width>70</width>
 		<aspectratio>keep</aspectratio>
 		<colordiffuse>c4ffffff</colordiffuse>
-		<texture>flags/defs/sdfo.png</texture>
-		<visible>!IsEmpty(ListItem.videoresolution) + !IntegerGreaterThan(ListItem.videoresolution,719)</visible>
-		<visible>!Skin.HasSetting(HideSD)</visible>
-	</control>
-	<control type="image">
-		<posx>0</posx>
-		<posy>-5</posy>
-		<height>34</height>
-		<width>70</width>
-		<aspectratio>keep</aspectratio>
-		<colordiffuse>c4ffffff</colordiffuse>
 		<texture>flags/defs/hdfo.png</texture>
 		<visible>IntegerGreaterThan(ListItem.videoresolution,719)</visible>
 	</control>
 </include>
 <include name="MovieHDFlagsDialog">
-	<control type="image">
-		<posx>0</posx>
-		<posy>-5</posy>
-		<height>34</height>
-		<width>70</width>
-		<aspectratio>keep</aspectratio>
-		<colordiffuse>c4ffffff</colordiffuse>
-		<texture>flags/defs/sdfo.png</texture>
-		<visible>!IsEmpty(VideoPlayer.videoresolution) + !IntegerGreaterThan(VideoPlayer.videoresolution,719)</visible>
-		<visible>!Skin.HasSetting(HideSD)</visible>
-	</control>
 	<control type="image">
 		<posx>0</posx>
 		<posy>-5</posy>

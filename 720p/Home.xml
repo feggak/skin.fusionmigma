@@ -31,7 +31,6 @@
             <texture>Home/middle.png</texture>
             <colordiffuse>AFFFFFFF</colordiffuse>
             <visible>Container(540).HasFocus(1) | Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(8) | Container(540).HasFocus(9) | Container(540).HasFocus(14) | Container(540).HasFocus(15)</visible>
-            <visible>Skin.HasSetting(HomeSubMenus)</visible>
             <animation type="WindowOpen" reversible="false">
                 <effect type="fade" start="0" end="100" time="250" delay="100"/>
             </animation>
@@ -178,7 +177,6 @@
                 <texture>Home/subarrow.png</texture>
                 <colordiffuse>FFFFFFFF</colordiffuse>
                 <visible>Container(540).HasFocus(1) | Container(540).HasFocus(2) | Container(540).HasFocus(3) | Container(540).HasFocus(4) | Container(540).HasFocus(7) | Container(540).HasFocus(8) | Container(540).HasFocus(9) | Container(540).HasFocus(14) | Container(540).HasFocus(15)</visible>
-                <visible>Skin.HasSetting(HomeSubMenus)</visible>
                 <animation type="WindowOpen" reversible="false">
                     <effect type="fade" start="0" end="100" time="450" delay="780" />
                 </animation>
@@ -461,7 +459,6 @@
         <!-- SUB MENU -->
         <control type="group" id="200">
             <description>Sub Menus</description>
-            <visible>Skin.HasSetting(HomeSubMenus)</visible>
 
             <!-- MOVIES -->
             <control type="list" id="640">
@@ -1085,7 +1082,6 @@
 
             <!-- CURRENT WEATHER (WEATHER) -->
             <control type="group">
-                <visible>Skin.HasSetting(HomeWeatherInfo)</visible>
                 <visible>Container(540).HasFocus(7)</visible>
                 <animation type="Visible" reversible="false">
                     <effect type="fade" start="0" end="100" time="100" delay="0"/>
@@ -1186,7 +1182,6 @@
                 </animation>
 
                 <control type="image">
-                    <visible>Skin.HasSetting(HomeRecentlyAdded)</visible>
                     <width>32</width>
                     <height>32</height>
                     <aspectratio>stretch</aspectratio>
@@ -1195,7 +1190,6 @@
                     <visible>Container(540).HasFocus(2) | Container(540).HasFocus(14) | Container(540).HasFocus(3) | Container(540).HasFocus(4)</visible>
                 </control>
                 <control type="image">
-                    <visible>Skin.HasSetting(HomeSystemInfo)</visible>
                     <width>32</width>
                     <height>32</height>
                     <aspectratio>stretch</aspectratio>
@@ -1204,7 +1198,6 @@
                     <visible>Container(540).HasFocus(9)</visible>
                 </control>
                 <control type="image">
-                    <visible>Skin.HasSetting(HomeSystemInfo)</visible>
                     <width>32</width>
                     <height>32</height>
                     <aspectratio>stretch</aspectratio>
@@ -1222,7 +1215,6 @@
                 </control>
 
                 <control type="label">
-                    <visible>Skin.HasSetting(HomeRecentlyAdded)</visible>
                     <posx>39</posx>
                     <posy>2</posy>
                     <width>250</width>
@@ -1234,7 +1226,6 @@
                     <visible>Container(540).HasFocus(2) | Container(540).HasFocus(14)</visible>
                 </control>
                 <control type="label">
-                    <visible>Skin.HasSetting(HomeSystemInfo)</visible>
                     <posx>39</posx>
                     <posy>2</posy>
                     <width>200</width>
@@ -1246,7 +1237,6 @@
                     <visible>Container(540).HasFocus(9)</visible>
                 </control>
                 <control type="label">
-                    <visible>Skin.HasSetting(HomeSystemInfo)</visible>
                     <posx>39</posx>
                     <posy>2</posy>
                     <width>200</width>
@@ -1258,7 +1248,6 @@
                     <visible>Container(540).HasFocus(8)</visible>
                 </control>
                 <control type="label">
-                    <visible>Skin.HasSetting(HomeRecentlyAdded)</visible>
                     <posx>39</posx>
                     <posy>2</posy>
                     <width>250</width>
@@ -1462,7 +1451,6 @@
             <!-- FUTURE WEATHER (WEATHER) -->
             <control type="group">
                 <posx>506r</posx>
-                <visible>Skin.HasSetting(HomeWeatherInfo)</visible>
                 <visible>Container(540).HasFocus(7)</visible>
                 <animation type="Visible" reversible="false">
                     <effect type="fade" start="0" end="100" time="100" delay="0"/>
@@ -1709,7 +1697,6 @@
                 !Container(540).HasFocus(10) + !Container(540).HasFocus(11) +
                 !Container(540).HasFocus(12) + !Container(540).HasFocus(15) +
                 !Container(540).HasFocus(15) + !Container(540).HasFocus(1)</visible>
-            <visible>Skin.HasSetting(HomeTotals)</visible>
 
             <!-- STATIC PANEL -->
             <control type="image">

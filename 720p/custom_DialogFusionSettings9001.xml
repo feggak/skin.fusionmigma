@@ -138,12 +138,6 @@
 						<onclick>Skin.ToggleSetting(HideDropDown)</onclick>
 						<selected>Skin.HasSetting(HideDropDown)</selected>
 					</control>
-					<control type="radiobutton" id="105">
-						<include>FusionSettingsButton</include>
-						<label>31469</label>
-						<onclick>Skin.ToggleSetting(HideSD)</onclick>
-						<selected>Skin.HasSetting(HideSD)</selected>
-					</control>
 					<control type="radiobutton" id="106">
 						<include>FusionSettingsButton</include>
 						<label>31470</label>

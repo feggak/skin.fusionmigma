@@ -92,10 +92,6 @@
 						<label>31411</label>
 						<onclick>SetFocus(9005)</onclick>
 					</item>
-					<item id="6">
-						<label>317804</label>
-						<onclick>SetFocus(9006)</onclick>
-					</item>
 				</content>
 			</control>
 
@@ -186,43 +182,11 @@
 					<ondown>9002</ondown>
 					<control type="radiobutton" id="100">
 						<include>FusionSettingsButton</include>
-						<label>31421</label>
-						<onclick>Skin.ToggleSetting(HomeTotals)</onclick>
-						<selected>!Skin.HasSetting(HomeTotals)</selected>
-					</control>
-					<control type="radiobutton" id="101">
-						<include>FusionSettingsButton</include>
-						<label>31422</label>
-						<onclick>Skin.ToggleSetting(HomeSystemInfo)</onclick>
-						<selected>!Skin.HasSetting(HomeSystemInfo)</selected>
-					</control>
-					<!-- <control type="radiobutton" id="108">
-						<include>FusionSettingsButton</include>
-						<label>31426</label>
-						<onclick>Skin.ToggleSetting(HomeWatchlistAlbums)</onclick>
-						<onclick>Skin.Reset(HomeRecentlyAddedAlbums)</onclick>
-						<selected>Skin.HasSetting(HomeWatchlistAlbums)</selected>
-						<visible>Skin.HasSetting(HomeWatchlist)</visible>
-					</control> -->
-					<control type="radiobutton" id="108">
-						<include>FusionSettingsButton</include>
-						<label>31428</label>
-						<onclick>Skin.ToggleSetting(HomeWeatherInfo)</onclick>
-						<selected>!Skin.HasSetting(HomeWeatherInfo)</selected>
-					</control>
-					<control type="radiobutton" id="109">
-						<include>FusionSettingsButton</include>
-						<label>31429</label>
-						<onclick>Skin.ToggleSetting(HomeSubMenus)</onclick>
-						<selected>!Skin.HasSetting(HomeSubMenus)</selected>
-					</control>
-					<control type="radiobutton" id="111">
-						<include>FusionSettingsButton</include>
 						<label>31467</label>
 						<onclick>Skin.ToggleSetting(ZBarhome)</onclick>
 						<selected>Skin.HasSetting(ZBarhome)</selected>
 					</control>
-					<control type="radiobutton" id="110">
+					<control type="radiobutton" id="101">
 						<include>FusionSettingsButton</include>
 						<label>31430</label>
 						<onclick>Skin.ToggleSetting(DiscLabel)</onclick>
@@ -496,26 +460,6 @@
 					</control>
 				</control>
 
-				<!-- Extra Items -->
-				<control type="grouplist" id="9006">
-					<description>Control Area</description>
-					<visible>Container(9000).Hasfocus(6)</visible>
-					<posx>366</posx>
-					<posy>136</posy>
-					<width>810</width>
-					<height>484</height>
-					<itemgap>.5</itemgap>
-					<onleft>9000</onleft>
-					<onright>9000</onright>
-					<onup>9005</onup>
-					<ondown>9005</ondown>
-					<control type="radiobutton" id="100">
-						<include>FusionSettingsButton</include>
-						<label>31423</label>
-						<onclick>Skin.ToggleSetting(HomeRecentlyAdded)</onclick>
-						<selected>!Skin.HasSetting(HomeRecentlyAdded)</selected>
-					</control>
-				</control>
 			</control>
 		</control>
 
