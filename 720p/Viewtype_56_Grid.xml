@@ -13,10 +13,10 @@
 			<control type="panel" id="56">
 				<viewtype label="PosterGrid">icon</viewtype>
 				<visible>Container.Content(Movies) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
-				<posx>520</posx>
-				<posy>132</posy>
+				<posx>512</posx>
+				<posy>123</posy>
 				<width>800</width>
-				<height>482</height>
+				<height>512</height>
 				<scrolltime>200</scrolltime>
 				<orientation>vertical</orientation>
 				<aligny>top</aligny>
@@ -27,7 +27,7 @@
 				<pagecontrol>69</pagecontrol>
 				<preloaditems>2</preloaditems>
 				<visible>!Skin.HasSetting(HideGrid)</visible>
-				<include>TallPanel</include>
+				<include>PosterPanel</include>
 			</control>
 
 			<!-- WIDE GRID -->
@@ -73,14 +73,14 @@
 
 			<!-- INFO PANEL -->
 			<control type="group">
-				<posx>-36</posx>
-				<posy>-5</posy>
+				<posx>-38</posx>
+				<posy>-12</posy>
 				<visible>Control.IsVisible(56) | Control.IsVisible(57) | Control.IsVisible(58)</visible>
 
 				<!-- FANART + BORDER -->
 				<control type="image">
 					<posx>78</posx>
-					<posy>137</posy>
+					<posy>133</posy>
 					<width>447</width>
 					<height>258</height>
 					<texture fallback="special://skin/extras/backgrounds/advancedlauncher.jpg" background="true" diffuse="info/fandiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
@@ -89,7 +89,7 @@
 				</control>
 				<control type="image">
 					<posx>78</posx>
-					<posy>137</posy>
+					<posy>133</posy>
 					<width>447</width>
 					<height>258</height>
 					<texture>$INFO[ListItem.path]landscape.jpg</texture>
@@ -99,7 +99,7 @@
 				</control>
 				<control type="image">
 					<posx>53</posx>
-					<posy>112</posy>
+					<posy>108</posy>
 					<width>497</width>
 					<height>308</height>
 					<aspectratio>stretch</aspectratio>
@@ -110,7 +110,7 @@
 				<!-- GLOBAL TITLE -->
 				<control type="label">
 					<posx>80</posx>
-					<posy>77</posy>
+					<posy>76</posy>
 					<width>1120</width>
 					<height>94</height>
 					<aligny>top</aligny>
@@ -124,7 +124,7 @@
 				<control type="label">
 					<visible>Container.Content(Movies) + !IsEmpty(ListItem.FileName)</visible>
 					<posx>80</posx>
-					<posy>406</posy>
+					<posy>402</posy>
 					<width>440</width>
 					<height>35</height>
 					<font>tvtitle3</font>
@@ -135,7 +135,7 @@
 				<control type="label">
 					<visible>Container.Content(Movies) + IsEmpty(ListItem.FileName)</visible>
 					<posx>80</posx>
-					<posy>406</posy>
+					<posy>402</posy>
 					<width>440</width>
 					<height>35</height>
 					<font>tvtitle3</font>
@@ -148,7 +148,7 @@
 				<control type="label">
 					<visible>Container.Content(TVShows)</visible>
 					<posx>80</posx>
-					<posy>406</posy>
+					<posy>402</posy>
 					<width>440</width>
 					<height>35</height>
 					<font>tvtitle3</font>
@@ -160,7 +160,7 @@
 				<control type="label">
 					<visible>Container.Content(Artists)</visible>
 					<posx>80</posx>
-					<posy>406</posy>
+					<posy>402</posy>
 					<width>440</width>
 					<height>35</height>
 					<font>tvtitle3</font>
@@ -172,7 +172,7 @@
 				<control type="label">
 					<visible>Container.Content(Albums)</visible>
 					<posx>80</posx>
-					<posy>406</posy>
+					<posy>402</posy>
 					<width>440</width>
 					<height>35</height>
 					<font>tvtitle3</font>
@@ -184,7 +184,7 @@
 				<control type="label">
 					<visible>SubString(Container.Folderpath,plugin://plugin.program.advanced.launcher)</visible>
 					<posx>80</posx>
-					<posy>405</posy>
+					<posy>402</posy>
 					<width>440</width>
 					<height>35</height>
 					<font>tvtitle3</font>
@@ -196,7 +196,7 @@
 				<!-- MOVIE PLOT FIELD -->
 				<control type="textbox">
 					<posx>80</posx>
-					<posy>440</posy>
+					<posy>438</posy>
 					<width>442</width>
 					<height>162</height>
 					<font>about</font>
@@ -210,7 +210,7 @@
 				<!-- TVSHOW PLOT FIELD -->
 				<control type="textbox">
 					<posx>80</posx>
-					<posy>440</posy>
+					<posy>438</posy>
 					<width>442</width>
 					<height>162</height>
 					<font>about</font>
@@ -224,7 +224,7 @@
 				<!-- ARTIST PLOT FIELD -->
 				<control type="textbox">
 					<posx>80</posx>
-					<posy>440</posy>
+					<posy>438</posy>
 					<width>442</width>
 					<height>162</height>
 					<font>about</font>
@@ -238,7 +238,7 @@
 				<!-- ALBUM PLOT FIELD -->
 				<control type="textbox">
 					<posx>80</posx>
-					<posy>440</posy>
+					<posy>438</posy>
 					<width>442</width>
 					<height>162</height>
 					<font>about</font>
@@ -252,7 +252,7 @@
 				<!-- ADDON PLOT FIELD -->
 				<control type="textbox">
 					<posx>80</posx>
-					<posy>440</posy>
+					<posy>438</posy>
 					<width>442</width>
 					<height>162</height>
 					<font>about</font>
@@ -382,9 +382,9 @@
 			<!-- SCROLL BAR POSTER -->
 			<control type="scrollbar" id="69">
 				<posx>1260</posx>
-				<posy>148</posy>
+				<posy>136</posy>
 				<width>6</width>
-				<height>450</height>
+				<height>482</height>
 				<visible allowhiddenfocus="true">Control.IsVisible(56) + Control.HasFocus(69)</visible>
 				<texturesliderbackground>white2.png</texturesliderbackground>
 				<textureslidernibfocus>white3v.png</textureslidernibfocus>
@@ -436,22 +436,22 @@
 		</focusedlayout>
 	</include>
 
-	<include name="TallPanel">
-		<itemlayout width="120" height="160">
+	<include name="PosterPanel">
+		<itemlayout width="122" height="169">
 			<control type="image">
 				<posx>16</posx>
 				<posy>6</posy>
 				<width>106</width>
-				<height>150</height>
+				<height>159</height>
 				<texture background="true" diffuse="grid/posterdiffuse.png">$INFO[ListItem.Icon]</texture>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<aspectratio scalediffuse="false">scale</aspectratio>
 				<colordiffuse>FFFFFFFF</colordiffuse>
 			</control>
 			<control type="image">
 				<posx>16</posx>
 				<posy>6</posy>
 				<width>106</width>
-				<height>150</height>
+				<height>159</height>
 				<texture diffuse="grid/posterdiffuse.png">white.png</texture>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
 				<colordiffuse>10FFFFFF</colordiffuse>
@@ -466,24 +466,24 @@
 				<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 			</control>
 		</itemlayout>
-		<focusedlayout width="176" height="220">
+		<focusedlayout width="178" height="229">
 			<control type="image">
 				<posx>15</posx>
 				<posy>6</posy>
 				<width>106</width>
-				<height>150</height>
+				<height>159</height>
 				<texture background="true" diffuse="grid/posterdiffuse.png">$INFO[ListItem.Icon]</texture>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="auto" start="80" end="120" time="200" tween="sine" easing="inout" />
 					<effect type="fade" start="80" end="100" time="400" />
 				</animation>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<aspectratio scalediffuse="false">scale</aspectratio>
 			</control>
 			<control type="image">
 				<posx>2</posx>
 				<posy>-6</posy>
 				<width>132</width>
-				<height>174</height>
+				<height>183</height>
 				<texture>grid/posterborder.png</texture>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="auto" start="80" end="120" time="200" tween="sine" easing="inout" />
