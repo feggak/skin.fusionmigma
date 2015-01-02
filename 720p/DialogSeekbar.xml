@@ -1,29 +1,31 @@
 ﻿<window id="115">
-    <defaultcontrol always="true">901</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
-    <visible>Window.IsActive(2005) + !Window.IsActive(142) + !Window.IsActive(10140) + !Window.IsActive(2901) + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
-    <controls>
-	 <!-- Current Time -->
-				<control type="label">
-					<posx>30</posx>
-					<posy>20</posy>
-					<width>300</width>
-					<label>[B]$INFO[System.Time][/B]</label>
-					<textcolor>ff404040</textcolor>
-					<font>movietitle6</font>
-					<align>left</align>
-					<visible>!Skin.HasSetting(oldosd)</visible>
-					 <visible>Window.IsActive(2005) + !Window.IsActive(142) + !Window.IsActive(2901) + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
-				</control>
-        <control type="group">
+	<defaultcontrol always="true">901</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<visible>Window.IsActive(2005) + !Window.IsActive(142) + !Window.IsActive(10140) + !Window.IsActive(2901) + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
+	<controls>
+
+		<!-- Current Time -->
+		<control type="label">
+			<posx>24r</posx>
+			<posy>20</posy>
+			<width>300</width>
+			<label>[B]$INFO[System.Time][/B]</label>
+			<textcolor>white</textcolor>
+			<font>movietitle6</font>
+			<align>right</align>
+			<visible>!Skin.HasSetting(oldosd)</visible>
+			<visible>Window.IsActive(2005) + !Window.IsActive(142) + !Window.IsActive(2901) + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
+		</control>
+
+		<control type="group">
 			<animation effect="fade" start="0" end="100" time="250" delay="0" reversable="false">WindowOpen</animation>
-            <animation effect="fade" start="100" end="0" delay="400" time="100" reversable="false">WindowClose</animation>
- 			<animation effect="fade" start="100" end="0" delay="0" time="0" condition="Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(142) | Window.IsVisible(2901)">Conditional</animation>
-            <visible>!Skin.HasSetting(oldosd)</visible>
+			<animation effect="fade" start="100" end="0" delay="350" time="100" reversable="false">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" delay="0" time="0" condition="Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(142) | Window.IsVisible(2901)">Conditional</animation>
+			<visible>!Skin.HasSetting(oldosd)</visible>
 			<control type="group">
 				<posx>0</posx>
 				<posy>123r</posy>
-			
+
 				<!-- BACKGROUND -->
 				<control type="image">
 					<posx>0</posx>
@@ -42,9 +44,8 @@
 					<texture>osd/musicbg.png</texture>
 					<colordiffuse>ffFFFFFF</colordiffuse>
 					<aspectratio>stretch</aspectratio>
-				</control>	
+				</control>
 
-					
 				<!-- TITLE -->
 				<control type="grouplist">
 					<posx>300</posx>
@@ -65,7 +66,6 @@
 					<include>MovieHDFlagsDialog</include>
 				</control>
 
-					
 				<!-- MOVIE INFO -->
 				<control type="grouplist">
 					<visible>VideoPlayer.Content(Movies)</visible>
@@ -190,10 +190,8 @@
 					</control>
 				</control>
 			</control>
-		
 
 			<!-- Z-BAR -->
-			
 			<control type="image">
 				<posx>0</posx>
 				<posy>715</posy>
@@ -217,9 +215,8 @@
 				<animation effect="slide" start="0,15" end="0,0" time="550" delay="200" reversable="false">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="0,15" delay="0" time="600" reversable="false">WindowClose</animation>
 			</control>
-	
+
 			<!-- PROGRESS BAR -->
-			
 			<control type="progress" id="23">
 				<posx>300</posx>
 				<posy>41r</posy>
@@ -248,9 +245,9 @@
 					<font>duration</font>
 					<align>left</align>
 				</control>
-	
+
 				<!-- SEEKING -->
- 				<control type="grouplist">
+				<control type="grouplist">
 					<visible>Player.DisplayAfterSeek + !Player.Paused</visible>
 					<posx>500</posx>
 					<width>346</width>
@@ -289,10 +286,10 @@
 					<textcolor>ffd0d0d0</textcolor>
 					<font>duration</font>
 				</control>
-	
+
 				<!-- PAUSED -->
 				<control type="group">
-                    <visible>Player.Paused + !Player.Seeking</visible>
+					<visible>Player.Paused + !Player.Seeking</visible>
 					<posx>624</posx>
 					<width>346</width>
 					<control type="label">
@@ -306,10 +303,10 @@
 						<align>center</align>
 					</control>
 				</control>
-				
+
 				<!-- REWIND -->
 				<control type="group">
-                    <visible>Player.Rewinding2x</visible>
+					<visible>Player.Rewinding2x</visible>
 					<posx>720</posx>
 					<width>346</width>
 					<control type="label">
@@ -324,7 +321,7 @@
 					</control>
 				</control>
 				<control type="group">
-                    <visible>Player.Rewinding4x</visible>
+					<visible>Player.Rewinding4x</visible>
 					<posx>720</posx>
 					<width>346</width>
 					<control type="label">
@@ -339,7 +336,7 @@
 					</control>
 				</control>
 				<control type="group">
-                    <visible>Player.Rewinding8x</visible>
+					<visible>Player.Rewinding8x</visible>
 					<posx>720</posx>
 					<width>346</width>
 					<control type="label">
@@ -354,7 +351,7 @@
 					</control>
 				</control>
 				<control type="group">
-                    <visible>Player.Rewinding16x</visible>
+					<visible>Player.Rewinding16x</visible>
 					<posx>720</posx>
 					<width>346</width>
 					<control type="label">
@@ -369,7 +366,7 @@
 					</control>
 				</control>
 				<control type="group">
-                    <visible>Player.Rewinding32x</visible>
+					<visible>Player.Rewinding32x</visible>
 					<posx>720</posx>
 					<width>346</width>
 					<control type="label">
@@ -386,7 +383,7 @@
 
 				<!-- FORWARD -->
 				<control type="group">
-                    <visible>Player.Forwarding2x</visible>
+					<visible>Player.Forwarding2x</visible>
 					<posx>720</posx>
 					<width>346</width>
 					<control type="label">
@@ -401,7 +398,7 @@
 					</control>
 				</control>
 				<control type="group">
-                    <visible>Player.Forwarding4x</visible>
+					<visible>Player.Forwarding4x</visible>
 					<posx>720</posx>
 					<width>346</width>
 					<control type="label">
@@ -416,7 +413,7 @@
 					</control>
 				</control>
 				<control type="group">
-                    <visible>Player.Forwarding8x</visible>
+					<visible>Player.Forwarding8x</visible>
 					<posx>720</posx>
 					<width>346</width>
 					<control type="label">
@@ -431,7 +428,7 @@
 					</control>
 				</control>
 				<control type="group">
-                    <visible>Player.Forwarding16x</visible>
+					<visible>Player.Forwarding16x</visible>
 					<posx>720</posx>
 					<width>346</width>
 					<control type="label">
@@ -446,7 +443,7 @@
 					</control>
 				</control>
 				<control type="group">
-                    <visible>Player.Forwarding32x</visible>
+					<visible>Player.Forwarding32x</visible>
 					<posx>720</posx>
 					<width>346</width>
 					<control type="label">
@@ -460,8 +457,6 @@
 						<align>center</align>
 					</control>
 				</control>
-				
-			
 			</control>
 
 			<!-- POSTER -->
@@ -489,7 +484,7 @@
 					<texture>poster/glassoverlay.png</texture>
 				</control>
 			</control>
-			
+
 			<!-- THUMB -->
 			<control type="group">
 				<visible>VideoPlayer.Content(episodes) | VideoPlayer.Content(files)</visible>
@@ -519,79 +514,74 @@
 			<!-- TVLOGO -->
 			<control type ="image">
 				<visible>VideoPlayer.Content(Episodes)</visible>
-				<posx>40</posx>     
-				<posy>255r</posy>    
+				<posx>40</posx>
+				<posy>255r</posy>
 				<width>220</width>
 				<height>80</height>
 				<align>center</align>
 				<aligny>bottom</aligny>
 				<texture background="true">$INFO[Player.FolderPath]../logo.png</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
-			</control>				
-				
+			</control>
+
 
 			<!-- CLEARART -->
 			<control type ="image">
 				<animation effect="fade" start="0" end="100" delay="200" time="300" reversable="false">WindowClose</animation>
 				<animation effect="fade" start="100" end="0" delay="200" time="300" reversable="false">WindowClose</animation>
 				<visible>VideoPlayer.Content(Episodes)</visible>
-                <visible>Player.Paused</visible>
+				<visible>Player.Paused</visible>
 				<fadetime>300</fadetime>
-				<posx>268r</posx>     
-				<posy>192r</posy>    
+				<posx>268r</posx>
+				<posy>192r</posy>
 				<width>250</width>
 				<height>140.5</height>
 				<align>right</align>
 				<aligny>bottom</aligny>
 				<texture background="true">$INFO[Player.FolderPath]../clearart.png</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
-			</control>				
+			</control>
 			<control type="group">
-            </control>
+			</control>
 		</control>
-		
-		
+
 		<!-- Old OSD -->
-		
-		
-		
 		<control type="group">
-            <animation effect="slide" start="0,100" end="0,0" time="400" delay="0" reversable="false" tween="back" easing="out">WindowOpen</animation>
-            <animation effect="slide" start="0,0" end="0,100" delay="0" time="400" reversable="false">WindowClose</animation>
-            <visible>Skin.HasSetting(oldosd)</visible>
-            <control type="image">
-                <posx>40</posx>
-                <posy>120r</posy>
-                <width>1200</width>
-                <height>122</height>
-                <aspectratio>keep</aspectratio>
-                <texture>osd/osdbg.png</texture>
-                <colordiffuse>c4FFFFFF</colordiffuse>
-            </control>
-			
-            <control type="progress" id="23">
-                <posx>95</posx>
-                <posy>62r</posy>
-                <width>820</width>
-                <height>10</height> 
-                <info>Player.Progress</info>
-                <texturebg>osd/progressbg.png</texturebg> 
-                <lefttexture>osd/pleft.png</lefttexture>
-                <midtexture>osd/pcenter.png</midtexture> 
-                <righttexture>osd/pright.png</righttexture>
-                <overlaytexture>-</overlaytexture>
-            </control>
-			
-			
-            <control type="label">
-                <posx>95</posx>
-                <posy>95r</posy>
-                <width>950</width>
-                <label>[B][UPPERCASE]$INFO[VideoPlayer.Title][/UPPERCASE][/B]</label>
-                <font>duration</font>
-                <textcolor>ff404040</textcolor>
-            </control>
-			
+			<animation effect="slide" start="0,100" end="0,0" time="400" delay="0" reversable="false" tween="back" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,100" delay="0" time="400" reversable="false">WindowClose</animation>
+			<visible>Skin.HasSetting(oldosd)</visible>
+			<control type="image">
+				<posx>40</posx>
+				<posy>120r</posy>
+				<width>1200</width>
+				<height>122</height>
+				<aspectratio>keep</aspectratio>
+				<texture>osd/osdbg.png</texture>
+				<colordiffuse>c4FFFFFF</colordiffuse>
+			</control>
+
+			<control type="progress" id="23">
+				<posx>95</posx>
+				<posy>62r</posy>
+				<width>820</width>
+				<height>10</height>
+				<info>Player.Progress</info>
+				<texturebg>osd/progressbg.png</texturebg>
+				<lefttexture>osd/pleft.png</lefttexture>
+				<midtexture>osd/pcenter.png</midtexture>
+				<righttexture>osd/pright.png</righttexture>
+				<overlaytexture>-</overlaytexture>
+			</control>
+
+			<control type="label">
+				<posx>95</posx>
+				<posy>95r</posy>
+				<width>950</width>
+				<label>[B][UPPERCASE]$INFO[VideoPlayer.Title][/UPPERCASE][/B]</label>
+				<font>duration</font>
+				<textcolor>ff404040</textcolor>
+			</control>
+
 			<control type="label">
 				<posx>95</posx>
 				<posy>50r</posy>
@@ -600,7 +590,7 @@
 				<font>duration</font>
 				<textcolor>ff404040</textcolor>
 			</control>
-			
+
 			<!-- FINISH TIME -->
 			<control type="grouplist">
 				<posx>570</posx>
@@ -627,6 +617,7 @@
 					<align>right</align>
 				</control>
 			</control>
+
 			<!-- Current TIME -->
 			<control type="grouplist">
 				<posx>660</posx>
@@ -643,139 +634,140 @@
 					<align>right</align>
 				</control>
 			</control>
-            <control type="group">
-                <!-- Rewind Info -->
-                <posx>320r</posx>
-                <posy>70r</posy>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+
+			<control type="group">
+				<!-- Rewind Info -->
+				<posx>320r</posx>
+				<posy>70r</posy>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
-                    <label>[B]$LOCALIZE[31621][/B]</label>
-                    <font>big</font>
-                    <textcolor>8F999999</textcolor>
-                    <visible>Player.Rewinding2x</visible>
-                    <animation effect="fade" start="100" end="0" time="100">windowclose</animation>
-                </control>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+					<label>[B]$LOCALIZE[31621][/B]</label>
+					<font>big</font>
+					<textcolor>8F999999</textcolor>
+					<visible>Player.Rewinding2x</visible>
+					<animation effect="fade" start="100" end="0" time="100">windowclose</animation>
+				</control>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
-                    <label>[B]$LOCALIZE[31622][/B]</label>
-                    <font>big</font>
-                    <textcolor>8F999999</textcolor>
-                    <visible>Player.Rewinding4x</visible>
-                    <animation effect="fade" start="100" end="0" time="100">windowclose</animation>
-                </control>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+					<label>[B]$LOCALIZE[31622][/B]</label>
+					<font>big</font>
+					<textcolor>8F999999</textcolor>
+					<visible>Player.Rewinding4x</visible>
+					<animation effect="fade" start="100" end="0" time="100">windowclose</animation>
+				</control>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
-                    <label>[B]$LOCALIZE[31623][/B]</label>
-                    <font>big</font>
-                    <textcolor>8F999999</textcolor>
-                    <visible>Player.Rewinding8x</visible>
-                    <animation effect="fade" start="100" end="0" time="100">windowclose</animation>
-                </control>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+					<label>[B]$LOCALIZE[31623][/B]</label>
+					<font>big</font>
+					<textcolor>8F999999</textcolor>
+					<visible>Player.Rewinding8x</visible>
+					<animation effect="fade" start="100" end="0" time="100">windowclose</animation>
+				</control>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
-                    <label>[B]$LOCALIZE[31624][/B]</label>
-                    <font>big</font>
-                    <textcolor>8F999999</textcolor>
-                    <visible>Player.Rewinding16x</visible>
-                    <animation effect="fade" start="100" end="0" time="100">windowclose</animation>
-                </control>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+					<label>[B]$LOCALIZE[31624][/B]</label>
+					<font>big</font>
+					<textcolor>8F999999</textcolor>
+					<visible>Player.Rewinding16x</visible>
+					<animation effect="fade" start="100" end="0" time="100">windowclose</animation>
+				</control>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
-                    <label>[B]$LOCALIZE[31625][/B]</label>
-                    <font>big</font>
-                    <textcolor>8F999999</textcolor>
-                    <visible>Player.Rewinding32x</visible>
-                    <animation effect="fade" start="100" end="0" time="100">windowclose</animation>
-                </control>
-            </control>
-			
-            <control type="group">
-                <posx>320r</posx>
-                <posy>70r</posy>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+					<label>[B]$LOCALIZE[31625][/B]</label>
+					<font>big</font>
+					<textcolor>8F999999</textcolor>
+					<visible>Player.Rewinding32x</visible>
+					<animation effect="fade" start="100" end="0" time="100">windowclose</animation>
+				</control>
+			</control>
+
+			<control type="group">
+				<posx>320r</posx>
+				<posy>70r</posy>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
-                    <label>[B]$LOCALIZE[31631][/B]</label>
-                    <font>big</font>
-                    <textcolor>8F999999</textcolor>
-                    <visible>Player.Playing</visible>
-                    <animation effect="fade" start="100" end="0" time="500" delay="500">windowclose</animation>
-                </control>
-            </control>
-			
-            <control type="group">
-                <posx>320r</posx>
-                <posy>70r</posy>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+					<label>[B]$LOCALIZE[31631][/B]</label>
+					<font>big</font>
+					<textcolor>8F999999</textcolor>
+					<visible>Player.Playing</visible>
+					<animation effect="fade" start="100" end="0" time="500" delay="500">windowclose</animation>
+				</control>
+			</control>
+
+			<control type="group">
+				<posx>320r</posx>
+				<posy>70r</posy>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
-                    <label>[B]$LOCALIZE[31607][/B]</label>
-                    <font>big</font>
-                    <textcolor>8F999999</textcolor>
-                    <visible>Player.Paused</visible>
-                    <animation effect="fade" start="100" end="0" time="500" delay="500">windowclose</animation>
-                </control>
-            </control>
-			
-            <control type="group">
-                <!-- FF Info -->
-                <posx>320r</posx>
-                <posy>70r</posy>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+					<label>[B]$LOCALIZE[31607][/B]</label>
+					<font>big</font>
+					<textcolor>8F999999</textcolor>
+					<visible>Player.Paused</visible>
+					<animation effect="fade" start="100" end="0" time="500" delay="500">windowclose</animation>
+				</control>
+			</control>
+
+			<control type="group">
+				<!-- FF Info -->
+				<posx>320r</posx>
+				<posy>70r</posy>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
-                    <label>[B]$LOCALIZE[31626][/B]</label>
-                    <font>big</font>
-                    <textcolor>8F999999</textcolor>
-                    <visible>Player.Forwarding2x</visible>
-                    <animation effect="fade" start="100" end="0" time="100">windowclose</animation>
-                </control>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+					<label>[B]$LOCALIZE[31626][/B]</label>
+					<font>big</font>
+					<textcolor>8F999999</textcolor>
+					<visible>Player.Forwarding2x</visible>
+					<animation effect="fade" start="100" end="0" time="100">windowclose</animation>
+				</control>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
-                    <label>[B]$LOCALIZE[31627][/B]</label>
-                    <font>big</font>
-                    <textcolor>8F999999</textcolor>
-                    <visible>Player.Forwarding4x</visible>
-                    <animation effect="fade" start="100" end="0" time="100">windowclose</animation>
-                </control>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+					<label>[B]$LOCALIZE[31627][/B]</label>
+					<font>big</font>
+					<textcolor>8F999999</textcolor>
+					<visible>Player.Forwarding4x</visible>
+					<animation effect="fade" start="100" end="0" time="100">windowclose</animation>
+				</control>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
-                    <label>[B]$LOCALIZE[31628][/B]</label>
-                    <font>big</font>
-                    <textcolor>8F999999</textcolor>
-                    <visible>Player.Forwarding8x</visible>
-                    <animation effect="fade" start="100" end="0" time="100">windowclose</animation>
-                </control>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+					<label>[B]$LOCALIZE[31628][/B]</label>
+					<font>big</font>
+					<textcolor>8F999999</textcolor>
+					<visible>Player.Forwarding8x</visible>
+					<animation effect="fade" start="100" end="0" time="100">windowclose</animation>
+				</control>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
-                    <label>[B]$LOCALIZE[31629][/B]</label>
-                    <font>big</font>
-                    <textcolor>8F999999</textcolor>
-                    <visible>Player.Forwarding16x</visible>
-                    <animation effect="fade" start="100" end="0" time="100">windowclose</animation>
-                </control>
-                <control type="label">
-                    <height>25</height>
-                    <width>223</width>
+					<label>[B]$LOCALIZE[31629][/B]</label>
+					<font>big</font>
+					<textcolor>8F999999</textcolor>
+					<visible>Player.Forwarding16x</visible>
+					<animation effect="fade" start="100" end="0" time="100">windowclose</animation>
+				</control>
+				<control type="label">
+					<height>25</height>
+					<width>223</width>
 					<align>center</align>
 					<label>[B]$LOCALIZE[31630][/B]</label>
 					<font>big</font>
@@ -783,7 +775,7 @@
 					<visible>Player.Forwarding32x</visible>
 					<animation effect="fade" start="100" end="0" time="100">windowclose</animation>
 				</control>
-            </control>
-        </control>
-    </controls>
+			</control>
+		</control>
+	</controls>
 </window>

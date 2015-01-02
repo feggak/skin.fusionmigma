@@ -780,7 +780,7 @@
                 <control type="label">
                     <posx>161</posx>
                     <posy>35</posy>
-                    <width>250</width>
+                    <width>360</width>
                     <height>35</height>
                     <font>recent2</font>
                     <textcolor>af808080</textcolor>

@@ -832,7 +832,7 @@
 
 				<!--Moviegenre Posters and Border-->
 				<control type="group">
-					<visible>Container.Content(genres) + !Window.IsVisible(502)</visible>
+					<visible>Container.Content(Genres)</visible>
 					<control type="image">
 						<posx>11</posx>
 						<posy>28.5</posy>
