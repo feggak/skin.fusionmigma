@@ -564,14 +564,6 @@
                     <texture background="true" fallback="nofanart.png">$INFO[ListItem.Thumb]</texture>
                 </control>
                 <control type="image">
-                    <posx>338</posx>
-                    <posy>22</posy>
-                    <width>145</width>
-                    <height>56</height>
-                    <aspectratio>scale</aspectratio>
-                    <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-                </control>
-                <control type="image">
                     <posx>18</posx>
                     <posy>8</posy>
                     <width>60</width>

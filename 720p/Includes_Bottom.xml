@@ -5,8 +5,8 @@
 		<control type="group">
 			<animation effect="slide" start="0,100" end="0,0" time="350" delay="50" reversable="false">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="0,100" delay="0" time="400" reversable="false">WindowClose</animation>
-			<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
-			<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,260" time="300" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,260" end="0,0" time="300" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
 			<control type="image">
 				<posx>0</posx>
 				<posy>654</posy>
@@ -69,8 +69,8 @@
 			<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
 			<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
 			<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
-			<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,260" time="300" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,260" end="0,0" time="300" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
 
 			<animation effect="slide" end="96" time="0" condition="Skin.HasSetting(StudiosViewtypes)">Conditional</animation>
 
@@ -116,8 +116,8 @@
 			<animation effect="fade" start="100" end="0" time="500" reversible="false" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
 			<animation effect="fade" start="15" end="100" time="350" delay="0" reversible="false" condition="!Window.IsVisible(106) + !Window.IsVisible(100)">Conditional</animation>
 			<animation effect="zoom" start="100" end="125" time="400" center="700,500" tween="circle" easing="out" condition="Window.IsVisible(106) | Window.IsVisible(100)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
-			<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,260" time="300" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
+			<animation effect="slide" start="0,260" end="0,0" time="300" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
 
 			<!-- MOVIE GENRE -->
 			<control type="label">

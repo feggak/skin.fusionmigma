@@ -111,7 +111,7 @@
 			<!-- LEFT ARROW-->
 			<control type="image">
 				<posx>15</posx>
-				<posy>85r</posy>
+				<posy>80r</posy>
 				<width>34</width>
 				<height>34</height>
 				<aspectratio>stretch</aspectratio>
@@ -122,7 +122,7 @@
 			</control>
 			<control type="image">
 				<posx>15</posx>
-				<posy>85r</posy>
+				<posy>80r</posy>
 				<width>34</width>
 				<height>34</height>
 				<aspectratio>stretch</aspectratio>
@@ -139,7 +139,7 @@
 			<!-- RIGHT ARROW -->
 			<control type="image">
 				<posx>49r</posx>
-				<posy>85r</posy>
+				<posy>80r</posy>
 				<width>34</width>
 				<height>34</height>
 				<aspectratio>stretch</aspectratio>
@@ -150,7 +150,7 @@
 			</control>
 			<control type="image">
 				<posx>49r</posx>
-				<posy>85r</posy>
+				<posy>80r</posy>
 				<width>34</width>
 				<height>34</height>
 				<aspectratio>stretch</aspectratio>
@@ -272,7 +272,7 @@
 				<scroll>true</scroll>
 				<align>left</align>
 				<aligny>center</aligny>
-				<label>[B]$INFO[ListItem.Year][/B]$INFO[ListItem.Studio,$LOCALIZE[31618]]</label>
+				<label>$INFO[ListItem.Year]$INFO[ListItem.Studio,$LOCALIZE[31618]]</label>
 				<visible>[Control.IsVisible(51) + !Window.IsVisible(VideoFiles)] + [Container.Content(Movies) + !ListItem.IsFolder] | Container.Content(TVShows)</visible>
 			</control>
 			<!-- MOVIE RUNTIME/GENRE -->
