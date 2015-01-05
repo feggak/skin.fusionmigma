@@ -263,7 +263,7 @@
 					<label>[UPPERCASE]$INFO[ListItem.Title] ($INFO[ListItem.Year])[/UPPERCASE]</label>
 					<textcolor>fce7e7e7</textcolor>
 					<textcolor>itemdetail</textcolor>
-					<visible>!Container.Content(Episodes</visible>
+					<visible>!Container.Content(Episodes) + !Container.Content(TVShows)</visible>
 				</control>
 				<!-- GLOBAL TITLE -->
 				<control type="label" id="20">
@@ -275,13 +275,13 @@
 					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
 					<textcolor>fce7e7e7</textcolor>
 					<textcolor>itemdetail</textcolor>
-					<visible>Container.Content(Episodes</visible>
+					<visible>Container.Content(Episodes) | Container.Content(TVShows)</visible>
 				</control>
 				<!-- MOVIE TAGLINE -->
 				<control type="label" id="20">
 					<description>Tagline</description>
 					<posx>20</posx>
-					<posy>121</posy>
+					<posy>120</posy>
 					<width>840</width>
 					<scrollsuffix>-</scrollsuffix>
 					<font>tagline</font>

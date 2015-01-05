@@ -431,7 +431,7 @@
 					<visible>Container.Content(Artists)</visible>
 					<control type="label">
 						<posx>0</posx>
-						<width min="29" max="900">auto</width>
+						<width min="29" max="1240">auto</width>
 						<height>36</height>
 						<font>movietitle3</font>
 						<textcolor>movietitleb</textcolor>
@@ -450,7 +450,7 @@
 					<visible>!Container.Content(Episodes) + !Container.Content(Artists)</visible>
 					<control type="label">
 						<posx>0</posx>
-						<width min="29" max="900">auto</width>
+						<width min="29" max="1240">auto</width>
 						<height>36</height>
 						<font>movietitle3</font>
 						<textcolor>movietitleb</textcolor>
@@ -469,7 +469,7 @@
 					<visible>Container.Content(Episodes)</visible>
 					<control type="label">
 						<posx>0</posx>
-						<width min="29" max="900">auto</width>
+						<width min="29" max="1240">auto</width>
 						<height>36</height>
 						<font>movietitle3</font>
 						<textcolor>movietitleb</textcolor>

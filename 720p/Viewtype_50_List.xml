@@ -1075,9 +1075,9 @@
 			<!-- SCROLL BAR -->
 			<control type="scrollbar" id="49">
 				<posx>1220</posx>
-				<posy>170</posy>
+				<posy>156</posy>
 				<width>5</width>
-				<height>350</height>
+				<height>390</height>
 				<visible allowhiddenfocus="true">Control.IsVisible(50) + Control.HasFocus(49)</visible>
 				<texturesliderbackground>white2.png</texturesliderbackground>
 				<textureslidernibfocus>white3v.png</textureslidernibfocus>

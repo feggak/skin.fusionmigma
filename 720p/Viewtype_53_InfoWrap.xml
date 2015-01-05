@@ -16,12 +16,13 @@
 				<posx>0</posx>
 				<posy>100</posy>
 
-				<!-- NAVIGATION ARROWS (NO LOGOS) -->
+				<!-- NAVIGATION ARROWS -->
 				<control type="group">
-					<visible>Container.Content(Movies) |  [Container.Content(Artists) + !Skin.HasSetting(MusicLogos)] | [Container.Content(TVShows) + !Skin.HasSetting(Logos)]</visible>
+					<animation effect="slide" start="0,0" end="0,6" time="0" condition="Skin.HasSetting(Logos) | Skin.HasSetting(MusicLogos)">Conditional</animation>
+					<visible>Container.Content(Movies) | Container.Content(Artists) | Container.Content(TVShows)</visible>
 					<control type="image">
 						<posx>168</posx>
-						<posy>200</posy>
+						<posy>194</posy>
 						<width>34</width>
 						<height>34</height>
 						<aspectratio>stretch</aspectratio>
@@ -32,7 +33,7 @@
 					</control>
 					<control type="image">
 						<posx>168</posx>
-						<posy>200</posy>
+						<posy>194</posy>
 						<width>34</width>
 						<height>34</height>
 						<aspectratio>stretch</aspectratio>
@@ -47,7 +48,7 @@
 					</control>
 					<control type="image">
 						<posx>1078</posx>
-						<posy>200</posy>
+						<posy>194</posy>
 						<width>34</width>
 						<height>34</height>
 						<aspectratio>stretch</aspectratio>
@@ -58,65 +59,7 @@
 					</control>
 					<control type="image">
 						<posx>1078</posx>
-						<posy>200</posy>
-						<width>34</width>
-						<height>34</height>
-						<aspectratio>stretch</aspectratio>
-						<texture flipx="true">Home/extras/leftarrow.png</texture>
-						<colordiffuse>78ffffff</colordiffuse>
-						<animation type="Hidden">
-							<effect type="slide" start="10" end="0" center="auto" time="300" reversible="false" />
-							<effect type="fade" start="100" end="0" time="300" reversible="false" />
-							<effect type="zoom" start="125" end="100" center="auto" time="300" reversible="false" />
-						</animation>
-						<visible>Container(53).OnNext</visible>
-					</control>
-				</control>
-
-				<!-- NAVIGATION ARROWS (LOGOS) -->
-				<control type="group">
-					<posy>46</posy>
-					<visible>[Container.Content(TVShows) + Skin.HasSetting(Logos)] | [Container.Content(Artists) + Skin.HasSetting(MusicLogos)]</visible>
-					<control type="image">
-						<posx>168</posx>
-						<posy>200</posy>
-						<width>34</width>
-						<height>34</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>Home/extras/leftarrow.png</texture>
-						<colordiffuse>78ffffff</colordiffuse>
-						<animation effect="fade" time="400" delay="50">Visible</animation>
-						<visible>!Container(53).OnPrevious</visible>
-					</control>
-					<control type="image">
-						<posx>168</posx>
-						<posy>200</posy>
-						<width>34</width>
-						<height>34</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>Home/extras/leftarrow.png</texture>
-						<colordiffuse>78ffffff</colordiffuse>
-						<animation type="Hidden">
-							<effect type="slide" start="-10" end="0" center="auto" time="300" reversible="false" />
-							<effect type="fade" start="100" end="0" time="300" reversible="false" />
-							<effect type="zoom" start="125" end="100" center="auto" time="300" reversible="false" />
-						</animation>
-						<visible>Container(53).OnPrevious</visible>
-					</control>
-					<control type="image">
-						<posx>1078</posx>
-						<posy>200</posy>
-						<width>34</width>
-						<height>34</height>
-						<aspectratio>stretch</aspectratio>
-						<texture flipx="true">Home/extras/leftarrow.png</texture>
-						<colordiffuse>78ffffff</colordiffuse>
-						<animation effect="fade" time="400" delay="50">Visible</animation>
-						<visible>!Container(53).OnNext</visible>
-					</control>
-					<control type="image">
-						<posx>1078</posx>
-						<posy>200</posy>
+						<posy>194</posy>
 						<width>34</width>
 						<height>34</height>
 						<aspectratio>stretch</aspectratio>
@@ -158,6 +101,7 @@
 					<!-- ARTIST AND TVSHOW FANART IS IN NAV.XML -->
 					<focusedlayout height="500" width="1280">
 						<control type="image">
+							<animation effect="slide" start="0,0" end="0,6" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 							<visible>Container.Content(Movies)</visible>
 							<posx>22</posx>
 							<posy>-17</posy>
@@ -168,6 +112,7 @@
 							<texture background="true" diffuse="infowrap/fanartdiffuse.png" fallback="nofanart2.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
 						</control>
 						<control type="image">
+							<animation effect="slide" start="0,0" end="0,6" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 							<visible>Container.Content(Movies)</visible>
 							<posx>0</posx>
 							<posy>0</posy>
@@ -177,6 +122,7 @@
 							<texture>infowrap/fanartborder.png</texture>
 						</control>
 						<control type="image">
+							<animation effect="slide" start="0,0" end="0,6" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 							<visible>Container.Content(Movies)</visible>
 							<posx>205</posx>
 							<posy>310</posy>
@@ -588,16 +534,16 @@
 						<textcolor>movietitleb</textcolor>
 						<scroll>false</scroll>
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-						<visible>Container.Content(TVShows) + Skin.HasSetting(Logos) + IsEmpty(Control.GetLabel(44))</visible>
+						<visible>[Container.Content(Movies) | Container.Content(TVShows)] + Skin.HasSetting(Logos) + IsEmpty(Control.GetLabel(44))</visible>
 					</control>
 				</control>
 
 				<!-- LOGO -->
 				<control type="largeimage" id="44">
-					<posx>466</posx>
+					<posx>498</posx>
 					<posy>42</posy>
-					<width>335</width>
-					<height>130</height>
+					<width>245</width>
+					<height>95</height>
 					<texture>$INFO[ListItem.Art(clearlogo)]</texture>
 					<fadetime>100</fadetime>
 					<aspectratio scalediffuse="false">keep</aspectratio>
@@ -608,18 +554,19 @@
 				<control type="largeimage" id="43">
 					<posx>478</posx>
 					<posy>46</posy>
-					<width>335</width>
-					<height>130</height>
+					<width>284</width>
+					<height>110</height>
 					<texture>$INFO[Skin.String(MusicFolder)]$INFO[ListItem.Artist,,/logo.png]</texture>
 					<fadetime>100</fadetime>
 					<aspectratio scalediffuse="false">keep</aspectratio>
 					<visible>Container.Content(Artists) + Skin.HasSetting(MusicLogos)</visible>
 				</control>
 
-				<!-- PLOT (NO LOGOS) -->
+				<!-- PLOT -->
 				<control type="textbox">
+					<animation effect="slide" start="0,0" end="0,6" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 					<posx>215</posx>
-					<posy>446</posy>
+					<posy>442</posy>
 					<width>850</width>
 					<height>132</height>
 					<font>homemenu3</font>
@@ -628,11 +575,12 @@
 					<align>justify</align>
 					<autoscroll delay="12000" time="2000" repeat="10000" />
 					<label>$INFO[ListItem.Plot]</label>
-					<visible>Container.Content(Movies) | [Container.Content(TVShows) + !Skin.HasSetting(Logos)]</visible>
+					<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
 				</control>
 				<control type="textbox">
+					<animation effect="slide" start="0,0" end="0,6" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 					<posx>215</posx>
-					<posy>446</posy>
+					<posy>442</posy>
 					<width>850</width>
 					<height>132</height>
 					<font>homemenu3</font>
@@ -641,12 +589,13 @@
 					<align>justify</align>
 					<autoscroll delay="12000" time="2000" repeat="10000" />
 					<label>MOVIE COLLECTION</label>
-					<visible>Container.Content(Movies) + !Skin.HasSetting(Logos)]</visible>
+					<visible>Container.Content(Movies)</visible>
 					<visible>ListItem.IsFolder</visible>
 				</control>
 				<control type="textbox">
+					<animation effect="slide" start="0,0" end="0,6" time="0" condition="Skin.HasSetting(MusicLogos)">Conditional</animation>
 					<posx>215</posx>
-					<posy>446</posy>
+					<posy>442</posy>
 					<width>850</width>
 					<height>132</height>
 					<font>homemenu3</font>
@@ -654,37 +603,10 @@
 					<scroll>true</scroll>
 					<align>justify</align>
 					<autoscroll delay="12000" time="2000" repeat="10000" />
-					<visible>Container.Content(Artists) + !Skin.HasSetting(MusicLogos)</visible>
+					<visible>Container.Content(Artists)</visible>
 					<label>$INFO[ListItem.Property(Artist_Description)]</label>
 				</control>
 
-				<!-- PLOT (LOGOS) -->
-				<control type="textbox">
-					<posx>215</posx>
-					<posy>492</posy>
-					<width>850</width>
-					<height>132</height>
-					<font>homemenu3</font>
-					<textcolor>movietitleb</textcolor>
-					<scroll>true</scroll>
-					<align>justify</align>
-					<autoscroll delay="12000" time="3000" repeat="10000" />
-					<label>$INFO[ListItem.Plot]</label>
-					<visible>Container.Content(TVShows) + Skin.HasSetting(Logos)</visible>
-				</control>
-				<control type="textbox">
-					<posx>215</posx>
-					<posy>492</posy>
-					<width>850</width>
-					<height>110</height>
-					<font>homemenu3</font>
-					<textcolor>movietitleb</textcolor>
-					<scroll>true</scroll>
-					<align>justify</align>
-					<autoscroll delay="12000" time="3000" repeat="10000" />
-					<visible>Container.Content(Artists) + Skin.HasSetting(MusicLogos)</visible>
-					<label>$INFO[ListItem.Property(Artist_Description)]</label>
-				</control>
 			</control>
 
 		</control>

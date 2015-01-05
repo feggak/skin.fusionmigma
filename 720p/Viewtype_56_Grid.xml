@@ -11,6 +11,7 @@
 
 			<!-- POSTER GRID -->
 			<control type="panel" id="56">
+				<animation effect="slide" start="0,0" end="0,-18" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 				<viewtype label="PosterGrid">icon</viewtype>
 				<visible>Container.Content(Movies) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
 				<posx>512</posx>
@@ -34,7 +35,7 @@
 			<control type="panel" id="57">
 				<viewtype label="WideGrid">icon</viewtype>
 				<visible>Container.Content(TVShows) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
-				<posx>595</posx>
+				<posx>512</posx>
 				<posy>128</posy>
 				<width>800</width>
 				<height>485</height>
@@ -79,15 +80,17 @@
 
 				<!-- FANART + BORDER -->
 				<control type="image">
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos) | Skin.HasSetting(MusicLogos)">Conditional</animation>
 					<posx>78</posx>
 					<posy>133</posy>
 					<width>447</width>
 					<height>258</height>
-					<texture fallback="special://skin/extras/backgrounds/advancedlauncher.jpg" background="true" diffuse="info/fandiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
+					<texture fallback="nofanart.jpg" background="true" diffuse="info/fandiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
 					<fadetime>300</fadetime>
 					<aspectratio>scale</aspectratio>
 				</control>
 				<control type="image">
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos) | Skin.HasSetting(MusicLogos)">Conditional</animation>
 					<posx>78</posx>
 					<posy>133</posy>
 					<width>447</width>
@@ -98,6 +101,7 @@
 					<aspectratio>scale</aspectratio>
 				</control>
 				<control type="image">
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos) | Skin.HasSetting(MusicLogos)">Conditional</animation>
 					<posx>53</posx>
 					<posy>108</posy>
 					<width>497</width>
@@ -105,6 +109,18 @@
 					<aspectratio>stretch</aspectratio>
 					<texture>grid/fanborder.png</texture>
 					<colordiffuse>E0FFFFFF</colordiffuse>
+				</control>
+
+				<!-- LOGO -->
+				<control type="largeimage" id="42">
+					<posx>210</posx>
+					<posy>72</posy>
+					<width>180</width>
+					<height>70</height>
+					<texture>$INFO[ListItem.Art(clearlogo)]</texture>
+					<fadetime>100</fadetime>
+					<aspectratio scalediffuse="false">keep</aspectratio>
+					<visible>Skin.HasSetting(Logos)</visible>
 				</control>
 
 				<!-- GLOBAL TITLE -->
@@ -117,11 +133,27 @@
 					<font>movietitle3</font>
 					<scroll>false</scroll>
 					<textcolor>white</textcolor>
-					<label>[UPPERCASE]$INFO[ListItem.Label]  $INFO[ListItem.Property(Addon.Version)][/UPPERCASE]</label>
+					<label>[UPPERCASE]$INFO[ListItem.Label] $INFO[ListItem.Property(Addon.Version)][/UPPERCASE]</label>
+					<visible>!Skin.HasSetting(Logos)</visible>
+				</control>
+
+				<!-- FALLBACK TITLE -->
+				<control type="label">
+					<posx>80</posx>
+					<posy>96</posy>
+					<width>480</width>
+					<height>94</height>
+					<aligny>top</aligny>
+					<font>movietitle3</font>
+					<scroll>false</scroll>
+					<textcolor>white</textcolor>
+					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					<visible>[Container.Content(Movies) | Container.Content(TVShows)] + Skin.HasSetting(Logos) + IsEmpty(Control.GetLabel(42))</visible>
 				</control>
 
 				<!-- MOVIE INFO -->
 				<control type="label">
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 					<visible>Container.Content(Movies)</visible>
 					<posx>80</posx>
 					<posy>402</posy>
@@ -134,6 +166,7 @@
 					<visible>!ListItem.IsFolder</visible>
 				</control>
 				<control type="label">
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 					<visible>Container.Content(Movies)</visible>
 					<posx>80</posx>
 					<posy>402</posy>
@@ -147,6 +180,7 @@
 				</control>
 				<!-- TVSHOW INFO -->
 				<control type="label">
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 					<visible>Container.Content(TVShows)</visible>
 					<posx>80</posx>
 					<posy>402</posy>
@@ -159,6 +193,7 @@
 				</control>
 				<!-- ARTIST INFO -->
 				<control type="label">
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(MusicLogos)">Conditional</animation>
 					<visible>Container.Content(Artists)</visible>
 					<posx>80</posx>
 					<posy>402</posy>
@@ -194,7 +229,7 @@
 					<label>Released: [COLOR=white]$INFO[ListItem.Premiered][/COLOR]  Genre: [COLOR=white]$INFO[ListItem.Genre][/COLOR]</label>
 				</control>
 
-				<!-- MOVIE PLOT FIELD -->
+				<!-- MOVIE PLOT FIELD (NO LOGOS) -->
 				<control type="textbox">
 					<posx>80</posx>
 					<posy>438</posy>
@@ -206,10 +241,25 @@
 					<align>justify</align>
 					<autoscroll delay="12000" time="3000" repeat="10000" />
 					<label>$INFO[ListItem.PlotOutline]</label>
-					<visible>Container.Content(Movies)</visible>
+					<visible>Container.Content(Movies) + !Skin.HasSetting(Logos)</visible>
+				</control>
+				<!-- MOVIE PLOT FIELD (LOGOS) -->
+				<control type="textbox">
+					<posx>80</posx>
+					<posy>458</posy>
+					<width>442</width>
+					<height>142</height>
+					<font>about</font>
+					<textcolor>white</textcolor>
+					<scroll>true</scroll>
+					<align>justify</align>
+					<autoscroll delay="12000" time="3000" repeat="10000" />
+					<label>$INFO[ListItem.PlotOutline]</label>
+					<visible>Container.Content(Movies) + Skin.HasSetting(Logos)</visible>
 				</control>
 				<!-- TVSHOW PLOT FIELD -->
 				<control type="textbox">
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 					<posx>80</posx>
 					<posy>438</posy>
 					<width>442</width>
@@ -224,6 +274,7 @@
 				</control>
 				<!-- ARTIST PLOT FIELD -->
 				<control type="textbox">
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(MusicLogos)">Conditional</animation>
 					<posx>80</posx>
 					<posy>438</posy>
 					<width>442</width>
@@ -316,38 +367,6 @@
 
 			</control>
 
-			<!-- INFO PANEL LOGOS -->
-			<control type="group">
-				<posx>-36</posx>
-				<posy>57</posy>
-				<visible>Container.Content(TVShows) + Skin.HasSetting(Logos)</visible>
-				<visible>Control.IsVisible(56) | Control.IsVisible(57) | Control.IsVisible(58)</visible>
-				<!-- LOGO -->
-				<control type="largeimage" id="44">
-					<posx>80</posx>
-					<posy>-5</posy>
-					<width>166</width>
-					<height>64</height>
-					<texture>$INFO[ListItem.path]logo.png</texture>
-					<align>left</align>
-					<fadetime>100</fadetime>
-					<aspectratio scalediffuse="false">keep</aspectratio>
-					<visible>Container.Content(TVShows) + Skin.HasSetting(Logos)</visible>
-				</control>
-				<!-- FANART + BORDER -->
-				<!-- MOVIE INFO -->
-				<control type="label">
-					<posx>79</posx>
-					<posy>340</posy>
-					<width>448</width>
-					<height>35</height>
-					<font>tvtitle3</font>
-					<scroll>false</scroll>
-					<textcolor>movietitleb2</textcolor>
-					<label>Premiered: [COLOR=white]$INFO[ListItem.Premiered][/COLOR] Total Episodes: [COLOR=white]$INFO[ListItem.Property(TotalEpisodes) ][/COLOR]</label>
-				</control>
-			</control>
-
 			<!-- SCROLL BAR SQUARE -->
 			<control type="scrollbar" id="71">
 				<posx>1264</posx>
@@ -382,6 +401,7 @@
 
 			<!-- SCROLL BAR POSTER -->
 			<control type="scrollbar" id="69">
+				<animation effect="slide" start="0,0" end="0,-18" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 				<posx>1260</posx>
 				<posy>136</posy>
 				<width>6</width>

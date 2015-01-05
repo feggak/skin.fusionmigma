@@ -158,8 +158,8 @@
 			<include>ContextFade</include>
 			<visible>[Control.IsVisible(53) | Control.IsVisible(54)] + Skin.HasSetting(Logos) + !Container.Content(Movies)</visible>
 			<posx>190</posx>
-			<posy>186</posy>
-			<animation effect="slide" end="0,-140" time="350" tween="back" easing="inout" condition="Container.Content(Seasons)">Conditional</animation>
+			<posy>144</posy>
+			<animation effect="slide" end="0,-100" time="350" tween="back" easing="inout" condition="Container.Content(Seasons)">Conditional</animation>
 			<control type="image">
 				<posx>22</posx>
 				<posy>-17</posy>

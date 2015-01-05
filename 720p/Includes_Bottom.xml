@@ -72,15 +72,15 @@
 			<animation effect="slide" start="0,0" end="0,260" time="400" delay="0" reversible="false" condition="Window.IsVisible(2003) | Window.IsVisible(146)">Conditional</animation>
 			<animation effect="slide" start="0,260" end="0,0" time="400" delay="0" reversible="false" condition="!Window.IsVisible(2003) + !Window.IsVisible(146)">Conditional</animation>
 
-			<animation effect="slide" end="96" time="0" condition="Skin.HasSetting(VideoInfoStudios)">Conditional</animation>
+			<animation effect="slide" end="96" time="0" condition="Skin.HasSetting(StudiosViewtypes)">Conditional</animation>
 
 			<!-- STUDIO LOGOS -->
 			<control type="image" id="43">
 				<description>Studio Images</description>
-				<posx>-92</posx>
-				<posy>68r</posy>
-				<width>100</width>
-				<height>67</height>
+				<posx>-88</posx>
+				<posy>62r</posy>
+				<width>89</width>
+				<height>60</height>
 				<aspectratio>keep</aspectratio>
 				<visible>Skin.HasSetting(VideoInfoStudios)</visible>
 				<texture background="true" fallback="$INFO[Skin.String(StudiosFolderInfo)]default.png">$INFO[Skin.String(StudiosFolderInfo)]$INFO[ListItem.Studio,,.png]</texture>

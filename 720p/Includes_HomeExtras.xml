@@ -145,7 +145,7 @@
                         <posy>0</posy>
                         <width>479</width>
                         <height>275</height>
-                        <aspectratio>stretch</aspectratio>
+                        <aspectratio>scale</aspectratio>
                         <texture background="true" diffuse="Home/extras/featureddifuse.png">$INFO[ListItem.Thumb]</texture>
                         <colordiffuse>ffffffff</colordiffuse>
                     </control>
@@ -557,23 +557,30 @@
                 </control>
                 <control type="image">
                     <posx>20</posx>
-                    <posy>12</posy>
-                    <width>130</width>
-                    <height>75</height>
+                    <posy>10</posy>
+                    <width>53</width>
+                    <height>79</height>
                     <aspectratio>scale</aspectratio>
-                    <texture background="true" fallback="nofanart.png" >$INFO[ListItem.ActualIcon]</texture>
-                    <colordiffuse>ffffffff</colordiffuse>
+                    <texture background="true" fallback="nofanart.png">$INFO[ListItem.Thumb]</texture>
                 </control>
                 <control type="image">
-                    <posx>12</posx>
-                    <posy>4</posy>
-                    <width>147</width>
-                    <height>91</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture>grid/fanborder.png</texture>
+                    <posx>338</posx>
+                    <posy>22</posy>
+                    <width>145</width>
+                    <height>56</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                </control>
+                <control type="image">
+                    <posx>18</posx>
+                    <posy>8</posy>
+                    <width>60</width>
+                    <height>85</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture>poster/glassoverlay.png</texture>
                 </control>
                 <control type="label">
-                    <posx>160</posx>
+                    <posx>84</posx>
                     <posy>12</posy>
                     <width>314</width>
                     <height>35</height>
@@ -584,24 +591,24 @@
                     <label>$INFO[ListItem.Label]</label>
                 </control>
                 <control type="label">
-                    <posx>161</posx>
+                    <posx>85</posx>
                     <posy>35</posy>
                     <width>250</width>
                     <height>35</height>
                     <font>recent2</font>
                     <textcolor>af808080</textcolor>
                     <align>left</align>
-                    <label>$INFO[ListItem.Label2,, minutes]</label>
+                    <label>$INFO[ListItem.Duration,, minutes]</label>
                 </control>
                 <control type="label">
-                    <posx>161</posx>
+                    <posx>85</posx>
                     <posy>55</posy>
                     <width>350</width>
                     <height>35</height>
                     <font>recent2</font>
                     <textcolor>ff707070</textcolor>
                     <align>left</align>
-                    <label>$INFO[ListItem.Thumb]</label>
+                    <label>$INFO[ListItem.Year]</label>
                 </control>
             </itemlayout>
             <focusedlayout height="101" width="498">
@@ -627,23 +634,22 @@
                 </control>
                 <control type="image">
                     <posx>20</posx>
-                    <posy>12</posy>
-                    <width>130</width>
-                    <height>75</height>
+                    <posy>10</posy>
+                    <width>53</width>
+                    <height>79</height>
                     <aspectratio>scale</aspectratio>
-                    <texture background="true" fallback="nofanart.png">$INFO[ListItem.ActualIcon]</texture>
-                    <colordiffuse>ffffffff</colordiffuse>
+                    <texture background="true" fallback="nofanart.png">$INFO[ListItem.Thumb]</texture>
                 </control>
                 <control type="image">
-                    <posx>12</posx>
-                    <posy>4</posy>
-                    <width>147</width>
-                    <height>91</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture>grid/fanborder.png</texture>
+                    <posx>18</posx>
+                    <posy>8</posy>
+                    <width>60</width>
+                    <height>85</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture>poster/glassoverlay.png</texture>
                 </control>
                 <control type="label">
-                    <posx>160</posx>
+                    <posx>84</posx>
                     <posy>12</posy>
                     <width>310</width>
                     <height>35</height>
@@ -654,68 +660,27 @@
                     <label>$INFO[ListItem.Label]</label>
                 </control>
                 <control type="label">
-                    <posx>161</posx>
+                    <posx>85</posx>
                     <posy>35</posy>
                     <width>350</width>
                     <height>35</height>
                     <font>recent2</font>
                     <textcolor>ff808080</textcolor>
                     <align>left</align>
-                    <label>$INFO[ListItem.Label2,, minutes]</label>
+                    <label>$INFO[ListItem.Duration,, minutes]</label>
                 </control>
                 <control type="label">
-                    <posx>161</posx>
+                    <posx>85</posx>
                     <posy>55</posy>
                     <width>350</width>
                     <height>35</height>
                     <font>recent2</font>
                     <textcolor>ff707070</textcolor>
                     <align>left</align>
-                    <label>$INFO[ListItem.Thumb]</label>
+                    <label>$INFO[ListItem.Year]</label>
                 </control>
             </focusedlayout>
-            <content>
-                <item id="1">
-                    <icon>$INFO[Window.Property(LatestMovie.1.Fanart]</icon>
-                    <label>$INFO[Window.Property(LatestMovie.1.Title)]</label>
-                    <label2>$INFO[Window.Property(LatestMovie.1.RunningTime)]</label2>
-                    <thumb>$INFO[Window.Property(LatestMovie.1.Year)]</thumb>
-                    <property name="Plot">$INFO[Window.Property(LatestMovie.1.Plot)]</property>
-                    <property name="Trailer">$INFO[Window(Home).Property(LatestMovie.1.Trailer)]</property>
-                    <onclick>PlayMedia($ESCINFO[Window.Property(LatestMovie.1.Path)])</onclick>
-                    <visible>!IsEmpty(Window.Property(LatestMovie.1.Title))</visible>
-                </item>
-                <item id="2">
-                    <icon>$INFO[Window.Property(LatestMovie.2.Fanart]</icon>
-                    <label>$INFO[Window.Property(LatestMovie.2.Title)]</label>
-                    <label2>$INFO[Window.Property(LatestMovie.2.RunningTime)]</label2>
-                    <thumb>$INFO[Window.Property(LatestMovie.2.Year)]</thumb>
-                    <property name="Plot">$INFO[Window.Property(LatestMovie.2.Plot)]</property>
-                    <property name="Trailer">$INFO[Window(Home).Property(LatestMovie.2.Trailer)]</property>
-                    <onclick>PlayMedia($ESCINFO[Window.Property(LatestMovie.2.Path)])</onclick>
-                    <visible>!IsEmpty(Window.Property(LatestMovie.2.Title))</visible>
-                </item>
-                <item id="3">
-                    <icon>$INFO[Window.Property(LatestMovie.3.Fanart]</icon>
-                    <label>$INFO[Window.Property(LatestMovie.3.Title)]</label>
-                    <label2>$INFO[Window.Property(LatestMovie.3.RunningTime)]</label2>
-                    <thumb>$INFO[Window.Property(LatestMovie.3.Year)]</thumb>
-                    <property name="Plot">$INFO[Window.Property(LatestMovie.3.Plot)]</property>
-                    <property name="Trailer">$INFO[Window(Home).Property(LatestMovie.3.Trailer)]</property>
-                    <onclick>PlayMedia($ESCINFO[Window.Property(LatestMovie.3.Path)])</onclick>
-                    <visible>!IsEmpty(Window.Property(LatestMovie.3.Title))</visible>
-                </item>
-                <item id="4">
-                    <icon>$INFO[Window.Property(LatestMovie.4.Fanart]</icon>
-                    <label>$INFO[Window.Property(LatestMovie.4.Title)]</label>
-                    <label2>$INFO[Window.Property(LatestMovie.4.RunningTime)]</label2>
-                    <thumb>$INFO[Window.Property(LatestMovie.4.Year)]</thumb>
-                    <property name="Plot">$INFO[Window.Property(LatestMovie.4.Plot)]</property>
-                    <property name="Trailer">$INFO[Window(Home).Property(LatestMovie.4.Trailer)]</property>
-                    <onclick>PlayMedia($ESCINFO[Window.Property(LatestMovie.4.Path)])</onclick>
-                    <visible>!IsEmpty(Window.Property(LatestMovie.4.Title))</visible>
-                </item>
-            </content>
+            <content>plugin://service.library.data.provider?type=recentmovies&reload=$INFO[Window.Property(recentmovies)]</content>
         </control>
     </include>
 

@@ -464,24 +464,4 @@
 		</control>
 	</include>
 
-	<!-- STUDIO LOGOS TV -->
-	<include name="StudioflagsTV">
-		<control type="image">
-			<description>Studio Images</description>
-			<width>73</width>
-			<height>48</height>
-			<aspectratio>keep</aspectratio>
-			<visible>Skin.HasSetting(StudiosViewtypes)</visible>
-			<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
-			<visible>!Player.HasMedia + !Window.IsVisible(12003)</visible>
-			<texture background="true" fallback="$INFO[Skin.String(StudiosFolder)]default.png">$INFO[Skin.String(StudiosFolder)]$INFO[ListItem.Studio,,.png]</texture>
-			<animation type="WindowClose" reversible="false">
-			<effect type="fade" start="100" end="0" time="250" delay="0" />
-			</animation>
-			<animation type="WindowOpen" reversible="false">
-			<effect type="fade" start="0" end="100" time="250" delay="750" />
-			</animation>
-			<animation effect="fade" start="0" end="100" time="400" delay="500" reversible="false" condition="!Window.IsVisible(2003)">Conditional</animation>
-		</control>
-	</include>
 </includes>
