@@ -25,6 +25,8 @@
 <include file="Viewtype_61_Wrap.xml" />
 <include file="Viewtype_64_Icon.xml" />
 <include file="Viewtype_67_SongList.xml" />
+<include file="Viewtype_68_Metro.xml" />
+<include file="Viewtype_71_Wall.xml" />
 <include file="Views_AddOns.xml" />
 
 <!-- VIDEO INFO FLAGS -->

@@ -18,7 +18,7 @@
 				<effect type="zoom" start="100" end="155" time="250" center="auto" delay="0" />
 			</animation>
 
-			<!-- MOVIES -->
+			<!-- POSTER -->
 			<control type="panel" id="64">
 				<visible>Container.Content(Movies)</visible>
 				<visible>!Skin.HasSetting(HideIcon)</visible>
@@ -108,20 +108,21 @@
 				</focusedlayout>
 			</control>
 
-			<!-- TV SHOWS -->
+			<!-- WIDE -->
 			<control type="panel" id="65">
 				<visible>Container.Content(TVShows) | Container.Content(Episodes)</visible>
 				<visible>!Window.IsVisible(24)</visible>
 				<visible>!Skin.HasSetting(HideWideIcon)</visible>
 				<posx>168</posx>
 				<posy>115</posy>
-				<width>946</width>
+				<width>940</width>
 				<height>470</height>
-				<onleft>300</onleft>
-				<onright>520</onright>
-				<onup>65</onup>
-				<ondown>65</ondown>
-				<scrolltime>200</scrolltime>
+				<onleft>65</onleft>
+				<onright>65</onright>
+				<onup>300</onup>
+				<ondown>520</ondown>
+				<scrolltime>150</scrolltime>
+				<orientation>horizontal</orientation>
 				<viewtype label="WideIcon">icon</viewtype>
 				<pagecontrol>520</pagecontrol>
 				<itemlayout height="230" width="310">
@@ -268,7 +269,7 @@
 				</focusedlayout>
 			</control>
 
-			<!-- MUSIC -->
+			<!-- SQUARE -->
 			<control type="panel" id="66">
 				<visible>!Skin.HasSetting(HideIcon)</visible>
 				<visible>Container.Content(Artists) | Container.Content(Albums)</visible>
@@ -717,25 +718,26 @@
 				<texturesliderbackground>white2.png</texturesliderbackground>
 				<textureslidernibfocus>white3.png</textureslidernibfocus>x
 				<onup>64</onup>
-				<onleft>516</onleft>
-				<onright>516</onright>
+				<onleft>518</onleft>
+				<onright>518</onright>
 				<showonepage>false</showonepage>
 				<orientation>horizontal</orientation>
 				<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(518)">Conditional</animation>
 			</control>
 			<control type="scrollbar" id="520">
-				<posx>1120</posx>
-				<posy>155</posy>
-				<width>5</width>
-				<height>350</height>
+				<posx>0</posx>
+				<posy>649</posy>
+				<width>1280</width>
+				<height>5</height>
 				<visible allowhiddenfocus="true">Control.IsVisible(65) + Control.HasFocus(520)</visible>
 				<texturesliderbackground>white2.png</texturesliderbackground>
-				<textureslidernibfocus>white3v.png</textureslidernibfocus>
-				<onleft>50</onleft>
-				<onright>50</onright>
+				<textureslidernibfocus>white3.png</textureslidernibfocus>x
+				<onup>65</onup>
+				<onleft>520</onleft>
+				<onright>520</onright>
 				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
-				<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(520)">Conditional</animation>
+				<orientation>horizontal</orientation>
+				<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(518)">Conditional</animation>
 			</control>
 		</control>
 	</include>

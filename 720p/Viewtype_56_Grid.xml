@@ -35,10 +35,10 @@
 			<control type="panel" id="57">
 				<viewtype label="WideGrid">icon</viewtype>
 				<visible>Container.Content(TVShows) | substring(container.folderpath,plugin://plugin.program.advanced.launcher)</visible>
-				<posx>512</posx>
+				<posx>526</posx>
 				<posy>128</posy>
 				<width>800</width>
-				<height>485</height>
+				<height>480</height>
 				<scrolltime>200</scrolltime>
 				<orientation>vertical</orientation>
 				<onup>57</onup>
@@ -65,8 +65,8 @@
 				<onup>82</onup>
 				<ondown>82</ondown>
 				<onleft>300</onleft>
-				<onright>71</onright>
-				<pagecontrol>71</pagecontrol>
+				<onright>751</onright>
+				<pagecontrol>751</pagecontrol>
 				<preloaditems>1</preloaditems>
 				<visible>!Skin.HasSetting(HideGrid)</visible>
 				<include>SquarePanel</include>
@@ -189,7 +189,7 @@
 					<font>tvtitle3</font>
 					<scroll>false</scroll>
 					<textcolor>movietitleb2</textcolor>
-					<label>Genre: [COLOR=white]$INFO[ListItem.Genre][/COLOR]</label>
+					<label>Premiered: [COLOR=white]$INFO[ListItem.Premiered][/COLOR]</label>
 				</control>
 				<!-- ARTIST INFO -->
 				<control type="label">
@@ -368,19 +368,19 @@
 			</control>
 
 			<!-- SCROLL BAR SQUARE -->
-			<control type="scrollbar" id="71">
+			<control type="scrollbar" id="751">
 				<posx>1264</posx>
 				<posy>136</posy>
 				<width>8</width>
 				<height>450</height>
-				<visible allowhiddenfocus="true">Control.IsVisible(58) + Control.HasFocus(71)</visible>
+				<visible allowhiddenfocus="true">Control.IsVisible(58) + Control.HasFocus(751)</visible>
 				<texturesliderbackground>scroll/scrollbg.png</texturesliderbackground>
 				<textureslidernibfocus>scroll/scrollnib.png</textureslidernibfocus>
 				<onleft>58</onleft>
 				<onright>300</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(71)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(751)">Conditional</animation>
 			</control>
 
 			<!-- SCROLL BAR WIDE -->
@@ -535,12 +535,12 @@
 	</include>
 
 	<include name="WidePanel">
-		<itemlayout width="188" height="120">
+		<itemlayout width="176" height="120">
 			<control type="image">
 				<posx>14</posx>
-				<posy>14</posy>
-				<width>174</width>
-				<height>93</height>
+				<posy>0</posy>
+				<width>164</width>
+				<height>92</height>
 				<texture background="true" diffuse="icon/episodediffuse.png" fallback="nofanart.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
 				<align>bottom</align>
 				<aspectratio scalediffuse="false">scale</aspectratio>
@@ -549,9 +549,9 @@
 			</control>
 			<control type="image">
 				<posx>14</posx>
-				<posy>108</posy>
-				<width>174</width>
-				<height>93</height>
+				<posy>92</posy>
+				<width>164</width>
+				<height>92</height>
 				<texture background="true" flipy="true" diffuse="icon/episodereflectdiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
 				<colordiffuse>89ffffff</colordiffuse>
 				<aspectratio scalediffuse="false">scale</aspectratio>
@@ -572,25 +572,25 @@
 		<focusedlayout width="188" height="124">
 			<control type="image">
 				<posx>14</posx>
-				<posy>14</posy>
-				<width>174</width>
-				<height>93</height>
+				<posy>0</posy>
+				<width>164</width>
+				<height>92</height>
 				<texture background="true" diffuse="icon/episodediffusefo.png" fallback="nofanart.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<animation effect="zoom" end="140" center="auto" tween="back" easing="out" time="250">focus</animation>
+				<animation effect="zoom" end="140" center="auto" tween="back" easing="out" time="200">focus</animation>
 				<visible>Container.Content(TVShows)</visible>
 				<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
 			</control>
 			<control type="image">
 				<posx>40</posx>
-				<posy>24</posy>
-				<width>121</width>
-				<height>74</height>
+				<posy>11</posy>
+				<width>112</width>
+				<height>70</height>
 				<texture>icon/episodeborder.png</texture>
 				<visible>!IsEmpty(ListItem.Thumb)</visible>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<aspectratio scalediffuse="false">scale</aspectratio>
 				<animation type="focus">
-					<effect type="zoom" end="246" center="auto" tween="back" easing="out" time="250" />
+					<effect type="zoom" end="246" center="auto" tween="back" easing="out" time="200" />
 					<effect type="fade" end="100" time="200" />
 				</animation>
 			</control>

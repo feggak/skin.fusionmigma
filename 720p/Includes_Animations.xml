@@ -152,38 +152,38 @@
 		<animation effect="fade" start="10" end="100" time="200" delay="100" reversible="false" condition="Container(52).OnNext">focus</animation>
 	</include>			
 	<include name="wallanim">
-		<animation effect="slide" end="27,40" time="0" condition="Container(560).Row(0) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(1)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(2)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(3)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(4)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(5)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(6)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,40" time="0" condition="Container(560).Row(0) + Container(560).Column(7)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="-29,40" time="0" condition="Container(560).Row(0) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="27,40" time="0" condition="Container(71).Row(0) + Container(71).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(71).Row(0) + Container(71).Column(1)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(71).Row(0) + Container(71).Column(2)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(71).Row(0) + Container(71).Column(3)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(71).Row(0) + Container(71).Column(4)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(71).Row(0) + Container(71).Column(5)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(71).Row(0) + Container(71).Column(6)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,40" time="0" condition="Container(71).Row(0) + Container(71).Column(7)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,40" time="0" condition="Container(71).Row(0) + Container(71).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
 
-		<animation effect="slide" end="27,0" time="0" condition="Container(560).Row(1) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="-29,0" time="0" condition="Container(560).Row(1) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="27,0" time="0" condition="Container(71).Row(1) + Container(71).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,0" time="0" condition="Container(71).Row(1) + Container(71).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
 
-		<animation effect="slide" end="27,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(1)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(2)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(3)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(4)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(5)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(6)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="0,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(7)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="-29,-40" time="0" condition="Container(560).Row(2) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="27,-40" time="0" condition="Container(71).Row(2) + Container(71).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(71).Row(2) + Container(71).Column(1)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(71).Row(2) + Container(71).Column(2)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(71).Row(2) + Container(71).Column(3)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(71).Row(2) + Container(71).Column(4)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(71).Row(2) + Container(71).Column(5)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(71).Row(2) + Container(71).Column(6)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="0,-40" time="0" condition="Container(71).Row(2) + Container(71).Column(7)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,-40" time="0" condition="Container(71).Row(2) + Container(71).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
 	</include>
 	<include name="wallpopupanim">
-		<animation effect="slide" end="27,0" time="0" condition="Container(560).Row(0) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="-29,0" time="0" condition="Container(560).Row(0) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="27,0" time="0" condition="Container(71).Row(0) + Container(71).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,0" time="0" condition="Container(71).Row(0) + Container(71).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
 
-		<animation effect="slide" end="27,0" time="0" condition="Container(560).Row(1) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="-29,0" time="0" condition="Container(560).Row(1) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="27,0" time="0" condition="Container(71).Row(1) + Container(71).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,0" time="0" condition="Container(71).Row(1) + Container(71).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
 
-		<animation effect="slide" end="27,0" time="0" condition="Container(560).Row(2) + Container(560).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
-		<animation effect="slide" end="-29,0" time="0" condition="Container(560).Row(2) + Container(560).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="27,0" time="0" condition="Container(71).Row(2) + Container(71).Column(0)" tween="sine" easing="inout" reversible="true">Conditional</animation>
+		<animation effect="slide" end="-29,0" time="0" condition="Container(71).Row(2) + Container(71).Column(8)" tween="sine" easing="inout" reversible="true">Conditional</animation>
 	</include>
 
 	<include name="biglist_slide_duration">

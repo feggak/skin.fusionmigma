@@ -30,6 +30,7 @@
         <visible>[Container.Content(Movies) + !Skin.HasSetting(movies_fanart_off)] |
             [Container.Content(TVShows) + !Skin.HasSetting(tvshows_fanart_off)]</visible>
         <visible>!Control.IsVisible(51)</visible>
+        <visible>!Control.IsVisible(71)</visible>
         <visible>!Control.IsVisible(560)</visible>
         <include>FanartFade</include>
         <include>ContextFadeFanArt</include>

@@ -197,7 +197,7 @@
 						<align>justify</align>
 						<info>ListItem.Plot</info>
 						<font>about</font>
-						<textcolor>movietitleb2</textcolor>
+						<textcolor>EFE0E0E0</textcolor>
 						<autoscroll>5</autoscroll>
 						<animation type="Focus" reversible="false">
 							<effect type="fade" start="0" end="100" time="100" />
@@ -587,7 +587,7 @@
 							<width min="29" max="1050">auto</width>
 							<height>38</height>
 							<font>movietitle6</font>
-							<textcolor>movietitleb</textcolor>
+							<textcolor>white</textcolor>
 							<scroll>false</scroll>
 							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 						</control>
@@ -624,7 +624,7 @@
 							<scroll>true</scroll>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+							<label>[UPPERCASE]$INFO[ListItem.Premiered,Premiered: ,][/UPPERCASE]</label>
 							<visible>Container.Content(TVShows)</visible>
 						</control>
 					</control>
@@ -643,7 +643,20 @@
 						<visible>Control.IsVisible(63) + ListItem.IsFolder</visible>
 						<visible>Container.Content(Movies)</visible>
 					</control>
+
 				</control>
+			</control>
+
+			<!-- LOGO -->
+			<control type="image">
+				<posx>1065</posx>
+				<posy>570</posy>
+				<width>200</width>
+				<height>78</height>
+				<texture>$INFO[ListItem.Art(clearlogo)]</texture>
+				<fadetime>100</fadetime>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<visible>Control.IsVisible(63) + Skin.HasSetting(Logos)</visible>
 			</control>
 
 			<!-- SCROLLBARS -->

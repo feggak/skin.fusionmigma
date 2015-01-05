@@ -3,7 +3,7 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
 	<onload>RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<views>50,51,52,53,54,56,57,59,60,61,63,64,65,569</views>
+	<views>50,51,52,53,54,56,57,59,60,61,63,64,65,68,71</views>
 	<controls>
 
 		<include>Background</include>
@@ -64,7 +64,7 @@
 			<itemgap>0</itemgap>
 			<orientation>horizontal</orientation>
 			<include>ColorFlags</include>
-			<visible>!Control.IsVisible(51)</visible>
+			<visible>!Control.IsVisible(51) + !Control.IsVisible(71)</visible>
 			<visible>!Substring(Container.FolderPath,plugin,Left)</visible>
 			<visible>!Skin.HasSetting(HideFlags)</visible>
 			<animation effect="fade" start="100" end="80" time="0" condition="true">true</animation>
@@ -87,6 +87,8 @@
 		<include>Episodes2</include>
 		<include>Wrap</include>
 		<include>Icon</include>
+		<include>Metro</include>
+		<include>Wall</include>
 
 		<include>VideoAddOnViews</include>
 
