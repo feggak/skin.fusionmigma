@@ -115,7 +115,7 @@
 				<visible>!Skin.HasSetting(HideWideIcon)</visible>
 				<posx>168</posx>
 				<posy>115</posy>
-				<width>940</width>
+				<width>960</width>
 				<height>470</height>
 				<onleft>65</onleft>
 				<onright>65</onright>
@@ -125,7 +125,7 @@
 				<orientation>horizontal</orientation>
 				<viewtype label="WideIcon">icon</viewtype>
 				<pagecontrol>520</pagecontrol>
-				<itemlayout height="230" width="310">
+				<itemlayout height="230" width="320">
 					<control type="image">
 						<posx>14</posx>
 						<posy>180</posy>

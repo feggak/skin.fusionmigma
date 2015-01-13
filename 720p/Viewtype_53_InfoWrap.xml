@@ -506,7 +506,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Artist][/UPPERCASE]</label>
 						<visible>!Window.IsVisible(VideoFiles)</visible>
 						<visible>Container.Content(Artists) | Container.Content(Albums)</visible>
-						<visible>!Skin.HasSetting(Logos)</visible>
+						<visible>!Skin.HasSetting(MusicLogos)</visible>
 						<animation type="Conditional" condition="Container.Content(Albums)">
 							<effect type="fade" start="100" end="0" time="200"/>
 							<effect type="slide" end="0,-88" time="350" tween="back" easing="inout"/>
@@ -540,7 +540,7 @@
 
 				<!-- LOGO -->
 				<control type="largeimage" id="44">
-					<posx>498</posx>
+					<posx>504</posx>
 					<posy>42</posy>
 					<width>245</width>
 					<height>95</height>

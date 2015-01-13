@@ -620,6 +620,30 @@
 						<scroll>false</scroll>
 						<include>BrowseListAnimation</include>
 					</control>
+					<control type="label">
+						<posy>37</posy>
+						<posx>66</posx>
+						<width>780</width>
+						<height>39</height>
+						<textcolor>itemdetail2</textcolor>
+						<font>listdetail2</font>
+						<label>[COLOR=itemdetail]Premiered:[/COLOR] $INFO[ListItem.Premiered]</label>
+						<visible>Container.Content(TVShows)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
+					<control type="label">
+						<posy>73</posy>
+						<posx>66</posx>
+						<width>780</width>
+						<height>39</height>
+						<textcolor>itemdetail2</textcolor>
+						<font>listdetail2</font>
+						<scroll>false</scroll>
+						<scrollspeed>0</scrollspeed>
+						<label>[COLOR=itemdetail]Total Episodes:[/COLOR] $INFO[ListItem.Property(TotalEpisodes)]</label>
+						<visible>Container.Content(TVShows)</visible>
+						<include>BrowseListAnimation</include>
+					</control>
 				</focusedlayout>
 
 				<!-- FOCUSED MUSIC INFO LAYOUT -->

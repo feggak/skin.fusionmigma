@@ -371,25 +371,25 @@
 				<label>[UPPERCASE]$LOCALIZE[31739][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(movies_fanart_light)</onclick>
 				<onclick>Skin.Reset(movies_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + !Skin.HasSetting(movies_fanart_light) + !Skin.HasSetting(movies_fanart_med) + !Skin.HasSetting(movies_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(71) + Container.Content(Movies) + !Skin.HasSetting(movies_fanart_light) + !Skin.HasSetting(movies_fanart_med) + !Skin.HasSetting(movies_fanart_heavy)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31740][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(movies_fanart_med)</onclick>
 				<onclick>Skin.Reset(movies_fanart_light)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_light)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(71) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_light)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31741][/UPPERCASE]</label>
 				<onclick>Skin.SetBool(movies_fanart_heavy)</onclick>
 				<onclick>Skin.Reset(movies_fanart_med)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_med)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(71) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_med)</visible>
 			</item>
 			<item id="4">
 				<label>[UPPERCASE]$LOCALIZE[31742][/UPPERCASE]</label>
 				<onclick>Skin.Reset(movies_fanart_heavy)</onclick>
 				<onclick>Skin.SetBool(movies_fanart_off)</onclick>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(560) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_heavy)</visible>
+				<visible>!IsEmpty(ListItem.Property(Fanart_Image)) + !Control.IsVisible(51) + !Control.IsVisible(71) + Container.Content(Movies) + Skin.HasSetting(movies_fanart_heavy)</visible>
 			</item>
 			<!-- FANART TVSHOWS -->
 			<item id="4">

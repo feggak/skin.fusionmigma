@@ -80,7 +80,8 @@
 
 				<!-- FANART + BORDER -->
 				<control type="image">
-					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos) | Skin.HasSetting(MusicLogos)">Conditional</animation>
+					<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
 					<posx>78</posx>
 					<posy>133</posy>
 					<width>447</width>
@@ -90,18 +91,30 @@
 					<aspectratio>scale</aspectratio>
 				</control>
 				<control type="image">
-					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos) | Skin.HasSetting(MusicLogos)">Conditional</animation>
+					<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos)">Conditional</animation>
+					<posx>53</posx>
+					<posy>108</posy>
+					<width>497</width>
+					<height>308</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>grid/fanborder.png</texture>
+					<colordiffuse>E0FFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<visible>Container.Content(Artists) | Container.Content(Albums)</visible>
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="kin.HasSetting(MusicLogos)">Conditional</animation>
 					<posx>78</posx>
 					<posy>133</posy>
 					<width>447</width>
 					<height>258</height>
-					<texture>$INFO[ListItem.path]landscape.jpg</texture>
-					<visible>Container.Content(Movies)</visible>
+					<texture fallback="nofanart.jpg" background="true" diffuse="info/fandiffuse.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
 					<fadetime>300</fadetime>
 					<aspectratio>scale</aspectratio>
 				</control>
 				<control type="image">
-					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(Logos) | Skin.HasSetting(MusicLogos)">Conditional</animation>
+					<visible>Container.Content(Artists) | Container.Content(Albums)</visible>
+					<animation effect="slide" start="0,0" end="0,20" time="0" condition="Skin.HasSetting(MusicLogos)">Conditional</animation>
 					<posx>53</posx>
 					<posy>108</posy>
 					<width>497</width>
@@ -134,7 +147,31 @@
 					<scroll>false</scroll>
 					<textcolor>white</textcolor>
 					<label>[UPPERCASE]$INFO[ListItem.Label] $INFO[ListItem.Property(Addon.Version)][/UPPERCASE]</label>
-					<visible>!Skin.HasSetting(Logos)</visible>
+					<visible>Container.Content(Addons)</visible>
+				</control>
+				<control type="label">
+					<posx>80</posx>
+					<posy>76</posy>
+					<width>1120</width>
+					<height>94</height>
+					<aligny>top</aligny>
+					<font>movietitle3</font>
+					<scroll>false</scroll>
+					<textcolor>white</textcolor>
+					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					<visible>[Container.Content(Movies) | Container.Content(TVShows)] + !Skin.HasSetting(Logos)</visible>
+				</control>
+				<control type="label">
+					<posx>80</posx>
+					<posy>76</posy>
+					<width>1120</width>
+					<height>94</height>
+					<aligny>top</aligny>
+					<font>movietitle3</font>
+					<scroll>false</scroll>
+					<textcolor>white</textcolor>
+					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					<visible>[Container.Content(Artists) | Container.Content(Albums)] + !Skin.HasSetting(MusicLogos)</visible>
 				</control>
 
 				<!-- FALLBACK TITLE -->

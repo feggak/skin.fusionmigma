@@ -261,6 +261,7 @@
 					<width>838</width>
 					<font>infobar</font>
 					<label>[UPPERCASE]$INFO[ListItem.Title] ($INFO[ListItem.Year])[/UPPERCASE]</label>
+					<scroll>false</scroll>
 					<textcolor>fce7e7e7</textcolor>
 					<textcolor>itemdetail</textcolor>
 					<visible>!Container.Content(Episodes) + !Container.Content(TVShows)</visible>
@@ -273,6 +274,7 @@
 					<width>838</width>
 					<font>infobar</font>
 					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+					<scroll>false</scroll>
 					<textcolor>fce7e7e7</textcolor>
 					<textcolor>itemdetail</textcolor>
 					<visible>Container.Content(Episodes) | Container.Content(TVShows)</visible>
@@ -286,6 +288,7 @@
 					<scrollsuffix>-</scrollsuffix>
 					<font>tagline</font>
 					<label>$INFO[ListItem.Tagline]</label>
+					<scroll>false</scroll>
 					<textcolor>fce7e7e7</textcolor>
 					<textcolor>itemdetail</textcolor>
 					<visible>Container.Content(Movies)</visible>
@@ -1034,7 +1037,7 @@
 
 			<!-- BOTTOM -->
 			<control type="group">
-				<animation effect="slide" end="0,-3" time="0" condition="Skin.HasSetting(ZBar)">Conditional</animation>
+				<animation effect="slide" end="0,-3" time="0" condition="!Skin.HasSetting(ZBar)">Conditional</animation>
 
 				<!-- STUDIO LOGO -->
 				<control type="image" id="43">

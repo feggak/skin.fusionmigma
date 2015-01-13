@@ -5,12 +5,12 @@
 			<include>ContextFade3</include>
 			<include>Keyboard</include>
 			<animation type="WindowOpen" reversible="false">
-				<effect type="fade" start="0" end="100" time="450" delay="0" />
-				<effect type="zoom" start="250" end="100" time="350" center="auto" delay="0" />
+				<effect type="fade" start="0" end="100" time="350" delay="0" />
+				<effect type="zoom" start="250" end="100" time="250" center="auto" delay="0" />
 			</animation>
 			<animation type="WindowClose" reversible="false">
-				<effect type="fade" start="100" end="0" time="350" delay="0" />
-				<effect type="zoom" start="100" end="250" time="300" center="auto" delay="0" />
+				<effect type="fade" start="100" end="0" time="250" delay="0" />
+				<effect type="zoom" start="100" end="250" time="200" center="auto" delay="0" />
 			</animation>
 
 			<control type="panel" id="71">
@@ -122,6 +122,7 @@
 					<label>$INFO[ListItem.Title]</label>
 					<font>homemenu3caps</font>
 					<textcolor>ffffffff</textcolor>
+					<scrollsuffix> - </scrollsuffix>
 					<animation type="Focus" reversible="false">
 						<effect type="fade" start="0" end="100" time="200" delay="1550" />
 						<effect type="slide" start="0,0" end="198,0" time="300" delay="1500" />

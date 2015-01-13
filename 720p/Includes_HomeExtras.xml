@@ -79,7 +79,7 @@
                         <label>$INFO[ListItem.Title] ($INFO[ListItem.Year])</label>
                     </control>
                 </focusedlayout>
-                <content>plugin://service.library.data.provider?type=randommovies&reload=$INFO[Window.Property(randommovies)]</content>
+                <content>plugin://service.library.data.provider?type=randommovies&limit=1&reload=$INFO[Window.Property(randommovies)]</content>
             </control>
 
             <control type="image">
@@ -170,7 +170,7 @@
                         <label>$INFO[ListItem.TVShowTitle]: $INFO[ListItem.Title]</label>
                     </control>
                 </focusedlayout>
-                <content>plugin://service.library.data.provider?type=randomepisodes&reload=$INFO[Window.Property(randomepisodes)]</content>
+                <content>plugin://service.library.data.provider?type=randomepisodes&limit=1&reload=$INFO[Window.Property(randomepisodes)]</content>
             </control>
             <control type="image">
                 <posx>180</posx>
@@ -341,7 +341,7 @@
                         <visible>Control.HasFocus(1014) + !IsEmpty(ListItem.Property(Album_Description))</visible>
                     </control>
                 </focusedlayout>
-                <content>plugin://service.library.data.provider?type=randomalbums&reload=$INFO[Window.Property(randomalbums)]</content>
+                <content>plugin://service.library.data.provider?type=randomalbums&limit=1&reload=$INFO[Window.Property(randomalbums)]</content>
             </control>
             <control type="image">
                 <posx>58</posx>
